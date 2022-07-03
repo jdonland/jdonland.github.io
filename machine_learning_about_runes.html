@@ -1523,6 +1523,230 @@ window.onload = function() {
   PagedTableDoc.initAll();
 };
 </script>
+<script>$(document).ready(function(){
+    if (typeof $('[data-toggle="tooltip"]').tooltip === 'function') {
+        $('[data-toggle="tooltip"]').tooltip();
+    }
+    if ($('[data-toggle="popover"]').popover === 'function') {
+        $('[data-toggle="popover"]').popover();
+    }
+});
+</script>
+<style type="text/css">
+.lightable-minimal {
+border-collapse: separate;
+border-spacing: 16px 1px;
+width: 100%;
+margin-bottom: 10px;
+}
+.lightable-minimal td {
+margin-left: 5px;
+margin-right: 5px;
+}
+.lightable-minimal th {
+margin-left: 5px;
+margin-right: 5px;
+}
+.lightable-minimal thead tr:last-child th {
+border-bottom: 2px solid #00000050;
+empty-cells: hide;
+}
+.lightable-minimal tbody tr:first-child td {
+padding-top: 0.5em;
+}
+.lightable-minimal.lightable-hover tbody tr:hover {
+background-color: #f5f5f5;
+}
+.lightable-minimal.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-classic {
+border-top: 0.16em solid #111111;
+border-bottom: 0.16em solid #111111;
+width: 100%;
+margin-bottom: 10px;
+margin: 10px 5px;
+}
+.lightable-classic tfoot tr td {
+border: 0;
+}
+.lightable-classic tfoot tr:first-child td {
+border-top: 0.14em solid #111111;
+}
+.lightable-classic caption {
+color: #222222;
+}
+.lightable-classic td {
+padding-left: 5px;
+padding-right: 5px;
+color: #222222;
+}
+.lightable-classic th {
+padding-left: 5px;
+padding-right: 5px;
+font-weight: normal;
+color: #222222;
+}
+.lightable-classic thead tr:last-child th {
+border-bottom: 0.10em solid #111111;
+}
+.lightable-classic.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-classic.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-classic-2 {
+border-top: 3px double #111111;
+border-bottom: 3px double #111111;
+width: 100%;
+margin-bottom: 10px;
+}
+.lightable-classic-2 tfoot tr td {
+border: 0;
+}
+.lightable-classic-2 tfoot tr:first-child td {
+border-top: 3px double #111111;
+}
+.lightable-classic-2 caption {
+color: #222222;
+}
+.lightable-classic-2 td {
+padding-left: 5px;
+padding-right: 5px;
+color: #222222;
+}
+.lightable-classic-2 th {
+padding-left: 5px;
+padding-right: 5px;
+font-weight: normal;
+color: #222222;
+}
+.lightable-classic-2 tbody tr:last-child td {
+border-bottom: 3px double #111111;
+}
+.lightable-classic-2 thead tr:last-child th {
+border-bottom: 1px solid #111111;
+}
+.lightable-classic-2.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-classic-2.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-material {
+min-width: 100%;
+white-space: nowrap;
+table-layout: fixed;
+font-family: Roboto, sans-serif;
+border: 1px solid #EEE;
+border-collapse: collapse;
+margin-bottom: 10px;
+}
+.lightable-material tfoot tr td {
+border: 0;
+}
+.lightable-material tfoot tr:first-child td {
+border-top: 1px solid #EEE;
+}
+.lightable-material th {
+height: 56px;
+padding-left: 16px;
+padding-right: 16px;
+}
+.lightable-material td {
+height: 52px;
+padding-left: 16px;
+padding-right: 16px;
+border-top: 1px solid #eeeeee;
+}
+.lightable-material.lightable-hover tbody tr:hover {
+background-color: #f5f5f5;
+}
+.lightable-material.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-material.lightable-striped tbody td {
+border: 0;
+}
+.lightable-material.lightable-striped thead tr:last-child th {
+border-bottom: 1px solid #ddd;
+}
+.lightable-material-dark {
+min-width: 100%;
+white-space: nowrap;
+table-layout: fixed;
+font-family: Roboto, sans-serif;
+border: 1px solid #FFFFFF12;
+border-collapse: collapse;
+margin-bottom: 10px;
+background-color: #363640;
+}
+.lightable-material-dark tfoot tr td {
+border: 0;
+}
+.lightable-material-dark tfoot tr:first-child td {
+border-top: 1px solid #FFFFFF12;
+}
+.lightable-material-dark th {
+height: 56px;
+padding-left: 16px;
+padding-right: 16px;
+color: #FFFFFF60;
+}
+.lightable-material-dark td {
+height: 52px;
+padding-left: 16px;
+padding-right: 16px;
+color: #FFFFFF;
+border-top: 1px solid #FFFFFF12;
+}
+.lightable-material-dark.lightable-hover tbody tr:hover {
+background-color: #FFFFFF12;
+}
+.lightable-material-dark.lightable-striped tbody tr:nth-child(even) {
+background-color: #FFFFFF12;
+}
+.lightable-material-dark.lightable-striped tbody td {
+border: 0;
+}
+.lightable-material-dark.lightable-striped thead tr:last-child th {
+border-bottom: 1px solid #FFFFFF12;
+}
+.lightable-paper {
+width: 100%;
+margin-bottom: 10px;
+color: #444;
+}
+.lightable-paper tfoot tr td {
+border: 0;
+}
+.lightable-paper tfoot tr:first-child td {
+border-top: 1px solid #00000020;
+}
+.lightable-paper thead tr:last-child th {
+color: #666;
+vertical-align: bottom;
+border-bottom: 1px solid #00000020;
+line-height: 1.15em;
+padding: 10px 5px;
+}
+.lightable-paper td {
+vertical-align: middle;
+border-bottom: 1px solid #00000010;
+line-height: 1.15em;
+padding: 7px 5px;
+}
+.lightable-paper.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-paper.lightable-striped tbody tr:nth-child(even) {
+background-color: #00000008;
+}
+.lightable-paper.lightable-striped tbody td {
+border: 0;
+}
+</style>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -1707,11 +1931,206 @@ show only rows where value in the column of inscription names matches
 <code>rs_short_inscr_name == &quot;Vimose comb&quot;</code> would fail because the
 values in that column have extra whitespace characters.</span></p>
 <pre class="r"><code>runes_data |&gt;
-  filter(str_detect(rs_short_inscr_name, pattern = &quot;Vimose comb&quot;))</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Findno"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["rs_short_inscr_name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["rs_fundort"],"name":[3],"type":["chr"],"align":["left"]},{"label":["rs_short_storage"],"name":[4],"type":["chr"],"align":["left"]},{"label":["rs_extdat"],"name":[5],"type":["chr"],"align":["left"]},{"label":["rs_short_dat_art"],"name":[6],"type":["chr"],"align":["left"]},{"label":["rs_short_context"],"name":[7],"type":["chr"],"align":["left"]},{"label":["rs_objklasse"],"name":[8],"type":["chr"],"align":["left"]},{"label":["rs_objtyp"],"name":[9],"type":["chr"],"align":["left"]},{"label":["rs_short_obj_complete"],"name":[10],"type":["chr"],"align":["left"]},{"label":["rs_short_matklasse"],"name":[11],"type":["chr"],"align":["left"]},{"label":["rs_mat"],"name":[12],"type":["chr"],"align":["left"]},{"label":["rs_short_obj_state"],"name":[13],"type":["chr"],"align":["left"]},{"label":["rs_runenreihe"],"name":[14],"type":["chr"],"align":["left"]},{"label":["rs_short_museum"],"name":[15],"type":["chr"],"align":["left"]},{"label":["rs_short_ins_complete"],"name":[16],"type":["chr"],"align":["left"]},{"label":["rs_translat"],"name":[17],"type":["chr"],"align":["left"]},{"label":["rs_translit"],"name":[18],"type":["chr"],"align":["left"]},{"label":["rs_short_ins_state"],"name":[19],"type":["chr"],"align":["left"]},{"label":["rs_short_markings"],"name":[20],"type":["chr"],"align":["left"]},{"label":["rs_short_transkript"],"name":[21],"type":["chr"],"align":["left"]},{"label":["rs_namen"],"name":[22],"type":["chr"],"align":["left"]},{"label":["rs_fundjahr"],"name":[23],"type":["chr"],"align":["left"]},{"label":["rs_short_gemeinde"],"name":[24],"type":["chr"],"align":["left"]},{"label":["rs_short_bezirk"],"name":[25],"type":["chr"],"align":["left"]},{"label":["rs_short_landschaft"],"name":[26],"type":["chr"],"align":["left"]},{"label":["rs_short_land"],"name":[27],"type":["chr"],"align":["left"]},{"label":["rs_short_invnr"],"name":[28],"type":["chr"],"align":["left"]},{"label":["rs_short_kategorie"],"name":[29],"type":["chr"],"align":["left"]},{"label":["rs_short_sigils"],"name":[30],"type":["chr"],"align":["left"]},{"label":["rs_traeger"],"name":[31],"type":["chr"],"align":["left"]}],"data":[{"1":"20","2":"Vimose comb","3":"Vimose","4":"Museum","5":"140-160","6":"arch.","7":"deposit find","8":"tool/implement","9":"personal hygiene","10":"yes","11":"bone/horn","12":"antler","13":"good","14":"older fuþark","15":"Nationalmuseet","16":"yes","17":"Harja.","18":"harja |","19":"good","20":"nein","21":"NA","22":"Vimose-kam","23":"1865","24":"Allese Sogn","25":"Odense Amt","26":"Fyn","27":"DK","28":"22657","29":"run.","30":"Fyn 19","31":"comb"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
+  filter(str_detect(rs_short_inscr_name, pattern = &quot;Vimose comb&quot;)) |&gt;
+  kbl() |&gt;
+  scroll_box(width = &quot;51.75%&quot;)</code></pre>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; ">
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+Findno
+</th>
+<th style="text-align:left;">
+rs_short_inscr_name
+</th>
+<th style="text-align:left;">
+rs_fundort
+</th>
+<th style="text-align:left;">
+rs_short_storage
+</th>
+<th style="text-align:left;">
+rs_extdat
+</th>
+<th style="text-align:left;">
+rs_short_dat_art
+</th>
+<th style="text-align:left;">
+rs_short_context
+</th>
+<th style="text-align:left;">
+rs_objklasse
+</th>
+<th style="text-align:left;">
+rs_objtyp
+</th>
+<th style="text-align:left;">
+rs_short_obj_complete
+</th>
+<th style="text-align:left;">
+rs_short_matklasse
+</th>
+<th style="text-align:left;">
+rs_mat
+</th>
+<th style="text-align:left;">
+rs_short_obj_state
+</th>
+<th style="text-align:left;">
+rs_runenreihe
+</th>
+<th style="text-align:left;">
+rs_short_museum
+</th>
+<th style="text-align:left;">
+rs_short_ins_complete
+</th>
+<th style="text-align:left;">
+rs_translat
+</th>
+<th style="text-align:left;">
+rs_translit
+</th>
+<th style="text-align:left;">
+rs_short_ins_state
+</th>
+<th style="text-align:left;">
+rs_short_markings
+</th>
+<th style="text-align:left;">
+rs_short_transkript
+</th>
+<th style="text-align:left;">
+rs_namen
+</th>
+<th style="text-align:left;">
+rs_fundjahr
+</th>
+<th style="text-align:left;">
+rs_short_gemeinde
+</th>
+<th style="text-align:left;">
+rs_short_bezirk
+</th>
+<th style="text-align:left;">
+rs_short_landschaft
+</th>
+<th style="text-align:left;">
+rs_short_land
+</th>
+<th style="text-align:left;">
+rs_short_invnr
+</th>
+<th style="text-align:left;">
+rs_short_kategorie
+</th>
+<th style="text-align:left;">
+rs_short_sigils
+</th>
+<th style="text-align:left;">
+rs_traeger
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:left;">
+Vimose comb
+</td>
+<td style="text-align:left;">
+Vimose
+</td>
+<td style="text-align:left;">
+Museum
+</td>
+<td style="text-align:left;">
+140-160
+</td>
+<td style="text-align:left;">
+arch.
+</td>
+<td style="text-align:left;">
+deposit find
+</td>
+<td style="text-align:left;">
+tool/implement
+</td>
+<td style="text-align:left;">
+personal hygiene
+</td>
+<td style="text-align:left;">
+yes
+</td>
+<td style="text-align:left;">
+bone/horn
+</td>
+<td style="text-align:left;">
+antler
+</td>
+<td style="text-align:left;">
+good
+</td>
+<td style="text-align:left;">
+older fuþark
+</td>
+<td style="text-align:left;">
+Nationalmuseet
+</td>
+<td style="text-align:left;">
+yes
+</td>
+<td style="text-align:left;">
+Harja.
+</td>
+<td style="text-align:left;">
+harja |
+</td>
+<td style="text-align:left;">
+good
+</td>
+<td style="text-align:left;">
+nein
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Vimose-kam
+</td>
+<td style="text-align:left;">
+1865
+</td>
+<td style="text-align:left;">
+Allese Sogn
+</td>
+<td style="text-align:left;">
+Odense Amt
+</td>
+<td style="text-align:left;">
+Fyn
+</td>
+<td style="text-align:left;">
+DK
+</td>
+<td style="text-align:left;">
+22657
+</td>
+<td style="text-align:left;">
+run.
+</td>
+<td style="text-align:left;">
+Fyn 19
+</td>
+<td style="text-align:left;">
+comb
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p>So we can see that this object was found in Vimose, currently resides
 in a museum, has been dated to 140-160 CE, is a personal hygiene tool
@@ -1723,11 +2142,656 @@ made of antler, says “harja” (ᚺᚨᚱᛃᚨ), etc.</p>
 count and proportion of missing and unique values in each column.
 <code>dlookr</code>’s <code>diagnose</code> does this.</p>
 <pre class="r"><code>runes_data |&gt; 
-  diagnose()</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["variables"],"name":[1],"type":["chr"],"align":["left"]},{"label":["types"],"name":[2],"type":["chr"],"align":["left"]},{"label":["missing_count"],"name":[3],"type":["int"],"align":["right"]},{"label":["missing_percent"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["unique_count"],"name":[5],"type":["int"],"align":["right"]},{"label":["unique_rate"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"Findno","2":"numeric","3":"0","4":"0.00000000","5":"8281","6":"1.0000000000"},{"1":"rs_short_inscr_name","2":"character","3":"7","4":"0.08453085","5":"5457","6":"0.6589783843"},{"1":"rs_fundort","2":"character","3":"34","4":"0.41057843","5":"3156","6":"0.3811133921"},{"1":"rs_short_storage","2":"character","3":"0","4":"0.00000000","5":"1723","6":"0.2080666586"},{"1":"rs_extdat","2":"character","3":"6","4":"0.07245502","5":"573","6":"0.0691945417"},{"1":"rs_short_dat_art","2":"character","3":"1988","4":"24.00676247","5":"19","6":"0.0022944089"},{"1":"rs_short_context","2":"character","3":"5240","4":"63.27738196","5":"21","6":"0.0025359256"},{"1":"rs_objklasse","2":"character","3":"33","4":"0.39850260","5":"13","6":"0.0015698587"},{"1":"rs_objtyp","2":"character","3":"1452","4":"17.53411424","5":"45","6":"0.0054341263"},{"1":"rs_short_obj_complete","2":"character","3":"1873","4":"22.61804130","5":"4","6":"0.0004830335"},{"1":"rs_short_matklasse","2":"character","3":"43","4":"0.51926096","5":"11","6":"0.0013283420"},{"1":"rs_mat","2":"character","3":"3550","4":"42.86921869","5":"119","6":"0.0143702451"},{"1":"rs_short_obj_state","2":"character","3":"1970","4":"23.78939742","5":"6","6":"0.0007245502"},{"1":"rs_runenreihe","2":"character","3":"463","4":"5.59111218","5":"12","6":"0.0014491004"},{"1":"rs_short_museum","2":"character","3":"4382","4":"52.91631445","5":"291","6":"0.0351406835"},{"1":"rs_short_ins_complete","2":"character","3":"1259","4":"15.20347784","5":"4","6":"0.0004830335"},{"1":"rs_translat","2":"character","3":"698","4":"8.42893370","5":"5592","6":"0.6752807632"},{"1":"rs_translit","2":"character","3":"91","4":"1.09890110","5":"7482","6":"0.9035140683"},{"1":"rs_short_ins_state","2":"character","3":"1371","4":"16.55597150","5":"6","6":"0.0007245502"},{"1":"rs_short_markings","2":"character","3":"2676","4":"32.31493781","5":"3","6":"0.0003622751"},{"1":"rs_short_transkript","2":"character","3":"1090","4":"13.16266151","5":"5536","6":"0.6685182949"},{"1":"rs_namen","2":"character","3":"5662","4":"68.37338486","5":"1554","6":"0.1876584954"},{"1":"rs_fundjahr","2":"character","3":"4895","4":"59.11121845","5":"700","6":"0.0845308538"},{"1":"rs_short_gemeinde","2":"character","3":"1435","4":"17.32882502","5":"1682","6":"0.2031155658"},{"1":"rs_short_bezirk","2":"character","3":"3287","4":"39.69327376","5":"406","6":"0.0490278952"},{"1":"rs_short_landschaft","2":"character","3":"1384","4":"16.71295737","5":"124","6":"0.0149740370"},{"1":"rs_short_land","2":"character","3":"48","4":"0.57964014","5":"28","6":"0.0033812342"},{"1":"rs_short_invnr","2":"character","3":"4709","4":"56.86511291","5":"2524","6":"0.3047941070"},{"1":"rs_short_kategorie","2":"character","3":"1227","4":"14.81705108","5":"15","6":"0.0018113754"},{"1":"rs_short_sigils","2":"character","3":"125","4":"1.50947953","5":"8129","6":"0.9816447289"},{"1":"rs_traeger","2":"character","3":"8","4":"0.09660669","5":"416","6":"0.0502354788"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
+  diagnose() |&gt;
+  kbl() |&gt;
+  scroll_box(width = &quot;51.75%&quot;)</code></pre>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; ">
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+variables
+</th>
+<th style="text-align:left;">
+types
+</th>
+<th style="text-align:right;">
+missing_count
+</th>
+<th style="text-align:right;">
+missing_percent
+</th>
+<th style="text-align:right;">
+unique_count
+</th>
+<th style="text-align:right;">
+unique_rate
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Findno
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+8281
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_inscr_name
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+0.0845309
+</td>
+<td style="text-align:right;">
+5457
+</td>
+<td style="text-align:right;">
+0.6589784
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_fundort
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+0.4105784
+</td>
+<td style="text-align:right;">
+3156
+</td>
+<td style="text-align:right;">
+0.3811134
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_storage
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+1723
+</td>
+<td style="text-align:right;">
+0.2080667
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_extdat
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0.0724550
+</td>
+<td style="text-align:right;">
+573
+</td>
+<td style="text-align:right;">
+0.0691945
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_dat_art
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+1988
+</td>
+<td style="text-align:right;">
+24.0067625
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+0.0022944
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_context
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+5240
+</td>
+<td style="text-align:right;">
+63.2773820
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+0.0025359
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_objklasse
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+0.3985026
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+0.0015699
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_objtyp
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+1452
+</td>
+<td style="text-align:right;">
+17.5341142
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+0.0054341
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_obj_complete
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+1873
+</td>
+<td style="text-align:right;">
+22.6180413
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0.0004830
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_matklasse
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+0.5192610
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+0.0013283
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_mat
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+3550
+</td>
+<td style="text-align:right;">
+42.8692187
+</td>
+<td style="text-align:right;">
+119
+</td>
+<td style="text-align:right;">
+0.0143702
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_obj_state
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+1970
+</td>
+<td style="text-align:right;">
+23.7893974
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0.0007246
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_runenreihe
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+463
+</td>
+<td style="text-align:right;">
+5.5911122
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+0.0014491
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_museum
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+4382
+</td>
+<td style="text-align:right;">
+52.9163145
+</td>
+<td style="text-align:right;">
+291
+</td>
+<td style="text-align:right;">
+0.0351407
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_ins_complete
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+1259
+</td>
+<td style="text-align:right;">
+15.2034778
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0.0004830
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_translat
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+698
+</td>
+<td style="text-align:right;">
+8.4289337
+</td>
+<td style="text-align:right;">
+5592
+</td>
+<td style="text-align:right;">
+0.6752808
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_translit
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+91
+</td>
+<td style="text-align:right;">
+1.0989011
+</td>
+<td style="text-align:right;">
+7482
+</td>
+<td style="text-align:right;">
+0.9035141
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_ins_state
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+1371
+</td>
+<td style="text-align:right;">
+16.5559715
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0.0007246
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_markings
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+2676
+</td>
+<td style="text-align:right;">
+32.3149378
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.0003623
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_transkript
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+1090
+</td>
+<td style="text-align:right;">
+13.1626615
+</td>
+<td style="text-align:right;">
+5536
+</td>
+<td style="text-align:right;">
+0.6685183
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_namen
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+5662
+</td>
+<td style="text-align:right;">
+68.3733849
+</td>
+<td style="text-align:right;">
+1554
+</td>
+<td style="text-align:right;">
+0.1876585
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_fundjahr
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+4895
+</td>
+<td style="text-align:right;">
+59.1112185
+</td>
+<td style="text-align:right;">
+700
+</td>
+<td style="text-align:right;">
+0.0845309
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_gemeinde
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+1435
+</td>
+<td style="text-align:right;">
+17.3288250
+</td>
+<td style="text-align:right;">
+1682
+</td>
+<td style="text-align:right;">
+0.2031156
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_bezirk
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+3287
+</td>
+<td style="text-align:right;">
+39.6932738
+</td>
+<td style="text-align:right;">
+406
+</td>
+<td style="text-align:right;">
+0.0490279
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_landschaft
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+1384
+</td>
+<td style="text-align:right;">
+16.7129574
+</td>
+<td style="text-align:right;">
+124
+</td>
+<td style="text-align:right;">
+0.0149740
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_land
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+0.5796401
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:right;">
+0.0033812
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_invnr
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+4709
+</td>
+<td style="text-align:right;">
+56.8651129
+</td>
+<td style="text-align:right;">
+2524
+</td>
+<td style="text-align:right;">
+0.3047941
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_kategorie
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+1227
+</td>
+<td style="text-align:right;">
+14.8170511
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+0.0018114
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_short_sigils
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+125
+</td>
+<td style="text-align:right;">
+1.5094795
+</td>
+<td style="text-align:right;">
+8129
+</td>
+<td style="text-align:right;">
+0.9816447
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rs_traeger
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+0.0966067
+</td>
+<td style="text-align:right;">
+416
+</td>
+<td style="text-align:right;">
+0.0502355
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p>Unfortunately, RuneS-DB is a bit of a mess. Because it’s amalgamated
 from many sources, information is coded inconsistently. A mix of
@@ -2033,13 +3097,13 @@ various model-specific packages, as well as convenient functions for
 defining, fitting, tuning, and comparing many combinations of data
 pre-processing recipes and model specifications.</p>
 <blockquote>
-<p>In parsnip, * the model type differentiates basic modeling
+<p>In parsnip, the model <em>type</em> differentiates basic modeling
 approaches, such as random forests, logistic regression, linear support
-vector machines, etc., * the mode denotes in what kind of modeling
-context it will be used (most commonly, classification or regression),
-and * the computational engine indicates how the model is fit, such as
-with a specific R package implementation or even methods outside of R
-like Keras or Stan.</p>
+vector machines, etc.; the <em>mode</em> denotes in what kind of
+modeling context it will be used (most commonly, classification or
+regression); and the computational <em>engine</em> indicates how the
+model is fit, such as with a specific R package implementation or even
+methods outside of R like Keras or Stan.</p>
 </blockquote>
 </div>
 <div id="pre-processing-recipe" class="section level3">
@@ -2288,11 +3352,49 @@ their relative complexity as well.</p>
   rmse     = c(final_cubist |&gt; collect_metrics() |&gt; pull(.estimate), 
                small_tree   |&gt; collect_metrics() |&gt; pull(.estimate)),
   features = c(final_cubist |&gt; extract_fit_engine() |&gt; vi() |&gt; filter(Importance &gt; 0) |&gt; nrow(),
-               small_tree   |&gt; extract_fit_engine() |&gt; vi() |&gt; filter(Importance &gt; 0) |&gt; nrow()))</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["model"],"name":[1],"type":["chr"],"align":["left"]},{"label":["rmse"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["features"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"Cubist","2":"109.4089","3":"38"},{"1":"Small Decision Tree","2":"131.1698","3":"7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
+               small_tree   |&gt; extract_fit_engine() |&gt; vi() |&gt; filter(Importance &gt; 0) |&gt; nrow())) |&gt;
+  kbl() |&gt;
+  scroll_box(width = &quot;51.75%&quot;)</code></pre>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; ">
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+model
+</th>
+<th style="text-align:right;">
+rmse
+</th>
+<th style="text-align:right;">
+features
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Cubist
+</td>
+<td style="text-align:right;">
+109.4089
+</td>
+<td style="text-align:right;">
+38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Small Decision Tree
+</td>
+<td style="text-align:right;">
+131.1698
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p>The small decision tree’s predictions are about 16% worse than the
 best Cubist model we could find. On the other hand, it’s <em>much</em>
