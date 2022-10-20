@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Jesse Onland - (Machine) Learning about Runes</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Jesse Onland</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html">Index</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../links.html">Links</a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">(Machine) Learning about Runes</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Today we’ll learn about an ancient Germanic writing system, clean up some messy data, engineer a couple of simple features, and see if we can find a way to predict the age of some historical artifacts without having to pay for a fancy-schmancy archaeology degree. Along the way, we’ll get a little overview of the <code>tidyverse</code> and <code>tidymodels</code> approaches to data analysis and modeling in R.</p>
+<section id="a-very-brief-primer-on-runes" class="level3">
+<h3 class="anchored" data-anchor-id="a-very-brief-primer-on-runes">A Very Brief Primer on Runes</h3>
+<p>A rune is a letter from any of a handful of closely-related alphabets used by Germanic peoples primarily from around the 3rd to the 13th centuries CE. Like the Latin alphabet used to write the Germanic languages today, they derive from an ancient form of the Greek alphabet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> These alphabets are sometimes called “futhark” (or “futhorc”, “fuþąrk”, etc.) after first few letters in their canonical order.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>The main runic alphabets are<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p>
+<table class="table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Main Language(s)</th>
+<th style="text-align: left;">Era (c.&nbsp;CE)</th>
+<th style="text-align: left;">Letters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Elder Futhark</td>
+<td style="text-align: left;">Proto-Germanic, Proto-Norse</td>
+<td style="text-align: left;">1st–8th</td>
+<td style="text-align: left;">ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ ᚺ ᚾ ᛁ ᛃ ᛈ ᛇ ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ ᛚ</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Anglo-Frisian Futhorc</td>
+<td style="text-align: left;">Old Frisian, Old English</td>
+<td style="text-align: left;">5th–11th</td>
+<td style="text-align: left;">ᚠ ᚢ ᚦ ᚩ ᚱ ᚳ ᚷ ᚹ ᚻ ᚾ ᛁ ᛡ ᛇ ᛈ ᛉ ᛋ ᛏ ᛒ ᛖ ᛗ ᛚ ᛝ ᛟ ᛞ ᚪ ᚫ ᛠ ᚣ</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Younger Futhark</td>
+<td style="text-align: left;">Old Norse</td>
+<td style="text-align: left;">8th–12th</td>
+<td style="text-align: left;">ᚠ ᚢ ᚦ ᚬ ᚱ ᚴ ᚼ ᚾ ᛁ ᛅ ᛦ ᛋ ᛏ ᛒ ᛘ ᛚ</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Medieval Runes</td>
+<td style="text-align: left;">Old Icelandic, Old Swedish</td>
+<td style="text-align: left;">12th–17th</td>
+<td style="text-align: left;">ᚠ ᚢ ᚦ ᚮ ᚱ ᚴ ᚼ ᚿ ᛁ ᛆ ᛌ ᛐ ᛒ ᛘ ᛚ ᛦ</td>
+</tr>
+</tbody>
+</table>
+<p>Magical incantations were sometimes written in runes, but despite what such august institutions as the gift shop of the National Museum of Iceland would have you believe, there’s no evidence that each runic letter had a specific symbolic meaning.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Neither is there much evidence that they were used in divination. These alphabets were used mainly for mundane purposes such as inscribing an object with its owner or creator’s name, and for memorializing the dead on gravestones. Nevertheless, in recent times these alphabets have become an element in various kinds of New Age mysticism, neo-pagan religions, and unsavoury political movements.</p>
+</section>
+<section id="runes-db" class="level3">
+<h3 class="anchored" data-anchor-id="runes-db">RuneS-DB</h3>
+<p>RuneS-DB is a database of artifacts bearing runic writing compiled from a variety of sources as part of RuneS, an overarching project to study these writing systems. It’s available from the RuneS project’s website.</p>
+<blockquote class="blockquote">
+<p>The rights to the data are held by the Göttingen Academy of Sciences and Humanities and are subject to the CC-BY- SA law. The RuneS research units Göttingen, Eichstätt-München and Kiel were involved in the generation of the data. RuneS-DB contains data from the Kiel Runenprojekt, the Danish database runer.ku.dk and the Samnordisk runtextdatabas/Rundata accessible under the Open Database License (ODbL). Please also note the additional information on other origin of the data provided under the label sources.</p>
+</blockquote>
+<p>RuneS provides a tool on their website to query the database, but it’s pretty clunky. Instead, we’ll use R to see if we can learn anything interesting.</p>
+</section>
+<section id="tools" class="level3">
+<h3 class="anchored" data-anchor-id="tools">Tools</h3>
+<p>We’ll use the <code>tidyverse</code> collection of packages for manipulating and visualizing our data and the <code>tidymodels</code> packages to quickly define, train, and compare a few machine learning models. These packages “share an underlying design philosophy, grammar, and data structures” rooted in the “tidy data” principles originally espoused by <a href="https://twitter.com/hadleywickham">Hadley Wickham</a>.</p>
+<p>This document was lovingly hand-crafted in artisanal, farm-to-table, GMO-free <a href="https://quarto.org/">Quarto</a>.</p>
+</section>
+</section>
+<section id="reading-and-cleaning-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="reading-and-cleaning-the-data">Reading and Cleaning the Data</h2>
+<section id="reading-the-file" class="level3">
+<h3 class="anchored" data-anchor-id="reading-the-file">Reading the File</h3>
+<p>The file we obtain from the RuneS website is tab-separated, contains three lines of preamble, and uses a hyphen to indicate missing data. Providing this information to <code>readr</code>’s <code>read_delim</code> will produce a tibble (i.e., a fancy data frame, which is in turn a fancy matrix) that we can begin to manipulate.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read the file</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_delim</span>(<span class="at">file =</span> <span class="st">"runes_data.csv"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">delim =</span> <span class="st">";"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">skip =</span> <span class="dv">3</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">na =</span> <span class="st">"-"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="ot">-&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># save to a dataframe</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="the-vimose-comb" class="level3">
+<h3 class="anchored" data-anchor-id="the-vimose-comb">The Vimose Comb</h3>
+<p>One artifact we’d expect to find in RuneS-DB is the <a href="https://en.wikipedia.org/wiki/Vimose_inscriptions">Vimose comb</a>, which bears what’s considered to be the oldest known datable<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> runic inscription. <code>dplyr</code>’s <code>filter</code> function and <code>stringr</code>’s <code>str_detect</code> let us filter the data to show only rows where value in the column of inscription names matches “Vimose comb”.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(rs_short_inscr_name, <span class="at">pattern =</span> <span class="st">"Vimose comb"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">"51.75%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; "><table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> Findno </th>
+   <th style="text-align:left;"> rs_short_inscr_name </th>
+   <th style="text-align:left;"> rs_fundort </th>
+   <th style="text-align:left;"> rs_short_storage </th>
+   <th style="text-align:left;"> rs_extdat </th>
+   <th style="text-align:left;"> rs_short_dat_art </th>
+   <th style="text-align:left;"> rs_short_context </th>
+   <th style="text-align:left;"> rs_objklasse </th>
+   <th style="text-align:left;"> rs_objtyp </th>
+   <th style="text-align:left;"> rs_short_obj_complete </th>
+   <th style="text-align:left;"> rs_short_matklasse </th>
+   <th style="text-align:left;"> rs_mat </th>
+   <th style="text-align:left;"> rs_short_obj_state </th>
+   <th style="text-align:left;"> rs_runenreihe </th>
+   <th style="text-align:left;"> rs_short_museum </th>
+   <th style="text-align:left;"> rs_short_ins_complete </th>
+   <th style="text-align:left;"> rs_translat </th>
+   <th style="text-align:left;"> rs_translit </th>
+   <th style="text-align:left;"> rs_short_ins_state </th>
+   <th style="text-align:left;"> rs_short_markings </th>
+   <th style="text-align:left;"> rs_short_transkript </th>
+   <th style="text-align:left;"> rs_namen </th>
+   <th style="text-align:left;"> rs_fundjahr </th>
+   <th style="text-align:left;"> rs_short_gemeinde </th>
+   <th style="text-align:left;"> rs_short_bezirk </th>
+   <th style="text-align:left;"> rs_short_landschaft </th>
+   <th style="text-align:left;"> rs_short_land </th>
+   <th style="text-align:left;"> rs_short_invnr </th>
+   <th style="text-align:left;"> rs_short_kategorie </th>
+   <th style="text-align:left;"> rs_short_sigils </th>
+   <th style="text-align:left;"> rs_traeger </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:left;"> Vimose comb </td>
+   <td style="text-align:left;"> Vimose </td>
+   <td style="text-align:left;"> Museum </td>
+   <td style="text-align:left;"> 140-160 </td>
+   <td style="text-align:left;"> arch. </td>
+   <td style="text-align:left;"> deposit find </td>
+   <td style="text-align:left;"> tool/implement </td>
+   <td style="text-align:left;"> personal hygiene </td>
+   <td style="text-align:left;"> yes </td>
+   <td style="text-align:left;"> bone/horn </td>
+   <td style="text-align:left;"> antler </td>
+   <td style="text-align:left;"> good </td>
+   <td style="text-align:left;"> older fuþark </td>
+   <td style="text-align:left;"> Nationalmuseet </td>
+   <td style="text-align:left;"> yes </td>
+   <td style="text-align:left;"> Harja. </td>
+   <td style="text-align:left;"> harja | </td>
+   <td style="text-align:left;"> good </td>
+   <td style="text-align:left;"> nein </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:left;"> Vimose-kam </td>
+   <td style="text-align:left;"> 1865 </td>
+   <td style="text-align:left;"> Allese Sogn </td>
+   <td style="text-align:left;"> Odense Amt </td>
+   <td style="text-align:left;"> Fyn </td>
+   <td style="text-align:left;"> DK </td>
+   <td style="text-align:left;"> 22657 </td>
+   <td style="text-align:left;"> run. </td>
+   <td style="text-align:left;"> Fyn 19 </td>
+   <td style="text-align:left;"> comb </td>
+  </tr>
+</tbody>
+</table></div>
+
+</div>
+</div>
+<p>So we can see that this object was found in Vimose, currently resides in a museum, has been dated to 140-160 CE, is a personal hygiene tool made of antler, says “harja” (ᚺᚨᚱᛃᚨ), etc.</p>
+</section>
+<section id="diagnosing" class="level3">
+<h3 class="anchored" data-anchor-id="diagnosing">Diagnosing</h3>
+<p>One way to quantify the messiness of a data set is to calculate the count and proportion of missing and unique values in each column. <code>dlookr</code>’s <code>diagnose</code> does this.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">diagnose</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">"51.75%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; "><table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> variables </th>
+   <th style="text-align:left;"> types </th>
+   <th style="text-align:right;"> missing_count </th>
+   <th style="text-align:right;"> missing_percent </th>
+   <th style="text-align:right;"> unique_count </th>
+   <th style="text-align:right;"> unique_rate </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Findno </td>
+   <td style="text-align:left;"> numeric </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 8281 </td>
+   <td style="text-align:right;"> 1.0000000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_inscr_name </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.0845309 </td>
+   <td style="text-align:right;"> 5457 </td>
+   <td style="text-align:right;"> 0.6589784 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_fundort </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 34 </td>
+   <td style="text-align:right;"> 0.4105784 </td>
+   <td style="text-align:right;"> 3156 </td>
+   <td style="text-align:right;"> 0.3811134 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_storage </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 1723 </td>
+   <td style="text-align:right;"> 0.2080667 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_extdat </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0.0724550 </td>
+   <td style="text-align:right;"> 573 </td>
+   <td style="text-align:right;"> 0.0691945 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_dat_art </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 1988 </td>
+   <td style="text-align:right;"> 24.0067625 </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 0.0022944 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_context </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 5240 </td>
+   <td style="text-align:right;"> 63.2773820 </td>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:right;"> 0.0025359 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_objklasse </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 33 </td>
+   <td style="text-align:right;"> 0.3985026 </td>
+   <td style="text-align:right;"> 13 </td>
+   <td style="text-align:right;"> 0.0015699 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_objtyp </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 1452 </td>
+   <td style="text-align:right;"> 17.5341142 </td>
+   <td style="text-align:right;"> 45 </td>
+   <td style="text-align:right;"> 0.0054341 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_obj_complete </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 1873 </td>
+   <td style="text-align:right;"> 22.6180413 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0.0004830 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_matklasse </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 43 </td>
+   <td style="text-align:right;"> 0.5192610 </td>
+   <td style="text-align:right;"> 11 </td>
+   <td style="text-align:right;"> 0.0013283 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_mat </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 3550 </td>
+   <td style="text-align:right;"> 42.8692187 </td>
+   <td style="text-align:right;"> 119 </td>
+   <td style="text-align:right;"> 0.0143702 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_obj_state </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 1970 </td>
+   <td style="text-align:right;"> 23.7893974 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0.0007246 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_runenreihe </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 463 </td>
+   <td style="text-align:right;"> 5.5911122 </td>
+   <td style="text-align:right;"> 12 </td>
+   <td style="text-align:right;"> 0.0014491 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_museum </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 4382 </td>
+   <td style="text-align:right;"> 52.9163145 </td>
+   <td style="text-align:right;"> 291 </td>
+   <td style="text-align:right;"> 0.0351407 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_ins_complete </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 1259 </td>
+   <td style="text-align:right;"> 15.2034778 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 0.0004830 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_translat </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 698 </td>
+   <td style="text-align:right;"> 8.4289337 </td>
+   <td style="text-align:right;"> 5592 </td>
+   <td style="text-align:right;"> 0.6752808 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_translit </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 91 </td>
+   <td style="text-align:right;"> 1.0989011 </td>
+   <td style="text-align:right;"> 7482 </td>
+   <td style="text-align:right;"> 0.9035141 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_ins_state </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 1371 </td>
+   <td style="text-align:right;"> 16.5559715 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 0.0007246 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_markings </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 2676 </td>
+   <td style="text-align:right;"> 32.3149378 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 0.0003623 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_transkript </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 1090 </td>
+   <td style="text-align:right;"> 13.1626615 </td>
+   <td style="text-align:right;"> 5536 </td>
+   <td style="text-align:right;"> 0.6685183 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_namen </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 5662 </td>
+   <td style="text-align:right;"> 68.3733849 </td>
+   <td style="text-align:right;"> 1554 </td>
+   <td style="text-align:right;"> 0.1876585 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_fundjahr </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 4895 </td>
+   <td style="text-align:right;"> 59.1112185 </td>
+   <td style="text-align:right;"> 700 </td>
+   <td style="text-align:right;"> 0.0845309 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_gemeinde </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 1435 </td>
+   <td style="text-align:right;"> 17.3288250 </td>
+   <td style="text-align:right;"> 1682 </td>
+   <td style="text-align:right;"> 0.2031156 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_bezirk </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 3287 </td>
+   <td style="text-align:right;"> 39.6932738 </td>
+   <td style="text-align:right;"> 406 </td>
+   <td style="text-align:right;"> 0.0490279 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_landschaft </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 1384 </td>
+   <td style="text-align:right;"> 16.7129574 </td>
+   <td style="text-align:right;"> 124 </td>
+   <td style="text-align:right;"> 0.0149740 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_land </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 48 </td>
+   <td style="text-align:right;"> 0.5796401 </td>
+   <td style="text-align:right;"> 28 </td>
+   <td style="text-align:right;"> 0.0033812 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_invnr </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 4709 </td>
+   <td style="text-align:right;"> 56.8651129 </td>
+   <td style="text-align:right;"> 2524 </td>
+   <td style="text-align:right;"> 0.3047941 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_kategorie </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 1227 </td>
+   <td style="text-align:right;"> 14.8170511 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 0.0018114 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_short_sigils </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 125 </td>
+   <td style="text-align:right;"> 1.5094795 </td>
+   <td style="text-align:right;"> 8129 </td>
+   <td style="text-align:right;"> 0.9816447 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rs_traeger </td>
+   <td style="text-align:left;"> character </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 0.0966067 </td>
+   <td style="text-align:right;"> 416 </td>
+   <td style="text-align:right;"> 0.0502355 </td>
+  </tr>
+</tbody>
+</table></div>
+
+</div>
+</div>
+<p>Unfortunately, RuneS-DB is a bit of a mess. Because it’s amalgamated from many sources, information is coded inconsistently. A mix of languages are used, including in the column names. Getting this data set clean enough to start visualizing it is easy enough using <code>dplyr</code> functions like <code>rename()</code>, <code>separate()</code>, and <code>mutate()</code>.</p>
+<p>The first step is to make the column names more informative and get rid of the weird “rs_” and “rs_short_” prefixes.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># rename the columns</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">find_number          =</span> Findno,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">inscription_name     =</span> rs_short_inscr_name,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">location             =</span> rs_short_storage,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">date                 =</span> rs_extdat,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">dating_method        =</span> rs_short_dat_art,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">context              =</span> rs_short_context,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">findspot             =</span> rs_fundort,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">object_class         =</span> rs_objklasse,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">object_type          =</span> rs_objtyp,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">object_complete      =</span> rs_short_obj_complete,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">material_class       =</span> rs_short_matklasse,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">material             =</span> rs_mat,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">object_state         =</span> rs_short_obj_state,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">writing_system       =</span> rs_runenreihe,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">museum               =</span> rs_short_museum,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">inscription_complete =</span> rs_short_ins_complete,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">translation          =</span> rs_translat,</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">transliteration      =</span> rs_translit,</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">inscription_state    =</span> rs_short_ins_state,</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">markings             =</span> rs_short_markings,</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">transcription        =</span> rs_short_transkript,</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">names                =</span> rs_namen,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">find_year            =</span> rs_fundjahr,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">community            =</span> rs_short_gemeinde,</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">district             =</span> rs_short_bezirk,</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">region               =</span> rs_short_landschaft,</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">country              =</span> rs_short_land,</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">inventory_number     =</span> rs_short_invnr,</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">category             =</span> rs_short_kategorie,</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">shelf_marks          =</span> rs_short_sigils,</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">carrier              =</span> rs_traeger</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  ) <span class="ot">-&gt;</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># update the dataframe</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next we’ll separate the <code>location</code> column into two columns, one with the general category and the other with the rest of the information. We’ll also create separate columns for the lower and upper bounds of each date, then convert this into a midpoint and a range.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># separate location category and detail</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    location,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"location_class"</span>, <span class="st">"location_detail"</span>),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="st">":"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">extra =</span> <span class="st">"merge"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># separate the date column into lower and upper bounds</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(date, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"date_lower"</span>, <span class="st">"date_upper"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># set dates to NA for undated objects</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">"date"</span>), <span class="sc">~</span> <span class="fu">na_if</span>(., <span class="st">"0"</span>)),</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># treat the dates as numbers</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">"date"</span>), <span class="sc">~</span> <span class="fu">as.numeric</span>(.)),</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># get the middle of each date range</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> (date_lower <span class="sc">+</span> date_upper) <span class="sc">/</span> <span class="dv">2</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># get the range of each date</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">date_range =</span> date_upper <span class="sc">-</span> date_lower) <span class="sc">|&gt;</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># discard the date bounds</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(date_upper, date_lower)) <span class="ot">-&gt;</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># update the dataframe again</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next let’s convert RuneS-DB’s somewhat idiosyncratic country codes into human-readable names. While we’re at it, we’ll collapse the rarest ones into a “Rest of World” category.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">country =</span> <span class="fu">recode</span>(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>      country,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">"S"</span>  <span class="ot">=</span> <span class="st">"Sweden"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"N"</span>  <span class="ot">=</span> <span class="st">"Norway"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">"DK"</span> <span class="ot">=</span> <span class="st">"Denmark"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"IS"</span> <span class="ot">=</span> <span class="st">"Iceland"</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"GB"</span> <span class="ot">=</span> <span class="st">"Great Britain"</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"D"</span>  <span class="ot">=</span> <span class="st">"Germany"</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>      <span class="st">"KN"</span> <span class="ot">=</span> <span class="st">"Greenland"</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> <span class="st">"Rest of World"</span>)) <span class="ot">-&gt;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Finally some miscellaneous re-encoding.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># treat the ID numbers as strings</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">find_number =</span> <span class="fu">as.character</span>(find_number),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># eliminate excess whitespace</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">where</span>(is.character), str_squish),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># translate the markings column into English</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">markings =</span> <span class="fu">recode</span>(markings, <span class="st">"ja"</span> <span class="ot">=</span> <span class="st">"yes"</span>, <span class="st">"nein"</span> <span class="ot">=</span> <span class="st">"no"</span>),</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># replace cross symbol</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">where</span>(is.character), <span class="sc">~</span> <span class="fu">recode</span>(., <span class="st">"†"</span> <span class="ot">=</span> <span class="st">"lost/destroyed"</span>)),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># replace "rune stick/rúnakefli", shorten "weapon/weapon accessories"</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">object_class =</span> <span class="fu">recode</span>(</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">iconv</span>(object_class, <span class="at">to =</span> <span class="st">'ASCII//TRANSLIT'</span>),</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">"rune stick/runakefli"</span> <span class="ot">=</span> <span class="st">"rune stick"</span>,</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>      <span class="st">"weapon/weapon accessories"</span> <span class="ot">=</span> <span class="st">"weapon/accessory"</span>),</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># make "Museum" lowercase for consistency</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">location_class =</span> <span class="fu">recode</span>(location_class, <span class="st">"Museum"</span> <span class="ot">=</span> <span class="st">"museum"</span>),</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># combine parchment and paper into a single material class</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">material_class =</span> <span class="fu">recode</span>(</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>      material_class,</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">"parchment; paper"</span> <span class="ot">=</span> <span class="st">"parchment/paper"</span>,</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">"parchment"</span> <span class="ot">=</span> <span class="st">"parchment/paper"</span>,</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">"paper"</span> <span class="ot">=</span> <span class="st">"parchment/paper"</span>),</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># give the writing systems friendlier names, combine medieval and post-Reformation runes as "manuscript runes"</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">writing_system =</span> <span class="fu">recode</span>(</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">iconv</span>(writing_system, <span class="at">to =</span> <span class="st">'ASCII//TRANSLIT'</span>),</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>      <span class="st">"older fu?ark"</span> <span class="ot">=</span> <span class="st">"elder futhark"</span>,</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>      <span class="st">"younger fu?ark"</span> <span class="ot">=</span> <span class="st">"younger futhark"</span>,</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>      <span class="st">"fu?orc"</span> <span class="ot">=</span> <span class="st">"anglo-frisian futhorc"</span>,</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>      <span class="st">"post-Reformation runes"</span> <span class="ot">=</span> <span class="st">"manuscript runes"</span>,</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>      <span class="st">"medieval runes"</span> <span class="ot">=</span> <span class="st">"manuscript runes"</span>,</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> <span class="st">"mixed/unknown"</span>)) <span class="ot">-&gt;</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>There’s more cleaning we could do, but this is enough for now.</p>
+</section>
+</section>
+<section id="exploratory-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(object_class, material_class) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(object_class, material_class) <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> object_class, <span class="at">y =</span> material_class, <span class="at">size =</span> count)) <span class="sc">+</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">21</span>, <span class="at">fill =</span> <span class="st">"#595959"</span>) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">size =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Runic Artifacts by Object and Material Class"</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Object Class"</span>,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Material Class"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="machine_learning_about_runes_files/figure-html/object%20class%20vs%20material%20class-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Nearly half of the artifacts in RuneS-DB are stones<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, which it turns out are always made of stone! Likewise, coins and bracteates<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> are always made of metal, and rune sticks are always made of wood. Tools, edifices, “inventory” (mostly furniture), and “other objects” all seem to come in a variety of materials.</p>
+<p>Where is this stuff typically found?</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># discard artifacts missing country information</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(country) <span class="sc">|&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">fct_infreq</span>(country))) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">4000</span>, <span class="dv">1000</span>), <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Runic Objects by Country"</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Country of Discovery"</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Number of Objects"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="machine_learning_about_runes_files/figure-html/location%20graphic-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Right. Scandinavia, mostly.</p>
+<p>One last exploratory graphic. How old is this stuff?</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># discard undated objects</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(date) <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(date)) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># bin into centuries</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"#595959"</span>, </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"white"</span>, </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">2022</span>, <span class="at">by=</span><span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">3000</span>, <span class="dv">1000</span>), <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2000</span>, <span class="at">by =</span> <span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Number of Runic Objects by Century"</span>,</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year of Manufacture"</span>,</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Number of Objects"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="machine_learning_about_runes_files/figure-html/dates%20graphic-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This histogram has a huge spike at the 10th century. Upon cursory investigation, this seems to be because the data set contains many rune stones with dated to the rather wide range of “725-1100”, i.e.&nbsp;the Viking Age. Obviously this data set is not random sample of all runic objects ever produced; some things are more likely to survive and be cataloged than others. The smaller spike at the 13th century seems to be more organic.</p>
+</section>
+<section id="feature-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="feature-engineering">Feature Engineering</h2>
+<p>Suppose you’re lost in the woods in northwestern Europe<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> and stumble upon some runes. Is there some rule you can use to estimate when they were carved (or written)?</p>
+<p>First, we need to consider what features of the object you’d be able to determine. I think these are all reasonable:</p>
+<ul>
+<li>object class (stone, coin, etc.)</li>
+<li>material class (stone, metal, wood, etc.)</li>
+<li>country</li>
+<li>writing system (elder futhark, anglo-frisian futhorc, etc.)</li>
+<li>length of the inscription</li>
+<li>whether the inscription contains an abecedarium; something like “fuþarkgw…” or “abcdefgh…”</li>
+<li>whether the inscription seems to contain any of a few common words or morphemes</li>
+</ul>
+<p>The first four of these features are already present in our data frame. We’ll have to “engineer” the others.</p>
+<p>Unfortunately, the transliterations in RuneS-DB are very inconsistently encoded, but we can still get an approximate length of each inscription by converting the transliteration to ASCII<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> and counting the number of resulting alphanumeric characters<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. It’s too bad the database doesn’t simply use the runic characters included in Unicode, but perhaps that wouldn’t be sufficient to encode parts of the inscriptions which are unclear, damaged, combined into ligatures (so-called “bind runes”), etc.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">inscription_length =</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>      transliteration <span class="sc">|&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>      <span class="co"># convert to ASCII</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">iconv</span>(<span class="at">to =</span> <span class="st">"ASCII//TRANSLIT"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>      <span class="co"># count alphanumeric characters</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_count</span>(<span class="st">"[[:lower:]</span><span class="sc">\\</span><span class="st">?]"</span>)) <span class="ot">-&gt;</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can identify abecedaria by slightly re-encoding the “category” column.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">abecedarium =</span> <span class="fu">case_when</span>(</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(category, <span class="st">"alphabet"</span>) <span class="sc">~</span> <span class="st">"abc"</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(category, <span class="st">"row"</span>) <span class="sc">~</span> <span class="st">"futh"</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"no"</span>)) <span class="ot">-&gt;</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Another feature we can derive from the inscription is what kind of spacing is used between words.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">spaces =</span> <span class="fu">case_when</span>(</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(transliteration, <span class="st">" [÷</span><span class="sc">\\</span><span class="st">*</span><span class="sc">\\</span><span class="st">+] "</span>) <span class="sc">~</span> <span class="st">"crosses/stars"</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(transliteration, <span class="st">" × "</span>) <span class="sc">~</span> <span class="st">"crosses/stars"</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(transliteration, <span class="st">" [ˈ</span><span class="sc">\\</span><span class="st">.] "</span>) <span class="sc">~</span> <span class="st">"single dots"</span>,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(transliteration, <span class="st">" : "</span>) <span class="sc">~</span> <span class="st">"double dots"</span>,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"none/other"</span>)) <span class="ot">-&gt;</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Finally let’s encode the presence or absence of a few of the most common words/morphemes.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">sin_sun_syn =</span> <span class="fu">str_detect</span>(transliteration, <span class="st">"sin|sun|syn"</span>),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">auk_uk_ok   =</span> <span class="fu">str_detect</span>(transliteration, <span class="st">"auk|uk|ok"</span>),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">at          =</span> <span class="fu">str_detect</span>(transliteration, <span class="st">"at"</span>),</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   fathur      = str_detect(transliteration, "faþur"),</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">stain_stin  =</span> <span class="fu">str_detect</span>(transliteration, <span class="st">"stain|stin|stӕin"</span>),</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">lit         =</span> <span class="fu">str_detect</span>(transliteration, <span class="st">"lit"</span>),</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(sin_sun_syn<span class="sc">:</span>lit, as.numeric)) <span class="ot">-&gt;</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Is this enough information to be able to predict the age of a runic inscription with any accuracy? Let’s try fitting a few different models using different approaches.</p>
+</section>
+<section id="model-fitting" class="level2">
+<h2 class="anchored" data-anchor-id="model-fitting">Model Fitting</h2>
+<section id="testtraining-data-split" class="level3">
+<h3 class="anchored" data-anchor-id="testtraining-data-split">Test/Training Data Split</h3>
+<p>First we’ll split the data into a training and a test set, then create cross-validation folds from training data to help estimate model performance.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># keep just the features we want to predict from</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    object_class, </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    material_class, </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    country, </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    writing_system, </span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    inscription_length,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    abecedarium,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    spaces,</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    sin_sun_syn<span class="sc">:</span>lit,</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    date) <span class="sc">|&gt;</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># discard objects with missing data</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="ot">-&gt;</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  runes_data</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="co"># split into training (75%) and test (25%) sets, stratified by date</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="fu">initial_split</span>(</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> runes_data, </span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop =</span> <span class="fl">0.75</span>, </span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">strata =</span> date) <span class="ot">-&gt;</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>  split</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="co"># store a copy of each set</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a><span class="fu">training</span>(split) <span class="ot">-&gt;</span> train</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a><span class="fu">testing</span>(split) <span class="ot">-&gt;</span> test</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a><span class="co"># create 10 cross-validation folds</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a><span class="fu">vfold_cv</span>(train) <span class="ot">-&gt;</span> folds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>tidymodels</code> framework provides a unified interface to various model-specific packages, as well as convenient functions for defining, fitting, tuning, and comparing many combinations of data pre-processing recipes and model specifications.</p>
+<blockquote class="blockquote">
+<p>In parsnip, the model <em>type</em> differentiates basic modeling approaches, such as random forests, logistic regression, linear support vector machines, etc.; the <em>mode</em> denotes in what kind of modeling context it will be used (most commonly, classification or regression); and the computational <em>engine</em> indicates how the model is fit, such as with a specific R package implementation or even methods outside of R like Keras or Stan.</p>
+</blockquote>
+</section>
+<section id="pre-processing-recipe" class="level3">
+<h3 class="anchored" data-anchor-id="pre-processing-recipe">Pre-Processing Recipe</h3>
+<p>Next we’ll define two pre-processing recipes. In both cases we’ll normalize our numeric predictor. Some model types require categorical predictors to be dummy-encoded, while others can exhibit better performance with categorical predictors left as-is. We’ll try both ways.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a pre-processing recipe</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">recipe</span>(runes_data) <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">update_role</span>(date, <span class="at">new_role =</span> <span class="st">"outcome"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">update_role</span>(<span class="dv">1</span><span class="sc">:</span>(<span class="fu">ncol</span>(runes_data) <span class="sc">-</span> <span class="dv">1</span>), <span class="at">new_role =</span> <span class="st">"predictor"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># normalize the numeric feature</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_normalize</span>(<span class="fu">all_numeric_predictors</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># dummy encode the categorical features</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_dummy</span>(<span class="fu">all_nominal_predictors</span>()) <span class="ot">-&gt;</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  runes_recipe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="baseline" class="level3">
+<h3 class="anchored" data-anchor-id="baseline">Baseline</h3>
+<p>Now we can define our models. First let’s “fit” the null model, which consists of just always guessing the mean date value from the training set. It’s straightforward to simply calculate the appropriate RMSE estimate in this case, but for illustrative purposes we’ll use cross-validation anyway. It doesn’t matter which recipe we use since the null model ignores the predictors anyway.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">null_model</span>() <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"parsnip"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">"regression"</span>) <span class="ot">-&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  null_spec</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">workflow</span>() <span class="sc">|&gt;</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_model</span>(null_spec) <span class="sc">|&gt;</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_recipe</span>(runes_recipe) <span class="sc">|&gt;</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit_resamples</span>(<span class="at">resamples =</span> folds, <span class="at">metrics =</span> <span class="fu">metric_set</span>(rmse)) <span class="sc">|&gt;</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">collect_metrics</span>() <span class="sc">|&gt;</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 311.4979</code></pre>
+</div>
+</div>
+<p>The null model’s prediction is, in a certain sense, off by more than three centuries on average. Surely we can do better than that.</p>
+</section>
+<section id="the-bias-variance-trade-off" class="level3">
+<h3 class="anchored" data-anchor-id="the-bias-variance-trade-off">The Bias-Variance Trade-off</h3>
+</section>
+<section id="model-specification" class="level3">
+<h3 class="anchored" data-anchor-id="model-specification">Model Specification</h3>
+<p>We’ll try six more kinds of model. Each comes with some hyperparameters which control the bias-variance tradeoff, the step size for gradient descent, etc. We can leave <code>tune()</code> as a placeholder for these values when creating the model specifications. When we fit the models, we’ll try 10 combinations of hyperparameter values for each model type, and keep only the best ones.</p>
+<p>A linear model assumes the outcome is a linear function of the predictors and finds the best coefficient to assign to each. Linear models are inflexible, and so tend to suffer from bias (unless the underlying relationship really is approximately linear), but they tend to have lower variance than more flexible model types, since their outputs are not too sensitive to small changes in their inputs. The <code>penalty</code> and <code>mixture</code> hyperparameters here control how much L1 (LASSO) and/or L2 (ridge) regularization to apply. Regularization penalizes more complex models in order to prevent overfitting.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_reg</span>(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">engine  =</span> <span class="st">"glmnet"</span>,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">penalty =</span> <span class="fu">tune</span>(),</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">mixture =</span> <span class="fu">tune</span>()) <span class="ot">-&gt;</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  linear_spec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A decision tree is essentially a flowchart, with each split corresponding to a rule in the form of an “if/then” condition on a predictor. The idea is to find the splits which best separate the outcome. Predictions are produced by taking the average outcome among the training data belonging to the relevant terminal node of the tree. <code>tree_depth</code> specifies the maximum depth of the tree; without some maximum, the training data could be completely interpolated (or “memorized”), an extreme form of overfitting. <code>cost_complexity</code> controls how well a split must separate its subset of the training data in order to be considered, and <code>min_n</code> controls how much training data must belong to a node in order to justify any further splitting.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">decision_tree</span>(<span class="at">engine     =</span> <span class="st">"partykit"</span>,</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">tree_depth =</span> <span class="fu">tune</span>(),</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">min_n      =</span> <span class="fu">tune</span>()) <span class="ot">-&gt;</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  decision_tree_spec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Nearest neighbours models predict that the value of the outcome for a test data point will be some kind of weighted average of that point’s nearest neighbours in the training data. <code>neighbors</code> controls the number of neighbours to consider and the other hyperparameters specify the precise notions of “weighted average” and “nearest” to use.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nearest_neighbor</span>(<span class="at">engine      =</span> <span class="st">"kknn"</span>,</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">neighbors   =</span> <span class="fu">tune</span>(),</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">weight_func =</span> <span class="fu">tune</span>(),</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">dist_power  =</span> <span class="fu">tune</span>()) <span class="ot">-&gt;</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  nearest_neighbours_spec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Boosted tree ensembles are a very popular machine learning approach involving fitting many small decision trees, each of which is optimized to improve the predictions obtained by combining the preceding trees. This model type inherents the hyperparameters involved in fitting decision trees, plus additional hyperparameters specifying the number of trees to use, the proportion of training data and number of predictors to consider at each step during fitting, as well as how much weight to initially apply to each new tree.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boost_tree</span>(<span class="at">engine         =</span> <span class="st">"xgboost"</span>,</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">trees          =</span> <span class="dv">1000</span>,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">tree_depth     =</span> <span class="fu">tune</span>(),</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">min_n          =</span> <span class="fu">tune</span>(),</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">loss_reduction =</span> <span class="fu">tune</span>(),</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">sample_size    =</span> <span class="fu">tune</span>(),</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">mtry           =</span> <span class="fu">tune</span>(),</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">learn_rate     =</span> <span class="fu">tune</span>()) <span class="ot">-&gt;</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  boosted_trees_spec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Some approaches combine multiple other types of models. Cubist involves a tree ensemble with linear models fit on each tree node, a boosting-like procedure, and a final nearest-neighbours-based adjustment.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cubist_rules</span>(<span class="at">engine =</span> <span class="st">"Cubist"</span>,</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">committees =</span> <span class="fu">tune</span>(),</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">neighbors =</span> <span class="fu">tune</span>()) <span class="ot">-&gt;</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  cubist_spec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="model-fitting-1" class="level3">
+<h3 class="anchored" data-anchor-id="model-fitting-1">Model Fitting</h3>
+<p>In <code>tidymodels</code>, a “workflow” is an object which bundles together a model specification together with any associated pre-processing recipes, hyperparameter values, and/or evaluation results. <code>workflow_set</code> and <code>workflow_map</code> allow us to tune all of our model specifications as a batch.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># combine the model specifications in a list</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(<span class="at">linear        =</span> linear_spec,</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">tree          =</span> decision_tree_spec,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">nn            =</span> nearest_neighbours_spec,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">boosted_trees =</span> boosted_trees_spec,</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">cubist        =</span> cubist_spec) <span class="ot">-&gt;</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  runes_model_specs</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co"># set the prediction mode of each engine to "regression"</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>runes_model_specs <span class="sc">|&gt;</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span><span class="fu">set_mode</span>(., <span class="st">"regression"</span>)) <span class="ot">-&gt;</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>  runes_model_specs</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="co"># combine pre-processing recipe and model specifications into a workflow set</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="fu">workflow_set</span>(<span class="at">preproc =</span> <span class="fu">list</span>(<span class="at">recipe =</span> runes_recipe),</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">models =</span> runes_model_specs) <span class="ot">-&gt;</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>  runes_workflow_set</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>runes_workflow_set <span class="sc">|&gt;</span></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># for each model specification, try ten combinations of tuning parameters</span></span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># and estimate rmse using cross-validation</span></span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">workflow_map</span>(</span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># save time by using anova to drop parameter combinations early if they are</span></span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># unlikely to be the best for that model type</span></span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tune_race_anova"</span>,</span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">resamples =</span> folds,</span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">grid =</span> <span class="dv">10</span>,</span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">metrics =</span> <span class="fu">metric_set</span>(rmse)) <span class="ot">-&gt;</span></span>
+<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># update the workflow set with the results</span></span>
+<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a>  runes_workflow_set</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="performance-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="performance-comparison">Performance Comparison</h3>
+<p>Now our workflow set contains ten fit models per model type for each of ten hyperparameter combinations. We can extract the best version of each model type and plot the cross-validated performance estimates.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the rmse estimate from the best iteration of each type of model</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rank_results</span>(runes_workflow_set, <span class="at">select_best =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(model) <span class="sc">|&gt;</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(mean) <span class="sc">|&gt;</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(mean, std_err, model) <span class="sc">|&gt;</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">rmse_mean =</span> mean, <span class="at">rmse_std_err =</span> std_err) <span class="sc">|&gt;</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_reorder</span>(model, <span class="sc">-</span><span class="fu">desc</span>(rmse_mean)), <span class="at">y =</span> rmse_mean)) <span class="sc">+</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="co">#  geom_point(size = 5, shape = 21, fill = "#6794A7", color = "black") +</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">ymin =</span> rmse_mean <span class="sc">-</span> rmse_std_err,</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">ymax =</span> rmse_mean <span class="sc">+</span> rmse_std_err),</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">0.1</span>,</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="fl">1.5</span>,</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"#595959"</span>) <span class="sc">+</span></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Model Type"</span>,</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Estimated RMSE"</span>,</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Estimated RMSE for Best Model of Each Type"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="machine_learning_about_runes_files/figure-html/model%20performance%20plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>It appears that Cubist and boosted trees models work best for these data. Let’s finalize a Cubist model by re-fitting the best one on the entire training set, and seeing how well it predicts the age of artifacts in the test set.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>runes_workflow_set <span class="sc">|&gt;</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get the cubist workflow</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_workflow</span>(<span class="st">"recipe_cubist"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get the best cubist hyperparameters and apply them to the workflow</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">finalize_workflow</span>(</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    runes_workflow_set <span class="sc">|&gt;</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">extract_workflow_set_result</span>(<span class="st">"recipe_cubist"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">select_best</span>(<span class="at">metric =</span> <span class="st">"rmse"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># fit on the entire training set</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">last_fit</span>(split, <span class="at">metrics =</span> <span class="fu">metric_set</span>(rmse)) <span class="ot">-&gt;</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  final_cubist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="the-performance-explainability-trade-off" class="level3">
+<h3 class="anchored" data-anchor-id="the-performance-explainability-trade-off">The Performance-Explainability Trade-off</h3>
+<p>Unfortunately, our finalized Cubist model is useless. Since we’re lost in the woods, we can’t actually compute a prediction involving a complicated collection of trees of linear models with hundreds or thousands of coefficients and weights in total.</p>
+<p>Can we find a simple decision tree with comparable performance by trying more hyperparameter combinations? Let’s set <code>tree_depth</code> to 3, find good values for the other hyperparameters, then finalize and evaluate the resulting decision tree model.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>decision_tree_spec <span class="sc">|&gt;</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_args</span>(<span class="at">tree_depth =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">"regression"</span>) <span class="ot">-&gt;</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  decision_tree_spec</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="fu">workflow</span>() <span class="sc">|&gt;</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_model</span>(decision_tree_spec) <span class="sc">|&gt;</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_recipe</span>(runes_recipe) <span class="sc">|&gt;</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># try 100 combinations of cost_complexity and min_n</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tune_grid</span>(<span class="at">resamples =</span> folds, <span class="at">metrics =</span> <span class="fu">metric_set</span>(rmse), <span class="at">grid =</span> <span class="dv">100</span>) <span class="sc">|&gt;</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># keep the best ones</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select_best</span>(<span class="at">metric =</span> <span class="st">"rmse"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plug them back into the model specification</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">finalize_workflow</span>(</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">workflow</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">add_model</span>(decision_tree_spec) <span class="sc">|&gt;</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">add_recipe</span>(runes_recipe),</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameters =</span> _) <span class="sc">|&gt;</span></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># fit on the entire training set</span></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">last_fit</span>(split, <span class="at">metrics =</span> <span class="fu">metric_set</span>(rmse)) <span class="ot">-&gt;</span></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>  small_tree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we have two finalized models: a Cubist model and a small decision tree. The most obvious way to compare them would be to inspect their performance, but we can also use the <code>vip</code> package to extract the number of features used by each model, giving us a way to compare their relative complexity as well.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">model    =</span> <span class="fu">c</span>(<span class="st">"Cubist"</span>, <span class="st">"Small Decision Tree"</span>),</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">rmse     =</span> <span class="fu">c</span>(final_cubist <span class="sc">|&gt;</span> <span class="fu">collect_metrics</span>() <span class="sc">|&gt;</span> <span class="fu">pull</span>(.estimate), </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>               small_tree   <span class="sc">|&gt;</span> <span class="fu">collect_metrics</span>() <span class="sc">|&gt;</span> <span class="fu">pull</span>(.estimate)),</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">features =</span> <span class="fu">c</span>(final_cubist <span class="sc">|&gt;</span> <span class="fu">extract_fit_engine</span>() <span class="sc">|&gt;</span> <span class="fu">vi</span>() <span class="sc">|&gt;</span> <span class="fu">filter</span>(Importance <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> <span class="fu">nrow</span>(),</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>               small_tree   <span class="sc">|&gt;</span> <span class="fu">extract_fit_engine</span>() <span class="sc">|&gt;</span> <span class="fu">vi</span>() <span class="sc">|&gt;</span> <span class="fu">filter</span>(Importance <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> <span class="fu">nrow</span>())) <span class="sc">|&gt;</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">|&gt;</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">"51.75%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; "><table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> model </th>
+   <th style="text-align:right;"> rmse </th>
+   <th style="text-align:right;"> features </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Cubist </td>
+   <td style="text-align:right;"> 109.4089 </td>
+   <td style="text-align:right;"> 38 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Small Decision Tree </td>
+   <td style="text-align:right;"> 131.1698 </td>
+   <td style="text-align:right;"> 7 </td>
+  </tr>
+</tbody>
+</table></div>
+
+</div>
+</div>
+<p>The small decision tree’s predictions are about 16% worse than the best Cubist model we could find. On the other hand, it’s <em>much</em> simpler. While the Cubist model uses essentially all of the information we provided to it, since we constrained our decision tree to three levels, it can use only a maximum of seven features.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> Although the more complicated Cubist performs well, it’s difficult to explain exactly why, or what the role of each feature is in generating predictions. This illustrates the performance-explainability trade-off.</p>
+<p>Our small tree model is simple enough to write on an index card and keep with us when venturing out into the forests of rural Scandinavia. Here it is:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>small_tree <span class="sc">|&gt;</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_fit_engine</span>() <span class="sc">|&gt;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.simpleparty</span>() <span class="sc">|&gt;</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">ip_args =</span> <span class="fu">list</span>(<span class="at">pval =</span> <span class="cn">FALSE</span>, <span class="at">id =</span> <span class="cn">FALSE</span>),</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">tp_args =</span> <span class="fu">list</span>(</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">id =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">FUN =</span> <span class="cf">function</span>(node){<span class="fu">round</span>(node<span class="sc">$</span>prediction[<span class="dv">1</span>])}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="machine_learning_about_runes_files/figure-html/tree%20graphic-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>If you can foresee yourself desperately needing to know the approximate age of a runic inscription, I recommend you write down the decision tree above and keep it in your pocket. That, or always bring a licensed and qualified runologist<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> with you.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<section id="runes" class="level3">
+<h3 class="anchored" data-anchor-id="runes">Runes</h3>
+<ul>
+<li><a href="https://books.google.ca/books/about/Runes_and_Their_Origin.html?id=cjdcAAAAMAAJ"><em>Runes and their Origin: Denmark and Elsewhere</em> (Moltke, 1985)</a></li>
+<li><a href="https://books.google.ca/books?id=okLarQEACAAJ"><em>Runes (Findell, 2014)</em></a></li>
+<li><a href="http://futhark-journal.com/issues/"><em>Futhark Journal</em></a></li>
+</ul>
+</section>
+<section id="statistical-inference-and-machine-learning" class="level3">
+<h3 class="anchored" data-anchor-id="statistical-inference-and-machine-learning">Statistical Inference and Machine Learning</h3>
+<ul>
+<li><a href="https://hastie.su.domains/ElemStatLearn/"><em>Elements of Statistical Learning</em> (Friedman, et al., 2001)</a></li>
+</ul>
+</section>
+<section id="data-science-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="data-science-in-r">Data Science in R</h3>
+<ul>
+<li><a href="https://www.jstatsoft.org/article/view/v059i10"><em>Tidy Data</em> (Wickham, 2014)</a></li>
+<li><a href="https://r4ds.had.co.nz/"><em>R for Data Science</em> (Grolemund &amp; Wickham, 2016)</a></li>
+<li><a href="https://www.tmwr.org/"><em>Tidy Modeling with R (Kuhn &amp; Silge, forthcoming)</em></a></li>
+</ul>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1" role="doc-endnote"><p>Possibly via one of the alpine Old Italic alphabets such as Venetic.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Curiously, the first three letters of these alphabets spell out a vulgar word for a woman’s genitals in Old Norse.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>The abecedaria, or “rune rows”, in this table are much simplified. In reality, there were many variations of each. The medieval runes in particular were augmented by diacritical dots in order to disambiguate sounds represented by the same rune in the younger futhark.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>The runes have mnemonic names, and occasionally a rune could stand in for its name, but even this is rare.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>Insert joke about “datable” here.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p>Just checking for <code>rs_short_inscr_name == "Vimose comb"</code> would fail because the values in that column have extra whitespace characters.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7" role="doc-endnote"><p><a href="https://frinkiac.com/meme/S04E19/338003.jpg?b64lines=R09PRCBPTEQgUk9DSy4gIApOT1RISU5HIEJFQVRTIFRIQVQu">Good old rock, nothin’ beats that!</a><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8" role="doc-endnote"><p>What’s a bracteate, you ask? Why, it’s “is”a flat, thin, single-sided gold medal worn as jewelry”.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9" role="doc-endnote"><p>What do you do if you’re lost in the woods in Iceland? Stand up.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10" role="doc-endnote"><p>Note that different operating systems have different ideas about how to convert other encodings into ASCII.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11" role="doc-endnote"><p>Plus question marks, to account for some of the non-ASCII letters.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12" role="doc-endnote"><p>None of which are among the ones we engineered, as it happens.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13" role="doc-endnote"><p>The real job title of perhaps an entire dozen people!<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
