@@ -186,7 +186,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="j-scorer" class="level1">
 <h1>J! Scorer</h1>
-<p>The website <a href="https://j-scorer.com/">J! Scorer</a> is a convenient way to record games and determine one’s Coryat score. The site was created by two-time TV game show contestant Steve McClellan and has a public GitHub <a href="https://github.com/steve-mcclellan/j-scorer">repository</a>.</p>
+<p><a href="https://j-scorer.com/">J! Scorer</a> is a convenient way to record games and determine one’s Coryat score. The site was created by two-time TV game show contestant Steve McClellan and has a public GitHub <a href="https://github.com/steve-mcclellan/j-scorer">repository</a>.</p>
 <p>J! Scorer users can download a JSON file of their games.</p>
 </section>
 <section id="reading-a-j-scorer-file-and-computing-coryat-scores" class="level1">
@@ -194,7 +194,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>It took a little effort to reverse-engineer the format of the files produced by J! Scorer. (I did this before finding the above-mentioned GitHub repo.) I used <code>jsonlite::read_json</code> plus a little trial and error. Then it’s just a matter of straightforward data transformations using <code>dplyr</code>.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read the JSON file, convert to data frame, and unnest some columns</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_json</span>(<span class="st">"backup20221027134621.jscor"</span>, <span class="at">simplifyVector =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_json</span>(<span class="st">"backup20221101182527.jscor"</span>, <span class="at">simplifyVector =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(games_attributes.sixths_attributes,</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                  games_attributes.final_attributes),</span>
@@ -203,7 +203,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># clue instead of per category, and calculate each clue's contribution to the</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Coryat score</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">2</span>, <span class="dv">10</span><span class="sc">:</span><span class="dv">14</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">round =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">6</span>), <span class="fu">rep</span>(<span class="dv">2</span>, <span class="dv">6</span>)), <span class="dv">91</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">round =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">6</span>), <span class="fu">rep</span>(<span class="dv">2</span>, <span class="dv">6</span>)), <span class="fu">n</span>()<span class="sc">/</span><span class="dv">12</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">names_to =</span> <span class="st">"clue"</span>, <span class="at">names_prefix =</span> <span class="st">"result"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">result =</span> value) <span class="sc">|&gt;</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">result =</span> <span class="fu">recode</span>(result, <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="ot">=</span> <span class="sc">-</span><span class="dv">1</span>, <span class="st">`</span><span class="at">3</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">`</span><span class="at">7</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="at">.default =</span> <span class="dv">0</span>),</span>
@@ -220,8 +220,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  coryat_scores</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="mean-score" class="level1">
-<h1>Mean Score</h1>
+<section id="average-score" class="level1">
+<h1>Average Score</h1>
 <p>An average score of around $25,000 is considered appropriate for prospective contestants.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>coryat_scores <span class="sc">|&gt;</span></span>
@@ -229,7 +229,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>() <span class="sc">|&gt;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 19738</code></pre>
+<pre><code>[1] 19623</code></pre>
 </div>
 </div>
 <p>Clearly, I have some studying to do before I consider trying to compete on the show.</p>
