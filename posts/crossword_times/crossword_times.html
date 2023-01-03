@@ -193,12 +193,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p><a href="https://downforacross.com/">Down For Across</a> is a website which allows you to solve user-uploaded crosswords solo or with friends.</p>
-<p>The crosswords published in major American newspapers often differ in difficulty according to the day of the week. For example, the New York Times’ Monday puzzles are the easiest and their Saturday puzzles are the hardest. The Sunday puzzles have easy clues but a large grid, and the Thursday puzzles have some unique gimmick.</p>
+<p>The crosswords published in major American newspapers often differ in difficulty according to the day of the week. For example, the <a href="https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle">New York Times’ guide</a> explains that their Monday puzzles are the easiest and their Saturday puzzles the hardest. Meanwhile, the Sunday puzzles have easy clues but a large grid, and the Thursday puzzles have some unique gimmick.</p>
 <p>I’ve started keeping track of my solo completion times the New York Times and Los Angeles Times crosswords. Below is a boxplot grouped by the publisher and day of the week.</p>
 </section>
 <section id="boxplot" class="level2">
 <h2 class="anchored" data-anchor-id="boxplot">Boxplot</h2>
-<p><code>lubridate</code> provides convenient date and time parsing functions like <code>ms</code>. <code>weekdays(as.Date('1970-01-01') + 4:10)</code> is a nice trick to produce a character vector with the names of the week, beginning with Monday.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><code>lubridate</code> provides convenient date and time parsing functions like <code>ms</code>. <code>weekdays(as.Date('1970-01-01') + 4:10)</code> is a nice trick to produce a character vector with the names of the week, beginning with Monday.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"crossword_times.csv"</span>, <span class="at">col_types =</span> <span class="st">"ccD"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(<span class="fu">weekdays</span>(<span class="fu">as.Date</span>(Date)), </span>
@@ -207,12 +207,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> Publisher)) <span class="sc">+</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Crossword Completion Times"</span>, </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Day of the Week"</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"Completion Time (Seconds)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">x =</span> <span class="st">"Day of the Week"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">"Completion Time (Seconds)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="crossword_times_files/figure-html/boxplot-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>One interesting observation is that it looks like the Los Angeles Times’ Wednesday puzzle is about as hard as a Tuesday puzzle, while the New York Times’ Wednesday is more like a Thursday.</p>
 
 
 </section>
@@ -221,7 +222,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>January 1st, 1970 was, inconveniently, a Thursday, but it is used as “day zero” in computing.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>January 1st, 1970 is used as “day zero” in computing. Inconveniently, it was a Thursday.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>I’m accustomed to thinking of the week as beginning with Sunday, but for the purposes of crossword difficulty analysis, Monday is better.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

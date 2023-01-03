@@ -158,13 +158,13 @@
     "href": "posts/crossword_times/crossword_times.html",
     "title": "Crossword Times",
     "section": "",
-    "text": "Down For Across is a website which allows you to solve user-uploaded crosswords solo or with friends.\nThe crosswords published in major American newspapers often differ in difficulty according to the day of the week. For example, the New York Times’ Monday puzzles are the easiest and their Saturday puzzles are the hardest. The Sunday puzzles have easy clues but a large grid, and the Thursday puzzles have some unique gimmick.\nI’ve started keeping track of my solo completion times the New York Times and Los Angeles Times crosswords. Below is a boxplot grouped by the publisher and day of the week."
+    "text": "Down For Across is a website which allows you to solve user-uploaded crosswords solo or with friends.\nThe crosswords published in major American newspapers often differ in difficulty according to the day of the week. For example, the New York Times’ guide explains that their Monday puzzles are the easiest and their Saturday puzzles the hardest. Meanwhile, the Sunday puzzles have easy clues but a large grid, and the Thursday puzzles have some unique gimmick.\nI’ve started keeping track of my solo completion times the New York Times and Los Angeles Times crosswords. Below is a boxplot grouped by the publisher and day of the week."
   },
   {
     "objectID": "posts/crossword_times/crossword_times.html#boxplot",
     "href": "posts/crossword_times/crossword_times.html#boxplot",
     "title": "Crossword Times",
     "section": "Boxplot",
-    "text": "Boxplot\nlubridate provides convenient date and time parsing functions like ms. weekdays(as.Date('1970-01-01') + 4:10) is a nice trick to produce a character vector with the names of the week, beginning with Monday.1\n\nread_csv(\"crossword_times.csv\", col_types = \"ccD\") |>\n  ggplot(aes(x = factor(weekdays(as.Date(Date)), \n                        weekdays(as.Date('1970-01-01') + 4:10)), \n             y = period_to_seconds(ms(Time)), \n             fill = Publisher)) +\n  geom_boxplot() +\n  labs(title = \"Crossword Completion Times\", \n         x = \"Day of the Week\",\n         y = \"Completion Time (Seconds)\")"
+    "text": "Boxplot\nlubridate provides convenient date and time parsing functions like ms. weekdays(as.Date('1970-01-01') + 4:10) is a nice trick to produce a character vector with the names of the week, beginning with Monday.12\n\nread_csv(\"crossword_times.csv\", col_types = \"ccD\") |>\n  ggplot(aes(x = factor(weekdays(as.Date(Date)), \n                        weekdays(as.Date('1970-01-01') + 4:10)), \n             y = period_to_seconds(ms(Time)), \n             fill = Publisher)) +\n  geom_boxplot() +\n  labs(title = \"Crossword Completion Times\", \n           x = \"Day of the Week\",\n           y = \"Completion Time (Seconds)\")\n\n\n\n\nOne interesting observation is that it looks like the Los Angeles Times’ Wednesday puzzle is about as hard as a Tuesday puzzle, while the New York Times’ Wednesday is more like a Thursday."
   }
 ]
