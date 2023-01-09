@@ -196,11 +196,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="jeopardy-coryat-scores" class="level1">
-<h1><em>Jeopardy!</em> Coryat Scores</h1>
+<section id="jeopardy-coryat-scores" class="level2">
+<h2 class="anchored" data-anchor-id="jeopardy-coryat-scores"><em>Jeopardy!</em> Coryat Scores</h2>
 <p>The Coryat score is a way of measuring one’s performance when playing along with <em>Jeopardy!</em> at home. It is named after musician, philosopher of physics, and two-day <em>Jeopardy!</em> champion <a href="https://en.wikipedia.org/wiki/Karl_Coryat">Karl Coryat</a>.</p>
 <p>A player’s Coryat score is the total value of clues answered correctly, minus that of those answered incorrectly, counting correctly-answered Daily Doubles according to their board position and ignoring Final Jeopardy! and any incorrectly-answered Daily Doubles.</p>
-<p>Thus the Coryat score is a measure of one’s knowledge of trivia material used on the show, ignoring other strategic elements like wagering.</p>
+<p>Thus the Coryat score is a measure of one’s knowledge of the trivia material used on the show, ignoring other strategic elements like wagering.</p>
 </section>
 <section id="j-scorer" class="level1">
 <h1>J! Scorer</h1>
@@ -237,9 +237,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># store the results</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  coryat_scores</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="average-score" class="level1">
-<h1>Average Score</h1>
+<section id="average-score" class="level2">
+<h2 class="anchored" data-anchor-id="average-score">Average Score</h2>
 <p>An average score of around $25,000 is considered appropriate for prospective contestants.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>coryat_scores <span class="sc">|&gt;</span></span>
@@ -252,17 +251,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Clearly, I have some studying to do before I consider trying to compete on the show.</p>
 </section>
-<section id="visualizing-scores" class="level1">
-<h1>Visualizing Scores</h1>
+<section id="visualizing-scores" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-scores">Visualizing Scores</h2>
 <p>We can create a histogram showing the distribution of my scores and a line chart showing the evolution of my scores over time using <code>ggplot2</code>.</p>
-<section id="histogram" class="level2">
-<h2 class="anchored" data-anchor-id="histogram">Histogram</h2>
+<section id="histogram" class="level3">
+<h3 class="anchored" data-anchor-id="histogram">Histogram</h3>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>coryat_scores <span class="sc">|&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> score)) <span class="sc">+</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"#8D2AB5"</span>) <span class="sc">+</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>, <span class="at">col =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">seq</span>(<span class="dv">500</span>,<span class="dv">29500</span>,<span class="dv">1000</span>), <span class="at">col =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">seq</span>(<span class="dv">500</span>, <span class="dv">29500</span>, <span class="dv">1000</span>), <span class="at">col =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels=</span>scales<span class="sc">::</span><span class="fu">label_dollar</span>()) <span class="sc">+</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Coryat Scores"</span>, </span>
@@ -277,8 +276,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="line-chart" class="level2">
-<h2 class="anchored" data-anchor-id="line-chart">Line Chart</h2>
+<section id="line-chart" class="level3">
+<h3 class="anchored" data-anchor-id="line-chart">Line Chart</h3>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>coryat_scores <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> game, <span class="at">y =</span> score)) <span class="sc">+</span></span>
@@ -296,6 +295,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><a href="https://j-scorer.com/">J! Scorer</a></li>
+<li><a href="https://j-archive.com/">J! Archive</a></li>
+<li><a href="https://j-ometry.com/">J!ometry</a></li>
+</ul>
 
 
 </section>

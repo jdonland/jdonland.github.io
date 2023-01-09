@@ -137,7 +137,7 @@
     "href": "posts/coryat_scores/coryat_scores.html",
     "title": "Coryat Scores",
     "section": "",
-    "text": "The Coryat score is a way of measuring one’s performance when playing along with Jeopardy! at home. It is named after musician, philosopher of physics, and two-day Jeopardy! champion Karl Coryat.\nA player’s Coryat score is the total value of clues answered correctly, minus that of those answered incorrectly, counting correctly-answered Daily Doubles according to their board position and ignoring Final Jeopardy! and any incorrectly-answered Daily Doubles.\nThus the Coryat score is a measure of one’s knowledge of trivia material used on the show, ignoring other strategic elements like wagering."
+    "text": "The Coryat score is a way of measuring one’s performance when playing along with Jeopardy! at home. It is named after musician, philosopher of physics, and two-day Jeopardy! champion Karl Coryat.\nA player’s Coryat score is the total value of clues answered correctly, minus that of those answered incorrectly, counting correctly-answered Daily Doubles according to their board position and ignoring Final Jeopardy! and any incorrectly-answered Daily Doubles.\nThus the Coryat score is a measure of one’s knowledge of the trivia material used on the show, ignoring other strategic elements like wagering."
   },
   {
     "objectID": "posts/coryat_scores/coryat_scores.html#histogram",
@@ -165,6 +165,41 @@
     "href": "posts/crossword_times/crossword_times.html#boxplot",
     "title": "Crossword Times",
     "section": "Boxplot",
-    "text": "Boxplot\nlubridate provides convenient date and time parsing functions like ms. weekdays(as.Date('1970-01-01') + 4:10) is a nice trick to produce a character vector with the names of the week, beginning with Monday.12\n\nread_csv(\"crossword_times.csv\", col_types = \"ccD\") |>\n  ggplot(aes(x = factor(weekdays(as.Date(Date)), \n                        weekdays(as.Date('1970-01-01') + 4:10)), \n             y = period_to_seconds(ms(Time))/60, \n             fill = Publisher)) +\n  geom_boxplot(aes(fill = Publisher)) +\n  scale_x_discrete(labels = c(\"M\", \"T\", \"W\", \"T\", \"F\", \"S\", \"S\")) +\n  facet_wrap(~Publisher) +\n  guides(fill = FALSE) + \n  labs(title = \"Crossword Completion Times\", \n           x = \"Day of the Week\",\n           y = \"Completion Time (Minutes)\")"
+    "text": "Boxplot\nlubridate provides convenient date and time parsing functions like ms. weekdays(as.Date('1970-01-01') + 4:10) is a nice trick to produce a character vector with the names of the week, beginning with Monday.12\n\nread_csv(\"crossword_times.csv\", col_types = \"ccD\") |>\n  ggplot(aes(x = factor(weekdays(Date), \n                        weekdays(as.Date('1970-01-01') + 4:10)),\n             y = period_to_seconds(ms(Time))/60, \n             fill = Publisher)) +\n  geom_boxplot() +\n  scale_x_discrete(labels = c(\"M\", \"T\", \"W\", \"T\", \"F\", \"S\", \"S\")) +\n  facet_wrap(~Publisher) +\n  guides(fill = FALSE) + \n  labs(title = \"Crossword Completion Times\", \n           x = \"Day of the Week\",\n           y = \"Completion Time (Minutes, Log Scale)\")\n\n\n\n\n\nTab 1Tab 2"
+  },
+  {
+    "objectID": "posts/coryat_scores/coryat_scores.html#average-score",
+    "href": "posts/coryat_scores/coryat_scores.html#average-score",
+    "title": "Coryat Scores",
+    "section": "Average Score",
+    "text": "Average Score\nAn average score of around $25,000 is considered appropriate for prospective contestants.\n\ncoryat_scores |>\n  pull(score) |>\n  mean() |>\n  round()\n\n[1] 19200\n\n\nClearly, I have some studying to do before I consider trying to compete on the show."
+  },
+  {
+    "objectID": "posts/coryat_scores/coryat_scores.html#visualizing-scores",
+    "href": "posts/coryat_scores/coryat_scores.html#visualizing-scores",
+    "title": "Coryat Scores",
+    "section": "Visualizing Scores",
+    "text": "Visualizing Scores\nWe can create a histogram showing the distribution of my scores and a line chart showing the evolution of my scores over time using ggplot2.\n\nHistogram\n\ncoryat_scores |>\n  ggplot(aes(x = score)) +\n  geom_histogram(fill = \"#8D2AB5\") +\n  geom_hline(yintercept = 1:15, col = \"white\") +\n  geom_vline(xintercept = seq(500, 29500, 1000), col = \"white\") +\n  scale_x_continuous(labels=scales::label_dollar()) +\n  theme_bw() +\n  labs(title = \"Distribution of Coryat Scores\", \n       x = \"Score\", \n       y = \"Count of Games\")\n\n\n\n\n\n\n\n\n\n\nLine Chart\n\ncoryat_scores |>\n  ggplot(aes(x = game, y = score)) +\n  geom_point(color = \"#8D2AB5\") +\n  geom_line(color = \"#8D2AB5\", linetype = \"dotted\") +\n  ylim(0, 30000) +\n  scale_y_continuous(labels=scales::label_dollar()) +\n  theme_bw() +\n  labs(title = \"Coryat Score Trend\", x = \"Time\", y = \"Score\")"
+  },
+  {
+    "objectID": "posts/coryat_scores/coryat_scores.html#references",
+    "href": "posts/coryat_scores/coryat_scores.html#references",
+    "title": "Coryat Scores",
+    "section": "References",
+    "text": "References\n\nJ! Scorer\nJ! Archive\nJ!ometry"
+  },
+  {
+    "objectID": "posts/crossword_times/crossword_times.html#references",
+    "href": "posts/crossword_times/crossword_times.html#references",
+    "title": "Crossword Times",
+    "section": "References",
+    "text": "References\n\nHow to Solve The New York Times Crossword"
+  },
+  {
+    "objectID": "posts/crossword_times/crossword_times.html#visualizing-solve-times",
+    "href": "posts/crossword_times/crossword_times.html#visualizing-solve-times",
+    "title": "Crossword Times",
+    "section": "Visualizing Solve Times",
+    "text": "Visualizing Solve Times\nlubridate provides convenient date and time parsing functions like ms. weekdays(as.Date('1970-01-01') + 4:10) is a nice trick to produce a character vector with the names of the week, beginning with Monday.12\n\nBox PlotDot PlotBoth\n\n\n\nread_csv(\"crossword_times.csv\", col_types = \"ccD\") |>\n  ggplot(aes(x = factor(weekdays(Date), \n                        weekdays(as.Date('1970-01-01') + 4:10)),\n             y = period_to_seconds(ms(Time))/60, \n             fill = Publisher)) +\n  geom_boxplot() +\n  scale_x_discrete(labels = c(\"M\", \"T\", \"W\", \"T\", \"F\", \"S\", \"S\")) +\n  facet_wrap(~Publisher) +\n  guides(fill = FALSE) + \n  labs(title = \"Crossword Completion Times\", \n           x = \"Day of the Week\",\n           y = \"Completion Time (Minutes, Log Scale)\")\n\n\n\n\n\n\n\nread_csv(\"crossword_times.csv\", col_types = \"ccD\") |>\n  ggplot(aes(x = factor(weekdays(Date), \n                        weekdays(as.Date('1970-01-01') + 4:10)),\n             y = period_to_seconds(ms(Time))/60, \n             fill = Publisher)) +\n  geom_dotplot(shape = 21, binaxis = \"y\", stackdir = \"center\", dotsize = 0.6) +\n  scale_x_discrete(labels = c(\"M\", \"T\", \"W\", \"T\", \"F\", \"S\", \"S\")) +\n  facet_wrap(~Publisher) +\n  guides(fill = FALSE) + \n  labs(title = \"Crossword Completion Times\", \n           x = \"Day of the Week\",\n           y = \"Completion Time (Minutes, Log Scale)\")\n\n\n\n\n\n\n\nread_csv(\"crossword_times.csv\", col_types = \"ccD\") |>\n  ggplot(aes(x = factor(weekdays(Date), \n                        weekdays(as.Date('1970-01-01') + 4:10)),\n             y = period_to_seconds(ms(Time))/60, \n             fill = Publisher)) +\n  geom_boxplot(outlier.shape = NA, alpha = 0.5) +\n  geom_dotplot(shape = 21, binaxis = \"y\", stackdir = \"center\", dotsize = 0.6) +\n  scale_x_discrete(labels = c(\"M\", \"T\", \"W\", \"T\", \"F\", \"S\", \"S\")) +\n  facet_wrap(~Publisher) +\n  guides(fill = FALSE) + \n  labs(title = \"Crossword Completion Times\", \n           x = \"Day of the Week\",\n           y = \"Completion Time (Minutes, Log Scale)\")"
   }
 ]
