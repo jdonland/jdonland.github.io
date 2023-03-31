@@ -25,7 +25,7 @@
     "href": "posts.html",
     "title": "Jesse Onland",
     "section": "",
-    "text": "Books No One Else Has\n\n\n\n\n\nAn examination of extraordinary editions.\n\n\n\n\n\n\nFeb 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nCrossword Times\n\n\n\n\n\nA consideration of cruciverbal complexity.\n\n\n\n\n\n\nJan 2, 2023\n\n\n\n\n\n\n  \n\n\n\n\nCoryat Scores\n\n\n\n\n\nThe joy of Jeopardy! judgement.\n\n\n\n\n\n\nOct 17, 2022\n\n\n\n\n\n\n  \n\n\n\n\n(Machine) Learning about Runes\n\n\n\n\n\nAlphabetic algorithm alchemy.\n\n\n\n\n\n\nJun 27, 2022\n\n\n\n\n\n\n  \n\n\n\n\nCities with Nice Weather\n\n\n\n\n\nA meteorological meditation.\n\n\n\n\n\n\nMay 12, 2022\n\n\n\n\n\n\nNo matching items"
+    "text": "Wordle Scores\n\n\n\n\n\nA wealth of word whimsy.\n\n\n\n\n\n\nMar 31, 2023\n\n\n\n\n\n\n  \n\n\n\n\nBooks No One Else Has\n\n\n\n\n\nAn examination of extraordinary editions.\n\n\n\n\n\n\nFeb 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nCrossword Times\n\n\n\n\n\nA consideration of cruciverbal complexity.\n\n\n\n\n\n\nJan 2, 2023\n\n\n\n\n\n\n  \n\n\n\n\nCoryat Scores\n\n\n\n\n\nThe joy of Jeopardy! judgement.\n\n\n\n\n\n\nOct 17, 2022\n\n\n\n\n\n\n  \n\n\n\n\n(Machine) Learning about Runes\n\n\n\n\n\nAlphabetic algorithm alchemy.\n\n\n\n\n\n\nJun 27, 2022\n\n\n\n\n\n\n  \n\n\n\n\nCities with Nice Weather\n\n\n\n\n\nA meteorological meditation.\n\n\n\n\n\n\nMay 12, 2022\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/city_temperatures/city_temperatures.html",
@@ -292,5 +292,33 @@
     "title": "Books No One Else Has",
     "section": "Coffee Table Books from Iceland",
     "text": "Coffee Table Books from Iceland\n\nMyndlistardeild Listaháskóla Íslands: útskriftarverkefni 2022 by Bjarki Bragason\nThis is the book for the 2022 graduation exhibition of the Iceland University of the Arts. I’m not surprised no one on the site else has this.\n\n\nErró: The Power of Images\nAnother exhibition book from Iceland, this one from an Erró retrospective at the Reykjavík Art Museum.\n\n\nSkáklist - 32 Pieces: The Art of Chess by Mark Sanders\nThe Art of Chess is a travelling exhibition of interesting chess sets. Although I wasn’t able to see it, the book from its stop in Iceland makes a nice addition to my collection of books about chess sets.\n\n\nStakkurinn - The Coat\nA pictorial history of (and fairly compelling advertisement for) the outerwear company 66°N."
+  },
+  {
+    "objectID": "posts/wordle_scores/wordle_scores.html",
+    "href": "posts/wordle_scores/wordle_scores.html",
+    "title": "Wordle Scores",
+    "section": "",
+    "text": "Unless you spent 2022 on the moon, you’ve heard of Wordle. Here I present the results of my word-guessery."
+  },
+  {
+    "objectID": "posts/wordle_scores/wordle_scores.html#visualizing-wordle-scores",
+    "href": "posts/wordle_scores/wordle_scores.html#visualizing-wordle-scores",
+    "title": "Wordle Scores",
+    "section": "Visualizing Wordle Scores",
+    "text": "Visualizing Wordle Scores\n\nHistogramLine Chart\n\n\n\n\nCode\nread_csv(\"wordle_scores.csv\") |>\n  ggplot(aes(x = score)) +\n  geom_bar(color = \"black\", fill = \"green\", alpha = 0.5) +\n  geom_text(aes(label = paste0(round(100*(..count..)/sum(..count..)), \"%\")), stat = \"count\", vjust = 1.25) +\n  scale_x_continuous(limits = c(0.5,6.5), breaks = 1:6) +\n  labs(title = \"Distribution of Wordle Scores\", x = \"Score\", y = \"Count\")\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nread_csv(\"wordle_scores.csv\") |>\n  ggplot(aes(x = puzzle, y = score)) +\n  geom_point(shape = 21, fill = \"green\") +\n  geom_line(aes(y = rollmean(score, 10, na.pad = TRUE)), \n            size = 1.5) +\n  scale_y_continuous(limits = c(0, 6)) +\n  labs(title = \"Wordle Scores Over Time\", \n       x = \"Puzzle Number\", \n       y = \"Score\",\n       subtitle = \"10-Puzzle Rolling Average\",\n       caption = \"Dashed line indicates my average score.\\nDotted line indicates average score with optimal play.\") +\n  geom_hline(yintercept = mean_score, linetype = \"dashed\") + \n  geom_hline(yintercept = 3.4201, linetype = \"dotted\")"
+  },
+  {
+    "objectID": "posts/wordle_scores/wordle_scores.html#line-chart",
+    "href": "posts/wordle_scores/wordle_scores.html#line-chart",
+    "title": "Wordle Scores",
+    "section": "Line Chart",
+    "text": "Line Chart\n\n\nCode\nread_csv(\"wordle_scores.csv\") |>\n  ggplot(aes(x = puzzle, y = score)) +\n  geom_point(shape = 21, fill = \"green\") +\n  geom_line(aes(y = rollmean(score, 10, na.pad = TRUE)), \n            size = 1.5) +\n  scale_y_continuous(limits = c(0, 6)) +\n  labs(title = \"Wordle Scores Over Time\", \n       x = \"Puzzle Number\", \n       y = \"Score\",\n       subtitle = \"10-Puzzle Rolling Average\",\n       caption = \"Dashed line indicates my average score.\\nDotted line indicates average score with optimal play.\") +\n  geom_hline(yintercept = mean_score, linetype = \"dashed\") + \n  geom_hline(yintercept = 3.4201, linetype = \"dotted\")"
+  },
+  {
+    "objectID": "posts/wordle_scores/wordle_scores.html#references",
+    "href": "posts/wordle_scores/wordle_scores.html#references",
+    "title": "Wordle Scores",
+    "section": "References",
+    "text": "References\n\nWordle-solving state of the art: all optimality results so far"
   }
 ]
