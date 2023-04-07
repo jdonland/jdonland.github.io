@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jdonland.github.io/posts/wordle_scores/wordle_scores.html</loc>
-    <lastmod>2023-03-31T21:30:33.780Z</lastmod>
+    <lastmod>2023-04-06T23:00:11.866Z</lastmod>
   </url>
   <url>
     <loc>https://jdonland.github.io/index.html</loc>
@@ -10,10 +10,26 @@
   </url>
   <url>
     <loc>https://jdonland.github.io/posts.html</loc>
-    <lastmod>2023-03-31T21:30:58.734Z</lastmod>
+    <lastmod>2023-04-07T03:21:01.356Z</lastmod>
   </url>
   <url>
     <loc>https://jdonland.github.io/links.html</loc>
     <lastmod>2023-03-31T21:31:33.286Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jdonland.github.io/posts/books_no_one_else_has/books_no_one_else_has.html</loc>
+    <lastmod>2023-03-31T22:12:12.312Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jdonland.github.io/posts/city_temperatures/city_temperatures.html</loc>
+    <lastmod>2023-03-31T22:12:52.428Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jdonland.github.io/posts/crossword_times/crossword_times.html</loc>
+    <lastmod>2023-04-07T03:21:04.948Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jdonland.github.io/posts/machine_learning_about_runes/machine_learning_about_runes.html</loc>
+    <lastmod>2023-03-31T22:14:59.348Z</lastmod>
   </url>
 </urlset>
