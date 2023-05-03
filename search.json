@@ -172,14 +172,14 @@
     "href": "posts/coryat_scores/coryat_scores.html#average-score",
     "title": "Coryat Scores",
     "section": "Average Score",
-    "text": "Average Score\nAn average score of around $25,000 is considered appropriate for prospective contestants.\n\ncoryat_scores |>\n  pull(score) |>\n  mean() |>\n  round()\n\n[1] 19200\n\n\nClearly, I have some studying to do before I consider trying to compete on the show."
+    "text": "Average Score\nAn average score of around $25,000 is considered appropriate for prospective contestants.\n\ncoryat_scores |>\n  pull(score) |>\n  mean() |>\n  round()\n\n[1] 19457\n\n\nClearly, I have some studying to do before I consider trying to compete on the show."
   },
   {
     "objectID": "posts/coryat_scores/coryat_scores.html#visualizing-scores",
     "href": "posts/coryat_scores/coryat_scores.html#visualizing-scores",
     "title": "Coryat Scores",
     "section": "Visualizing Scores",
-    "text": "Visualizing Scores\nWe can create a histogram showing the distribution of my scores and a line chart showing the evolution of my scores over time using ggplot2.\n\nHistogramLine Chart\n\n\n\n\nCode\ncoryat_scores |>\n  ggplot(aes(x = score)) +\n  geom_histogram(fill = \"#8D2AB5\") +\n  geom_hline(yintercept = 1:15, col = \"white\") +\n  geom_vline(xintercept = seq(500, 29500, 1000), col = \"white\") +\n  scale_x_continuous(labels=scales::label_dollar()) +\n  theme_bw() +\n  labs(title = \"Distribution of Coryat Scores\", \n       x = \"Score\", \n       y = \"Count of Games\")\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\ncoryat_scores |>\n  ggplot(aes(x = game, y = score)) +\n  geom_point(color = \"#8D2AB5\") +\n  geom_line(color = \"#8D2AB5\", linetype = \"dotted\") +\n  ylim(0, 30000) +\n  scale_y_continuous(labels=scales::label_dollar()) +\n  theme_bw() +\n  labs(title = \"Coryat Score Trend\", x = \"Time\", y = \"Score\")"
+    "text": "Visualizing Scores\nWe can create a histogram showing the distribution of my scores and a line chart showing the evolution of my scores over time using ggplot2.\n\nHistogramLine Chart\n\n\n\n\nCode\ncoryat_scores |>\n  ggplot(aes(x = score)) +\n  geom_histogram(fill = \"#8D2AB5\") +\n  geom_hline(yintercept = 1:15, colour = \"grey92\") +\n  geom_vline(xintercept = seq(500, 29500, 1000), colour = \"grey92\") +\n  scale_x_continuous(labels = scales::label_dollar()) +\n  labs(title = \"Distribution of Coryat Scores\", \n       x = \"Score\", \n       y = \"Count of Games\")\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\ncoryat_scores |>\n  ggplot(aes(x = game, y = score)) +\n  geom_point(colour = \"#8D2AB5\") +\n  geom_line(colour = \"#8D2AB5\", linetype = \"dotted\") +\n  ylim(0, 30000) +\n  scale_y_continuous(labels=scales::label_dollar()) +\n  stat_smooth(colour = \"magenta\", linetype = \"dashed\") +\n  labs(title = \"Coryat Score Trend\", x = \"Game\", y = \"Score\")"
   },
   {
     "objectID": "posts/coryat_scores/coryat_scores.html#references",
