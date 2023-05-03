@@ -196,170 +196,201 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Homeworlds is an abstract space battle game designed by John Cooper and published by Looney Labs. It’s played with multipurpose game pieces called Looney pyramids, three each of combination of three sizes (small, medium, and large) and four colours (green, yellow, blue, and red) for 36 in total. A pyramid lying down is a space ship and a pyramid standing up is a star. Each colour is associated with an ability.</p>
+<p>At the beginning of the game, each player chooses two stars to be their homeworld. Star systems are connected if they have no sizes in common.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="home5.jpg" class="lightbox" title="Homeworlds star connection rule (from Looney Labs)" data-gallery="quarto-lightbox-gallery-1"><img src="home5.jpg" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Homeworlds star connection rule (from Looney Labs)</figcaption><p></p>
+</figure>
+</div>
+<p>Expert players actively debate Homeworlds’ opening theory. One question is which combination of star sizes should be selected by the first player, and how the second player should respond.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="home6.jpg" class="lightbox" title="Some homeworld options (from Looney Labs)" data-gallery="quarto-lightbox-gallery-2"><img src="home6.jpg" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Some homeworld options (from Looney Labs)</figcaption><p></p>
+</figure>
+</div>
+<p>When players’ homeworlds are one step away from one another (i.e.&nbsp;connected), this is known as a “microverse”. If they are two steps away, that’s a “small universe”, and if they are three steps away, that’s a “large universe”.</p>
+<p>In addition to their homeworld stars, each player selects pyramid to be their first ship. The rest of the pieces become the bank from which new stars and ships are taken and to which destroyed stars and ships are returned.</p>
 </section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>Babamots compiled information from 4928 games of Homeworlds played on <a href="https://en.boardgamearena.com/">BoardGameArena</a> and provided a first player win rate and a count of observations for each combination of first and second player homeworld sizes. Draws were counted as half a win for each player. Only games that lasted at least eight turns for each player were included.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"raw_data.csv"</span>) <span class="ot">-&gt;</span> raw_data</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>raw_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 36 × 4
+   p1_wr     n p1_hw p2_hw
+   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+ 1 0.175    20 SS    SM   
+ 2 0.2      10 SS    ML   
+ 3 0.25      4 SS    LL   
+ 4 0.292    12 SS    SL   
+ 5 0.385    13 SL    MM   
+ 6 0.393    28 ML    MM   
+ 7 0.408    71 SM    MM   
+ 8 0.409    22 ML    SS   
+ 9 0.441    34 ML    LL   
+10 0.449   476 SL    SM   
+# ℹ 26 more rows</code></pre>
 </div>
+</div>
+<p>We’ll also create some helper vectors and functions that will be convenient later.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># helper vectors</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"SS"</span>, <span class="st">"SM"</span>, <span class="st">"SL"</span>, <span class="st">"MM"</span>, <span class="st">"ML"</span>, <span class="st">"LL"</span>) <span class="ot">-&gt;</span> hw_sizes</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"micro"</span>, <span class="st">"small"</span>, <span class="st">"large"</span>) <span class="ot">-&gt;</span> universe_sizes</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># list the stars in a homeworld</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>(<span class="cf">function</span>(hw) {<span class="fu">unlist</span>(<span class="fu">strsplit</span>(<span class="fu">as.character</span>(hw), <span class="st">""</span>))}) <span class="ot">-&gt;</span> stars</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># determine the universe size</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>(<span class="cf">function</span>(hw1, hw2) {</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">case_when</span>(<span class="fu">length</span>(<span class="fu">intersect</span>(<span class="fu">stars</span>(hw1), <span class="fu">stars</span>(hw2))) <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"micro"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">c</span>(<span class="fu">stars</span>(hw1), <span class="fu">stars</span>(hw2)))) <span class="sc">&lt;=</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"small"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>            T <span class="sc">~</span> <span class="st">"large"</span>)}) <span class="ot">-&gt;</span> universe_size</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="modelling-first-player-advantage" class="level2">
+<h2 class="anchored" data-anchor-id="modelling-first-player-advantage">Modelling First Player Advantage</h2>
+<p>We can model first player advantage by associating a parameter ranging from zero to one with each combination of homeworld sizes representing the proportion of games we should expect the first player to win.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> If this parameter is distributed according to a beta distribution <em>Beta(a, b)</em>, then its posterior distribution accounting for observing <em>n</em> wins and <em>m</em> losses for the first player is <em>Beta(a + n, b + m)</em>. All that is left is to decide on a prior distribution representing our beliefs before observing any data. This is an interesting subtlety<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, but it seems reasonable to choose a uniform prior, <em>Beta(1, 1)</em>, under which all possibilities are equally credible.</p>
+<p>From the posterior distribution, we can construct a 90% credible interval. Unlike the confidence intervals used in frequentist statistical inference, which are the source of much confusion, Bayesian credible intervals have a straightforward interpretation: we’re 90% sure the true value of the parameter is contained in a 90% credible interval.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># helper vectors</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"SS"</span>, <span class="st">"SM"</span>, <span class="st">"SL"</span>, <span class="st">"MM"</span>, <span class="st">"ML"</span>, <span class="st">"LL"</span>) <span class="ot">-&gt;</span> hw_sizes</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"micro"</span>, <span class="st">"small"</span>, <span class="st">"large"</span>) <span class="ot">-&gt;</span> universe_sizes</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>(<span class="cf">function</span>(hw) {<span class="fu">unlist</span>(<span class="fu">strsplit</span>(<span class="fu">as.character</span>(hw), <span class="st">""</span>))}) <span class="ot">-&gt;</span> stars</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># helper function to check whether homeworlds are connected</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>(<span class="cf">function</span>(hw1, hw2) {<span class="fu">length</span>(<span class="fu">intersect</span>(<span class="fu">stars</span>(hw1), <span class="fu">stars</span>(hw2)))}) <span class="ot">-&gt;</span> </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  connected</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>(<span class="cf">function</span>(hw1, hw2) {}) <span class="ot">-&gt;</span> universe_size</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="st">"p1_wr, n, p1_hw, p2_hw</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="st">0.175,      20,     SS, SM</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">0.200,      10,     SS, ML</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="st">0.250,       4,     SS, LL</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="st">0.292,      12,     SS, SL</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">0.385,      13,     SL, MM</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="st">0.393,      28,     ML, MM</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="st">0.408,      71,     SM, MM</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="st">0.409,      22,     ML, SS</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="st">0.441,      34,     ML, LL</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">0.449,     476,     SL, SM</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">0.472,     724,     ML, SM</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st">0.481,      27,     SL, LL</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="st">0.486,     590,     SM, SL</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="st">0.491,      53,     LL, SL</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="st">0.495,      92,     LL, LL</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="st">0.495,     813,     SM, ML</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="st">0.500,       3,     SS, MM</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="st">0.502,     430,     SL, ML</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="st">0.510,      52,     SM, LL</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="st">0.538,     398,     ML, SL</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="st">0.550,      30,     MM, MM</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="st">0.571,       7,     SS, SS</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="st">0.599,     292,     ML, ML</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="st">0.604,     130,     SL, SL</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="st">0.625,       8,     MM, LL</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="st">0.631,      84,     LL, ML</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="st">0.635,      52,     MM, SM</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="st">0.643,     300,     SM, SM</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="st">0.667,       3,     SM, SS</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="st">0.667,       6,     SL, SS</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="st">0.667,       6,     MM, SS</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="st">0.679,      56,     MM, ML</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="st">0.723,      47,     LL, SM</span></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="st">0.750,      20,     MM, SL</span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="st">0.833,       6,     LL, SS</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="st">0.889,       9,     LL, MM"</span> <span class="ot">-&gt;</span> raw_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(raw_data, <span class="at">col_types =</span> <span class="fu">cols</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">p1_wr =</span> <span class="st">"n"</span>,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="st">"i"</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">p1_hw =</span> readr<span class="sc">::</span><span class="fu">col_factor</span>(<span class="at">levels =</span> hw_sizes, <span class="at">ordered =</span> T),</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">p2_hw =</span> readr<span class="sc">::</span><span class="fu">col_factor</span>(<span class="at">levels =</span> hw_sizes, <span class="at">ordered =</span> T))) <span class="sc">|&gt;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p1_wins =</span> n<span class="sc">*</span>p1_wr,</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">p2_wins =</span> n<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> p1_wr),</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_lower =</span> <span class="fu">qbeta</span>(<span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>), <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins)[<span class="dv">1</span>],</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_upper =</span> <span class="fu">qbeta</span>(<span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>), <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins)[<span class="dv">2</span>],</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>raw_data <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(p1_hw, p2_hw), </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                \(x) <span class="fu">factor</span>(x, <span class="at">ordered =</span> T, <span class="at">levels =</span> hw_sizes))) <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p1_wins =</span> n<span class="sc">*</span>p1_wr,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">p2_wins =</span> n<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> p1_wr),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>         <span class="co"># calculate a 90% credible interval from the posterior distribution</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_lower =</span> <span class="fu">qbeta</span>(<span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>), <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins)[<span class="dv">1</span>],</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_upper =</span> <span class="fu">qbeta</span>(<span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>), <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins)[<span class="dv">2</span>],</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>         <span class="co"># format the interval as text</span></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">formatted_ci =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>ci_lower),<span class="st">"-"</span>,<span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>ci_upper),<span class="st">"%"</span>),</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_fontface =</span> <span class="fu">case_when</span>(ci_lower <span class="sc">&gt;</span> <span class="fl">0.5</span> <span class="sc">~</span> <span class="st">"bold"</span>,</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                                 ci_upper <span class="sc">&lt;</span> <span class="fl">0.5</span> <span class="sc">~</span> <span class="st">"bold"</span>, </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>         <span class="co"># bold intervals that do not contain 50%</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_fontface =</span> <span class="fu">case_when</span>(<span class="sc">!</span><span class="fu">between</span>(<span class="fl">0.5</span>, ci_lower, ci_upper) <span class="sc">~</span> <span class="st">"bold"</span>,</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                                 T <span class="sc">~</span> <span class="st">"plain"</span>),</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">universe_size =</span> <span class="fu">case_when</span>(<span class="fu">connected</span>(p1_hw, p2_hw) <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"micro"</span>,</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                                   <span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">c</span>(<span class="fu">stars</span>(p1_hw), <span class="fu">stars</span>(p2_hw)))) <span class="sc">&lt;=</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"small"</span>,</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                                   T <span class="sc">~</span> <span class="st">"large"</span>)) <span class="ot">-&gt;</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  homeworlds_openings</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">universe_size =</span> <span class="fu">universe_size</span>(p1_hw, p2_hw)) <span class="ot">-&gt;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  homeworlds_openings</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>homeworlds_openings</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 36 × 11
+# Rowwise: 
+   p1_wr     n p1_hw p2_hw p1_wins p2_wins ci_lower ci_upper formatted_ci
+   &lt;dbl&gt; &lt;dbl&gt; &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;       
+ 1 0.175    20 SS    SM       3.5    16.5    0.0830    0.357 8-36%       
+ 2 0.2      10 SS    ML       2       8      0.0788    0.470 8-47%       
+ 3 0.25      4 SS    LL       1       3      0.0764    0.657 8-66%       
+ 4 0.292    12 SS    SL       3.50    8.50   0.139     0.535 14-53%      
+ 5 0.385    13 SL    MM       5.00    8.00   0.206     0.610 21-61%      
+ 6 0.393    28 ML    MM      11.0    17.0    0.259     0.549 26-55%      
+ 7 0.408    71 SM    MM      29.0    42.0    0.318     0.506 32-51%      
+ 8 0.409    22 ML    SS       9.00   13.0    0.258     0.583 26-58%      
+ 9 0.441    34 ML    LL      15.0    19.0    0.311     0.581 31-58%      
+10 0.449   476 SL    SM     214.    262.     0.412     0.487 41-49%      
+# ℹ 26 more rows
+# ℹ 2 more variables: ci_fontface &lt;chr&gt;, universe_size &lt;chr&gt;</code></pre>
 </div>
+</div>
+</section>
+<section id="visualizing-first-player-advantage" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-first-player-advantage">Visualizing First Player Advantage</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>homeworlds_openings <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1_hw, <span class="at">y =</span> p2_hw, <span class="at">fill =</span> p1_wr)) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">width =</span> <span class="fl">0.8</span>, <span class="at">height =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> formatted_ci, <span class="at">fontface =</span> ci_fontface)) <span class="sc">+</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Homeworlds First Player Advantage by Opening"</span>,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"90% Bayesian credible intervals with uniform priors"</span>,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"First Player's Homeworld Sizes"</span>,</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"Second Player's Homeworld Sizes"</span>,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">fill =</span> <span class="st">"First Player Win Rate"</span>) <span class="sc">+</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"red"</span>, <span class="at">mid =</span> <span class="st">"white"</span>, <span class="at">high =</span> <span class="st">"blue"</span>, <span class="at">midpoint =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>homeworlds_openings <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1_hw, <span class="at">y =</span> p2_hw, <span class="at">fill =</span> p1_wr)) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add tiles coloured to indicate the observed first player win rate</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">width =</span> <span class="fl">0.8</span>, <span class="at">height =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add 90% credible intervals as text</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> formatted_ci, <span class="at">fontface =</span> ci_fontface)) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add dots to indicate universe size</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> universe_size), </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">x =</span> <span class="fl">0.3</span>, <span class="at">y =</span> <span class="fl">0.3</span>), </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># trick to circle the universe size dots without a fill scale collision</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">21</span>, </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="cn">NA</span>, </span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> <span class="st">"black"</span>, </span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">x =</span> <span class="fl">0.3</span>, <span class="at">y =</span> <span class="fl">0.3</span>)) <span class="sc">+</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add labels</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Homeworlds First Player Advantage by Opening"</span>,</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"90% Bayesian credible intervals with uniform priors"</span>,</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"First Player's Homeworld Sizes"</span>,</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Second Player's Homeworld Sizes"</span>,</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"First Player Win Rate"</span>,</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">colour =</span> <span class="st">"Universe Size"</span>) <span class="sc">+</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># gradient scale for the tiles</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"red"</span>, </span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>                       <span class="at">mid =</span> <span class="st">"white"</span>, </span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">"blue"</span>, </span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>                       <span class="at">midpoint =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># discrete scale for the universe size dots</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">micro =</span> <span class="st">"white"</span>, </span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">small =</span> <span class="st">"grey50"</span>, </span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">large =</span> <span class="st">"black"</span>)) <span class="sc">+</span> </span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># put the win rate legend under the universe size legend</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">colour =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="homeworlds_openings_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="homeworlds_openings_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="homeworlds_openings_files/figure-html/graphic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="homeworlds_openings_files/figure-html/graphic-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># aggregate by universe size</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>homeworlds_openings <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(p1_wins, p2_wins, universe_size) <span class="sc">|&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(universe_size) <span class="sc">|&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="fu">c</span>(p1_wins, p2_wins), sum)) <span class="sc">|&gt;</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ci_lower =</span> <span class="fu">qbeta</span>(<span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>), <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins)[<span class="dv">1</span>],</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_upper =</span> <span class="fu">qbeta</span>(<span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>), <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins)[<span class="dv">2</span>],</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">formatted_ci =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>ci_lower),<span class="st">"-"</span>,<span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>ci_upper),<span class="st">"%"</span>),</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">formatted_ci =</span> <span class="fu">case_when</span>(ci_lower <span class="sc">&gt;</span> <span class="fl">0.5</span> <span class="sc">|</span> ci_upper <span class="sc">&lt;</span> <span class="fl">0.5</span> <span class="sc">~</span> <span class="fu">paste0</span>(<span class="st">"**"</span>, formatted_ci, <span class="st">"**"</span>),</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                                  T <span class="sc">~</span> formatted_ci),</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">universe_size =</span> <span class="fu">factor</span>(universe_size, <span class="at">levels =</span> universe_sizes)) <span class="sc">|&gt;</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(universe_size, formatted_ci) <span class="sc">|&gt;</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(universe_size)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 2
-# Rowwise: 
-  universe_size formatted_ci
-  &lt;fct&gt;         &lt;chr&gt;       
-1 micro         **52-64%**  
-2 small         **55-60%**  
-3 large         47-50%      </code></pre>
-</div>
-</div>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># aggregate everything</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qbeta</span>(<span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>), </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>      <span class="dv">1</span> <span class="sc">+</span> <span class="fu">sum</span>(homeworlds_openings<span class="sc">$</span>p1_wins), </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>      <span class="dv">1</span> <span class="sc">+</span> <span class="fu">sum</span>(homeworlds_openings<span class="sc">$</span>p2_wins)) <span class="sc">|&gt;</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unlist</span>() <span class="sc">|&gt;</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sapply</span>(<span class="at">FUN =</span> \(x) <span class="dv">100</span><span class="sc">*</span>x) <span class="sc">|&gt;</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(<span class="st">"%"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="at">collapse =</span> <span class="st">"-"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sapply</span>(<span class="at">FUN =</span> \(x) <span class="fu">paste0</span>(<span class="st">"**"</span>, x, <span class="st">"**"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unname</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "**50.2%-52.6%**"</code></pre>
-</div>
-</div>
+</section>
+<section id="observations" class="level2">
+<h2 class="anchored" data-anchor-id="observations">Observations</h2>
+<p>It seems that the first player should probably choose a large-large or medium-medium homeworld configuration. A homeworld with equally-sized stars is known as a “Gemini” configuration. When the first player chooses a Gemini opening, the second player loses the option of creating a large universe; only a small or a microverse is possible.</p>
+<p>The second player should opt for a small universe rather than a microverse. (A large universe is not possible when the first player’s homeworld contains stars of equal size.)</p>
+<p>Why isn’t small-small also advantageous for the first player? This is likely due to creating a bank configuration which will provide better lines of play to the second player in the early turns of the game.</p>
+</section>
+<section id="confounding-variables" class="level2">
+<h2 class="anchored" data-anchor-id="confounding-variables">Confounding Variables</h2>
+<p>One might reasonably object to the model described above. For one thing, it does not take into account the colours of the pieces selected. This is a relatively minor issue, however, since a certain combination of colours<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> is almost universally chosen.</p>
+<p>More concerning is the potentially confounding effect of player skill. It’s very possible that some openings may be effective only in the hands of experts. It would be interesting to revisit this analysis with more granular and detailed data that included Elo ratings. You can help with this by learning Homeworlds!</p>
+<p>You can buy a Homeworlds set from Looney Labs. The same pieces can also be used to play many other interesting games.</p>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<p>If you’re playing first, start with two large stars of blue and yellow, and a large green ship. If you’re playing second and your opponent has followed my advice, try small-large or large-large in the same colours.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><a href="https://www.looneylabs.com/rules/homeworlds">Homeworlds | Looney Labs</a></li>
+<li><a href="https://en.boardgamearena.com/gamepanel?game=homeworlds">Play Homeworlds Online | BoardGameArena</a></li>
+<li><a href="https://store.looneylabs.com/collections/pyramid-games/products/homeworlds">Looney Labs’ Online Store</a></li>
+<li><a href="https://jpeterbaker.github.io/homeworlds/site/index.html">Babamots’ Homeworlds Site</a></li>
+<li><a href="http://www.wunderland.com/WTS/Andy/Games/ILoveHomeworlds.html">Andy’s Page About Homeworlds</a></li>
+<li><a href="https://boardgamegeek.com/boardgame/14634/homeworlds">Homeworlds | Board Game | BoardGameGeek</a></li>
+</ul>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Assuming “average” play, anyway.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>See <a href="https://stats.stackexchange.com/a/298176/327338">this StackExchange answer</a> for more on uninformative Beta priors.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Blue and yellow stars with a green ship.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -609,7 +640,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":true,"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","loop":true});</script>
 
 
 
