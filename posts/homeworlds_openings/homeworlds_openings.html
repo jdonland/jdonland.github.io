@@ -6,7 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-05-01">
+<meta name="dcterms.date" content="2023-05-03">
+<meta name="description" content="A sojourn on star situations.">
 
 <title>Jesse Onland - Homeworlds Openings</title>
 <style>
@@ -176,6 +177,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">Homeworlds Openings</h1>
 </div>
 
+<div>
+  <div class="description">
+    A sojourn on star situations.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -184,7 +190,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 1, 2023</p>
+      <p class="date">May 3, 2023</p>
     </div>
   </div>
   
@@ -200,14 +206,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>At the beginning of the game, each player chooses two stars to be their homeworld. Star systems are connected if they have no sizes in common.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="home5.jpg" class="lightbox" title="Homeworlds star connection rule (from Looney Labs)" data-gallery="quarto-lightbox-gallery-1"><img src="home5.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="home5.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Homeworlds star connection rule (from Looney Labs)"><img src="home5.jpg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Homeworlds star connection rule (from Looney Labs)</figcaption><p></p>
 </figure>
 </div>
 <p>Expert players actively debate Homeworlds’ opening theory. One question is which combination of star sizes should be selected by the first player, and how the second player should respond.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="home6.jpg" class="lightbox" title="Some homeworld options (from Looney Labs)" data-gallery="quarto-lightbox-gallery-2"><img src="home6.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="home6.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Some homeworld options (from Looney Labs)"><img src="home6.jpg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Some homeworld options (from Looney Labs)</figcaption><p></p>
 </figure>
 </div>
@@ -216,7 +222,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>Babamots compiled information from 4928 games of Homeworlds played on <a href="https://en.boardgamearena.com/">BoardGameArena</a> and provided a first player win rate and a count of observations for each combination of first and second player homeworld sizes. Draws were counted as half a win for each player. Only games that lasted at least eight turns for each player were included.</p>
+<p><a href="https://jpeterbaker.github.io/homeworlds/site/index.html">Babamots</a> compiled information from 4928 games of Homeworlds played on <a href="https://en.boardgamearena.com/">BoardGameArena</a> and provided a first player win rate and a count of observations for each combination of first and second player homeworld sizes. Draws were counted as half a win for each player. Only games that lasted at least eight turns for each player were included.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -259,8 +265,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="modelling-first-player-advantage" class="level2">
 <h2 class="anchored" data-anchor-id="modelling-first-player-advantage">Modelling First Player Advantage</h2>
-<p>We can model first player advantage by associating a parameter ranging from zero to one with each combination of homeworld sizes representing the proportion of games we should expect the first player to win.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> If this parameter is distributed according to a beta distribution <em>Beta(a, b)</em>, then its posterior distribution accounting for observing <em>n</em> wins and <em>m</em> losses for the first player is <em>Beta(a + n, b + m)</em>. All that is left is to decide on a prior distribution representing our beliefs before observing any data. This is an interesting subtlety<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, but it seems reasonable to choose a uniform prior, <em>Beta(1, 1)</em>, under which all possibilities are equally credible.</p>
-<p>From the posterior distribution, we can construct a 90% credible interval. Unlike the confidence intervals used in frequentist statistical inference, which are the source of much confusion, Bayesian credible intervals have a straightforward interpretation: we’re 90% sure the true value of the parameter is contained in a 90% credible interval.</p>
+<p>We can model first player advantage by associating a parameter ranging from zero to one with each combination of homeworld sizes representing the proportion of games we should expect the first player to win.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> If this parameter is distributed according to a beta distribution <em>Beta(a, b)</em>, then its posterior distribution accounting for observing <em>n</em> wins and <em>m</em> losses for the first player is <em>Beta(a + n, b + m)</em>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> All that is left is to decide on a prior distribution representing our beliefs before observing any data. This is an interesting subtlety<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, but it seems reasonable to choose a uniform prior, <em>Beta(1, 1)</em>, under which all possibilities are equally credible.</p>
+<p>From the posterior distribution, we can construct a 90% <a href="https://en.wikipedia.org/wiki/Credible_interval">credible interval</a> using <code>qbeta</code>. Unlike the confidence intervals used in frequentist statistical inference, which are the source of much confusion, Bayesian credible intervals have a straightforward interpretation: we’re 90% sure the true value of the parameter is contained in a 90% credible interval.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -274,14 +280,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_lower =</span> <span class="fu">qbeta</span>(<span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>), <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins)[<span class="dv">1</span>],</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_upper =</span> <span class="fu">qbeta</span>(<span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>), <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins)[<span class="dv">2</span>],</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>         <span class="co"># format the interval as text</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">formatted_ci =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>ci_lower),<span class="st">"-"</span>,<span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>ci_upper),<span class="st">"%"</span>),</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>         <span class="co"># bold intervals that do not contain 50%</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_fontface =</span> <span class="fu">case_when</span>(<span class="sc">!</span><span class="fu">between</span>(<span class="fl">0.5</span>, ci_lower, ci_upper) <span class="sc">~</span> <span class="st">"bold"</span>,</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                                 T <span class="sc">~</span> <span class="st">"plain"</span>),</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">universe_size =</span> <span class="fu">universe_size</span>(p1_hw, p2_hw)) <span class="ot">-&gt;</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  homeworlds_openings</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>homeworlds_openings</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">formatted_ci =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> ci_lower),</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"-"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                               <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> ci_upper),</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"%"</span>),</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>         <span class="co"># bold intervals that do not contain 50%</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_fontface =</span> <span class="fu">case_when</span>(<span class="sc">!</span><span class="fu">between</span>(<span class="fl">0.5</span>, ci_lower, ci_upper) <span class="sc">~</span> <span class="st">"bold"</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                                 T <span class="sc">~</span> <span class="st">"plain"</span>),</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>         <span class="at">universe_size =</span> <span class="fu">universe_size</span>(p1_hw, p2_hw),</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">universe_size =</span> <span class="fu">factor</span>(universe_size, <span class="at">ordered =</span> T, <span class="at">levels =</span> universe_sizes)) <span class="ot">-&gt;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  homeworlds_openings</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>homeworlds_openings</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 36 × 11
@@ -299,7 +309,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  9 0.441    34 ML    LL      15.0    19.0    0.311     0.581 31-58%      
 10 0.449   476 SL    SM     214.    262.     0.412     0.487 41-49%      
 # ℹ 26 more rows
-# ℹ 2 more variables: ci_fontface &lt;chr&gt;, universe_size &lt;chr&gt;</code></pre>
+# ℹ 2 more variables: ci_fontface &lt;chr&gt;, universe_size &lt;ord&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -335,13 +345,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"red"</span>, </span>
 <span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>                       <span class="at">mid =</span> <span class="st">"white"</span>, </span>
 <span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">"blue"</span>, </span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>                       <span class="at">midpoint =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># discrete scale for the universe size dots</span></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">micro =</span> <span class="st">"white"</span>, </span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">small =</span> <span class="st">"grey50"</span>, </span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">large =</span> <span class="st">"black"</span>)) <span class="sc">+</span> </span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># put the win rate legend under the universe size legend</span></span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">colour =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>                       <span class="at">midpoint =</span> <span class="fl">0.5</span>,</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>                       <span class="at">labels =</span> scales<span class="sc">::</span>percent,</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>                       <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># discrete scale for the universe size dots</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">micro =</span> <span class="st">"white"</span>, </span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">small =</span> <span class="st">"grey50"</span>, </span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">large =</span> <span class="st">"black"</span>)) <span class="sc">+</span> </span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>  <span class="co"># put the win rate legend under the universe size legend</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">colour =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -360,7 +372,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="confounding-variables" class="level2">
 <h2 class="anchored" data-anchor-id="confounding-variables">Confounding Variables</h2>
-<p>One might reasonably object to the model described above. For one thing, it does not take into account the colours of the pieces selected. This is a relatively minor issue, however, since a certain combination of colours<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> is almost universally chosen.</p>
+<p>One might reasonably object to the model described above. For one thing, it does not take into account the colours of the pieces selected. This is a relatively minor issue, however, since a certain combination of colours<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> is almost universally chosen.</p>
 <p>More concerning is the potentially confounding effect of player skill. It’s very possible that some openings may be effective only in the hands of experts. It would be interesting to revisit this analysis with more granular and detailed data that included Elo ratings. You can help with this by learning Homeworlds!</p>
 <p>You can buy a Homeworlds set from Looney Labs. The same pieces can also be used to play many other interesting games.</p>
 </section>
@@ -387,8 +399,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ol>
 <li id="fn1"><p>Assuming “average” play, anyway.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>See <a href="https://stats.stackexchange.com/a/298176/327338">this StackExchange answer</a> for more on uninformative Beta priors.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Blue and yellow stars with a green ship.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>See <a href="https://cchecastaldo.github.io/BayesianShortCourse/content/handouts/DerivationBetaBinomialConjugate.pdf">these slides</a> for a quick proof of this fact.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>See <a href="https://stats.stackexchange.com/a/298176/327338">this StackExchange answer</a> for more on uninformative Beta priors.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Blue and yellow stars with a green ship.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -640,7 +653,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","loop":true});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":true,"descPosition":"bottom"});</script>
 
 
 

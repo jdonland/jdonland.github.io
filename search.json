@@ -25,7 +25,7 @@
     "href": "posts.html",
     "title": "Jesse Onland",
     "section": "",
-    "text": "Wordle Scores\n\n\n\n\n\nA wealth of word whimsy.\n\n\n\n\n\n\nMar 31, 2023\n\n\n\n\n\n\n  \n\n\n\n\nBooks No One Else Has\n\n\n\n\n\nAn examination of extraordinary editions.\n\n\n\n\n\n\nFeb 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nCrossword Times\n\n\n\n\n\nA consideration of cruciverbal complexity.\n\n\n\n\n\n\nJan 2, 2023\n\n\n\n\n\n\n  \n\n\n\n\nCoryat Scores\n\n\n\n\n\nThe joy of Jeopardy! judgement.\n\n\n\n\n\n\nOct 17, 2022\n\n\n\n\n\n\n  \n\n\n\n\n(Machine) Learning about Runes\n\n\n\n\n\nAlphabetic algorithm alchemy.\n\n\n\n\n\n\nJun 27, 2022\n\n\n\n\n\n\n  \n\n\n\n\nCities with Nice Weather\n\n\n\n\n\nA meteorological meditation.\n\n\n\n\n\n\nMay 12, 2022\n\n\n\n\n\n\nNo matching items"
+    "text": "Homeworlds Openings\n\n\n\n\n\nA sojourn on star situations.\n\n\n\n\n\n\nMay 3, 2023\n\n\n\n\n\n\n  \n\n\n\n\nWordle Scores\n\n\n\n\n\nA wealth of word whimsy.\n\n\n\n\n\n\nMar 31, 2023\n\n\n\n\n\n\n  \n\n\n\n\nBooks No One Else Has\n\n\n\n\n\nAn examination of extraordinary editions.\n\n\n\n\n\n\nFeb 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nCrossword Times\n\n\n\n\n\nA consideration of cruciverbal complexity.\n\n\n\n\n\n\nJan 2, 2023\n\n\n\n\n\n\n  \n\n\n\n\nCoryat Scores\n\n\n\n\n\nThe joy of Jeopardy! judgement.\n\n\n\n\n\n\nOct 17, 2022\n\n\n\n\n\n\n  \n\n\n\n\n(Machine) Learning about Runes\n\n\n\n\n\nAlphabetic algorithm alchemy.\n\n\n\n\n\n\nJun 27, 2022\n\n\n\n\n\n\n  \n\n\n\n\nCities with Nice Weather\n\n\n\n\n\nA meteorological meditation.\n\n\n\n\n\n\nMay 12, 2022\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/city_temperatures/city_temperatures.html",
@@ -320,5 +320,61 @@
     "title": "Wordle Scores",
     "section": "References",
     "text": "References\n\nWordle-solving state of the art: all optimality results so far"
+  },
+  {
+    "objectID": "posts/homeworlds_openings/homeworlds_openings.html",
+    "href": "posts/homeworlds_openings/homeworlds_openings.html",
+    "title": "Homeworlds Openings",
+    "section": "",
+    "text": "Homeworlds is an abstract space battle game designed by John Cooper and published by Looney Labs. It’s played with multipurpose game pieces called Looney pyramids, three each of combination of three sizes (small, medium, and large) and four colours (green, yellow, blue, and red) for 36 in total. A pyramid lying down is a space ship and a pyramid standing up is a star. Each colour is associated with an ability.\nAt the beginning of the game, each player chooses two stars to be their homeworld. Star systems are connected if they have no sizes in common.\n\n\n\nHomeworlds star connection rule (from Looney Labs)\n\n\nExpert players actively debate Homeworlds’ opening theory. One question is which combination of star sizes should be selected by the first player, and how the second player should respond.\n\n\n\nSome homeworld options (from Looney Labs)\n\n\nWhen players’ homeworlds are one step away from one another (i.e. connected), this is known as a “microverse”. If they are two steps away, that’s a “small universe”, and if they are three steps away, that’s a “large universe”.\nIn addition to their homeworld stars, each player selects pyramid to be their first ship. The rest of the pieces become the bank from which new stars and ships are taken and to which destroyed stars and ships are returned."
+  },
+  {
+    "objectID": "posts/homeworlds_openings/homeworlds_openings.html#data",
+    "href": "posts/homeworlds_openings/homeworlds_openings.html#data",
+    "title": "Homeworlds Openings",
+    "section": "Data",
+    "text": "Data\nBabamots compiled information from 4928 games of Homeworlds played on BoardGameArena and provided a first player win rate and a count of observations for each combination of first and second player homeworld sizes. Draws were counted as half a win for each player. Only games that lasted at least eight turns for each player were included.\n\n\nCode\nread_csv(\"raw_data.csv\") -> raw_data\n\nraw_data\n\n\n# A tibble: 36 × 4\n   p1_wr     n p1_hw p2_hw\n   <dbl> <dbl> <chr> <chr>\n 1 0.175    20 SS    SM   \n 2 0.2      10 SS    ML   \n 3 0.25      4 SS    LL   \n 4 0.292    12 SS    SL   \n 5 0.385    13 SL    MM   \n 6 0.393    28 ML    MM   \n 7 0.408    71 SM    MM   \n 8 0.409    22 ML    SS   \n 9 0.441    34 ML    LL   \n10 0.449   476 SL    SM   \n# ℹ 26 more rows\n\n\nWe’ll also create some helper vectors and functions that will be convenient later.\n\n# helper vectors\nc(\"SS\", \"SM\", \"SL\", \"MM\", \"ML\", \"LL\") -> hw_sizes\nc(\"micro\", \"small\", \"large\") -> universe_sizes\n\n# list the stars in a homeworld\n(function(hw) {unlist(strsplit(as.character(hw), \"\"))}) -> stars\n\n# determine the universe size\n(function(hw1, hw2) {\n  case_when(length(intersect(stars(hw1), stars(hw2))) == 0 ~ \"micro\",\n            length(unique(c(stars(hw1), stars(hw2)))) <= 2 ~ \"small\",\n            T ~ \"large\")}) -> universe_size"
+  },
+  {
+    "objectID": "posts/homeworlds_openings/homeworlds_openings.html#modelling-first-player-advantage",
+    "href": "posts/homeworlds_openings/homeworlds_openings.html#modelling-first-player-advantage",
+    "title": "Homeworlds Openings",
+    "section": "Modelling First Player Advantage",
+    "text": "Modelling First Player Advantage\nWe can model first player advantage by associating a parameter ranging from zero to one with each combination of homeworld sizes representing the proportion of games we should expect the first player to win.1 If this parameter is distributed according to a beta distribution Beta(a, b), then its posterior distribution accounting for observing n wins and m losses for the first player is Beta(a + n, b + m).2 All that is left is to decide on a prior distribution representing our beliefs before observing any data. This is an interesting subtlety3, but it seems reasonable to choose a uniform prior, Beta(1, 1), under which all possibilities are equally credible.\nFrom the posterior distribution, we can construct a 90% credible interval using qbeta. Unlike the confidence intervals used in frequentist statistical inference, which are the source of much confusion, Bayesian credible intervals have a straightforward interpretation: we’re 90% sure the true value of the parameter is contained in a 90% credible interval.\n\n\nCode\nraw_data |>\n  mutate(across(c(p1_hw, p2_hw), \n                \\(x) factor(x, ordered = T, levels = hw_sizes))) |>\n  rowwise() |>\n  mutate(p1_wins = n*p1_wr,\n         p2_wins = n*(1 - p1_wr),\n         # calculate a 90% credible interval from the posterior distribution\n         ci_lower = qbeta(c(0.05, 0.95), 1 + p1_wins, 1 + p2_wins)[1],\n         ci_upper = qbeta(c(0.05, 0.95), 1 + p1_wins, 1 + p2_wins)[2],\n         # format the interval as text\n         formatted_ci = paste0(round(100 * ci_lower),\n                               \"-\",\n                               round(100 * ci_upper),\n                               \"%\"),\n         # bold intervals that do not contain 50%\n         ci_fontface = case_when(!between(0.5, ci_lower, ci_upper) ~ \"bold\",\n                                 T ~ \"plain\"),\n         universe_size = universe_size(p1_hw, p2_hw),\n         universe_size = factor(universe_size, ordered = T, levels = universe_sizes)) ->\n  homeworlds_openings\n\nhomeworlds_openings\n\n\n# A tibble: 36 × 11\n# Rowwise: \n   p1_wr     n p1_hw p2_hw p1_wins p2_wins ci_lower ci_upper formatted_ci\n   <dbl> <dbl> <ord> <ord>   <dbl>   <dbl>    <dbl>    <dbl> <chr>       \n 1 0.175    20 SS    SM       3.5    16.5    0.0830    0.357 8-36%       \n 2 0.2      10 SS    ML       2       8      0.0788    0.470 8-47%       \n 3 0.25      4 SS    LL       1       3      0.0764    0.657 8-66%       \n 4 0.292    12 SS    SL       3.50    8.50   0.139     0.535 14-53%      \n 5 0.385    13 SL    MM       5.00    8.00   0.206     0.610 21-61%      \n 6 0.393    28 ML    MM      11.0    17.0    0.259     0.549 26-55%      \n 7 0.408    71 SM    MM      29.0    42.0    0.318     0.506 32-51%      \n 8 0.409    22 ML    SS       9.00   13.0    0.258     0.583 26-58%      \n 9 0.441    34 ML    LL      15.0    19.0    0.311     0.581 31-58%      \n10 0.449   476 SL    SM     214.    262.     0.412     0.487 41-49%      \n# ℹ 26 more rows\n# ℹ 2 more variables: ci_fontface <chr>, universe_size <ord>"
+  },
+  {
+    "objectID": "posts/homeworlds_openings/homeworlds_openings.html#visualizing-first-player-advantage",
+    "href": "posts/homeworlds_openings/homeworlds_openings.html#visualizing-first-player-advantage",
+    "title": "Homeworlds Openings",
+    "section": "Visualizing First Player Advantage",
+    "text": "Visualizing First Player Advantage\n\n\nCode\nhomeworlds_openings |>\n  ggplot(aes(x = p1_hw, y = p2_hw, fill = p1_wr)) +\n  # add tiles coloured to indicate the observed first player win rate\n  geom_tile(width = 0.8, height = 0.8) +\n  # add 90% credible intervals as text\n  geom_text(aes(label = formatted_ci, fontface = ci_fontface)) +\n  # add dots to indicate universe size\n  geom_point(aes(colour = universe_size), \n             position = position_nudge(x = 0.3, y = 0.3), \n             size = 3) +\n  # trick to circle the universe size dots without a fill scale collision\n  geom_point(size = 3, \n             shape = 21, \n             fill = NA, \n             colour = \"black\", \n             position = position_nudge(x = 0.3, y = 0.3)) +\n  # add labels\n  labs(title = \"Homeworlds First Player Advantage by Opening\",\n       subtitle = \"90% Bayesian credible intervals with uniform priors\",\n       x = \"First Player's Homeworld Sizes\",\n       y = \"Second Player's Homeworld Sizes\",\n       fill = \"First Player Win Rate\",\n       colour = \"Universe Size\") +\n  # gradient scale for the tiles\n  scale_fill_gradient2(low = \"red\", \n                       mid = \"white\", \n                       high = \"blue\", \n                       midpoint = 0.5,\n                       labels = scales::percent,\n                       limits = c(0, 1)) +\n  # discrete scale for the universe size dots\n  scale_colour_manual(values = c(micro = \"white\", \n                                 small = \"grey50\", \n                                 large = \"black\")) + \n  # put the win rate legend under the universe size legend\n  guides(colour = guide_legend(order = 1))"
+  },
+  {
+    "objectID": "posts/homeworlds_openings/homeworlds_openings.html#observations",
+    "href": "posts/homeworlds_openings/homeworlds_openings.html#observations",
+    "title": "Homeworlds Openings",
+    "section": "Observations",
+    "text": "Observations\nIt seems that the first player should probably choose a large-large or medium-medium homeworld configuration. A homeworld with equally-sized stars is known as a “Gemini” configuration. When the first player chooses a Gemini opening, the second player loses the option of creating a large universe; only a small or a microverse is possible.\nThe second player should opt for a small universe rather than a microverse. (A large universe is not possible when the first player’s homeworld contains stars of equal size.)\nWhy isn’t small-small also advantageous for the first player? This is likely due to creating a bank configuration which will provide better lines of play to the second player in the early turns of the game."
+  },
+  {
+    "objectID": "posts/homeworlds_openings/homeworlds_openings.html#confounding-variables",
+    "href": "posts/homeworlds_openings/homeworlds_openings.html#confounding-variables",
+    "title": "Homeworlds Openings",
+    "section": "Confounding Variables",
+    "text": "Confounding Variables\nOne might reasonably object to the model described above. For one thing, it does not take into account the colours of the pieces selected. This is a relatively minor issue, however, since a certain combination of colours4 is almost universally chosen.\nMore concerning is the potentially confounding effect of player skill. It’s very possible that some openings may be effective only in the hands of experts. It would be interesting to revisit this analysis with more granular and detailed data that included Elo ratings. You can help with this by learning Homeworlds!\nYou can buy a Homeworlds set from Looney Labs. The same pieces can also be used to play many other interesting games."
+  },
+  {
+    "objectID": "posts/homeworlds_openings/homeworlds_openings.html#conclusions",
+    "href": "posts/homeworlds_openings/homeworlds_openings.html#conclusions",
+    "title": "Homeworlds Openings",
+    "section": "Conclusions",
+    "text": "Conclusions\nIf you’re playing first, start with two large stars of blue and yellow, and a large green ship. If you’re playing second and your opponent has followed my advice, try small-large or large-large in the same colours."
+  },
+  {
+    "objectID": "posts/homeworlds_openings/homeworlds_openings.html#references",
+    "href": "posts/homeworlds_openings/homeworlds_openings.html#references",
+    "title": "Homeworlds Openings",
+    "section": "References",
+    "text": "References\n\nHomeworlds | Looney Labs\nPlay Homeworlds Online | BoardGameArena\nLooney Labs’ Online Store\nBabamots’ Homeworlds Site\nAndy’s Page About Homeworlds\nHomeworlds | Board Game | BoardGameGeek"
   }
 ]
