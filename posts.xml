@@ -20,23 +20,23 @@
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Homeworlds is an abstract space battle game designed by John Cooper and published by Looney Labs. It’s played with multipurpose game pieces called Looney pyramids, three each of combination of three sizes (small, medium, and large) and four colours (green, yellow, blue, and red) for 36 in total. A pyramid lying down is a space ship and a pyramid standing up is a star. Each colour is associated with an ability.</p>
+<p>Homeworlds is an abstract space battle game designed by John Cooper and published by Looney Labs. It’s played with multipurpose game pieces called Looney pyramids, three of each of combination of three sizes (small, medium, and large) and four colours (green, yellow, blue, and red) for 36 in total. A pyramid lying down is a space ship and a pyramid standing up is a star. Each colour is associated with an ability.</p>
 <p>At the beginning of the game, each player chooses two stars to be their homeworld. Star systems are connected if they have no sizes in common.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="home5.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Homeworlds star connection rule (from Looney Labs)"><img src="https://jdonland.github.io/posts/homeworlds_openings/home5.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="home5.jpg" class="lightbox" title="Homeworlds star connection rule (from Looney Labs)" data-gallery="quarto-lightbox-gallery-1"><img src="https://jdonland.github.io/posts/homeworlds_openings/home5.jpg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Homeworlds star connection rule (from Looney Labs)</figcaption><p></p>
 </figure>
 </div>
 <p>Expert players actively debate Homeworlds’ opening theory. One question is which combination of star sizes should be selected by the first player, and how the second player should respond.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="home6.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Some homeworld options (from Looney Labs)"><img src="https://jdonland.github.io/posts/homeworlds_openings/home6.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="home6.jpg" class="lightbox" title="Some homeworld options (from Looney Labs)" data-gallery="quarto-lightbox-gallery-2"><img src="https://jdonland.github.io/posts/homeworlds_openings/home6.jpg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Some homeworld options (from Looney Labs)</figcaption><p></p>
 </figure>
 </div>
 <p>When players’ homeworlds are one step away from one another (i.e.&nbsp;connected), this is known as a “microverse”. If they are two steps away, that’s a “small universe”, and if they are three steps away, that’s a “large universe”.</p>
-<p>In addition to their homeworld stars, each player selects pyramid to be their first ship. The rest of the pieces become the bank from which new stars and ships are taken and to which destroyed stars and ships are returned.</p>
+<p>In addition to their homeworld stars, each player selects a pyramid to be their first ship. The rest of the pieces become the bank from which new stars and ships are taken and to which destroyed stars and ships are returned.</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
@@ -84,7 +84,7 @@
 <section id="modelling-first-player-advantage" class="level2">
 <h2 class="anchored" data-anchor-id="modelling-first-player-advantage">Modelling First Player Advantage</h2>
 <p>We can model first player advantage by associating a parameter ranging from zero to one with each combination of homeworld sizes representing the proportion of games we should expect the first player to win.<sup>1</sup> If this parameter is distributed according to a beta distribution <em>Beta(a, b)</em>, then its posterior distribution accounting for observing <em>n</em> wins and <em>m</em> losses for the first player is <em>Beta(a + n, b + m)</em>.<sup>2</sup> All that is left is to decide on a prior distribution representing our beliefs before observing any data. This is an interesting subtlety<sup>3</sup>, but it seems reasonable to choose a uniform prior, <em>Beta(1, 1)</em>, under which all possibilities are equally credible.</p>
-<p>From the posterior distribution, we can construct a 90% <a href="https://en.wikipedia.org/wiki/Credible_interval">credible interval</a> using <code>qbeta</code>. Unlike the confidence intervals used in frequentist statistical inference, which are the source of much confusion, Bayesian credible intervals have a straightforward interpretation: we’re 90% sure the true value of the parameter is contained in a 90% credible interval.</p>
+<p>From the posterior distribution, we can construct a 90% <a href="https://en.wikipedia.org/wiki/Credible_interval">credible interval</a> using <code>qbeta</code>. Unlike the confidence intervals used in frequentist statistical inference, which are the source of much confusion, Bayesian credible intervals have a straightforward interpretation: we’re 90% sure the true value of the parameter is contained in a 90% credible interval.<sup>4</sup></p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -190,7 +190,7 @@
 </section>
 <section id="confounding-variables" class="level2">
 <h2 class="anchored" data-anchor-id="confounding-variables">Confounding Variables</h2>
-<p>One might reasonably object to the model described above. For one thing, it does not take into account the colours of the pieces selected. This is a relatively minor issue, however, since a certain combination of colours<sup>4</sup> is almost universally chosen.</p>
+<p>One might reasonably object to the model described above. For one thing, it does not take into account the colours of the pieces selected. This is a relatively minor issue, however, since a certain combination of colours<sup>5</sup> is almost universally chosen.</p>
 <p>More concerning is the potentially confounding effect of player skill. It’s very possible that some openings may be effective only in the hands of experts. It would be interesting to revisit this analysis with more granular and detailed data that included Elo ratings. You can help with this by learning Homeworlds!</p>
 <p>You can buy a Homeworlds set from Looney Labs. The same pieces can also be used to play many other interesting games.</p>
 </section>
@@ -219,7 +219,8 @@
 <li id="fn1"><p>Assuming “average” play, anyway.↩︎</p></li>
 <li id="fn2"><p>See <a href="https://cchecastaldo.github.io/BayesianShortCourse/content/handouts/DerivationBetaBinomialConjugate.pdf">these slides</a> for a quick proof of this fact.↩︎</p></li>
 <li id="fn3"><p>See <a href="https://stats.stackexchange.com/a/298176/327338">this StackExchange answer</a> for more on uninformative Beta priors.↩︎</p></li>
-<li id="fn4"><p>Blue and yellow stars with a green ship.↩︎</p></li>
+<li id="fn4"><p>Frequentists view the bounds of a confidence interval as random, and the parameter value as fixed. Bayesians view the bounds of a credible interval as fixed, and the parameter value as random.↩︎</p></li>
+<li id="fn5"><p>Blue and yellow stars with a green ship.↩︎</p></li>
 </ol>
 </section></div> ]]></description>
   <guid>https://jdonland.github.io/posts/homeworlds_openings/homeworlds_openings.html</guid>
