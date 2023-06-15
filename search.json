@@ -172,14 +172,14 @@
     "href": "posts/coryat_scores/coryat_scores.html#average-score",
     "title": "Coryat Scores",
     "section": "Average Score",
-    "text": "Average Score\nAn average score of around $25,000 is considered appropriate for prospective contestants.\n\ncoryat_scores |>\n  pull(score) |>\n  mean() |>\n  round()\n\n[1] 19457\n\n\nClearly, I have some studying to do before I consider trying to compete on the show."
+    "text": "Average Score\nAn average score of around $25,000 is considered appropriate for prospective contestants.\n\ncoryat_scores |&gt; pull(score) |&gt; mean() |&gt; round()\n\n[1] 19351\n\n\nClearly, I have some studying to do before I consider trying to compete on the show."
   },
   {
     "objectID": "posts/coryat_scores/coryat_scores.html#visualizing-scores",
     "href": "posts/coryat_scores/coryat_scores.html#visualizing-scores",
     "title": "Coryat Scores",
     "section": "Visualizing Scores",
-    "text": "Visualizing Scores\nWe can create a histogram showing the distribution of my scores and a line chart showing the evolution of my scores over time using ggplot2.\n\nHistogramLine Chart\n\n\n\n\nCode\ncoryat_scores |>\n  ggplot(aes(x = score)) +\n  geom_histogram(fill = \"#8D2AB5\") +\n  geom_hline(yintercept = 1:15, colour = \"grey92\") +\n  geom_vline(xintercept = seq(500, 29500, 1000), colour = \"grey92\") +\n  scale_x_continuous(labels = scales::label_dollar()) +\n  labs(title = \"Distribution of Coryat Scores\", \n       x = \"Score\", \n       y = \"Count of Games\")\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\ncoryat_scores |>\n  ggplot(aes(x = game, y = score)) +\n  geom_point(colour = \"#8D2AB5\") +\n  geom_line(colour = \"#8D2AB5\", linetype = \"dotted\") +\n  ylim(0, 30000) +\n  scale_y_continuous(labels=scales::label_dollar()) +\n  stat_smooth(colour = \"magenta\", linetype = \"dashed\") +\n  labs(title = \"Coryat Score Trend\", x = \"Game\", y = \"Score\")"
+    "text": "Visualizing Scores\nWe can create a histogram showing the distribution of my scores and a line chart showing the evolution of my scores over time using ggplot2.\n\nEmpirical Cumulative DistributionLine Chart and Histogram\n\n\n\n\nCode\ncoryat_scores |&gt;\n  arrange(score) |&gt;\n  ggplot(aes(x = score, y = cumsum(score)/sum(score))) +\n  geom_line(color = \"#8D2AB5\", size = 2) +\n  scale_x_continuous(labels = scales::label_dollar()) +\n  scale_y_continuous(labels = scales::label_percent()) +\n  labs(title = \"Cumulative Distribution of Coryat Scores\", \n       x = \"Score\", \n       y = \"Percentile\")\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\n(coryat_scores |&gt;\n  ggplot(aes(x = game, y = score)) +\n  geom_point(colour = \"#8D2AB5\") +\n  geom_line(colour = \"#8D2AB5\", linetype = \"dotted\") +\n  ylim(0, 30000) +\n  scale_y_continuous(labels=scales::label_dollar()) +\n  stat_smooth(colour = \"magenta\", linetype = \"dashed\") +\n  labs(title = \"Coryat Score Trend\", x = \"Game\", y = \"Score\")) |&gt;\n  ggMarginal(type = \"histogram\", margins = \"y\", fill = \"#8D2AB5\")"
   },
   {
     "objectID": "posts/coryat_scores/coryat_scores.html#references",
@@ -390,5 +390,12 @@
     "title": "Wordle Scores",
     "section": "",
     "text": "Unless you spent 2022 on the moon, you’ve heard of Wordle. Here I present the results of my word-guessery."
+  },
+  {
+    "objectID": "posts/coryat_scores/coryat_scores.html#jeopardy-coryat-scores",
+    "href": "posts/coryat_scores/coryat_scores.html#jeopardy-coryat-scores",
+    "title": "Coryat Scores",
+    "section": "",
+    "text": "The Coryat score is a way of measuring one’s performance when playing along with Jeopardy! at home. It is named after musician, philosopher of physics, and two-day Jeopardy! champion Karl Coryat.\nA player’s Coryat score is the total value of clues answered correctly, minus that of those answered incorrectly, counting correctly-answered Daily Doubles according to their board position and ignoring Final Jeopardy! and any incorrectly-answered Daily Doubles.\nThus the Coryat score is a measure of one’s knowledge of the trivia material used on the show, ignoring other strategic elements like wagering."
   }
 ]

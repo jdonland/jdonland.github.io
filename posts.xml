@@ -1479,9 +1479,15 @@ background-color: null;
 font-style: inherit;"># read the JSON file, convert to data frame, and unnest some columns</span></span>
 <span id="cb1-2"><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">read_json</span>(<span class="st" style="color: #20794D;
+font-style: inherit;">read_json</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">"backup20230502183052.jscor"</span>, <span class="at" style="color: #657422;
+font-style: inherit;">list.files</span>()[<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">grep</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">".jscor"</span>, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list.files</span>())], <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">simplifyVector =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
@@ -1712,22 +1718,19 @@ font-style: inherit;"># store the results</span></span>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">coryat_scores <span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb2-2">  <span class="fu" style="color: #4758AB;
+font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">pull</span>(score) <span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb2-3">  <span class="fu" style="color: #4758AB;
+font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mean</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb2-4">  <span class="fu" style="color: #4758AB;
+font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">round</span>()</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 19457</code></pre>
+<pre><code>[1] 19351</code></pre>
 </div>
 </div>
 <p>Clearly, I have some studying to do before I consider trying to compete on the show.</p>
@@ -1735,8 +1738,8 @@ font-style: inherit;">round</span>()</span></code></pre></div>
 <section id="visualizing-scores" class="level2">
 <h2 class="anchored" data-anchor-id="visualizing-scores">Visualizing Scores</h2>
 <p>We can create a histogram showing the distribution of my scores and a line chart showing the evolution of my scores over time using <code>ggplot2</code>.</p>
-<div class="panel-tabset">
-<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" aria-controls="tabset-1-1" aria-selected="true">Histogram</a></li><li class="nav-item"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" aria-controls="tabset-1-2" aria-selected="false">Line Chart</a></li></ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" aria-controls="tabset-1-1" aria-selected="true">Empirical Cumulative Distribution</a></li><li class="nav-item"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" aria-controls="tabset-1-2" aria-selected="false">Line Chart and Histogram</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" aria-labelledby="tabset-1-1-tab">
 <div class="cell" data-layout-align="center">
@@ -1747,59 +1750,40 @@ background-color: null;
 font-style: inherit;">|&gt;</span></span>
 <span id="cb4-2">  <span class="fu" style="color: #4758AB;
 background-color: null;
+font-style: inherit;">arrange</span>(score) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb4-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
 font-style: inherit;">ggplot</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">x =</span> score)) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">x =</span> score, <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb4-3">  <span class="fu" style="color: #4758AB;
+font-style: inherit;">y =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">geom_histogram</span>(<span class="at" style="color: #657422;
+font-style: inherit;">cumsum</span>(score)<span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">"#8D2AB5"</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">sum</span>(score))) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb4-4">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">geom_hline</span>(<span class="at" style="color: #657422;
+font-style: inherit;">geom_line</span>(<span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">yintercept =</span> <span class="dv" style="color: #AD0000;
+font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"#8D2AB5"</span>, <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">15</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"grey92"</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">2</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb4-5">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">geom_vline</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">xintercept =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">500</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">29500</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1000</span>), <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"grey92"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb4-6">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_x_continuous</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -1810,13 +1794,24 @@ background-color: null;
 font-style: inherit;">label_dollar</span>()) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
+<span id="cb4-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scale_y_continuous</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">labels =</span> scales<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">label_percent</span>()) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
 <span id="cb4-7">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Distribution of Coryat Scores"</span>, </span>
+font-style: inherit;">"Cumulative Distribution of Coryat Scores"</span>, </span>
 <span id="cb4-8">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
@@ -1826,12 +1821,12 @@ font-style: inherit;">"Score"</span>, </span>
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Count of Games"</span>)</span></code></pre></div>
+font-style: inherit;">"Percentile"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="coryat_scores_files/figure-html/histogram-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://jdonland.github.io/posts/coryat_scores/coryat_scores_files/figure-html/histogram-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="coryat_scores_files/figure-html/empirical-cumulative-distribution-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://jdonland.github.io/posts/coryat_scores/coryat_scores_files/figure-html/empirical-cumulative-distribution-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1841,7 +1836,7 @@ font-style: inherit;">"Count of Games"</span>)</span></code></pre></div>
 <div class="cell" data-layout-align="center">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">coryat_scores <span class="sc" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">(coryat_scores <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
 <span id="cb5-2">  <span class="fu" style="color: #4758AB;
@@ -1924,12 +1919,29 @@ font-style: inherit;">"Game"</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Score"</span>)</span></code></pre></div>
+font-style: inherit;">"Score"</span>)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb5-9">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggMarginal</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"histogram"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">margins =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"y"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#8D2AB5"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="coryat_scores_files/figure-html/line chart-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://jdonland.github.io/posts/coryat_scores/coryat_scores_files/figure-html/line chart-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="coryat_scores_files/figure-html/line-chart-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://jdonland.github.io/posts/coryat_scores/coryat_scores_files/figure-html/line-chart-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
