@@ -2334,33 +2334,38 @@ font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Wordle Score Trend and Histogram"</span>, </span>
+font-style: inherit;">"My Wordle Scores"</span>,</span>
 <span id="cb2-14">       <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">subtitle =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Trend and distribution"</span>,</span>
+<span id="cb2-15">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Puzzle Number"</span>, </span>
-<span id="cb2-15">       <span class="at" style="color: #657422;
+<span id="cb2-16">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Score"</span>,</span>
-<span id="cb2-16">       <span class="at" style="color: #657422;
+<span id="cb2-17">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">caption =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Dashed black line indicates average score with optimal play."</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb2-17">  <span class="co" style="color: #5E5E5E;
+<span id="cb2-18">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># theming</span></span>
-<span id="cb2-18">  <span class="fu" style="color: #4758AB;
+<span id="cb2-19">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_bw</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb2-19">  <span class="fu" style="color: #4758AB;
+<span id="cb2-20">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2369,27 +2374,27 @@ background-color: null;
 font-style: inherit;">element_blank</span>())) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb2-20">  <span class="co" style="color: #5E5E5E;
+<span id="cb2-21">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># add the marginal histogram</span></span>
-<span id="cb2-21">  <span class="fu" style="color: #4758AB;
+<span id="cb2-22">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggMarginal</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"histogram"</span>, </span>
-<span id="cb2-22">             <span class="at" style="color: #657422;
+<span id="cb2-23">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">margins =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"y"</span>, </span>
-<span id="cb2-23">             <span class="at" style="color: #657422;
+<span id="cb2-24">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"#008000"</span>,</span>
-<span id="cb2-24">             <span class="at" style="color: #657422;
+<span id="cb2-25">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">yparams =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2451,7 +2456,7 @@ font-style: inherit;">1</span>))</span></code></pre></div>
 </section>
 <section id="on-the-choice-of-a-common-language-by-h.-jacob" class="level2">
 <h2 class="anchored" data-anchor-id="on-the-choice-of-a-common-language-by-h.-jacob"><a href="https://www.librarything.com/work/29589232/"><em>On the Choice of a Common Language</em></a> by H. Jacob</h2>
-<p>Another artifact from the era of peak public interest in auxiliary languages.</p>
+<p>Another artifact from the era of peak public interest in auxiliary languages. The author followed up this essay the next year with <em>A Planned Auxiliary Language</em>, which was briefly <a href="https://www.nature.com/articles/161665d0">reviewed</a> in <em>Nature</em>.</p>
 </section>
 <section id="logical-methods-by-greg-restall-and-shawn-standefer" class="level2">
 <h2 class="anchored" data-anchor-id="logical-methods-by-greg-restall-and-shawn-standefer"><a href="https://www.librarything.com/work/29586740/"><em>Logical Methods</em></a> by Greg Restall and Shawn Standefer</h2>
@@ -3504,7 +3509,7 @@ font-style: inherit;">geom_hline</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">yintercept =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">24000</span>, <span class="at" style="color: #657422;
+font-style: inherit;">25000</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -3581,7 +3586,7 @@ font-style: inherit;">"Score"</span>,</span>
 background-color: null;
 font-style: inherit;">caption =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Dashed black line indicates target average of $24,000."</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"Dashed black line indicates target average of $25,000."</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb4-22">  <span class="co" style="color: #5E5E5E;
