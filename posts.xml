@@ -25,14 +25,14 @@
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="home5.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Homeworlds star connection rule (from Looney Labs)"><img src="https://jdonland.github.io/posts/homeworlds_openings/home5.jpg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Homeworlds star connection rule (from Looney Labs)</figcaption><p></p>
+<figcaption class="figure-caption">Homeworlds star connection rule (from Looney Labs)</figcaption>
 </figure>
 </div>
 <p>Expert players actively debate Homeworlds’ opening theory. One question is which combination of star sizes should be selected by the first player, and how the second player should respond.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="home6.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Some homeworld options (from Looney Labs)"><img src="https://jdonland.github.io/posts/homeworlds_openings/home6.jpg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Some homeworld options (from Looney Labs)</figcaption><p></p>
+<figcaption class="figure-caption">Some homeworld options (from Looney Labs)</figcaption>
 </figure>
 </div>
 <p>When players’ homeworlds are one step away from one another (i.e.&nbsp;connected), this is known as a “microverse”. If they are two steps away, that’s a “small universe”, and if they are three steps away, that’s a “large universe”.</p>
@@ -52,34 +52,720 @@ font-style: inherit;">"raw_data.csv"</span>) <span class="ot" style="color: #003
 background-color: null;
 font-style: inherit;">-&gt;</span> raw_data</span>
 <span id="cb1-2"></span>
-<span id="cb1-3">raw_data</span></code></pre></div>
+<span id="cb1-3">raw_data <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb1-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">gt</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb1-5">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cols_label</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">p1_wr =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"First Player Win Rate"</span>,</span>
+<span id="cb1-6">             <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Number of Games"</span>,</span>
+<span id="cb1-7">             <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">p1_hw =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"First Player"</span>,</span>
+<span id="cb1-8">             <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">p2_hw =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Second Player"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb1-9">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_spanner</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">label =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">md</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"**Homeworld Sizes**"</span>), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columns =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb1-10">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cols_align</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">align =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"center"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columns =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">everything</span>()) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb1-11">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_header</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Homeworlds Openings Data"</span>,</span>
+<span id="cb1-12">             <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">subtitle =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Courtesy of Babamots"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb1-13">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_options</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">container.height =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"500px"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb1-14">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 36 × 4
-   p1_wr     n p1_hw p2_hw
-   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
- 1 0.175    20 SS    SM   
- 2 0.2      10 SS    ML   
- 3 0.25      4 SS    LL   
- 4 0.292    12 SS    SL   
- 5 0.385    13 SL    MM   
- 6 0.393    28 ML    MM   
- 7 0.408    71 SM    MM   
- 8 0.409    22 ML    SS   
- 9 0.441    34 ML    LL   
-10 0.449   476 SL    SM   
-# ℹ 26 more rows</code></pre>
+<div class="cell-output-display">
+
+<div id="rhagwtegua" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
+<style>#rhagwtegua table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#rhagwtegua thead, #rhagwtegua tbody, #rhagwtegua tfoot, #rhagwtegua tr, #rhagwtegua td, #rhagwtegua th {
+  border-style: none;
+}
+
+#rhagwtegua p {
+  margin: 0;
+  padding: 0;
+}
+
+#rhagwtegua .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#rhagwtegua .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#rhagwtegua .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#rhagwtegua .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#rhagwtegua .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#rhagwtegua .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#rhagwtegua .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#rhagwtegua .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#rhagwtegua .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#rhagwtegua .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#rhagwtegua .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#rhagwtegua .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#rhagwtegua .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#rhagwtegua .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#rhagwtegua .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhagwtegua .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#rhagwtegua .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#rhagwtegua .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#rhagwtegua .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhagwtegua .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#rhagwtegua .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhagwtegua .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#rhagwtegua .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhagwtegua .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhagwtegua .gt_left {
+  text-align: left;
+}
+
+#rhagwtegua .gt_center {
+  text-align: center;
+}
+
+#rhagwtegua .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#rhagwtegua .gt_font_normal {
+  font-weight: normal;
+}
+
+#rhagwtegua .gt_font_bold {
+  font-weight: bold;
+}
+
+#rhagwtegua .gt_font_italic {
+  font-style: italic;
+}
+
+#rhagwtegua .gt_super {
+  font-size: 65%;
+}
+
+#rhagwtegua .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#rhagwtegua .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#rhagwtegua .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#rhagwtegua .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#rhagwtegua .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#rhagwtegua .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#rhagwtegua .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="4" class="gt_heading gt_title gt_font_normal" style="">Homeworlds Openings Data</td>
+    </tr>
+    <tr class="gt_heading">
+      <td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Courtesy of Babamots</td>
+    </tr>
+    <tr class="gt_col_headings gt_spanner_row">
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="First Player Win Rate">First Player Win Rate</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="Number of Games">Number of Games</th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="<strong>Homeworld Sizes</strong>">
+        <span class="gt_column_spanner"><strong>Homeworld Sizes</strong></span>
+      </th>
+    </tr>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="First Player">First Player</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Second Player">Second Player</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.175</td>
+<td headers="n" class="gt_row gt_center">20</td>
+<td headers="p1_hw" class="gt_row gt_center">SS</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.200</td>
+<td headers="n" class="gt_row gt_center gt_striped">10</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">ML</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.250</td>
+<td headers="n" class="gt_row gt_center">4</td>
+<td headers="p1_hw" class="gt_row gt_center">SS</td>
+<td headers="p2_hw" class="gt_row gt_center">LL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.292</td>
+<td headers="n" class="gt_row gt_center gt_striped">12</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.385</td>
+<td headers="n" class="gt_row gt_center">13</td>
+<td headers="p1_hw" class="gt_row gt_center">SL</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.393</td>
+<td headers="n" class="gt_row gt_center gt_striped">28</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">ML</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">MM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.408</td>
+<td headers="n" class="gt_row gt_center">71</td>
+<td headers="p1_hw" class="gt_row gt_center">SM</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.409</td>
+<td headers="n" class="gt_row gt_center gt_striped">22</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">ML</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.441</td>
+<td headers="n" class="gt_row gt_center">34</td>
+<td headers="p1_hw" class="gt_row gt_center">ML</td>
+<td headers="p2_hw" class="gt_row gt_center">LL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.449</td>
+<td headers="n" class="gt_row gt_center gt_striped">476</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.472</td>
+<td headers="n" class="gt_row gt_center">724</td>
+<td headers="p1_hw" class="gt_row gt_center">ML</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.481</td>
+<td headers="n" class="gt_row gt_center gt_striped">27</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">LL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.486</td>
+<td headers="n" class="gt_row gt_center">590</td>
+<td headers="p1_hw" class="gt_row gt_center">SM</td>
+<td headers="p2_hw" class="gt_row gt_center">SL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.491</td>
+<td headers="n" class="gt_row gt_center gt_striped">53</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.495</td>
+<td headers="n" class="gt_row gt_center">92</td>
+<td headers="p1_hw" class="gt_row gt_center">LL</td>
+<td headers="p2_hw" class="gt_row gt_center">LL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.495</td>
+<td headers="n" class="gt_row gt_center gt_striped">813</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">ML</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.500</td>
+<td headers="n" class="gt_row gt_center">3</td>
+<td headers="p1_hw" class="gt_row gt_center">SS</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.502</td>
+<td headers="n" class="gt_row gt_center gt_striped">430</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">ML</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.510</td>
+<td headers="n" class="gt_row gt_center">52</td>
+<td headers="p1_hw" class="gt_row gt_center">SM</td>
+<td headers="p2_hw" class="gt_row gt_center">LL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.538</td>
+<td headers="n" class="gt_row gt_center gt_striped">398</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">ML</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.550</td>
+<td headers="n" class="gt_row gt_center">30</td>
+<td headers="p1_hw" class="gt_row gt_center">MM</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.571</td>
+<td headers="n" class="gt_row gt_center gt_striped">7</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.599</td>
+<td headers="n" class="gt_row gt_center">292</td>
+<td headers="p1_hw" class="gt_row gt_center">ML</td>
+<td headers="p2_hw" class="gt_row gt_center">ML</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.604</td>
+<td headers="n" class="gt_row gt_center gt_striped">130</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.625</td>
+<td headers="n" class="gt_row gt_center">8</td>
+<td headers="p1_hw" class="gt_row gt_center">MM</td>
+<td headers="p2_hw" class="gt_row gt_center">LL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.631</td>
+<td headers="n" class="gt_row gt_center gt_striped">84</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">ML</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.635</td>
+<td headers="n" class="gt_row gt_center">52</td>
+<td headers="p1_hw" class="gt_row gt_center">MM</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.643</td>
+<td headers="n" class="gt_row gt_center gt_striped">300</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.667</td>
+<td headers="n" class="gt_row gt_center">3</td>
+<td headers="p1_hw" class="gt_row gt_center">SM</td>
+<td headers="p2_hw" class="gt_row gt_center">SS</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.667</td>
+<td headers="n" class="gt_row gt_center gt_striped">6</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.667</td>
+<td headers="n" class="gt_row gt_center">6</td>
+<td headers="p1_hw" class="gt_row gt_center">MM</td>
+<td headers="p2_hw" class="gt_row gt_center">SS</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.679</td>
+<td headers="n" class="gt_row gt_center gt_striped">56</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">MM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">ML</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.723</td>
+<td headers="n" class="gt_row gt_center">47</td>
+<td headers="p1_hw" class="gt_row gt_center">LL</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.750</td>
+<td headers="n" class="gt_row gt_center gt_striped">20</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">MM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.833</td>
+<td headers="n" class="gt_row gt_center">6</td>
+<td headers="p1_hw" class="gt_row gt_center">LL</td>
+<td headers="p2_hw" class="gt_row gt_center">SS</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.889</td>
+<td headers="n" class="gt_row gt_center gt_striped">9</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">MM</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
 </div>
 </div>
 <p>We’ll also create some helper vectors and functions that will be convenient later.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># helper vectors</span></span>
-<span id="cb3-2"><span class="co" style="color: #5E5E5E;
+<span id="cb2-2"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#c("SS", "SM", "SL", "MM", "ML", "LL") -&gt; hw_sizes</span></span>
-<span id="cb3-3"><span class="fu" style="color: #4758AB;
+<span id="cb2-3"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
 background-color: null;
@@ -96,7 +782,7 @@ background-color: null;
 font-style: inherit;">"LL"</span>) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span> hw_sizes</span>
-<span id="cb3-4"><span class="fu" style="color: #4758AB;
+<span id="cb2-4"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
 background-color: null;
@@ -107,11 +793,11 @@ background-color: null;
 font-style: inherit;">"large"</span>) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span> universe_sizes</span>
-<span id="cb3-5"></span>
-<span id="cb3-6"><span class="co" style="color: #5E5E5E;
+<span id="cb2-5"></span>
+<span id="cb2-6"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># list the stars in a homeworld</span></span>
-<span id="cb3-7">(<span class="cf" style="color: #003B4F;
+<span id="cb2-7">(<span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">function</span>(hw) {<span class="fu" style="color: #4758AB;
 background-color: null;
@@ -124,14 +810,14 @@ background-color: null;
 font-style: inherit;">""</span>))}) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span> stars</span>
-<span id="cb3-8"></span>
-<span id="cb3-9"><span class="co" style="color: #5E5E5E;
+<span id="cb2-8"></span>
+<span id="cb2-9"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># determine the universe size</span></span>
-<span id="cb3-10">(<span class="cf" style="color: #003B4F;
+<span id="cb2-10">(<span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">function</span>(hw1, hw2) {</span>
-<span id="cb3-11">  <span class="fu" style="color: #4758AB;
+<span id="cb2-11">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">case_when</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
@@ -150,7 +836,7 @@ background-color: null;
 font-style: inherit;">~</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"micro"</span>,</span>
-<span id="cb3-12">            <span class="fu" style="color: #4758AB;
+<span id="cb2-12">            <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">length</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
@@ -169,7 +855,7 @@ background-color: null;
 font-style: inherit;">~</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"small"</span>,</span>
-<span id="cb3-13">            T <span class="sc" style="color: #5E5E5E;
+<span id="cb2-13">            T <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -187,17 +873,17 @@ font-style: inherit;">-&gt;</span> universe_size</span></code></pre></div>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">raw_data <span class="sc" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">raw_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb4-2">  <span class="fu" style="color: #4758AB;
+<span id="cb3-2">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mutate</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">across</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">c</span>(p1_hw, p2_hw), </span>
-<span id="cb4-3">                \(x) <span class="fu" style="color: #4758AB;
+<span id="cb3-3">                \(x) <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">factor</span>(x, <span class="at" style="color: #657422;
 background-color: null;
@@ -206,19 +892,19 @@ background-color: null;
 font-style: inherit;">levels =</span> hw_sizes))) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb4-4">  <span class="fu" style="color: #4758AB;
+<span id="cb3-4">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">rowwise</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb4-5">  <span class="fu" style="color: #4758AB;
+<span id="cb3-5">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">p1_wins =</span> n<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span>p1_wr,</span>
-<span id="cb4-6">         <span class="at" style="color: #657422;
+<span id="cb3-6">         <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">p2_wins =</span> n<span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -227,10 +913,10 @@ background-color: null;
 font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span> p1_wr),</span>
-<span id="cb4-7">         <span class="co" style="color: #5E5E5E;
+<span id="cb3-7">         <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># calculate a 90% credible interval from the posterior distribution</span></span>
-<span id="cb4-8">         <span class="at" style="color: #657422;
+<span id="cb3-8">         <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">ci_lower =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -251,7 +937,7 @@ background-color: null;
 font-style: inherit;">+</span> p2_wins)[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>],</span>
-<span id="cb4-9">         <span class="at" style="color: #657422;
+<span id="cb3-9">         <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">ci_upper =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -272,10 +958,10 @@ background-color: null;
 font-style: inherit;">+</span> p2_wins)[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>],</span>
-<span id="cb4-10">         <span class="co" style="color: #5E5E5E;
+<span id="cb3-10">         <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># format the interval as text</span></span>
-<span id="cb4-11">         <span class="at" style="color: #657422;
+<span id="cb3-11">         <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">formatted_ci =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -286,23 +972,23 @@ background-color: null;
 font-style: inherit;">100</span> <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span> ci_lower),</span>
-<span id="cb4-12">                               <span class="st" style="color: #20794D;
+<span id="cb3-12">                               <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"-"</span>,</span>
-<span id="cb4-13">                               <span class="fu" style="color: #4758AB;
+<span id="cb3-13">                               <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">round</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">100</span> <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span> ci_upper),</span>
-<span id="cb4-14">                               <span class="st" style="color: #20794D;
+<span id="cb3-14">                               <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"%"</span>),</span>
-<span id="cb4-15">         <span class="co" style="color: #5E5E5E;
+<span id="cb3-15">         <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># bold intervals that do not contain 50%</span></span>
-<span id="cb4-16">         <span class="at" style="color: #657422;
+<span id="cb3-16">         <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">ci_fontface =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -317,17 +1003,17 @@ background-color: null;
 font-style: inherit;">~</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"bold"</span>,</span>
-<span id="cb4-17">                                 T <span class="sc" style="color: #5E5E5E;
+<span id="cb3-17">                                 T <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"plain"</span>),</span>
-<span id="cb4-18">         <span class="at" style="color: #657422;
+<span id="cb3-18">         <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">universe_size =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">universe_size</span>(p1_hw, p2_hw),</span>
-<span id="cb4-19">         <span class="at" style="color: #657422;
+<span id="cb3-19">         <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">universe_size =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -336,7 +1022,7 @@ background-color: null;
 font-style: inherit;">ordered =</span> T, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">levels =</span> universe_sizes),</span>
-<span id="cb4-20">         <span class="at" style="color: #657422;
+<span id="cb3-20">         <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">prob_fav =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -355,12 +1041,12 @@ background-color: null;
 font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> p2_wins),</span>
-<span id="cb4-21">         <span class="at" style="color: #657422;
+<span id="cb3-21">         <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">formatted_prob_fav =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">case_when</span>(</span>
-<span id="cb4-22">           prob_fav <span class="sc" style="color: #5E5E5E;
+<span id="cb3-22">           prob_fav <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;</span> <span class="fl" style="color: #AD0000;
 background-color: null;
@@ -369,7 +1055,7 @@ background-color: null;
 font-style: inherit;">~</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"&lt;1%"</span>,</span>
-<span id="cb4-23">           prob_fav <span class="sc" style="color: #5E5E5E;
+<span id="cb3-23">           prob_fav <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;</span> <span class="fl" style="color: #AD0000;
 background-color: null;
@@ -386,12 +1072,12 @@ background-color: null;
 font-style: inherit;">*</span> prob_fav), <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"%"</span>),</span>
-<span id="cb4-24">           T <span class="sc" style="color: #5E5E5E;
+<span id="cb3-24">           T <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"&gt;99%"</span>),</span>
-<span id="cb4-25">         <span class="at" style="color: #657422;
+<span id="cb3-25">         <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">prob_fav_fontface =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -416,49 +1102,734 @@ background-color: null;
 font-style: inherit;">"plain"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb4-26">  <span class="fu" style="color: #4758AB;
+<span id="cb3-26">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">arrange</span>(p1_hw, p2_hw) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
-<span id="cb4-27">  homeworlds_openings</span>
-<span id="cb4-28"></span>
-<span id="cb4-29">homeworlds_openings</span></code></pre></div>
+<span id="cb3-27">  homeworlds_openings</span>
+<span id="cb3-28"></span>
+<span id="cb3-29">homeworlds_openings <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-30">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">select</span>(p1_hw, p2_hw, formatted_ci, prob_fav) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-31">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">gt</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-32">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cols_label</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">p1_hw =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"First Player"</span>,</span>
+<span id="cb3-33">             <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">p2_hw =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Second Player"</span>,</span>
+<span id="cb3-34">             <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">formatted_ci =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">html</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"First Player Advantage&lt;br&gt;Credible Interval"</span>),</span>
+<span id="cb3-35">             <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">prob_fav =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">html</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Probability of&lt;br&gt;First Player Advantage"</span>)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-36">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_spanner</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">label =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">md</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"**Homeworld Sizes**"</span>), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columns =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-37">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cols_align</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">align =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"center"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">columns =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">everything</span>()) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-38">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_header</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"First Player Advantage in Homeworlds Openings"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-39">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tab_options</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">container.height =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"500px"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-40">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 36 × 14
-# Rowwise: 
-   p1_wr     n p1_hw p2_hw p1_wins p2_wins ci_lower ci_upper formatted_ci
-   &lt;dbl&gt; &lt;dbl&gt; &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;       
- 1 0.643   300 SM    SM     193.   107.       0.596    0.687 60-69%      
- 2 0.486   590 SM    SL     287.   303.       0.452    0.520 45-52%      
- 3 0.495   813 SM    ML     402.   411.       0.466    0.524 47-52%      
- 4 0.667     3 SM    SS       2.00   0.999    0.249    0.903 25-90%      
- 5 0.408    71 SM    MM      29.0   42.0      0.318    0.506 32-51%      
- 6 0.51     52 SM    LL      26.5   25.5      0.398    0.620 40-62%      
- 7 0.449   476 SL    SM     214.   262.       0.412    0.487 41-49%      
- 8 0.604   130 SL    SL      78.5   51.5      0.532    0.671 53-67%      
- 9 0.502   430 SL    ML     216.   214.       0.462    0.542 46-54%      
-10 0.667     6 SL    SS       4.00   2.00     0.342    0.871 34-87%      
-# ℹ 26 more rows
-# ℹ 5 more variables: ci_fontface &lt;chr&gt;, universe_size &lt;ord&gt;, prob_fav &lt;dbl&gt;,
-#   formatted_prob_fav &lt;chr&gt;, prob_fav_fontface &lt;chr&gt;</code></pre>
+<div class="cell-output-display">
+
+<div id="ykrppoawnn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
+<style>#ykrppoawnn table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ykrppoawnn thead, #ykrppoawnn tbody, #ykrppoawnn tfoot, #ykrppoawnn tr, #ykrppoawnn td, #ykrppoawnn th {
+  border-style: none;
+}
+
+#ykrppoawnn p {
+  margin: 0;
+  padding: 0;
+}
+
+#ykrppoawnn .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ykrppoawnn .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ykrppoawnn .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ykrppoawnn .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ykrppoawnn .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ykrppoawnn .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ykrppoawnn .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ykrppoawnn .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ykrppoawnn .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ykrppoawnn .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ykrppoawnn .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ykrppoawnn .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ykrppoawnn .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ykrppoawnn .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ykrppoawnn .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ykrppoawnn .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ykrppoawnn .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ykrppoawnn .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ykrppoawnn .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ykrppoawnn .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ykrppoawnn .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ykrppoawnn .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ykrppoawnn .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ykrppoawnn .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ykrppoawnn .gt_left {
+  text-align: left;
+}
+
+#ykrppoawnn .gt_center {
+  text-align: center;
+}
+
+#ykrppoawnn .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ykrppoawnn .gt_font_normal {
+  font-weight: normal;
+}
+
+#ykrppoawnn .gt_font_bold {
+  font-weight: bold;
+}
+
+#ykrppoawnn .gt_font_italic {
+  font-style: italic;
+}
+
+#ykrppoawnn .gt_super {
+  font-size: 65%;
+}
+
+#ykrppoawnn .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ykrppoawnn .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ykrppoawnn .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ykrppoawnn .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ykrppoawnn .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ykrppoawnn .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ykrppoawnn .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">First Player Advantage in Homeworlds Openings</td>
+    </tr>
+    
+    <tr class="gt_col_headings gt_spanner_row">
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="<strong>Homeworld Sizes</strong>">
+        <span class="gt_column_spanner"><strong>Homeworld Sizes</strong></span>
+      </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="First Player Advantage<br>Credible Interval">First Player Advantage<br>Credible Interval</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="Probability of<br>First Player Advantage">Probability of<br>First Player Advantage</th>
+    </tr>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="First Player">First Player</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Second Player">Second Player</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="p1_hw" class="gt_row gt_center">SM</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td>
+<td headers="formatted_ci" class="gt_row gt_center">60-69%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.999999680</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">45-52%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.248413661</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SM</td>
+<td headers="p2_hw" class="gt_row gt_center">ML</td>
+<td headers="formatted_ci" class="gt_row gt_center">47-52%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.387849078</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">25-90%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.687849323</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SM</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td>
+<td headers="formatted_ci" class="gt_row gt_center">32-51%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.061530777</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">40-62%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.556708384</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SL</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td>
+<td headers="formatted_ci" class="gt_row gt_center">41-49%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.013054745</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">53-67%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.991093430</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SL</td>
+<td headers="p2_hw" class="gt_row gt_center">ML</td>
+<td headers="formatted_ci" class="gt_row gt_center">46-54%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.533008043</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">34-87%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.773895167</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SL</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td>
+<td headers="formatted_ci" class="gt_row gt_center">21-61%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.212754245</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">33-63%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.423357565</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">ML</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td>
+<td headers="formatted_ci" class="gt_row gt_center">44-50%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.066035425</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">ML</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">50-58%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.935076177</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">ML</td>
+<td headers="p2_hw" class="gt_row gt_center">ML</td>
+<td headers="formatted_ci" class="gt_row gt_center">55-64%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.999647706</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">ML</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">26-58%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.202200438</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">ML</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td>
+<td headers="formatted_ci" class="gt_row gt_center">26-55%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.132786582</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">ML</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">31-58%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.249135577</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SS</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td>
+<td headers="formatted_ci" class="gt_row gt_center">8-36%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.001698437</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">14-53%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.081930335</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SS</td>
+<td headers="p2_hw" class="gt_row gt_center">ML</td>
+<td headers="formatted_ci" class="gt_row gt_center">8-47%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.032714844</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">29-81%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.635929076</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SS</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td>
+<td headers="formatted_ci" class="gt_row gt_center">17-83%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.500000000</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">8-66%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.187500000</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">MM</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td>
+<td headers="formatted_ci" class="gt_row gt_center">52-73%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.973623861</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">MM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">56-87%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.986698151</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">MM</td>
+<td headers="p2_hw" class="gt_row gt_center">ML</td>
+<td headers="formatted_ci" class="gt_row gt_center">57-77%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.996318685</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">MM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">34-87%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.773895167</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">MM</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td>
+<td headers="formatted_ci" class="gt_row gt_center">40-69%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.704614834</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">MM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">34-83%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.746093750</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">LL</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td>
+<td headers="formatted_ci" class="gt_row gt_center">60-81%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.998935554</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">38-60%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.448433249</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">LL</td>
+<td headers="p2_hw" class="gt_row gt_center">ML</td>
+<td headers="formatted_ci" class="gt_row gt_center">54-71%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.991765439</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">48-95%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.937298892</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">LL</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td>
+<td headers="formatted_ci" class="gt_row gt_center">61-96%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.989278600</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">41-58%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.462032892</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
 </div>
 </div>
 </section>
 <section id="visualizing-first-player-advantage" class="level2">
 <h2 class="anchored" data-anchor-id="visualizing-first-player-advantage">Visualizing First Player Advantage</h2>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" aria-controls="tabset-1-1" aria-selected="true">Credible Intervals</a></li><li class="nav-item"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" aria-controls="tabset-1-2" aria-selected="false">Posterior Probability of First Player Advantage</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">homeworlds_openings <span class="sc" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">homeworlds_openings <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb6-2">  <span class="fu" style="color: #4758AB;
+<span id="cb4-2">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggplot</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
@@ -471,10 +1842,10 @@ background-color: null;
 font-style: inherit;">fill =</span> p1_wr)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb6-3">  <span class="co" style="color: #5E5E5E;
+<span id="cb4-3">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># add tiles coloured to indicate the observed first player win rate</span></span>
-<span id="cb6-4">  <span class="fu" style="color: #4758AB;
+<span id="cb4-4">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_tile</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -487,17 +1858,17 @@ background-color: null;
 font-style: inherit;">0.8</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb6-5">  <span class="co" style="color: #5E5E5E;
+<span id="cb4-5">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># add dots to indicate universe size</span></span>
-<span id="cb6-6">  <span class="fu" style="color: #4758AB;
+<span id="cb4-6">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_point</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">colour =</span> universe_size), </span>
-<span id="cb6-7">             <span class="at" style="color: #657422;
+<span id="cb4-7">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">position =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -510,39 +1881,39 @@ background-color: null;
 font-style: inherit;">y =</span> <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0.3</span>), </span>
-<span id="cb6-8">             <span class="at" style="color: #657422;
+<span id="cb4-8">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb6-9">  <span class="co" style="color: #5E5E5E;
+<span id="cb4-9">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># trick to circle the universe size dots without a fill scale collision</span></span>
-<span id="cb6-10">  <span class="fu" style="color: #4758AB;
+<span id="cb4-10">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_point</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>, </span>
-<span id="cb6-11">             <span class="at" style="color: #657422;
+<span id="cb4-11">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">shape =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">21</span>, </span>
-<span id="cb6-12">             <span class="at" style="color: #657422;
+<span id="cb4-12">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">fill =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
 font-style: inherit;">NA</span>, </span>
-<span id="cb6-13">             <span class="at" style="color: #657422;
+<span id="cb4-13">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"black"</span>, </span>
-<span id="cb6-14">             <span class="at" style="color: #657422;
+<span id="cb4-14">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">position =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -557,27 +1928,27 @@ background-color: null;
 font-style: inherit;">0.3</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb6-15">  <span class="co" style="color: #5E5E5E;
+<span id="cb4-15">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># add labels</span></span>
-<span id="cb6-16">  <span class="fu" style="color: #4758AB;
+<span id="cb4-16">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Homeworlds First Player Advantage by Opening"</span>,</span>
-<span id="cb6-17">       <span class="at" style="color: #657422;
+<span id="cb4-17">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"First Player's Homeworld Sizes"</span>,</span>
-<span id="cb6-18">       <span class="at" style="color: #657422;
+<span id="cb4-18">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Second Player's Homeworld Sizes"</span>,</span>
-<span id="cb6-19">       <span class="at" style="color: #657422;
+<span id="cb4-19">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -586,44 +1957,44 @@ background-color: null;
 font-style: inherit;">\n</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">Win Rate"</span>,</span>
-<span id="cb6-20">       <span class="at" style="color: #657422;
+<span id="cb4-20">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Universe Size"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb6-21">  <span class="co" style="color: #5E5E5E;
+<span id="cb4-21">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># gradient scale for the tiles</span></span>
-<span id="cb6-22">  <span class="fu" style="color: #4758AB;
+<span id="cb4-22">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_fill_gradient2</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">low =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"red"</span>, </span>
-<span id="cb6-23">                       <span class="at" style="color: #657422;
+<span id="cb4-23">                       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">mid =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"white"</span>, </span>
-<span id="cb6-24">                       <span class="at" style="color: #657422;
+<span id="cb4-24">                       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">high =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"blue"</span>, </span>
-<span id="cb6-25">                       <span class="at" style="color: #657422;
+<span id="cb4-25">                       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">midpoint =</span> <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0.5</span>,</span>
-<span id="cb6-26">                       <span class="at" style="color: #657422;
+<span id="cb4-26">                       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">labels =</span> scales<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span>percent,</span>
-<span id="cb6-27">                       <span class="at" style="color: #657422;
+<span id="cb4-27">                       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">limits =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -634,10 +2005,10 @@ background-color: null;
 font-style: inherit;">1</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb6-28">  <span class="co" style="color: #5E5E5E;
+<span id="cb4-28">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># discrete scale for the universe size dots</span></span>
-<span id="cb6-29">  <span class="fu" style="color: #4758AB;
+<span id="cb4-29">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_colour_manual</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -648,29 +2019,29 @@ background-color: null;
 font-style: inherit;">micro =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"white"</span>, </span>
-<span id="cb6-30">                                 <span class="at" style="color: #657422;
+<span id="cb4-30">                                 <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">small =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"grey50"</span>, </span>
-<span id="cb6-31">                                 <span class="at" style="color: #657422;
+<span id="cb4-31">                                 <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">large =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"black"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb6-32">  <span class="fu" style="color: #4758AB;
+<span id="cb4-32">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_y_discrete</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">limits =</span> rev) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb6-33">  <span class="co" style="color: #5E5E5E;
+<span id="cb4-33">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># put the win rate legend under the universe size legend</span></span>
-<span id="cb6-34">  <span class="fu" style="color: #4758AB;
+<span id="cb4-34">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">guides</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -683,15 +2054,15 @@ background-color: null;
 font-style: inherit;">1</span>)) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
-<span id="cb6-35">  plot</span>
-<span id="cb6-36"></span>
-<span id="cb6-37">plot <span class="sc" style="color: #5E5E5E;
+<span id="cb4-35">  plot</span>
+<span id="cb4-36"></span>
+<span id="cb4-37">plot <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb6-38">  <span class="co" style="color: #5E5E5E;
+<span id="cb4-38">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># add formatted credible intervals as text</span></span>
-<span id="cb6-39">  <span class="fu" style="color: #4758AB;
+<span id="cb4-39">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_text</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
@@ -702,10 +2073,10 @@ background-color: null;
 font-style: inherit;">fontface =</span> ci_fontface)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb6-40">  <span class="co" style="color: #5E5E5E;
+<span id="cb4-40">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># add subtitle</span></span>
-<span id="cb6-41">  <span class="fu" style="color: #4758AB;
+<span id="cb4-41">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -726,13 +2097,13 @@ font-style: inherit;">"90% Bayesian credible intervals with uniform priors"</spa
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">plot <span class="sc" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">plot <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb7-2">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-2">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># add posterior probability first player is favoured as text</span></span>
-<span id="cb7-3">  <span class="fu" style="color: #4758AB;
+<span id="cb5-3">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_text</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
@@ -743,10 +2114,10 @@ background-color: null;
 font-style: inherit;">fontface =</span> prob_fav_fontface)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb7-4">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-4">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># add subtitle</span></span>
-<span id="cb7-5">  <span class="fu" style="color: #4758AB;
+<span id="cb5-5">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -757,7 +2128,7 @@ font-style: inherit;">"Posterior probability first player is favoured"</span>)</
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="homeworlds_openings_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="https://jdonland.github.io/posts/homeworlds_openings/homeworlds_openings_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="homeworlds_openings_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="https://jdonland.github.io/posts/homeworlds_openings/homeworlds_openings_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,9 +19,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -48,43 +49,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -141,25 +112,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html">
+    <a class="nav-link" href="../../posts.html" rel="" target="">
  <span class="menu-text">Index</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../links.html">
+    <a class="nav-link" href="../../links.html" rel="" target="">
  <span class="menu-text">Links</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resume.pdf">
+    <a class="nav-link" href="../../resume.pdf" rel="" target="">
  <span class="menu-text">Resume</span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
+            <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -207,14 +178,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="home5.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Homeworlds star connection rule (from Looney Labs)"><img src="home5.jpg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Homeworlds star connection rule (from Looney Labs)</figcaption><p></p>
+<figcaption class="figure-caption">Homeworlds star connection rule (from Looney Labs)</figcaption>
 </figure>
 </div>
 <p>Expert players actively debate Homeworlds’ opening theory. One question is which combination of star sizes should be selected by the first player, and how the second player should respond.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="home6.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Some homeworld options (from Looney Labs)"><img src="home6.jpg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Some homeworld options (from Looney Labs)</figcaption><p></p>
+<figcaption class="figure-caption">Some homeworld options (from Looney Labs)</figcaption>
 </figure>
 </div>
 <p>When players’ homeworlds are one step away from one another (i.e.&nbsp;connected), this is known as a “microverse”. If they are two steps away, that’s a “small universe”, and if they are three steps away, that’s a “large universe”.</p>
@@ -228,40 +199,648 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"raw_data.csv"</span>) <span class="ot">-&gt;</span> raw_data</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>raw_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>raw_data <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">p1_wr =</span> <span class="st">"First Player Win Rate"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">n =</span> <span class="st">"Number of Games"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">p1_hw =</span> <span class="st">"First Player"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">p2_hw =</span> <span class="st">"Second Player"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"**Homeworld Sizes**"</span>), <span class="at">columns =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Homeworlds Openings Data"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">subtitle =</span> <span class="st">"Courtesy of Babamots"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">container.height =</span> <span class="st">"500px"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_row_striping</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 36 × 4
-   p1_wr     n p1_hw p2_hw
-   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
- 1 0.175    20 SS    SM   
- 2 0.2      10 SS    ML   
- 3 0.25      4 SS    LL   
- 4 0.292    12 SS    SL   
- 5 0.385    13 SL    MM   
- 6 0.393    28 ML    MM   
- 7 0.408    71 SM    MM   
- 8 0.409    22 ML    SS   
- 9 0.441    34 ML    LL   
-10 0.449   476 SL    SM   
-# ℹ 26 more rows</code></pre>
+<div class="cell-output-display">
+
+<div id="rhagwtegua" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
+<style>#rhagwtegua table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#rhagwtegua thead, #rhagwtegua tbody, #rhagwtegua tfoot, #rhagwtegua tr, #rhagwtegua td, #rhagwtegua th {
+  border-style: none;
+}
+
+#rhagwtegua p {
+  margin: 0;
+  padding: 0;
+}
+
+#rhagwtegua .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#rhagwtegua .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#rhagwtegua .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#rhagwtegua .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#rhagwtegua .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#rhagwtegua .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#rhagwtegua .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#rhagwtegua .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#rhagwtegua .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#rhagwtegua .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#rhagwtegua .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#rhagwtegua .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#rhagwtegua .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#rhagwtegua .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#rhagwtegua .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhagwtegua .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#rhagwtegua .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#rhagwtegua .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#rhagwtegua .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhagwtegua .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#rhagwtegua .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhagwtegua .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#rhagwtegua .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhagwtegua .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rhagwtegua .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhagwtegua .gt_left {
+  text-align: left;
+}
+
+#rhagwtegua .gt_center {
+  text-align: center;
+}
+
+#rhagwtegua .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#rhagwtegua .gt_font_normal {
+  font-weight: normal;
+}
+
+#rhagwtegua .gt_font_bold {
+  font-weight: bold;
+}
+
+#rhagwtegua .gt_font_italic {
+  font-style: italic;
+}
+
+#rhagwtegua .gt_super {
+  font-size: 65%;
+}
+
+#rhagwtegua .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#rhagwtegua .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#rhagwtegua .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#rhagwtegua .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#rhagwtegua .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#rhagwtegua .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#rhagwtegua .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="4" class="gt_heading gt_title gt_font_normal" style="">Homeworlds Openings Data</td>
+    </tr>
+    <tr class="gt_heading">
+      <td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Courtesy of Babamots</td>
+    </tr>
+    <tr class="gt_col_headings gt_spanner_row">
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="First Player Win Rate">First Player Win Rate</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="Number of Games">Number of Games</th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="<strong>Homeworld Sizes</strong>">
+        <span class="gt_column_spanner"><strong>Homeworld Sizes</strong></span>
+      </th>
+    </tr>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="First Player">First Player</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Second Player">Second Player</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.175</td>
+<td headers="n" class="gt_row gt_center">20</td>
+<td headers="p1_hw" class="gt_row gt_center">SS</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.200</td>
+<td headers="n" class="gt_row gt_center gt_striped">10</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">ML</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.250</td>
+<td headers="n" class="gt_row gt_center">4</td>
+<td headers="p1_hw" class="gt_row gt_center">SS</td>
+<td headers="p2_hw" class="gt_row gt_center">LL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.292</td>
+<td headers="n" class="gt_row gt_center gt_striped">12</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.385</td>
+<td headers="n" class="gt_row gt_center">13</td>
+<td headers="p1_hw" class="gt_row gt_center">SL</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.393</td>
+<td headers="n" class="gt_row gt_center gt_striped">28</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">ML</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">MM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.408</td>
+<td headers="n" class="gt_row gt_center">71</td>
+<td headers="p1_hw" class="gt_row gt_center">SM</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.409</td>
+<td headers="n" class="gt_row gt_center gt_striped">22</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">ML</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.441</td>
+<td headers="n" class="gt_row gt_center">34</td>
+<td headers="p1_hw" class="gt_row gt_center">ML</td>
+<td headers="p2_hw" class="gt_row gt_center">LL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.449</td>
+<td headers="n" class="gt_row gt_center gt_striped">476</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.472</td>
+<td headers="n" class="gt_row gt_center">724</td>
+<td headers="p1_hw" class="gt_row gt_center">ML</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.481</td>
+<td headers="n" class="gt_row gt_center gt_striped">27</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">LL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.486</td>
+<td headers="n" class="gt_row gt_center">590</td>
+<td headers="p1_hw" class="gt_row gt_center">SM</td>
+<td headers="p2_hw" class="gt_row gt_center">SL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.491</td>
+<td headers="n" class="gt_row gt_center gt_striped">53</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.495</td>
+<td headers="n" class="gt_row gt_center">92</td>
+<td headers="p1_hw" class="gt_row gt_center">LL</td>
+<td headers="p2_hw" class="gt_row gt_center">LL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.495</td>
+<td headers="n" class="gt_row gt_center gt_striped">813</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">ML</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.500</td>
+<td headers="n" class="gt_row gt_center">3</td>
+<td headers="p1_hw" class="gt_row gt_center">SS</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.502</td>
+<td headers="n" class="gt_row gt_center gt_striped">430</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">ML</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.510</td>
+<td headers="n" class="gt_row gt_center">52</td>
+<td headers="p1_hw" class="gt_row gt_center">SM</td>
+<td headers="p2_hw" class="gt_row gt_center">LL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.538</td>
+<td headers="n" class="gt_row gt_center gt_striped">398</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">ML</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.550</td>
+<td headers="n" class="gt_row gt_center">30</td>
+<td headers="p1_hw" class="gt_row gt_center">MM</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.571</td>
+<td headers="n" class="gt_row gt_center gt_striped">7</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.599</td>
+<td headers="n" class="gt_row gt_center">292</td>
+<td headers="p1_hw" class="gt_row gt_center">ML</td>
+<td headers="p2_hw" class="gt_row gt_center">ML</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.604</td>
+<td headers="n" class="gt_row gt_center gt_striped">130</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.625</td>
+<td headers="n" class="gt_row gt_center">8</td>
+<td headers="p1_hw" class="gt_row gt_center">MM</td>
+<td headers="p2_hw" class="gt_row gt_center">LL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.631</td>
+<td headers="n" class="gt_row gt_center gt_striped">84</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">ML</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.635</td>
+<td headers="n" class="gt_row gt_center">52</td>
+<td headers="p1_hw" class="gt_row gt_center">MM</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.643</td>
+<td headers="n" class="gt_row gt_center gt_striped">300</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.667</td>
+<td headers="n" class="gt_row gt_center">3</td>
+<td headers="p1_hw" class="gt_row gt_center">SM</td>
+<td headers="p2_hw" class="gt_row gt_center">SS</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.667</td>
+<td headers="n" class="gt_row gt_center gt_striped">6</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.667</td>
+<td headers="n" class="gt_row gt_center">6</td>
+<td headers="p1_hw" class="gt_row gt_center">MM</td>
+<td headers="p2_hw" class="gt_row gt_center">SS</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.679</td>
+<td headers="n" class="gt_row gt_center gt_striped">56</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">MM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">ML</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.723</td>
+<td headers="n" class="gt_row gt_center">47</td>
+<td headers="p1_hw" class="gt_row gt_center">LL</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.750</td>
+<td headers="n" class="gt_row gt_center gt_striped">20</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">MM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center">0.833</td>
+<td headers="n" class="gt_row gt_center">6</td>
+<td headers="p1_hw" class="gt_row gt_center">LL</td>
+<td headers="p2_hw" class="gt_row gt_center">SS</td></tr>
+    <tr><td headers="p1_wr" class="gt_row gt_center gt_striped">0.889</td>
+<td headers="n" class="gt_row gt_center gt_striped">9</td>
+<td headers="p1_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">MM</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
 </div>
 </div>
 <p>We’ll also create some helper vectors and functions that will be convenient later.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># helper vectors</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#c("SS", "SM", "SL", "MM", "ML", "LL") -&gt; hw_sizes</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"SM"</span>, <span class="st">"SL"</span>, <span class="st">"ML"</span>, <span class="st">"SS"</span>, <span class="st">"MM"</span>, <span class="st">"LL"</span>) <span class="ot">-&gt;</span> hw_sizes</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"micro"</span>, <span class="st">"small"</span>, <span class="st">"large"</span>) <span class="ot">-&gt;</span> universe_sizes</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># list the stars in a homeworld</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>(<span class="cf">function</span>(hw) {<span class="fu">unlist</span>(<span class="fu">strsplit</span>(<span class="fu">as.character</span>(hw), <span class="st">""</span>))}) <span class="ot">-&gt;</span> stars</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># determine the universe size</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>(<span class="cf">function</span>(hw1, hw2) {</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">case_when</span>(<span class="fu">length</span>(<span class="fu">intersect</span>(<span class="fu">stars</span>(hw1), <span class="fu">stars</span>(hw2))) <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"micro"</span>,</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>            <span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">c</span>(<span class="fu">stars</span>(hw1), <span class="fu">stars</span>(hw2)))) <span class="sc">&lt;=</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"small"</span>,</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>            T <span class="sc">~</span> <span class="st">"large"</span>)}) <span class="ot">-&gt;</span> universe_size</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># helper vectors</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#c("SS", "SM", "SL", "MM", "ML", "LL") -&gt; hw_sizes</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"SM"</span>, <span class="st">"SL"</span>, <span class="st">"ML"</span>, <span class="st">"SS"</span>, <span class="st">"MM"</span>, <span class="st">"LL"</span>) <span class="ot">-&gt;</span> hw_sizes</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"micro"</span>, <span class="st">"small"</span>, <span class="st">"large"</span>) <span class="ot">-&gt;</span> universe_sizes</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># list the stars in a homeworld</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>(<span class="cf">function</span>(hw) {<span class="fu">unlist</span>(<span class="fu">strsplit</span>(<span class="fu">as.character</span>(hw), <span class="st">""</span>))}) <span class="ot">-&gt;</span> stars</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># determine the universe size</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>(<span class="cf">function</span>(hw1, hw2) {</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">case_when</span>(<span class="fu">length</span>(<span class="fu">intersect</span>(<span class="fu">stars</span>(hw1), <span class="fu">stars</span>(hw2))) <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"micro"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>            <span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">c</span>(<span class="fu">stars</span>(hw1), <span class="fu">stars</span>(hw2)))) <span class="sc">&lt;=</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"small"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            T <span class="sc">~</span> <span class="st">"large"</span>)}) <span class="ot">-&gt;</span> universe_size</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="modelling-first-player-advantage" class="level2">
@@ -273,107 +852,710 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>raw_data <span class="sc">|&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(p1_hw, p2_hw), </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                \(x) <span class="fu">factor</span>(x, <span class="at">ordered =</span> T, <span class="at">levels =</span> hw_sizes))) <span class="sc">|&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p1_wins =</span> n<span class="sc">*</span>p1_wr,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">p2_wins =</span> n<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> p1_wr),</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>         <span class="co"># calculate a 90% credible interval from the posterior distribution</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_lower =</span> <span class="fu">qbeta</span>(<span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>), <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins)[<span class="dv">1</span>],</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_upper =</span> <span class="fu">qbeta</span>(<span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>), <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins)[<span class="dv">2</span>],</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>         <span class="co"># format the interval as text</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">formatted_ci =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> ci_lower),</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"-"</span>,</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                               <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> ci_upper),</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"%"</span>),</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>         <span class="co"># bold intervals that do not contain 50%</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_fontface =</span> <span class="fu">case_when</span>(<span class="sc">!</span><span class="fu">between</span>(<span class="fl">0.5</span>, ci_lower, ci_upper) <span class="sc">~</span> <span class="st">"bold"</span>,</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                                 T <span class="sc">~</span> <span class="st">"plain"</span>),</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>         <span class="at">universe_size =</span> <span class="fu">universe_size</span>(p1_hw, p2_hw),</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">universe_size =</span> <span class="fu">factor</span>(universe_size, <span class="at">ordered =</span> T, <span class="at">levels =</span> universe_sizes),</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">prob_fav =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbeta</span>(<span class="fl">0.5</span>, <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins),</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>         <span class="at">formatted_prob_fav =</span> <span class="fu">case_when</span>(</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>           prob_fav <span class="sc">&lt;</span> <span class="fl">0.005</span> <span class="sc">~</span> <span class="st">"&lt;1%"</span>,</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>           prob_fav <span class="sc">&lt;</span> <span class="fl">0.995</span> <span class="sc">~</span> <span class="fu">paste0</span>(<span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> prob_fav), <span class="st">"%"</span>),</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>           T <span class="sc">~</span> <span class="st">"&gt;99%"</span>),</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>         <span class="at">prob_fav_fontface =</span> <span class="fu">case_when</span>(<span class="fu">abs</span>(prob_fav <span class="sc">-</span> <span class="fl">0.5</span>) <span class="sc">&gt;</span> <span class="fl">0.45</span> <span class="sc">~</span> <span class="st">"bold"</span>, T <span class="sc">~</span> <span class="st">"plain"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(p1_hw, p2_hw) <span class="ot">-&gt;</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  homeworlds_openings</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>homeworlds_openings</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>raw_data <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(p1_hw, p2_hw), </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                \(x) <span class="fu">factor</span>(x, <span class="at">ordered =</span> T, <span class="at">levels =</span> hw_sizes))) <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p1_wins =</span> n<span class="sc">*</span>p1_wr,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">p2_wins =</span> n<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> p1_wr),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>         <span class="co"># calculate a 90% credible interval from the posterior distribution</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_lower =</span> <span class="fu">qbeta</span>(<span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>), <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins)[<span class="dv">1</span>],</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_upper =</span> <span class="fu">qbeta</span>(<span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>), <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins)[<span class="dv">2</span>],</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>         <span class="co"># format the interval as text</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">formatted_ci =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> ci_lower),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"-"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                               <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> ci_upper),</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"%"</span>),</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>         <span class="co"># bold intervals that do not contain 50%</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_fontface =</span> <span class="fu">case_when</span>(<span class="sc">!</span><span class="fu">between</span>(<span class="fl">0.5</span>, ci_lower, ci_upper) <span class="sc">~</span> <span class="st">"bold"</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                                 T <span class="sc">~</span> <span class="st">"plain"</span>),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>         <span class="at">universe_size =</span> <span class="fu">universe_size</span>(p1_hw, p2_hw),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">universe_size =</span> <span class="fu">factor</span>(universe_size, <span class="at">ordered =</span> T, <span class="at">levels =</span> universe_sizes),</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">prob_fav =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbeta</span>(<span class="fl">0.5</span>, <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins),</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>         <span class="at">formatted_prob_fav =</span> <span class="fu">case_when</span>(</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>           prob_fav <span class="sc">&lt;</span> <span class="fl">0.005</span> <span class="sc">~</span> <span class="st">"&lt;1%"</span>,</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>           prob_fav <span class="sc">&lt;</span> <span class="fl">0.995</span> <span class="sc">~</span> <span class="fu">paste0</span>(<span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> prob_fav), <span class="st">"%"</span>),</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>           T <span class="sc">~</span> <span class="st">"&gt;99%"</span>),</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>         <span class="at">prob_fav_fontface =</span> <span class="fu">case_when</span>(<span class="fu">abs</span>(prob_fav <span class="sc">-</span> <span class="fl">0.5</span>) <span class="sc">&gt;</span> <span class="fl">0.45</span> <span class="sc">~</span> <span class="st">"bold"</span>, T <span class="sc">~</span> <span class="st">"plain"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(p1_hw, p2_hw) <span class="ot">-&gt;</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  homeworlds_openings</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>homeworlds_openings <span class="sc">|&gt;</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(p1_hw, p2_hw, formatted_ci, prob_fav) <span class="sc">|&gt;</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">p1_hw =</span> <span class="st">"First Player"</span>,</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>             <span class="at">p2_hw =</span> <span class="st">"Second Player"</span>,</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>             <span class="at">formatted_ci =</span> <span class="fu">html</span>(<span class="st">"First Player Advantage&lt;br&gt;Credible Interval"</span>),</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>             <span class="at">prob_fav =</span> <span class="fu">html</span>(<span class="st">"Probability of&lt;br&gt;First Player Advantage"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"**Homeworld Sizes**"</span>), <span class="at">columns =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"First Player Advantage in Homeworlds Openings"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">container.height =</span> <span class="st">"500px"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_row_striping</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 36 × 14
-# Rowwise: 
-   p1_wr     n p1_hw p2_hw p1_wins p2_wins ci_lower ci_upper formatted_ci
-   &lt;dbl&gt; &lt;dbl&gt; &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;       
- 1 0.643   300 SM    SM     193.   107.       0.596    0.687 60-69%      
- 2 0.486   590 SM    SL     287.   303.       0.452    0.520 45-52%      
- 3 0.495   813 SM    ML     402.   411.       0.466    0.524 47-52%      
- 4 0.667     3 SM    SS       2.00   0.999    0.249    0.903 25-90%      
- 5 0.408    71 SM    MM      29.0   42.0      0.318    0.506 32-51%      
- 6 0.51     52 SM    LL      26.5   25.5      0.398    0.620 40-62%      
- 7 0.449   476 SL    SM     214.   262.       0.412    0.487 41-49%      
- 8 0.604   130 SL    SL      78.5   51.5      0.532    0.671 53-67%      
- 9 0.502   430 SL    ML     216.   214.       0.462    0.542 46-54%      
-10 0.667     6 SL    SS       4.00   2.00     0.342    0.871 34-87%      
-# ℹ 26 more rows
-# ℹ 5 more variables: ci_fontface &lt;chr&gt;, universe_size &lt;ord&gt;, prob_fav &lt;dbl&gt;,
-#   formatted_prob_fav &lt;chr&gt;, prob_fav_fontface &lt;chr&gt;</code></pre>
+<div class="cell-output-display">
+
+<div id="ykrppoawnn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
+<style>#ykrppoawnn table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ykrppoawnn thead, #ykrppoawnn tbody, #ykrppoawnn tfoot, #ykrppoawnn tr, #ykrppoawnn td, #ykrppoawnn th {
+  border-style: none;
+}
+
+#ykrppoawnn p {
+  margin: 0;
+  padding: 0;
+}
+
+#ykrppoawnn .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ykrppoawnn .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ykrppoawnn .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ykrppoawnn .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ykrppoawnn .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ykrppoawnn .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ykrppoawnn .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ykrppoawnn .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ykrppoawnn .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ykrppoawnn .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ykrppoawnn .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ykrppoawnn .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ykrppoawnn .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ykrppoawnn .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ykrppoawnn .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ykrppoawnn .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ykrppoawnn .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ykrppoawnn .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ykrppoawnn .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ykrppoawnn .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ykrppoawnn .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ykrppoawnn .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ykrppoawnn .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ykrppoawnn .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ykrppoawnn .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ykrppoawnn .gt_left {
+  text-align: left;
+}
+
+#ykrppoawnn .gt_center {
+  text-align: center;
+}
+
+#ykrppoawnn .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ykrppoawnn .gt_font_normal {
+  font-weight: normal;
+}
+
+#ykrppoawnn .gt_font_bold {
+  font-weight: bold;
+}
+
+#ykrppoawnn .gt_font_italic {
+  font-style: italic;
+}
+
+#ykrppoawnn .gt_super {
+  font-size: 65%;
+}
+
+#ykrppoawnn .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ykrppoawnn .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ykrppoawnn .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ykrppoawnn .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ykrppoawnn .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ykrppoawnn .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ykrppoawnn .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">First Player Advantage in Homeworlds Openings</td>
+    </tr>
+    
+    <tr class="gt_col_headings gt_spanner_row">
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="<strong>Homeworld Sizes</strong>">
+        <span class="gt_column_spanner"><strong>Homeworld Sizes</strong></span>
+      </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="First Player Advantage<br>Credible Interval">First Player Advantage<br>Credible Interval</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="Probability of<br>First Player Advantage">Probability of<br>First Player Advantage</th>
+    </tr>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="First Player">First Player</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Second Player">Second Player</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="p1_hw" class="gt_row gt_center">SM</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td>
+<td headers="formatted_ci" class="gt_row gt_center">60-69%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.999999680</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">45-52%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.248413661</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SM</td>
+<td headers="p2_hw" class="gt_row gt_center">ML</td>
+<td headers="formatted_ci" class="gt_row gt_center">47-52%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.387849078</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">25-90%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.687849323</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SM</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td>
+<td headers="formatted_ci" class="gt_row gt_center">32-51%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.061530777</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">40-62%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.556708384</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SL</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td>
+<td headers="formatted_ci" class="gt_row gt_center">41-49%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.013054745</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">53-67%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.991093430</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SL</td>
+<td headers="p2_hw" class="gt_row gt_center">ML</td>
+<td headers="formatted_ci" class="gt_row gt_center">46-54%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.533008043</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">34-87%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.773895167</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SL</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td>
+<td headers="formatted_ci" class="gt_row gt_center">21-61%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.212754245</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">33-63%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.423357565</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">ML</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td>
+<td headers="formatted_ci" class="gt_row gt_center">44-50%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.066035425</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">ML</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">50-58%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.935076177</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">ML</td>
+<td headers="p2_hw" class="gt_row gt_center">ML</td>
+<td headers="formatted_ci" class="gt_row gt_center">55-64%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.999647706</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">ML</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">26-58%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.202200438</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">ML</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td>
+<td headers="formatted_ci" class="gt_row gt_center">26-55%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.132786582</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">ML</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">31-58%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.249135577</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SS</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td>
+<td headers="formatted_ci" class="gt_row gt_center">8-36%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.001698437</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">14-53%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.081930335</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SS</td>
+<td headers="p2_hw" class="gt_row gt_center">ML</td>
+<td headers="formatted_ci" class="gt_row gt_center">8-47%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.032714844</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">29-81%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.635929076</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">SS</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td>
+<td headers="formatted_ci" class="gt_row gt_center">17-83%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.500000000</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">8-66%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.187500000</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">MM</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td>
+<td headers="formatted_ci" class="gt_row gt_center">52-73%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.973623861</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">MM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">56-87%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.986698151</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">MM</td>
+<td headers="p2_hw" class="gt_row gt_center">ML</td>
+<td headers="formatted_ci" class="gt_row gt_center">57-77%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.996318685</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">MM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">34-87%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.773895167</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">MM</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td>
+<td headers="formatted_ci" class="gt_row gt_center">40-69%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.704614834</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">MM</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">34-83%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.746093750</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">LL</td>
+<td headers="p2_hw" class="gt_row gt_center">SM</td>
+<td headers="formatted_ci" class="gt_row gt_center">60-81%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.998935554</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">38-60%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.448433249</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">LL</td>
+<td headers="p2_hw" class="gt_row gt_center">ML</td>
+<td headers="formatted_ci" class="gt_row gt_center">54-71%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.991765439</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">SS</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">48-95%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.937298892</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center">LL</td>
+<td headers="p2_hw" class="gt_row gt_center">MM</td>
+<td headers="formatted_ci" class="gt_row gt_center">61-96%</td>
+<td headers="prob_fav" class="gt_row gt_center">0.989278600</td></tr>
+    <tr><td headers="p1_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="p2_hw" class="gt_row gt_center gt_striped">LL</td>
+<td headers="formatted_ci" class="gt_row gt_center gt_striped">41-58%</td>
+<td headers="prob_fav" class="gt_row gt_center gt_striped">0.462032892</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
 </div>
 </div>
 </section>
 <section id="visualizing-first-player-advantage" class="level2">
 <h2 class="anchored" data-anchor-id="visualizing-first-player-advantage">Visualizing First Player Advantage</h2>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Credible Intervals</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Posterior Probability of First Player Advantage</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>homeworlds_openings <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1_hw, <span class="at">y =</span> p2_hw, <span class="at">fill =</span> p1_wr)) <span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add tiles coloured to indicate the observed first player win rate</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">width =</span> <span class="fl">0.8</span>, <span class="at">height =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add dots to indicate universe size</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> universe_size), </span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">x =</span> <span class="fl">0.3</span>, <span class="at">y =</span> <span class="fl">0.3</span>), </span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># trick to circle the universe size dots without a fill scale collision</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, </span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">21</span>, </span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="cn">NA</span>, </span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> <span class="st">"black"</span>, </span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">x =</span> <span class="fl">0.3</span>, <span class="at">y =</span> <span class="fl">0.3</span>)) <span class="sc">+</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add labels</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Homeworlds First Player Advantage by Opening"</span>,</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"First Player's Homeworld Sizes"</span>,</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Second Player's Homeworld Sizes"</span>,</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Observed First Player</span><span class="sc">\n</span><span class="st">Win Rate"</span>,</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">colour =</span> <span class="st">"Universe Size"</span>) <span class="sc">+</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># gradient scale for the tiles</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"red"</span>, </span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>                       <span class="at">mid =</span> <span class="st">"white"</span>, </span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">"blue"</span>, </span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>                       <span class="at">midpoint =</span> <span class="fl">0.5</span>,</span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>                       <span class="at">labels =</span> scales<span class="sc">::</span>percent,</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>                       <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># discrete scale for the universe size dots</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">micro =</span> <span class="st">"white"</span>, </span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">small =</span> <span class="st">"grey50"</span>, </span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">large =</span> <span class="st">"black"</span>)) <span class="sc">+</span> </span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_discrete</span>(<span class="at">limits =</span> rev) <span class="sc">+</span></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># put the win rate legend under the universe size legend</span></span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">colour =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">1</span>)) <span class="ot">-&gt;</span></span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>  plot</span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>plot <span class="sc">+</span></span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add formatted credible intervals as text</span></span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> formatted_ci, <span class="at">fontface =</span> ci_fontface)) <span class="sc">+</span></span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add subtitle</span></span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"90% Bayesian credible intervals with uniform priors"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>homeworlds_openings <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1_hw, <span class="at">y =</span> p2_hw, <span class="at">fill =</span> p1_wr)) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add tiles coloured to indicate the observed first player win rate</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">width =</span> <span class="fl">0.8</span>, <span class="at">height =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add dots to indicate universe size</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> universe_size), </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">x =</span> <span class="fl">0.3</span>, <span class="at">y =</span> <span class="fl">0.3</span>), </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># trick to circle the universe size dots without a fill scale collision</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">21</span>, </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="cn">NA</span>, </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> <span class="st">"black"</span>, </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">x =</span> <span class="fl">0.3</span>, <span class="at">y =</span> <span class="fl">0.3</span>)) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add labels</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Homeworlds First Player Advantage by Opening"</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"First Player's Homeworld Sizes"</span>,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Second Player's Homeworld Sizes"</span>,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Observed First Player</span><span class="sc">\n</span><span class="st">Win Rate"</span>,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">colour =</span> <span class="st">"Universe Size"</span>) <span class="sc">+</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># gradient scale for the tiles</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"red"</span>, </span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>                       <span class="at">mid =</span> <span class="st">"white"</span>, </span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">"blue"</span>, </span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>                       <span class="at">midpoint =</span> <span class="fl">0.5</span>,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>                       <span class="at">labels =</span> scales<span class="sc">::</span>percent,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>                       <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># discrete scale for the universe size dots</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">micro =</span> <span class="st">"white"</span>, </span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">small =</span> <span class="st">"grey50"</span>, </span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">large =</span> <span class="st">"black"</span>)) <span class="sc">+</span> </span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_discrete</span>(<span class="at">limits =</span> rev) <span class="sc">+</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># put the win rate legend under the universe size legend</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">colour =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">1</span>)) <span class="ot">-&gt;</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  plot</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>plot <span class="sc">+</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add formatted credible intervals as text</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> formatted_ci, <span class="at">fontface =</span> ci_fontface)) <span class="sc">+</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add subtitle</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"90% Bayesian credible intervals with uniform priors"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -388,16 +1570,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plot <span class="sc">+</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add posterior probability first player is favoured as text</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> formatted_prob_fav, <span class="at">fontface =</span> prob_fav_fontface)) <span class="sc">+</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add subtitle</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"Posterior probability first player is favoured"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plot <span class="sc">+</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add posterior probability first player is favoured as text</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> formatted_prob_fav, <span class="at">fontface =</span> prob_fav_fontface)) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add subtitle</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"Posterior probability first player is favoured"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="homeworlds_openings_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="homeworlds_openings_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="homeworlds_openings_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="homeworlds_openings_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -589,9 +1771,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -656,6 +1852,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -696,7 +1978,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","openEffect":"zoom"});</script>
 
 
 
