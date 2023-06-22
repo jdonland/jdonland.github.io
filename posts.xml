@@ -838,9 +838,6 @@ font-style: inherit;">-&gt;</span></span>
 </details>
 </div>
 </section>
-<section id="average-score" class="level2">
-<h2 class="anchored" data-anchor-id="average-score">Average Score</h2>
-</section>
 <section id="visualizing-wordle-scores" class="level2">
 <h2 class="anchored" data-anchor-id="visualizing-wordle-scores">Visualizing Wordle Scores</h2>
 <section id="line-chart-with-marginal-histogram" class="level3">
@@ -892,9 +889,9 @@ font-style: inherit;">limits =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">c</span>(<span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">0.5</span>, <span class="fl" style="color: #AD0000;
+font-style: inherit;">0.75</span>, <span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">7.5</span>), <span class="at" style="color: #657422;
+font-style: inherit;">7.25</span>), <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">breaks =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -936,37 +933,12 @@ background-color: null;
 font-style: inherit;">"Score"</span>,</span>
 <span id="cb2-9">       <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">caption =</span> <span class="fu" style="color: #4758AB;
+font-style: inherit;">caption =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">paste0</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"My average score: "</span>, </span>
-<span id="cb2-10">                        <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">round</span>(mean_score, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>) ,</span>
-<span id="cb2-11">                        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">Average score with optimal play: 3.42"</span>)) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"Dashed line indicates mean score with optimal play."</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb2-12">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">geom_hline</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">yintercept =</span> mean_score, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"dashed"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> </span>
-<span id="cb2-13">  <span class="fu" style="color: #4758AB;
+<span id="cb2-10">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_hline</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -976,27 +948,36 @@ font-style: inherit;">3.4201</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"dotted"</span>)) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"dashed"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb2-11">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">panel.grid.minor =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_blank</span>())) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb2-14">  <span class="fu" style="color: #4758AB;
+<span id="cb2-12">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggMarginal</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"histogram"</span>, </span>
-<span id="cb2-15">             <span class="at" style="color: #657422;
+<span id="cb2-13">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">margins =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"y"</span>, </span>
-<span id="cb2-16">             <span class="at" style="color: #657422;
+<span id="cb2-14">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"#6AAA64"</span>,</span>
-<span id="cb2-17">             <span class="at" style="color: #657422;
+<span id="cb2-15">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">yparams =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
