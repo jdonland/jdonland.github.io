@@ -822,12 +822,8 @@ font-style: inherit;">"Posterior probability first player is favoured"</span>)</
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Unless you spent 2022 on the moon, you’ve heard of <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a>. Here I present the results of my word-guessery.</p>
 </section>
-<section id="visualizing-wordle-scores" class="level2">
-<h2 class="anchored" data-anchor-id="visualizing-wordle-scores">Visualizing Wordle Scores</h2>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" aria-controls="tabset-1-1" aria-selected="true">Histogram</a></li><li class="nav-item"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" aria-controls="tabset-1-2" aria-selected="false">Line Chart</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" aria-labelledby="tabset-1-1-tab">
+<section id="reading-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="reading-the-data">Reading the Data</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -835,136 +831,24 @@ font-style: inherit;">"Posterior probability first player is favoured"</span>)</
 background-color: null;
 font-style: inherit;">read_csv</span>(<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"wordle_scores.csv"</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"wordle_scores.csv"</span>) <span class="ot" style="color: #003B4F;
 background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb1-2">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">ggplot</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x =</span> score)) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb1-3">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">geom_bar</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"black"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#EBEBEB"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb1-4">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">geom_text</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">label =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">paste0</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">round</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span>(..count..)<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(..count..)), <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"%"</span>)), </span>
-<span id="cb1-5">            <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">stat =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"count"</span>, </span>
-<span id="cb1-6">            <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">vjust =</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1.25</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb1-7">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">scale_x_continuous</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">limits =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">c</span>(<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.5</span>,<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">7.5</span>), <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">breaks =</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">7</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">labels =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">6</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"≥7"</span>)) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb1-8">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Distribution of Wordle Scores"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Score"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Count"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span>   </span>
-<span id="cb1-9">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">theme_clean</span>()</span></code></pre></div>
+font-style: inherit;">-&gt;</span></span>
+<span id="cb1-2">  wordle_scores</span></code></pre></div>
 </details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="wordle_scores_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://jdonland.github.io/posts/wordle_scores/wordle_scores_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
-</figure>
 </div>
-</div>
-</div>
-</div>
-<div id="tabset-1-2" class="tab-pane" aria-labelledby="tabset-1-2-tab">
+</section>
+<section id="average-score" class="level2">
+<h2 class="anchored" data-anchor-id="average-score">Average Score</h2>
+</section>
+<section id="visualizing-wordle-scores" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-wordle-scores">Visualizing Wordle Scores</h2>
+<section id="line-chart-with-marginal-histogram" class="level3">
+<h3 class="anchored" data-anchor-id="line-chart-with-marginal-histogram">Line Chart with Marginal Histogram</h3>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">read_csv</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"wordle_scores.csv"</span>) <span class="sc" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">(wordle_scores <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
 <span id="cb2-2">  <span class="fu" style="color: #4758AB;
@@ -1002,11 +886,11 @@ font-style: inherit;">scale_y_continuous</span>(<span class="at" style="color: #
 background-color: null;
 font-style: inherit;">limits =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
+font-style: inherit;">c</span>(<span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+font-style: inherit;">0.5</span>, <span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">7</span>), <span class="at" style="color: #657422;
+font-style: inherit;">7.5</span>), <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">breaks =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1035,7 +919,7 @@ font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Wordle Scores Over Time"</span>, </span>
+font-style: inherit;">"Wordle Score Trend and Histogram"</span>, </span>
 <span id="cb2-7">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
@@ -1088,24 +972,50 @@ font-style: inherit;">3.4201</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"dotted"</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"dotted"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">+</span></span>
+font-style: inherit;">|&gt;</span></span>
 <span id="cb2-14">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_clean</span>()</span></code></pre></div>
+font-style: inherit;">ggMarginal</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"histogram"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">margins =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"y"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">yparams =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">bins =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">center =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">binwidth =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#EBEBEB"</span>))</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="wordle_scores_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://jdonland.github.io/posts/wordle_scores/wordle_scores_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="wordle_scores_files/figure-html/line-chart-histogram-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://jdonland.github.io/posts/wordle_scores/wordle_scores_files/figure-html/line-chart-histogram-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
@@ -1408,7 +1318,7 @@ font-style: inherit;">3</span>)</span></code></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="crossword_times_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://jdonland.github.io/posts/crossword_times/crossword_times_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="crossword_times_files/figure-html/scatterplot-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://jdonland.github.io/posts/crossword_times/crossword_times_files/figure-html/scatterplot-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1428,7 +1338,7 @@ font-style: inherit;">geom_boxplot</span>()</span></code></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="crossword_times_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://jdonland.github.io/posts/crossword_times/crossword_times_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="crossword_times_files/figure-html/boxplots-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://jdonland.github.io/posts/crossword_times/crossword_times_files/figure-html/boxplots-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1716,7 +1626,10 @@ font-style: inherit;"># store the results</span></span>
 <h2 class="anchored" data-anchor-id="average-score">Average Score</h2>
 <p>An average score of around $25,000 is considered appropriate for prospective contestants.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">coryat_scores <span class="sc" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># calculate my mean score</span></span>
+<span id="cb2-2">coryat_scores <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1730,7 +1643,7 @@ font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">round</span>()</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 19351</code></pre>
+<pre><code>[1] 19308</code></pre>
 </div>
 </div>
 <p>Clearly, I have some studying to do before I consider trying to compete on the show.</p>
@@ -1791,7 +1704,11 @@ font-style: inherit;">labels =</span> scales<span class="sc" style="color: #5E5E
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">label_dollar</span>()) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">label_dollar</span>(), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n.breaks =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb4-6">  <span class="fu" style="color: #4758AB;
@@ -1811,7 +1728,7 @@ font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Cumulative Distribution of Coryat Scores"</span>, </span>
+font-style: inherit;">"Coryat Score Cumulative Distribution"</span>, </span>
 <span id="cb4-8">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
@@ -1889,7 +1806,11 @@ font-style: inherit;">labels=</span>scales<span class="sc" style="color: #5E5E5E
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">label_dollar</span>()) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">label_dollar</span>(), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n.breaks =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb5-7">  <span class="fu" style="color: #4758AB;
@@ -1911,7 +1832,7 @@ font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Coryat Score Trend"</span>, <span class="at" style="color: #657422;
+font-style: inherit;">"Coryat Score Trend and Histogram"</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
 background-color: null;
