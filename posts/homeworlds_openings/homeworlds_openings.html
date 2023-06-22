@@ -197,40 +197,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"raw_data.csv"</span>) <span class="ot">-&gt;</span> raw_data</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>raw_data <span class="sc">|&gt;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">p1_wr =</span> <span class="st">"First Player Win Rate"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">n =</span> <span class="st">"Number of Games"</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">p1_hw =</span> <span class="st">"First Player"</span>,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">p2_hw =</span> <span class="st">"Second Player"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"**Homeworld Sizes**"</span>), <span class="at">columns =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Homeworlds Openings Data"</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">subtitle =</span> <span class="st">"Courtesy of Babamots"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">container.height =</span> <span class="st">"500px"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_row_striping</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"homeworlds_openings.csv"</span>) <span class="ot">-&gt;</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  homeworlds_openings</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>homeworlds_openings <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">p1_wr =</span> <span class="st">"First Player Win Rate"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">n =</span> <span class="st">"Number of Games"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">p1_hw =</span> <span class="st">"First Player"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">p2_hw =</span> <span class="st">"Second Player"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"**Homeworld Sizes**"</span>), <span class="at">columns =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Homeworlds Openings Data"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">subtitle =</span> <span class="st">"Source: Scraped from BGA by Babamots"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">container.height =</span> <span class="st">"500px"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_row_striping</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 
-<div id="rhagwtegua" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
-<style>#rhagwtegua table {
+<div id="gzggvwacku" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
+<style>#gzggvwacku table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rhagwtegua thead, #rhagwtegua tbody, #rhagwtegua tfoot, #rhagwtegua tr, #rhagwtegua td, #rhagwtegua th {
+#gzggvwacku thead, #gzggvwacku tbody, #gzggvwacku tfoot, #gzggvwacku tr, #gzggvwacku td, #gzggvwacku th {
   border-style: none;
 }
 
-#rhagwtegua p {
+#gzggvwacku p {
   margin: 0;
   padding: 0;
 }
 
-#rhagwtegua .gt_table {
+#gzggvwacku .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -256,12 +257,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#rhagwtegua .gt_caption {
+#gzggvwacku .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rhagwtegua .gt_title {
+#gzggvwacku .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -273,7 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#rhagwtegua .gt_subtitle {
+#gzggvwacku .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -285,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#rhagwtegua .gt_heading {
+#gzggvwacku .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -297,13 +298,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#rhagwtegua .gt_bottom_border {
+#gzggvwacku .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rhagwtegua .gt_col_headings {
+#gzggvwacku .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -318,7 +319,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#rhagwtegua .gt_col_heading {
+#gzggvwacku .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -338,7 +339,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#rhagwtegua .gt_column_spanner_outer {
+#gzggvwacku .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -350,15 +351,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#rhagwtegua .gt_column_spanner_outer:first-child {
+#gzggvwacku .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rhagwtegua .gt_column_spanner_outer:last-child {
+#gzggvwacku .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rhagwtegua .gt_column_spanner {
+#gzggvwacku .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -370,11 +371,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#rhagwtegua .gt_spanner_row {
+#gzggvwacku .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rhagwtegua .gt_group_heading {
+#gzggvwacku .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -400,7 +401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#rhagwtegua .gt_empty_group_heading {
+#gzggvwacku .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -415,15 +416,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#rhagwtegua .gt_from_md > :first-child {
+#gzggvwacku .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rhagwtegua .gt_from_md > :last-child {
+#gzggvwacku .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rhagwtegua .gt_row {
+#gzggvwacku .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -442,7 +443,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#rhagwtegua .gt_stub {
+#gzggvwacku .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -455,7 +456,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#rhagwtegua .gt_stub_row_group {
+#gzggvwacku .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -469,15 +470,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#rhagwtegua .gt_row_group_first td {
+#gzggvwacku .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rhagwtegua .gt_row_group_first th {
+#gzggvwacku .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rhagwtegua .gt_summary_row {
+#gzggvwacku .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -487,16 +488,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#rhagwtegua .gt_first_summary_row {
+#gzggvwacku .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rhagwtegua .gt_first_summary_row.thick {
+#gzggvwacku .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rhagwtegua .gt_last_summary_row {
+#gzggvwacku .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -506,7 +507,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#rhagwtegua .gt_grand_summary_row {
+#gzggvwacku .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -516,7 +517,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#rhagwtegua .gt_first_grand_summary_row {
+#gzggvwacku .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -526,7 +527,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#rhagwtegua .gt_last_grand_summary_row_top {
+#gzggvwacku .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -536,11 +537,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#rhagwtegua .gt_striped {
+#gzggvwacku .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rhagwtegua .gt_table_body {
+#gzggvwacku .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -549,7 +550,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#rhagwtegua .gt_footnotes {
+#gzggvwacku .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -563,7 +564,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#rhagwtegua .gt_footnote {
+#gzggvwacku .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -572,7 +573,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#rhagwtegua .gt_sourcenotes {
+#gzggvwacku .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -586,7 +587,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#rhagwtegua .gt_sourcenote {
+#gzggvwacku .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -594,63 +595,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#rhagwtegua .gt_left {
+#gzggvwacku .gt_left {
   text-align: left;
 }
 
-#rhagwtegua .gt_center {
+#gzggvwacku .gt_center {
   text-align: center;
 }
 
-#rhagwtegua .gt_right {
+#gzggvwacku .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rhagwtegua .gt_font_normal {
+#gzggvwacku .gt_font_normal {
   font-weight: normal;
 }
 
-#rhagwtegua .gt_font_bold {
+#gzggvwacku .gt_font_bold {
   font-weight: bold;
 }
 
-#rhagwtegua .gt_font_italic {
+#gzggvwacku .gt_font_italic {
   font-style: italic;
 }
 
-#rhagwtegua .gt_super {
+#gzggvwacku .gt_super {
   font-size: 65%;
 }
 
-#rhagwtegua .gt_footnote_marks {
+#gzggvwacku .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rhagwtegua .gt_asterisk {
+#gzggvwacku .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rhagwtegua .gt_indent_1 {
+#gzggvwacku .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rhagwtegua .gt_indent_2 {
+#gzggvwacku .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rhagwtegua .gt_indent_3 {
+#gzggvwacku .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rhagwtegua .gt_indent_4 {
+#gzggvwacku .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rhagwtegua .gt_indent_5 {
+#gzggvwacku .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -660,7 +661,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <td colspan="4" class="gt_heading gt_title gt_font_normal" style="">Homeworlds Openings Data</td>
     </tr>
     <tr class="gt_heading">
-      <td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Courtesy of Babamots</td>
+      <td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Source: Scraped from BGA by Babamots</td>
     </tr>
     <tr class="gt_col_headings gt_spanner_row">
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="First Player Win Rate">First Player Win Rate</th>
@@ -852,7 +853,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>raw_data <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>homeworlds_openings <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(p1_hw, p2_hw), </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                \(x) <span class="fu">factor</span>(x, <span class="at">ordered =</span> T, <span class="at">levels =</span> hw_sizes))) <span class="sc">|&gt;</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
@@ -870,48 +871,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">ci_fontface =</span> <span class="fu">case_when</span>(<span class="sc">!</span><span class="fu">between</span>(<span class="fl">0.5</span>, ci_lower, ci_upper) <span class="sc">~</span> <span class="st">"bold"</span>,</span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                                 T <span class="sc">~</span> <span class="st">"plain"</span>),</span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>         <span class="at">universe_size =</span> <span class="fu">universe_size</span>(p1_hw, p2_hw),</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">universe_size =</span> <span class="fu">factor</span>(universe_size, <span class="at">ordered =</span> T, <span class="at">levels =</span> universe_sizes),</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">prob_fav =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbeta</span>(<span class="fl">0.5</span>, <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins),</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>         <span class="at">formatted_prob_fav =</span> <span class="fu">case_when</span>(</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>           prob_fav <span class="sc">&lt;</span> <span class="fl">0.005</span> <span class="sc">~</span> <span class="st">"&lt;1%"</span>,</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>           prob_fav <span class="sc">&lt;</span> <span class="fl">0.995</span> <span class="sc">~</span> <span class="fu">paste0</span>(<span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> prob_fav), <span class="st">"%"</span>),</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>           T <span class="sc">~</span> <span class="st">"&gt;99%"</span>),</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>         <span class="at">prob_fav_fontface =</span> <span class="fu">case_when</span>(<span class="fu">abs</span>(prob_fav <span class="sc">-</span> <span class="fl">0.5</span>) <span class="sc">&gt;</span> <span class="fl">0.45</span> <span class="sc">~</span> <span class="st">"bold"</span>, T <span class="sc">~</span> <span class="st">"plain"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(p1_hw, p2_hw) <span class="ot">-&gt;</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  homeworlds_openings</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>homeworlds_openings <span class="sc">|&gt;</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(p1_hw, p2_hw, formatted_ci, prob_fav) <span class="sc">|&gt;</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">p1_hw =</span> <span class="st">"First Player"</span>,</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>             <span class="at">p2_hw =</span> <span class="st">"Second Player"</span>,</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>             <span class="at">formatted_ci =</span> <span class="fu">html</span>(<span class="st">"First Player Advantage&lt;br&gt;Credible Interval"</span>),</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>             <span class="at">prob_fav =</span> <span class="fu">html</span>(<span class="st">"Probability of&lt;br&gt;First Player Advantage"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"**Homeworld Sizes**"</span>), <span class="at">columns =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"First Player Advantage in Homeworlds Openings"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">container.height =</span> <span class="st">"500px"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_row_striping</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">universe_size =</span> <span class="fu">factor</span>(universe_size, </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>                                <span class="at">ordered =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>                                <span class="at">levels =</span> universe_sizes),</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>         <span class="at">prob_fav =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbeta</span>(<span class="fl">0.5</span>, <span class="dv">1</span> <span class="sc">+</span> p1_wins, <span class="dv">1</span> <span class="sc">+</span> p2_wins),</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>         <span class="at">formatted_prob_fav =</span> <span class="fu">case_when</span>(</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>           prob_fav <span class="sc">&lt;</span> <span class="fl">0.005</span> <span class="sc">~</span> <span class="st">"&lt;1%"</span>,</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>           prob_fav <span class="sc">&lt;</span> <span class="fl">0.995</span> <span class="sc">~</span> <span class="fu">paste0</span>(<span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> prob_fav), <span class="st">"%"</span>),</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>           T <span class="sc">~</span> <span class="st">"&gt;99%"</span>),</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>         <span class="at">prob_fav_fontface =</span> <span class="fu">case_when</span>(<span class="fu">abs</span>(prob_fav <span class="sc">-</span> <span class="fl">0.5</span>) <span class="sc">&gt;</span> <span class="fl">0.45</span> <span class="sc">~</span> <span class="st">"bold"</span>, </span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>                                       T <span class="sc">~</span> <span class="st">"plain"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(p1_hw, p2_hw) <span class="ot">-&gt;</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  visualization_data</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>visualization_data <span class="sc">|&gt;</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(p1_hw, p2_hw, formatted_ci, prob_fav) <span class="sc">|&gt;</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">p1_hw =</span> <span class="st">"First Player"</span>,</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>             <span class="at">p2_hw =</span> <span class="st">"Second Player"</span>,</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>             <span class="at">formatted_ci =</span> <span class="fu">html</span>(<span class="st">"First Player Advantage&lt;br&gt;90% Credible Interval"</span>),</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>             <span class="at">prob_fav =</span> <span class="fu">html</span>(<span class="st">"Probability of&lt;br&gt;First Player Advantage"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"**Homeworld Sizes**"</span>), <span class="at">columns =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"center"</span>, <span class="at">columns =</span> <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"First Player Advantage in Homeworlds Openings"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">container.height =</span> <span class="st">"500px"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_row_striping</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 
-<div id="ykrppoawnn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
-<style>#ykrppoawnn table {
+<div id="rrjfsffzad" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
+<style>#rrjfsffzad table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ykrppoawnn thead, #ykrppoawnn tbody, #ykrppoawnn tfoot, #ykrppoawnn tr, #ykrppoawnn td, #ykrppoawnn th {
+#rrjfsffzad thead, #rrjfsffzad tbody, #rrjfsffzad tfoot, #rrjfsffzad tr, #rrjfsffzad td, #rrjfsffzad th {
   border-style: none;
 }
 
-#ykrppoawnn p {
+#rrjfsffzad p {
   margin: 0;
   padding: 0;
 }
 
-#ykrppoawnn .gt_table {
+#rrjfsffzad .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -937,12 +941,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#ykrppoawnn .gt_caption {
+#rrjfsffzad .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ykrppoawnn .gt_title {
+#rrjfsffzad .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -954,7 +958,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#ykrppoawnn .gt_subtitle {
+#rrjfsffzad .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -966,7 +970,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#ykrppoawnn .gt_heading {
+#rrjfsffzad .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -978,13 +982,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ykrppoawnn .gt_bottom_border {
+#rrjfsffzad .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ykrppoawnn .gt_col_headings {
+#rrjfsffzad .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -999,7 +1003,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ykrppoawnn .gt_col_heading {
+#rrjfsffzad .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1019,7 +1023,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ykrppoawnn .gt_column_spanner_outer {
+#rrjfsffzad .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1031,15 +1035,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#ykrppoawnn .gt_column_spanner_outer:first-child {
+#rrjfsffzad .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ykrppoawnn .gt_column_spanner_outer:last-child {
+#rrjfsffzad .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ykrppoawnn .gt_column_spanner {
+#rrjfsffzad .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1051,11 +1055,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#ykrppoawnn .gt_spanner_row {
+#rrjfsffzad .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ykrppoawnn .gt_group_heading {
+#rrjfsffzad .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1081,7 +1085,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#ykrppoawnn .gt_empty_group_heading {
+#rrjfsffzad .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1096,15 +1100,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#ykrppoawnn .gt_from_md > :first-child {
+#rrjfsffzad .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ykrppoawnn .gt_from_md > :last-child {
+#rrjfsffzad .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ykrppoawnn .gt_row {
+#rrjfsffzad .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1123,7 +1127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ykrppoawnn .gt_stub {
+#rrjfsffzad .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1136,7 +1140,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ykrppoawnn .gt_stub_row_group {
+#rrjfsffzad .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1150,15 +1154,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#ykrppoawnn .gt_row_group_first td {
+#rrjfsffzad .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ykrppoawnn .gt_row_group_first th {
+#rrjfsffzad .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ykrppoawnn .gt_summary_row {
+#rrjfsffzad .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1168,16 +1172,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ykrppoawnn .gt_first_summary_row {
+#rrjfsffzad .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ykrppoawnn .gt_first_summary_row.thick {
+#rrjfsffzad .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ykrppoawnn .gt_last_summary_row {
+#rrjfsffzad .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1187,7 +1191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ykrppoawnn .gt_grand_summary_row {
+#rrjfsffzad .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1197,7 +1201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ykrppoawnn .gt_first_grand_summary_row {
+#rrjfsffzad .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1207,7 +1211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#ykrppoawnn .gt_last_grand_summary_row_top {
+#rrjfsffzad .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1217,11 +1221,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ykrppoawnn .gt_striped {
+#rrjfsffzad .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ykrppoawnn .gt_table_body {
+#rrjfsffzad .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1230,7 +1234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ykrppoawnn .gt_footnotes {
+#rrjfsffzad .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1244,7 +1248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ykrppoawnn .gt_footnote {
+#rrjfsffzad .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1253,7 +1257,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ykrppoawnn .gt_sourcenotes {
+#rrjfsffzad .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1267,7 +1271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ykrppoawnn .gt_sourcenote {
+#rrjfsffzad .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1275,63 +1279,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ykrppoawnn .gt_left {
+#rrjfsffzad .gt_left {
   text-align: left;
 }
 
-#ykrppoawnn .gt_center {
+#rrjfsffzad .gt_center {
   text-align: center;
 }
 
-#ykrppoawnn .gt_right {
+#rrjfsffzad .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ykrppoawnn .gt_font_normal {
+#rrjfsffzad .gt_font_normal {
   font-weight: normal;
 }
 
-#ykrppoawnn .gt_font_bold {
+#rrjfsffzad .gt_font_bold {
   font-weight: bold;
 }
 
-#ykrppoawnn .gt_font_italic {
+#rrjfsffzad .gt_font_italic {
   font-style: italic;
 }
 
-#ykrppoawnn .gt_super {
+#rrjfsffzad .gt_super {
   font-size: 65%;
 }
 
-#ykrppoawnn .gt_footnote_marks {
+#rrjfsffzad .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ykrppoawnn .gt_asterisk {
+#rrjfsffzad .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ykrppoawnn .gt_indent_1 {
+#rrjfsffzad .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ykrppoawnn .gt_indent_2 {
+#rrjfsffzad .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ykrppoawnn .gt_indent_3 {
+#rrjfsffzad .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ykrppoawnn .gt_indent_4 {
+#rrjfsffzad .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ykrppoawnn .gt_indent_5 {
+#rrjfsffzad .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1345,7 +1349,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="<strong>Homeworld Sizes</strong>">
         <span class="gt_column_spanner"><strong>Homeworld Sizes</strong></span>
       </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="First Player Advantage<br>Credible Interval">First Player Advantage<br>Credible Interval</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="First Player Advantage<br>90% Credible Interval">First Player Advantage<br>90% Credible Interval</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="Probability of<br>First Player Advantage">Probability of<br>First Player Advantage</th>
     </tr>
     <tr class="gt_col_headings">
@@ -1515,52 +1519,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>homeworlds_openings <span class="sc">|&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> p1_hw, <span class="at">y =</span> p2_hw, <span class="at">fill =</span> p1_wr)) <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add tiles coloured to indicate the observed first player win rate</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">width =</span> <span class="fl">0.8</span>, <span class="at">height =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add dots to indicate universe size</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> universe_size), </span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">x =</span> <span class="fl">0.3</span>, <span class="at">y =</span> <span class="fl">0.3</span>), </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># trick to circle the universe size dots without a fill scale collision</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, </span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">21</span>, </span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="cn">NA</span>, </span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> <span class="st">"black"</span>, </span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">x =</span> <span class="fl">0.3</span>, <span class="at">y =</span> <span class="fl">0.3</span>)) <span class="sc">+</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add labels</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Homeworlds First Player Advantage by Opening"</span>,</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"First Player's Homeworld Sizes"</span>,</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Second Player's Homeworld Sizes"</span>,</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Observed First Player</span><span class="sc">\n</span><span class="st">Win Rate"</span>,</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">colour =</span> <span class="st">"Universe Size"</span>) <span class="sc">+</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># gradient scale for the tiles</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"red"</span>, </span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>                       <span class="at">mid =</span> <span class="st">"white"</span>, </span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">"blue"</span>, </span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>                       <span class="at">midpoint =</span> <span class="fl">0.5</span>,</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>                       <span class="at">labels =</span> scales<span class="sc">::</span>percent,</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>                       <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># discrete scale for the universe size dots</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">micro =</span> <span class="st">"white"</span>, </span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">small =</span> <span class="st">"grey50"</span>, </span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">large =</span> <span class="st">"black"</span>)) <span class="sc">+</span> </span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_discrete</span>(<span class="at">limits =</span> rev) <span class="sc">+</span></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># put the win rate legend under the universe size legend</span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>visualization_data <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># underlying plot</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># aesthetic mapping</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> p1_hw, <span class="at">y =</span> p2_hw, <span class="at">fill =</span> p1_wr) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># visual elements representing the data</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## add tiles coloured to indicate the observed first player win rate</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">width =</span> <span class="fl">0.8</span>, <span class="at">height =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="do">## add dots to indicate universe size</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> universe_size), </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">x =</span> <span class="fl">0.3</span>, <span class="at">y =</span> <span class="fl">0.3</span>), </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="do">## trick to circle the universe size dots without a fill scale collision</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, </span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">21</span>, </span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="cn">NA</span>, </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> <span class="st">"black"</span>, </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">x =</span> <span class="fl">0.3</span>, <span class="at">y =</span> <span class="fl">0.3</span>)) <span class="sc">+</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scales</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="do">## gradient scale for the tiles</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>() <span class="sc">+</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="do">## discrete scale for the universe size dots</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_discrete</span>(<span class="at">limits =</span> rev) <span class="sc">+</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Homeworlds First Player Advantage by Opening"</span>,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"First Player's Homeworld Sizes"</span>,</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Second Player's Homeworld Sizes"</span>,</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Observed First Player</span><span class="sc">\n</span><span class="st">Win Rate"</span>,</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">colour =</span> <span class="st">"Universe Size"</span>) <span class="sc">+</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theming</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  <span class="do">## put the win rate legend under the universe size legend</span></span>
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">colour =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">1</span>)) <span class="ot">-&gt;</span></span>
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  plot</span>
 <span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>plot <span class="sc">+</span></span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add formatted credible intervals as text</span></span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> formatted_ci, <span class="at">fontface =</span> ci_fontface)) <span class="sc">+</span></span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add subtitle</span></span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"90% Bayesian credible intervals with uniform priors"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="co"># version labelled with credible intervals</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>plot <span class="sc">+</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add formatted credible intervals as text</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> formatted_ci, <span class="at">fontface =</span> ci_fontface)) <span class="sc">+</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add subtitle</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"90% Bayesian credible intervals with uniform priors"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="homeworlds_openings_files/figure-html/graphic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="homeworlds_openings_files/figure-html/graphic-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="homeworlds_openings_files/figure-html/credible-intervals-graphic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="homeworlds_openings_files/figure-html/credible-intervals-graphic-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1570,16 +1575,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plot <span class="sc">+</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add posterior probability first player is favoured as text</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> formatted_prob_fav, <span class="at">fontface =</span> prob_fav_fontface)) <span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add subtitle</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"Posterior probability first player is favoured"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># version labelled with posterior probability of first player advantage</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plot <span class="sc">+</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add posterior probability first player is favoured as text</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> formatted_prob_fav, <span class="at">fontface =</span> prob_fav_fontface)) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># add subtitle</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"Posterior probability first player is favoured"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="homeworlds_openings_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="homeworlds_openings_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="homeworlds_openings_files/figure-html/posterior-probability-graphic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="homeworlds_openings_files/figure-html/posterior-probability-graphic-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1978,7 +1984,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":true});</script>
 
 
 
