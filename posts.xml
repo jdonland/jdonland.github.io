@@ -2283,9 +2283,10 @@ font-style: inherit;">limits =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">c</span>(<span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">0.75</span>, <span class="fl" style="color: #AD0000;
+font-style: inherit;">7.25</span>, <span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">7.25</span>), <span class="at" style="color: #657422;
+font-style: inherit;">0.75</span>), </span>
+<span id="cb2-11">                     <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">breaks =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2293,7 +2294,8 @@ font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">7</span>, <span class="at" style="color: #657422;
+font-style: inherit;">7</span>, </span>
+<span id="cb2-12">                     <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">labels =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2305,10 +2307,15 @@ font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">6</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"≥7"</span>)) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"≥7"</span>), </span>
+<span id="cb2-13">                     <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">trans =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"reverse"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb2-11">  <span class="fu" style="color: #4758AB;
+<span id="cb2-14">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_x_continuous</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2325,47 +2332,47 @@ background-color: null;
 font-style: inherit;">0</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb2-12">  <span class="co" style="color: #5E5E5E;
+<span id="cb2-15">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># labels</span></span>
-<span id="cb2-13">  <span class="fu" style="color: #4758AB;
+<span id="cb2-16">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"My Wordle Scores"</span>,</span>
-<span id="cb2-14">       <span class="at" style="color: #657422;
+<span id="cb2-17">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">subtitle =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Trend and distribution"</span>,</span>
-<span id="cb2-15">       <span class="at" style="color: #657422;
+<span id="cb2-18">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Puzzle Number"</span>, </span>
-<span id="cb2-16">       <span class="at" style="color: #657422;
+<span id="cb2-19">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Score"</span>,</span>
-<span id="cb2-17">       <span class="at" style="color: #657422;
+<span id="cb2-20">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">caption =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Dashed black line indicates average score with optimal play."</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb2-18">  <span class="co" style="color: #5E5E5E;
+<span id="cb2-21">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># theming</span></span>
-<span id="cb2-19">  <span class="fu" style="color: #4758AB;
+<span id="cb2-22">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_bw</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb2-20">  <span class="fu" style="color: #4758AB;
+<span id="cb2-23">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2374,27 +2381,27 @@ background-color: null;
 font-style: inherit;">element_blank</span>())) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb2-21">  <span class="co" style="color: #5E5E5E;
+<span id="cb2-24">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># add the marginal histogram</span></span>
-<span id="cb2-22">  <span class="fu" style="color: #4758AB;
+<span id="cb2-25">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggMarginal</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"histogram"</span>, </span>
-<span id="cb2-23">             <span class="at" style="color: #657422;
+<span id="cb2-26">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">margins =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"y"</span>, </span>
-<span id="cb2-24">             <span class="at" style="color: #657422;
+<span id="cb2-27">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"#008000"</span>,</span>
-<span id="cb2-25">             <span class="at" style="color: #657422;
+<span id="cb2-28">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">yparams =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
