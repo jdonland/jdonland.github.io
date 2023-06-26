@@ -2182,7 +2182,7 @@ font-style: inherit;">"Posterior probability first player is favoured"</span>)</
 <p>Unless you spent 2022 on the moon, you’ve heard of <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a>, but just in case you haven’t here’s <a href="https://www.protocol.com/bulletins/josh-wardle-wordle-gdc-2022">the story</a>. You get up to six guesses to identify a secret five-letter word. The game tells you whether each of the letters of your guesses appears in the word and, if they do, whether they’re in the correct place.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="game_in_progress.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A typical game of Wordle in progress."><img src="https://jdonland.github.io/posts/wordle_scores/game_in_progress.png" class="img-fluid figure-img" width="500"></a></p>
+<p><a href="game_in_progress.png" class="lightbox" title="A typical game of Wordle in progress." data-gallery="quarto-lightbox-gallery-1"><img src="https://jdonland.github.io/posts/wordle_scores/game_in_progress.png" class="img-fluid figure-img" width="500"></a></p>
 <figcaption class="figure-caption">A typical game of Wordle in progress.</figcaption>
 </figure>
 </div>
@@ -2251,7 +2251,7 @@ font-style: inherit;">"My Wordle Scores: Summary Statistics"</span>)</span></cod
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">score</td>
-<td style="text-align: left;">172</td>
+<td style="text-align: left;">173</td>
 <td style="text-align: left;">4.1</td>
 <td style="text-align: left;">1.1</td>
 <td style="text-align: left;">2</td>
@@ -2441,8 +2441,6 @@ font-style: inherit;">"Wordle Scores from Twitter: Summary Statistics"</span>)</
 </div>
 <p>We should be careful when thinking about mean scores, since we’ve coded the “X” representing a failed puzzle as a 7. If we filter those out, we get the average number of guesses per <em>solved</em> puzzle.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">wordle_scores <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -2477,26 +2475,25 @@ font-style: inherit;">|&gt;</span></span>
 <span id="cb3-6">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">gt</span>()</span></code></pre></div>
-</details>
 <div class="cell-output-display">
 
-<div id="ytnspwbesl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ytnspwbesl table {
+<div id="xxyubjkwpt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xxyubjkwpt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ytnspwbesl thead, #ytnspwbesl tbody, #ytnspwbesl tfoot, #ytnspwbesl tr, #ytnspwbesl td, #ytnspwbesl th {
+#xxyubjkwpt thead, #xxyubjkwpt tbody, #xxyubjkwpt tfoot, #xxyubjkwpt tr, #xxyubjkwpt td, #xxyubjkwpt th {
   border-style: none;
 }
 
-#ytnspwbesl p {
+#xxyubjkwpt p {
   margin: 0;
   padding: 0;
 }
 
-#ytnspwbesl .gt_table {
+#xxyubjkwpt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2522,12 +2519,12 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#ytnspwbesl .gt_caption {
+#xxyubjkwpt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ytnspwbesl .gt_title {
+#xxyubjkwpt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2539,7 +2536,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#ytnspwbesl .gt_subtitle {
+#xxyubjkwpt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2551,7 +2548,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-top-width: 0;
 }
 
-#ytnspwbesl .gt_heading {
+#xxyubjkwpt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2563,13 +2560,13 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#ytnspwbesl .gt_bottom_border {
+#xxyubjkwpt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ytnspwbesl .gt_col_headings {
+#xxyubjkwpt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2584,7 +2581,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#ytnspwbesl .gt_col_heading {
+#xxyubjkwpt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2604,7 +2601,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#ytnspwbesl .gt_column_spanner_outer {
+#xxyubjkwpt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2616,15 +2613,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 4px;
 }
 
-#ytnspwbesl .gt_column_spanner_outer:first-child {
+#xxyubjkwpt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ytnspwbesl .gt_column_spanner_outer:last-child {
+#xxyubjkwpt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ytnspwbesl .gt_column_spanner {
+#xxyubjkwpt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2636,11 +2633,11 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   width: 100%;
 }
 
-#ytnspwbesl .gt_spanner_row {
+#xxyubjkwpt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ytnspwbesl .gt_group_heading {
+#xxyubjkwpt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2666,7 +2663,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   text-align: left;
 }
 
-#ytnspwbesl .gt_empty_group_heading {
+#xxyubjkwpt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2681,15 +2678,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   vertical-align: middle;
 }
 
-#ytnspwbesl .gt_from_md > :first-child {
+#xxyubjkwpt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ytnspwbesl .gt_from_md > :last-child {
+#xxyubjkwpt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ytnspwbesl .gt_row {
+#xxyubjkwpt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2708,7 +2705,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#ytnspwbesl .gt_stub {
+#xxyubjkwpt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2721,7 +2718,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#ytnspwbesl .gt_stub_row_group {
+#xxyubjkwpt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2735,15 +2732,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   vertical-align: top;
 }
 
-#ytnspwbesl .gt_row_group_first td {
+#xxyubjkwpt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ytnspwbesl .gt_row_group_first th {
+#xxyubjkwpt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ytnspwbesl .gt_summary_row {
+#xxyubjkwpt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2753,16 +2750,16 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#ytnspwbesl .gt_first_summary_row {
+#xxyubjkwpt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ytnspwbesl .gt_first_summary_row.thick {
+#xxyubjkwpt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ytnspwbesl .gt_last_summary_row {
+#xxyubjkwpt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2772,7 +2769,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#ytnspwbesl .gt_grand_summary_row {
+#xxyubjkwpt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2782,7 +2779,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#ytnspwbesl .gt_first_grand_summary_row {
+#xxyubjkwpt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2792,7 +2789,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#ytnspwbesl .gt_last_grand_summary_row_top {
+#xxyubjkwpt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2802,11 +2799,11 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#ytnspwbesl .gt_striped {
+#xxyubjkwpt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ytnspwbesl .gt_table_body {
+#xxyubjkwpt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2815,7 +2812,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#ytnspwbesl .gt_footnotes {
+#xxyubjkwpt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2829,7 +2826,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#ytnspwbesl .gt_footnote {
+#xxyubjkwpt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2838,7 +2835,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#ytnspwbesl .gt_sourcenotes {
+#xxyubjkwpt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2852,7 +2849,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#ytnspwbesl .gt_sourcenote {
+#xxyubjkwpt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2860,63 +2857,63 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#ytnspwbesl .gt_left {
+#xxyubjkwpt .gt_left {
   text-align: left;
 }
 
-#ytnspwbesl .gt_center {
+#xxyubjkwpt .gt_center {
   text-align: center;
 }
 
-#ytnspwbesl .gt_right {
+#xxyubjkwpt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ytnspwbesl .gt_font_normal {
+#xxyubjkwpt .gt_font_normal {
   font-weight: normal;
 }
 
-#ytnspwbesl .gt_font_bold {
+#xxyubjkwpt .gt_font_bold {
   font-weight: bold;
 }
 
-#ytnspwbesl .gt_font_italic {
+#xxyubjkwpt .gt_font_italic {
   font-style: italic;
 }
 
-#ytnspwbesl .gt_super {
+#xxyubjkwpt .gt_super {
   font-size: 65%;
 }
 
-#ytnspwbesl .gt_footnote_marks {
+#xxyubjkwpt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ytnspwbesl .gt_asterisk {
+#xxyubjkwpt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ytnspwbesl .gt_indent_1 {
+#xxyubjkwpt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ytnspwbesl .gt_indent_2 {
+#xxyubjkwpt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ytnspwbesl .gt_indent_3 {
+#xxyubjkwpt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ytnspwbesl .gt_indent_4 {
+#xxyubjkwpt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ytnspwbesl .gt_indent_5 {
+#xxyubjkwpt .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2930,7 +2927,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   </thead>
   <tbody class="gt_table_body">
     <tr><td headers="source" class="gt_row gt_left">me</td>
-<td headers="filtered_mean" class="gt_row gt_right">4.076023</td></tr>
+<td headers="filtered_mean" class="gt_row gt_right">4.075581</td></tr>
     <tr><td headers="source" class="gt_row gt_left">twitter</td>
 <td headers="filtered_mean" class="gt_row gt_right">4.085486</td></tr>
   </tbody>
@@ -3249,7 +3246,7 @@ font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"neither"</span>,</span>
+font-style: inherit;">"n"</span>,</span>
 <span id="cb5-15">                          source <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">==</span> <span class="st" style="color: #20794D;
@@ -3258,14 +3255,14 @@ font-style: inherit;">"me"</span> <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"left"</span>,</span>
+font-style: inherit;">"l"</span>,</span>
 <span id="cb5-16">                          <span class="cn" style="color: #8f5902;
 background-color: null;
 font-style: inherit;">TRUE</span> <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"right"</span>)) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"r"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
 <span id="cb5-17">  <span class="fu" style="color: #4758AB;
@@ -3277,7 +3274,7 @@ font-style: inherit;">r_label_colour  =</span> <span class="fu" style="color: #4
 background-color: null;
 font-style: inherit;">case_match</span>(axis, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"right"</span> <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"r"</span> <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -3288,7 +3285,7 @@ font-style: inherit;">l_label_colour  =</span> <span class="fu" style="color: #4
 background-color: null;
 font-style: inherit;">case_match</span>(axis, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"left"</span>  <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"l"</span>  <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -3299,7 +3296,7 @@ font-style: inherit;">r_tick_linetype =</span> <span class="fu" style="color: #4
 background-color: null;
 font-style: inherit;">case_match</span>(axis, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"right"</span> <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"r"</span> <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -3314,7 +3311,7 @@ font-style: inherit;">l_tick_linetype =</span> <span class="fu" style="color: #4
 background-color: null;
 font-style: inherit;">case_match</span>(axis, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"left"</span>  <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"l"</span>  <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span> <span class="st" style="color: #20794D;
 background-color: null;

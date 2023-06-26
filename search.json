@@ -18,7 +18,7 @@
     "href": "links.html",
     "title": "Links",
     "section": "",
-    "text": "Here are some things on the Web that I’ve found interesting, useful, or impactful.\n\n🎨 Art\n\nThis Man Has Spent 30 Years Mapping the Imaginary Land of Ukrania\nRagna Róbertsdóttir\nSelected Works by M. C. Escher\nSelected Piet Mondrian Paintings\nHenry Darger\nGerd Arntz Web Archive\nFrançois Avril\n104 Mesmerizing Mosque Ceilings That Highlight The Wonders Of Islamic Architecture\nTauba Aurebach - Works\n\n\n\n🏙️ Cities\n\n50 Reasons Why Everyone Should Want More Walkable Streets\nWhat I Mean When I Say ‘Ban Cars’\nThe People Who Hate People\nStroads are Ugly, Expensive, and Dangerous (and they’re everywhere)\nWhat’s a Gadgetbahn?\nShifting gears: why US cities are falling out of love with the parking lot\nEvery NIMBY’s Speech at a Public Hearing\nThere’s No Such Thing as Affordable Housing\nIvan Illich on Cars\nWhy Canadian cities just generally suck\nThe housing theory of everything\nWhy Is Japanese Zoning More Liberal Than US Zoning?\n\n\n\n🛍 Consumer Goods\n\nHow To Judge Quality In Clothing\nShaving Is Too Expensive. Also the world is out to get you\nThe Kitchen Starter Kit: Essential Tools for Every Cook\nYour stuff is actually worse now\nLet’s talk about margins\n\n\n\n🏛️ Culture & Politics\n\nCanada is fake\nIs Culture Snobbery The New Resistance?\nA decade of sore winners\nWhat Moneyball-for-Everything Has Done to American Culture\nWe Live In The Age of The Bullshitter\nThe age of average\n\n\n\n📊 Data Science\n\nData Science: Reality Doesn’t Meet Expectations\nThe weirdest paradox in statistics (and machine learning)\nReview of Probability Theory: The Logic of Science\nThe Good Research Code Handbook\nThinking Clearly About Correlations and Causation: Graphical Causal Models for Observational Data\nCommon statistical tests are linear models (or: how to teach stats)\nGoodbye, Data Science\nProbability that a number is prime\nPhilosophy of Probability\nWhy Business Data Science Irritates Me\nSimpson’s paradox all the way down\nPhilosophy of Statistics\nOn Moving from Statistics to Machine Learning, the Final Stage of Grief\nNever Test for Normality\nStats can’t make modeling decisions\nMost Data Work Seems Fundamentally Worthless\n1 dataset 100 visualizations\nThe Shortcomings of Standardized Regression Coefficients\nWhat Is Probability?\nCan you have confidence in a confidence interval?\nDirected Acyclic Graphs\nSimulating confounders, colliders and mediators\nHow People Actually Lie With Charts\n\n\n\n🎲 Games\n\nhangman is a weird game\nAngry Birds, Farmville and Other Hyperaddictive ‘Stupid Games’\n1000 Blank White Cards Wiki\nZendo—Design History\n\n\n\n🗣️ Language\n\nUtopian for Beginners\nThe Interpreter\nNo Béarla\nWhat Consonant Clusters are Possible?\nWhy is English so weirdly different from other languages?\nWhy language might be the optimal self-regulating system\nIPA: Symbols of Power?\nThe vowel space\n\n\n\n📚 Learning\n\nHow To Understand Things\nHow to Self-Study Math\nEffectively self-studying over the Internet\n\n\n\n💵 Money\n\nThere’s Nothing to Do Except Gamble\nThe Singular Pursuit of Comrade Bezos\nFinding and Funding a Good Life\nThe Homeownership Society Was a Mistake\nYes, Crypto is ALL a Scam\nMaybe Treating Housing as an Investment was a Colossal, Society-Shattering Mistake\nOn the Phenomenon of Bullshit Jobs\nLine Goes Up – The Problem With NFTs\nPricing Money\n\n\n\n🎵 Music\n\nBlood on the Frets\nWhy 12 notes to the Octave?\nA Guide to Imaginational Anthem’s 10 Volumes of Stirring American Primitive Guitar\n‘A Real Little Taste Of Heaven’: Visionary Guitarist Jack Rose In 11 Songs\nThe Ballad of Geeshie and Elvie\n\n\n\n🤔 Philosophy\n\nWhose Idea Is It, Anyway?\nIt’s all bullsh*t! On the relationship between pseudoscience and pseudophilosophy\nThe Normative Status of Logic\nUse and Mention\nZhuangzi And That Bloody Butterfly\n\n\n\n📖 Poetry & Short Fiction\n\nMMAcevedo\nSecond Person, Present Tense\nWant Song\nAutopsy\nMiscreant Insects\nTwo-Headed Calf\nThe Revolution Will Not Be Televised\nAll of the Words on a Bottle of Rolling Rock Beer in a Different Order\nTo Explicate Meaning\nKansas, 4 A.M.\n\n\n\n⏰ Productivity\n\nProductivity 101: An Introduction to The Pomodoro Technique\nHow a Lazy Bitch like me learned to be Productive\nThe Case Against Collaboration\nEffective Spaced Repetition\nFinish your projects\n\n\n\n🧠 Psychology\n\nWhy aren’t smart people happier?\n\n\n\n👔 Style\n\nHow To Develop Good Taste, Pt. 1\nHow To Develop Good Taste, Pt. 2\nHow To Develop Good Taste, Pt. 3\nArticles of Interest - American Ivy\nThe Most Stylish Man Alive\n\n\n\n💾 Technology\n\nWhy Nothing Works Anymore\nSocialism’s DIY Computer\nHow to Take Back the Internet by Choosing the Internet Less Traveled\nThe Old Internet Shows Signs of Quietly Coming Back\nWhy I Still Use RSS\n12ft Ladder\nTinyWow\nWhy We Should Have Markdown Rendered Websites\nThe Bitter Lesson\nThe False Promise of ChatGPT\nWe need more of Richard Stallman, not less"
+    "text": "This Man Has Spent 30 Years Mapping the Imaginary Land of Ukrania\nRagna Róbertsdóttir\nSelected Works by M. C. Escher\nSelected Piet Mondrian Paintings\nHenry Darger\nGerd Arntz Web Archive\nFrançois Avril\n104 Mesmerizing Mosque Ceilings That Highlight The Wonders Of Islamic Architecture\nTauba Aurebach - Works"
   },
   {
     "objectID": "posts.html",
@@ -459,7 +459,7 @@
     "href": "posts/wordle_scores/wordle_scores.html#data",
     "title": "Wordle Scores",
     "section": "Data",
-    "text": "Data\n\nMy Scores\n\nread_csv(\"wordle_scores.csv\", col_types = \"nn-\") |&gt;\n  mutate(source = \"me\") -&gt;\n  wordle_scores\n\nwordle_scores |&gt;\n  select(-source, -puzzle) |&gt;\n  st(title = \"My Wordle Scores: Summary Statistics\")\n\n\nMy Wordle Scores: Summary Statistics\n\n\nVariable\nN\nMean\nStd. Dev.\nMin\nPctl. 25\nPctl. 75\nMax\n\n\n\n\nscore\n172\n4.1\n1.1\n2\n3\n5\n7\n\n\n\n\n\n\n\n\n\nScores from Twitter\nI found two data sets of Wordle-related tweets on Kaggle: this one and this other one.\nWe can combine them, taking care to remove duplicates. There’s surely some bias here, since people are more likely to share their scores on social media when they do well.\n\nread_csv(\"wordle_tweets_1.zip\", col_types = \"nc--c\") |&gt;\n  rename(puzzle = wordle_id) -&gt;\n  twitter_scores_1\n\nread_csv(\"wordle_tweets_2.zip\", col_types = \"nc-c------\") |&gt;\n  rename(puzzle = WordleID, tweet_id = ID, tweet_text = Text) -&gt;\n  twitter_scores_2\n\ntwitter_scores_1 |&gt;\n  rbind(twitter_scores_2) |&gt;\n  mutate(score = str_extract(tweet_text, \"Wordle [0-9]{3} ([1-6X])/6\", 1),\n         score = as.numeric(case_match(score, \"X\" ~ \"7\", .default = score)),\n         source = \"twitter\",\n         .keep = \"unused\") |&gt;\n  drop_na() |&gt;\n  distinct(tweet_id, .keep_all = TRUE) |&gt;\n  select(-tweet_id) -&gt;\n  twitter_scores\n\nrm(twitter_scores_1, twitter_scores_2)\n\ntwitter_scores |&gt; \n  select(-source, -puzzle) |&gt;\n  st(title = \"Wordle Scores from Twitter: Summary Statistics\")\n\n\nWordle Scores from Twitter: Summary Statistics\n\n\nVariable\nN\nMean\nStd. Dev.\nMin\nPctl. 25\nPctl. 75\nMax\n\n\n\n\nscore\n3090345\n4.1\n1.2\n1\n3\n5\n7\n\n\n\n\n\n\n\nWe should be careful when thinking about mean scores, since we’ve coded the “X” representing a failed puzzle as a 7. If we filter those out, we get the average number of guesses per solved puzzle.\n\n\nCode\nwordle_scores |&gt;\n  full_join(twitter_scores) |&gt;\n  filter(score &lt; 7) |&gt;\n  group_by(source) |&gt;\n  summarize(filtered_mean = mean(score)) |&gt;\n  gt()\n\n\n\n\n\n\n  \n    \n    \n      source\n      filtered_mean\n    \n  \n  \n    me\n4.076023\n    twitter\n4.085486\n  \n  \n  \n\n\n\n\nLooks like I’m slightly better on average than the people who tweeted their scores, not accounting for any failed puzzles."
+    "text": "Data\n\nMy Scores\n\nread_csv(\"wordle_scores.csv\", col_types = \"nn-\") |&gt;\n  mutate(source = \"me\") -&gt;\n  wordle_scores\n\nwordle_scores |&gt;\n  select(-source, -puzzle) |&gt;\n  st(title = \"My Wordle Scores: Summary Statistics\")\n\n\nMy Wordle Scores: Summary Statistics\n\n\nVariable\nN\nMean\nStd. Dev.\nMin\nPctl. 25\nPctl. 75\nMax\n\n\n\n\nscore\n173\n4.1\n1.1\n2\n3\n5\n7\n\n\n\n\n\n\n\n\n\nScores from Twitter\nI found two data sets of Wordle-related tweets on Kaggle: this one and this other one.\nWe can combine them, taking care to remove duplicates. There’s surely some bias here, since people are more likely to share their scores on social media when they do well.\n\nread_csv(\"wordle_tweets_1.zip\", col_types = \"nc--c\") |&gt;\n  rename(puzzle = wordle_id) -&gt;\n  twitter_scores_1\n\nread_csv(\"wordle_tweets_2.zip\", col_types = \"nc-c------\") |&gt;\n  rename(puzzle = WordleID, tweet_id = ID, tweet_text = Text) -&gt;\n  twitter_scores_2\n\ntwitter_scores_1 |&gt;\n  rbind(twitter_scores_2) |&gt;\n  mutate(score = str_extract(tweet_text, \"Wordle [0-9]{3} ([1-6X])/6\", 1),\n         score = as.numeric(case_match(score, \"X\" ~ \"7\", .default = score)),\n         source = \"twitter\",\n         .keep = \"unused\") |&gt;\n  drop_na() |&gt;\n  distinct(tweet_id, .keep_all = TRUE) |&gt;\n  select(-tweet_id) -&gt;\n  twitter_scores\n\nrm(twitter_scores_1, twitter_scores_2)\n\ntwitter_scores |&gt; \n  select(-source, -puzzle) |&gt;\n  st(title = \"Wordle Scores from Twitter: Summary Statistics\")\n\n\nWordle Scores from Twitter: Summary Statistics\n\n\nVariable\nN\nMean\nStd. Dev.\nMin\nPctl. 25\nPctl. 75\nMax\n\n\n\n\nscore\n3090345\n4.1\n1.2\n1\n3\n5\n7\n\n\n\n\n\n\n\nWe should be careful when thinking about mean scores, since we’ve coded the “X” representing a failed puzzle as a 7. If we filter those out, we get the average number of guesses per solved puzzle.\n\nwordle_scores |&gt;\n  full_join(twitter_scores) |&gt;\n  filter(score &lt; 7) |&gt;\n  group_by(source) |&gt;\n  summarize(filtered_mean = mean(score)) |&gt;\n  gt()\n\n\n\n\n\n  \n    \n    \n      source\n      filtered_mean\n    \n  \n  \n    me\n4.075581\n    twitter\n4.085486\n  \n  \n  \n\n\n\n\nLooks like I’m slightly better on average than the people who tweeted their scores, not accounting for any failed puzzles."
   },
   {
     "objectID": "posts/wordle_scores/wordle_scores.html#observations",
@@ -480,6 +480,118 @@
     "href": "posts/wordle_scores/wordle_scores.html#visualisation",
     "title": "Wordle Scores",
     "section": "Visualisation",
-    "text": "Visualisation\nFirst let’s make one those those trend-and-distribution charts that I love so much. See the post about my Jeopardy! Coryat scores for another one.\nFor a more detailed comparison against the scores from Twitter, we’ll look at the cumulative distributions.\n\nMy Scores: Line Chart and HistogramComparison with Twitter: Cumulative Distributions\n\n\n\n\nCode\n# main plot\n(wordle_scores |&gt;\n  ggplot(aes(x = puzzle, y = score)) +\n  # visual elements representing the data\n  geom_point(colour = \"#008000\") +\n  geom_line(colour = \"#008000\", linetype = \"dotted\") +\n  geom_smooth(colour = \"#7AD151\", linetype = \"dashed\") +\n  # scales\n  scale_y_continuous(limits = c(7.25, 0.75), \n                     breaks = 1:7, \n                     labels = c(1:6, \"X\"), \n                     trans = \"reverse\") +\n  scale_x_continuous(n.breaks = 9, expand = c(0, 0)) +\n  # labels\n  labs(title = \"My Wordle Scores\",\n       subtitle = \"Trend and distribution\",\n       x = \"Puzzle Number\", \n       y = \"Score\") +\n  # theming\n  theme_bw() +\n  theme(panel.grid.minor = element_blank())) |&gt;\n  # add the marginal histogram\n  ggMarginal(type = \"histogram\", \n             margins = \"y\", \n             fill = \"#008000\",\n             yparams = list(bins = 7, center = 0, binwidth = 1))\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\n# combine the scores from twitter with my own\nwordle_scores |&gt;\n  full_join(twitter_scores) |&gt;\n  # count the occurences of each possible combination of source and score\n  group_by(source, score) |&gt;\n  count() |&gt;\n  ungroup() |&gt;\n  complete(source, score, fill = list(n = 0)) |&gt;\n  # get the cumulative percentiles for each source\n  arrange(source, score) |&gt;\n  group_by(source) |&gt;\n  mutate(percentile = cumsum(n)/sum(n)) |&gt;\n  # add some helper columns for evil secondary axis trickery later\n  mutate(axis = case_when(percentile == 1 ~ \"neither\",\n                          source == \"me\" ~ \"left\",\n                          TRUE ~ \"right\")) |&gt;\n  mutate(\n    r_label_colour  = case_match(axis, \"right\" ~ \"grey30\"),\n    l_label_colour  = case_match(axis, \"left\"  ~ \"grey30\"),\n    r_tick_linetype = case_match(axis, \"right\" ~ \"solid\", .default = \"blank\"),\n    l_tick_linetype = case_match(axis, \"left\"  ~ \"solid\", .default = \"blank\")) -&gt; \n  # need to save this dataframe so we can refer to it within the ggplot call\n  temp\n\ntemp |&gt;\n  ggplot() +\n  aes(x = score, y = percentile, colour = source) +\n  # visual elements representing the data\n  geom_line(linetype = \"dotted\") +\n  geom_point(size = 3) +\n  # scales\n  scale_x_continuous(breaks = 1:7, \n                     labels = c(1:6, \"X\"),\n                     expand = c(0, 0)) +\n  ## evil secondary axis trickery part one\n  scale_y_continuous(breaks = temp$percentile,\n                     labels = scales::label_percent(),\n                     limits = c(0, 1),\n                     expand = c(0, 0),\n                     sec.axis = dup_axis()) +\n  scale_colour_viridis(discrete = TRUE, end = 0.85) +\n  # labels\n  labs(y = \"\", \n       x = \"Score\", \n       title = \"My Wordle Scores vs Twitter\", \n       subtitle = \"Cumulative distributions\") +\n  # theming\n  theme_bw() +\n  ## evil secondary axis trickery part two\n  theme(panel.grid.minor   = element_blank(),\n        axis.text.y.right  = element_text(colour = temp$r_label_colour),\n        axis.text.y.left   = element_text(colour = temp$l_label_colour),\n        axis.ticks.y.right = element_line(linetype = temp$r_tick_linetype),\n        axis.ticks.y.left  = element_line(linetype = temp$l_tick_linetype))"
+    "text": "Visualisation\nFirst let’s make one those those trend-and-distribution charts that I love so much. See the post about my Jeopardy! Coryat scores for another one.\nFor a more detailed comparison against the scores from Twitter, we’ll look at the cumulative distributions.\n\nMy Scores: Line Chart and HistogramComparison with Twitter: Cumulative Distributions\n\n\n\n\nCode\n# main plot\n(wordle_scores |&gt;\n  ggplot(aes(x = puzzle, y = score)) +\n  # visual elements representing the data\n  geom_point(colour = \"#008000\") +\n  geom_line(colour = \"#008000\", linetype = \"dotted\") +\n  geom_smooth(colour = \"#7AD151\", linetype = \"dashed\") +\n  # scales\n  scale_y_continuous(limits = c(7.25, 0.75), \n                     breaks = 1:7, \n                     labels = c(1:6, \"X\"), \n                     trans = \"reverse\") +\n  scale_x_continuous(n.breaks = 9, expand = c(0, 0)) +\n  # labels\n  labs(title = \"My Wordle Scores\",\n       subtitle = \"Trend and distribution\",\n       x = \"Puzzle Number\", \n       y = \"Score\") +\n  # theming\n  theme_bw() +\n  theme(panel.grid.minor = element_blank())) |&gt;\n  # add the marginal histogram\n  ggMarginal(type = \"histogram\", \n             margins = \"y\", \n             fill = \"#008000\",\n             yparams = list(bins = 7, center = 0, binwidth = 1))\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\n# combine the scores from twitter with my own\nwordle_scores |&gt;\n  full_join(twitter_scores) |&gt;\n  # count the occurences of each possible combination of source and score\n  group_by(source, score) |&gt;\n  count() |&gt;\n  ungroup() |&gt;\n  complete(source, score, fill = list(n = 0)) |&gt;\n  # get the cumulative percentiles for each source\n  arrange(source, score) |&gt;\n  group_by(source) |&gt;\n  mutate(percentile = cumsum(n)/sum(n)) |&gt;\n  # add some helper columns for evil secondary axis trickery later\n  mutate(axis = case_when(percentile == 1 ~ \"n\",\n                          source == \"me\" ~ \"l\",\n                          TRUE ~ \"r\")) |&gt;\n  mutate(\n    r_label_colour  = case_match(axis, \"r\" ~ \"grey30\"),\n    l_label_colour  = case_match(axis, \"l\"  ~ \"grey30\"),\n    r_tick_linetype = case_match(axis, \"r\" ~ \"solid\", .default = \"blank\"),\n    l_tick_linetype = case_match(axis, \"l\"  ~ \"solid\", .default = \"blank\")) -&gt; \n  # need to save this dataframe so we can refer to it within the ggplot call\n  temp\n\ntemp |&gt;\n  ggplot() +\n  aes(x = score, y = percentile, colour = source) +\n  # visual elements representing the data\n  geom_line(linetype = \"dotted\") +\n  geom_point(size = 3) +\n  # scales\n  scale_x_continuous(breaks = 1:7, \n                     labels = c(1:6, \"X\"),\n                     expand = c(0, 0)) +\n  ## evil secondary axis trickery part one\n  scale_y_continuous(breaks = temp$percentile,\n                     labels = scales::label_percent(),\n                     limits = c(0, 1),\n                     expand = c(0, 0),\n                     sec.axis = dup_axis()) +\n  scale_colour_viridis(discrete = TRUE, end = 0.85) +\n  # labels\n  labs(y = \"\", \n       x = \"Score\", \n       title = \"My Wordle Scores vs Twitter\", \n       subtitle = \"Cumulative distributions\") +\n  # theming\n  theme_bw() +\n  ## evil secondary axis trickery part two\n  theme(panel.grid.minor   = element_blank(),\n        axis.text.y.right  = element_text(colour = temp$r_label_colour),\n        axis.text.y.left   = element_text(colour = temp$l_label_colour),\n        axis.ticks.y.right = element_line(linetype = temp$r_tick_linetype),\n        axis.ticks.y.left  = element_line(linetype = temp$l_tick_linetype))"
+  },
+  {
+    "objectID": "links.html#art",
+    "href": "links.html#art",
+    "title": "Links",
+    "section": "",
+    "text": "This Man Has Spent 30 Years Mapping the Imaginary Land of Ukrania\nRagna Róbertsdóttir\nSelected Works by M. C. Escher\nSelected Piet Mondrian Paintings\nHenry Darger\nGerd Arntz Web Archive\nFrançois Avril\n104 Mesmerizing Mosque Ceilings That Highlight The Wonders Of Islamic Architecture\nTauba Aurebach - Works"
+  },
+  {
+    "objectID": "links.html#cities",
+    "href": "links.html#cities",
+    "title": "Links",
+    "section": "Cities 🏙️",
+    "text": "Cities 🏙️\n\n50 Reasons Why Everyone Should Want More Walkable Streets\nWhat I Mean When I Say ‘Ban Cars’\nThe People Who Hate People\nStroads are Ugly, Expensive, and Dangerous (and they’re everywhere)\nWhat’s a Gadgetbahn?\nShifting gears: why US cities are falling out of love with the parking lot\nEvery NIMBY’s Speech at a Public Hearing\nThere’s No Such Thing as Affordable Housing\nIvan Illich on Cars\nWhy Canadian cities just generally suck\nThe housing theory of everything\nWhy Is Japanese Zoning More Liberal Than US Zoning?"
+  },
+  {
+    "objectID": "links.html#consumer-goods",
+    "href": "links.html#consumer-goods",
+    "title": "Links",
+    "section": "Consumer Goods 🛍",
+    "text": "Consumer Goods 🛍\n\nHow To Judge Quality In Clothing\nShaving Is Too Expensive. Also the world is out to get you\nThe Kitchen Starter Kit: Essential Tools for Every Cook\nYour stuff is actually worse now\nLet’s talk about margins"
+  },
+  {
+    "objectID": "links.html#culture-politics",
+    "href": "links.html#culture-politics",
+    "title": "Links",
+    "section": "Culture & Politics 🏛️",
+    "text": "Culture & Politics 🏛️\n\nCanada is fake\nIs Culture Snobbery The New Resistance?\nA decade of sore winners\nWhat Moneyball-for-Everything Has Done to American Culture\nWe Live In The Age of The Bullshitter\nThe age of average"
+  },
+  {
+    "objectID": "links.html#data-science",
+    "href": "links.html#data-science",
+    "title": "Links",
+    "section": "Data Science 📊",
+    "text": "Data Science 📊\n\nData Science: Reality Doesn’t Meet Expectations\nThe weirdest paradox in statistics (and machine learning)\nReview of Probability Theory: The Logic of Science\nThe Good Research Code Handbook\nThinking Clearly About Correlations and Causation: Graphical Causal Models for Observational Data\nCommon statistical tests are linear models (or: how to teach stats)\nGoodbye, Data Science\nProbability that a number is prime\nPhilosophy of Probability\nWhy Business Data Science Irritates Me\nSimpson’s paradox all the way down\nPhilosophy of Statistics\nOn Moving from Statistics to Machine Learning, the Final Stage of Grief\nNever Test for Normality\nStats can’t make modeling decisions\nMost Data Work Seems Fundamentally Worthless\n1 dataset 100 visualizations\nThe Shortcomings of Standardized Regression Coefficients\nWhat Is Probability?\nCan you have confidence in a confidence interval?\nDirected Acyclic Graphs\nSimulating confounders, colliders and mediators\nHow People Actually Lie With Charts\nGo Get the Data"
+  },
+  {
+    "objectID": "links.html#games",
+    "href": "links.html#games",
+    "title": "Links",
+    "section": "Games 🎲",
+    "text": "Games 🎲\n\nhangman is a weird game\nAngry Birds, Farmville and Other Hyperaddictive ‘Stupid Games’\n1000 Blank White Cards Wiki\nZendo—Design History"
+  },
+  {
+    "objectID": "links.html#language",
+    "href": "links.html#language",
+    "title": "Links",
+    "section": "Language 🗣️",
+    "text": "Language 🗣️\n\nUtopian for Beginners\nThe Interpreter\nNo Béarla\nWhat Consonant Clusters are Possible?\nWhy is English so weirdly different from other languages?\nWhy language might be the optimal self-regulating system\nIPA: Symbols of Power?\nThe vowel space"
+  },
+  {
+    "objectID": "links.html#learning",
+    "href": "links.html#learning",
+    "title": "Links",
+    "section": "Learning 📚",
+    "text": "Learning 📚\n\nHow To Understand Things\nHow to Self-Study Math\nEffectively self-studying over the Internet"
+  },
+  {
+    "objectID": "links.html#money",
+    "href": "links.html#money",
+    "title": "Links",
+    "section": "Money 💵",
+    "text": "Money 💵\n\nThere’s Nothing to Do Except Gamble\nThe Singular Pursuit of Comrade Bezos\nFinding and Funding a Good Life\nThe Homeownership Society Was a Mistake\nYes, Crypto is ALL a Scam\nMaybe Treating Housing as an Investment was a Colossal, Society-Shattering Mistake\nOn the Phenomenon of Bullshit Jobs\nLine Goes Up – The Problem With NFTs\nPricing Money"
+  },
+  {
+    "objectID": "links.html#music",
+    "href": "links.html#music",
+    "title": "Links",
+    "section": "Music 🎵",
+    "text": "Music 🎵\n\nBlood on the Frets\nWhy 12 notes to the Octave?\nA Guide to Imaginational Anthem’s 10 Volumes of Stirring American Primitive Guitar\n‘A Real Little Taste Of Heaven’: Visionary Guitarist Jack Rose In 11 Songs\nThe Ballad of Geeshie and Elvie"
+  },
+  {
+    "objectID": "links.html#philosophy",
+    "href": "links.html#philosophy",
+    "title": "Links",
+    "section": "Philosophy 🤔",
+    "text": "Philosophy 🤔\n\nWhose Idea Is It, Anyway?\nIt’s all bullsh*t! On the relationship between pseudoscience and pseudophilosophy\nThe Normative Status of Logic\nUse and Mention\nZhuangzi And That Bloody Butterfly"
+  },
+  {
+    "objectID": "links.html#poetry-short-fiction",
+    "href": "links.html#poetry-short-fiction",
+    "title": "Links",
+    "section": "Poetry & Short Fiction 📖",
+    "text": "Poetry & Short Fiction 📖\n\nMMAcevedo\nSecond Person, Present Tense\nWant Song\nAutopsy\nMiscreant Insects\nTwo-Headed Calf\nThe Revolution Will Not Be Televised\nAll of the Words on a Bottle of Rolling Rock Beer in a Different Order\nTo Explicate Meaning\nKansas, 4 A.M.\nNausicaä"
+  },
+  {
+    "objectID": "links.html#productivity",
+    "href": "links.html#productivity",
+    "title": "Links",
+    "section": "Productivity ⏰",
+    "text": "Productivity ⏰\n\nProductivity 101: An Introduction to The Pomodoro Technique\nHow a Lazy Bitch like me learned to be Productive\nThe Case Against Collaboration\nEffective Spaced Repetition\nFinish your projects"
+  },
+  {
+    "objectID": "links.html#psychology",
+    "href": "links.html#psychology",
+    "title": "Links",
+    "section": "Psychology 🧠",
+    "text": "Psychology 🧠\n\nWhy aren’t smart people happier?"
+  },
+  {
+    "objectID": "links.html#style",
+    "href": "links.html#style",
+    "title": "Links",
+    "section": "Style 👔",
+    "text": "Style 👔\n\nHow To Develop Good Taste, Pt. 1\nHow To Develop Good Taste, Pt. 2\nHow To Develop Good Taste, Pt. 3\nArticles of Interest - American Ivy\nThe Most Stylish Man Alive"
+  },
+  {
+    "objectID": "links.html#technology",
+    "href": "links.html#technology",
+    "title": "Links",
+    "section": "Technology 💾",
+    "text": "Technology 💾\n\nWhy Nothing Works Anymore\nSocialism’s DIY Computer\nHow to Take Back the Internet by Choosing the Internet Less Traveled\nThe Old Internet Shows Signs of Quietly Coming Back\nWhy I Still Use RSS\n12ft Ladder\nTinyWow\nWhy We Should Have Markdown Rendered Websites\nThe Bitter Lesson\nThe False Promise of ChatGPT\nWe need more of Richard Stallman, not less"
   }
 ]
