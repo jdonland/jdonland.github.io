@@ -24,14 +24,14 @@
 <p>At the beginning of the game, each player chooses two stars to be their homeworld. Star systems are connected if they have no sizes in common.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="home5.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Homeworlds star connection rule (from Looney Labs)"><img src="https://jdonland.github.io/posts/homeworlds_openings/home5.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="home5.jpg" class="lightbox" title="Homeworlds star connection rule (from Looney Labs)" data-gallery="quarto-lightbox-gallery-1"><img src="https://jdonland.github.io/posts/homeworlds_openings/home5.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Homeworlds star connection rule (from Looney Labs)</figcaption>
 </figure>
 </div>
 <p>Expert players actively debate Homeworlds’ opening theory. One question is which combination of star sizes should be selected by the first player, and how the second player should respond.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="home6.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Some homeworld options (from Looney Labs)"><img src="https://jdonland.github.io/posts/homeworlds_openings/home6.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="home6.jpg" class="lightbox" title="Some homeworld options (from Looney Labs)" data-gallery="quarto-lightbox-gallery-2"><img src="https://jdonland.github.io/posts/homeworlds_openings/home6.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Some homeworld options (from Looney Labs)</figcaption>
 </figure>
 </div>
@@ -146,23 +146,23 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 
-<div id="gzggvwacku" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
-<style>#gzggvwacku table {
+<div id="jotjsityeg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
+<style>#jotjsityeg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gzggvwacku thead, #gzggvwacku tbody, #gzggvwacku tfoot, #gzggvwacku tr, #gzggvwacku td, #gzggvwacku th {
+#jotjsityeg thead, #jotjsityeg tbody, #jotjsityeg tfoot, #jotjsityeg tr, #jotjsityeg td, #jotjsityeg th {
   border-style: none;
 }
 
-#gzggvwacku p {
+#jotjsityeg p {
   margin: 0;
   padding: 0;
 }
 
-#gzggvwacku .gt_table {
+#jotjsityeg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -188,12 +188,12 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#gzggvwacku .gt_caption {
+#jotjsityeg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gzggvwacku .gt_title {
+#jotjsityeg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -205,7 +205,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#gzggvwacku .gt_subtitle {
+#jotjsityeg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -217,7 +217,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-top-width: 0;
 }
 
-#gzggvwacku .gt_heading {
+#jotjsityeg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -229,13 +229,13 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#gzggvwacku .gt_bottom_border {
+#jotjsityeg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gzggvwacku .gt_col_headings {
+#jotjsityeg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -250,7 +250,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#gzggvwacku .gt_col_heading {
+#jotjsityeg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -270,7 +270,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#gzggvwacku .gt_column_spanner_outer {
+#jotjsityeg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -282,15 +282,15 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 4px;
 }
 
-#gzggvwacku .gt_column_spanner_outer:first-child {
+#jotjsityeg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gzggvwacku .gt_column_spanner_outer:last-child {
+#jotjsityeg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gzggvwacku .gt_column_spanner {
+#jotjsityeg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -302,11 +302,11 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   width: 100%;
 }
 
-#gzggvwacku .gt_spanner_row {
+#jotjsityeg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gzggvwacku .gt_group_heading {
+#jotjsityeg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -332,7 +332,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   text-align: left;
 }
 
-#gzggvwacku .gt_empty_group_heading {
+#jotjsityeg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -347,15 +347,15 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   vertical-align: middle;
 }
 
-#gzggvwacku .gt_from_md > :first-child {
+#jotjsityeg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gzggvwacku .gt_from_md > :last-child {
+#jotjsityeg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gzggvwacku .gt_row {
+#jotjsityeg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -374,7 +374,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#gzggvwacku .gt_stub {
+#jotjsityeg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -387,7 +387,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#gzggvwacku .gt_stub_row_group {
+#jotjsityeg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -401,15 +401,15 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   vertical-align: top;
 }
 
-#gzggvwacku .gt_row_group_first td {
+#jotjsityeg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gzggvwacku .gt_row_group_first th {
+#jotjsityeg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gzggvwacku .gt_summary_row {
+#jotjsityeg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -419,16 +419,16 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#gzggvwacku .gt_first_summary_row {
+#jotjsityeg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gzggvwacku .gt_first_summary_row.thick {
+#jotjsityeg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gzggvwacku .gt_last_summary_row {
+#jotjsityeg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -438,7 +438,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#gzggvwacku .gt_grand_summary_row {
+#jotjsityeg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -448,7 +448,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#gzggvwacku .gt_first_grand_summary_row {
+#jotjsityeg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -458,7 +458,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#gzggvwacku .gt_last_grand_summary_row_top {
+#jotjsityeg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -468,11 +468,11 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#gzggvwacku .gt_striped {
+#jotjsityeg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gzggvwacku .gt_table_body {
+#jotjsityeg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -481,7 +481,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#gzggvwacku .gt_footnotes {
+#jotjsityeg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -495,7 +495,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#gzggvwacku .gt_footnote {
+#jotjsityeg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -504,7 +504,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#gzggvwacku .gt_sourcenotes {
+#jotjsityeg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -518,7 +518,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#gzggvwacku .gt_sourcenote {
+#jotjsityeg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -526,63 +526,63 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#gzggvwacku .gt_left {
+#jotjsityeg .gt_left {
   text-align: left;
 }
 
-#gzggvwacku .gt_center {
+#jotjsityeg .gt_center {
   text-align: center;
 }
 
-#gzggvwacku .gt_right {
+#jotjsityeg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gzggvwacku .gt_font_normal {
+#jotjsityeg .gt_font_normal {
   font-weight: normal;
 }
 
-#gzggvwacku .gt_font_bold {
+#jotjsityeg .gt_font_bold {
   font-weight: bold;
 }
 
-#gzggvwacku .gt_font_italic {
+#jotjsityeg .gt_font_italic {
   font-style: italic;
 }
 
-#gzggvwacku .gt_super {
+#jotjsityeg .gt_super {
   font-size: 65%;
 }
 
-#gzggvwacku .gt_footnote_marks {
+#jotjsityeg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gzggvwacku .gt_asterisk {
+#jotjsityeg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gzggvwacku .gt_indent_1 {
+#jotjsityeg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gzggvwacku .gt_indent_2 {
+#jotjsityeg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gzggvwacku .gt_indent_3 {
+#jotjsityeg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gzggvwacku .gt_indent_4 {
+#jotjsityeg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gzggvwacku .gt_indent_5 {
+#jotjsityeg .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -865,11 +865,11 @@ background-color: null;
 font-style: inherit;">-&gt;</span> universe_size</span></code></pre></div>
 </div>
 </section>
-<section id="modelling-first-player-advantage" class="level2">
+<section id="modelling-first-player-advantage" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="modelling-first-player-advantage">Modelling First Player Advantage</h2>
-<p>We can model first player advantage by imagining that a game of Homeworlds is like a biased coin flip, where each opening is associated with an independent bias. For example, if the bias parameter for some opening is 0.6, then we expect the first player to win 60% of the time that opening is played.<sup>1</sup></p>
-<p>If this parameter is distributed according to a beta distribution <em>Beta(a, b)</em>, then its posterior distribution accounting for observing <em>n</em> wins and <em>m</em> losses for the first player is <em>Beta(a + n, b + m)</em>.<sup>2</sup> All that is left is to decide on a prior distribution representing our beliefs before observing any data. This is an interesting subtlety<sup>3</sup>, but it seems reasonable to choose a uniform prior, <em>Beta(1, 1)</em>, under which all possibilities are equally credible.</p>
-<p>From the posterior distribution, we can construct a 90% <a href="https://en.wikipedia.org/wiki/Credible_interval">credible interval</a> using <code>qbeta</code>. Unlike the confidence intervals used in frequentist statistical inference, which are the source of much confusion, Bayesian credible intervals have a straightforward interpretation: we’re 90% sure the true value of the parameter is contained in a 90% credible interval.<sup>4</sup></p>
+<div class="page-columns page-full"><p>We can model first player advantage by imagining that a game of Homeworlds is like a biased coin flip, where each opening is associated with an independent bias. For example, if the bias parameter for some opening is 0.6, then we expect the first player to win 60% of the time that opening is played.<sup>1</sup></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Assuming “average play”, anyway.</p></li></div></div>
+<div class="page-columns page-full"><p>If this parameter is distributed according to a beta distribution <em>Beta(a, b)</em>, then its posterior distribution accounting for observing <em>n</em> wins and <em>m</em> losses for the first player is <em>Beta(a + n, b + m)</em>.<sup>2</sup> All that is left is to decide on a prior distribution representing our beliefs before observing any data. This is an interesting subtlety<sup>3</sup>, but it seems reasonable to choose a uniform prior, <em>Beta(1, 1)</em>, under which all possibilities are equally credible.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;See <a href="https://cchecastaldo.github.io/BayesianShortCourse/content/handouts/DerivationBetaBinomialConjugate.pdf">these slides</a> for a quick proof of this fact.</p></li><li id="fn3"><p><sup>3</sup>&nbsp;See <a href="https://stats.stackexchange.com/a/298176/327338">this StackExchange answer</a> for more on uninformative Beta priors.</p></li></div></div>
+<div class="page-columns page-full"><p>From the posterior distribution, we can construct a 90% <a href="https://en.wikipedia.org/wiki/Credible_interval">credible interval</a> using <code>qbeta</code>. Unlike the confidence intervals used in frequentist statistical inference, which are the source of much confusion, Bayesian credible intervals have a straightforward interpretation: we’re 90% sure the true value of the parameter is contained in a 90% credible interval.<sup>4</sup></p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;Frequentists view the bounds of a confidence interval as random, and the parameter value as fixed. Bayesians view the bounds of a credible interval as fixed, and the parameter value as random.</p></li></div></div>
 <p>We can also calculate the probability that the first player is favoured (i.e.&nbsp;is expected to win at least half the time) in each opening using <code>pbeta</code>. In this case we don’t consider the extent of the advantage, just whether there is one.</p>
 <div class="cell">
 <details>
@@ -1212,23 +1212,23 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 
-<div id="rrjfsffzad" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
-<style>#rrjfsffzad table {
+<div id="jrsbgzwtqy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
+<style>#jrsbgzwtqy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rrjfsffzad thead, #rrjfsffzad tbody, #rrjfsffzad tfoot, #rrjfsffzad tr, #rrjfsffzad td, #rrjfsffzad th {
+#jrsbgzwtqy thead, #jrsbgzwtqy tbody, #jrsbgzwtqy tfoot, #jrsbgzwtqy tr, #jrsbgzwtqy td, #jrsbgzwtqy th {
   border-style: none;
 }
 
-#rrjfsffzad p {
+#jrsbgzwtqy p {
   margin: 0;
   padding: 0;
 }
 
-#rrjfsffzad .gt_table {
+#jrsbgzwtqy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1254,12 +1254,12 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#rrjfsffzad .gt_caption {
+#jrsbgzwtqy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rrjfsffzad .gt_title {
+#jrsbgzwtqy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1271,7 +1271,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#rrjfsffzad .gt_subtitle {
+#jrsbgzwtqy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1283,7 +1283,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-top-width: 0;
 }
 
-#rrjfsffzad .gt_heading {
+#jrsbgzwtqy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1295,13 +1295,13 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#rrjfsffzad .gt_bottom_border {
+#jrsbgzwtqy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rrjfsffzad .gt_col_headings {
+#jrsbgzwtqy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1316,7 +1316,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#rrjfsffzad .gt_col_heading {
+#jrsbgzwtqy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1336,7 +1336,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#rrjfsffzad .gt_column_spanner_outer {
+#jrsbgzwtqy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1348,15 +1348,15 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 4px;
 }
 
-#rrjfsffzad .gt_column_spanner_outer:first-child {
+#jrsbgzwtqy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rrjfsffzad .gt_column_spanner_outer:last-child {
+#jrsbgzwtqy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rrjfsffzad .gt_column_spanner {
+#jrsbgzwtqy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1368,11 +1368,11 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   width: 100%;
 }
 
-#rrjfsffzad .gt_spanner_row {
+#jrsbgzwtqy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rrjfsffzad .gt_group_heading {
+#jrsbgzwtqy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1398,7 +1398,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   text-align: left;
 }
 
-#rrjfsffzad .gt_empty_group_heading {
+#jrsbgzwtqy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1413,15 +1413,15 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   vertical-align: middle;
 }
 
-#rrjfsffzad .gt_from_md > :first-child {
+#jrsbgzwtqy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rrjfsffzad .gt_from_md > :last-child {
+#jrsbgzwtqy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rrjfsffzad .gt_row {
+#jrsbgzwtqy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1440,7 +1440,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#rrjfsffzad .gt_stub {
+#jrsbgzwtqy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1453,7 +1453,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#rrjfsffzad .gt_stub_row_group {
+#jrsbgzwtqy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1467,15 +1467,15 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   vertical-align: top;
 }
 
-#rrjfsffzad .gt_row_group_first td {
+#jrsbgzwtqy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rrjfsffzad .gt_row_group_first th {
+#jrsbgzwtqy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rrjfsffzad .gt_summary_row {
+#jrsbgzwtqy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1485,16 +1485,16 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#rrjfsffzad .gt_first_summary_row {
+#jrsbgzwtqy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rrjfsffzad .gt_first_summary_row.thick {
+#jrsbgzwtqy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rrjfsffzad .gt_last_summary_row {
+#jrsbgzwtqy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1504,7 +1504,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#rrjfsffzad .gt_grand_summary_row {
+#jrsbgzwtqy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1514,7 +1514,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#rrjfsffzad .gt_first_grand_summary_row {
+#jrsbgzwtqy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1524,7 +1524,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#rrjfsffzad .gt_last_grand_summary_row_top {
+#jrsbgzwtqy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1534,11 +1534,11 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#rrjfsffzad .gt_striped {
+#jrsbgzwtqy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rrjfsffzad .gt_table_body {
+#jrsbgzwtqy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1547,7 +1547,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#rrjfsffzad .gt_footnotes {
+#jrsbgzwtqy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1561,7 +1561,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#rrjfsffzad .gt_footnote {
+#jrsbgzwtqy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1570,7 +1570,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#rrjfsffzad .gt_sourcenotes {
+#jrsbgzwtqy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1584,7 +1584,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#rrjfsffzad .gt_sourcenote {
+#jrsbgzwtqy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1592,63 +1592,63 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#rrjfsffzad .gt_left {
+#jrsbgzwtqy .gt_left {
   text-align: left;
 }
 
-#rrjfsffzad .gt_center {
+#jrsbgzwtqy .gt_center {
   text-align: center;
 }
 
-#rrjfsffzad .gt_right {
+#jrsbgzwtqy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rrjfsffzad .gt_font_normal {
+#jrsbgzwtqy .gt_font_normal {
   font-weight: normal;
 }
 
-#rrjfsffzad .gt_font_bold {
+#jrsbgzwtqy .gt_font_bold {
   font-weight: bold;
 }
 
-#rrjfsffzad .gt_font_italic {
+#jrsbgzwtqy .gt_font_italic {
   font-style: italic;
 }
 
-#rrjfsffzad .gt_super {
+#jrsbgzwtqy .gt_super {
   font-size: 65%;
 }
 
-#rrjfsffzad .gt_footnote_marks {
+#jrsbgzwtqy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rrjfsffzad .gt_asterisk {
+#jrsbgzwtqy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rrjfsffzad .gt_indent_1 {
+#jrsbgzwtqy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rrjfsffzad .gt_indent_2 {
+#jrsbgzwtqy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rrjfsffzad .gt_indent_3 {
+#jrsbgzwtqy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rrjfsffzad .gt_indent_4 {
+#jrsbgzwtqy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rrjfsffzad .gt_indent_5 {
+#jrsbgzwtqy .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1954,7 +1954,11 @@ background-color: null;
 font-style: italic;">## gradient scale for the tiles</span></span>
 <span id="cb4-21">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">scale_fill_viridis</span>() <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">scale_fill_viridis</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">option =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"cividis"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb4-22">  <span class="do" style="color: #5E5E5E;
@@ -1963,6 +1967,10 @@ font-style: italic;">## discrete scale for the universe size dots</span></span>
 <span id="cb4-23">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_colour_viridis</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">option =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"cividis"</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">discrete =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
@@ -2017,13 +2025,16 @@ background-color: null;
 font-style: inherit;"># theming</span></span>
 <span id="cb4-32">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_bw</span>() <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">theme_jdonland</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb4-33">  <span class="do" style="color: #5E5E5E;
+<span id="cb4-33"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#  theme(panel.background = element_rect(colour = "#fffcf9")) +</span></span>
+<span id="cb4-34">  <span class="do" style="color: #5E5E5E;
 background-color: null;
 font-style: italic;">## put the win rate legend under the universe size legend</span></span>
-<span id="cb4-34">  <span class="fu" style="color: #4758AB;
+<span id="cb4-35">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">guides</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2036,32 +2047,46 @@ background-color: null;
 font-style: inherit;">1</span>)) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
-<span id="cb4-35">  plot</span>
-<span id="cb4-36"></span>
-<span id="cb4-37"><span class="co" style="color: #5E5E5E;
+<span id="cb4-36">  plot</span>
+<span id="cb4-37"></span>
+<span id="cb4-38"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># version labelled with credible intervals</span></span>
-<span id="cb4-38">plot <span class="sc" style="color: #5E5E5E;
+<span id="cb4-39">plot <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb4-39">  <span class="co" style="color: #5E5E5E;
+<span id="cb4-40">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># add formatted credible intervals as text</span></span>
-<span id="cb4-40">  <span class="fu" style="color: #4758AB;
+<span id="cb4-41">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">geom_text</span>(<span class="fu" style="color: #4758AB;
+font-style: inherit;">geom_label</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">label =</span> formatted_ci, <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">fontface =</span> ci_fontface)) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">fontface =</span> ci_fontface),</span>
+<span id="cb4-42">             <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#fffcf9"</span>,</span>
+<span id="cb4-43">             <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">label.padding =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">unit</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.125</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"lines"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb4-41">  <span class="co" style="color: #5E5E5E;
+<span id="cb4-44">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># add subtitle</span></span>
-<span id="cb4-42">  <span class="fu" style="color: #4758AB;
+<span id="cb4-45">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2093,19 +2118,33 @@ background-color: null;
 font-style: inherit;"># add posterior probability first player is favoured as text</span></span>
 <span id="cb5-4">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">geom_text</span>(<span class="fu" style="color: #4758AB;
+font-style: inherit;">geom_label</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">label =</span> formatted_prob_fav, <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">fontface =</span> prob_fav_fontface)) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">fontface =</span> prob_fav_fontface),</span>
+<span id="cb5-5">            <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#fffcf9"</span>,</span>
+<span id="cb5-6">            <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">label.padding =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">unit</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.125</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"lines"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-5">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-7">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># add subtitle</span></span>
-<span id="cb5-6">  <span class="fu" style="color: #4758AB;
+<span id="cb5-8">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2131,9 +2170,9 @@ font-style: inherit;">"Posterior probability first player is favoured"</span>)</
 <p>The second player should opt for a small universe rather than a microverse. (A large universe is not possible when the first player’s homeworld contains stars of equal size.)</p>
 <p>Why isn’t small-small also advantageous for the first player? This is likely due to creating a bank configuration which will provide better lines of play to the second player in the early turns of the game.</p>
 </section>
-<section id="confounding-variables" class="level2">
+<section id="confounding-variables" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="confounding-variables">Confounding Variables</h2>
-<p>One might reasonably object to the model described above. For one thing, it does not take into account the colours of the pieces selected. This is a relatively minor issue, however, since a certain combination of colours<sup>5</sup> is almost universally chosen.</p>
+<div class="page-columns page-full"><p>One might reasonably object to the model described above. For one thing, it does not take into account the colours of the pieces selected. This is a relatively minor issue, however, since a certain combination of colours<sup>5</sup> is almost universally chosen.</p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Blue and yellow stars with a green ship.</p></li></div></div>
 <p>More concerning is the potentially confounding effect of player skill. It’s very possible that some openings may be effective only in the hands of experts. It would be interesting to revisit this analysis with more granular and detailed data that included Elo ratings. You can help with this by learning Homeworlds!</p>
 <p>You can buy a Homeworlds set from Looney Labs. The same pieces can also be used to play many other interesting games.</p>
 </section>
@@ -2156,16 +2195,7 @@ font-style: inherit;">"Posterior probability first player is favoured"</span>)</
 </section>
 
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Assuming “average play”, anyway.↩︎</p></li>
-<li id="fn2"><p>See <a href="https://cchecastaldo.github.io/BayesianShortCourse/content/handouts/DerivationBetaBinomialConjugate.pdf">these slides</a> for a quick proof of this fact.↩︎</p></li>
-<li id="fn3"><p>See <a href="https://stats.stackexchange.com/a/298176/327338">this StackExchange answer</a> for more on uninformative Beta priors.↩︎</p></li>
-<li id="fn4"><p>Frequentists view the bounds of a confidence interval as random, and the parameter value as fixed. Bayesians view the bounds of a credible interval as fixed, and the parameter value as random.↩︎</p></li>
-<li id="fn5"><p>Blue and yellow stars with a green ship.↩︎</p></li>
-</ol>
-</section></div> ]]></description>
+ ]]></description>
   <guid>https://jdonland.github.io/posts/homeworlds_openings/homeworlds_openings.html</guid>
   <pubDate>Wed, 03 May 2023 04:00:00 GMT</pubDate>
   <media:content url="https://jdonland.github.io/posts/homeworlds_openings/home3.jpg" medium="image" type="image/jpeg"/>
@@ -2477,23 +2507,23 @@ background-color: null;
 font-style: inherit;">gt</span>()</span></code></pre></div>
 <div class="cell-output-display">
 
-<div id="vvbcjgfzjk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vvbcjgfzjk table {
+<div id="jaqrqmzoat" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jaqrqmzoat table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vvbcjgfzjk thead, #vvbcjgfzjk tbody, #vvbcjgfzjk tfoot, #vvbcjgfzjk tr, #vvbcjgfzjk td, #vvbcjgfzjk th {
+#jaqrqmzoat thead, #jaqrqmzoat tbody, #jaqrqmzoat tfoot, #jaqrqmzoat tr, #jaqrqmzoat td, #jaqrqmzoat th {
   border-style: none;
 }
 
-#vvbcjgfzjk p {
+#jaqrqmzoat p {
   margin: 0;
   padding: 0;
 }
 
-#vvbcjgfzjk .gt_table {
+#jaqrqmzoat .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2519,12 +2549,12 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#vvbcjgfzjk .gt_caption {
+#jaqrqmzoat .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vvbcjgfzjk .gt_title {
+#jaqrqmzoat .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2536,7 +2566,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#vvbcjgfzjk .gt_subtitle {
+#jaqrqmzoat .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2548,7 +2578,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-top-width: 0;
 }
 
-#vvbcjgfzjk .gt_heading {
+#jaqrqmzoat .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2560,13 +2590,13 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#vvbcjgfzjk .gt_bottom_border {
+#jaqrqmzoat .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vvbcjgfzjk .gt_col_headings {
+#jaqrqmzoat .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2581,7 +2611,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#vvbcjgfzjk .gt_col_heading {
+#jaqrqmzoat .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2601,7 +2631,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#vvbcjgfzjk .gt_column_spanner_outer {
+#jaqrqmzoat .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2613,15 +2643,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 4px;
 }
 
-#vvbcjgfzjk .gt_column_spanner_outer:first-child {
+#jaqrqmzoat .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vvbcjgfzjk .gt_column_spanner_outer:last-child {
+#jaqrqmzoat .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vvbcjgfzjk .gt_column_spanner {
+#jaqrqmzoat .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2633,11 +2663,11 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   width: 100%;
 }
 
-#vvbcjgfzjk .gt_spanner_row {
+#jaqrqmzoat .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vvbcjgfzjk .gt_group_heading {
+#jaqrqmzoat .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2663,7 +2693,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   text-align: left;
 }
 
-#vvbcjgfzjk .gt_empty_group_heading {
+#jaqrqmzoat .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2678,15 +2708,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   vertical-align: middle;
 }
 
-#vvbcjgfzjk .gt_from_md > :first-child {
+#jaqrqmzoat .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vvbcjgfzjk .gt_from_md > :last-child {
+#jaqrqmzoat .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vvbcjgfzjk .gt_row {
+#jaqrqmzoat .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2705,7 +2735,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#vvbcjgfzjk .gt_stub {
+#jaqrqmzoat .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2718,7 +2748,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#vvbcjgfzjk .gt_stub_row_group {
+#jaqrqmzoat .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2732,15 +2762,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   vertical-align: top;
 }
 
-#vvbcjgfzjk .gt_row_group_first td {
+#jaqrqmzoat .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vvbcjgfzjk .gt_row_group_first th {
+#jaqrqmzoat .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vvbcjgfzjk .gt_summary_row {
+#jaqrqmzoat .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2750,16 +2780,16 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#vvbcjgfzjk .gt_first_summary_row {
+#jaqrqmzoat .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vvbcjgfzjk .gt_first_summary_row.thick {
+#jaqrqmzoat .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vvbcjgfzjk .gt_last_summary_row {
+#jaqrqmzoat .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2769,7 +2799,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#vvbcjgfzjk .gt_grand_summary_row {
+#jaqrqmzoat .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2779,7 +2809,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#vvbcjgfzjk .gt_first_grand_summary_row {
+#jaqrqmzoat .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2789,7 +2819,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#vvbcjgfzjk .gt_last_grand_summary_row_top {
+#jaqrqmzoat .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2799,11 +2829,11 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#vvbcjgfzjk .gt_striped {
+#jaqrqmzoat .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vvbcjgfzjk .gt_table_body {
+#jaqrqmzoat .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2812,7 +2842,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#vvbcjgfzjk .gt_footnotes {
+#jaqrqmzoat .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2826,7 +2856,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#vvbcjgfzjk .gt_footnote {
+#jaqrqmzoat .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2835,7 +2865,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#vvbcjgfzjk .gt_sourcenotes {
+#jaqrqmzoat .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2849,7 +2879,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#vvbcjgfzjk .gt_sourcenote {
+#jaqrqmzoat .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2857,63 +2887,63 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#vvbcjgfzjk .gt_left {
+#jaqrqmzoat .gt_left {
   text-align: left;
 }
 
-#vvbcjgfzjk .gt_center {
+#jaqrqmzoat .gt_center {
   text-align: center;
 }
 
-#vvbcjgfzjk .gt_right {
+#jaqrqmzoat .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vvbcjgfzjk .gt_font_normal {
+#jaqrqmzoat .gt_font_normal {
   font-weight: normal;
 }
 
-#vvbcjgfzjk .gt_font_bold {
+#jaqrqmzoat .gt_font_bold {
   font-weight: bold;
 }
 
-#vvbcjgfzjk .gt_font_italic {
+#jaqrqmzoat .gt_font_italic {
   font-style: italic;
 }
 
-#vvbcjgfzjk .gt_super {
+#jaqrqmzoat .gt_super {
   font-size: 65%;
 }
 
-#vvbcjgfzjk .gt_footnote_marks {
+#jaqrqmzoat .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vvbcjgfzjk .gt_asterisk {
+#jaqrqmzoat .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vvbcjgfzjk .gt_indent_1 {
+#jaqrqmzoat .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vvbcjgfzjk .gt_indent_2 {
+#jaqrqmzoat .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vvbcjgfzjk .gt_indent_3 {
+#jaqrqmzoat .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vvbcjgfzjk .gt_indent_4 {
+#jaqrqmzoat .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vvbcjgfzjk .gt_indent_5 {
+#jaqrqmzoat .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3898,7 +3928,16 @@ font-style: inherit;">element_blank</span>(),</span>
 background-color: null;
 font-style: inherit;">panel.grid.major.x =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">element_blank</span>())</span></code></pre></div>
+font-style: inherit;">element_blank</span>(),</span>
+<span id="cb2-26">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">panel.background =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_rect</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#fffcf9"</span>))</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -4183,7 +4222,7 @@ font-style: inherit;">"Time (Minutes)"</span>, </span>
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Percentile"</span>,</span>
+font-style: inherit;">""</span>,</span>
 <span id="cb3-32">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">colour =</span> <span class="cn" style="color: #8f5902;
@@ -4252,7 +4291,16 @@ font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">0</span>))</span></code></pre></div>
+font-style: inherit;">0</span>),</span>
+<span id="cb3-41">        <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">panel.background =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_rect</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#fffcf9"</span>))</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
