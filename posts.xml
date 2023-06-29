@@ -24,14 +24,14 @@
 <p>At the beginning of the game, each player chooses two stars to be their homeworld. Star systems are connected if they have no sizes in common.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="home5.jpg" class="lightbox" title="Homeworlds star connection rule (from Looney Labs)" data-gallery="quarto-lightbox-gallery-1"><img src="https://jdonland.github.io/posts/homeworlds_openings/home5.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="home5.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Homeworlds star connection rule (from Looney Labs)"><img src="https://jdonland.github.io/posts/homeworlds_openings/home5.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Homeworlds star connection rule (from Looney Labs)</figcaption>
 </figure>
 </div>
 <p>Expert players actively debate Homeworlds’ opening theory. One question is which combination of star sizes should be selected by the first player, and how the second player should respond.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="home6.jpg" class="lightbox" title="Some homeworld options (from Looney Labs)" data-gallery="quarto-lightbox-gallery-2"><img src="https://jdonland.github.io/posts/homeworlds_openings/home6.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="home6.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Some homeworld options (from Looney Labs)"><img src="https://jdonland.github.io/posts/homeworlds_openings/home6.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Some homeworld options (from Looney Labs)</figcaption>
 </figure>
 </div>
@@ -42,8 +42,6 @@
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <p><a href="https://jpeterbaker.github.io/homeworlds/site/index.html">Babamots</a> compiled information from 4928 games of Homeworlds played on <a href="https://en.boardgamearena.com/">BoardGameArena</a> and provided a first player win rate and a count of observations for each combination of first and second player homeworld sizes. Draws were counted as half a win for each player. Only games that lasted at least eight turns for each player were included.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">read_csv</span>(<span class="st" style="color: #20794D;
@@ -143,26 +141,25 @@ font-style: inherit;">|&gt;</span></span>
 <span id="cb1-15">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
-</details>
 <div class="cell-output-display">
 
-<div id="jotjsityeg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
-<style>#jotjsityeg table {
+<div id="ayyvgupfji" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
+<style>#ayyvgupfji table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jotjsityeg thead, #jotjsityeg tbody, #jotjsityeg tfoot, #jotjsityeg tr, #jotjsityeg td, #jotjsityeg th {
+#ayyvgupfji thead, #ayyvgupfji tbody, #ayyvgupfji tfoot, #ayyvgupfji tr, #ayyvgupfji td, #ayyvgupfji th {
   border-style: none;
 }
 
-#jotjsityeg p {
+#ayyvgupfji p {
   margin: 0;
   padding: 0;
 }
 
-#jotjsityeg .gt_table {
+#ayyvgupfji .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -188,12 +185,12 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#jotjsityeg .gt_caption {
+#ayyvgupfji .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jotjsityeg .gt_title {
+#ayyvgupfji .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -205,7 +202,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#jotjsityeg .gt_subtitle {
+#ayyvgupfji .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -217,7 +214,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-top-width: 0;
 }
 
-#jotjsityeg .gt_heading {
+#ayyvgupfji .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -229,13 +226,13 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#jotjsityeg .gt_bottom_border {
+#ayyvgupfji .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jotjsityeg .gt_col_headings {
+#ayyvgupfji .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -250,7 +247,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#jotjsityeg .gt_col_heading {
+#ayyvgupfji .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -270,7 +267,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#jotjsityeg .gt_column_spanner_outer {
+#ayyvgupfji .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -282,15 +279,15 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 4px;
 }
 
-#jotjsityeg .gt_column_spanner_outer:first-child {
+#ayyvgupfji .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jotjsityeg .gt_column_spanner_outer:last-child {
+#ayyvgupfji .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jotjsityeg .gt_column_spanner {
+#ayyvgupfji .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -302,11 +299,11 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   width: 100%;
 }
 
-#jotjsityeg .gt_spanner_row {
+#ayyvgupfji .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jotjsityeg .gt_group_heading {
+#ayyvgupfji .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -332,7 +329,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   text-align: left;
 }
 
-#jotjsityeg .gt_empty_group_heading {
+#ayyvgupfji .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -347,15 +344,15 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   vertical-align: middle;
 }
 
-#jotjsityeg .gt_from_md > :first-child {
+#ayyvgupfji .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jotjsityeg .gt_from_md > :last-child {
+#ayyvgupfji .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jotjsityeg .gt_row {
+#ayyvgupfji .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -374,7 +371,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#jotjsityeg .gt_stub {
+#ayyvgupfji .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -387,7 +384,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#jotjsityeg .gt_stub_row_group {
+#ayyvgupfji .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -401,15 +398,15 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   vertical-align: top;
 }
 
-#jotjsityeg .gt_row_group_first td {
+#ayyvgupfji .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jotjsityeg .gt_row_group_first th {
+#ayyvgupfji .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jotjsityeg .gt_summary_row {
+#ayyvgupfji .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -419,16 +416,16 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#jotjsityeg .gt_first_summary_row {
+#ayyvgupfji .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jotjsityeg .gt_first_summary_row.thick {
+#ayyvgupfji .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jotjsityeg .gt_last_summary_row {
+#ayyvgupfji .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -438,7 +435,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#jotjsityeg .gt_grand_summary_row {
+#ayyvgupfji .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -448,7 +445,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#jotjsityeg .gt_first_grand_summary_row {
+#ayyvgupfji .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -458,7 +455,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#jotjsityeg .gt_last_grand_summary_row_top {
+#ayyvgupfji .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -468,11 +465,11 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#jotjsityeg .gt_striped {
+#ayyvgupfji .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jotjsityeg .gt_table_body {
+#ayyvgupfji .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -481,7 +478,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#jotjsityeg .gt_footnotes {
+#ayyvgupfji .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -495,7 +492,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#jotjsityeg .gt_footnote {
+#ayyvgupfji .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -504,7 +501,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#jotjsityeg .gt_sourcenotes {
+#ayyvgupfji .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -518,7 +515,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#jotjsityeg .gt_sourcenote {
+#ayyvgupfji .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -526,63 +523,63 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#jotjsityeg .gt_left {
+#ayyvgupfji .gt_left {
   text-align: left;
 }
 
-#jotjsityeg .gt_center {
+#ayyvgupfji .gt_center {
   text-align: center;
 }
 
-#jotjsityeg .gt_right {
+#ayyvgupfji .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jotjsityeg .gt_font_normal {
+#ayyvgupfji .gt_font_normal {
   font-weight: normal;
 }
 
-#jotjsityeg .gt_font_bold {
+#ayyvgupfji .gt_font_bold {
   font-weight: bold;
 }
 
-#jotjsityeg .gt_font_italic {
+#ayyvgupfji .gt_font_italic {
   font-style: italic;
 }
 
-#jotjsityeg .gt_super {
+#ayyvgupfji .gt_super {
   font-size: 65%;
 }
 
-#jotjsityeg .gt_footnote_marks {
+#ayyvgupfji .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jotjsityeg .gt_asterisk {
+#ayyvgupfji .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jotjsityeg .gt_indent_1 {
+#ayyvgupfji .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jotjsityeg .gt_indent_2 {
+#ayyvgupfji .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jotjsityeg .gt_indent_3 {
+#ayyvgupfji .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jotjsityeg .gt_indent_4 {
+#ayyvgupfji .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jotjsityeg .gt_indent_5 {
+#ayyvgupfji .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -872,8 +869,6 @@ font-style: inherit;">-&gt;</span> universe_size</span></code></pre></div>
 <div class="page-columns page-full"><p>From the posterior distribution, we can construct a 90% <a href="https://en.wikipedia.org/wiki/Credible_interval">credible interval</a> using <code>qbeta</code>. Unlike the confidence intervals used in frequentist statistical inference, which are the source of much confusion, Bayesian credible intervals have a straightforward interpretation: we’re 90% sure the true value of the parameter is contained in a 90% credible interval.<sup>4</sup></p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;Frequentists view the bounds of a confidence interval as random, and the parameter value as fixed. Bayesians view the bounds of a credible interval as fixed, and the parameter value as random.</p></li></div></div>
 <p>We can also calculate the probability that the first player is favoured (i.e.&nbsp;is expected to win at least half the time) in each opening using <code>pbeta</code>. In this case we don’t consider the extent of the advantage, just whether there is one.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">homeworlds_openings <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -1209,26 +1204,25 @@ font-style: inherit;">|&gt;</span></span>
 <span id="cb3-43">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
-</details>
 <div class="cell-output-display">
 
-<div id="jrsbgzwtqy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
-<style>#jrsbgzwtqy table {
+<div id="yjdzmieoby" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;">
+<style>#yjdzmieoby table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jrsbgzwtqy thead, #jrsbgzwtqy tbody, #jrsbgzwtqy tfoot, #jrsbgzwtqy tr, #jrsbgzwtqy td, #jrsbgzwtqy th {
+#yjdzmieoby thead, #yjdzmieoby tbody, #yjdzmieoby tfoot, #yjdzmieoby tr, #yjdzmieoby td, #yjdzmieoby th {
   border-style: none;
 }
 
-#jrsbgzwtqy p {
+#yjdzmieoby p {
   margin: 0;
   padding: 0;
 }
 
-#jrsbgzwtqy .gt_table {
+#yjdzmieoby .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1254,12 +1248,12 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#jrsbgzwtqy .gt_caption {
+#yjdzmieoby .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jrsbgzwtqy .gt_title {
+#yjdzmieoby .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1271,7 +1265,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#jrsbgzwtqy .gt_subtitle {
+#yjdzmieoby .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1283,7 +1277,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-top-width: 0;
 }
 
-#jrsbgzwtqy .gt_heading {
+#yjdzmieoby .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1295,13 +1289,13 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#jrsbgzwtqy .gt_bottom_border {
+#yjdzmieoby .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jrsbgzwtqy .gt_col_headings {
+#yjdzmieoby .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1316,7 +1310,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#jrsbgzwtqy .gt_col_heading {
+#yjdzmieoby .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1336,7 +1330,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#jrsbgzwtqy .gt_column_spanner_outer {
+#yjdzmieoby .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1348,15 +1342,15 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 4px;
 }
 
-#jrsbgzwtqy .gt_column_spanner_outer:first-child {
+#yjdzmieoby .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jrsbgzwtqy .gt_column_spanner_outer:last-child {
+#yjdzmieoby .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jrsbgzwtqy .gt_column_spanner {
+#yjdzmieoby .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1368,11 +1362,11 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   width: 100%;
 }
 
-#jrsbgzwtqy .gt_spanner_row {
+#yjdzmieoby .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jrsbgzwtqy .gt_group_heading {
+#yjdzmieoby .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1398,7 +1392,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   text-align: left;
 }
 
-#jrsbgzwtqy .gt_empty_group_heading {
+#yjdzmieoby .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1413,15 +1407,15 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   vertical-align: middle;
 }
 
-#jrsbgzwtqy .gt_from_md > :first-child {
+#yjdzmieoby .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jrsbgzwtqy .gt_from_md > :last-child {
+#yjdzmieoby .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jrsbgzwtqy .gt_row {
+#yjdzmieoby .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1440,7 +1434,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#jrsbgzwtqy .gt_stub {
+#yjdzmieoby .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1453,7 +1447,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#jrsbgzwtqy .gt_stub_row_group {
+#yjdzmieoby .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1467,15 +1461,15 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   vertical-align: top;
 }
 
-#jrsbgzwtqy .gt_row_group_first td {
+#yjdzmieoby .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jrsbgzwtqy .gt_row_group_first th {
+#yjdzmieoby .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jrsbgzwtqy .gt_summary_row {
+#yjdzmieoby .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1485,16 +1479,16 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#jrsbgzwtqy .gt_first_summary_row {
+#yjdzmieoby .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jrsbgzwtqy .gt_first_summary_row.thick {
+#yjdzmieoby .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jrsbgzwtqy .gt_last_summary_row {
+#yjdzmieoby .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1504,7 +1498,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#jrsbgzwtqy .gt_grand_summary_row {
+#yjdzmieoby .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1514,7 +1508,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#jrsbgzwtqy .gt_first_grand_summary_row {
+#yjdzmieoby .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1524,7 +1518,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#jrsbgzwtqy .gt_last_grand_summary_row_top {
+#yjdzmieoby .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1534,11 +1528,11 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#jrsbgzwtqy .gt_striped {
+#yjdzmieoby .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jrsbgzwtqy .gt_table_body {
+#yjdzmieoby .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1547,7 +1541,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#jrsbgzwtqy .gt_footnotes {
+#yjdzmieoby .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1561,7 +1555,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#jrsbgzwtqy .gt_footnote {
+#yjdzmieoby .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1570,7 +1564,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#jrsbgzwtqy .gt_sourcenotes {
+#yjdzmieoby .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1584,7 +1578,7 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#jrsbgzwtqy .gt_sourcenote {
+#yjdzmieoby .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1592,63 +1586,63 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#jrsbgzwtqy .gt_left {
+#yjdzmieoby .gt_left {
   text-align: left;
 }
 
-#jrsbgzwtqy .gt_center {
+#yjdzmieoby .gt_center {
   text-align: center;
 }
 
-#jrsbgzwtqy .gt_right {
+#yjdzmieoby .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jrsbgzwtqy .gt_font_normal {
+#yjdzmieoby .gt_font_normal {
   font-weight: normal;
 }
 
-#jrsbgzwtqy .gt_font_bold {
+#yjdzmieoby .gt_font_bold {
   font-weight: bold;
 }
 
-#jrsbgzwtqy .gt_font_italic {
+#yjdzmieoby .gt_font_italic {
   font-style: italic;
 }
 
-#jrsbgzwtqy .gt_super {
+#yjdzmieoby .gt_super {
   font-size: 65%;
 }
 
-#jrsbgzwtqy .gt_footnote_marks {
+#yjdzmieoby .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jrsbgzwtqy .gt_asterisk {
+#yjdzmieoby .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jrsbgzwtqy .gt_indent_1 {
+#yjdzmieoby .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jrsbgzwtqy .gt_indent_2 {
+#yjdzmieoby .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jrsbgzwtqy .gt_indent_3 {
+#yjdzmieoby .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jrsbgzwtqy .gt_indent_4 {
+#yjdzmieoby .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jrsbgzwtqy .gt_indent_5 {
+#yjdzmieoby .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1830,8 +1824,6 @@ font-style: inherit;">opt_row_striping</span>()</span></code></pre></div>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">visualization_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -2093,7 +2085,6 @@ background-color: null;
 font-style: inherit;">subtitle =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"90% Bayesian credible intervals with uniform priors"</span>)</span></code></pre></div>
-</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2105,8 +2096,6 @@ font-style: inherit;">"90% Bayesian credible intervals with uniform priors"</spa
 </div>
 <div id="tabset-1-2" class="tab-pane" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># version labelled with posterior probability of first player advantage</span></span>
@@ -2151,7 +2140,6 @@ background-color: null;
 font-style: inherit;">subtitle =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Posterior probability first player is favoured"</span>)</span></code></pre></div>
-</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2198,7 +2186,6 @@ font-style: inherit;">"Posterior probability first player is favoured"</span>)</
  ]]></description>
   <guid>https://jdonland.github.io/posts/homeworlds_openings/homeworlds_openings.html</guid>
   <pubDate>Wed, 03 May 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://jdonland.github.io/posts/homeworlds_openings/home3.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Wordle Scores</title>
@@ -2212,7 +2199,7 @@ font-style: inherit;">"Posterior probability first player is favoured"</span>)</
 <p>Unless you spent 2022 on the moon, you’ve heard of <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a>, but just in case you haven’t here’s <a href="https://www.protocol.com/bulletins/josh-wardle-wordle-gdc-2022">the story</a>. You get up to six guesses to identify a secret five-letter word. The game tells you whether each of the letters of your guesses appears in the word and, if they do, whether they’re in the correct place.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="game_in_progress.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A typical game of Wordle in progress."><img src="https://jdonland.github.io/posts/wordle_scores/game_in_progress.png" class="img-fluid figure-img" width="500"></a></p>
+<p><a href="game_in_progress.png" class="lightbox" title="A typical game of Wordle in progress." data-gallery="quarto-lightbox-gallery-1"><img src="https://jdonland.github.io/posts/wordle_scores/game_in_progress.png" class="img-fluid figure-img" width="500"></a></p>
 <figcaption class="figure-caption">A typical game of Wordle in progress.</figcaption>
 </figure>
 </div>
@@ -3600,7 +3587,6 @@ font-style: inherit;">$</span>l_tick_linetype))</span></code></pre></div>
  ]]></description>
   <guid>https://jdonland.github.io/posts/wordle_scores/wordle_scores.html</guid>
   <pubDate>Fri, 31 Mar 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://jdonland.github.io/posts/wordle_scores/wordle_scores.png" medium="image" type="image/png" height="81" width="144"/>
 </item>
 <item>
   <title>Books No One Else Has</title>
@@ -3658,7 +3644,6 @@ font-style: inherit;">$</span>l_tick_linetype))</span></code></pre></div>
  ]]></description>
   <guid>https://jdonland.github.io/posts/books_no_one_else_has/books_no_one_else_has.html</guid>
   <pubDate>Sat, 04 Feb 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://jdonland.github.io/posts/books_no_one_else_has/books_no_one_else_has.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Crossword Times</title>
@@ -3721,7 +3706,175 @@ background-color: null;
 font-style: inherit;">publisher =</span> Publisher) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
-<span id="cb1-6">  crossword_times</span></code></pre></div>
+<span id="cb1-6">  crossword_times</span>
+<span id="cb1-7"></span>
+<span id="cb1-8">crossword_times <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb1-9">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">st</span>()</span></code></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Summary Statistics</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">N</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Mean</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Std. Dev.</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Min</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Pctl. 25</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Pctl. 75</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">publisher</td>
+<td style="text-align: left;">400</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Los Angeles Times</td>
+<td style="text-align: left;">119</td>
+<td style="text-align: left;">30%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... New York Times</td>
+<td style="text-align: left;">136</td>
+<td style="text-align: left;">34%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... New Yorker</td>
+<td style="text-align: left;">105</td>
+<td style="text-align: left;">26%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Wall Street Journal</td>
+<td style="text-align: left;">40</td>
+<td style="text-align: left;">10%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">day</td>
+<td style="text-align: left;">400</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... 1</td>
+<td style="text-align: left;">74</td>
+<td style="text-align: left;">18%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... 2</td>
+<td style="text-align: left;">69</td>
+<td style="text-align: left;">17%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... 3</td>
+<td style="text-align: left;">72</td>
+<td style="text-align: left;">18%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... 4</td>
+<td style="text-align: left;">77</td>
+<td style="text-align: left;">19%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... 5</td>
+<td style="text-align: left;">64</td>
+<td style="text-align: left;">16%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... 6</td>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">7%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... 7</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">4%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">minutes</td>
+<td style="text-align: left;">400</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">4.1</td>
+<td style="text-align: left;">7.4</td>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">66</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
 </div>
 </section>
 <section id="visualizing-solve-times" class="level2">
@@ -3914,7 +4067,7 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb2-23">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_bw</span>() <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">theme_jdonland</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb2-24">  <span class="fu" style="color: #4758AB;
@@ -3931,13 +4084,13 @@ background-color: null;
 font-style: inherit;">element_blank</span>(),</span>
 <span id="cb2-26">        <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">panel.background =</span> <span class="fu" style="color: #4758AB;
+font-style: inherit;">strip.text =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">element_rect</span>(<span class="at" style="color: #657422;
+font-style: inherit;">element_text</span>(<span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
+font-style: inherit;">hjust =</span> <span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">"#fffcf9"</span>))</span></code></pre></div>
+font-style: inherit;">0.5</span>))</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -4235,7 +4388,7 @@ background-color: null;
 font-style: inherit;"># theming</span></span>
 <span id="cb3-34">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_bw</span>() <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">theme_jdonland</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb3-35">  <span class="fu" style="color: #4758AB;
@@ -4294,13 +4447,13 @@ background-color: null;
 font-style: inherit;">0</span>),</span>
 <span id="cb3-41">        <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">panel.background =</span> <span class="fu" style="color: #4758AB;
+font-style: inherit;">strip.text =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">element_rect</span>(<span class="at" style="color: #657422;
+font-style: inherit;">element_text</span>(<span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
+font-style: inherit;">hjust =</span> <span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">"#fffcf9"</span>))</span></code></pre></div>
+font-style: inherit;">0.5</span>))</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -4327,7 +4480,6 @@ font-style: inherit;">"#fffcf9"</span>))</span></code></pre></div>
  ]]></description>
   <guid>https://jdonland.github.io/posts/crossword_times/crossword_times.html</guid>
   <pubDate>Mon, 02 Jan 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://jdonland.github.io/posts/crossword_times/crossword_times.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Coryat Scores</title>
@@ -4935,13 +5087,13 @@ font-style: inherit;">""</span>)</span></code></pre></div>
 
 
 
-<section id="introduction" class="level2">
+<section id="introduction" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Today we’ll learn about an ancient Germanic writing system, clean up some messy data, engineer a couple of simple features, and see if we can find a way to predict the age of some historical artifacts without having to pay for a fancy-schmancy archaeology degree. Along the way, we’ll get a little overview of the <code>tidyverse</code> and <code>tidymodels</code> approaches to data analysis and modeling in R.</p>
-<section id="a-very-brief-primer-on-runes" class="level3">
+<section id="a-very-brief-primer-on-runes" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="a-very-brief-primer-on-runes">A Very Brief Primer on Runes</h3>
-<p>A rune is a letter from any of a handful of closely-related alphabets used by Germanic peoples primarily from around the 3rd to the 13th centuries CE. Like the Latin alphabet used to write the Germanic languages today, they derive from an ancient form of the Greek alphabet.<sup>1</sup> These alphabets are sometimes called “futhark” (or “futhorc”, “fuþąrk”, etc.) after first few letters in their canonical order.<sup>2</sup></p>
-<p>The main runic alphabets are<sup>3</sup>:</p>
+<div class="page-columns page-full"><p>A rune is a letter from any of a handful of closely-related alphabets used by Germanic peoples primarily from around the 3rd to the 13th centuries CE. Like the Latin alphabet used to write the Germanic languages today, they derive from an ancient form of the Greek alphabet.<sup>1</sup> These alphabets are sometimes called “futhark” (or “futhorc”, “fuþąrk”, etc.) after first few letters in their canonical order.<sup>2</sup></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Possibly via one of the alpine Old Italic alphabets such as Venetic.</p></li><li id="fn2"><p><sup>2</sup>&nbsp;Curiously, the first three letters of these alphabets spell out a vulgar word for a woman’s genitals in Old Norse.</p></li></div></div>
+<div class="page-columns page-full"><p>The main runic alphabets are<sup>3</sup>:</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;The abecedaria, or “rune rows”, in this table are much simplified. In reality, there were many variations of each. The medieval runes in particular were augmented by diacritical dots in order to disambiguate sounds represented by the same rune in the younger futhark.</p></li></div></div>
 <table class="table">
 <colgroup>
 <col style="width: 18%">
@@ -4984,7 +5136,7 @@ font-style: inherit;">""</span>)</span></code></pre></div>
 </tr>
 </tbody>
 </table>
-<p>Magical incantations were sometimes written in runes, but despite what such august institutions as the gift shop of the National Museum of Iceland would have you believe, there’s no evidence that each runic letter had a specific symbolic meaning.<sup>4</sup> Neither is there much evidence that they were used in divination. These alphabets were used mainly for mundane purposes such as inscribing an object with its owner or creator’s name, and for memorializing the dead on gravestones. Nevertheless, in recent times these alphabets have become an element in various kinds of New Age mysticism, neo-pagan religions, and unsavoury political movements.</p>
+<div class="page-columns page-full"><p>Magical incantations were sometimes written in runes, but despite what such august institutions as the gift shop of the National Museum of Iceland would have you believe, there’s no evidence that each runic letter had a specific symbolic meaning.<sup>4</sup> Neither is there much evidence that they were used in divination. These alphabets were used mainly for mundane purposes such as inscribing an object with its owner or creator’s name, and for memorializing the dead on gravestones. Nevertheless, in recent times these alphabets have become an element in various kinds of New Age mysticism, neo-pagan religions, and unsavoury political movements.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;The runes have mnemonic names, and occasionally a rune could stand in for its name, but even this is rare.</p></li></div></div>
 </section>
 <section id="runes-db" class="level3">
 <h3 class="anchored" data-anchor-id="runes-db">RuneS-DB</h3>
@@ -5000,7 +5152,7 @@ font-style: inherit;">""</span>)</span></code></pre></div>
 <p>This document was lovingly hand-crafted in artisanal, farm-to-table, GMO-free <a href="https://quarto.org/">Quarto</a>.</p>
 </section>
 </section>
-<section id="reading-and-cleaning-the-data" class="level2">
+<section id="reading-and-cleaning-the-data" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="reading-and-cleaning-the-data">Reading and Cleaning the Data</h2>
 <section id="reading-the-file" class="level3">
 <h3 class="anchored" data-anchor-id="reading-the-file">Reading the File</h3>
@@ -5044,9 +5196,9 @@ font-style: inherit;"># save to a dataframe</span></span>
 <span id="cb1-8">  runes_data</span></code></pre></div>
 </div>
 </section>
-<section id="the-vimose-comb" class="level3">
+<section id="the-vimose-comb" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="the-vimose-comb">The Vimose Comb</h3>
-<p>One artifact we’d expect to find in RuneS-DB is the <a href="https://en.wikipedia.org/wiki/Vimose_inscriptions">Vimose comb</a>, which bears what’s considered to be the oldest known datable<sup>5</sup> runic inscription. <code>dplyr</code>’s <code>filter</code> function and <code>stringr</code>’s <code>str_detect</code> let us filter the data to show only rows where value in the column of inscription names matches “Vimose comb”.<sup>6</sup></p>
+<div class="page-columns page-full"><p>One artifact we’d expect to find in RuneS-DB is the <a href="https://en.wikipedia.org/wiki/Vimose_inscriptions">Vimose comb</a>, which bears what’s considered to be the oldest known datable<sup>5</sup> runic inscription. <code>dplyr</code>’s <code>filter</code> function and <code>stringr</code>’s <code>str_detect</code> let us filter the data to show only rows where value in the column of inscription names matches “Vimose comb”.<sup>6</sup></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Insert joke about “datable” here.</p></li><li id="fn6"><p><sup>6</sup>&nbsp;Just checking for <code>rs_short_inscr_name == "Vimose comb"</code> would fail because the values in that column have extra whitespace characters.</p></li></div></div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -5075,79 +5227,80 @@ font-style: inherit;">width =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"51.75%"</span>)</span></code></pre></div>
 <div class="cell-output-display">
-
-<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; "><table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> Findno </th>
-   <th style="text-align:left;"> rs_short_inscr_name </th>
-   <th style="text-align:left;"> rs_fundort </th>
-   <th style="text-align:left;"> rs_short_storage </th>
-   <th style="text-align:left;"> rs_extdat </th>
-   <th style="text-align:left;"> rs_short_dat_art </th>
-   <th style="text-align:left;"> rs_short_context </th>
-   <th style="text-align:left;"> rs_objklasse </th>
-   <th style="text-align:left;"> rs_objtyp </th>
-   <th style="text-align:left;"> rs_short_obj_complete </th>
-   <th style="text-align:left;"> rs_short_matklasse </th>
-   <th style="text-align:left;"> rs_mat </th>
-   <th style="text-align:left;"> rs_short_obj_state </th>
-   <th style="text-align:left;"> rs_runenreihe </th>
-   <th style="text-align:left;"> rs_short_museum </th>
-   <th style="text-align:left;"> rs_short_ins_complete </th>
-   <th style="text-align:left;"> rs_translat </th>
-   <th style="text-align:left;"> rs_translit </th>
-   <th style="text-align:left;"> rs_short_ins_state </th>
-   <th style="text-align:left;"> rs_short_markings </th>
-   <th style="text-align:left;"> rs_short_transkript </th>
-   <th style="text-align:left;"> rs_namen </th>
-   <th style="text-align:left;"> rs_fundjahr </th>
-   <th style="text-align:left;"> rs_short_gemeinde </th>
-   <th style="text-align:left;"> rs_short_bezirk </th>
-   <th style="text-align:left;"> rs_short_landschaft </th>
-   <th style="text-align:left;"> rs_short_land </th>
-   <th style="text-align:left;"> rs_short_invnr </th>
-   <th style="text-align:left;"> rs_short_kategorie </th>
-   <th style="text-align:left;"> rs_short_sigils </th>
-   <th style="text-align:left;"> rs_traeger </th>
-  </tr>
- </thead>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; ">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Findno</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_inscr_name</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_fundort</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_storage</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_extdat</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_dat_art</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_context</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_objklasse</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_objtyp</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_obj_complete</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_matklasse</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_mat</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_obj_state</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_runenreihe</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_museum</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_ins_complete</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_translat</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_translit</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_ins_state</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_markings</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_transkript</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_namen</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_fundjahr</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_gemeinde</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_bezirk</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_landschaft</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_land</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_invnr</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_kategorie</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_sigils</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_traeger</th>
+</tr>
+</thead>
 <tbody>
-  <tr>
-   <td style="text-align:right;"> 20 </td>
-   <td style="text-align:left;"> Vimose comb </td>
-   <td style="text-align:left;"> Vimose </td>
-   <td style="text-align:left;"> Museum </td>
-   <td style="text-align:left;"> 140-160 </td>
-   <td style="text-align:left;"> arch. </td>
-   <td style="text-align:left;"> deposit find </td>
-   <td style="text-align:left;"> tool/implement </td>
-   <td style="text-align:left;"> personal hygiene </td>
-   <td style="text-align:left;"> yes </td>
-   <td style="text-align:left;"> bone/horn </td>
-   <td style="text-align:left;"> antler </td>
-   <td style="text-align:left;"> good </td>
-   <td style="text-align:left;"> older fuþark </td>
-   <td style="text-align:left;"> Nationalmuseet </td>
-   <td style="text-align:left;"> yes </td>
-   <td style="text-align:left;"> Harja. </td>
-   <td style="text-align:left;"> harja | </td>
-   <td style="text-align:left;"> good </td>
-   <td style="text-align:left;"> nein </td>
-   <td style="text-align:left;"> NA </td>
-   <td style="text-align:left;"> Vimose-kam </td>
-   <td style="text-align:left;"> 1865 </td>
-   <td style="text-align:left;"> Allese Sogn </td>
-   <td style="text-align:left;"> Odense Amt </td>
-   <td style="text-align:left;"> Fyn </td>
-   <td style="text-align:left;"> DK </td>
-   <td style="text-align:left;"> 22657 </td>
-   <td style="text-align:left;"> run. </td>
-   <td style="text-align:left;"> Fyn 19 </td>
-   <td style="text-align:left;"> comb </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">Vimose comb</td>
+<td style="text-align: left;">Vimose</td>
+<td style="text-align: left;">Museum</td>
+<td style="text-align: left;">140-160</td>
+<td style="text-align: left;">arch.</td>
+<td style="text-align: left;">deposit find</td>
+<td style="text-align: left;">tool/implement</td>
+<td style="text-align: left;">personal hygiene</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">bone/horn</td>
+<td style="text-align: left;">antler</td>
+<td style="text-align: left;">good</td>
+<td style="text-align: left;">older fuþark</td>
+<td style="text-align: left;">Nationalmuseet</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Harja.</td>
+<td style="text-align: left;">harja |</td>
+<td style="text-align: left;">good</td>
+<td style="text-align: left;">nein</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Vimose-kam</td>
+<td style="text-align: left;">1865</td>
+<td style="text-align: left;">Allese Sogn</td>
+<td style="text-align: left;">Odense Amt</td>
+<td style="text-align: left;">Fyn</td>
+<td style="text-align: left;">DK</td>
+<td style="text-align: left;">22657</td>
+<td style="text-align: left;">run.</td>
+<td style="text-align: left;">Fyn 19</td>
+<td style="text-align: left;">comb</td>
+</tr>
 </tbody>
-</table></div>
+</table>
+</div>
 
 </div>
 </div>
@@ -5178,269 +5331,270 @@ font-style: inherit;">width =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"51.75%"</span>)</span></code></pre></div>
 <div class="cell-output-display">
-
-<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; "><table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> variables </th>
-   <th style="text-align:left;"> types </th>
-   <th style="text-align:right;"> missing_count </th>
-   <th style="text-align:right;"> missing_percent </th>
-   <th style="text-align:right;"> unique_count </th>
-   <th style="text-align:right;"> unique_rate </th>
-  </tr>
- </thead>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; ">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">variables</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">types</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">missing_count</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">missing_percent</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">unique_count</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">unique_rate</th>
+</tr>
+</thead>
 <tbody>
-  <tr>
-   <td style="text-align:left;"> Findno </td>
-   <td style="text-align:left;"> numeric </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.0000000 </td>
-   <td style="text-align:right;"> 8281 </td>
-   <td style="text-align:right;"> 1.0000000 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_inscr_name </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 0.0845309 </td>
-   <td style="text-align:right;"> 5457 </td>
-   <td style="text-align:right;"> 0.6589784 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_fundort </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 34 </td>
-   <td style="text-align:right;"> 0.4105784 </td>
-   <td style="text-align:right;"> 3156 </td>
-   <td style="text-align:right;"> 0.3811134 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_storage </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.0000000 </td>
-   <td style="text-align:right;"> 1723 </td>
-   <td style="text-align:right;"> 0.2080667 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_extdat </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 0.0724550 </td>
-   <td style="text-align:right;"> 573 </td>
-   <td style="text-align:right;"> 0.0691945 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_dat_art </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1988 </td>
-   <td style="text-align:right;"> 24.0067625 </td>
-   <td style="text-align:right;"> 19 </td>
-   <td style="text-align:right;"> 0.0022944 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_context </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 5240 </td>
-   <td style="text-align:right;"> 63.2773820 </td>
-   <td style="text-align:right;"> 21 </td>
-   <td style="text-align:right;"> 0.0025359 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_objklasse </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 33 </td>
-   <td style="text-align:right;"> 0.3985026 </td>
-   <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 0.0015699 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_objtyp </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1452 </td>
-   <td style="text-align:right;"> 17.5341142 </td>
-   <td style="text-align:right;"> 45 </td>
-   <td style="text-align:right;"> 0.0054341 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_obj_complete </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1873 </td>
-   <td style="text-align:right;"> 22.6180413 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 0.0004830 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_matklasse </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 43 </td>
-   <td style="text-align:right;"> 0.5192610 </td>
-   <td style="text-align:right;"> 11 </td>
-   <td style="text-align:right;"> 0.0013283 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_mat </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 3550 </td>
-   <td style="text-align:right;"> 42.8692187 </td>
-   <td style="text-align:right;"> 119 </td>
-   <td style="text-align:right;"> 0.0143702 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_obj_state </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1970 </td>
-   <td style="text-align:right;"> 23.7893974 </td>
-   <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 0.0007246 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_runenreihe </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 463 </td>
-   <td style="text-align:right;"> 5.5911122 </td>
-   <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 0.0014491 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_museum </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 4382 </td>
-   <td style="text-align:right;"> 52.9163145 </td>
-   <td style="text-align:right;"> 291 </td>
-   <td style="text-align:right;"> 0.0351407 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_ins_complete </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1259 </td>
-   <td style="text-align:right;"> 15.2034778 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 0.0004830 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_translat </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 698 </td>
-   <td style="text-align:right;"> 8.4289337 </td>
-   <td style="text-align:right;"> 5592 </td>
-   <td style="text-align:right;"> 0.6752808 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_translit </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 91 </td>
-   <td style="text-align:right;"> 1.0989011 </td>
-   <td style="text-align:right;"> 7482 </td>
-   <td style="text-align:right;"> 0.9035141 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_ins_state </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1371 </td>
-   <td style="text-align:right;"> 16.5559715 </td>
-   <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 0.0007246 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_markings </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 2676 </td>
-   <td style="text-align:right;"> 32.3149378 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.0003623 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_transkript </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1090 </td>
-   <td style="text-align:right;"> 13.1626615 </td>
-   <td style="text-align:right;"> 5536 </td>
-   <td style="text-align:right;"> 0.6685183 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_namen </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 5662 </td>
-   <td style="text-align:right;"> 68.3733849 </td>
-   <td style="text-align:right;"> 1554 </td>
-   <td style="text-align:right;"> 0.1876585 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_fundjahr </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 4895 </td>
-   <td style="text-align:right;"> 59.1112185 </td>
-   <td style="text-align:right;"> 700 </td>
-   <td style="text-align:right;"> 0.0845309 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_gemeinde </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1435 </td>
-   <td style="text-align:right;"> 17.3288250 </td>
-   <td style="text-align:right;"> 1682 </td>
-   <td style="text-align:right;"> 0.2031156 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_bezirk </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 3287 </td>
-   <td style="text-align:right;"> 39.6932738 </td>
-   <td style="text-align:right;"> 406 </td>
-   <td style="text-align:right;"> 0.0490279 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_landschaft </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1384 </td>
-   <td style="text-align:right;"> 16.7129574 </td>
-   <td style="text-align:right;"> 124 </td>
-   <td style="text-align:right;"> 0.0149740 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_land </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 48 </td>
-   <td style="text-align:right;"> 0.5796401 </td>
-   <td style="text-align:right;"> 28 </td>
-   <td style="text-align:right;"> 0.0033812 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_invnr </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 4709 </td>
-   <td style="text-align:right;"> 56.8651129 </td>
-   <td style="text-align:right;"> 2524 </td>
-   <td style="text-align:right;"> 0.3047941 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_kategorie </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1227 </td>
-   <td style="text-align:right;"> 14.8170511 </td>
-   <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 0.0018114 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_sigils </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 125 </td>
-   <td style="text-align:right;"> 1.5094795 </td>
-   <td style="text-align:right;"> 8129 </td>
-   <td style="text-align:right;"> 0.9816447 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_traeger </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 0.0966067 </td>
-   <td style="text-align:right;"> 416 </td>
-   <td style="text-align:right;"> 0.0502355 </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: left;">Findno</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">8281</td>
+<td style="text-align: right;">1.0000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_inscr_name</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0.0845309</td>
+<td style="text-align: right;">5457</td>
+<td style="text-align: right;">0.6589784</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_fundort</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">0.4105784</td>
+<td style="text-align: right;">3156</td>
+<td style="text-align: right;">0.3811134</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_storage</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">1723</td>
+<td style="text-align: right;">0.2080667</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_extdat</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.0724550</td>
+<td style="text-align: right;">573</td>
+<td style="text-align: right;">0.0691945</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_dat_art</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1988</td>
+<td style="text-align: right;">24.0067625</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">0.0022944</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_context</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">5240</td>
+<td style="text-align: right;">63.2773820</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">0.0025359</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_objklasse</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">0.3985026</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0.0015699</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_objtyp</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1452</td>
+<td style="text-align: right;">17.5341142</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">0.0054341</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_obj_complete</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1873</td>
+<td style="text-align: right;">22.6180413</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.0004830</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_matklasse</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">0.5192610</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0.0013283</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_mat</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">3550</td>
+<td style="text-align: right;">42.8692187</td>
+<td style="text-align: right;">119</td>
+<td style="text-align: right;">0.0143702</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_obj_state</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1970</td>
+<td style="text-align: right;">23.7893974</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.0007246</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_runenreihe</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">463</td>
+<td style="text-align: right;">5.5911122</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0.0014491</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_museum</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">4382</td>
+<td style="text-align: right;">52.9163145</td>
+<td style="text-align: right;">291</td>
+<td style="text-align: right;">0.0351407</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_ins_complete</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1259</td>
+<td style="text-align: right;">15.2034778</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.0004830</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_translat</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">698</td>
+<td style="text-align: right;">8.4289337</td>
+<td style="text-align: right;">5592</td>
+<td style="text-align: right;">0.6752808</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_translit</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">1.0989011</td>
+<td style="text-align: right;">7482</td>
+<td style="text-align: right;">0.9035141</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_ins_state</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1371</td>
+<td style="text-align: right;">16.5559715</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.0007246</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_markings</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">2676</td>
+<td style="text-align: right;">32.3149378</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.0003623</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_transkript</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1090</td>
+<td style="text-align: right;">13.1626615</td>
+<td style="text-align: right;">5536</td>
+<td style="text-align: right;">0.6685183</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_namen</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">5662</td>
+<td style="text-align: right;">68.3733849</td>
+<td style="text-align: right;">1554</td>
+<td style="text-align: right;">0.1876585</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_fundjahr</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">4895</td>
+<td style="text-align: right;">59.1112185</td>
+<td style="text-align: right;">700</td>
+<td style="text-align: right;">0.0845309</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_gemeinde</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1435</td>
+<td style="text-align: right;">17.3288250</td>
+<td style="text-align: right;">1682</td>
+<td style="text-align: right;">0.2031156</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_bezirk</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">3287</td>
+<td style="text-align: right;">39.6932738</td>
+<td style="text-align: right;">406</td>
+<td style="text-align: right;">0.0490279</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_landschaft</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1384</td>
+<td style="text-align: right;">16.7129574</td>
+<td style="text-align: right;">124</td>
+<td style="text-align: right;">0.0149740</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_land</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">0.5796401</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">0.0033812</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_invnr</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">4709</td>
+<td style="text-align: right;">56.8651129</td>
+<td style="text-align: right;">2524</td>
+<td style="text-align: right;">0.3047941</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_kategorie</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1227</td>
+<td style="text-align: right;">14.8170511</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">0.0018114</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_sigils</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">125</td>
+<td style="text-align: right;">1.5094795</td>
+<td style="text-align: right;">8129</td>
+<td style="text-align: right;">0.9816447</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_traeger</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0.0966067</td>
+<td style="text-align: right;">416</td>
+<td style="text-align: right;">0.0502355</td>
+</tr>
 </tbody>
-</table></div>
+</table>
+</div>
 
 </div>
 </div>
@@ -5947,7 +6101,7 @@ font-style: inherit;">-&gt;</span></span>
 <p>There’s more cleaning we could do, but this is enough for now.</p>
 </section>
 </section>
-<section id="exploratory-data-analysis" class="level2">
+<section id="exploratory-data-analysis" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h2>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb8-1">runes_data <span class="sc" style="color: #5E5E5E;
@@ -6051,7 +6205,7 @@ font-style: inherit;">"Material Class"</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
-<p>Nearly half of the artifacts in RuneS-DB are stones<sup>7</sup>, which it turns out are always made of stone! Likewise, coins and bracteates<sup>8</sup> are always made of metal, and rune sticks are always made of wood. Tools, edifices, “inventory” (mostly furniture), and “other objects” all seem to come in a variety of materials.</p>
+<div class="page-columns page-full"><p>Nearly half of the artifacts in RuneS-DB are stones<sup>7</sup>, which it turns out are always made of stone! Likewise, coins and bracteates<sup>8</sup> are always made of metal, and rune sticks are always made of wood. Tools, edifices, “inventory” (mostly furniture), and “other objects” all seem to come in a variety of materials.</p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;<a href="https://frinkiac.com/meme/S04E19/338003.jpg?b64lines=R09PRCBPTEQgUk9DSy4gIApOT1RISU5HIEJFQVRTIFRIQVQu">Good old rock, nothin’ beats that!</a></p></li><li id="fn8"><p><sup>8</sup>&nbsp;What’s a bracteate, you ask? Why, it’s “is”a flat, thin, single-sided gold medal worn as jewelry”.</p></li></div></div>
 <p>Where is this stuff typically found?</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb9-1">runes_data <span class="sc" style="color: #5E5E5E;
@@ -6245,9 +6399,9 @@ font-style: inherit;">"Number of Objects"</span>)</span></code></pre></div>
 </div>
 <p>This histogram has a huge spike at the 10th century. Upon cursory investigation, this seems to be because the data set contains many rune stones with dated to the rather wide range of “725-1100”, i.e.&nbsp;the Viking Age. Obviously this data set is not random sample of all runic objects ever produced; some things are more likely to survive and be cataloged than others. The smaller spike at the 13th century seems to be more organic.</p>
 </section>
-<section id="feature-engineering" class="level2">
+<section id="feature-engineering" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="feature-engineering">Feature Engineering</h2>
-<p>Suppose you’re lost in the woods in northwestern Europe<sup>9</sup> and stumble upon some runes. Is there some rule you can use to estimate when they were carved (or written)?</p>
+<div class="page-columns page-full"><p>Suppose you’re lost in the woods in northwestern Europe<sup>9</sup> and stumble upon some runes. Is there some rule you can use to estimate when they were carved (or written)?</p><div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;What do you do if you’re lost in the woods in Iceland? Stand up.</p></li></div></div>
 <p>First, we need to consider what features of the object you’d be able to determine. I think these are all reasonable:</p>
 <ul>
 <li>object class (stone, coin, etc.)</li>
@@ -6259,7 +6413,7 @@ font-style: inherit;">"Number of Objects"</span>)</span></code></pre></div>
 <li>whether the inscription seems to contain any of a few common words or morphemes</li>
 </ul>
 <p>The first four of these features are already present in our data frame. We’ll have to “engineer” the others.</p>
-<p>Unfortunately, the transliterations in RuneS-DB are very inconsistently encoded, but we can still get an approximate length of each inscription by converting the transliteration to ASCII<sup>10</sup> and counting the number of resulting alphanumeric characters<sup>11</sup>. It’s too bad the database doesn’t simply use the runic characters included in Unicode, but perhaps that wouldn’t be sufficient to encode parts of the inscriptions which are unclear, damaged, combined into ligatures (so-called “bind runes”), etc.</p>
+<div class="page-columns page-full"><p>Unfortunately, the transliterations in RuneS-DB are very inconsistently encoded, but we can still get an approximate length of each inscription by converting the transliteration to ASCII<sup>10</sup> and counting the number of resulting alphanumeric characters<sup>11</sup>. It’s too bad the database doesn’t simply use the runic characters included in Unicode, but perhaps that wouldn’t be sufficient to encode parts of the inscriptions which are unclear, damaged, combined into ligatures (so-called “bind runes”), etc.</p><div class="no-row-height column-margin column-container"><li id="fn10"><p><sup>10</sup>&nbsp;Note that different operating systems have different ideas about how to convert other encodings into ASCII.</p></li><li id="fn11"><p><sup>11</sup>&nbsp;Plus question marks, to account for some of the non-ASCII letters.</p></li></div></div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -6472,7 +6626,7 @@ font-style: inherit;">-&gt;</span></span>
 </div>
 <p>Is this enough information to be able to predict the age of a runic inscription with any accuracy? Let’s try fitting a few different models using different approaches.</p>
 </section>
-<section id="model-fitting" class="level2">
+<section id="model-fitting" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="model-fitting">Model Fitting</h2>
 <section id="testtraining-data-split" class="level3">
 <h3 class="anchored" data-anchor-id="testtraining-data-split">Test/Training Data Split</h3>
@@ -7109,7 +7263,7 @@ font-style: inherit;">-&gt;</span></span>
 <span id="cb26-11">  final_cubist</span></code></pre></div>
 </div>
 </section>
-<section id="the-performance-explainability-trade-off" class="level3">
+<section id="the-performance-explainability-trade-off" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="the-performance-explainability-trade-off">The Performance-Explainability Trade-off</h3>
 <p>Unfortunately, our finalized Cubist model is useless. Since we’re lost in the woods, we can’t actually compute a prediction involving a complicated collection of trees of linear models with hundreds or thousands of coefficients and weights in total.</p>
 <p>Can we find a simple decision tree with comparable performance by trying more hyperparameter combinations? Let’s set <code>tree_depth</code> to 3, find good values for the other hyperparameters, then finalize and evaluate the resulting decision tree model.</p>
@@ -7315,32 +7469,33 @@ font-style: inherit;">width =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"51.75%"</span>)</span></code></pre></div>
 <div class="cell-output-display">
-
-<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; "><table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> model </th>
-   <th style="text-align:right;"> rmse </th>
-   <th style="text-align:right;"> features </th>
-  </tr>
- </thead>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; ">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">model</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">rmse</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">features</th>
+</tr>
+</thead>
 <tbody>
-  <tr>
-   <td style="text-align:left;"> Cubist </td>
-   <td style="text-align:right;"> 109.7088 </td>
-   <td style="text-align:right;"> 38 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Small Decision Tree </td>
-   <td style="text-align:right;"> 131.1698 </td>
-   <td style="text-align:right;"> 7 </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: left;">Cubist</td>
+<td style="text-align: right;">109.7088</td>
+<td style="text-align: right;">38</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Small Decision Tree</td>
+<td style="text-align: right;">131.1698</td>
+<td style="text-align: right;">7</td>
+</tr>
 </tbody>
-</table></div>
+</table>
+</div>
 
 </div>
 </div>
-<p>The small decision tree’s predictions are about 16% worse than the best Cubist model we could find. On the other hand, it’s <em>much</em> simpler. While the Cubist model uses essentially all of the information we provided to it, since we constrained our decision tree to three levels, it can use only a maximum of seven features.<sup>12</sup> Although the more complicated Cubist performs well, it’s difficult to explain exactly why, or what the role of each feature is in generating predictions. This illustrates the performance-explainability trade-off.</p>
+<div class="page-columns page-full"><p>The small decision tree’s predictions are about 16% worse than the best Cubist model we could find. On the other hand, it’s <em>much</em> simpler. While the Cubist model uses essentially all of the information we provided to it, since we constrained our decision tree to three levels, it can use only a maximum of seven features.<sup>12</sup> Although the more complicated Cubist performs well, it’s difficult to explain exactly why, or what the role of each feature is in generating predictions. This illustrates the performance-explainability trade-off.</p><div class="no-row-height column-margin column-container"><li id="fn12"><p><sup>12</sup>&nbsp;None of which are among the ones we engineered, as it happens.</p></li></div></div>
 <p>Our small tree model is simple enough to write on an index card and keep with us when venturing out into the forests of rural Scandinavia. Here it is:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1">small_tree <span class="sc" style="color: #5E5E5E;
@@ -7403,9 +7558,9 @@ font-style: inherit;">1</span>])}))</span></code></pre></div>
 </div>
 </section>
 </section>
-<section id="conclusion" class="level2">
+<section id="conclusion" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>If you can foresee yourself desperately needing to know the approximate age of a runic inscription, I recommend you write down the decision tree above and keep it in your pocket. That, or always bring a licensed and qualified runologist<sup>13</sup> with you.</p>
+<div class="page-columns page-full"><p>If you can foresee yourself desperately needing to know the approximate age of a runic inscription, I recommend you write down the decision tree above and keep it in your pocket. That, or always bring a licensed and qualified runologist<sup>13</sup> with you.</p><div class="no-row-height column-margin column-container"><li id="fn13"><p><sup>13</sup>&nbsp;The real job title of perhaps an entire dozen people!</p></li></div></div>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
@@ -7436,27 +7591,9 @@ font-style: inherit;">1</span>])}))</span></code></pre></div>
 </section>
 
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Possibly via one of the alpine Old Italic alphabets such as Venetic.↩︎</p></li>
-<li id="fn2"><p>Curiously, the first three letters of these alphabets spell out a vulgar word for a woman’s genitals in Old Norse.↩︎</p></li>
-<li id="fn3"><p>The abecedaria, or “rune rows”, in this table are much simplified. In reality, there were many variations of each. The medieval runes in particular were augmented by diacritical dots in order to disambiguate sounds represented by the same rune in the younger futhark.↩︎</p></li>
-<li id="fn4"><p>The runes have mnemonic names, and occasionally a rune could stand in for its name, but even this is rare.↩︎</p></li>
-<li id="fn5"><p>Insert joke about “datable” here.↩︎</p></li>
-<li id="fn6"><p>Just checking for <code>rs_short_inscr_name == "Vimose comb"</code> would fail because the values in that column have extra whitespace characters.↩︎</p></li>
-<li id="fn7"><p><a href="https://frinkiac.com/meme/S04E19/338003.jpg?b64lines=R09PRCBPTEQgUk9DSy4gIApOT1RISU5HIEJFQVRTIFRIQVQu">Good old rock, nothin’ beats that!</a>↩︎</p></li>
-<li id="fn8"><p>What’s a bracteate, you ask? Why, it’s “is”a flat, thin, single-sided gold medal worn as jewelry”.↩︎</p></li>
-<li id="fn9"><p>What do you do if you’re lost in the woods in Iceland? Stand up.↩︎</p></li>
-<li id="fn10"><p>Note that different operating systems have different ideas about how to convert other encodings into ASCII.↩︎</p></li>
-<li id="fn11"><p>Plus question marks, to account for some of the non-ASCII letters.↩︎</p></li>
-<li id="fn12"><p>None of which are among the ones we engineered, as it happens.↩︎</p></li>
-<li id="fn13"><p>The real job title of perhaps an entire dozen people!↩︎</p></li>
-</ol>
-</section></div> ]]></description>
+ ]]></description>
   <guid>https://jdonland.github.io/posts/machine_learning_about_runes/machine_learning_about_runes.html</guid>
   <pubDate>Mon, 27 Jun 2022 04:00:00 GMT</pubDate>
-  <media:content url="https://jdonland.github.io/posts/machine_learning_about_runes/machine_learning_about_runes.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Cities with Nice Weather</title>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,9 +19,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -48,43 +49,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -97,12 +68,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -121,10 +90,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -141,25 +109,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html">
+    <a class="nav-link" href="../../posts.html" rel="" target="">
  <span class="menu-text">Index</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../links.html">
+    <a class="nav-link" href="../../links.html" rel="" target="">
  <span class="menu-text">Links</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resume.pdf">
+    <a class="nav-link" href="../../resume.pdf" rel="" target="">
  <span class="menu-text">Resume</span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -168,9 +135,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -200,13 +169,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="introduction" class="level2">
+<section id="introduction" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Today we’ll learn about an ancient Germanic writing system, clean up some messy data, engineer a couple of simple features, and see if we can find a way to predict the age of some historical artifacts without having to pay for a fancy-schmancy archaeology degree. Along the way, we’ll get a little overview of the <code>tidyverse</code> and <code>tidymodels</code> approaches to data analysis and modeling in R.</p>
-<section id="a-very-brief-primer-on-runes" class="level3">
+<section id="a-very-brief-primer-on-runes" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="a-very-brief-primer-on-runes">A Very Brief Primer on Runes</h3>
-<p>A rune is a letter from any of a handful of closely-related alphabets used by Germanic peoples primarily from around the 3rd to the 13th centuries CE. Like the Latin alphabet used to write the Germanic languages today, they derive from an ancient form of the Greek alphabet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> These alphabets are sometimes called “futhark” (or “futhorc”, “fuþąrk”, etc.) after first few letters in their canonical order.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p>The main runic alphabets are<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p>
+<div class="page-columns page-full"><p>A rune is a letter from any of a handful of closely-related alphabets used by Germanic peoples primarily from around the 3rd to the 13th centuries CE. Like the Latin alphabet used to write the Germanic languages today, they derive from an ancient form of the Greek alphabet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> These alphabets are sometimes called “futhark” (or “futhorc”, “fuþąrk”, etc.) after first few letters in their canonical order.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Possibly via one of the alpine Old Italic alphabets such as Venetic.</p></li><li id="fn2"><p><sup>2</sup>&nbsp;Curiously, the first three letters of these alphabets spell out a vulgar word for a woman’s genitals in Old Norse.</p></li></div></div>
+<div class="page-columns page-full"><p>The main runic alphabets are<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;The abecedaria, or “rune rows”, in this table are much simplified. In reality, there were many variations of each. The medieval runes in particular were augmented by diacritical dots in order to disambiguate sounds represented by the same rune in the younger futhark.</p></li></div></div>
 <table class="table">
 <colgroup>
 <col style="width: 18%">
@@ -249,7 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p>Magical incantations were sometimes written in runes, but despite what such august institutions as the gift shop of the National Museum of Iceland would have you believe, there’s no evidence that each runic letter had a specific symbolic meaning.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Neither is there much evidence that they were used in divination. These alphabets were used mainly for mundane purposes such as inscribing an object with its owner or creator’s name, and for memorializing the dead on gravestones. Nevertheless, in recent times these alphabets have become an element in various kinds of New Age mysticism, neo-pagan religions, and unsavoury political movements.</p>
+<div class="page-columns page-full"><p>Magical incantations were sometimes written in runes, but despite what such august institutions as the gift shop of the National Museum of Iceland would have you believe, there’s no evidence that each runic letter had a specific symbolic meaning.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Neither is there much evidence that they were used in divination. These alphabets were used mainly for mundane purposes such as inscribing an object with its owner or creator’s name, and for memorializing the dead on gravestones. Nevertheless, in recent times these alphabets have become an element in various kinds of New Age mysticism, neo-pagan religions, and unsavoury political movements.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;The runes have mnemonic names, and occasionally a rune could stand in for its name, but even this is rare.</p></li></div></div>
 </section>
 <section id="runes-db" class="level3">
 <h3 class="anchored" data-anchor-id="runes-db">RuneS-DB</h3>
@@ -265,7 +234,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This document was lovingly hand-crafted in artisanal, farm-to-table, GMO-free <a href="https://quarto.org/">Quarto</a>.</p>
 </section>
 </section>
-<section id="reading-and-cleaning-the-data" class="level2">
+<section id="reading-and-cleaning-the-data" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="reading-and-cleaning-the-data">Reading and Cleaning the Data</h2>
 <section id="reading-the-file" class="level3">
 <h3 class="anchored" data-anchor-id="reading-the-file">Reading the File</h3>
@@ -281,88 +250,89 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="the-vimose-comb" class="level3">
+<section id="the-vimose-comb" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="the-vimose-comb">The Vimose Comb</h3>
-<p>One artifact we’d expect to find in RuneS-DB is the <a href="https://en.wikipedia.org/wiki/Vimose_inscriptions">Vimose comb</a>, which bears what’s considered to be the oldest known datable<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> runic inscription. <code>dplyr</code>’s <code>filter</code> function and <code>stringr</code>’s <code>str_detect</code> let us filter the data to show only rows where value in the column of inscription names matches “Vimose comb”.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<div class="page-columns page-full"><p>One artifact we’d expect to find in RuneS-DB is the <a href="https://en.wikipedia.org/wiki/Vimose_inscriptions">Vimose comb</a>, which bears what’s considered to be the oldest known datable<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> runic inscription. <code>dplyr</code>’s <code>filter</code> function and <code>stringr</code>’s <code>str_detect</code> let us filter the data to show only rows where value in the column of inscription names matches “Vimose comb”.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Insert joke about “datable” here.</p></li><li id="fn6"><p><sup>6</sup>&nbsp;Just checking for <code>rs_short_inscr_name == "Vimose comb"</code> would fail because the values in that column have extra whitespace characters.</p></li></div></div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(rs_short_inscr_name, <span class="at">pattern =</span> <span class="st">"Vimose comb"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">|&gt;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">"51.75%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
-<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; "><table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> Findno </th>
-   <th style="text-align:left;"> rs_short_inscr_name </th>
-   <th style="text-align:left;"> rs_fundort </th>
-   <th style="text-align:left;"> rs_short_storage </th>
-   <th style="text-align:left;"> rs_extdat </th>
-   <th style="text-align:left;"> rs_short_dat_art </th>
-   <th style="text-align:left;"> rs_short_context </th>
-   <th style="text-align:left;"> rs_objklasse </th>
-   <th style="text-align:left;"> rs_objtyp </th>
-   <th style="text-align:left;"> rs_short_obj_complete </th>
-   <th style="text-align:left;"> rs_short_matklasse </th>
-   <th style="text-align:left;"> rs_mat </th>
-   <th style="text-align:left;"> rs_short_obj_state </th>
-   <th style="text-align:left;"> rs_runenreihe </th>
-   <th style="text-align:left;"> rs_short_museum </th>
-   <th style="text-align:left;"> rs_short_ins_complete </th>
-   <th style="text-align:left;"> rs_translat </th>
-   <th style="text-align:left;"> rs_translit </th>
-   <th style="text-align:left;"> rs_short_ins_state </th>
-   <th style="text-align:left;"> rs_short_markings </th>
-   <th style="text-align:left;"> rs_short_transkript </th>
-   <th style="text-align:left;"> rs_namen </th>
-   <th style="text-align:left;"> rs_fundjahr </th>
-   <th style="text-align:left;"> rs_short_gemeinde </th>
-   <th style="text-align:left;"> rs_short_bezirk </th>
-   <th style="text-align:left;"> rs_short_landschaft </th>
-   <th style="text-align:left;"> rs_short_land </th>
-   <th style="text-align:left;"> rs_short_invnr </th>
-   <th style="text-align:left;"> rs_short_kategorie </th>
-   <th style="text-align:left;"> rs_short_sigils </th>
-   <th style="text-align:left;"> rs_traeger </th>
-  </tr>
- </thead>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; ">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Findno</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_inscr_name</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_fundort</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_storage</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_extdat</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_dat_art</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_context</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_objklasse</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_objtyp</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_obj_complete</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_matklasse</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_mat</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_obj_state</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_runenreihe</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_museum</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_ins_complete</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_translat</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_translit</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_ins_state</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_markings</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_transkript</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_namen</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_fundjahr</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_gemeinde</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_bezirk</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_landschaft</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_land</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_invnr</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_kategorie</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_short_sigils</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">rs_traeger</th>
+</tr>
+</thead>
 <tbody>
-  <tr>
-   <td style="text-align:right;"> 20 </td>
-   <td style="text-align:left;"> Vimose comb </td>
-   <td style="text-align:left;"> Vimose </td>
-   <td style="text-align:left;"> Museum </td>
-   <td style="text-align:left;"> 140-160 </td>
-   <td style="text-align:left;"> arch. </td>
-   <td style="text-align:left;"> deposit find </td>
-   <td style="text-align:left;"> tool/implement </td>
-   <td style="text-align:left;"> personal hygiene </td>
-   <td style="text-align:left;"> yes </td>
-   <td style="text-align:left;"> bone/horn </td>
-   <td style="text-align:left;"> antler </td>
-   <td style="text-align:left;"> good </td>
-   <td style="text-align:left;"> older fuþark </td>
-   <td style="text-align:left;"> Nationalmuseet </td>
-   <td style="text-align:left;"> yes </td>
-   <td style="text-align:left;"> Harja. </td>
-   <td style="text-align:left;"> harja | </td>
-   <td style="text-align:left;"> good </td>
-   <td style="text-align:left;"> nein </td>
-   <td style="text-align:left;"> NA </td>
-   <td style="text-align:left;"> Vimose-kam </td>
-   <td style="text-align:left;"> 1865 </td>
-   <td style="text-align:left;"> Allese Sogn </td>
-   <td style="text-align:left;"> Odense Amt </td>
-   <td style="text-align:left;"> Fyn </td>
-   <td style="text-align:left;"> DK </td>
-   <td style="text-align:left;"> 22657 </td>
-   <td style="text-align:left;"> run. </td>
-   <td style="text-align:left;"> Fyn 19 </td>
-   <td style="text-align:left;"> comb </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">Vimose comb</td>
+<td style="text-align: left;">Vimose</td>
+<td style="text-align: left;">Museum</td>
+<td style="text-align: left;">140-160</td>
+<td style="text-align: left;">arch.</td>
+<td style="text-align: left;">deposit find</td>
+<td style="text-align: left;">tool/implement</td>
+<td style="text-align: left;">personal hygiene</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">bone/horn</td>
+<td style="text-align: left;">antler</td>
+<td style="text-align: left;">good</td>
+<td style="text-align: left;">older fuþark</td>
+<td style="text-align: left;">Nationalmuseet</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Harja.</td>
+<td style="text-align: left;">harja |</td>
+<td style="text-align: left;">good</td>
+<td style="text-align: left;">nein</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Vimose-kam</td>
+<td style="text-align: left;">1865</td>
+<td style="text-align: left;">Allese Sogn</td>
+<td style="text-align: left;">Odense Amt</td>
+<td style="text-align: left;">Fyn</td>
+<td style="text-align: left;">DK</td>
+<td style="text-align: left;">22657</td>
+<td style="text-align: left;">run.</td>
+<td style="text-align: left;">Fyn 19</td>
+<td style="text-align: left;">comb</td>
+</tr>
 </tbody>
-</table></div>
+</table>
+</div>
 
 </div>
 </div>
@@ -377,269 +347,270 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">|&gt;</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">"51.75%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
-<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; "><table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> variables </th>
-   <th style="text-align:left;"> types </th>
-   <th style="text-align:right;"> missing_count </th>
-   <th style="text-align:right;"> missing_percent </th>
-   <th style="text-align:right;"> unique_count </th>
-   <th style="text-align:right;"> unique_rate </th>
-  </tr>
- </thead>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; ">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">variables</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">types</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">missing_count</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">missing_percent</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">unique_count</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">unique_rate</th>
+</tr>
+</thead>
 <tbody>
-  <tr>
-   <td style="text-align:left;"> Findno </td>
-   <td style="text-align:left;"> numeric </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.0000000 </td>
-   <td style="text-align:right;"> 8281 </td>
-   <td style="text-align:right;"> 1.0000000 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_inscr_name </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 0.0845309 </td>
-   <td style="text-align:right;"> 5457 </td>
-   <td style="text-align:right;"> 0.6589784 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_fundort </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 34 </td>
-   <td style="text-align:right;"> 0.4105784 </td>
-   <td style="text-align:right;"> 3156 </td>
-   <td style="text-align:right;"> 0.3811134 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_storage </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0.0000000 </td>
-   <td style="text-align:right;"> 1723 </td>
-   <td style="text-align:right;"> 0.2080667 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_extdat </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 0.0724550 </td>
-   <td style="text-align:right;"> 573 </td>
-   <td style="text-align:right;"> 0.0691945 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_dat_art </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1988 </td>
-   <td style="text-align:right;"> 24.0067625 </td>
-   <td style="text-align:right;"> 19 </td>
-   <td style="text-align:right;"> 0.0022944 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_context </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 5240 </td>
-   <td style="text-align:right;"> 63.2773820 </td>
-   <td style="text-align:right;"> 21 </td>
-   <td style="text-align:right;"> 0.0025359 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_objklasse </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 33 </td>
-   <td style="text-align:right;"> 0.3985026 </td>
-   <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 0.0015699 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_objtyp </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1452 </td>
-   <td style="text-align:right;"> 17.5341142 </td>
-   <td style="text-align:right;"> 45 </td>
-   <td style="text-align:right;"> 0.0054341 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_obj_complete </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1873 </td>
-   <td style="text-align:right;"> 22.6180413 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 0.0004830 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_matklasse </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 43 </td>
-   <td style="text-align:right;"> 0.5192610 </td>
-   <td style="text-align:right;"> 11 </td>
-   <td style="text-align:right;"> 0.0013283 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_mat </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 3550 </td>
-   <td style="text-align:right;"> 42.8692187 </td>
-   <td style="text-align:right;"> 119 </td>
-   <td style="text-align:right;"> 0.0143702 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_obj_state </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1970 </td>
-   <td style="text-align:right;"> 23.7893974 </td>
-   <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 0.0007246 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_runenreihe </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 463 </td>
-   <td style="text-align:right;"> 5.5911122 </td>
-   <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 0.0014491 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_museum </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 4382 </td>
-   <td style="text-align:right;"> 52.9163145 </td>
-   <td style="text-align:right;"> 291 </td>
-   <td style="text-align:right;"> 0.0351407 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_ins_complete </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1259 </td>
-   <td style="text-align:right;"> 15.2034778 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 0.0004830 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_translat </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 698 </td>
-   <td style="text-align:right;"> 8.4289337 </td>
-   <td style="text-align:right;"> 5592 </td>
-   <td style="text-align:right;"> 0.6752808 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_translit </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 91 </td>
-   <td style="text-align:right;"> 1.0989011 </td>
-   <td style="text-align:right;"> 7482 </td>
-   <td style="text-align:right;"> 0.9035141 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_ins_state </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1371 </td>
-   <td style="text-align:right;"> 16.5559715 </td>
-   <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 0.0007246 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_markings </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 2676 </td>
-   <td style="text-align:right;"> 32.3149378 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 0.0003623 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_transkript </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1090 </td>
-   <td style="text-align:right;"> 13.1626615 </td>
-   <td style="text-align:right;"> 5536 </td>
-   <td style="text-align:right;"> 0.6685183 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_namen </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 5662 </td>
-   <td style="text-align:right;"> 68.3733849 </td>
-   <td style="text-align:right;"> 1554 </td>
-   <td style="text-align:right;"> 0.1876585 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_fundjahr </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 4895 </td>
-   <td style="text-align:right;"> 59.1112185 </td>
-   <td style="text-align:right;"> 700 </td>
-   <td style="text-align:right;"> 0.0845309 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_gemeinde </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1435 </td>
-   <td style="text-align:right;"> 17.3288250 </td>
-   <td style="text-align:right;"> 1682 </td>
-   <td style="text-align:right;"> 0.2031156 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_bezirk </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 3287 </td>
-   <td style="text-align:right;"> 39.6932738 </td>
-   <td style="text-align:right;"> 406 </td>
-   <td style="text-align:right;"> 0.0490279 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_landschaft </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1384 </td>
-   <td style="text-align:right;"> 16.7129574 </td>
-   <td style="text-align:right;"> 124 </td>
-   <td style="text-align:right;"> 0.0149740 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_land </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 48 </td>
-   <td style="text-align:right;"> 0.5796401 </td>
-   <td style="text-align:right;"> 28 </td>
-   <td style="text-align:right;"> 0.0033812 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_invnr </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 4709 </td>
-   <td style="text-align:right;"> 56.8651129 </td>
-   <td style="text-align:right;"> 2524 </td>
-   <td style="text-align:right;"> 0.3047941 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_kategorie </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 1227 </td>
-   <td style="text-align:right;"> 14.8170511 </td>
-   <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 0.0018114 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_short_sigils </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 125 </td>
-   <td style="text-align:right;"> 1.5094795 </td>
-   <td style="text-align:right;"> 8129 </td>
-   <td style="text-align:right;"> 0.9816447 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> rs_traeger </td>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 0.0966067 </td>
-   <td style="text-align:right;"> 416 </td>
-   <td style="text-align:right;"> 0.0502355 </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: left;">Findno</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">8281</td>
+<td style="text-align: right;">1.0000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_inscr_name</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0.0845309</td>
+<td style="text-align: right;">5457</td>
+<td style="text-align: right;">0.6589784</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_fundort</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">0.4105784</td>
+<td style="text-align: right;">3156</td>
+<td style="text-align: right;">0.3811134</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_storage</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">1723</td>
+<td style="text-align: right;">0.2080667</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_extdat</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.0724550</td>
+<td style="text-align: right;">573</td>
+<td style="text-align: right;">0.0691945</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_dat_art</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1988</td>
+<td style="text-align: right;">24.0067625</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">0.0022944</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_context</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">5240</td>
+<td style="text-align: right;">63.2773820</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">0.0025359</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_objklasse</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">0.3985026</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0.0015699</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_objtyp</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1452</td>
+<td style="text-align: right;">17.5341142</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">0.0054341</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_obj_complete</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1873</td>
+<td style="text-align: right;">22.6180413</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.0004830</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_matklasse</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">0.5192610</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0.0013283</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_mat</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">3550</td>
+<td style="text-align: right;">42.8692187</td>
+<td style="text-align: right;">119</td>
+<td style="text-align: right;">0.0143702</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_obj_state</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1970</td>
+<td style="text-align: right;">23.7893974</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.0007246</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_runenreihe</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">463</td>
+<td style="text-align: right;">5.5911122</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0.0014491</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_museum</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">4382</td>
+<td style="text-align: right;">52.9163145</td>
+<td style="text-align: right;">291</td>
+<td style="text-align: right;">0.0351407</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_ins_complete</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1259</td>
+<td style="text-align: right;">15.2034778</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.0004830</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_translat</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">698</td>
+<td style="text-align: right;">8.4289337</td>
+<td style="text-align: right;">5592</td>
+<td style="text-align: right;">0.6752808</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_translit</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">1.0989011</td>
+<td style="text-align: right;">7482</td>
+<td style="text-align: right;">0.9035141</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_ins_state</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1371</td>
+<td style="text-align: right;">16.5559715</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.0007246</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_markings</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">2676</td>
+<td style="text-align: right;">32.3149378</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.0003623</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_transkript</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1090</td>
+<td style="text-align: right;">13.1626615</td>
+<td style="text-align: right;">5536</td>
+<td style="text-align: right;">0.6685183</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_namen</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">5662</td>
+<td style="text-align: right;">68.3733849</td>
+<td style="text-align: right;">1554</td>
+<td style="text-align: right;">0.1876585</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_fundjahr</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">4895</td>
+<td style="text-align: right;">59.1112185</td>
+<td style="text-align: right;">700</td>
+<td style="text-align: right;">0.0845309</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_gemeinde</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1435</td>
+<td style="text-align: right;">17.3288250</td>
+<td style="text-align: right;">1682</td>
+<td style="text-align: right;">0.2031156</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_bezirk</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">3287</td>
+<td style="text-align: right;">39.6932738</td>
+<td style="text-align: right;">406</td>
+<td style="text-align: right;">0.0490279</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_landschaft</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1384</td>
+<td style="text-align: right;">16.7129574</td>
+<td style="text-align: right;">124</td>
+<td style="text-align: right;">0.0149740</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_land</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">0.5796401</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">0.0033812</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_invnr</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">4709</td>
+<td style="text-align: right;">56.8651129</td>
+<td style="text-align: right;">2524</td>
+<td style="text-align: right;">0.3047941</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_short_kategorie</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1227</td>
+<td style="text-align: right;">14.8170511</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">0.0018114</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rs_short_sigils</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">125</td>
+<td style="text-align: right;">1.5094795</td>
+<td style="text-align: right;">8129</td>
+<td style="text-align: right;">0.9816447</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rs_traeger</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0.0966067</td>
+<td style="text-align: right;">416</td>
+<td style="text-align: right;">0.0502355</td>
+</tr>
 </tbody>
-</table></div>
+</table>
+</div>
 
 </div>
 </div>
@@ -764,7 +735,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>There’s more cleaning we could do, but this is enough for now.</p>
 </section>
 </section>
-<section id="exploratory-data-analysis" class="level2">
+<section id="exploratory-data-analysis" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h2>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
@@ -788,7 +759,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<p>Nearly half of the artifacts in RuneS-DB are stones<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, which it turns out are always made of stone! Likewise, coins and bracteates<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> are always made of metal, and rune sticks are always made of wood. Tools, edifices, “inventory” (mostly furniture), and “other objects” all seem to come in a variety of materials.</p>
+<div class="page-columns page-full"><p>Nearly half of the artifacts in RuneS-DB are stones<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, which it turns out are always made of stone! Likewise, coins and bracteates<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> are always made of metal, and rune sticks are always made of wood. Tools, edifices, “inventory” (mostly furniture), and “other objects” all seem to come in a variety of materials.</p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;<a href="https://frinkiac.com/meme/S04E19/338003.jpg?b64lines=R09PRCBPTEQgUk9DSy4gIApOT1RISU5HIEJFQVRTIFRIQVQu">Good old rock, nothin’ beats that!</a></p></li><li id="fn8"><p><sup>8</sup>&nbsp;What’s a bracteate, you ask? Why, it’s “is”a flat, thin, single-sided gold medal worn as jewelry”.</p></li></div></div>
 <p>Where is this stuff typically found?</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
@@ -838,9 +809,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>This histogram has a huge spike at the 10th century. Upon cursory investigation, this seems to be because the data set contains many rune stones with dated to the rather wide range of “725-1100”, i.e.&nbsp;the Viking Age. Obviously this data set is not random sample of all runic objects ever produced; some things are more likely to survive and be cataloged than others. The smaller spike at the 13th century seems to be more organic.</p>
 </section>
-<section id="feature-engineering" class="level2">
+<section id="feature-engineering" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="feature-engineering">Feature Engineering</h2>
-<p>Suppose you’re lost in the woods in northwestern Europe<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> and stumble upon some runes. Is there some rule you can use to estimate when they were carved (or written)?</p>
+<div class="page-columns page-full"><p>Suppose you’re lost in the woods in northwestern Europe<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> and stumble upon some runes. Is there some rule you can use to estimate when they were carved (or written)?</p><div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;What do you do if you’re lost in the woods in Iceland? Stand up.</p></li></div></div>
 <p>First, we need to consider what features of the object you’d be able to determine. I think these are all reasonable:</p>
 <ul>
 <li>object class (stone, coin, etc.)</li>
@@ -852,7 +823,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>whether the inscription seems to contain any of a few common words or morphemes</li>
 </ul>
 <p>The first four of these features are already present in our data frame. We’ll have to “engineer” the others.</p>
-<p>Unfortunately, the transliterations in RuneS-DB are very inconsistently encoded, but we can still get an approximate length of each inscription by converting the transliteration to ASCII<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> and counting the number of resulting alphanumeric characters<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. It’s too bad the database doesn’t simply use the runic characters included in Unicode, but perhaps that wouldn’t be sufficient to encode parts of the inscriptions which are unclear, damaged, combined into ligatures (so-called “bind runes”), etc.</p>
+<div class="page-columns page-full"><p>Unfortunately, the transliterations in RuneS-DB are very inconsistently encoded, but we can still get an approximate length of each inscription by converting the transliteration to ASCII<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> and counting the number of resulting alphanumeric characters<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. It’s too bad the database doesn’t simply use the runic characters included in Unicode, but perhaps that wouldn’t be sufficient to encode parts of the inscriptions which are unclear, damaged, combined into ligatures (so-called “bind runes”), etc.</p><div class="no-row-height column-margin column-container"><li id="fn10"><p><sup>10</sup>&nbsp;Note that different operating systems have different ideas about how to convert other encodings into ASCII.</p></li><li id="fn11"><p><sup>11</sup>&nbsp;Plus question marks, to account for some of the non-ASCII letters.</p></li></div></div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -901,7 +872,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Is this enough information to be able to predict the age of a runic inscription with any accuracy? Let’s try fitting a few different models using different approaches.</p>
 </section>
-<section id="model-fitting" class="level2">
+<section id="model-fitting" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="model-fitting">Model Fitting</h2>
 <section id="testtraining-data-split" class="level3">
 <h3 class="anchored" data-anchor-id="testtraining-data-split">Test/Training Data Split</h3>
@@ -1102,7 +1073,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  final_cubist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="the-performance-explainability-trade-off" class="level3">
+<section id="the-performance-explainability-trade-off" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="the-performance-explainability-trade-off">The Performance-Explainability Trade-off</h3>
 <p>Unfortunately, our finalized Cubist model is useless. Since we’re lost in the woods, we can’t actually compute a prediction involving a complicated collection of trees of linear models with hundreds or thousands of coefficients and weights in total.</p>
 <p>Can we find a simple decision tree with comparable performance by trying more hyperparameter combinations? Let’s set <code>tree_depth</code> to 3, find good values for the other hyperparameters, then finalize and evaluate the resulting decision tree model.</p>
@@ -1140,32 +1111,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">|&gt;</span></span>
 <span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">"51.75%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
-<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; "><table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> model </th>
-   <th style="text-align:right;"> rmse </th>
-   <th style="text-align:right;"> features </th>
-  </tr>
- </thead>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; ">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">model</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">rmse</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">features</th>
+</tr>
+</thead>
 <tbody>
-  <tr>
-   <td style="text-align:left;"> Cubist </td>
-   <td style="text-align:right;"> 109.7088 </td>
-   <td style="text-align:right;"> 38 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Small Decision Tree </td>
-   <td style="text-align:right;"> 131.1698 </td>
-   <td style="text-align:right;"> 7 </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: left;">Cubist</td>
+<td style="text-align: right;">109.7088</td>
+<td style="text-align: right;">38</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Small Decision Tree</td>
+<td style="text-align: right;">131.1698</td>
+<td style="text-align: right;">7</td>
+</tr>
 </tbody>
-</table></div>
+</table>
+</div>
 
 </div>
 </div>
-<p>The small decision tree’s predictions are about 16% worse than the best Cubist model we could find. On the other hand, it’s <em>much</em> simpler. While the Cubist model uses essentially all of the information we provided to it, since we constrained our decision tree to three levels, it can use only a maximum of seven features.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> Although the more complicated Cubist performs well, it’s difficult to explain exactly why, or what the role of each feature is in generating predictions. This illustrates the performance-explainability trade-off.</p>
+<div class="page-columns page-full"><p>The small decision tree’s predictions are about 16% worse than the best Cubist model we could find. On the other hand, it’s <em>much</em> simpler. While the Cubist model uses essentially all of the information we provided to it, since we constrained our decision tree to three levels, it can use only a maximum of seven features.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> Although the more complicated Cubist performs well, it’s difficult to explain exactly why, or what the role of each feature is in generating predictions. This illustrates the performance-explainability trade-off.</p><div class="no-row-height column-margin column-container"><li id="fn12"><p><sup>12</sup>&nbsp;None of which are among the ones we engineered, as it happens.</p></li></div></div>
 <p>Our small tree model is simple enough to write on an index card and keep with us when venturing out into the forests of rural Scandinavia. Here it is:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>small_tree <span class="sc">|&gt;</span></span>
@@ -1186,9 +1158,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section>
 </section>
-<section id="conclusion" class="level2">
+<section id="conclusion" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>If you can foresee yourself desperately needing to know the approximate age of a runic inscription, I recommend you write down the decision tree above and keep it in your pocket. That, or always bring a licensed and qualified runologist<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> with you.</p>
+<div class="page-columns page-full"><p>If you can foresee yourself desperately needing to know the approximate age of a runic inscription, I recommend you write down the decision tree above and keep it in your pocket. That, or always bring a licensed and qualified runologist<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> with you.</p><div class="no-row-height column-margin column-container"><li id="fn13"><p><sup>13</sup>&nbsp;The real job title of perhaps an entire dozen people!</p></li></div></div>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
@@ -1219,24 +1191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Possibly via one of the alpine Old Italic alphabets such as Venetic.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Curiously, the first three letters of these alphabets spell out a vulgar word for a woman’s genitals in Old Norse.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>The abecedaria, or “rune rows”, in this table are much simplified. In reality, there were many variations of each. The medieval runes in particular were augmented by diacritical dots in order to disambiguate sounds represented by the same rune in the younger futhark.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>The runes have mnemonic names, and occasionally a rune could stand in for its name, but even this is rare.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Insert joke about “datable” here.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>Just checking for <code>rs_short_inscr_name == "Vimose comb"</code> would fail because the values in that column have extra whitespace characters.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p><a href="https://frinkiac.com/meme/S04E19/338003.jpg?b64lines=R09PRCBPTEQgUk9DSy4gIApOT1RISU5HIEJFQVRTIFRIQVQu">Good old rock, nothin’ beats that!</a><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>What’s a bracteate, you ask? Why, it’s “is”a flat, thin, single-sided gold medal worn as jewelry”.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9"><p>What do you do if you’re lost in the woods in Iceland? Stand up.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn10"><p>Note that different operating systems have different ideas about how to convert other encodings into ASCII.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn11"><p>Plus question marks, to account for some of the non-ASCII letters.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn12"><p>None of which are among the ones we engineered, as it happens.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn13"><p>The real job title of perhaps an entire dozen people!<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1257,121 +1212,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1379,9 +1219,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1446,6 +1300,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
