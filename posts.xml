@@ -2268,7 +2268,7 @@ font-style: inherit;">"My Wordle Scores: Summary Statistics"</span>)</span></cod
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">score</td>
-<td style="text-align: left;">175</td>
+<td style="text-align: left;">181</td>
 <td style="text-align: left;">4.1</td>
 <td style="text-align: left;">1.1</td>
 <td style="text-align: left;">2</td>
@@ -2494,23 +2494,23 @@ background-color: null;
 font-style: inherit;">gt</span>()</span></code></pre></div>
 <div class="cell-output-display">
 
-<div id="jaqrqmzoat" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jaqrqmzoat table {
+<div id="bxwdoiytxg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bxwdoiytxg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jaqrqmzoat thead, #jaqrqmzoat tbody, #jaqrqmzoat tfoot, #jaqrqmzoat tr, #jaqrqmzoat td, #jaqrqmzoat th {
+#bxwdoiytxg thead, #bxwdoiytxg tbody, #bxwdoiytxg tfoot, #bxwdoiytxg tr, #bxwdoiytxg td, #bxwdoiytxg th {
   border-style: none;
 }
 
-#jaqrqmzoat p {
+#bxwdoiytxg p {
   margin: 0;
   padding: 0;
 }
 
-#jaqrqmzoat .gt_table {
+#bxwdoiytxg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2536,12 +2536,12 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#jaqrqmzoat .gt_caption {
+#bxwdoiytxg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jaqrqmzoat .gt_title {
+#bxwdoiytxg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2553,7 +2553,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#jaqrqmzoat .gt_subtitle {
+#bxwdoiytxg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2565,7 +2565,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-top-width: 0;
 }
 
-#jaqrqmzoat .gt_heading {
+#bxwdoiytxg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2577,13 +2577,13 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#jaqrqmzoat .gt_bottom_border {
+#bxwdoiytxg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jaqrqmzoat .gt_col_headings {
+#bxwdoiytxg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2598,7 +2598,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#jaqrqmzoat .gt_col_heading {
+#bxwdoiytxg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2618,7 +2618,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#jaqrqmzoat .gt_column_spanner_outer {
+#bxwdoiytxg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2630,15 +2630,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 4px;
 }
 
-#jaqrqmzoat .gt_column_spanner_outer:first-child {
+#bxwdoiytxg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jaqrqmzoat .gt_column_spanner_outer:last-child {
+#bxwdoiytxg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jaqrqmzoat .gt_column_spanner {
+#bxwdoiytxg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2650,11 +2650,11 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   width: 100%;
 }
 
-#jaqrqmzoat .gt_spanner_row {
+#bxwdoiytxg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jaqrqmzoat .gt_group_heading {
+#bxwdoiytxg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2680,7 +2680,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   text-align: left;
 }
 
-#jaqrqmzoat .gt_empty_group_heading {
+#bxwdoiytxg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2695,15 +2695,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   vertical-align: middle;
 }
 
-#jaqrqmzoat .gt_from_md > :first-child {
+#bxwdoiytxg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jaqrqmzoat .gt_from_md > :last-child {
+#bxwdoiytxg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jaqrqmzoat .gt_row {
+#bxwdoiytxg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2722,7 +2722,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#jaqrqmzoat .gt_stub {
+#bxwdoiytxg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2735,7 +2735,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#jaqrqmzoat .gt_stub_row_group {
+#bxwdoiytxg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2749,15 +2749,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   vertical-align: top;
 }
 
-#jaqrqmzoat .gt_row_group_first td {
+#bxwdoiytxg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jaqrqmzoat .gt_row_group_first th {
+#bxwdoiytxg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jaqrqmzoat .gt_summary_row {
+#bxwdoiytxg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2767,16 +2767,16 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#jaqrqmzoat .gt_first_summary_row {
+#bxwdoiytxg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jaqrqmzoat .gt_first_summary_row.thick {
+#bxwdoiytxg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jaqrqmzoat .gt_last_summary_row {
+#bxwdoiytxg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2786,7 +2786,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#jaqrqmzoat .gt_grand_summary_row {
+#bxwdoiytxg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2796,7 +2796,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#jaqrqmzoat .gt_first_grand_summary_row {
+#bxwdoiytxg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2806,7 +2806,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#jaqrqmzoat .gt_last_grand_summary_row_top {
+#bxwdoiytxg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2816,11 +2816,11 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#jaqrqmzoat .gt_striped {
+#bxwdoiytxg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jaqrqmzoat .gt_table_body {
+#bxwdoiytxg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2829,7 +2829,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#jaqrqmzoat .gt_footnotes {
+#bxwdoiytxg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2843,7 +2843,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#jaqrqmzoat .gt_footnote {
+#bxwdoiytxg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2852,7 +2852,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#jaqrqmzoat .gt_sourcenotes {
+#bxwdoiytxg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2866,7 +2866,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#jaqrqmzoat .gt_sourcenote {
+#bxwdoiytxg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2874,63 +2874,63 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#jaqrqmzoat .gt_left {
+#bxwdoiytxg .gt_left {
   text-align: left;
 }
 
-#jaqrqmzoat .gt_center {
+#bxwdoiytxg .gt_center {
   text-align: center;
 }
 
-#jaqrqmzoat .gt_right {
+#bxwdoiytxg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jaqrqmzoat .gt_font_normal {
+#bxwdoiytxg .gt_font_normal {
   font-weight: normal;
 }
 
-#jaqrqmzoat .gt_font_bold {
+#bxwdoiytxg .gt_font_bold {
   font-weight: bold;
 }
 
-#jaqrqmzoat .gt_font_italic {
+#bxwdoiytxg .gt_font_italic {
   font-style: italic;
 }
 
-#jaqrqmzoat .gt_super {
+#bxwdoiytxg .gt_super {
   font-size: 65%;
 }
 
-#jaqrqmzoat .gt_footnote_marks {
+#bxwdoiytxg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jaqrqmzoat .gt_asterisk {
+#bxwdoiytxg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jaqrqmzoat .gt_indent_1 {
+#bxwdoiytxg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jaqrqmzoat .gt_indent_2 {
+#bxwdoiytxg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jaqrqmzoat .gt_indent_3 {
+#bxwdoiytxg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jaqrqmzoat .gt_indent_4 {
+#bxwdoiytxg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jaqrqmzoat .gt_indent_5 {
+#bxwdoiytxg .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2944,7 +2944,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   </thead>
   <tbody class="gt_table_body">
     <tr><td headers="source" class="gt_row gt_left">me</td>
-<td headers="filtered_mean" class="gt_row gt_right">4.074713</td></tr>
+<td headers="filtered_mean" class="gt_row gt_right">4.072222</td></tr>
     <tr><td headers="source" class="gt_row gt_left">twitter</td>
 <td headers="filtered_mean" class="gt_row gt_right">4.085486</td></tr>
   </tbody>
@@ -2962,7 +2962,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
 <p>First let’s make one those those trend-and-distribution charts that I love so much. See the post about my <a href="https://jdonland.github.io/posts/coryat_scores/coryat_scores.html"><em>Jeopardy!</em> Coryat scores</a> for another one.</p>
 <p>For a more detailed comparison against the scores from Twitter, we’ll look at the cumulative distributions.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" aria-controls="tabset-1-1" aria-selected="true">My Scores: Line Chart and Histogram</a></li><li class="nav-item"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" aria-controls="tabset-1-2" aria-selected="false">Comparison with Twitter: Cumulative Distributions</a></li></ul>
+<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" aria-controls="tabset-1-1" aria-selected="true">Line Chart and Histogram</a></li><li class="nav-item"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" aria-controls="tabset-1-2" aria-selected="false">Cumulative Distributions</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
@@ -2994,7 +2994,7 @@ font-style: inherit;">geom_point</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"#008000"</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"#9e7140"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb4-6">  <span class="fu" style="color: #4758AB;
@@ -3003,7 +3003,7 @@ font-style: inherit;">geom_line</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"#008000"</span>, <span class="at" style="color: #657422;
+font-style: inherit;">"#9e7140"</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -3016,7 +3016,7 @@ font-style: inherit;">geom_smooth</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"#7AD151"</span>, <span class="at" style="color: #657422;
+font-style: inherit;">"brown"</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -3146,7 +3146,7 @@ font-style: inherit;">"y"</span>, </span>
 background-color: null;
 font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"#008000"</span>,</span>
+font-style: inherit;">"#9e7140"</span>,</span>
 <span id="cb4-26">             <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">yparams =</span> <span class="fu" style="color: #4758AB;
@@ -3360,7 +3360,7 @@ font-style: inherit;">x =</span> score, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y =</span> percentile, <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">colour =</span> source) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">fill =</span> source) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb5-28">  <span class="co" style="color: #5E5E5E;
@@ -3381,7 +3381,15 @@ font-style: inherit;">geom_point</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">3</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">3</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">shape =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">21</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"black"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb5-31">  <span class="co" style="color: #5E5E5E;
@@ -3466,15 +3474,15 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb5-41">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">scale_colour_viridis</span>(<span class="at" style="color: #657422;
+font-style: inherit;">scale_fill_manual</span>(<span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">discrete =</span> <span class="cn" style="color: #8f5902;
+font-style: inherit;">values =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">TRUE</span>, <span class="at" style="color: #657422;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">end =</span> <span class="fl" style="color: #AD0000;
+font-style: inherit;">"#9e7140"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">0.85</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"#fffcf9"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb5-42">  <span class="co" style="color: #5E5E5E;
@@ -3501,28 +3509,33 @@ font-style: inherit;">"My Wordle Scores vs Twitter"</span>, </span>
 background-color: null;
 font-style: inherit;">subtitle =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Cumulative distributions"</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"Cumulative distributions"</span>,</span>
+<span id="cb5-47">       <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Source"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-47">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-48">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># theming</span></span>
-<span id="cb5-48">  <span class="fu" style="color: #4758AB;
+<span id="cb5-49">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_bw</span>() <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">theme_jdonland</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-49">  <span class="do" style="color: #5E5E5E;
+<span id="cb5-50">  <span class="do" style="color: #5E5E5E;
 background-color: null;
 font-style: italic;">## evil secondary axis trickery part two</span></span>
-<span id="cb5-50">  <span class="fu" style="color: #4758AB;
+<span id="cb5-51">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">panel.grid.minor   =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">element_blank</span>(),</span>
-<span id="cb5-51">        <span class="at" style="color: #657422;
+<span id="cb5-52">        <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">axis.text.y.right  =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -3531,7 +3544,7 @@ background-color: null;
 font-style: inherit;">colour =</span> temp<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">$</span>r_label_colour),</span>
-<span id="cb5-52">        <span class="at" style="color: #657422;
+<span id="cb5-53">        <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">axis.text.y.left   =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -3540,7 +3553,7 @@ background-color: null;
 font-style: inherit;">colour =</span> temp<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">$</span>l_label_colour),</span>
-<span id="cb5-53">        <span class="at" style="color: #657422;
+<span id="cb5-54">        <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">axis.ticks.y.right =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -3549,7 +3562,7 @@ background-color: null;
 font-style: inherit;">linetype =</span> temp<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">$</span>r_tick_linetype),</span>
-<span id="cb5-54">        <span class="at" style="color: #657422;
+<span id="cb5-55">        <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">axis.ticks.y.left  =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -3562,7 +3575,7 @@ font-style: inherit;">$</span>l_tick_linetype))</span></code></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="wordle_scores_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="https://jdonland.github.io/posts/wordle_scores/wordle_scores_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="wordle_scores_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="https://jdonland.github.io/posts/wordle_scores/wordle_scores_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -7098,7 +7111,7 @@ font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">round</span>()</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 19308</code></pre>
+<pre><code>[1] 19280</code></pre>
 </div>
 </div>
 <p>Clearly, I have some studying to do before I consider trying to compete on the show.</p>
@@ -7141,20 +7154,12 @@ background-color: null;
 font-style: inherit;"># visual elements representing the data</span></span>
 <span id="cb4-7">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">geom_point</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#8D2AB5"</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">geom_point</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb4-8">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_line</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#8D2AB5"</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -7165,13 +7170,13 @@ font-style: inherit;">+</span></span>
 background-color: null;
 font-style: inherit;">geom_smooth</span>(<span class="at" style="color: #657422;
 background-color: null;
+font-style: inherit;">se =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>, <span class="at" style="color: #657422;
+background-color: null;
 font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"magenta"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"dashed"</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"#dc2828"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb4-10">  <span class="fu" style="color: #4758AB;
@@ -7285,7 +7290,7 @@ font-style: inherit;">"y"</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"#8D2AB5"</span>)</span></code></pre></div>
+font-style: inherit;">"#dc2828"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -7328,10 +7333,6 @@ font-style: inherit;">+</span></span>
 <span id="cb5-4">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_line</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#8D2AB5"</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -7385,7 +7386,12 @@ font-style: inherit;">"Score"</span>, </span>
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">""</span>)</span></code></pre></div>
+font-style: inherit;">""</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb5-11">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_bw</span>()</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
