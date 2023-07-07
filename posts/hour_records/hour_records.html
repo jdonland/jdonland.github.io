@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-07-01">
+<meta name="dcterms.date" content="2023-07-07">
 
 <title>Jesse Onland - Cycling Hour Records</title>
 <style>
@@ -88,10 +88,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -134,9 +137,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -151,7 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 1, 2023</p>
+      <p class="date">July 7, 2023</p>
     </div>
   </div>
   
@@ -163,886 +168,669 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac turpis sapien. Mauris ut ipsum efficitur, egestas orci vitae, pulvinar sapien. Sed vitae magna vel quam aliquet iaculis nec non turpis. Fusce augue ante, gravida volutpat lacinia at, euismod id augue. Praesent eget pharetra tortor, id ultricies ipsum.</p>
-<p>Aliquam molestie, risus vitae laoreet dictum, odio justo gravida tortor, a convallis mi sem sed augue. Nullam egestas venenatis ex mattis pharetra. Suspendisse et dictum turpis. Duis posuere mollis odio quis semper. Integer tincidunt erat sit amet erat tempus semper eu ut nibh. Ut scelerisque, lectus nec ullamcorper faucibus, odio tortor tempor eros, quis dictum ipsum nibh ut felis.</p>
+<p>One of the most prestigious achievements in professional cycling is the hour record: travel farther on a bicycle in one hour than anyone has before.</p>
+</section>
+<section id="history" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="history">History</h2>
+<div class="page-columns page-full"><p>Henri Desgrange, the bicycle racer and sports journalist who organized the Tour de France in its earliest years, set the first official hour record at 35.325 km on the Vélodrome Buffalo in Paris in 1893. Two months later, a Mlle<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> de Saint-Saveur set the women’s record at 26.012 km on the same track.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Her first name seems to be lost to history.</p></li></div></div>
+<p>Eight decades later, Eddy Merckx would break the men’s record by riding 49.431 km. Merckx was by that time undisputedly the greatest cylist of all time, but despite taking advantage of the lower aerodynamic drag offered by Mexico City’s high altitude, he described it as the hardest ride of his life. Maria Cressari broke the women’s record with a 41.471 km ride on the same track a month later.</p>
+<div class="page-columns page-full"><p>The 1980s and 90s were a period of controversy for the hour record. A series of improvements on the records of Merckx and Cressari were achieved, but many attributed these to more aerodynamic equipment and riding postures. The battle over the hour record between the unconventional cyclist Graeme Obree and the UCI<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> was dramatized in the 2006 film <a href="https://www.imdb.com/title/tt0472268/">The Flying Scotsman</a>. The ultimate result was a decision split the hour record into two categories: one requiring the use of equipment similar to what was available to Merckx and Cressari in the early 70s, and another allowing basically anything that was arguably a bicycle. This change was retroactive, so the official men’s hour record was reverted to Merckx’s.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Professional cycling’s regulatory body.</p></li></div></div>
+<div class="page-columns page-full"><p>While Cressari’s record had been improved upon five times by the early 2000s, the men’s record was just barely broken<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> by Chris Boardman and then by Ondřej Sosenka. The former had the advantage of shoes which locked into the pedals and the latter was probably doping at the time he the broke record. There followed a decade of disinterest in the hour record.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;By a margin of only 10 m!</p></li></div></div>
+<p>The UCI revived the hour record in 2014 by changing the rules again. Going forward, the hour record would use the same equipment as Olympic track cycling races. The result was a burst of new hour record attempts including several successes. The current record holders are Filippo Ganna and Ellen van Dijk with 56.792 km and 49.254 km respectively.</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>We can classify successful record attempts into four types: <strong>historical</strong> records set before Merckx’s, <strong>classic</strong> records set under the restrictive equipment rules, <strong>absolute</strong> records set under the permissive rules, and <strong>unified</strong> records set since the unification of the equipment rules with track racing.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"hour_records.csv"</span>, <span class="at">col_types =</span> <span class="st">"ccffn"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">mdy</span>(date)) <span class="ot">-&gt;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  hour_records</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>hour_records <span class="sc">|&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Cycling Hour Records"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">height =</span> <span class="st">"5in"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
-<div id="gseamrfsgb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gseamrfsgb table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#gseamrfsgb thead, #gseamrfsgb tbody, #gseamrfsgb tfoot, #gseamrfsgb tr, #gseamrfsgb td, #gseamrfsgb th {
-  border-style: none;
-}
-
-#gseamrfsgb p {
-  margin: 0;
-  padding: 0;
-}
-
-#gseamrfsgb .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#gseamrfsgb .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#gseamrfsgb .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#gseamrfsgb .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#gseamrfsgb .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#gseamrfsgb .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#gseamrfsgb .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#gseamrfsgb .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#gseamrfsgb .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#gseamrfsgb .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#gseamrfsgb .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#gseamrfsgb .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#gseamrfsgb .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#gseamrfsgb .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#gseamrfsgb .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#gseamrfsgb .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#gseamrfsgb .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#gseamrfsgb .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#gseamrfsgb .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#gseamrfsgb .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#gseamrfsgb .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#gseamrfsgb .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#gseamrfsgb .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#gseamrfsgb .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#gseamrfsgb .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#gseamrfsgb .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#gseamrfsgb .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#gseamrfsgb .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#gseamrfsgb .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#gseamrfsgb .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#gseamrfsgb .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#gseamrfsgb .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#gseamrfsgb .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#gseamrfsgb .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#gseamrfsgb .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#gseamrfsgb .gt_left {
-  text-align: left;
-}
-
-#gseamrfsgb .gt_center {
-  text-align: center;
-}
-
-#gseamrfsgb .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#gseamrfsgb .gt_font_normal {
-  font-weight: normal;
-}
-
-#gseamrfsgb .gt_font_bold {
-  font-weight: bold;
-}
-
-#gseamrfsgb .gt_font_italic {
-  font-style: italic;
-}
-
-#gseamrfsgb .gt_super {
-  font-size: 65%;
-}
-
-#gseamrfsgb .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#gseamrfsgb .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#gseamrfsgb .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#gseamrfsgb .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#gseamrfsgb .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#gseamrfsgb .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#gseamrfsgb .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="date">date</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="name">name</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="gender">gender</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="type">type</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="distance">distance</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="date" class="gt_row gt_right">1893-05-11</td>
-<td headers="name" class="gt_row gt_left">Henri Desgrange</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">35.325</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1894-10-31</td>
-<td headers="name" class="gt_row gt_left">Jules Dubois</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">38.220</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1897-07-30</td>
-<td headers="name" class="gt_row gt_left">Oscar Van den Eynde</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">39.240</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1898-07-03</td>
-<td headers="name" class="gt_row gt_left">Willie Hamilton</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">40.781</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1905-08-24</td>
-<td headers="name" class="gt_row gt_left">Lucien Petit-Breton</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">41.110</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1907-06-20</td>
-<td headers="name" class="gt_row gt_left">Marcel Berthet</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">41.520</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1912-08-22</td>
-<td headers="name" class="gt_row gt_left">Oscar Egg</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">42.360</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1913-08-07</td>
-<td headers="name" class="gt_row gt_left">Marcel Berthet</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">42.741</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1913-08-21</td>
-<td headers="name" class="gt_row gt_left">Oscar Egg</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">43.525</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1913-09-20</td>
-<td headers="name" class="gt_row gt_left">Marcel Berthet</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">43.775</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1914-08-18</td>
-<td headers="name" class="gt_row gt_left">Oscar Egg</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">44.247</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1933-08-25</td>
-<td headers="name" class="gt_row gt_left">Jan van Hout</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">44.588</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1933-09-28</td>
-<td headers="name" class="gt_row gt_left">Maurice Richard</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">44.777</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1935-10-31</td>
-<td headers="name" class="gt_row gt_left">Giuseppe Olmo</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">45.090</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1936-10-14</td>
-<td headers="name" class="gt_row gt_left">Maurice Richard</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">45.325</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1937-09-29</td>
-<td headers="name" class="gt_row gt_left">Frans Slaats</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">45.485</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1937-11-03</td>
-<td headers="name" class="gt_row gt_left">Maurice Archambaud</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">45.767</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1942-11-07</td>
-<td headers="name" class="gt_row gt_left">Fausto Coppi</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">45.798</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1956-06-29</td>
-<td headers="name" class="gt_row gt_left">Jacques Anquetil</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">46.159</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1956-09-19</td>
-<td headers="name" class="gt_row gt_left">Ercole Baldini</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">46.394</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1957-09-18</td>
-<td headers="name" class="gt_row gt_left">Roger Rivière</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">46.923</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1959-09-23</td>
-<td headers="name" class="gt_row gt_left">Roger Rivière</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">47.347</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1967-10-30</td>
-<td headers="name" class="gt_row gt_left">Ferdi Bracke</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">48.093</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1968-10-10</td>
-<td headers="name" class="gt_row gt_left">Ole Ritter</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">48.653</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1972-10-25</td>
-<td headers="name" class="gt_row gt_left">Eddy Merckx</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Classic</td>
-<td headers="distance" class="gt_row gt_right">49.431</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1984-01-09</td>
-<td headers="name" class="gt_row gt_left">Francesco Moser</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Absolute</td>
-<td headers="distance" class="gt_row gt_right">50.808</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1984-01-23</td>
-<td headers="name" class="gt_row gt_left">Francesco Moser</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Absolute</td>
-<td headers="distance" class="gt_row gt_right">51.151</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1993-07-17</td>
-<td headers="name" class="gt_row gt_left">Graeme Obree</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Absolute</td>
-<td headers="distance" class="gt_row gt_right">51.596</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1993-07-23</td>
-<td headers="name" class="gt_row gt_left">Chris Boardman</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Absolute</td>
-<td headers="distance" class="gt_row gt_right">52.270</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1994-04-27</td>
-<td headers="name" class="gt_row gt_left">Graeme Obree</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Absolute</td>
-<td headers="distance" class="gt_row gt_right">52.713</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1994-09-02</td>
-<td headers="name" class="gt_row gt_left">Miguel Indurain</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Absolute</td>
-<td headers="distance" class="gt_row gt_right">53.040</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1994-10-22</td>
-<td headers="name" class="gt_row gt_left">Tony Rominger</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Absolute</td>
-<td headers="distance" class="gt_row gt_right">53.832</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1994-11-05</td>
-<td headers="name" class="gt_row gt_left">Tony Rominger</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Absolute</td>
-<td headers="distance" class="gt_row gt_right">55.291</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1996-09-06</td>
-<td headers="name" class="gt_row gt_left">Chris Boardman</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Absolute</td>
-<td headers="distance" class="gt_row gt_right">56.375</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2000-10-27</td>
-<td headers="name" class="gt_row gt_left">Chris Boardman</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Classic</td>
-<td headers="distance" class="gt_row gt_right">49.441</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2005-07-19</td>
-<td headers="name" class="gt_row gt_left">Ondřej Sosenka</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Classic</td>
-<td headers="distance" class="gt_row gt_right">49.700</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2014-09-01</td>
-<td headers="name" class="gt_row gt_left">Jens Voigt</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Unified</td>
-<td headers="distance" class="gt_row gt_right">51.110</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2014-10-30</td>
-<td headers="name" class="gt_row gt_left">Matthias Brändle</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Unified</td>
-<td headers="distance" class="gt_row gt_right">51.852</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2015-02-08</td>
-<td headers="name" class="gt_row gt_left">Rohan Dennis</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Unified</td>
-<td headers="distance" class="gt_row gt_right">52.491</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2015-05-02</td>
-<td headers="name" class="gt_row gt_left">Alex Dowsett</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Unified</td>
-<td headers="distance" class="gt_row gt_right">52.937</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2015-06-07</td>
-<td headers="name" class="gt_row gt_left">Bradley Wiggins</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Unified</td>
-<td headers="distance" class="gt_row gt_right">54.526</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2019-04-16</td>
-<td headers="name" class="gt_row gt_left">Victor Campenaerts</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Unified</td>
-<td headers="distance" class="gt_row gt_right">55.089</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2022-08-19</td>
-<td headers="name" class="gt_row gt_left">Daniel Bigham</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Unified</td>
-<td headers="distance" class="gt_row gt_right">55.548</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2022-10-08</td>
-<td headers="name" class="gt_row gt_left">Filippo Ganna</td>
-<td headers="gender" class="gt_row gt_center">Men's</td>
-<td headers="type" class="gt_row gt_center">Unified</td>
-<td headers="distance" class="gt_row gt_right">56.792</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1893-07-01</td>
-<td headers="name" class="gt_row gt_left">Mlle de Saint-Saveur</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">26.012</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1893-08-01</td>
-<td headers="name" class="gt_row gt_left">Renée Debatz</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">28.019</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1893-10-01</td>
-<td headers="name" class="gt_row gt_left">Hélène Dutrieu</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">28.780</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1897-10-01</td>
-<td headers="name" class="gt_row gt_left">Louise Roger</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">34.684</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1911-01-01</td>
-<td headers="name" class="gt_row gt_left">Alfonsina Strada</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">37.192</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1947-10-01</td>
-<td headers="name" class="gt_row gt_left">Élyane Bonneau</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">37.560</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1948-11-01</td>
-<td headers="name" class="gt_row gt_left">Jeannine Lemaire</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">37.720</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1949-07-01</td>
-<td headers="name" class="gt_row gt_left">Jeannine Lemaire</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">38.283</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1952-01-01</td>
-<td headers="name" class="gt_row gt_left">Jeannine Lemaire</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">39.735</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1955-07-07</td>
-<td headers="name" class="gt_row gt_left">Tamara Novikova</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">38.473</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1957-09-18</td>
-<td headers="name" class="gt_row gt_left">Renee Vissac</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">38.569</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1958-09-25</td>
-<td headers="name" class="gt_row gt_left">Millie Robinson</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">39.719</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1958-11-09</td>
-<td headers="name" class="gt_row gt_left">Elsy Jacobs</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Historical</td>
-<td headers="distance" class="gt_row gt_right">41.347</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1972-11-25</td>
-<td headers="name" class="gt_row gt_left">Maria Cressari</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Classic</td>
-<td headers="distance" class="gt_row gt_right">41.471</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1978-09-16</td>
-<td headers="name" class="gt_row gt_left">Keetie van Oosten</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Classic</td>
-<td headers="distance" class="gt_row gt_right">43.082</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2000-10-18</td>
-<td headers="name" class="gt_row gt_left">Anna Wilson-Millward</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Classic</td>
-<td headers="distance" class="gt_row gt_right">43.501</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2000-11-05</td>
-<td headers="name" class="gt_row gt_left">Jeannie Longo-Ciprelli</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Classic</td>
-<td headers="distance" class="gt_row gt_right">44.767</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2000-12-07</td>
-<td headers="name" class="gt_row gt_left">Jeannie Longo-Ciprelli</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Classic</td>
-<td headers="distance" class="gt_row gt_right">45.094</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2003-10-01</td>
-<td headers="name" class="gt_row gt_left">Leontien Zijlaard-van Moorsel</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Classic</td>
-<td headers="distance" class="gt_row gt_right">46.065</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1986-09-20</td>
-<td headers="name" class="gt_row gt_left">Jeannie Longo-Ciprelli</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Absolute</td>
-<td headers="distance" class="gt_row gt_right">44.770</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1987-09-23</td>
-<td headers="name" class="gt_row gt_left">Jeannie Longo-Ciprelli</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Absolute</td>
-<td headers="distance" class="gt_row gt_right">44.933</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1989-10-01</td>
-<td headers="name" class="gt_row gt_left">Jeannie Longo-Ciprelli</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Absolute</td>
-<td headers="distance" class="gt_row gt_right">46.352</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1995-04-29</td>
-<td headers="name" class="gt_row gt_left">Catherine Marsal</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Absolute</td>
-<td headers="distance" class="gt_row gt_right">47.112</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1995-06-17</td>
-<td headers="name" class="gt_row gt_left">Yvonne McGregor</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Absolute</td>
-<td headers="distance" class="gt_row gt_right">47.411</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">1996-10-26</td>
-<td headers="name" class="gt_row gt_left">Jeannie Longo-Ciprelli</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Absolute</td>
-<td headers="distance" class="gt_row gt_right">48.159</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2015-09-12</td>
-<td headers="name" class="gt_row gt_left">Molly Shaffer Van Houweling</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Unified</td>
-<td headers="distance" class="gt_row gt_right">46.273</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2016-01-22</td>
-<td headers="name" class="gt_row gt_left">Bridie O'Donnell</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Unified</td>
-<td headers="distance" class="gt_row gt_right">46.882</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2016-02-27</td>
-<td headers="name" class="gt_row gt_left">Evelyn Stevens</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Unified</td>
-<td headers="distance" class="gt_row gt_right">47.980</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2018-09-13</td>
-<td headers="name" class="gt_row gt_left">Vittoria Bussi</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Unified</td>
-<td headers="distance" class="gt_row gt_right">48.007</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2021-09-30</td>
-<td headers="name" class="gt_row gt_left">Joscelin Lowden</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Unified</td>
-<td headers="distance" class="gt_row gt_right">48.405</td></tr>
-    <tr><td headers="date" class="gt_row gt_right">2022-05-23</td>
-<td headers="name" class="gt_row gt_left">Ellen van Dijk</td>
-<td headers="gender" class="gt_row gt_center">Women's</td>
-<td headers="type" class="gt_row gt_center">Unified</td>
-<td headers="distance" class="gt_row gt_right">49.254</td></tr>
-  </tbody>
-  
-  
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:5in; ">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Cycling Hour Records</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">date</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">name</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">gender</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">type</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">distance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1893-05-11</td>
+<td style="text-align: left;">Henri Desgrange</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">35.325</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1894-10-31</td>
+<td style="text-align: left;">Jules Dubois</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">38.220</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1897-07-30</td>
+<td style="text-align: left;">Oscar Van den Eynde</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">39.240</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1898-07-03</td>
+<td style="text-align: left;">Willie Hamilton</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">40.781</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1905-08-24</td>
+<td style="text-align: left;">Lucien Petit-Breton</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">41.110</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1907-06-20</td>
+<td style="text-align: left;">Marcel Berthet</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">41.520</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1912-08-22</td>
+<td style="text-align: left;">Oscar Egg</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">42.360</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1913-08-07</td>
+<td style="text-align: left;">Marcel Berthet</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">42.741</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1913-08-21</td>
+<td style="text-align: left;">Oscar Egg</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">43.525</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1913-09-20</td>
+<td style="text-align: left;">Marcel Berthet</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">43.775</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1914-08-18</td>
+<td style="text-align: left;">Oscar Egg</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">44.247</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1933-08-25</td>
+<td style="text-align: left;">Jan van Hout</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">44.588</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1933-09-28</td>
+<td style="text-align: left;">Maurice Richard</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">44.777</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1935-10-31</td>
+<td style="text-align: left;">Giuseppe Olmo</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">45.090</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1936-10-14</td>
+<td style="text-align: left;">Maurice Richard</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">45.325</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1937-09-29</td>
+<td style="text-align: left;">Frans Slaats</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">45.485</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1937-11-03</td>
+<td style="text-align: left;">Maurice Archambaud</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">45.767</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1942-11-07</td>
+<td style="text-align: left;">Fausto Coppi</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">45.798</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1956-06-29</td>
+<td style="text-align: left;">Jacques Anquetil</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">46.159</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1956-09-19</td>
+<td style="text-align: left;">Ercole Baldini</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">46.394</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1957-09-18</td>
+<td style="text-align: left;">Roger Rivière</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">46.923</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1959-09-23</td>
+<td style="text-align: left;">Roger Rivière</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">47.347</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1967-10-30</td>
+<td style="text-align: left;">Ferdi Bracke</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">48.093</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1968-10-10</td>
+<td style="text-align: left;">Ole Ritter</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">48.653</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1972-10-25</td>
+<td style="text-align: left;">Eddy Merckx</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Classic</td>
+<td style="text-align: right;">49.431</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1984-01-09</td>
+<td style="text-align: left;">Francesco Moser</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: right;">50.808</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1984-01-23</td>
+<td style="text-align: left;">Francesco Moser</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: right;">51.151</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1993-07-17</td>
+<td style="text-align: left;">Graeme Obree</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: right;">51.596</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1993-07-23</td>
+<td style="text-align: left;">Chris Boardman</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: right;">52.270</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1994-04-27</td>
+<td style="text-align: left;">Graeme Obree</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: right;">52.713</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1994-09-02</td>
+<td style="text-align: left;">Miguel Indurain</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: right;">53.040</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1994-10-22</td>
+<td style="text-align: left;">Tony Rominger</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: right;">53.832</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1994-11-05</td>
+<td style="text-align: left;">Tony Rominger</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: right;">55.291</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1996-09-06</td>
+<td style="text-align: left;">Chris Boardman</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: right;">56.375</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2000-10-27</td>
+<td style="text-align: left;">Chris Boardman</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Classic</td>
+<td style="text-align: right;">49.441</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2005-07-19</td>
+<td style="text-align: left;">Ondřej Sosenka</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Classic</td>
+<td style="text-align: right;">49.700</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2014-09-01</td>
+<td style="text-align: left;">Jens Voigt</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Unified</td>
+<td style="text-align: right;">51.110</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2014-10-30</td>
+<td style="text-align: left;">Matthias Brändle</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Unified</td>
+<td style="text-align: right;">51.852</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2015-02-08</td>
+<td style="text-align: left;">Rohan Dennis</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Unified</td>
+<td style="text-align: right;">52.491</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2015-05-02</td>
+<td style="text-align: left;">Alex Dowsett</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Unified</td>
+<td style="text-align: right;">52.937</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2015-06-07</td>
+<td style="text-align: left;">Bradley Wiggins</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Unified</td>
+<td style="text-align: right;">54.526</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2019-04-16</td>
+<td style="text-align: left;">Victor Campenaerts</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Unified</td>
+<td style="text-align: right;">55.089</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-08-19</td>
+<td style="text-align: left;">Daniel Bigham</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Unified</td>
+<td style="text-align: right;">55.548</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2022-10-08</td>
+<td style="text-align: left;">Filippo Ganna</td>
+<td style="text-align: left;">Men's</td>
+<td style="text-align: left;">Unified</td>
+<td style="text-align: right;">56.792</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1893-07-01</td>
+<td style="text-align: left;">Mlle de Saint-Saveur</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">26.012</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1893-08-01</td>
+<td style="text-align: left;">Renée Debatz</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">28.019</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1893-10-01</td>
+<td style="text-align: left;">Hélène Dutrieu</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">28.780</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1897-10-01</td>
+<td style="text-align: left;">Louise Roger</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">34.684</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1911-01-01</td>
+<td style="text-align: left;">Alfonsina Strada</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">37.192</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1947-10-01</td>
+<td style="text-align: left;">Élyane Bonneau</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">37.560</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1948-11-01</td>
+<td style="text-align: left;">Jeannine Lemaire</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">37.720</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1949-07-01</td>
+<td style="text-align: left;">Jeannine Lemaire</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">38.283</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1952-01-01</td>
+<td style="text-align: left;">Jeannine Lemaire</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">39.735</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1955-07-07</td>
+<td style="text-align: left;">Tamara Novikova</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">38.473</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1957-09-18</td>
+<td style="text-align: left;">Renee Vissac</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">38.569</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1958-09-25</td>
+<td style="text-align: left;">Millie Robinson</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">39.719</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1958-11-09</td>
+<td style="text-align: left;">Elsy Jacobs</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Historical</td>
+<td style="text-align: right;">41.347</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1972-11-25</td>
+<td style="text-align: left;">Maria Cressari</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Classic</td>
+<td style="text-align: right;">41.471</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1978-09-16</td>
+<td style="text-align: left;">Keetie van Oosten</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Classic</td>
+<td style="text-align: right;">43.082</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2000-10-18</td>
+<td style="text-align: left;">Anna Wilson-Millward</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Classic</td>
+<td style="text-align: right;">43.501</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2000-11-05</td>
+<td style="text-align: left;">Jeannie Longo-Ciprelli</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Classic</td>
+<td style="text-align: right;">44.767</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2000-12-07</td>
+<td style="text-align: left;">Jeannie Longo-Ciprelli</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Classic</td>
+<td style="text-align: right;">45.094</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2003-10-01</td>
+<td style="text-align: left;">Leontien Zijlaard-van Moorsel</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Classic</td>
+<td style="text-align: right;">46.065</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1986-09-20</td>
+<td style="text-align: left;">Jeannie Longo-Ciprelli</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: right;">44.770</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1987-09-23</td>
+<td style="text-align: left;">Jeannie Longo-Ciprelli</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: right;">44.933</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1989-10-01</td>
+<td style="text-align: left;">Jeannie Longo-Ciprelli</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: right;">46.352</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1995-04-29</td>
+<td style="text-align: left;">Catherine Marsal</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: right;">47.112</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1995-06-17</td>
+<td style="text-align: left;">Yvonne McGregor</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: right;">47.411</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1996-10-26</td>
+<td style="text-align: left;">Jeannie Longo-Ciprelli</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: right;">48.159</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2015-09-12</td>
+<td style="text-align: left;">Molly Shaffer Van Houweling</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Unified</td>
+<td style="text-align: right;">46.273</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2016-01-22</td>
+<td style="text-align: left;">Bridie O'Donnell</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Unified</td>
+<td style="text-align: right;">46.882</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2016-02-27</td>
+<td style="text-align: left;">Evelyn Stevens</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Unified</td>
+<td style="text-align: right;">47.980</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2018-09-13</td>
+<td style="text-align: left;">Vittoria Bussi</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Unified</td>
+<td style="text-align: right;">48.007</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2021-09-30</td>
+<td style="text-align: left;">Joscelin Lowden</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Unified</td>
+<td style="text-align: right;">48.405</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2022-05-23</td>
+<td style="text-align: left;">Ellen van Dijk</td>
+<td style="text-align: left;">Women's</td>
+<td style="text-align: left;">Unified</td>
+<td style="text-align: right;">49.254</td>
+</tr>
+</tbody>
 </table>
 </div>
+
 </div>
 </div>
 </section>
 <section id="visualization" class="level2">
 <h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">1890-present</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">1972-present</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<section id="first-and-last-by-era-and-gender" class="level3">
+<h3 class="anchored" data-anchor-id="first-and-last-by-era-and-gender">First and Last by Era and Gender</h3>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>hour_records <span class="sc">|&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> distance, <span class="at">colour =</span> type, <span class="at">fill =</span> type) <span class="sc">+</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">60</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">25</span>, <span class="dv">60</span>, <span class="dv">5</span>)) <span class="sc">+</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="fu">as.Date</span>(<span class="st">"1890-01-01"</span>), <span class="cn">NA</span>), </span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">breaks =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(<span class="fu">seq</span>(<span class="dv">1890</span>, <span class="dv">2030</span>, <span class="at">by =</span> <span class="dv">10</span>), <span class="st">"-01-01"</span>)), </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">labels =</span> <span class="fu">date_format</span>(<span class="st">"%Y"</span>)) <span class="sc">+</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(gender)) <span class="sc">+</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Cycling Hour Records"</span>,</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"1890-present"</span>,</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Distance (km)"</span>, </span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Date"</span>, </span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">colour =</span> <span class="st">""</span>, </span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jdonland</span>() <span class="sc">+</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>date) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(type, gender) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(distance <span class="sc">%in%</span> <span class="fu">c</span>(<span class="fu">min</span>(distance), <span class="fu">max</span>(distance))) <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(type, gender, distance) <span class="sc">|&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">extreme =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"first"</span>, <span class="st">"last"</span>), <span class="dv">8</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> <span class="fu">c</span>(gender, type), </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">names_from =</span> extreme, </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> <span class="fu">c</span>(distance, name)) <span class="sc">|&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">y =</span> type, </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">xmin =</span> distance_first, </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">xmax =</span> distance_last, </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">group =</span> gender,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">colour =</span> gender) <span class="sc">+</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_linerange</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">5</span>), </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                 <span class="at">colour =</span> <span class="st">"#b4b4b4"</span>, </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                 <span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> distance_first), <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">5</span>), <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> distance_last), <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">5</span>), <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">25</span><span class="sc">:</span><span class="dv">60</span>) <span class="sc">+</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#dc2828"</span>, <span class="st">"black"</span>)) <span class="sc">+</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Cycling Hour Records: First and Last by Era and Gender"</span>, </span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Distance (km)"</span>, </span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Record Type"</span>) <span class="sc">+</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">c</span>(<span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="fl">3.5</span>), <span class="at">colour =</span> <span class="st">"grey85"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="hour_records_files/figure-html/chart-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="hour_records_files/figure-html/chart-1-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="hour_records_files/figure-html/chart-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="hour_records_files/figure-html/chart-3-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This graphic highlights how little progress was made on the men’s record during the classic era. We can also see that the unified records have overtaken the old “anything goes” absolute records. Finally, it’s interesting to note that the current women’s record is just slightly shy of Merckx’s.</p>
+</section>
+<section id="timelines" class="level3">
+<h3 class="anchored" data-anchor-id="timelines">Timelines</h3>
+<p>Expand the code for the second plot to see a useful trick that allows one to modify the data set underlying a <code>ggplot</code> object, in this case to filter out the historical records.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">1893-present</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">1972-present</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>hour_records <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># aesthetic mapping</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> distance, <span class="at">colour =</span> type, <span class="at">fill =</span> type, <span class="at">label =</span> name) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># visual elements representing the data</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">"#b4b4b4"</span>) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scales</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">25</span>,<span class="dv">60</span>,<span class="dv">5</span>), <span class="at">minor_breaks =</span> <span class="fu">seq</span>(<span class="dv">25</span>, <span class="dv">60</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(<span class="fu">seq</span>(<span class="dv">1890</span>, <span class="dv">2030</span>, <span class="at">by =</span> <span class="dv">5</span>), <span class="st">"-01-01"</span>)),</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">labels =</span> <span class="fu">date_format</span>(<span class="st">"%Y"</span>),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">guide =</span> <span class="fu">guide_axis</span>(<span class="at">n.dodge =</span> <span class="dv">2</span>),</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">limits =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">"1890-01-01"</span>, <span class="st">"2025-01-01"</span>)),</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># facets</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="at">facets =</span> <span class="fu">vars</span>(gender), </span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>             <span class="at">scales =</span> <span class="st">"free_y"</span>, </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">nrow =</span> <span class="dv">2</span>, </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">strip.position=</span><span class="st">"right"</span>) <span class="sc">+</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Cycling Hour Records"</span>, </span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Distance (km)"</span>, </span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Date"</span>) <span class="sc">+</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theming</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>()) <span class="ot">-&gt;</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  p</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="hour_records_files/figure-html/chart-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="hour_records_files/figure-html/chart-1-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1050,31 +838,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>hour_records <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(type <span class="sc">!=</span> <span class="st">"Historical"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> distance, <span class="at">colour =</span> type, <span class="at">fill =</span> type) <span class="sc">+</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">60</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">40</span>, <span class="dv">60</span>, <span class="dv">5</span>)) <span class="sc">+</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="fu">as.Date</span>(<span class="st">"1970-01-01"</span>), <span class="cn">NA</span>),</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">breaks =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(<span class="fu">seq</span>(<span class="dv">1970</span>, <span class="dv">2030</span>, <span class="at">by =</span> <span class="dv">10</span>), <span class="st">"-01-01"</span>)),</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">labels =</span> <span class="fu">date_format</span>(<span class="st">"%Y"</span>)) <span class="sc">+</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(gender)) <span class="sc">+</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Cycling Hour Records"</span>, </span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"1970-present"</span>,</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Distance (km)"</span>, </span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Date"</span>, </span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">colour =</span> <span class="st">""</span>, </span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jdonland</span>() <span class="sc">+</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># change the data embedded in the previous plot</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>p<span class="sc">$</span>data <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(type <span class="sc">!=</span> <span class="st">"Historical"</span>) <span class="ot">-&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  p<span class="sc">$</span>data</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># re-plot it with text labels and new scales</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(<span class="fu">seq</span>(<span class="dv">1970</span>, <span class="dv">2030</span>, <span class="at">by =</span> <span class="dv">5</span>), <span class="st">"-01-01"</span>)),</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">labels =</span> <span class="fu">date_format</span>(<span class="st">"%Y"</span>),</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">limits =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">"1970-01-01"</span>, <span class="st">"2025-01-01"</span>)),</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>() <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>, <span class="at">begin =</span> <span class="fl">0.33</span>) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Cycling Hour Records, 1972-present"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="hour_records_files/figure-html/chart-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="hour_records_files/figure-html/chart-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="hour_records_files/figure-html/chart-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="hour_records_files/figure-html/chart-2-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1083,11 +868,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
+</section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Hour_record">Hour record (Wikipedia)</a></li>
+<li><a href="https://bikeraceinfo.com/riderhistories/Merckx-Hour-Record.html">Eddy Merckx and the Hour Record</a></li>
+</ul>
 
 
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1324,7 +1115,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":true,"openEffect":"zoom","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});</script>
 
 
 
