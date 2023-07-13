@@ -4935,13 +4935,13 @@ font-style: inherit;">$</span>l_tick_linetype))</span></code></pre></div>
 
 
 <section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<h2 data-anchor-id="introduction">Introduction</h2>
 <p><a href="https://downforacross.com/">Down For Across</a> is a website which allows you to solve user-uploaded crosswords solo or with friends.</p>
 <p>The crosswords published in major American newspapers often differ in difficulty according to the day of the week. For example, the <a href="https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle">New York Times’ guide</a> explains that their Monday puzzles are the easiest and their Saturday puzzles the hardest. Meanwhile, the Sunday puzzles have easy clues but a large grid, and the Thursday puzzles have some unique gimmick. By contrast, the New Yorker’s crosswords decrease in difficulty over the week.</p>
 <p>I’ve started keeping track of my solo completion times for the New York Times, Los Angeles Times, New Yorker, and Wall Street Journal crosswords.</p>
 </section>
 <section id="reading-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="reading-the-data">Reading the Data</h2>
+<h2 data-anchor-id="reading-the-data">Reading the Data</h2>
 <p>I’m accustomed to thinking of the week as beginning with Sunday, but for the purposes of crossword difficulty analysis, Monday is better. We’ll convert the solve times from <code>00:00</code>-style to minutes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
@@ -7084,6 +7084,26 @@ font-style: inherit;">"5in"</span>)</span></code></pre></div>
 <td style="text-align: left;">6</td>
 <td style="text-align: right;">17</td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">New York Times</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Los Angeles Times</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New York Times</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">New York Times</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: right;">16</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -7305,23 +7325,23 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 
-<div id="uqludttypp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uqludttypp table {
+<div id="valxmwubev" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#valxmwubev table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uqludttypp thead, #uqludttypp tbody, #uqludttypp tfoot, #uqludttypp tr, #uqludttypp td, #uqludttypp th {
+#valxmwubev thead, #valxmwubev tbody, #valxmwubev tfoot, #valxmwubev tr, #valxmwubev td, #valxmwubev th {
   border-style: none;
 }
 
-#uqludttypp p {
+#valxmwubev p {
   margin: 0;
   padding: 0;
 }
 
-#uqludttypp .gt_table {
+#valxmwubev .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -7347,12 +7367,12 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#uqludttypp .gt_caption {
+#valxmwubev .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uqludttypp .gt_title {
+#valxmwubev .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -7364,7 +7384,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#uqludttypp .gt_subtitle {
+#valxmwubev .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -7376,7 +7396,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-top-width: 0;
 }
 
-#uqludttypp .gt_heading {
+#valxmwubev .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -7388,13 +7408,13 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#uqludttypp .gt_bottom_border {
+#valxmwubev .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uqludttypp .gt_col_headings {
+#valxmwubev .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7409,7 +7429,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#uqludttypp .gt_col_heading {
+#valxmwubev .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7429,7 +7449,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#uqludttypp .gt_column_spanner_outer {
+#valxmwubev .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7441,15 +7461,15 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   padding-right: 4px;
 }
 
-#uqludttypp .gt_column_spanner_outer:first-child {
+#valxmwubev .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uqludttypp .gt_column_spanner_outer:last-child {
+#valxmwubev .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uqludttypp .gt_column_spanner {
+#valxmwubev .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -7461,11 +7481,11 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   width: 100%;
 }
 
-#uqludttypp .gt_spanner_row {
+#valxmwubev .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uqludttypp .gt_group_heading {
+#valxmwubev .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7491,7 +7511,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   text-align: left;
 }
 
-#uqludttypp .gt_empty_group_heading {
+#valxmwubev .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -7506,15 +7526,15 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   vertical-align: middle;
 }
 
-#uqludttypp .gt_from_md > :first-child {
+#valxmwubev .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uqludttypp .gt_from_md > :last-child {
+#valxmwubev .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uqludttypp .gt_row {
+#valxmwubev .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7533,7 +7553,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#uqludttypp .gt_stub {
+#valxmwubev .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7546,7 +7566,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#uqludttypp .gt_stub_row_group {
+#valxmwubev .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7560,15 +7580,15 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   vertical-align: top;
 }
 
-#uqludttypp .gt_row_group_first td {
+#valxmwubev .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uqludttypp .gt_row_group_first th {
+#valxmwubev .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uqludttypp .gt_summary_row {
+#valxmwubev .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7578,16 +7598,16 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#uqludttypp .gt_first_summary_row {
+#valxmwubev .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uqludttypp .gt_first_summary_row.thick {
+#valxmwubev .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uqludttypp .gt_last_summary_row {
+#valxmwubev .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7597,7 +7617,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#uqludttypp .gt_grand_summary_row {
+#valxmwubev .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7607,7 +7627,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#uqludttypp .gt_first_grand_summary_row {
+#valxmwubev .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7617,7 +7637,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#uqludttypp .gt_last_grand_summary_row_top {
+#valxmwubev .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7627,11 +7647,11 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#uqludttypp .gt_striped {
+#valxmwubev .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uqludttypp .gt_table_body {
+#valxmwubev .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7640,7 +7660,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#uqludttypp .gt_footnotes {
+#valxmwubev .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7654,7 +7674,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#uqludttypp .gt_footnote {
+#valxmwubev .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -7663,7 +7683,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#uqludttypp .gt_sourcenotes {
+#valxmwubev .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7677,7 +7697,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#uqludttypp .gt_sourcenote {
+#valxmwubev .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -7685,63 +7705,63 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#uqludttypp .gt_left {
+#valxmwubev .gt_left {
   text-align: left;
 }
 
-#uqludttypp .gt_center {
+#valxmwubev .gt_center {
   text-align: center;
 }
 
-#uqludttypp .gt_right {
+#valxmwubev .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uqludttypp .gt_font_normal {
+#valxmwubev .gt_font_normal {
   font-weight: normal;
 }
 
-#uqludttypp .gt_font_bold {
+#valxmwubev .gt_font_bold {
   font-weight: bold;
 }
 
-#uqludttypp .gt_font_italic {
+#valxmwubev .gt_font_italic {
   font-style: italic;
 }
 
-#uqludttypp .gt_super {
+#valxmwubev .gt_super {
   font-size: 65%;
 }
 
-#uqludttypp .gt_footnote_marks {
+#valxmwubev .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uqludttypp .gt_asterisk {
+#valxmwubev .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uqludttypp .gt_indent_1 {
+#valxmwubev .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uqludttypp .gt_indent_2 {
+#valxmwubev .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uqludttypp .gt_indent_3 {
+#valxmwubev .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uqludttypp .gt_indent_4 {
+#valxmwubev .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uqludttypp .gt_indent_5 {
+#valxmwubev .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -7783,10 +7803,10 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   </thead>
   <tbody class="gt_table_body">
     <tr><td headers="day" class="gt_row gt_center">1</td>
-<td headers="n_Los Angeles Times" class="gt_row gt_right">25</td>
+<td headers="n_Los Angeles Times" class="gt_row gt_right">26</td>
 <td headers="mean_Los Angeles Times" class="gt_row gt_right">7</td>
 <td headers="sd_Los Angeles Times" class="gt_row gt_right">1</td>
-<td headers="n_New York Times" class="gt_row gt_right">28</td>
+<td headers="n_New York Times" class="gt_row gt_right">29</td>
 <td headers="mean_New York Times" class="gt_row gt_right">6</td>
 <td headers="sd_New York Times" class="gt_row gt_right">1</td>
 <td headers="n_New Yorker" class="gt_row gt_right">14</td>
@@ -7799,7 +7819,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
 <td headers="n_Los Angeles Times" class="gt_row gt_right">22</td>
 <td headers="mean_Los Angeles Times" class="gt_row gt_right">8</td>
 <td headers="sd_Los Angeles Times" class="gt_row gt_right">2</td>
-<td headers="n_New York Times" class="gt_row gt_right">25</td>
+<td headers="n_New York Times" class="gt_row gt_right">26</td>
 <td headers="mean_New York Times" class="gt_row gt_right">8</td>
 <td headers="sd_New York Times" class="gt_row gt_right">2</td>
 <td headers="n_New Yorker" class="gt_row gt_right">17</td>
@@ -7825,7 +7845,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
 <td headers="n_Los Angeles Times" class="gt_row gt_right">21</td>
 <td headers="mean_Los Angeles Times" class="gt_row gt_right">13</td>
 <td headers="sd_Los Angeles Times" class="gt_row gt_right">6</td>
-<td headers="n_New York Times" class="gt_row gt_right">21</td>
+<td headers="n_New York Times" class="gt_row gt_right">22</td>
 <td headers="mean_New York Times" class="gt_row gt_right">22</td>
 <td headers="sd_New York Times" class="gt_row gt_right">7</td>
 <td headers="n_New Yorker" class="gt_row gt_right">31</td>
@@ -7885,7 +7905,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
 </div>
 </section>
 <section id="visualizing-solve-times" class="level2">
-<h2 class="anchored" data-anchor-id="visualizing-solve-times">Visualizing Solve Times</h2>
+<h2 data-anchor-id="visualizing-solve-times">Visualizing Solve Times</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" aria-controls="tabset-2-1" aria-selected="true">Violin Plot</a></li><li class="nav-item"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" aria-controls="tabset-2-2" aria-selected="false">Cumulative Distributions</a></li></ul>
 <div class="tab-content">
@@ -8394,7 +8414,7 @@ background-color: null;
 font-style: inherit;"># theming</span></span>
 <span id="cb5-34">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_jdonland</span>() <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">theme_bw</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb5-35">  <span class="fu" style="color: #4758AB;
@@ -8474,7 +8494,7 @@ font-style: inherit;">0.5</span>))</span></code></pre></div>
 </div>
 </section>
 <section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
+<h2 data-anchor-id="references">References</h2>
 <ul>
 <li><a href="https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle">How to Solve The New York Times Crossword</a></li>
 <li><a href="https://www.theguardian.com/global/2019/may/12/anna-shechtman-the-new-queen-of-crosswords">Anna Shechtman, the new queen of crosswords</a></li>
@@ -8494,19 +8514,22 @@ font-style: inherit;">0.5</span>))</span></code></pre></div>
 
 
 
-<section id="jeopardy-coryat-scores" class="level2">
-<h2 class="anchored" data-anchor-id="jeopardy-coryat-scores"><em>Jeopardy!</em> Coryat Scores</h2>
+<section id="introduction" class="level2">
+<h2 data-anchor-id="introduction">Introduction</h2>
+<section id="coryat-scores" class="level3">
+<h3 data-anchor-id="coryat-scores">Coryat Scores</h3>
 <p>The Coryat score is a way of measuring one’s performance when playing along with <em>Jeopardy!</em> at home. It is named after musician, philosopher of physics, and two-day <em>Jeopardy!</em> champion <a href="https://en.wikipedia.org/wiki/Karl_Coryat">Karl Coryat</a>.</p>
 <p>A player’s Coryat score is the total value of clues answered correctly, minus that of those answered incorrectly, counting correctly-answered Daily Doubles according to their board position and ignoring Final Jeopardy! and any incorrectly-answered Daily Doubles.</p>
 <p>Thus the Coryat score is a measure of one’s knowledge of the trivia material used on the show, ignoring other strategic elements like wagering.</p>
 </section>
-<section id="j-scorer" class="level2">
-<h2 class="anchored" data-anchor-id="j-scorer">J! Scorer</h2>
+<section id="j-scorer" class="level3">
+<h3 data-anchor-id="j-scorer">J! Scorer</h3>
 <p><a href="https://j-scorer.com/">J! Scorer</a> is a convenient way to record games and determine one’s Coryat score. The site was created by two-time TV game show contestant Steve McClellan and has a public GitHub <a href="https://github.com/steve-mcclellan/j-scorer">repository</a>.</p>
 <p>J! Scorer users can download a JSON file of their games.</p>
 </section>
-<section id="reading-a-j-scorer-file-and-computing-coryat-scores" class="level2">
-<h2 class="anchored" data-anchor-id="reading-a-j-scorer-file-and-computing-coryat-scores">Reading a J! Scorer File and Computing Coryat Scores</h2>
+</section>
+<section id="data" class="level2">
+<h2 data-anchor-id="data">Data</h2>
 <p>It took a little effort to reverse-engineer the format of the files produced by J! Scorer. (I did this before finding the above-mentioned GitHub repo.) I used <code>jsonlite::read_json</code> plus a little trial and error. Then it’s just a matter of straightforward data transformations using <code>dplyr</code>.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
@@ -8747,15 +8770,686 @@ background-color: null;
 font-style: inherit;"># store the results</span></span>
 <span id="cb1-25">  coryat_scores</span></code></pre></div>
 </div>
+<section id="table" class="level3">
+<h3 data-anchor-id="table">Table</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1">coryat_scores <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">kable</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">caption =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"My Jeopardy! Coryat Scores"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scroll_box</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">height =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"5in"</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:5in; ">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>My Jeopardy! Coryat Scores</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">score</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">game</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">17800</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10200</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">16000</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12400</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">16400</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16800</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18200</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16000</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">16000</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18400</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18600</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">22600</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">25000</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">17600</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19600</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">24000</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19600</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18600</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20200</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">17800</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">26800</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">21000</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20800</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">19600</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17800</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18200</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">16600</td>
+<td style="text-align: right;">27</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">25400</td>
+<td style="text-align: right;">28</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4000</td>
+<td style="text-align: right;">29</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">27800</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18600</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">27000</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">24200</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">21600</td>
+<td style="text-align: right;">34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">22600</td>
+<td style="text-align: right;">35</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">21400</td>
+<td style="text-align: right;">36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18800</td>
+<td style="text-align: right;">37</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">11800</td>
+<td style="text-align: right;">38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">23200</td>
+<td style="text-align: right;">39</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">28000</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">24400</td>
+<td style="text-align: right;">41</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14800</td>
+<td style="text-align: right;">42</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17000</td>
+<td style="text-align: right;">43</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16200</td>
+<td style="text-align: right;">44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">27800</td>
+<td style="text-align: right;">45</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18000</td>
+<td style="text-align: right;">46</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18200</td>
+<td style="text-align: right;">47</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">28600</td>
+<td style="text-align: right;">48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">22600</td>
+<td style="text-align: right;">49</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">13600</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18000</td>
+<td style="text-align: right;">51</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16200</td>
+<td style="text-align: right;">52</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18400</td>
+<td style="text-align: right;">53</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">17200</td>
+<td style="text-align: right;">54</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">24200</td>
+<td style="text-align: right;">55</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">19400</td>
+<td style="text-align: right;">56</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20400</td>
+<td style="text-align: right;">57</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">21000</td>
+<td style="text-align: right;">58</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">16800</td>
+<td style="text-align: right;">59</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">19800</td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">24800</td>
+<td style="text-align: right;">61</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">19600</td>
+<td style="text-align: right;">62</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20400</td>
+<td style="text-align: right;">63</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">24400</td>
+<td style="text-align: right;">64</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18600</td>
+<td style="text-align: right;">65</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">17200</td>
+<td style="text-align: right;">66</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">23400</td>
+<td style="text-align: right;">67</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">26600</td>
+<td style="text-align: right;">68</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">24800</td>
+<td style="text-align: right;">69</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">21600</td>
+<td style="text-align: right;">70</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">24600</td>
+<td style="text-align: right;">71</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">21600</td>
+<td style="text-align: right;">72</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17600</td>
+<td style="text-align: right;">73</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12000</td>
+<td style="text-align: right;">74</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">21600</td>
+<td style="text-align: right;">75</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">17800</td>
+<td style="text-align: right;">76</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">23600</td>
+<td style="text-align: right;">77</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">21800</td>
+<td style="text-align: right;">78</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">22400</td>
+<td style="text-align: right;">79</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18800</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">28400</td>
+<td style="text-align: right;">81</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16800</td>
+<td style="text-align: right;">82</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">21400</td>
+<td style="text-align: right;">83</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5600</td>
+<td style="text-align: right;">84</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15000</td>
+<td style="text-align: right;">85</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">19400</td>
+<td style="text-align: right;">86</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">14200</td>
+<td style="text-align: right;">87</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16400</td>
+<td style="text-align: right;">88</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">23200</td>
+<td style="text-align: right;">89</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20400</td>
+<td style="text-align: right;">90</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">22600</td>
+<td style="text-align: right;">91</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18200</td>
+<td style="text-align: right;">92</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">14000</td>
+<td style="text-align: right;">93</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">17000</td>
+<td style="text-align: right;">94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19000</td>
+<td style="text-align: right;">95</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">19400</td>
+<td style="text-align: right;">96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10200</td>
+<td style="text-align: right;">97</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14400</td>
+<td style="text-align: right;">98</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13600</td>
+<td style="text-align: right;">99</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16000</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18000</td>
+<td style="text-align: right;">101</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10000</td>
+<td style="text-align: right;">102</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">21400</td>
+<td style="text-align: right;">103</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">21400</td>
+<td style="text-align: right;">104</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7200</td>
+<td style="text-align: right;">105</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18400</td>
+<td style="text-align: right;">106</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13600</td>
+<td style="text-align: right;">107</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20400</td>
+<td style="text-align: right;">108</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">14000</td>
+<td style="text-align: right;">109</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18400</td>
+<td style="text-align: right;">110</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">26200</td>
+<td style="text-align: right;">111</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">26400</td>
+<td style="text-align: right;">112</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">22800</td>
+<td style="text-align: right;">113</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">33200</td>
+<td style="text-align: right;">114</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19800</td>
+<td style="text-align: right;">115</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">26400</td>
+<td style="text-align: right;">116</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18600</td>
+<td style="text-align: right;">117</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">13600</td>
+<td style="text-align: right;">118</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">22200</td>
+<td style="text-align: right;">119</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">24800</td>
+<td style="text-align: right;">120</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">27400</td>
+<td style="text-align: right;">121</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">13400</td>
+<td style="text-align: right;">122</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">14000</td>
+<td style="text-align: right;">123</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">13600</td>
+<td style="text-align: right;">124</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15200</td>
+<td style="text-align: right;">125</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12000</td>
+<td style="text-align: right;">126</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20800</td>
+<td style="text-align: right;">127</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">26200</td>
+<td style="text-align: right;">128</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">16800</td>
+<td style="text-align: right;">129</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20400</td>
+<td style="text-align: right;">130</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">28800</td>
+<td style="text-align: right;">131</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">32400</td>
+<td style="text-align: right;">132</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10400</td>
+<td style="text-align: right;">133</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20000</td>
+<td style="text-align: right;">134</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">12400</td>
+<td style="text-align: right;">135</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">11400</td>
+<td style="text-align: right;">136</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20600</td>
+<td style="text-align: right;">137</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">19800</td>
+<td style="text-align: right;">138</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18200</td>
+<td style="text-align: right;">139</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20200</td>
+<td style="text-align: right;">140</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20000</td>
+<td style="text-align: right;">141</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">15800</td>
+<td style="text-align: right;">142</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">16400</td>
+<td style="text-align: right;">143</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">17000</td>
+<td style="text-align: right;">144</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">22400</td>
+<td style="text-align: right;">145</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">15600</td>
+<td style="text-align: right;">146</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20200</td>
+<td style="text-align: right;">147</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20600</td>
+<td style="text-align: right;">148</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18600</td>
+<td style="text-align: right;">149</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">19400</td>
+<td style="text-align: right;">150</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">22800</td>
+<td style="text-align: right;">151</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">13400</td>
+<td style="text-align: right;">152</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18800</td>
+<td style="text-align: right;">153</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">15200</td>
+<td style="text-align: right;">154</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20000</td>
+<td style="text-align: right;">155</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14000</td>
+<td style="text-align: right;">156</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">25200</td>
+<td style="text-align: right;">157</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">25800</td>
+<td style="text-align: right;">158</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
 </section>
-<section id="average-score" class="level2">
-<h2 class="anchored" data-anchor-id="average-score">Average Score</h2>
+<section id="average-score" class="level3">
+<h3 data-anchor-id="average-score">Average Score</h3>
 <p>An average score of around $25,000 is considered appropriate for prospective contestants.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># calculate my mean score</span></span>
-<span id="cb2-2">coryat_scores <span class="sc" style="color: #5E5E5E;
+<span id="cb3-2">coryat_scores <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -8769,13 +9463,14 @@ font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">round</span>()</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 19280</code></pre>
+<pre><code>[1] 19304</code></pre>
 </div>
 </div>
 <p>Clearly, I have some studying to do before I consider trying to compete on the show.</p>
 </section>
-<section id="visualizing-scores" class="level2">
-<h2 class="anchored" data-anchor-id="visualizing-scores">Visualizing Scores</h2>
+</section>
+<section id="visualization" class="level2">
+<h2 data-anchor-id="visualization">Visualization</h2>
 <p>We can create a histogram showing the distribution of my scores and a line chart showing the evolution of my scores over time using <code>ggplot2</code>.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" aria-controls="tabset-1-1" aria-selected="true">Line Chart and Histogram</a></li><li class="nav-item"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" aria-controls="tabset-1-2" aria-selected="false">Cumulative Distribution</a></li></ul>
@@ -8784,21 +9479,21 @@ font-style: inherit;">round</span>()</span></code></pre></div>
 <div class="cell" data-layout-align="center">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># main plot</span></span>
-<span id="cb4-2">(coryat_scores <span class="sc" style="color: #5E5E5E;
+<span id="cb5-2">(coryat_scores <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb4-3">  <span class="fu" style="color: #4758AB;
+<span id="cb5-3">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggplot</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb4-4">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-4">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># aesthetic mapping</span></span>
-<span id="cb4-5">  <span class="fu" style="color: #4758AB;
+<span id="cb5-5">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8807,10 +9502,10 @@ background-color: null;
 font-style: inherit;">y =</span> score) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb4-6">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-6">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># visual elements representing the data</span></span>
-<span id="cb4-7">  <span class="fu" style="color: #4758AB;
+<span id="cb5-7">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_line</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8819,7 +9514,7 @@ background-color: null;
 font-style: inherit;">"#b4b4b4"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb4-8">  <span class="fu" style="color: #4758AB;
+<span id="cb5-8">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_smooth</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8832,7 +9527,7 @@ background-color: null;
 font-style: inherit;">"black"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb4-9">  <span class="fu" style="color: #4758AB;
+<span id="cb5-9">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_hline</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8845,7 +9540,7 @@ background-color: null;
 font-style: inherit;">"dashed"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb4-10">  <span class="fu" style="color: #4758AB;
+<span id="cb5-10">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_point</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8854,10 +9549,10 @@ background-color: null;
 font-style: inherit;">"#dc2828"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb4-11">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-11">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># scales</span></span>
-<span id="cb4-12">  <span class="fu" style="color: #4758AB;
+<span id="cb5-12">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_y_continuous</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8866,12 +9561,12 @@ background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">label_dollar</span>(), </span>
-<span id="cb4-13">                     <span class="at" style="color: #657422;
+<span id="cb5-13">                     <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">n.breaks =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">6</span>, </span>
-<span id="cb4-14">                     <span class="at" style="color: #657422;
+<span id="cb5-14">                     <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">limits =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -8882,7 +9577,7 @@ background-color: null;
 font-style: inherit;">30000</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb4-15">  <span class="fu" style="color: #4758AB;
+<span id="cb5-15">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_x_continuous</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8899,50 +9594,50 @@ background-color: null;
 font-style: inherit;">NULL</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb4-16">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-16">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># labels</span></span>
-<span id="cb4-17">  <span class="fu" style="color: #4758AB;
+<span id="cb5-17">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"My Jeopardy! Coryat Scores"</span>,</span>
-<span id="cb4-18">       <span class="at" style="color: #657422;
+<span id="cb5-18">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">subtitle =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Trend and distribution"</span>, </span>
-<span id="cb4-19">       <span class="at" style="color: #657422;
+<span id="cb5-19">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">""</span>, </span>
-<span id="cb4-20">       <span class="at" style="color: #657422;
+<span id="cb5-20">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Score"</span>,</span>
-<span id="cb4-21">       <span class="at" style="color: #657422;
+<span id="cb5-21">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">caption =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Dashed black line indicates target average of $25,000."</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb4-22">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-22">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># theming</span></span>
-<span id="cb4-23">  <span class="fu" style="color: #4758AB;
+<span id="cb5-23">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_bw</span>()) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb4-24">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-24">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># add the marginal histogram</span></span>
-<span id="cb4-25">  <span class="fu" style="color: #4758AB;
+<span id="cb5-25">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggMarginal</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8971,15 +9666,15 @@ font-style: inherit;">"#b4b4b4"</span>)</span></code></pre></div>
 <div class="cell" data-layout-align="center">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1">coryat_scores <span class="sc" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1">coryat_scores <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb5-2">  <span class="fu" style="color: #4758AB;
+<span id="cb6-2">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">arrange</span>(score) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb5-3">  <span class="fu" style="color: #4758AB;
+<span id="cb6-3">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggplot</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
@@ -8996,7 +9691,7 @@ background-color: null;
 font-style: inherit;">sum</span>(score))) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-4">  <span class="fu" style="color: #4758AB;
+<span id="cb6-4">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_line</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -9009,7 +9704,7 @@ background-color: null;
 font-style: inherit;">"#dc2828"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-5">  <span class="fu" style="color: #4758AB;
+<span id="cb6-5">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_x_continuous</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -9018,12 +9713,12 @@ background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">label_dollar</span>(), </span>
-<span id="cb5-6">                     <span class="at" style="color: #657422;
+<span id="cb6-6">                     <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">n.breaks =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">6</span>, </span>
-<span id="cb5-7">                     <span class="at" style="color: #657422;
+<span id="cb6-7">                     <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">expand =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -9034,7 +9729,7 @@ background-color: null;
 font-style: inherit;">0</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-8">  <span class="fu" style="color: #4758AB;
+<span id="cb6-8">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_y_continuous</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -9053,31 +9748,31 @@ background-color: null;
 font-style: inherit;">0</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-9">  <span class="fu" style="color: #4758AB;
+<span id="cb6-9">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"My Jeopardy! Coryat Scores"</span>,</span>
-<span id="cb5-10">       <span class="at" style="color: #657422;
+<span id="cb6-10">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">subtitle =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Cumulative distribution"</span>, </span>
-<span id="cb5-11">       <span class="at" style="color: #657422;
+<span id="cb6-11">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Score"</span>, </span>
-<span id="cb5-12">       <span class="at" style="color: #657422;
+<span id="cb6-12">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">""</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-13">  <span class="fu" style="color: #4758AB;
+<span id="cb6-13">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_bw</span>()</span></code></pre></div>
 </details>
@@ -9094,7 +9789,7 @@ font-style: inherit;">theme_bw</span>()</span></code></pre></div>
 </div>
 </section>
 <section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
+<h2 data-anchor-id="references">References</h2>
 <ul>
 <li><a href="https://j-scorer.com/">J! Scorer</a></li>
 <li><a href="https://j-archive.com/">J! Archive</a></li>
