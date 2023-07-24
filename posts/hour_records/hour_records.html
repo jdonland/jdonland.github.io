@@ -741,54 +741,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="visualization" class="level2">
 <h2 data-anchor-id="visualization">Visualization</h2>
-<section id="first-and-last-by-era-and-gender" class="level3">
-<h3 data-anchor-id="first-and-last-by-era-and-gender">First and Last by Era and Gender</h3>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>hour_records <span class="sc">|&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>date) <span class="sc">|&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(type, gender) <span class="sc">|&gt;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(distance <span class="sc">%in%</span> <span class="fu">c</span>(<span class="fu">min</span>(distance), <span class="fu">max</span>(distance))) <span class="sc">|&gt;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(type, gender, distance) <span class="sc">|&gt;</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">extreme =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"first"</span>, <span class="st">"last"</span>), <span class="dv">8</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> <span class="fu">c</span>(gender, type), </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">names_from =</span> extreme, </span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> <span class="fu">c</span>(distance, name)) <span class="sc">|&gt;</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">y =</span> type, </span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">xmin =</span> distance_first, </span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">xmax =</span> distance_last, </span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">group =</span> gender,</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">colour =</span> gender) <span class="sc">+</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_linerange</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">5</span>), </span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                 <span class="at">colour =</span> <span class="st">"#b4b4b4"</span>, </span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                 <span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> distance_first), <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">5</span>), <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> distance_last), <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">5</span>), <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">25</span><span class="sc">:</span><span class="dv">60</span>) <span class="sc">+</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#dc2828"</span>, <span class="st">"black"</span>)) <span class="sc">+</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Cycling Hour Records: First and Last by Era and Gender"</span>, </span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Distance (km)"</span>, </span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Record Type"</span>) <span class="sc">+</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">c</span>(<span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="fl">3.5</span>), <span class="at">colour =</span> <span class="st">"grey85"</span>)</span></code></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="hour_records_files/figure-html/chart-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="hour_records_files/figure-html/chart-3-1.png" class="img-fluid figure-img" width="672"></a></p>
-</figure>
-</div>
-</div>
-</div>
-<p>This graphic highlights how little progress was made on the men’s record during the classic era. We can also see that the unified records have overtaken the old “anything goes” absolute records. Finally, it’s interesting to note that the current women’s record is just slightly shy of Merckx’s.</p>
-</section>
-<section id="timelines" class="level3">
-<h3 data-anchor-id="timelines">Timelines</h3>
 <p>Expand the code for the second plot to see a useful trick that allows one to modify the data set underlying a <code>ggplot</code> object, in this case to filter out the historical records.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">1893-present</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">1972-present</a></li></ul>
@@ -797,44 +749,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>hour_records <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># aesthetic mapping</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> distance, <span class="at">colour =</span> type, <span class="at">fill =</span> type, <span class="at">label =</span> name) <span class="sc">+</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># visual elements representing the data</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">"#b4b4b4"</span>) <span class="sc">+</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scales</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">25</span>,<span class="dv">60</span>,<span class="dv">5</span>), <span class="at">minor_breaks =</span> <span class="fu">seq</span>(<span class="dv">25</span>, <span class="dv">60</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(<span class="fu">seq</span>(<span class="dv">1890</span>, <span class="dv">2030</span>, <span class="at">by =</span> <span class="dv">5</span>), <span class="st">"-01-01"</span>)),</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">labels =</span> <span class="fu">date_format</span>(<span class="st">"%Y"</span>),</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">guide =</span> <span class="fu">guide_axis</span>(<span class="at">n.dodge =</span> <span class="dv">2</span>),</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">limits =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">"1890-01-01"</span>, <span class="st">"2025-01-01"</span>)),</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># facets</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="at">facets =</span> <span class="fu">vars</span>(gender), </span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>             <span class="at">scales =</span> <span class="st">"free_y"</span>, </span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">nrow =</span> <span class="dv">2</span>, </span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">strip.position=</span><span class="st">"right"</span>) <span class="sc">+</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Cycling Hour Records"</span>, </span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Distance (km)"</span>, </span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Date"</span>) <span class="sc">+</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theming</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>()) <span class="ot">-&gt;</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  p</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>hour_records <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># aesthetic mapping</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> distance, <span class="at">colour =</span> type, <span class="at">fill =</span> type, <span class="at">label =</span> name) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># visual elements representing the data</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">"#b4b4b4"</span>) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scales</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">25</span>,<span class="dv">60</span>,<span class="dv">5</span>), <span class="at">minor_breaks =</span> <span class="fu">seq</span>(<span class="dv">25</span>, <span class="dv">60</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(<span class="fu">seq</span>(<span class="dv">1890</span>, <span class="dv">2030</span>, <span class="at">by =</span> <span class="dv">5</span>), <span class="st">"-01-01"</span>)),</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">labels =</span> <span class="fu">date_format</span>(<span class="st">"%Y"</span>),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">guide =</span> <span class="fu">guide_axis</span>(<span class="at">n.dodge =</span> <span class="dv">2</span>),</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">limits =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">"1890-01-01"</span>, <span class="st">"2025-01-01"</span>)),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># facets</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="at">facets =</span> <span class="fu">vars</span>(gender), </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>             <span class="at">scales =</span> <span class="st">"free_y"</span>, </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">nrow =</span> <span class="dv">2</span>, </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">strip.position=</span><span class="st">"right"</span>) <span class="sc">+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Cycling Hour Records"</span>, </span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Distance (km)"</span>, </span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Date"</span>) <span class="sc">+</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theming</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>()) <span class="ot">-&gt;</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  p</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="hour_records_files/figure-html/chart-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="hour_records_files/figure-html/chart-1-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="hour_records_files/figure-html/chart-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="hour_records_files/figure-html/chart-1-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -844,26 +796,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># change the data embedded in the previous plot</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>p<span class="sc">$</span>data <span class="sc">|&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(type <span class="sc">!=</span> <span class="st">"Historical"</span>) <span class="ot">-&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  p<span class="sc">$</span>data</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># re-plot it with text labels and new scales</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(<span class="fu">seq</span>(<span class="dv">1970</span>, <span class="dv">2030</span>, <span class="at">by =</span> <span class="dv">5</span>), <span class="st">"-01-01"</span>)),</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">labels =</span> <span class="fu">date_format</span>(<span class="st">"%Y"</span>),</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">limits =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">"1970-01-01"</span>, <span class="st">"2025-01-01"</span>)),</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>() <span class="sc">+</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>, <span class="at">begin =</span> <span class="fl">0.33</span>) <span class="sc">+</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Cycling Hour Records, 1972-present"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># change the data embedded in the previous plot</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>p<span class="sc">$</span>data <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(type <span class="sc">!=</span> <span class="st">"Historical"</span>) <span class="ot">-&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  p<span class="sc">$</span>data</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># re-plot it with text labels and new scales</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(<span class="fu">seq</span>(<span class="dv">1970</span>, <span class="dv">2030</span>, <span class="at">by =</span> <span class="dv">5</span>), <span class="st">"-01-01"</span>)),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">labels =</span> <span class="fu">date_format</span>(<span class="st">"%Y"</span>),</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">limits =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">"1970-01-01"</span>, <span class="st">"2025-01-01"</span>)),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>() <span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>, <span class="at">begin =</span> <span class="fl">0.33</span>) <span class="sc">+</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Cycling Hour Records, 1972-present"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="hour_records_files/figure-html/chart-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="hour_records_files/figure-html/chart-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="hour_records_files/figure-html/chart-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="hour_records_files/figure-html/chart-2-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -872,12 +824,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
+<section id="observations" class="level2">
+<h2 data-anchor-id="observations">Observations</h2>
+<p>These charts highlight how little progress was made on the men’s record during the classic era. We can also see that the unified records have overtaken the old “anything goes” absolute records. Finally, it’s interesting to note that the current women’s record is just slightly shy of Merckx’s.</p>
 </section>
 <section id="references" class="level2">
 <h2 data-anchor-id="references">References</h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Hour_record">Hour record (Wikipedia)</a></li>
 <li><a href="https://bikeraceinfo.com/riderhistories/Merckx-Hour-Record.html">Eddy Merckx and the Hour Record</a></li>
+<li><a href="http://bikeretrogrouch.blogspot.com/2014/05/the-hour-record.html">The Retrogrouch: The Hour Record</a></li>
 </ul>
 
 
@@ -1060,7 +1016,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"loop":true,"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});</script>
 
 
 
