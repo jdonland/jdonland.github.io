@@ -18,7 +18,7 @@
     "href": "links.html",
     "title": "Links",
     "section": "",
-    "text": "Jerry’s Map\nRagna Róbertsdóttir\nM. C. Escher\nPiet Mondrian\nHenry Darger\nGerd Arntz\nFrançois Avril\n104 Mesmerizing Mosque Ceilings That Highlight The Wonders Of Islamic Architecture\nTauba Aurebach\nMœbius\nThe Codex Seraphinianus"
+    "text": "Goodbye, Data Science\nWhy Business Data Science Irritates Me\nOn Moving from Statistics to Machine Learning, the Final Stage of Grief\nMost Data Work Seems Fundamentally Worthless\nData Science Is Different Now"
   },
   {
     "objectID": "posts.html",
@@ -557,7 +557,7 @@
     "href": "links.html#philosophy",
     "title": "Links",
     "section": "Philosophy",
-    "text": "Philosophy\n\nWhose Idea Is It, Anyway?\nIt’s All Bullsh*t! On the Relationship Between Pseudoscience and Pseudophilosophy\nThe Normative Status of Logic\nUse and Mention\nZhuangzi and That Bloody Butterfly"
+    "text": "Philosophy\n\nReview of Probability Theory: The Logic of Science\nProbability That a Number Is Prime\nPhilosophy of Probability\nPhilosophy of Statistics\nWhat Is Probability?\nCan You Have Confidence in a Confidence Interval?"
   },
   {
     "objectID": "links.html#poetry-short-fiction",
@@ -698,5 +698,33 @@
     "title": "Links",
     "section": "Urbanism",
     "text": "Urbanism\n\n50 Reasons Why Everyone Should Want More Walkable Streets\nWhat I Mean When I Say ‘Ban Cars’\nThe People Who Hate People\nStroads Are Ugly, Expensive, and Dangerous (and They’re Everywhere)\nWhat’s a Gadgetbahn?\nShifting Gears: Why US Cities Are Falling Out of Love With the Parking Lot\nEvery NIMBY’s Speech at a Public Hearing\nThere’s No Such Thing as Affordable Housing\nIvan Illich on Cars\nWhy Canadian Cities Just Generally Suck\nThe Housing Theory of Everything\nWhy Is Japanese Zoning More Liberal Than US Zoning?\nAmericans Spend Too Much Time in Cars. The Solution Is Simple.\nSão Paulo: The City With No Outdoor Advertisements\nThe Hidden Force That Shapes Everything Around Us: Parking\nMotornomativity: How Social Norms Hide a Major Public Health Hazard"
+  },
+  {
+    "objectID": "links.html#careers-industry",
+    "href": "links.html#careers-industry",
+    "title": "Links",
+    "section": "",
+    "text": "Goodbye, Data Science\nWhy Business Data Science Irritates Me\nOn Moving from Statistics to Machine Learning, the Final Stage of Grief\nMost Data Work Seems Fundamentally Worthless\nData Science Is Different Now"
+  },
+  {
+    "objectID": "links.html#methodology-and-practice",
+    "href": "links.html#methodology-and-practice",
+    "title": "Links",
+    "section": "Methodology And Practice",
+    "text": "Methodology And Practice\n\nThe Good Research Code Handbook\nThinking Clearly About Correlations and Causation: Graphical Causal Models for Observational Data\nCommon Statistical Tests Are Linear Models (or: How To Teach Stats)\nNever Test For Normality\nStats Can’t Make Modeling Decisions\nThe Shortcomings of Standardized Regression Coefficients\nDirected Acyclic Graphs\nSimulating Confounders, Colliders and Mediators\nGo Get the Data\nThree Advantages of Non-AI Models"
+  },
+  {
+    "objectID": "links.html#paradoxes-puzzles",
+    "href": "links.html#paradoxes-puzzles",
+    "title": "Links",
+    "section": "Paradoxes & Puzzles",
+    "text": "Paradoxes & Puzzles\n\nThe Weirdest Paradox in Statistics (and Machine Learning)\nSimpson’s Paradox All the Way Down"
+  },
+  {
+    "objectID": "links.html#visualization",
+    "href": "links.html#visualization",
+    "title": "Links",
+    "section": "Visualization",
+    "text": "Visualization\n\n1 Dataset 100 Visualizations\nHow People Actually Lie With Charts"
   }
 ]
