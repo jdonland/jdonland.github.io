@@ -557,7 +557,7 @@
     "href": "links.html#philosophy",
     "title": "Data Science Links",
     "section": "Philosophy",
-    "text": "Philosophy\n\nReview of Probability Theory: The Logic of Science\nProbability That a Number Is Prime\nPhilosophy of Probability\nPhilosophy of Statistics\nWhat Is Probability?\nCan You Have Confidence in a Confidence Interval?"
+    "text": "Philosophy\n\nReview of Probability Theory: The Logic of Science\nProbability That a Number Is Prime\nPhilosophy of Probability\nPhilosophy of Statistics\nWhat Is Probability?\nCan You Have Confidence in a Confidence Interval?\nPrior Probabilities\nThe Well-Posed Problem\nMonkeys, Kangaroos, and N"
   },
   {
     "objectID": "links.html#poetry-short-fiction",
@@ -733,5 +733,12 @@
     "title": "Data Science Links",
     "section": "References & Resources",
     "text": "References & Resources\n\nAwesome Public Datasets"
+  },
+  {
+    "objectID": "links.html#and-n",
+    "href": "links.html#and-n",
+    "title": "Data Science Links",
+    "section": "And N",
+    "text": "And N\n\nMonkeys"
   }
 ]
