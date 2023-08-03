@@ -747,5 +747,12 @@
     "title": "Data Science Links",
     "section": "Methodology & Practice",
     "text": "Methodology & Practice\n\nThe Good Research Code Handbook\nCommon Statistical Tests Are Linear Models (or: How To Teach Stats)\nNever Test For Normality\nStats Can’t Make Modeling Decisions\nThe Shortcomings of Standardized Regression Coefficients\nDirected Acyclic Graphs\nSimulating Confounders, Colliders and Mediators\nGo Get the Data\nThree Advantages of Non-AI Models\nLog Transforms, Geometric Means and Estimating Population Totals"
+  },
+  {
+    "objectID": "links.html#puzzles-paradoxes",
+    "href": "links.html#puzzles-paradoxes",
+    "title": "Data Science Links",
+    "section": "Puzzles & Paradoxes",
+    "text": "Puzzles & Paradoxes\n\nThe Weirdest Paradox in Statistics (and Machine Learning)\nSimpson’s Paradox All the Way Down\nBertrand’s Paradox"
   }
 ]
