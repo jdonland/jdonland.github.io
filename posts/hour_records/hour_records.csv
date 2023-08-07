@@ -1,0 +1,76 @@
+date,name,gender,type,distance
+5/11/1893,Henri Desgrange,Men's,Historical,35.325
+10/31/1894,Jules Dubois,Men's,Historical,38.220
+7/30/1897,Oscar Van den Eynde,Men's,Historical,39.240
+7/3/1898,Willie Hamilton,Men's,Historical,40.781
+8/24/1905,Lucien Petit-Breton,Men's,Historical,41.110
+6/20/1907,Marcel Berthet,Men's,Historical,41.520
+8/22/1912,Oscar Egg,Men's,Historical,42.360
+8/7/1913,Marcel Berthet,Men's,Historical,42.741
+8/21/1913,Oscar Egg,Men's,Historical,43.525
+9/20/1913,Marcel Berthet,Men's,Historical,43.775
+8/18/1914,Oscar Egg,Men's,Historical,44.247
+8/25/1933,Jan van Hout,Men's,Historical,44.588
+9/28/1933,Maurice Richard,Men's,Historical,44.777
+10/31/1935,Giuseppe Olmo,Men's,Historical,45.090
+10/14/1936,Maurice Richard,Men's,Historical,45.325
+9/29/1937,Frans Slaats,Men's,Historical,45.485
+11/3/1937,Maurice Archambaud,Men's,Historical,45.767
+11/7/1942,Fausto Coppi,Men's,Historical,45.798
+6/29/1956,Jacques Anquetil,Men's,Historical,46.159
+9/19/1956,Ercole Baldini,Men's,Historical,46.394
+9/18/1957,Roger Rivière,Men's,Historical,46.923
+9/23/1959,Roger Rivière,Men's,Historical,47.347
+10/30/1967,Ferdi Bracke,Men's,Historical,48.093
+10/10/1968,Ole Ritter,Men's,Historical,48.653
+10/25/1972,Eddy Merckx,Men's,Classic,49.431
+1/9/1984,Francesco Moser,Men's,Absolute,50.808
+1/23/1984,Francesco Moser,Men's,Absolute,51.151
+7/17/1993,Graeme Obree,Men's,Absolute,51.596
+7/23/1993,Chris Boardman,Men's,Absolute,52.270
+4/27/1994,Graeme Obree,Men's,Absolute,52.713
+9/2/1994,Miguel Indurain,Men's,Absolute,53.040
+10/22/1994,Tony Rominger,Men's,Absolute,53.832
+11/5/1994,Tony Rominger,Men's,Absolute,55.291
+9/6/1996,Chris Boardman,Men's,Absolute,56.375
+10/27/2000,Chris Boardman,Men's,Classic,49.441
+7/19/2005,Ondřej Sosenka,Men's,Classic,49.700
+9/1/2014,Jens Voigt,Men's,Unified,51.110
+10/30/2014,Matthias Brändle,Men's,Unified,51.852
+2/8/2015,Rohan Dennis,Men's,Unified,52.491
+5/2/2015,Alex Dowsett,Men's,Unified,52.937
+6/7/2015,Bradley Wiggins,Men's,Unified,54.526
+4/16/2019,Victor Campenaerts,Men's,Unified,55.089
+8/19/2022,Daniel Bigham,Men's,Unified,55.548
+10/8/2022,Filippo Ganna,Men's,Unified,56.792
+7/1/1893,Mlle de Saint-Saveur,Women's,Historical,26.012
+8/1/1893,Renée Debatz,Women's,Historical,28.019
+10/1/1893,Hélène Dutrieu,Women's,Historical,28.780
+10/1/1897,Louise Roger,Women's,Historical,34.684
+1/1/1911,Alfonsina Strada,Women's,Historical,37.192
+10/1/1947,Élyane Bonneau,Women's,Historical,37.560
+11/1/1948,Jeannine Lemaire,Women's,Historical,37.720
+7/1/1949,Jeannine Lemaire,Women's,Historical,38.283
+1/1/1952,Jeannine Lemaire,Women's,Historical,39.735
+7/7/1955,Tamara Novikova,Women's,Historical,38.473
+9/18/1957,Renee Vissac,Women's,Historical,38.569
+9/25/1958,Millie Robinson,Women's,Historical,39.719
+11/9/1958,Elsy Jacobs,Women's,Historical,41.347
+11/25/1972,Maria Cressari,Women's,Classic,41.471
+9/16/1978,Keetie van Oosten,Women's,Classic,43.082
+10/18/2000,Anna Wilson-Millward,Women's,Classic,43.501
+11/5/2000,Jeannie Longo-Ciprelli,Women's,Classic,44.767
+12/7/2000,Jeannie Longo-Ciprelli,Women's,Classic,45.094
+10/1/2003,Leontien Zijlaard-van Moorsel,Women's,Classic,46.065
+9/20/1986,Jeannie Longo-Ciprelli,Women's,Absolute,44.770
+9/23/1987,Jeannie Longo-Ciprelli,Women's,Absolute,44.933
+10/1/1989,Jeannie Longo-Ciprelli,Women's,Absolute,46.352
+4/29/1995,Catherine Marsal,Women's,Absolute,47.112
+6/17/1995,Yvonne McGregor,Women's,Absolute,47.411
+10/26/1996,Jeannie Longo-Ciprelli,Women's,Absolute,48.159
+9/12/2015,Molly Shaffer Van Houweling,Women's,Unified,46.273
+1/22/2016,Bridie O'Donnell,Women's,Unified,46.882
+2/27/2016,Evelyn Stevens,Women's,Unified,47.980
+9/13/2018,Vittoria Bussi,Women's,Unified,48.007
+9/30/2021,Joscelin Lowden,Women's,Unified,48.405
+5/23/2022,Ellen van Dijk,Women's,Unified,49.254

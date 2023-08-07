@@ -1,0 +1,29 @@
+"0","#| label: libraries"
+"0","#| include: false"
+"0",""
+"0","library(here)"
+"2","here() starts at E:/Users/Gamer99/Documents/jdonland.github.io
+"
+"0","library(tidyverse)"
+"0","library(gt)"
+"2","Registered S3 methods overwritten by 'htmltools':
+  method               from         
+  print.html           tools:rstudio
+  print.shiny.tag      tools:rstudio
+  print.shiny.tag.list tools:rstudio
+"
+"0","library(vtable)"
+"2","Loading required package: kableExtra
+"
+"2","
+Attaching package: ‘kableExtra’
+
+"
+"2","The following object is masked from ‘package:dplyr’:
+
+    group_rows
+
+"
+"0","library(viridis)"
+"2","Loading required package: viridisLite
+"

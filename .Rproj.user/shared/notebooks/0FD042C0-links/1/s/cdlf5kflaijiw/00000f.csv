@@ -1,0 +1,51 @@
+"0","#| echo: false"
+"0","#| output: asis"
+"0","#| message: false"
+"0",""
+"0","read_csv(""data_science_links.csv"") |>"
+"0","  arrange(category, date_added) |>"
+"0","  mutate(markdown_link = paste0(""- ["", title, ""]("", url, "")""),"
+"0","         category = paste(""\n## "", str_to_title(category)),"
+"0","         .keep = ""none"") |>"
+"0","  group_by(category) |>"
+"0","  summarize(content = paste0(markdown_link, collapse = ""\n"")) |>"
+"0","  mutate(content = paste(category, ""\n"", content, ""\n"")) |>"
+"0","  pull(content) |>"
+"0","  paste0(collapse = "" "") |>"
+"0","  cat()"
+"1","
+##  Careers & Industry 
+ - [Goodbye, Data Science](https://ryxcommar.com/2022/11/27/goodbye-data-science/)
+- [Why Business Data Science Irritates Me](https://shakoist.substack.com/p/why-business-data-science-irritates)
+- [On Moving from Statistics to Machine Learning, the Final Stage of Grief](https://ryxcommar.com/2019/07/14/on-moving-from-statistics-to-machine-learning-the-final-stage-of-grief/)
+- [Most Data Work Seems Fundamentally Worthless](https://ludic.mataroa.blog/blog/most-data-work-seems-fundamentally-worthless/)
+- [Data Science Is Different Now](https://vickiboykis.com/2019/02/13/data-science-is-different-now/) 
+ 
+##  Methodology And Practice 
+ - [The Good Research Code Handbook](https://goodresearch.dev/index.html)
+- [Thinking Clearly About Correlations and Causation: Graphical Causal Models for Observational Data](https://journals.sagepub.com/doi/10.1177/2515245917745629)
+- [Common Statistical Tests Are Linear Models (or: How To Teach Stats)](https://lindeloev.github.io/tests-as-linear/)
+- [Never Test For Normality](https://www.allendowney.com/blog/2023/01/28/never-test-for-normality/)
+- [Stats Can't Make Modeling Decisions](https://allendowney.blogspot.com/2016/05/stats-cant-make-modeling-decisions.html)
+- [The Shortcomings of Standardized Regression Coefficients](https://data.library.virginia.edu/the-shortcomings-of-standardized-regression-coefficients/)
+- [Directed Acyclic Graphs](https://arelbundock.com/posts/acmq_en_06_dag/)
+- [Simulating Confounders, Colliders and Mediators](http://freerangestats.info/blog/2023/06/04/causality-sims)
+- [Go Get the Data](https://www.allendowney.com/blog/2023/06/25/go-get-the-data/)
+- [Three Advantages of Non-AI Models](https://www.johndcook.com/blog/2023/07/03/three-advantages-of-non-ai-models/) 
+ 
+##  Paradoxes & Puzzles 
+ - [The Weirdest Paradox in Statistics (and Machine Learning)](https://youtu.be/cUqoHQDinCM)
+- [Simpson's Paradox All the Way Down](https://dynomight.net/simpsons-paradox/) 
+ 
+##  Philosophy 
+ - [Review of Probability Theory: The Logic of Science](https://www.ams.org/notices/200601/rev-faris.pdf)
+- [Probability That a Number Is Prime](https://www.johndcook.com/blog/2010/10/06/probability-a-number-is-prime/)
+- [Philosophy of Probability](https://aidanlyon.com/philprob.pdf)
+- [Philosophy of Statistics](https://plato.stanford.edu/entries/statistics/)
+- [What Is Probability?](https://two-wrongs.com/what-is-probability)
+- [Can You Have Confidence in a Confidence Interval?](https://www.johndcook.com/blog/2023/04/23/confidence-interval/) 
+ 
+##  Visualization 
+ - [1 Dataset 100 Visualizations](https://100.datavizproject.com/)
+- [How People Actually Lie With Charts](https://vdl.sci.utah.edu/blog/2023/04/17/misleading/) 
+"

@@ -1,0 +1,168 @@
+---
+title: "Coryat Scores"
+date: "2022-10-17"
+description: "The joy of Jeopardy! judgement."
+image: "coryat_scores.jpg"
+filters:
+   - lightbox
+lightbox: auto
+---
+
+```{r}
+#| label: libraries
+#| include: false
+
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.align = "center",
+  paged.print = TRUE)
+
+library(tidyverse)
+library(kableExtra)
+library(jsonlite)
+library(scales)
+library(ggExtra)
+```
+
+## Introduction
+
+### Coryat Scores
+
+The Coryat score is a way of measuring one's performance when playing along with *Jeopardy!* at home. It is named after musician, philosopher of physics, and two-day *Jeopardy!* champion [Karl Coryat](https://en.wikipedia.org/wiki/Karl_Coryat).
+
+A player's Coryat score is the total value of clues answered correctly, minus that of those answered incorrectly, counting correctly-answered Daily Doubles according to their board position and ignoring Final Jeopardy! and any incorrectly-answered Daily Doubles.
+
+Thus the Coryat score is a measure of one's knowledge of the trivia material used on the show, ignoring other strategic elements like wagering.
+
+### J! Scorer
+
+[J! Scorer](https://j-scorer.com/) is a convenient way to record games and determine one's Coryat score. The site was created by two-time TV game show contestant Steve McClellan and has a public GitHub [repository](https://github.com/steve-mcclellan/j-scorer).
+
+J! Scorer users can download a JSON file of their games.
+
+## Data
+
+It took a little effort to reverse-engineer the format of the files produced by J! Scorer. (I did this before finding the above-mentioned GitHub repo.) I used `jsonlite::read_json` plus a little trial and error. Then it's just a matter of straightforward data transformations using `dplyr`.
+
+```{r}
+#| label: data-preparation
+#| message: false
+
+# read the JSON file, convert to data frame, and unnest some columns
+read_json(list.files()[grep(".jscor", list.files())], simplifyVector = TRUE) |>
+  as.data.frame() |>
+  unnest(cols = c(games_attributes.sixths_attributes,
+                  games_attributes.final_attributes),
+         names_repair = "universal") |>
+  # keep only the columns we need, add a round indicator, pivot to one row per
+  # clue instead of per category, and calculate each clue's contribution to the
+  # Coryat score
+  select(2, 10:14) |>
+  mutate(round = rep(c(rep(1, 6), rep(2, 6)), n()/12)) |>
+  pivot_longer(cols = 2:6, names_to = "clue", names_prefix = "result") |>
+  rename(result = value) |>
+  mutate(result = recode(result, `1` = -1, `3` = 1, `7` = 1, .default = 0),
+         score = round * as.numeric(clue) * 200 * result) |>
+  # group by game, add up the total score, sort by game order, and throw away
+  # the timestamps
+  group_by(games_attributes.date_played) |>
+  summarize(sum(score)) |>
+  arrange(1) |>
+  mutate(game = row_number()) |>
+  select(-1) |>
+  rename(score = `sum(score)`) ->
+  # store the results
+  coryat_scores
+```
+
+### Table
+
+```{r}
+#| label: table
+coryat_scores |>
+  kable(caption = "My Jeopardy! Coryat Scores") |>
+  scroll_box(height = "5in")
+```
+
+### Average Score
+
+An average score of around \$25,000 is considered appropriate for prospective contestants.
+
+```{r}
+#| label: mean-score
+
+# calculate my mean score
+coryat_scores |> pull(score) |> mean() |> round()
+```
+
+Clearly, I have some studying to do before I consider trying to compete on the show.
+
+## Visualization
+
+We can create a histogram showing the distribution of my scores and a line chart showing the evolution of my scores over time using `ggplot2`.
+
+::: panel-tabset
+### Line Chart and Histogram
+
+```{r}
+#| label: line-chart-histogram
+#| warning: false
+#| code-fold: true
+
+# main plot
+(coryat_scores |>
+  ggplot() +
+  # aesthetic mapping
+  aes(x = game, y = score) +
+  # visual elements representing the data
+  geom_line(colour = "#b4b4b4") +
+  geom_smooth(se = FALSE, colour = "black") +
+  geom_hline(yintercept = 25000, linetype = "dashed") +
+  geom_point(colour = "#dc2828") +
+  # scales
+  scale_y_continuous(labels = scales::label_dollar(), 
+                     n.breaks = 6, 
+                     limits = c(0, 30000)) +
+  scale_x_continuous(expand = c(0, 0), breaks = NULL) +
+  # labels
+  labs(title = "My Jeopardy! Coryat Scores",
+       subtitle = "Trend and distribution", 
+       x = "", 
+       y = "Score",
+       caption = "Dashed black line indicates target average of $25,000.") +
+  # theming
+  theme_bw()) |>
+  # add the marginal histogram
+  ggMarginal(type = "histogram", margins = "y", fill = "#b4b4b4")
+```
+
+### Cumulative Distribution
+
+```{r}
+#| label: empirical-cumulative-distribution
+#| warning: false
+#| code-fold: true
+
+coryat_scores |>
+  arrange(score) |>
+  ggplot(aes(x = score, y = cumsum(score)/sum(score))) +
+  geom_line(size = 2, colour = "#dc2828") +
+  scale_x_continuous(labels = scales::label_dollar(), 
+                     n.breaks = 6, 
+                     expand = c(0, 0)) +
+  scale_y_continuous(labels = scales::label_percent(), expand = c(0, 0)) +
+  labs(title = "My Jeopardy! Coryat Scores",
+       subtitle = "Cumulative distribution", 
+       x = "Score", 
+       y = "") +
+  theme_bw()
+```
+:::
+
+## References
+
+-   [J! Scorer](https://j-scorer.com/)
+-   [J! Archive](https://j-archive.com/)
+-   [J!ometry](https://j-ometry.com/)

@@ -1,0 +1,41 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Jesse Onland"
+  site-url: "https://jdonland.github.io/"
+  favicon: image.jpg
+  search: false
+  page-footer: ""
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: posts.qmd
+        text: Index
+      - href: links.qmd 
+        text: Links
+      - href: resume.pdf
+        text: Resume
+
+format:
+  html:
+    reference-location: margin
+    citation-location: margin
+    theme: 
+      - simplex
+      - theme.scss
+    mainfont: Palatino
+    linkcolor: "#dc2828"
+    grid:
+      sidebar-width: 300px
+      body-width: 723px
+      margin-width: 300px
+    code-copy: false
+    anchor-sections: false
+    filters:
+      - lightbox
+    link-external-newwindow: true
+
+editor: source

@@ -1,0 +1,512 @@
+ylim(0, 60)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(alpha = 0.5) +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(alpha = 0.5, normalize = "panel") +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(alpha = 0.5, normalize = "panels") +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+crossword_times |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher)) +
+geom_point(shape = 21, alpha = 0.5) +
+stat_slab() +
+scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S")) +
+facet_wrap(~Publisher) +
+guides(fill = FALSE) +
+labs(title = "Crossword Completion Times",
+x = "Day of the Week",
+y = "Completion Time (Minutes)")
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(alpha = 0.5, normalize = "panels") +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(alpha = 0.5, normalize = "all") +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(alpha = 0.5, normalize = "none") +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(alpha = 0.5, normalize = "all") +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(alpha = 0.5, normalize = "groups") +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(alpha = 0.5, normalize = "groups") +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+geom_boxplot() +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(alpha = 0.5, normalize = "groups") +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+geom_boxplot(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+library(gghalves)
+install.packages("gghalves")
+library(gghalves)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups") +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+geom_half_boxplot(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups", adjust = 0.5) +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+geom_half_boxplot(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups", scale = 0.5) +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+geom_half_boxplot(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups",
+scale = 0.5,
+color = "black") +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+geom_half_boxplot(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups",
+scale = 0.5,
+color = "black",
+expland = FALSE) +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+geom_half_boxplot(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups",
+scale = 0.5,
+color = "black",
+trim = TRUE) +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+geom_half_boxplot(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups",
+scale = 0.5,
+color = "black",
+p_limits = c(0.1, 0.9)) +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+geom_half_boxplot(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher)
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups",
+scale = 0.5)) +
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups",
+scale = 0.5)) +
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups",
+scale = 0.5) +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = F) +
+geom_half_boxplot(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+inherit.aes = F) +
+ylim(0, 60) +
+facet_wrap(~Publisher) +
+guides(fill = FALSE) +
+labs(title = "Crossword Completion Times",
+x = "Day of the Week",
+y = "Completion Time (Minutes)")
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+library(readr)
+library(lubridate)
+library(ggplot2)
+library(ggdist)
+library(gghalves)
+crossword_times |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher)) +
+geom_boxplot() +
+scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S")) +
+facet_wrap(~Publisher) +
+guides(fill = FALSE) +
+labs(title = "Crossword Completion Times",
+x = "Day of the Week",
+y = "Completion Time (Minutes)")
+#| warning: false
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups",
+scale = 0.5) +
+ylim(0, 60) +
+facet_wrap(~Publisher) +
+guides(fill = FALSE) +
+labs(title = "Crossword Completion Times",
+x = "Day of the Week",
+y = "Completion Time (Minutes)")
+#| warning: false
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups",
+scale = 0.5) +
+ylim(0, 65) +
+facet_wrap(~Publisher) +
+guides(fill = FALSE) +
+labs(title = "Crossword Completion Times",
+x = "Day of the Week",
+y = "Completion Time (Minutes)")
+crossword_times |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher)) +
+geom_boxplot() +
+scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S")) +
+facet_wrap(~Publisher) +
+ylim(0, 65) +
+guides(fill = FALSE) +
+labs(title = "Crossword Completion Times",
+x = "Day of the Week",
+y = "Completion Time (Minutes)")
+scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S"))
+scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S")) +
+facet_wrap(~Publisher) +
+ylim(0, 65) +
+guides(fill = FALSE) +
+labs(title = "Crossword Completion Times",
+x = "Day of the Week",
+y = "Completion Time (Minutes)")
+ggproto() + scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S")) +
+facet_wrap(~Publisher) +
+ylim(0, 65) +
+guides(fill = FALSE) +
+labs(title = "Crossword Completion Times",
+x = "Day of the Week",
+y = "Completion Time (Minutes)")
+add_reused_chart_elements <- function(g) {
+g +
+scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S")) +
+facet_wrap(~Publisher) +
+ylim(0, 65) +
+guides(fill = FALSE) +
+labs(title = "Crossword Completion Times",
+x = "Day of the Week",
+y = "Completion Time (Minutes)")
+}
+crossword_times |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher)) +
+geom_boxplot() |>
+add_reused_chart_elements()
+reused_chart_elements <- list(
+scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S")),
+facet_wrap(~Publisher),
+ylim(0, 65),
+guides(fill = FALSE),
+labs(title = "Crossword Completion Times",
+x = "Day of the Week",
+y = "Completion Time (Minutes)"))
+crossword_times |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher)) +
+geom_boxplot() +
+reused_chart_elements
+#| warning: false
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups",
+scale = 0.5) +
+reused_chart_elements
+#| warning: false
+#| message: false
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups",
+scale = 0.5) +
+geom_point(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+shape = 21,
+alpha = 0.5,
+inherit.aes = FALSE) +
+geom_half_boxplot(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+inherit.aes = FALSE) +
+reused_chart_elements
+#| warning: false
+#| message: false
+lognormal_summary |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups",
+scale = 0.5) +
+geom_half_boxplot(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+inherit.aes = FALSE) +
+reused_chart_elements
+#| warning: false
+#| message: false
+crossword_times |>
+group_by(Publisher, day) |>
+summarize(meanlog = mean(log(minutes)), sdlog = sd(log(minutes))) |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups",
+scale = 0.5) +
+geom_half_boxplot(data = crossword_times,
+aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+y = minutes,
+fill = Publisher),
+inherit.aes = FALSE) +
+reused_chart_elements
+#| warning: false
+crossword_times |>
+group_by(Publisher, day) |>
+summarize(meanlog = mean(log(minutes)), sdlog = sd(log(minutes))) |>
+ggplot(aes(x = factor(day, weekdays(as.Date('1970-01-01') + 4:10)),
+ydist = dist_lognormal(meanlog, sdlog),
+fill = Publisher)) +
+stat_slab(normalize = "groups",
+scale = 0.5) +
+reused_chart_elements
+install.packages("rvest")

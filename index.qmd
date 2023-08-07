@@ -1,0 +1,23 @@
+---
+title: "Jesse Onland"
+image: index.gif
+about: 
+  template: trestles
+  image-shape: round
+#  image-width: 15em
+  links:
+    - icon: github
+      href: https://github.com/jdonland
+    - icon: linkedin
+      href: https://www.linkedin.com/in/jesseonland/
+    - icon: mastodon
+      href: https://vis.social/@jdonland
+    - icon: envelope-at-fill
+      href: mailto://jesse.onland@gmail.com
+---
+
+I'm a data scientist and business intelligence analyst living in Kitchener, Ontario, Canada.
+
+I'm interested in inference broadly construed. That includes symbolic logic, mathematical proof, statistical inference, machine learning, and other topics related to knowing what we ought to conclude from the facts available to us.
+
+My motto is, "If mathematics were cheesecake, I wouldn't be a piano tuner." Ask me about it some time!

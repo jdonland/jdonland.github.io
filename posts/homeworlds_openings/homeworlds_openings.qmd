@@ -1,0 +1,258 @@
+---
+title: "Homeworlds Openings"
+date: "2023-05-03"
+description: "A sojourn on star situations."
+execute: 
+   warning: false
+   message: false
+filters:
+   - lightbox
+lightbox: auto
+---
+
+## Introduction
+
+Homeworlds is an abstract space battle game designed by John Cooper and published by Looney Labs. It's played with multipurpose game pieces called Looney pyramids, three of each of combination of three sizes (small, medium, and large) and four colours (green, yellow, blue, and red) for 36 in total. A pyramid lying down is a space ship and a pyramid standing up is a star. Each colour is associated with an ability.
+
+At the beginning of the game, each player chooses two stars to be their homeworld. Star systems are connected if they have no sizes in common.
+
+![Homeworlds star connection rule (from Looney Labs)](home5.jpg)
+
+Expert players actively debate Homeworlds' opening theory. One question is which combination of star sizes should be selected by the first player, and how the second player should respond.
+
+![Some homeworld options (from Looney Labs)](home6.jpg)
+
+When players' homeworlds are one step away from one another (i.e. connected), this is known as a "microverse". If they are two steps away, that's a "small universe", and if they are three steps away, that's a "large universe".
+
+In addition to their homeworld stars, each player selects a pyramid to be their first ship. The rest of the pieces become the bank from which new stars and ships are taken and to which destroyed stars and ships are returned.
+
+## Data
+
+[Babamots](https://jpeterbaker.github.io/homeworlds/site/index.html) compiled information from 4928 games of Homeworlds played on [BoardGameArena](https://en.boardgamearena.com/) and provided a first player win rate and a count of observations for each combination of first and second player homeworld sizes. Draws were counted as half a win for each player. Only games that lasted at least eight turns for each player were included.
+
+```{r}
+#| label: libraries
+#| include: false
+
+library(here)
+library(tidyverse)
+library(gt)
+library(viridis)
+library(showtext)
+```
+
+```{r}
+#| label: ggplot-theme
+#| include: false
+
+source(here("posts/theme_jdonland.R"))
+```
+
+```{r}
+#| label: data
+#| message: false
+
+read_csv("homeworlds_openings.csv") -> 
+  homeworlds_openings
+
+homeworlds_openings |>
+  gt() |> 
+  cols_label(p1_wr = "First Player Win Rate",
+             n = "Number of Games",
+             p1_hw = "First Player",
+             p2_hw = "Second Player") |>
+  tab_spanner(label = md("**Homeworld Sizes**"), columns = 3:4) |>
+  cols_align(align = "center", columns = everything()) |>
+  tab_header(title = "Homeworlds Openings Data",
+             subtitle = "Source: Scraped from BGA by Babamots") |>
+  tab_options(container.height = "500px") |>
+  opt_row_striping()
+```
+
+We'll also create some helper vectors and functions that will be convenient later.
+
+```{r}
+#| label: helpers
+#| code-fold: false
+
+# helper vectors
+#c("SS", "SM", "SL", "MM", "ML", "LL") -> hw_sizes
+c("SM", "SL", "ML", "SS", "MM", "LL") -> hw_sizes
+c("micro", "small", "large") -> universe_sizes
+
+# list the stars in a homeworld
+(function(hw) {unlist(strsplit(as.character(hw), ""))}) -> stars
+
+# determine the universe size
+(function(hw1, hw2) {
+  case_when(length(intersect(stars(hw1), stars(hw2))) == 0 ~ "micro",
+            length(unique(c(stars(hw1), stars(hw2)))) <= 2 ~ "small",
+            T ~ "large")}) -> universe_size
+```
+
+## Modelling First Player Advantage
+
+We can model first player advantage by imagining that a game of Homeworlds is like a biased coin flip, where each opening is associated with an independent bias. For example, if the bias parameter for some opening is 0.6, then we expect the first player to win 60% of the time that opening is played.[^1]
+
+[^1]: Assuming "average play", anyway.
+
+If this parameter is distributed according to a beta distribution *Beta(a, b)*, then its posterior distribution accounting for observing *n* wins and *m* losses for the first player is *Beta(a + n, b + m)*.[^2] All that is left is to decide on a prior distribution representing our beliefs before observing any data. This is an interesting subtlety[^3], but it seems reasonable to choose a uniform prior, *Beta(1, 1)*, under which all possibilities are equally credible.
+
+[^2]: See [these slides](https://cchecastaldo.github.io/BayesianShortCourse/content/handouts/DerivationBetaBinomialConjugate.pdf) for a quick proof of this fact.
+
+[^3]: See [this StackExchange answer](https://stats.stackexchange.com/a/298176/327338) for more on uninformative Beta priors.
+
+From the posterior distribution, we can construct a 90% [credible interval](https://en.wikipedia.org/wiki/Credible_interval) using `qbeta`. Unlike the confidence intervals used in frequentist statistical inference, which are the source of much confusion, Bayesian credible intervals have a straightforward interpretation: we're 90% sure the true value of the parameter is contained in a 90% credible interval.[^4]
+
+[^4]: Frequentists view the bounds of a confidence interval as random, and the parameter value as fixed. Bayesians view the bounds of a credible interval as fixed, and the parameter value as random.
+
+We can also calculate the probability that the first player is favoured (i.e. is expected to win at least half the time) in each opening using `pbeta`. In this case we don't consider the extent of the advantage, just whether there is one.
+
+```{r}
+#| label: data-frame
+homeworlds_openings |>
+  mutate(across(c(p1_hw, p2_hw), 
+                \(x) factor(x, ordered = T, levels = hw_sizes))) |>
+  rowwise() |>
+  mutate(p1_wins = n*p1_wr,
+         p2_wins = n*(1 - p1_wr),
+         # calculate a 90% credible interval from the posterior distribution
+         ci_lower = qbeta(c(0.05, 0.95), 1 + p1_wins, 1 + p2_wins)[1],
+         ci_upper = qbeta(c(0.05, 0.95), 1 + p1_wins, 1 + p2_wins)[2],
+         # format the interval as text
+         formatted_ci = paste0(round(100 * ci_lower),
+                               "-",
+                               round(100 * ci_upper),
+                               "%"),
+         # bold intervals that do not contain 50%
+         ci_fontface = case_when(!between(0.5, ci_lower, ci_upper) ~ "bold",
+                                 T ~ "plain"),
+         universe_size = universe_size(p1_hw, p2_hw),
+         universe_size = factor(universe_size, 
+                                ordered = TRUE, 
+                                levels = universe_sizes),
+         prob_fav = 1 - pbeta(0.5, 1 + p1_wins, 1 + p2_wins),
+         formatted_prob_fav = case_when(
+           prob_fav < 0.005 ~ "<1%",
+           prob_fav < 0.995 ~ paste0(round(100 * prob_fav), "%"),
+           T ~ ">99%"),
+         prob_fav_fontface = case_when(abs(prob_fav - 0.5) > 0.45 ~ "bold", 
+                                       T ~ "plain")) |>
+  arrange(p1_hw, p2_hw) ->
+  visualization_data
+
+visualization_data |>
+  select(p1_hw, p2_hw, formatted_ci, prob_fav) |>
+  gt() |>
+  cols_label(p1_hw = "First Player",
+             p2_hw = "Second Player",
+             formatted_ci = html("First Player Advantage<br>90% Credible Interval"),
+             prob_fav = html("Probability of<br>First Player Advantage")) |>
+  tab_spanner(label = md("**Homeworld Sizes**"), columns = 1:2) |>
+  cols_align(align = "center", columns = everything()) |>
+  tab_header(title = "First Player Advantage in Homeworlds Openings") |>
+  tab_options(container.height = "500px") |>
+  opt_row_striping()
+```
+
+## Visualizing First Player Advantage
+
+::: panel-tabset
+### Credible Intervals
+
+```{r}
+#| label: credible-intervals-graphic
+
+visualization_data |>
+  # underlying plot
+  ggplot() +
+  # aesthetic mapping
+  aes(x = p1_hw, y = p2_hw, fill = p1_wr) +
+  # visual elements representing the data
+  ## add tiles coloured to indicate the observed first player win rate
+  geom_tile(width = 0.8, height = 0.8) +
+  ## add dots to indicate universe size
+  geom_point(aes(colour = universe_size), 
+             position = position_nudge(x = 0.3, y = 0.3), 
+             size = 3) +
+  ## trick to circle the universe size dots without a fill scale collision
+  geom_point(size = 3, 
+             shape = 21, 
+             fill = NA, 
+             colour = "black", 
+             position = position_nudge(x = 0.3, y = 0.3)) +
+  # scales
+  ## gradient scale for the tiles
+  scale_fill_viridis(option = "cividis") +
+  ## discrete scale for the universe size dots
+  scale_colour_viridis(option = "cividis", discrete = TRUE) +
+  scale_y_discrete(limits = rev) +
+  # labels
+  labs(title = "Homeworlds First Player Advantage by Opening",
+       x = "First Player's Homeworld Sizes",
+       y = "Second Player's Homeworld Sizes",
+       fill = "Observed First Player\nWin Rate",
+       colour = "Universe Size") +
+  # theming
+  theme_jdonland() +
+#  theme(panel.background = element_rect(colour = "#fffcf9")) +
+  ## put the win rate legend under the universe size legend
+  guides(colour = guide_legend(order = 1)) ->
+  plot
+
+# version labelled with credible intervals
+plot +
+  # add formatted credible intervals as text
+  geom_label(aes(label = formatted_ci, fontface = ci_fontface),
+             fill = "#fffcf9",
+             label.padding = unit(0.125, "lines")) +
+  # add subtitle
+  labs(subtitle = "90% Bayesian credible intervals with uniform priors")
+```
+
+### Posterior Probability of First Player Advantage
+
+```{r}
+#| label: posterior-probability-graphic
+
+# version labelled with posterior probability of first player advantage
+plot + 
+  # add posterior probability first player is favoured as text
+  geom_label(aes(label = formatted_prob_fav, fontface = prob_fav_fontface),
+            fill = "#fffcf9",
+            label.padding = unit(0.125, "lines")) +
+  # add subtitle
+  labs(subtitle = "Posterior probability first player is favoured")
+```
+:::
+
+## Observations
+
+It seems that the first player should probably choose a large-large or medium-medium homeworld configuration. A homeworld with equally-sized stars is known as a "Gemini" configuration. When the first player chooses a Gemini opening, the second player loses the option of creating a large universe; only a small or a microverse is possible.
+
+The second player should opt for a small universe rather than a microverse. (A large universe is not possible when the first player's homeworld contains stars of equal size.)
+
+Why isn't small-small also advantageous for the first player? This is likely due to creating a bank configuration which will provide better lines of play to the second player in the early turns of the game.
+
+## Confounding Variables
+
+One might reasonably object to the model described above. For one thing, it does not take into account the colours of the pieces selected. This is a relatively minor issue, however, since a certain combination of colours[^5] is almost universally chosen.
+
+[^5]: Blue and yellow stars with a green ship.
+
+More concerning is the potentially confounding effect of player skill. It's very possible that some openings may be effective only in the hands of experts. It would be interesting to revisit this analysis with more granular and detailed data that included Elo ratings. You can help with this by learning Homeworlds!
+
+You can buy a Homeworlds set from Looney Labs. The same pieces can also be used to play many other interesting games.
+
+## Conclusions
+
+If you're playing first, start with two large stars of blue and yellow, and a large green ship. If you're playing second and your opponent has followed my advice, try small-large or large-large in the same colours.
+
+## References
+
+-   [Homeworlds \| Looney Labs](https://www.looneylabs.com/rules/homeworlds)
+-   [Play Homeworlds Online \| BoardGameArena](https://en.boardgamearena.com/gamepanel?game=homeworlds)
+-   [Looney Labs' Online Store](https://store.looneylabs.com/collections/pyramid-games/products/homeworlds)
+-   [Babamots' Homeworlds Site](https://jpeterbaker.github.io/homeworlds/site/index.html)
+-   [Andy's Page About Homeworlds](http://www.wunderland.com/WTS/Andy/Games/ILoveHomeworlds.html)
+-   [Homeworlds \| Board Game \| BoardGameGeek](https://boardgamegeek.com/boardgame/14634/homeworlds)

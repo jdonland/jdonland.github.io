@@ -1,0 +1,31 @@
+---
+title: "Data Science Links"
+editor: source
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+
+options(readr.show_col_types = FALSE)
+```
+
+```{r}
+#| echo: false
+#| output: asis
+#| message: false
+
+read_csv("data_science_links.csv") |>
+  arrange(category, date_added) |>
+  mutate(markdown_link = paste0("- [", title, "](", url, ")"),
+         category = paste("\n## ", str_to_title(category)),
+         .keep = "none") |>
+  group_by(category) |>
+  summarize(content = paste0(markdown_link, collapse = "\n")) |>
+  mutate(content = paste(category, "\n", content, "\n")) |>
+  pull(content) |>
+  paste0(collapse = " ") |>
+  cat()
+```

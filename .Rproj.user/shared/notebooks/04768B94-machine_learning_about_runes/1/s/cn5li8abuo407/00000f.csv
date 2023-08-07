@@ -1,0 +1,8 @@
+"0","# read the file"
+"0","read_delim(file = ""runes_data.csv"","
+"0","           delim = "";"","
+"0","           skip = 3,"
+"0","           na = ""-"","
+"0","           show_col_types = FALSE) ->"
+"0","  # save to a dataframe"
+"0","  runes_data"

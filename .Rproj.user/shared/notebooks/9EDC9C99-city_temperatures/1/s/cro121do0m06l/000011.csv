@@ -1,0 +1,4 @@
+"0","read_csv(""temps.csv"", show_col_types = FALSE) ->"
+"0","  city_temps"
+"0",""
+"0","st(city_temps)"

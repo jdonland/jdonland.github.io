@@ -1,0 +1,178 @@
+---
+title: "Crossword Times"
+date: "2023-01-02"
+description: "A consideration of cruciverbal complexity."
+filters:
+   - lightbox
+lightbox: auto
+---
+
+```{r}
+#| label: libraries
+#| include: false
+
+library(here)
+library(tidyverse)
+library(gt)
+library(vtable)
+library(viridis)
+```
+
+## Introduction
+
+[Down For Across](https://downforacross.com/) is a website which allows you to solve user-uploaded crosswords solo or with friends.
+
+The crosswords published in major American newspapers often differ in difficulty according to the day of the week. For example, the [New York Times' guide](https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle) explains that their Monday puzzles are the easiest and their Saturday puzzles the hardest. Meanwhile, the Sunday puzzles have easy clues but a large grid, and the Thursday puzzles have some unique gimmick. By contrast, the New Yorker's crosswords decrease in difficulty over the week.
+
+I've started keeping track of my solo completion times for the New York Times, Los Angeles Times, New Yorker, and Wall Street Journal crosswords.
+
+## Reading the Data
+
+I'm accustomed to thinking of the week as beginning with Sunday, but for the purposes of crossword difficulty analysis, Monday is better. We'll convert the solve times from `00:00`-style to minutes.
+
+```{r}
+#| label: data-preparation
+#| message: false
+
+read_csv("crossword_times.csv", col_types = "ccD") |>
+  transmute(Publisher,
+            day = factor(wday(Date, week_start = 1)),
+            minutes = period_to_seconds(ms(Time))/60) |>
+  rename(publisher = Publisher) ->
+  crossword_times
+```
+
+::: panel-tabset
+### Table
+```{r}
+#| label: table
+#| message: false
+#| code-fold: true
+
+crossword_times |>
+  mutate(minutes = round(minutes)) |>
+  kable(caption = "My Crossword Solve Times") |>
+  scroll_box(height = "5in")
+```
+
+### Summary
+```{r}
+#| label: summary
+#| message: false
+#| code-fold: true
+
+crossword_times |>
+  group_by(publisher, day) |>
+  summarize(n = n(), mean = mean(minutes), sd = sd(minutes)) |>
+  mutate(across(c("mean", "sd"), \(x) round(x))) |>
+  pivot_wider(names_from = publisher, 
+              values_from = c("n", "mean", "sd"),
+              names_sort = TRUE) |>
+  relocate(c(1, 2, 6, 10, 3, 7, 11, 4, 8, 12, 5, 9, 13)) |>
+  gt() |>
+  tab_header(title = "My Crossword Solve Times: Summary") |>
+  tab_spanner(label = "Los Angeles Times", columns = 2:4) |>
+  tab_spanner(label = "New York Times", columns = 5:7) |>
+  tab_spanner(label = "New Yorker", columns = 8:10) |>
+  tab_spanner(label = "Wall Street Journal", columns = 11:13) |>
+  cols_label(starts_with("n") ~ "n", 
+             starts_with("mean") ~ "mean", 
+             starts_with("sd") ~ "sd")
+```
+:::
+
+## Visualizing Solve Times
+
+::: panel-tabset
+### Violin Plot
+
+```{r}
+#| label: violin-plots
+#| warning: false
+#| message: false
+#| code-fold: true
+
+crossword_times |>
+  ggplot() +
+  # plot structure
+  facet_grid(cols = vars(publisher)) +
+  # aesthetic mapping
+  aes(x = day, y = minutes, fill = publisher) +
+  # visual elements representing the data
+  geom_violin(scale = "width", 
+              trim = FALSE, 
+              colour = NA) +
+  geom_boxplot(width = 0.25, fill = "white", outlier.shape = 21) +
+  # scales
+  scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S")) +
+  scale_y_continuous(breaks = seq(0, 80, 5), limits = c(0, 80), expand = c(0, 0)) +
+  # labels
+  labs(title = "Crossword Solve Times",
+       subtitle = "Distribution by publisher and day of the week",
+       x = "Day of the Week",
+       y = "Solve Time (Minutes)") +
+  # theming
+  guides(fill = FALSE) +
+  scale_fill_viridis(discrete = TRUE) +
+  theme_bw() +
+  theme(panel.grid.minor.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        strip.text = element_text(hjust = 0.5))
+```
+
+### Cumulative Distributions
+
+```{r}
+#| label: cumulative-distributions
+#| warning: false
+#| message: false
+#| code-fold: true
+
+c(`1`="M", `2`="T", `3`="W", `4`="T", `5`="F", `6`="S", `7`="S") |>
+  as_labeller() ->
+  day_labeller
+
+crossword_times |>
+  # group by publisher and day, sort by solve time, transform to percentiles
+  group_by(publisher, day) |>
+  arrange(minutes) |>
+  summarize(percentile = cumsum(minutes)/sum(minutes), minutes = minutes) |>
+  ggplot() +
+  # plot structure
+  facet_grid(rows = vars(day), labeller = day_labeller) +
+  # aesthetic mapping
+  aes(x = minutes, y = percentile, colour = publisher) +
+  # visual elements representing the data
+  geom_line(size = 2, alpha = 0.75) +
+  # scales
+  scale_y_continuous(labels = scales::label_percent(),
+                     limits = c(0, NA),
+                     expand = c(0 ,0),
+                     sec.axis = sec_axis(~ ., 
+                                         labels = NULL, 
+                                         breaks = NULL, 
+                                         name = "Day of the Week\n")) +
+  scale_x_continuous(n.breaks = 12, minor_breaks = 0:65) +
+  scale_colour_viridis(discrete = TRUE) +
+  # labels
+  labs(title = "Crossword Solve Times", 
+       subtitle = "Cumulative distribution by publisher and day of the week",
+       x = "Time (Minutes)", 
+       y = "",
+       colour = NULL) +
+  # theming
+  theme_bw() +
+  theme(legend.position = "top", 
+        panel.spacing.y = unit(0.02, "npc"),
+        axis.text.y = element_text(size = rel(0.8)),
+        panel.grid.minor.y = element_blank(),
+        panel.grid.minor.x = element_line(linetype = 3),
+        legend.margin = margin(0, 0, 0, 0),
+        strip.text = element_text(hjust = 0.5))
+```
+:::
+
+## References
+
+-   [How to Solve The New York Times Crossword](https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle)
+-   [Anna Shechtman, the new queen of crosswords](https://www.theguardian.com/global/2019/may/12/anna-shechtman-the-new-queen-of-crosswords)

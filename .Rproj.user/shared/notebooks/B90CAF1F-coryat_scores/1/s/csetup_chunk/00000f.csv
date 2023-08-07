@@ -1,0 +1,43 @@
+"0","#| label: libraries"
+"0","#| include: false"
+"0",""
+"0","knitr::opts_chunk$set("
+"0","  echo = TRUE,"
+"0","  warning = FALSE,"
+"0","  message = FALSE,"
+"0","  fig.align = ""center"","
+"0","  paged.print = TRUE)"
+"0",""
+"0","library(tidyverse)"
+"0","library(kableExtra)"
+"0","library(jsonlite)"
+"2","
+Attaching package: ‘jsonlite’
+
+"
+"2","The following object is masked from ‘package:purrr’:
+
+    flatten
+
+"
+"0","library(scales)"
+"2","
+Attaching package: ‘scales’
+
+"
+"2","The following object is masked from ‘package:viridis’:
+
+    viridis_pal
+
+"
+"2","The following object is masked from ‘package:purrr’:
+
+    discard
+
+"
+"2","The following object is masked from ‘package:readr’:
+
+    col_factor
+
+"
+"0","library(ggExtra)"

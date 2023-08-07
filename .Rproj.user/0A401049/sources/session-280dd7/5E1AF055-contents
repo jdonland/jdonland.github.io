@@ -1,0 +1,223 @@
+---
+title: "Wordle Scores"
+date: "2023-03-31"
+description: "A wealth of word whimsy."
+execute: 
+   warning: false
+   message: false
+filters:
+   - lightbox
+lightbox: auto
+format:
+  html:
+    code-fold: false
+---
+
+## Introduction
+
+Unless you spent 2022 on the moon, you've heard of [Wordle](https://www.nytimes.com/games/wordle/index.html), but just in case you haven't here's [the story](https://www.protocol.com/bulletins/josh-wardle-wordle-gdc-2022). You get up to six guesses to identify a secret five-letter word. The game tells you whether each of the letters of your guesses appears in the word and, if they do, whether they're in the correct place.
+
+![A typical game of Wordle in progress.](game_in_progress.png){fig-align="center" width="500"}
+
+```{r}
+#| label: libraries
+#| include: false
+
+library(here)
+library(tidyverse)
+library(viridis)
+library(ggExtra)
+library(vtable)
+library(gt)
+```
+
+## Data
+
+### My Scores
+
+```{r}
+#| label: data-preparation
+#| message: false
+#| code-fold: false
+
+read_csv("wordle_scores.csv", col_types = "nn-") |>
+  mutate(source = "me", puzzle = row_number()) ->
+  wordle_scores
+
+wordle_scores |>
+  select(-source, -puzzle) |>
+  st(title = "My Wordle Scores: Summary Statistics")
+```
+
+### Scores from Twitter
+
+I found two data sets of Wordle-related tweets on Kaggle: [this one](https://www.kaggle.com/datasets/vora1011/wordletweets) and [this other one](https://www.kaggle.com/datasets/benhamner/wordle-tweets).
+
+We can combine them, taking care to remove duplicates. There's surely some bias here, since people are more likely to share their scores on social media when they do well.
+
+```{r}
+#| label: twitter-scores
+#| message: false
+#| warning: false
+#| code-fold: false
+
+read_csv("wordle_tweets_1.zip", col_types = "nc--c") |>
+  rename(puzzle = wordle_id) ->
+  twitter_scores_1
+
+read_csv("wordle_tweets_2.zip", col_types = "nc-c------") |>
+  rename(puzzle = WordleID, tweet_id = ID, tweet_text = Text) ->
+  twitter_scores_2
+
+twitter_scores_1 |>
+  rbind(twitter_scores_2) |>
+  mutate(score = str_extract(tweet_text, "Wordle [0-9]{3} ([1-6X])/6", 1),
+         score = as.numeric(case_match(score, "X" ~ "7", .default = score)),
+         source = "twitter",
+         .keep = "unused") |>
+  drop_na() |>
+  distinct(tweet_id, .keep_all = TRUE) |>
+  select(-tweet_id) ->
+  twitter_scores
+
+rm(twitter_scores_1, twitter_scores_2)
+
+twitter_scores |> 
+  select(-source, -puzzle) |>
+  st(title = "Wordle Scores from Twitter: Summary Statistics")
+```
+
+We should be careful when thinking about mean scores, since we've coded the "X" representing a failed puzzle as a 7. If we filter those out, we get the average number of guesses per *solved* puzzle.
+
+```{r}
+#| label: filtered-means
+#| message: false
+
+wordle_scores |>
+  full_join(twitter_scores) |>
+  filter(score < 7) |>
+  group_by(source) |>
+  summarize(filtered_mean = mean(score)) |>
+  gt()
+```
+
+Looks like I'm slightly better on average than the people who tweeted their scores, not accounting for any failed puzzles.
+
+## Visualization
+
+First let's make one those those trend-and-distribution charts that I love so much. See the post about my [*Jeopardy!* Coryat scores](https://jdonland.github.io/posts/coryat_scores/coryat_scores.html) for another one.
+
+For a more detailed comparison against the scores from Twitter, we'll look at the cumulative distributions.
+
+::: panel-tabset
+### Line Chart and Histogram
+
+```{r}
+#| label: line-chart-histogram
+#| warning: false
+#| message: false
+#| code-fold: true
+
+# main plot
+(wordle_scores |>
+  ggplot() +
+  # aesthetic mapping
+  aes(x = puzzle, y = score) +
+  # visual elements representing the data
+  geom_line(colour = "#b4b4b4") +
+  geom_smooth(se = FALSE, colour = "black") +
+  geom_point(colour = "#dc2828") +
+  # scales
+  scale_y_continuous(limits = c(7.25, 0.75), 
+                     breaks = 1:7, 
+                     labels = c(1:6, "X"), 
+                     trans = "reverse") +
+  scale_x_continuous(expand = c(0, 0), breaks = NULL) +
+  # labels
+  labs(title = "My Wordle Scores",
+       subtitle = "Trend and distribution",
+       x = "", 
+       y = "Score") +
+  # theming
+  theme_bw() +
+  theme(panel.grid.minor = element_blank())) |>
+  # add the marginal histogram
+  ggMarginal(type = "histogram", 
+             margins = "y", 
+             fill = "#b4b4b4",
+             yparams = list(bins = 7, center = 0, binwidth = 1))
+```
+
+### Cumulative Distributions
+
+```{r}
+#| lable: distribution-vs-twitter
+#| message: false
+#| warning: false
+#| code-fold: true
+
+# combine the scores from twitter with my own
+wordle_scores |>
+  full_join(twitter_scores) |>
+  # count the occurences of each possible combination of source and score
+  group_by(source, score) |>
+  count() |>
+  ungroup() |>
+  complete(source, score, fill = list(n = 0)) |>
+  # get the cumulative percentiles for each source
+  arrange(source, score) |>
+  group_by(source) |>
+  mutate(percentile = cumsum(n)/sum(n)) |>
+  # add some helper columns for evil secondary axis trickery later
+  mutate(axis = case_when(percentile == 1 ~ "n",
+                          source == "me" ~ "l",
+                          TRUE ~ "r")) |>
+  mutate(
+    r_label_colour  = case_match(axis, "r" ~ "grey30"),
+    l_label_colour  = case_match(axis, "l"  ~ "grey30"),
+    r_tick_linetype = case_match(axis, "r" ~ "solid", .default = "blank"),
+    l_tick_linetype = case_match(axis, "l"  ~ "solid", .default = "blank")) -> 
+  # need to save this dataframe so we can refer to it within the ggplot call
+  temp
+
+temp |>
+  ggplot() +
+  aes(x = score, y = percentile, fill = source) +
+  # visual elements representing the data
+  geom_line(linetype = "dotted") +
+  geom_point(size = 3, shape = 21, colour = "black") +
+  # scales
+  scale_x_continuous(breaks = 1:7, 
+                     labels = c(1:6, "X"),
+                     expand = c(0, 0)) +
+  ## evil secondary axis trickery part one
+  scale_y_continuous(breaks = temp$percentile,
+                     labels = scales::label_percent(),
+                     limits = c(0, 1),
+                     expand = c(0, 0),
+                     sec.axis = dup_axis()) +
+  scale_fill_manual(values = c("#dc2828", "white")) +
+  # labels
+  labs(y = "", 
+       x = "Score", 
+       title = "My Wordle Scores vs Twitter", 
+       subtitle = "Cumulative distributions",
+       fill = "Source") +
+  # theming
+  theme_bw() +
+  ## evil secondary axis trickery part two
+  theme(panel.grid.minor   = element_blank(),
+        axis.text.y.right  = element_text(colour = temp$r_label_colour),
+        axis.text.y.left   = element_text(colour = temp$l_label_colour),
+        axis.ticks.y.right = element_line(linetype = temp$r_tick_linetype),
+        axis.ticks.y.left  = element_line(linetype = temp$l_tick_linetype))
+```
+:::
+
+## Observations
+
+I get fewer puzzles in two or fewer guesses than those who posted their scores to Twitter, but I do better at the harder words. I suspect this is the result of the bias speculated about above; probably there are many people who only tweeted _because_ they got the puzzle in two guesses.
+
+## References & Further Reading
+
+-   [Wordle-solving state of the art: all optimality results so far](https://www.poirrier.ca/notes/wordle-optimal/)

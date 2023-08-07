@@ -1,0 +1,51 @@
+---
+title: "Books No One Else Has"
+date: "2023-02-04"
+description: "An examination of extraordinary editions."
+---
+
+[LibraryThing](https://www.librarything.com/) is a site for storing and sharing book catalogues. It currently has about 3 million users and 183 million books catalogued.
+
+These are the books on my shelves which appear in no other user's catalogue. (As of 2023-02-04.)
+
+## [*赤峰幸生の暮しっく*](https://www.librarything.com/work/29740444/) by Eisuke Yamashita
+
+This is a coffee table book of photos of the world's most stylish man, Yukio Akamine. Derek Guy interviewed the author for Put This On [here](https://putthison.com/yukio-akamine-classic-life/).
+
+This is a boutique, foreign-language publication on a niche subject, which I expect explains why it doesn't appear in anyone else's catalogue.
+
+## [*Dicionario de la 10.000 Radiki di la Linguo Universala Ido*](https://www.librarything.com/work/29589247/) by Marcel Peach
+
+A self-published dictionary of the would-be successor to Esperanto. It's somewhat dated (e.g. "di la" is usually "dil" today) and Ido is only spoken by a very small community of enthusiasts. I'm surprised none of the collections of any of the various Esperanto organizations, some of which are very extensive, contain it.
+
+## [*On the Choice of a Common Language*](https://www.librarything.com/work/29589232/) by H. Jacob
+
+Another artifact from the era of peak public interest in auxiliary languages. The author followed up this essay the next year with *A Planned Auxiliary Language*, which was briefly [reviewed](https://www.nature.com/articles/161665d0) in *Nature*.
+
+## [*Logical Methods*](https://www.librarything.com/work/29586740/) by Greg Restall and Shawn Standefer
+
+In his [review](https://www.logicmatters.net/2023/01/08/restall-stander-logical-methods/), Peter Smith calls this a "an introduction to some aspects of formal logic that are of particular philosophical interest". Unusually, it covers propositional modal logic before developing first-order logic.
+
+This is a newly-released book and I'm sure it will fall off this list once a few more university lecturers start using it in their courses.
+
+## [*Tidy Modeling with R: A Framework for Modeling in the Tidyverse*](https://www.librarything.com/work/28650260/) by Max Kuhn and Julia Silge
+
+This is an O'Reilly book about the `tidymodels` framework for statistical inference and machine learning in R. I'm a bit surprised that no other users have this yet. Maybe Python is just too popular.
+
+## Coffee Table Books from Iceland
+
+### [*Myndlistardeild Listaháskóla Íslands: útskriftarverkefni 2022*](https://www.librarything.com/work/28625984/) by Bjarki Bragason
+
+This is the book for the 2022 graduation exhibition of the Iceland University of the Arts. I'm not surprised no one on the site else has this.
+
+### [*Erró: The Power of Images*](https://www.librarything.com/work/28239798/)
+
+Another exhibition book from Iceland, this one from an [Erró retrospective](https://listasafnreykjavikur.is/en/exhibitions/erro-power-images) at the Reykjavík Art Museum.
+
+### [*Skáklist - 32 Pieces: The Art of Chess*](https://www.librarything.com/work/28218629/) by Mark Sanders
+
+[*The Art of Chess*](https://www.allvisualarts.org/exhibitions/TheArtofChessLondon.aspx) is a travelling exhibition of interesting chess sets. Although I wasn't able to see it, the book from its stop in Iceland makes a nice addition to my collection of books about chess sets.
+
+### [*Stakkurinn - The Coat*](https://www.librarything.com/work/28239782/)
+
+A pictorial history of (and fairly compelling advertisement for) the outerwear company 66°N.

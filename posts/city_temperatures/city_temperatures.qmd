@@ -1,0 +1,232 @@
+---
+title: "Cities with Nice Weather"
+date: "2022-05-12"
+description: "A meteorological meditation."
+execute: 
+   warning: false
+   message: false
+image: "city_temperatures.jpg"
+---
+
+```{r setup, include = FALSE}
+#| label: libraries
+#| include: false
+
+library(here)
+library(tidyverse)
+library(papeR)
+library(ggExtra)
+```
+
+```{r}
+#| label: ggplot-theme
+#| include: false
+
+source(here("posts/theme_jdonland.R"))
+```
+
+## Introduction
+
+I live near [Toronto](https://en.wikipedia.org/wiki/Toronto#Climate). It's springtime, and currently about 30 °C. In my opinion, Toronto is too hot in the summer and too cold in the winter. I'd like to know which cities have the least deviation from a tolerable average temperature.
+
+## Tools
+
+This page was created using [Quarto](https://quarto.org/). I'm using the [`tidyverse`](https://www.tidyverse.org/) for data wrangling, [`ggplot2`](https://ggplot2.tidyverse.org/) and [`ggExtra`](https://exts.ggplot2.tidyverse.org/ggExtra.html) to plot.
+
+## Data
+
+First, I created a CSV file comprising all the information in the Wikpedia article [List of cities by average temperature](https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature).
+
+```{r}
+read_csv("temps.csv", show_col_types = FALSE) ->
+  city_temps
+
+head(city_temps)
+```
+
+Each row corresponds to a distinct city. There are two text columns containing each city's name and country, twelve numeric columns indicating the "averages of the daily highs and lows"[^1] for each month, and one additional numeric column containing the same figure for the entire year. The units are degrees Celsius. 455 cities are included in the data.
+
+[^1]: This is a bit ambiguous, but no matter. The article also points out that "the actual daytime temperature in a given month will be 3 to 10 °C higher than the temperature listed here, depending on how large the difference between daily highs and lows is."
+
+We'll define the "deviation" mentioned above as the difference between the value recorded for the coldest and hottest months, and the "average" as the value recorded for the whole year overall.
+
+We'll ignore any other weather characteristics like humidity, rain, wind, diurnal temperature difference, etc.[^2]
+
+[^2]: This may or many not be reasonable depending on your personal preferences about weather.
+
+```{r}
+city_temps |>
+  rename_with(tolower) |>
+  rowwise() |>
+  transmute(city,
+            avg = year,
+            range = max(c_across(jan:dec)) - min(c_across(jan:dec))) ->
+  city_temps
+
+head(city_temps)
+```
+
+## Summary Statistics
+
+Now we can investigate the distribution of each of our two variables.
+
+Here are the default summaries:
+
+```{r}
+city_temps |> 
+  select(avg, range) |>
+  summarize()
+```
+
+Which cities correspond to the extremes for each variable?
+
+```{r}
+city_temps |>
+  filter(
+    avg   %in% (city_temps |> pull(avg)   |> range())  || 
+    range %in% (city_temps |> pull(range) |> range())) |>
+  arrange(avg)
+```
+
+Let's see the values for Toronto as a baseline, and save them for later:
+
+```{r}
+city_temps |>
+  filter(city == "Toronto")
+
+city_temps |>
+  filter(city == "Toronto") |>
+  pull(avg) ->
+  toronto_avg
+
+city_temps |>
+  filter(city == "Toronto") |>
+  pull(range) ->
+  toronto_range
+```
+
+By global standards, Toronto is cool on average, but in keeping with my subjective perception, the deviation from that average over the year is quite large.
+
+## Plots
+
+Let's look at a scatter plot with marginal histograms:
+
+```{r}
+city_temps |>
+  ggplot(aes(x = avg, y = range)) +
+  geom_point(alpha = 0.33) +
+  geom_vline(xintercept = toronto_avg,
+             linetype = "dashed",
+             alpha = 0.33) +
+  geom_hline(yintercept = toronto_range,
+             linetype = "dashed",
+             alpha = 0.33) +
+  labs(title = "Average Temperature vs Range by City",
+       x = "Average Temperature (°C)",
+       y = "Difference Between Hottest and Coldest Months (°C)") +
+  theme_jdonland() ->
+  plot
+
+plot |>
+  ggMarginal(type = "histogram", fill = "transparent", size = 10) ->
+  plot
+
+plot
+```
+
+Here Toronto is indicated by the dashed lines.
+
+We can see there's a negative association between a city's average temperature and the range of temperatures experienced there. In particular, there's a big cluster of very hot cities which have little difference between their hottest and coldest months.
+
+Ten tropical cities fall into both the hottest decile and the least varying decile:
+
+```{r}
+city_temps |> 
+  filter(range < quantile(city_temps$range, 0.1),
+         avg   > quantile(city_temps$avg,   0.9)) |>
+  select(city)
+```
+
+While these cities see very little temperature variation throughout the year, they are much too hot.
+
+## Zooming In
+
+The area of this plot I'm most interested in is the vertical slice around Toronto. Let's see the same plot, including only the cities within one degree of Toronto's average temperature.[^3] We'll exclude the marginal histograms but add labels to the cities.
+
+[^3]: I haven't defined an ideal average temperature, but any city with a similar average and smaller range than Toronto is a clear improvement.
+
+```{r}
+#| warning: false
+city_temps |>
+  filter(abs(avg - toronto_avg)<=1) |>
+  ggplot(aes(x = avg, y = range, label = city)) +
+  geom_point(alpha = 0.33) +
+  geom_text(size = 4, nudge_x = 0.01, hjust = "left") +
+  geom_vline(xintercept = toronto_avg,
+             linetype = "dashed",
+             alpha = 0.33) +
+  geom_hline(yintercept = toronto_range,
+             linetype = "dashed",
+             alpha = 0.33) +
+  labs(title = "Average Temperature vs Range by City (Detail 1)",
+       x = "Average Temperature (°C)",
+       y = "Difference Between Hottest and Coldest Months (°C)") +
+  theme_jdonland()
+```
+
+So it seems that [La Paz](https://en.wikipedia.org/wiki/La_Paz#Climate), [Edinburgh](https://en.wikipedia.org/wiki/Edinburgh#Climate), or [Dublin](https://en.wikipedia.org/wiki/Dublin#Climate) might be good options.
+
+But which cities are the *best*? These would be the ones with the smallest range for a given maximum average. Let's find them.
+
+## Finding the Cities with the Nicest Weather
+
+We want to know, for each maximum average temperature, the city that has the minimum range of temperatures. These are the cities that form the "bottom-left edge" of our first plot.
+
+Nine cities fit this criterion:
+
+```{r}
+city_temps |>
+  arrange(avg) |>
+  cbind(city_temps |> arrange(avg) |> pull(range) |> cummin()) |>
+  rename(running_min = 4) |>
+  filter(range == running_min) |>
+  select(city)
+```
+
+Of these, the first two have temperatures which are more variable than Toronto, so we can remove them from consideration.
+
+Let's plot the final seven candidates:
+
+```{r}
+#| warning: false
+city_temps |>
+  arrange(avg) |>
+  cbind(city_temps |> arrange(avg) |> pull(range) |> cummin()) |>
+  rename(running_min = 4) |>
+  filter(range == running_min) |>
+  select(-running_min) |>
+  filter(range <= toronto_range) |>
+  ggplot(aes(x = avg, y = range, label = city)) +
+  geom_point(alpha = 0.33) +
+  geom_text(size = 4, nudge_x = 0.5, hjust = "left") +
+  geom_vline(xintercept = toronto_avg,
+             linetype = "dashed",
+             alpha = 0.33) +
+  scale_x_continuous(expand = expansion(mult = 0.15)) +
+    labs(title = "Average Temperature vs Range by City (Detail 2)",
+         x = "Average Temperature (°C)",
+         y = "Difference Between Hottest and Coldest Months (°C)") +
+  theme_jdonland()
+```
+
+Again we see that La Paz has a similar overall average temperature to Toronto, but much less annual variability. [Cusco](https://en.wikipedia.org/wiki/Cusco#Geography_and_climate) and [Bogotá](https://en.wikipedia.org/wiki/Bogot%C3%A1#Climate) are warmer but even less variable.
+
+[Reykjavík](https://en.wikipedia.org/wiki/Reykjav%C3%ADk#Climate) and [Stanley](https://en.wikipedia.org/wiki/Stanley,_Falkland_Islands#Climate) are colder than Toronto, and while they represent a smaller decrease in variability compared to La Paz, Cusco, and Bogotá, they have the benefit (for me) of being 98%+ English-speaking.
+
+[Nuuk](https://en.wikipedia.org/wiki/Nuuk#Climate) and [Honiara](https://en.wikipedia.org/wiki/Honiara#Geography_and_climate) are right out.
+
+## Next Steps
+
+It would be interesting to use detailed time series for each city and a utility function on temperatures (perhaps including wind chill and humidex) to determine which cities are truly mean-variance optimal.
+
+Of course, one should probably not choose a place to live based solely on the weather.
