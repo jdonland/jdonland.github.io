@@ -1,4 +1,0 @@
-"0","runes_data |>"
-"0","  filter(str_detect(rs_short_inscr_name, pattern = ""Vimose comb"")) |>"
-"0","  kbl() |>"
-"0","  scroll_box(width = ""51.75%"")"

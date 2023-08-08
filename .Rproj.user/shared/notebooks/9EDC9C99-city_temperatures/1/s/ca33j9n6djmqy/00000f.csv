@@ -1,4 +1,0 @@
-"0","city_temps |> "
-"0","  filter(range < quantile(city_temps$range, 0.1),"
-"0","         avg   > quantile(city_temps$avg,   0.9)) |>"
-"0","  select(city)"

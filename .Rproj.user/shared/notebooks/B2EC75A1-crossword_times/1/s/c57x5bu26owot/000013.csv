@@ -1,8 +1,0 @@
-"0","#| label: table"
-"0","#| message: false"
-"0","#| code-fold: true"
-"0",""
-"0","crossword_times |>"
-"0","  mutate(minutes = round(minutes)) |>"
-"0","  kable(caption = ""My Crossword Solve Times"") |>"
-"0","  scroll_box(height = ""5in"")"

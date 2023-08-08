@@ -1,4 +1,0 @@
-"0","#| label: table"
-"0","coryat_scores |>"
-"0","  kable(caption = ""My Jeopardy! Coryat Scores"") |>"
-"0","  scroll_box(height = ""5in"")"
