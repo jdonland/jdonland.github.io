@@ -65,7 +65,7 @@ read_csv("wordle_tweets_1.zip", col_types = "nc--c") |>
   rename(puzzle = wordle_id) ->
   twitter_scores_1
 
-read_csv("wordle_tweets_2.zip", col_types = "nc-c------") |>
+read_csv("wordle_tweets_2.zip", col_types = "ncc") |>
   rename(puzzle = WordleID, tweet_id = ID, tweet_text = Text) ->
   twitter_scores_2
 
