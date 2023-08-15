@@ -105,7 +105,9 @@ crossword_times |>
   geom_boxplot(width = 0.25, fill = "white", outlier.shape = 21) +
   # scales
   scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S")) +
-  scale_y_continuous(breaks = seq(0, 80, 5), limits = c(0, 80), expand = c(0, 0)) +
+  scale_y_continuous(breaks = seq(0, 80, 5), 
+                     limits = c(0, 80), 
+                     expand = c(0, 0)) +
   # labels
   labs(title = "Crossword Solve Times",
        subtitle = "Distribution by publisher and day of the week",
