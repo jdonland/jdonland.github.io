@@ -1,6 +1,8 @@
 ---
 title: "Wordle Scores"
 date: "2023-03-31"
+date-modified: last-modified
+date-format: long
 description: "A wealth of word whimsy."
 execute: 
    warning: false

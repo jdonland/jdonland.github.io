@@ -1,6 +1,8 @@
 ---
 title: "Coryat Scores"
 date: "2022-10-17"
+date-modified: last-modified
+date-format: long
 description: "The joy of Jeopardy! judgement."
 image: "coryat_scores.jpg"
 filters:

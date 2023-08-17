@@ -1,6 +1,8 @@
 ---
 title: "Crossword Times"
 date: "2023-01-02"
+date-modified: last-modified
+date-format: long
 description: "A consideration of cruciverbal complexity."
 filters:
    - lightbox

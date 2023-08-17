@@ -1,6 +1,8 @@
 ---
 title: "Books No One Else Has"
 date: "2023-02-04"
+date-modified: last-modified
+date-format: long
 description: "An examination of extraordinary editions."
 ---
 
