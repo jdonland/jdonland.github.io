@@ -2,7 +2,6 @@
 title: "Roller Derby Home Team Advantage"
 date: "2023-03-13"
 description: ""
-image: ".jpg"
 execute: 
    warning: false
    message: false
