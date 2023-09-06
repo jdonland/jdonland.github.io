@@ -3212,7 +3212,7 @@ font-style: inherit;">"Posterior probability first player is favoured"</span>)</
 <p>Unless you spent 2022 on the moon, you’ve heard of <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a>, but just in case you haven’t here’s <a href="https://www.protocol.com/bulletins/josh-wardle-wordle-gdc-2022">the story</a>. You get up to six guesses to identify a secret five-letter word. The game tells you whether each of the letters of your guesses appears in the word and, if they do, whether they’re in the correct place.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="game_in_progress.png" class="lightbox" title="A typical game of Wordle in progress." data-gallery="quarto-lightbox-gallery-1"><img src="https://jdonland.github.io/posts/wordle_scores/game_in_progress.png" class="img-fluid figure-img" width="500"></a></p>
+<p><a href="game_in_progress.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A typical game of Wordle in progress."><img src="https://jdonland.github.io/posts/wordle_scores/game_in_progress.png" class="img-fluid figure-img" width="500"></a></p>
 <figcaption class="figure-caption">A typical game of Wordle in progress.</figcaption>
 </figure>
 </div>
@@ -3285,7 +3285,7 @@ font-style: inherit;">"My Wordle Scores: Summary Statistics"</span>)</span></cod
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">score</td>
-<td style="text-align: left;">244</td>
+<td style="text-align: left;">246</td>
 <td style="text-align: left;">4.1</td>
 <td style="text-align: left;">1.1</td>
 <td style="text-align: left;">2</td>
@@ -3511,23 +3511,23 @@ background-color: null;
 font-style: inherit;">gt</span>()</span></code></pre></div>
 <div class="cell-output-display">
 
-<div id="xvhkaofnnw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xvhkaofnnw table {
+<div id="fnfaqnlbpl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fnfaqnlbpl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xvhkaofnnw thead, #xvhkaofnnw tbody, #xvhkaofnnw tfoot, #xvhkaofnnw tr, #xvhkaofnnw td, #xvhkaofnnw th {
+#fnfaqnlbpl thead, #fnfaqnlbpl tbody, #fnfaqnlbpl tfoot, #fnfaqnlbpl tr, #fnfaqnlbpl td, #fnfaqnlbpl th {
   border-style: none;
 }
 
-#xvhkaofnnw p {
+#fnfaqnlbpl p {
   margin: 0;
   padding: 0;
 }
 
-#xvhkaofnnw .gt_table {
+#fnfaqnlbpl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3553,12 +3553,12 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#xvhkaofnnw .gt_caption {
+#fnfaqnlbpl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xvhkaofnnw .gt_title {
+#fnfaqnlbpl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3570,7 +3570,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#xvhkaofnnw .gt_subtitle {
+#fnfaqnlbpl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3582,7 +3582,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-top-width: 0;
 }
 
-#xvhkaofnnw .gt_heading {
+#fnfaqnlbpl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3594,13 +3594,13 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#xvhkaofnnw .gt_bottom_border {
+#fnfaqnlbpl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xvhkaofnnw .gt_col_headings {
+#fnfaqnlbpl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3615,7 +3615,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#xvhkaofnnw .gt_col_heading {
+#fnfaqnlbpl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3635,7 +3635,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#xvhkaofnnw .gt_column_spanner_outer {
+#fnfaqnlbpl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3647,15 +3647,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 4px;
 }
 
-#xvhkaofnnw .gt_column_spanner_outer:first-child {
+#fnfaqnlbpl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xvhkaofnnw .gt_column_spanner_outer:last-child {
+#fnfaqnlbpl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xvhkaofnnw .gt_column_spanner {
+#fnfaqnlbpl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3667,11 +3667,11 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   width: 100%;
 }
 
-#xvhkaofnnw .gt_spanner_row {
+#fnfaqnlbpl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xvhkaofnnw .gt_group_heading {
+#fnfaqnlbpl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3697,7 +3697,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   text-align: left;
 }
 
-#xvhkaofnnw .gt_empty_group_heading {
+#fnfaqnlbpl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3712,15 +3712,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   vertical-align: middle;
 }
 
-#xvhkaofnnw .gt_from_md > :first-child {
+#fnfaqnlbpl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xvhkaofnnw .gt_from_md > :last-child {
+#fnfaqnlbpl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xvhkaofnnw .gt_row {
+#fnfaqnlbpl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3739,7 +3739,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#xvhkaofnnw .gt_stub {
+#fnfaqnlbpl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3752,7 +3752,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#xvhkaofnnw .gt_stub_row_group {
+#fnfaqnlbpl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3766,15 +3766,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   vertical-align: top;
 }
 
-#xvhkaofnnw .gt_row_group_first td {
+#fnfaqnlbpl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xvhkaofnnw .gt_row_group_first th {
+#fnfaqnlbpl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xvhkaofnnw .gt_summary_row {
+#fnfaqnlbpl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3784,16 +3784,16 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#xvhkaofnnw .gt_first_summary_row {
+#fnfaqnlbpl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xvhkaofnnw .gt_first_summary_row.thick {
+#fnfaqnlbpl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xvhkaofnnw .gt_last_summary_row {
+#fnfaqnlbpl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3803,7 +3803,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#xvhkaofnnw .gt_grand_summary_row {
+#fnfaqnlbpl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3813,7 +3813,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#xvhkaofnnw .gt_first_grand_summary_row {
+#fnfaqnlbpl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3823,7 +3823,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#xvhkaofnnw .gt_last_grand_summary_row_top {
+#fnfaqnlbpl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3833,11 +3833,11 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#xvhkaofnnw .gt_striped {
+#fnfaqnlbpl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xvhkaofnnw .gt_table_body {
+#fnfaqnlbpl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3846,7 +3846,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#xvhkaofnnw .gt_footnotes {
+#fnfaqnlbpl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3860,7 +3860,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#xvhkaofnnw .gt_footnote {
+#fnfaqnlbpl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3869,7 +3869,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#xvhkaofnnw .gt_sourcenotes {
+#fnfaqnlbpl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3883,7 +3883,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#xvhkaofnnw .gt_sourcenote {
+#fnfaqnlbpl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3891,63 +3891,63 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#xvhkaofnnw .gt_left {
+#fnfaqnlbpl .gt_left {
   text-align: left;
 }
 
-#xvhkaofnnw .gt_center {
+#fnfaqnlbpl .gt_center {
   text-align: center;
 }
 
-#xvhkaofnnw .gt_right {
+#fnfaqnlbpl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xvhkaofnnw .gt_font_normal {
+#fnfaqnlbpl .gt_font_normal {
   font-weight: normal;
 }
 
-#xvhkaofnnw .gt_font_bold {
+#fnfaqnlbpl .gt_font_bold {
   font-weight: bold;
 }
 
-#xvhkaofnnw .gt_font_italic {
+#fnfaqnlbpl .gt_font_italic {
   font-style: italic;
 }
 
-#xvhkaofnnw .gt_super {
+#fnfaqnlbpl .gt_super {
   font-size: 65%;
 }
 
-#xvhkaofnnw .gt_footnote_marks {
+#fnfaqnlbpl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xvhkaofnnw .gt_asterisk {
+#fnfaqnlbpl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xvhkaofnnw .gt_indent_1 {
+#fnfaqnlbpl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xvhkaofnnw .gt_indent_2 {
+#fnfaqnlbpl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xvhkaofnnw .gt_indent_3 {
+#fnfaqnlbpl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xvhkaofnnw .gt_indent_4 {
+#fnfaqnlbpl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xvhkaofnnw .gt_indent_5 {
+#fnfaqnlbpl .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3961,7 +3961,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   </thead>
   <tbody class="gt_table_body">
     <tr><td headers="source" class="gt_row gt_left">me</td>
-<td headers="filtered_mean" class="gt_row gt_right">4.041494</td></tr>
+<td headers="filtered_mean" class="gt_row gt_right">4.041322</td></tr>
     <tr><td headers="source" class="gt_row gt_left">twitter</td>
 <td headers="filtered_mean" class="gt_row gt_right">4.085486</td></tr>
   </tbody>
@@ -4628,7 +4628,7 @@ font-style: inherit;">$</span>l_tick_linetype))</span></code></pre></div>
 
 
 <p><a href="https://www.librarything.com/">LibraryThing</a> is a site for storing and sharing book catalogues. It currently has about 3 million users and 183 million books catalogued.</p>
-<p>These are the books on my shelves which appear in no other user’s catalogue. (As of 2023-02-04.)</p>
+<p>These are the books on my shelves which appear in no other user’s catalogue.</p>
 <section id="赤峰幸生の暮しっく-by-eisuke-yamashita" class="level2">
 <h2 data-anchor-id="赤峰幸生の暮しっく-by-eisuke-yamashita"><a href="https://www.librarything.com/work/29740444/"><em>赤峰幸生の暮しっく</em></a> by Eisuke Yamashita</h2>
 <p>This is a coffee table book of photos of the world’s most stylish man, Yukio Akamine. Derek Guy interviewed the author for Put This On <a href="https://putthison.com/yukio-akamine-classic-life/">here</a>.</p>
@@ -4641,11 +4641,6 @@ font-style: inherit;">$</span>l_tick_linetype))</span></code></pre></div>
 <section id="on-the-choice-of-a-common-language-by-h.-jacob" class="level2">
 <h2 data-anchor-id="on-the-choice-of-a-common-language-by-h.-jacob"><a href="https://www.librarything.com/work/29589232/"><em>On the Choice of a Common Language</em></a> by H. Jacob</h2>
 <p>Another artifact from the era of peak public interest in auxiliary languages. The author followed up this essay the next year with <em>A Planned Auxiliary Language</em>, which was briefly <a href="https://www.nature.com/articles/161665d0">reviewed</a> in <em>Nature</em>.</p>
-</section>
-<section id="logical-methods-by-greg-restall-and-shawn-standefer" class="level2">
-<h2 data-anchor-id="logical-methods-by-greg-restall-and-shawn-standefer"><a href="https://www.librarything.com/work/29586740/"><em>Logical Methods</em></a> by Greg Restall and Shawn Standefer</h2>
-<p>In his <a href="https://www.logicmatters.net/2023/01/08/restall-stander-logical-methods/">review</a>, Peter Smith calls this a “an introduction to some aspects of formal logic that are of particular philosophical interest”. Unusually, it covers propositional modal logic before developing first-order logic.</p>
-<p>This is a newly-released book and I’m sure it will fall off this list once a few more university lecturers start using it in their courses.</p>
 </section>
 <section id="tidy-modeling-with-r-a-framework-for-modeling-in-the-tidyverse-by-max-kuhn-and-julia-silge" class="level2">
 <h2 data-anchor-id="tidy-modeling-with-r-a-framework-for-modeling-in-the-tidyverse-by-max-kuhn-and-julia-silge"><a href="https://www.librarything.com/work/28650260/"><em>Tidy Modeling with R: A Framework for Modeling in the Tidyverse</em></a> by Max Kuhn and Julia Silge</h2>
@@ -4668,6 +4663,14 @@ font-style: inherit;">$</span>l_tick_linetype))</span></code></pre></div>
 <section id="stakkurinn---the-coat" class="level3">
 <h3 data-anchor-id="stakkurinn---the-coat"><a href="https://www.librarything.com/work/28239782/"><em>Stakkurinn - The Coat</em></a></h3>
 <p>A pictorial history of (and fairly compelling advertisement for) the outerwear company 66°N.</p>
+</section>
+<section id="ef-ég-hefði-verdið-reykjavík-1950-1970-by-nina-zurier" class="level3">
+<h3 data-anchor-id="ef-ég-hefði-verdið-reykjavík-1950-1970-by-nina-zurier"><a href="https://www.librarything.com/work/30888019/"><em>Ef ég hefði verdið … : Reykjavík 1950-1970</em></a> by Nina Zurier</h3>
+<p>A fictional autobiography in which the editor imagines what it would have been like to grow up in Reykjavík instead of the American Midwest by compiling material from the Reykjavík Museum of Photography.</p>
+</section>
+<section id="saga-spilanna-by-guðbrandur-magnússon" class="level3">
+<h3 data-anchor-id="saga-spilanna-by-guðbrandur-magnússon"><a href="https://www.librarything.com/work/30887961/"><em>Saga Spilanna</em></a> by Guðbrandur Magnússon</h3>
+<p>A history of playing cards in Iceland.</p>
 
 
 </section>
