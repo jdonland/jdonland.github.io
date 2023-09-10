@@ -32,7 +32,7 @@ This is an O'Reilly book about the `tidymodels` framework for statistical infere
 
 ### [*Myndlistardeild Listaháskóla Íslands: útskriftarverkefni 2022*](https://www.librarything.com/work/28625984/) by Bjarki Bragason
 
-This is the book for the 2022 graduation exhibition of the Iceland University of the Arts. I'm not surprised no one on the site else has this.
+This is the book for the 2022 graduation exhibition of the Iceland University of the Arts. I'm not surprised no one else on the site has this.
 
 ### [*Erró: The Power of Images*](https://www.librarything.com/work/28239798/)
 
