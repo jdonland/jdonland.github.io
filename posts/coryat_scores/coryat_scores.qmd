@@ -58,6 +58,8 @@ read_json(list.files()[grep(".jscor", list.files())], simplifyVector = TRUE) |>
   unnest(cols = c(games_attributes.sixths_attributes,
                   games_attributes.final_attributes),
          names_repair = "universal") |>
+  # keep only regular games (i.e., exclude tournaments, etc.)
+  filter(games_attributes.play_type == "regular") |>
   # keep only the columns we need, add a round indicator, pivot to one row per
   # clue instead of per category, and calculate each clue's contribution to the
   # Coryat score

@@ -8726,16 +8726,25 @@ background-color: null;
 font-style: inherit;">"universal"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-7">  <span class="co" style="color: #5E5E5E;
+<span id="cb1-7">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;"># keep only the columns we need, add a round indicator, pivot to one row per</span></span>
+font-style: inherit;">filter</span>(games_attributes.play_type <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"regular"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
 <span id="cb1-8">  <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># clue instead of per category, and calculate each clue's contribution to the</span></span>
+font-style: inherit;"># keep only the columns we need, add a round indicator, pivot to one row per</span></span>
 <span id="cb1-9">  <span class="co" style="color: #5E5E5E;
 background-color: null;
+font-style: inherit;"># clue instead of per category, and calculate each clue's contribution to the</span></span>
+<span id="cb1-10">  <span class="co" style="color: #5E5E5E;
+background-color: null;
 font-style: inherit;"># Coryat score</span></span>
-<span id="cb1-10">  <span class="fu" style="color: #4758AB;
+<span id="cb1-11">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">select</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -8748,7 +8757,7 @@ background-color: null;
 font-style: inherit;">14</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-11">  <span class="fu" style="color: #4758AB;
+<span id="cb1-12">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8777,7 +8786,7 @@ background-color: null;
 font-style: inherit;">12</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-12">  <span class="fu" style="color: #4758AB;
+<span id="cb1-13">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">pivot_longer</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8798,14 +8807,14 @@ background-color: null;
 font-style: inherit;">"result"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-13">  <span class="fu" style="color: #4758AB;
+<span id="cb1-14">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">rename</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">result =</span> value) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-14">  <span class="fu" style="color: #4758AB;
+<span id="cb1-15">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8848,7 +8857,7 @@ background-color: null;
 font-style: inherit;">.default =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>),</span>
-<span id="cb1-15">         <span class="at" style="color: #657422;
+<span id="cb1-16">         <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">score =</span> round <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -8863,32 +8872,32 @@ background-color: null;
 font-style: inherit;">*</span> result) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-16">  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># group by game, add up the total score, sort by game order, and throw away</span></span>
 <span id="cb1-17">  <span class="co" style="color: #5E5E5E;
 background-color: null;
+font-style: inherit;"># group by game, add up the total score, sort by game order, and throw away</span></span>
+<span id="cb1-18">  <span class="co" style="color: #5E5E5E;
+background-color: null;
 font-style: inherit;"># the timestamps</span></span>
-<span id="cb1-18">  <span class="fu" style="color: #4758AB;
+<span id="cb1-19">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">group_by</span>(games_attributes.date_played) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-19">  <span class="fu" style="color: #4758AB;
+<span id="cb1-20">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">summarize</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">sum</span>(score)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-20">  <span class="fu" style="color: #4758AB;
+<span id="cb1-21">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">arrange</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-21">  <span class="fu" style="color: #4758AB;
+<span id="cb1-22">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8897,7 +8906,7 @@ background-color: null;
 font-style: inherit;">row_number</span>()) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-22">  <span class="fu" style="color: #4758AB;
+<span id="cb1-23">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">select</span>(<span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -8906,7 +8915,7 @@ background-color: null;
 font-style: inherit;">1</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-23">  <span class="fu" style="color: #4758AB;
+<span id="cb1-24">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">rename</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8919,10 +8928,10 @@ background-color: null;
 font-style: inherit;">`</span>) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
-<span id="cb1-24">  <span class="co" style="color: #5E5E5E;
+<span id="cb1-25">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># store the results</span></span>
-<span id="cb1-25">  coryat_scores</span></code></pre></div>
+<span id="cb1-26">  coryat_scores</span></code></pre></div>
 </div>
 <section id="table" class="level3">
 <h3 data-anchor-id="table">Table</h3>
@@ -9302,87 +9311,87 @@ font-style: inherit;">"5in"</span>)</span></code></pre></div>
 <td style="text-align: right;">86</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">14200</td>
+<td style="text-align: right;">18400</td>
 <td style="text-align: right;">87</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">16400</td>
+<td style="text-align: right;">18400</td>
 <td style="text-align: right;">88</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">23200</td>
+<td style="text-align: right;">26200</td>
 <td style="text-align: right;">89</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">20400</td>
+<td style="text-align: right;">26400</td>
 <td style="text-align: right;">90</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">22600</td>
+<td style="text-align: right;">22800</td>
 <td style="text-align: right;">91</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">18200</td>
+<td style="text-align: right;">33200</td>
 <td style="text-align: right;">92</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">14000</td>
+<td style="text-align: right;">19800</td>
 <td style="text-align: right;">93</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">17000</td>
+<td style="text-align: right;">26400</td>
 <td style="text-align: right;">94</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">19000</td>
+<td style="text-align: right;">18600</td>
 <td style="text-align: right;">95</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">19400</td>
+<td style="text-align: right;">13600</td>
 <td style="text-align: right;">96</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">10200</td>
+<td style="text-align: right;">22200</td>
 <td style="text-align: right;">97</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">14400</td>
+<td style="text-align: right;">24800</td>
 <td style="text-align: right;">98</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">13600</td>
+<td style="text-align: right;">27400</td>
 <td style="text-align: right;">99</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">16000</td>
+<td style="text-align: right;">13400</td>
 <td style="text-align: right;">100</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">18000</td>
+<td style="text-align: right;">14000</td>
 <td style="text-align: right;">101</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">10000</td>
+<td style="text-align: right;">13600</td>
 <td style="text-align: right;">102</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">21400</td>
+<td style="text-align: right;">15200</td>
 <td style="text-align: right;">103</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">21400</td>
+<td style="text-align: right;">12000</td>
 <td style="text-align: right;">104</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">7200</td>
+<td style="text-align: right;">20800</td>
 <td style="text-align: right;">105</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">18400</td>
+<td style="text-align: right;">26200</td>
 <td style="text-align: right;">106</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">13600</td>
+<td style="text-align: right;">16800</td>
 <td style="text-align: right;">107</td>
 </tr>
 <tr class="even">
@@ -9390,256 +9399,188 @@ font-style: inherit;">"5in"</span>)</span></code></pre></div>
 <td style="text-align: right;">108</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">14000</td>
+<td style="text-align: right;">28800</td>
 <td style="text-align: right;">109</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">18400</td>
+<td style="text-align: right;">32400</td>
 <td style="text-align: right;">110</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">26200</td>
+<td style="text-align: right;">10400</td>
 <td style="text-align: right;">111</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">26400</td>
+<td style="text-align: right;">20000</td>
 <td style="text-align: right;">112</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">22800</td>
+<td style="text-align: right;">12400</td>
 <td style="text-align: right;">113</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">33200</td>
+<td style="text-align: right;">11400</td>
 <td style="text-align: right;">114</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">19800</td>
+<td style="text-align: right;">20600</td>
 <td style="text-align: right;">115</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">26400</td>
+<td style="text-align: right;">19800</td>
 <td style="text-align: right;">116</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">18600</td>
+<td style="text-align: right;">18200</td>
 <td style="text-align: right;">117</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">13600</td>
+<td style="text-align: right;">20200</td>
 <td style="text-align: right;">118</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">22200</td>
+<td style="text-align: right;">20000</td>
 <td style="text-align: right;">119</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">24800</td>
+<td style="text-align: right;">15800</td>
 <td style="text-align: right;">120</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">27400</td>
+<td style="text-align: right;">16400</td>
 <td style="text-align: right;">121</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">13400</td>
+<td style="text-align: right;">17000</td>
 <td style="text-align: right;">122</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">14000</td>
+<td style="text-align: right;">22400</td>
 <td style="text-align: right;">123</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">13600</td>
+<td style="text-align: right;">15600</td>
 <td style="text-align: right;">124</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">15200</td>
+<td style="text-align: right;">20200</td>
 <td style="text-align: right;">125</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">12000</td>
+<td style="text-align: right;">20600</td>
 <td style="text-align: right;">126</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">20800</td>
+<td style="text-align: right;">18600</td>
 <td style="text-align: right;">127</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">26200</td>
+<td style="text-align: right;">19400</td>
 <td style="text-align: right;">128</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">16800</td>
+<td style="text-align: right;">22800</td>
 <td style="text-align: right;">129</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">20400</td>
+<td style="text-align: right;">13400</td>
 <td style="text-align: right;">130</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">28800</td>
+<td style="text-align: right;">18800</td>
 <td style="text-align: right;">131</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">32400</td>
+<td style="text-align: right;">15200</td>
 <td style="text-align: right;">132</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">10400</td>
+<td style="text-align: right;">20000</td>
 <td style="text-align: right;">133</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">20000</td>
+<td style="text-align: right;">14000</td>
 <td style="text-align: right;">134</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">12400</td>
+<td style="text-align: right;">25200</td>
 <td style="text-align: right;">135</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">11400</td>
+<td style="text-align: right;">25800</td>
 <td style="text-align: right;">136</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">20600</td>
+<td style="text-align: right;">20000</td>
 <td style="text-align: right;">137</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">19800</td>
+<td style="text-align: right;">28600</td>
 <td style="text-align: right;">138</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">18200</td>
+<td style="text-align: right;">16200</td>
 <td style="text-align: right;">139</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">20200</td>
+<td style="text-align: right;">16400</td>
 <td style="text-align: right;">140</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">20000</td>
+<td style="text-align: right;">18000</td>
 <td style="text-align: right;">141</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">15800</td>
+<td style="text-align: right;">20200</td>
 <td style="text-align: right;">142</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">16400</td>
+<td style="text-align: right;">18600</td>
 <td style="text-align: right;">143</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">17000</td>
+<td style="text-align: right;">19800</td>
 <td style="text-align: right;">144</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">22400</td>
+<td style="text-align: right;">13000</td>
 <td style="text-align: right;">145</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">15600</td>
+<td style="text-align: right;">10200</td>
 <td style="text-align: right;">146</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">20200</td>
+<td style="text-align: right;">15600</td>
 <td style="text-align: right;">147</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">20600</td>
+<td style="text-align: right;">14400</td>
 <td style="text-align: right;">148</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">18600</td>
+<td style="text-align: right;">25200</td>
 <td style="text-align: right;">149</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">19400</td>
+<td style="text-align: right;">5800</td>
 <td style="text-align: right;">150</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">22800</td>
+<td style="text-align: right;">12800</td>
 <td style="text-align: right;">151</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">13400</td>
+<td style="text-align: right;">15600</td>
 <td style="text-align: right;">152</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">18800</td>
+<td style="text-align: right;">10200</td>
 <td style="text-align: right;">153</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">15200</td>
+<td style="text-align: right;">15400</td>
 <td style="text-align: right;">154</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">20000</td>
-<td style="text-align: right;">155</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">14000</td>
-<td style="text-align: right;">156</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">25200</td>
-<td style="text-align: right;">157</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">25800</td>
-<td style="text-align: right;">158</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">20000</td>
-<td style="text-align: right;">159</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">28600</td>
-<td style="text-align: right;">160</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">16200</td>
-<td style="text-align: right;">161</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">16400</td>
-<td style="text-align: right;">162</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">18000</td>
-<td style="text-align: right;">163</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">20200</td>
-<td style="text-align: right;">164</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">18600</td>
-<td style="text-align: right;">165</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">19800</td>
-<td style="text-align: right;">166</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">13000</td>
-<td style="text-align: right;">167</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">10200</td>
-<td style="text-align: right;">168</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">15600</td>
-<td style="text-align: right;">169</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">14400</td>
-<td style="text-align: right;">170</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">25200</td>
-<td style="text-align: right;">171</td>
 </tr>
 </tbody>
 </table>
@@ -9669,7 +9610,7 @@ font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">round</span>()</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 19218</code></pre>
+<pre><code>[1] 19360</code></pre>
 </div>
 </div>
 <p>Clearly, I have some studying to do before I consider trying to compete on the show.</p>
@@ -12787,7 +12728,11 @@ font-style: inherit;">geom_point</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">alpha =</span> <span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">0.33</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">0.33</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#dc2828"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb12-4">  <span class="fu" style="color: #4758AB;
@@ -12840,15 +12785,20 @@ font-style: inherit;">"Average Temperature (°C)"</span>,</span>
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Difference Between Hottest and Coldest Months (°C)"</span>) <span class="ot" style="color: #003B4F;
+font-style: inherit;">"Difference Between Hottest and Coldest Months (°C)"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb12-13">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_bw</span>() <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
-<span id="cb12-13">  plot</span>
-<span id="cb12-14"></span>
-<span id="cb12-15">plot <span class="sc" style="color: #5E5E5E;
+<span id="cb12-14">  plot</span>
+<span id="cb12-15"></span>
+<span id="cb12-16">plot <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb12-16">  <span class="fu" style="color: #4758AB;
+<span id="cb12-17">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggMarginal</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -12858,16 +12808,16 @@ font-style: inherit;">"histogram"</span>, <span class="at" style="color: #657422
 background-color: null;
 font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"transparent"</span>, <span class="at" style="color: #657422;
+font-style: inherit;">"#b4b4b4"</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">10</span>) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
-<span id="cb12-17">  plot</span>
-<span id="cb12-18"></span>
-<span id="cb12-19">plot</span></code></pre></div>
+<span id="cb12-18">  plot</span>
+<span id="cb12-19"></span>
+<span id="cb12-20">plot</span></code></pre></div>
 <div class="cell-output-display">
 <p><img src="https://jdonland.github.io/posts/city_temperatures/city_temperatures_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -12960,9 +12910,9 @@ font-style: inherit;">+</span></span>
 background-color: null;
 font-style: inherit;">geom_point</span>(<span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">alpha =</span> <span class="fl" style="color: #AD0000;
+font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">0.33</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"#dc2828"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb15-5">  <span class="fu" style="color: #4758AB;
@@ -13032,7 +12982,12 @@ font-style: inherit;">"Average Temperature (°C)"</span>,</span>
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Difference Between Hottest and Coldest Months (°C)"</span>)</span></code></pre></div>
+font-style: inherit;">"Difference Between Hottest and Coldest Months (°C)"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb15-15">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_bw</span>()</span></code></pre></div>
 <div class="cell-output-display">
 <p><img src="https://jdonland.github.io/posts/city_temperatures/city_temperatures_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -13177,9 +13132,9 @@ font-style: inherit;">+</span></span>
 background-color: null;
 font-style: inherit;">geom_point</span>(<span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">alpha =</span> <span class="fl" style="color: #AD0000;
+font-style: inherit;">colour =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">0.33</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"#dc2828"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb18-10">  <span class="fu" style="color: #4758AB;
@@ -13245,7 +13200,12 @@ font-style: inherit;">"Average Temperature (°C)"</span>,</span>
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Difference Between Hottest and Coldest Months (°C)"</span>)</span></code></pre></div>
+font-style: inherit;">"Difference Between Hottest and Coldest Months (°C)"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb18-18">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_bw</span>()</span></code></pre></div>
 <div class="cell-output-display">
 <p><img src="https://jdonland.github.io/posts/city_temperatures/city_temperatures_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>

@@ -20,13 +20,6 @@ library(papeR)
 library(ggExtra)
 ```
 
-```{r}
-#| label: ggplot-theme
-#| include: false
-
-source(here("posts/theme_jdonland.R"))
-```
-
 ## Introduction
 
 I live near [Toronto](https://en.wikipedia.org/wiki/Toronto#Climate). It's springtime, and currently about 30 °C. In my opinion, Toronto is too hot in the summer and too cold in the winter. I'd like to know which cities have the least deviation from a tolerable average temperature.
@@ -116,7 +109,7 @@ Let's look at a scatter plot with marginal histograms:
 ```{r}
 city_temps |>
   ggplot(aes(x = avg, y = range)) +
-  geom_point(alpha = 0.33) +
+  geom_point(alpha = 0.33, colour = "#dc2828") +
   geom_vline(xintercept = toronto_avg,
              linetype = "dashed",
              alpha = 0.33) +
@@ -126,11 +119,11 @@ city_temps |>
   labs(title = "Average Temperature vs Range by City",
        x = "Average Temperature (°C)",
        y = "Difference Between Hottest and Coldest Months (°C)") +
-  theme_jdonland() ->
+  theme_bw() ->
   plot
 
 plot |>
-  ggMarginal(type = "histogram", fill = "transparent", size = 10) ->
+  ggMarginal(type = "histogram", fill = "#b4b4b4", size = 10) ->
   plot
 
 plot
@@ -162,7 +155,7 @@ The area of this plot I'm most interested in is the vertical slice around Toront
 city_temps |>
   filter(abs(avg - toronto_avg)<=1) |>
   ggplot(aes(x = avg, y = range, label = city)) +
-  geom_point(alpha = 0.33) +
+  geom_point(colour = "#dc2828") +
   geom_text(size = 4, nudge_x = 0.01, hjust = "left") +
   geom_vline(xintercept = toronto_avg,
              linetype = "dashed",
@@ -173,7 +166,7 @@ city_temps |>
   labs(title = "Average Temperature vs Range by City (Detail 1)",
        x = "Average Temperature (°C)",
        y = "Difference Between Hottest and Coldest Months (°C)") +
-  theme_jdonland()
+  theme_bw()
 ```
 
 So it seems that [La Paz](https://en.wikipedia.org/wiki/La_Paz#Climate), [Edinburgh](https://en.wikipedia.org/wiki/Edinburgh#Climate), or [Dublin](https://en.wikipedia.org/wiki/Dublin#Climate) might be good options.
@@ -209,7 +202,7 @@ city_temps |>
   select(-running_min) |>
   filter(range <= toronto_range) |>
   ggplot(aes(x = avg, y = range, label = city)) +
-  geom_point(alpha = 0.33) +
+  geom_point(colour = "#dc2828") +
   geom_text(size = 4, nudge_x = 0.5, hjust = "left") +
   geom_vline(xintercept = toronto_avg,
              linetype = "dashed",
@@ -218,7 +211,7 @@ city_temps |>
     labs(title = "Average Temperature vs Range by City (Detail 2)",
          x = "Average Temperature (°C)",
          y = "Difference Between Hottest and Coldest Months (°C)") +
-  theme_jdonland()
+  theme_bw()
 ```
 
 Again we see that La Paz has a similar overall average temperature to Toronto, but much less annual variability. [Cusco](https://en.wikipedia.org/wiki/Cusco#Geography_and_climate) and [Bogotá](https://en.wikipedia.org/wiki/Bogot%C3%A1#Climate) are warmer but even less variable.
