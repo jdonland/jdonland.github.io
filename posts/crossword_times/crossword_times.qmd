@@ -1,5 +1,6 @@
 ---
 title: "Crossword Times"
+subtitle: "With a word on density plots"
 date: "2023-01-02"
 date-modified: now
 date-format: long
@@ -13,10 +14,13 @@ lightbox: auto
 #| label: libraries
 #| include: false
 
-library(here)
 library(tidyverse)
 library(gt)
 library(vtable)
+library(brms)
+library(modelr)
+library(tidybayes)
+library(ggdist)
 library(viridis)
 ```
 
@@ -83,9 +87,51 @@ crossword_times |>
 ```
 :::
 
+## Modelling Solve Times
+
+It's plausible to think that crossword solve times would be distributed log-normally. As the name suggests, a log-normally distributed variable has a normally distributed logarithm. The relevant Wikipedia [article](https://en.wikipedia.org/wiki/Log-normal_distribution) lists a variety of phenomena which seem to follow a log-normal distribution, including the length of chess games, the incubation period of diseases, and incomes (except those of the very rich).
+
+### Fitting a Bayesian Log-Normal Regression
+
+If we imagine that the distribution of solves times within each combination of publisher and day of the week is log-normal where the underlying normal distribution has some particular mean and standard deviation, we can provide that model specification to `brms`, accept some default priors, and have it estimate posterior distributions of those means and standard deviations based on the observed solve times.
+
+```{r}
+#| label: model
+#| eval: false
+#| output: false
+
+crossword_times |>
+  brm(formula = minutes ~ (1 + day | publisher),
+      data = _,
+      family = lognormal(),
+      warmup = 1000,
+      iter = 2000,
+      chains = 4,
+      control = list(adapt_delta = 0.95)) ->
+  solve_time_model
+```
+
+```{r}
+#| include: false
+if (exists("solve_time_model")) {
+  save(solve_time_model, file = "solve_time_model.RData")
+}
+
+if (file.exists("solve_time_model.RData")) {load("solve_time_model.RData")}
+```
+
 ## Visualizing Solve Times
 
-::: panel-tabset
+It's a matter of some debate among data visualization practitioners about when to use density plots, such as violin plots, instead of histograms. Or indeed whether density plots should ever be used. Or even whether histograms should ever be used!
+
+I disagree with several of the points Angela Collier makes in her video ["violin plots should not exist"](https://www.youtube.com/watch?v=_0QMKFzW9fw), but one that I find compelling is that drawing density plots requires making modelling assumptions which may not accurately reflect the actual process from which the data result.
+
+In most situations, `ggplot` uses locally estimated scatterplot smoothing (LOESS) by default, which involves evaluating a fitting a separate polynomial regression model on a weighted neighbourhood around each data point and evaluating it there. It makes nice looking violin plots, but you wouldn't expect it to reflect that "actual" theoretical distribution of the data. In particular you run into edge cases like a non-zero violin width outside the range in which the data can actually fall. LOESS doesn't know that it can't take -1.5 minutes for the first Northern cardinal to appear at your bird feeder after you fill it.
+
+It seems to me that this sort of thing is a symptom of a general desire to avoid having to actually specify models by pretending that there's some bright-line distinction between descriptive statistics and statistical inference.
+
+Since we were willing to actually specify a model, we can make density plots that show something meaningful: the [posterior predictive distributions](http://www.medicine.mcgill.ca/epidemiology/Joseph/courses/EPIB-668/predictive.pdf) corresponding to our model. We'll use `add_predicted_draws()` from `tidybayes` to generate draws from those models and use these to draw violins that reflect the data we expect to observe in the future based on those we have observed so far. (We also enlist the help of `data_grid` from `modelr`.)
+
 ### Violin Plot
 
 ```{r}
@@ -95,42 +141,50 @@ crossword_times |>
 #| code-fold: true
 
 crossword_times |>
+  data_grid(publisher, day) |>
+  add_predicted_draws(solve_time_model) |>
+  # filter out predictions for groups that do not actually occur
+  filter(!(publisher == "New Yorker" & day %in% c(6, 7)),
+         !(publisher == "Wall Street Journal" & day == 7)) |>
   ggplot() +
   # plot structure
   facet_grid(cols = vars(publisher)) +
-  # aesthetic mapping
-  aes(x = day, y = minutes, fill = publisher) +
-  # visual elements representing the data
-  geom_violin(scale = "width", 
-              trim = FALSE, 
-              colour = NA) +
-  geom_boxplot(width = 0.25, fill = "white", outlier.shape = 21) +
+  # aesthetic mapping for the violins
+  aes(y = .prediction, x = day) +
+  # visual elements representing the posterior predictive model
+  stat_eye(colour = NA, fill = "grey") +
+  # visual elements representing the observed data
+  geom_jitter(width = 0.25, 
+              data = crossword_times, 
+              aes(y = minutes, fill = publisher),
+              alpha = 0.5,
+              pch = 21) +
   # scales
   scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S")) +
-  scale_y_continuous(breaks = seq(0, 80, 5), 
-                     limits = c(0, 80), 
+  scale_y_continuous(breaks = seq(0, 70, 5), 
+                     limits = c(0, 70), 
                      expand = c(0, 0)) +
+  scale_fill_viridis(discrete = TRUE) +
   # labels
   labs(title = "Crossword Solve Times",
-       subtitle = "Distribution by publisher and day of the week",
+       subtitle = "With posterior predictive log-normal distributions",
        x = "Day of the Week",
        y = "Solve Time (Minutes)") +
+  guides(fill = "none") +
   # theming
-  guides(fill = FALSE) +
-  scale_fill_viridis(discrete = TRUE) +
   theme_bw() +
   theme(panel.grid.minor.y = element_blank(),
         panel.grid.major.x = element_blank(),
         strip.text = element_text(hjust = 0.5))
 ```
 
-### Cumulative Distributions
-
 ```{r}
 #| label: cumulative-distributions
 #| warning: false
 #| message: false
 #| code-fold: true
+#| eval: false
+#| include: false
 
 c(`1`="M", `2`="T", `3`="W", `4`="T", `5`="F", `6`="S", `7`="S") |>
   as_labeller() ->
@@ -174,7 +228,6 @@ crossword_times |>
         legend.margin = margin(0, 0, 0, 0),
         strip.text = element_text(hjust = 0.5))
 ```
-:::
 
 ## References
 
