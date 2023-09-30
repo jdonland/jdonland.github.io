@@ -32,7 +32,7 @@ The crosswords published in major American newspapers often differ in difficulty
 
 I've started keeping track of my solo completion times for the New York Times, Los Angeles Times, New Yorker, and Wall Street Journal crosswords.
 
-## Reading the Data
+## Data
 
 I'm accustomed to thinking of the week as beginning with Sunday, but for the purposes of crossword difficulty analysis, Monday is better. We'll convert the solve times from `00:00`-style to minutes.
 
@@ -87,7 +87,7 @@ crossword_times |>
 ```
 :::
 
-## Modelling Solve Times
+## Modelling
 
 It's plausible to think that crossword solve times would be distributed log-normally. As the name suggests, a log-normally distributed variable has a normally distributed logarithm. The relevant Wikipedia [article](https://en.wikipedia.org/wiki/Log-normal_distribution) lists a variety of phenomena which seem to follow a log-normal distribution, including the length of chess games, the incubation period of diseases, and incomes (except those of the very rich).
 
@@ -120,7 +120,7 @@ if (exists("solve_time_model")) {
 if (file.exists("solve_time_model.RData")) {load("solve_time_model.RData")}
 ```
 
-## Visualizing Solve Times
+## Visualization
 
 It's a matter of some debate among data visualization practitioners about when to use density plots, such as violin plots, instead of histograms. Or indeed whether density plots should ever be used. Or even whether histograms should ever be used!
 
@@ -178,7 +178,7 @@ crossword_times |>
         strip.text = element_text(hjust = 0.5))
 ```
 
-### Violins vs Log-Normals
+### geom_violin vs Log-Normal Densities
 
 What's the difference between plotting LOESS-based densities and posterior predictive distributions? I think this image illustrates the shortcomings of the former approach well:
 

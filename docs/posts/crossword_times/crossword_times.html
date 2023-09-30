@@ -181,8 +181,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The crosswords published in major American newspapers often differ in difficulty according to the day of the week. For example, the <a href="https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle">New York Times’ guide</a> explains that their Monday puzzles are the easiest and their Saturday puzzles the hardest. Meanwhile, the Sunday puzzles have easy clues but a large grid, and the Thursday puzzles have some unique gimmick. By contrast, the New Yorker’s crosswords decrease in difficulty over the week.</p>
 <p>I’ve started keeping track of my solo completion times for the New York Times, Los Angeles Times, New Yorker, and Wall Street Journal crosswords.</p>
 </section>
-<section id="reading-the-data" class="level2">
-<h2 data-anchor-id="reading-the-data">Reading the Data</h2>
+<section id="data" class="level2">
+<h2 data-anchor-id="data">Data</h2>
 <p>I’m accustomed to thinking of the week as beginning with Sunday, but for the purposes of crossword difficulty analysis, Monday is better. We’ll convert the solve times from <code>00:00</code>-style to minutes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"crossword_times.csv"</span>, <span class="at">col_types =</span> <span class="st">"ccD"</span>) <span class="sc">|&gt;</span></span>
@@ -2727,23 +2727,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 <div class="cell-output-display">
 
-<div id="eskefrfrxo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#eskefrfrxo table {
+<div id="qxkppcbpsi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qxkppcbpsi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#eskefrfrxo thead, #eskefrfrxo tbody, #eskefrfrxo tfoot, #eskefrfrxo tr, #eskefrfrxo td, #eskefrfrxo th {
+#qxkppcbpsi thead, #qxkppcbpsi tbody, #qxkppcbpsi tfoot, #qxkppcbpsi tr, #qxkppcbpsi td, #qxkppcbpsi th {
   border-style: none;
 }
 
-#eskefrfrxo p {
+#qxkppcbpsi p {
   margin: 0;
   padding: 0;
 }
 
-#eskefrfrxo .gt_table {
+#qxkppcbpsi .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2769,12 +2769,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#eskefrfrxo .gt_caption {
+#qxkppcbpsi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#eskefrfrxo .gt_title {
+#qxkppcbpsi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2786,7 +2786,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#eskefrfrxo .gt_subtitle {
+#qxkppcbpsi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2798,7 +2798,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#eskefrfrxo .gt_heading {
+#qxkppcbpsi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2810,13 +2810,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#eskefrfrxo .gt_bottom_border {
+#qxkppcbpsi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#eskefrfrxo .gt_col_headings {
+#qxkppcbpsi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2831,7 +2831,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#eskefrfrxo .gt_col_heading {
+#qxkppcbpsi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2851,7 +2851,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#eskefrfrxo .gt_column_spanner_outer {
+#qxkppcbpsi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2863,15 +2863,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#eskefrfrxo .gt_column_spanner_outer:first-child {
+#qxkppcbpsi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#eskefrfrxo .gt_column_spanner_outer:last-child {
+#qxkppcbpsi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#eskefrfrxo .gt_column_spanner {
+#qxkppcbpsi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2883,11 +2883,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#eskefrfrxo .gt_spanner_row {
+#qxkppcbpsi .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#eskefrfrxo .gt_group_heading {
+#qxkppcbpsi .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2913,7 +2913,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#eskefrfrxo .gt_empty_group_heading {
+#qxkppcbpsi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2928,15 +2928,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#eskefrfrxo .gt_from_md > :first-child {
+#qxkppcbpsi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#eskefrfrxo .gt_from_md > :last-child {
+#qxkppcbpsi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#eskefrfrxo .gt_row {
+#qxkppcbpsi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2955,7 +2955,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#eskefrfrxo .gt_stub {
+#qxkppcbpsi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2968,7 +2968,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#eskefrfrxo .gt_stub_row_group {
+#qxkppcbpsi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2982,15 +2982,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#eskefrfrxo .gt_row_group_first td {
+#qxkppcbpsi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#eskefrfrxo .gt_row_group_first th {
+#qxkppcbpsi .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#eskefrfrxo .gt_summary_row {
+#qxkppcbpsi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3000,16 +3000,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#eskefrfrxo .gt_first_summary_row {
+#qxkppcbpsi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#eskefrfrxo .gt_first_summary_row.thick {
+#qxkppcbpsi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#eskefrfrxo .gt_last_summary_row {
+#qxkppcbpsi .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3019,7 +3019,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#eskefrfrxo .gt_grand_summary_row {
+#qxkppcbpsi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3029,7 +3029,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#eskefrfrxo .gt_first_grand_summary_row {
+#qxkppcbpsi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3039,7 +3039,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#eskefrfrxo .gt_last_grand_summary_row_top {
+#qxkppcbpsi .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3049,11 +3049,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#eskefrfrxo .gt_striped {
+#qxkppcbpsi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#eskefrfrxo .gt_table_body {
+#qxkppcbpsi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3062,7 +3062,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#eskefrfrxo .gt_footnotes {
+#qxkppcbpsi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3076,7 +3076,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#eskefrfrxo .gt_footnote {
+#qxkppcbpsi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3085,7 +3085,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#eskefrfrxo .gt_sourcenotes {
+#qxkppcbpsi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3099,7 +3099,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#eskefrfrxo .gt_sourcenote {
+#qxkppcbpsi .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3107,63 +3107,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#eskefrfrxo .gt_left {
+#qxkppcbpsi .gt_left {
   text-align: left;
 }
 
-#eskefrfrxo .gt_center {
+#qxkppcbpsi .gt_center {
   text-align: center;
 }
 
-#eskefrfrxo .gt_right {
+#qxkppcbpsi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#eskefrfrxo .gt_font_normal {
+#qxkppcbpsi .gt_font_normal {
   font-weight: normal;
 }
 
-#eskefrfrxo .gt_font_bold {
+#qxkppcbpsi .gt_font_bold {
   font-weight: bold;
 }
 
-#eskefrfrxo .gt_font_italic {
+#qxkppcbpsi .gt_font_italic {
   font-style: italic;
 }
 
-#eskefrfrxo .gt_super {
+#qxkppcbpsi .gt_super {
   font-size: 65%;
 }
 
-#eskefrfrxo .gt_footnote_marks {
+#qxkppcbpsi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#eskefrfrxo .gt_asterisk {
+#qxkppcbpsi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#eskefrfrxo .gt_indent_1 {
+#qxkppcbpsi .gt_indent_1 {
   text-indent: 5px;
 }
 
-#eskefrfrxo .gt_indent_2 {
+#qxkppcbpsi .gt_indent_2 {
   text-indent: 10px;
 }
 
-#eskefrfrxo .gt_indent_3 {
+#qxkppcbpsi .gt_indent_3 {
   text-indent: 15px;
 }
 
-#eskefrfrxo .gt_indent_4 {
+#qxkppcbpsi .gt_indent_4 {
   text-indent: 20px;
 }
 
-#eskefrfrxo .gt_indent_5 {
+#qxkppcbpsi .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3306,8 +3306,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="modelling-solve-times" class="level2">
-<h2 data-anchor-id="modelling-solve-times">Modelling Solve Times</h2>
+<section id="modelling" class="level2">
+<h2 data-anchor-id="modelling">Modelling</h2>
 <p>It’s plausible to think that crossword solve times would be distributed log-normally. As the name suggests, a log-normally distributed variable has a normally distributed logarithm. The relevant Wikipedia <a href="https://en.wikipedia.org/wiki/Log-normal_distribution">article</a> lists a variety of phenomena which seem to follow a log-normal distribution, including the length of chess games, the incubation period of diseases, and incomes (except those of the very rich).</p>
 <section id="fitting-a-bayesian-log-normal-regression" class="level3">
 <h3 data-anchor-id="fitting-a-bayesian-log-normal-regression">Fitting a Bayesian Log-Normal Regression</h3>
@@ -3325,8 +3325,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="visualizing-solve-times" class="level2">
-<h2 data-anchor-id="visualizing-solve-times">Visualizing Solve Times</h2>
+<section id="visualization" class="level2">
+<h2 data-anchor-id="visualization">Visualization</h2>
 <p>It’s a matter of some debate among data visualization practitioners about when to use density plots, such as violin plots, instead of histograms. Or indeed whether density plots should ever be used. Or even whether histograms should ever be used!</p>
 <p>I disagree with several of the points Angela Collier makes in her video <a href="https://www.youtube.com/watch?v=_0QMKFzW9fw">“violin plots should not exist”</a>, but one that I find compelling is that drawing density plots requires making modelling assumptions which may not accurately reflect the actual process from which the data result.</p>
 <p>In most situations, <code>ggplot</code> uses locally estimated scatterplot smoothing (LOESS) by default, which involves evaluating a fitting a separate polynomial regression model on a weighted neighbourhood around each data point and evaluating it there. It makes nice looking violin plots, but you wouldn’t expect it to reflect that “actual” theoretical distribution of the data. In particular you run into edge cases like a non-zero violin width outside the range in which the data can actually fall. LOESS doesn’t know that it can’t take -1.5 minutes for the first Northern cardinal to appear at your bird feeder after you fill it.</p>
@@ -3383,8 +3383,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="violins-vs-log-normals" class="level3">
-<h3 data-anchor-id="violins-vs-log-normals">Violins vs Log-Normals</h3>
+<section id="geom_violin-vs-log-normal-densities" class="level3">
+<h3 data-anchor-id="geom_violin-vs-log-normal-densities">geom_violin vs Log-Normal Densities</h3>
 <p>What’s the difference between plotting LOESS-based densities and posterior predictive distributions? I think this image illustrates the shortcomings of the former approach well:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -3594,7 +3594,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":true});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":true,"selector":".lightbox"});</script>
 
 
 
