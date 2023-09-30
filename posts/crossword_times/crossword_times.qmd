@@ -182,7 +182,7 @@ crossword_times |>
 
 What's the difference between plotting LOESS-based densities and posterior predictive distributions? I think this image illustrates the shortcomings of the former approach well:
 
-![`geom_violin` (black) vs our posterior predictive distributions (grey).](loess_vs_model.png){fig-align="center" width="500"}
+![geom_violin (black) vs our posterior predictive distributions (grey).](loess_vs_model.png){fig-align="center" width="500"}
 
 ```{r}
 #| label: cumulative-distributions
