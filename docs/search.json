@@ -32,7 +32,7 @@
     "href": "links.html#methodology-practice",
     "title": "Data Science Links",
     "section": "Methodology & Practice",
-    "text": "Methodology & Practice\n\nThe Good Research Code Handbook\nCommon Statistical Tests Are Linear Models (or: How To Teach Stats)\nNever Test For Normality\nStats Can’t Make Modeling Decisions\nThe Shortcomings of Standardized Regression Coefficients\nDirected Acyclic Graphs\nSimulating Confounders, Colliders and Mediators\nGo Get the Data\nThree Advantages of Non-AI Models\nLog Transforms, Geometric Means and Estimating Population Totals\nStatistician’s Time Series Hack\nThere Are No Magic Outcome Variables\nDo We Have To Tune the Number of Trees in a Random Forest?\nSolving for the Hidden Data\nFirst Time Seeing a Rare Event\nTell me What you Want, What you Really, Really Want: How to Identify the Real Business Question\nThe Misunderstood Kelly Criterion"
+    "text": "Methodology & Practice\n\nThe Good Research Code Handbook\nCommon Statistical Tests Are Linear Models (or: How To Teach Stats)\nNever Test For Normality\nStats Can’t Make Modeling Decisions\nThe Shortcomings of Standardized Regression Coefficients\nDirected Acyclic Graphs\nSimulating Confounders, Colliders and Mediators\nGo Get the Data\nThree Advantages of Non-AI Models\nLog Transforms, Geometric Means and Estimating Population Totals\nStatistician’s Time Series Hack\nThere Are No Magic Outcome Variables\nDo We Have To Tune the Number of Trees in a Random Forest?\nSolving for the Hidden Data\nFirst Time Seeing a Rare Event\nTell Me What You Really Want: How to Identify the Real Business Question\nThe Misunderstood Kelly Criterion\nWhat Size Is That Correlation?"
   },
   {
     "objectID": "links.html#philosophy",
@@ -53,7 +53,7 @@
     "href": "links.html#references-resources",
     "title": "Data Science Links",
     "section": "References & Resources",
-    "text": "References & Resources\n\nAwesome Public Datasets\nModern Data Science with R\nStatistical Rethinking with brms, ggplot2, and the tidyverse\nData Creators Club\nRegression Modeling Strategies\nBayes Rules! An Introduction to Applied Bayesian Modeling"
+    "text": "References & Resources\n\nAwesome Public Datasets\nModern Data Science with R\nStatistical Rethinking with brms, ggplot2, and the tidyverse\nData Creators Club\nRegression Modeling Strategies\nBayes Rules! An Introduction to Applied Bayesian Modeling\nPast, Present, and Future of Software for Bayesian Inference\nCausal Inference: The Mixtape\nHappy Git and GitHub for the useR"
   },
   {
     "objectID": "links.html#visualization",
