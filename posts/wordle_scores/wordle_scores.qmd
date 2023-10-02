@@ -153,7 +153,7 @@ For a more detailed comparison against the scores from Twitter, we'll look at th
 ### Cumulative Distributions
 
 ```{r}
-#| lable: distribution-vs-twitter
+#| label: distribution-vs-twitter
 #| message: false
 #| warning: false
 #| code-fold: true
