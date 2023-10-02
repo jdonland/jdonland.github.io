@@ -20,6 +20,7 @@ library(vtable)
 library(brms)
 library(modelr)
 library(tidybayes)
+library(ggforce)
 library(ggdist)
 library(viridis)
 ```
@@ -113,6 +114,7 @@ crossword_times |>
 
 ```{r}
 #| include: false
+
 if (exists("solve_time_model")) {
   save(solve_time_model, file = "solve_time_model.RData")
 }
@@ -154,11 +156,10 @@ crossword_times |>
   # visual elements representing the posterior predictive model
   stat_eye(colour = NA, fill = "grey") +
   # visual elements representing the observed data
-  geom_jitter(width = 0.25, 
-              data = crossword_times, 
-              aes(y = minutes, fill = publisher),
-              alpha = 0.5,
-              pch = 21) +
+  geom_sina(data = crossword_times,
+            aes(y = minutes, fill = publisher),
+            pch = 21, 
+            alpha = 0.5) +
   # scales
   scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S")) +
   scale_y_continuous(breaks = seq(0, 70, 5), 
@@ -192,7 +193,8 @@ What's the difference between plotting LOESS-based densities and posterior predi
 #| eval: false
 #| include: false
 
-c(`1`="M", `2`="T", `3`="W", `4`="T", `5`="F", `6`="S", `7`="S") |>
+c("M", "T", "W", "T", "F", "S", "S") |>
+  setNames(1:7) |>
   as_labeller() ->
   day_labeller
 
@@ -211,7 +213,7 @@ crossword_times |>
   # scales
   scale_y_continuous(labels = scales::label_percent(),
                      limits = c(0, NA),
-                     expand = c(0 ,0),
+                     expand = c(0, 0),
                      sec.axis = sec_axis(~ ., 
                                          labels = NULL, 
                                          breaks = NULL, 
