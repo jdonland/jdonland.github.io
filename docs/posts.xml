@@ -3285,7 +3285,7 @@ font-style: inherit;">"My Wordle Scores: Summary Statistics"</span>)</span></cod
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">score</td>
-<td style="text-align: left;">272</td>
+<td style="text-align: left;">275</td>
 <td style="text-align: left;">4.1</td>
 <td style="text-align: left;">1.1</td>
 <td style="text-align: left;">2</td>
@@ -3511,23 +3511,23 @@ background-color: null;
 font-style: inherit;">gt</span>()</span></code></pre></div>
 <div class="cell-output-display">
 
-<div id="xsmrwhgbwp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xsmrwhgbwp table {
+<div id="ahirevydgu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ahirevydgu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xsmrwhgbwp thead, #xsmrwhgbwp tbody, #xsmrwhgbwp tfoot, #xsmrwhgbwp tr, #xsmrwhgbwp td, #xsmrwhgbwp th {
+#ahirevydgu thead, #ahirevydgu tbody, #ahirevydgu tfoot, #ahirevydgu tr, #ahirevydgu td, #ahirevydgu th {
   border-style: none;
 }
 
-#xsmrwhgbwp p {
+#ahirevydgu p {
   margin: 0;
   padding: 0;
 }
 
-#xsmrwhgbwp .gt_table {
+#ahirevydgu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3553,12 +3553,12 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#xsmrwhgbwp .gt_caption {
+#ahirevydgu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xsmrwhgbwp .gt_title {
+#ahirevydgu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3570,7 +3570,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#xsmrwhgbwp .gt_subtitle {
+#ahirevydgu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3582,7 +3582,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-top-width: 0;
 }
 
-#xsmrwhgbwp .gt_heading {
+#ahirevydgu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3594,13 +3594,13 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#xsmrwhgbwp .gt_bottom_border {
+#ahirevydgu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xsmrwhgbwp .gt_col_headings {
+#ahirevydgu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3615,7 +3615,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#xsmrwhgbwp .gt_col_heading {
+#ahirevydgu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3635,7 +3635,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#xsmrwhgbwp .gt_column_spanner_outer {
+#ahirevydgu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3647,15 +3647,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 4px;
 }
 
-#xsmrwhgbwp .gt_column_spanner_outer:first-child {
+#ahirevydgu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xsmrwhgbwp .gt_column_spanner_outer:last-child {
+#ahirevydgu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xsmrwhgbwp .gt_column_spanner {
+#ahirevydgu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3667,11 +3667,11 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   width: 100%;
 }
 
-#xsmrwhgbwp .gt_spanner_row {
+#ahirevydgu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xsmrwhgbwp .gt_group_heading {
+#ahirevydgu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3697,7 +3697,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   text-align: left;
 }
 
-#xsmrwhgbwp .gt_empty_group_heading {
+#ahirevydgu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3712,15 +3712,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   vertical-align: middle;
 }
 
-#xsmrwhgbwp .gt_from_md > :first-child {
+#ahirevydgu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xsmrwhgbwp .gt_from_md > :last-child {
+#ahirevydgu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xsmrwhgbwp .gt_row {
+#ahirevydgu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3739,7 +3739,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#xsmrwhgbwp .gt_stub {
+#ahirevydgu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3752,7 +3752,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#xsmrwhgbwp .gt_stub_row_group {
+#ahirevydgu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3766,15 +3766,15 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   vertical-align: top;
 }
 
-#xsmrwhgbwp .gt_row_group_first td {
+#ahirevydgu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xsmrwhgbwp .gt_row_group_first th {
+#ahirevydgu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xsmrwhgbwp .gt_summary_row {
+#ahirevydgu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3784,16 +3784,16 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#xsmrwhgbwp .gt_first_summary_row {
+#ahirevydgu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xsmrwhgbwp .gt_first_summary_row.thick {
+#ahirevydgu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xsmrwhgbwp .gt_last_summary_row {
+#ahirevydgu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3803,7 +3803,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#xsmrwhgbwp .gt_grand_summary_row {
+#ahirevydgu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3813,7 +3813,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#xsmrwhgbwp .gt_first_grand_summary_row {
+#ahirevydgu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3823,7 +3823,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#xsmrwhgbwp .gt_last_grand_summary_row_top {
+#ahirevydgu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3833,11 +3833,11 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#xsmrwhgbwp .gt_striped {
+#ahirevydgu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xsmrwhgbwp .gt_table_body {
+#ahirevydgu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3846,7 +3846,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#xsmrwhgbwp .gt_footnotes {
+#ahirevydgu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3860,7 +3860,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#xsmrwhgbwp .gt_footnote {
+#ahirevydgu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3869,7 +3869,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#xsmrwhgbwp .gt_sourcenotes {
+#ahirevydgu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3883,7 +3883,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#xsmrwhgbwp .gt_sourcenote {
+#ahirevydgu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3891,63 +3891,63 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   padding-right: 5px;
 }
 
-#xsmrwhgbwp .gt_left {
+#ahirevydgu .gt_left {
   text-align: left;
 }
 
-#xsmrwhgbwp .gt_center {
+#ahirevydgu .gt_center {
   text-align: center;
 }
 
-#xsmrwhgbwp .gt_right {
+#ahirevydgu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xsmrwhgbwp .gt_font_normal {
+#ahirevydgu .gt_font_normal {
   font-weight: normal;
 }
 
-#xsmrwhgbwp .gt_font_bold {
+#ahirevydgu .gt_font_bold {
   font-weight: bold;
 }
 
-#xsmrwhgbwp .gt_font_italic {
+#ahirevydgu .gt_font_italic {
   font-style: italic;
 }
 
-#xsmrwhgbwp .gt_super {
+#ahirevydgu .gt_super {
   font-size: 65%;
 }
 
-#xsmrwhgbwp .gt_footnote_marks {
+#ahirevydgu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xsmrwhgbwp .gt_asterisk {
+#ahirevydgu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xsmrwhgbwp .gt_indent_1 {
+#ahirevydgu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xsmrwhgbwp .gt_indent_2 {
+#ahirevydgu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xsmrwhgbwp .gt_indent_3 {
+#ahirevydgu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xsmrwhgbwp .gt_indent_4 {
+#ahirevydgu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xsmrwhgbwp .gt_indent_5 {
+#ahirevydgu .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3961,7 +3961,7 @@ font-style: inherit;">gt</span>()</span></code></pre></div>
   </thead>
   <tbody class="gt_table_body">
     <tr><td headers="source" class="gt_row gt_left">me</td>
-<td headers="filtered_mean" class="gt_row gt_right">4.014925</td></tr>
+<td headers="filtered_mean" class="gt_row gt_right">4.011070</td></tr>
     <tr><td headers="source" class="gt_row gt_left">twitter</td>
 <td headers="filtered_mean" class="gt_row gt_right">4.085486</td></tr>
   </tbody>
@@ -4210,7 +4210,7 @@ background-color: null;
 font-style: inherit;">|&gt;</span></span>
 <span id="cb5-4">  <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># count the occurences of each possible combination of source and score</span></span>
+font-style: inherit;"># count the occurrences of each possible combination of source and score</span></span>
 <span id="cb5-5">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">group_by</span>(source, score) <span class="sc" style="color: #5E5E5E;
@@ -7301,6 +7301,76 @@ font-style: inherit;">"5in"</span>)</span></code></pre></div>
 <td style="text-align: left;">1</td>
 <td style="text-align: right;">21</td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">Wall Street Journal</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wall Street Journal</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Wall Street Journal</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">New York Times</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New Yorker</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wall Street Journal</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Los Angeles Times</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">New York Times</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Los Angeles Times</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wall Street Journal</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New Yorker</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Los Angeles Times</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New Yorker</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Los Angeles Times</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: right;">13</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -7522,23 +7592,23 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 
-<div id="rjhkvtdfoz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rjhkvtdfoz table {
+<div id="lsrnkhlnll" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lsrnkhlnll table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rjhkvtdfoz thead, #rjhkvtdfoz tbody, #rjhkvtdfoz tfoot, #rjhkvtdfoz tr, #rjhkvtdfoz td, #rjhkvtdfoz th {
+#lsrnkhlnll thead, #lsrnkhlnll tbody, #lsrnkhlnll tfoot, #lsrnkhlnll tr, #lsrnkhlnll td, #lsrnkhlnll th {
   border-style: none;
 }
 
-#rjhkvtdfoz p {
+#lsrnkhlnll p {
   margin: 0;
   padding: 0;
 }
 
-#rjhkvtdfoz .gt_table {
+#lsrnkhlnll .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -7564,12 +7634,12 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#rjhkvtdfoz .gt_caption {
+#lsrnkhlnll .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rjhkvtdfoz .gt_title {
+#lsrnkhlnll .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -7581,7 +7651,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#rjhkvtdfoz .gt_subtitle {
+#lsrnkhlnll .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -7593,7 +7663,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-top-width: 0;
 }
 
-#rjhkvtdfoz .gt_heading {
+#lsrnkhlnll .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -7605,13 +7675,13 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#rjhkvtdfoz .gt_bottom_border {
+#lsrnkhlnll .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rjhkvtdfoz .gt_col_headings {
+#lsrnkhlnll .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7626,7 +7696,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#rjhkvtdfoz .gt_col_heading {
+#lsrnkhlnll .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7646,7 +7716,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#rjhkvtdfoz .gt_column_spanner_outer {
+#lsrnkhlnll .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7658,15 +7728,15 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   padding-right: 4px;
 }
 
-#rjhkvtdfoz .gt_column_spanner_outer:first-child {
+#lsrnkhlnll .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rjhkvtdfoz .gt_column_spanner_outer:last-child {
+#lsrnkhlnll .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rjhkvtdfoz .gt_column_spanner {
+#lsrnkhlnll .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -7678,11 +7748,11 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   width: 100%;
 }
 
-#rjhkvtdfoz .gt_spanner_row {
+#lsrnkhlnll .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rjhkvtdfoz .gt_group_heading {
+#lsrnkhlnll .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7708,7 +7778,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   text-align: left;
 }
 
-#rjhkvtdfoz .gt_empty_group_heading {
+#lsrnkhlnll .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -7723,15 +7793,15 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   vertical-align: middle;
 }
 
-#rjhkvtdfoz .gt_from_md > :first-child {
+#lsrnkhlnll .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rjhkvtdfoz .gt_from_md > :last-child {
+#lsrnkhlnll .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rjhkvtdfoz .gt_row {
+#lsrnkhlnll .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7750,7 +7820,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#rjhkvtdfoz .gt_stub {
+#lsrnkhlnll .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7763,7 +7833,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#rjhkvtdfoz .gt_stub_row_group {
+#lsrnkhlnll .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7777,15 +7847,15 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   vertical-align: top;
 }
 
-#rjhkvtdfoz .gt_row_group_first td {
+#lsrnkhlnll .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rjhkvtdfoz .gt_row_group_first th {
+#lsrnkhlnll .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rjhkvtdfoz .gt_summary_row {
+#lsrnkhlnll .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7795,16 +7865,16 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#rjhkvtdfoz .gt_first_summary_row {
+#lsrnkhlnll .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rjhkvtdfoz .gt_first_summary_row.thick {
+#lsrnkhlnll .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rjhkvtdfoz .gt_last_summary_row {
+#lsrnkhlnll .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7814,7 +7884,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#rjhkvtdfoz .gt_grand_summary_row {
+#lsrnkhlnll .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7824,7 +7894,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#rjhkvtdfoz .gt_first_grand_summary_row {
+#lsrnkhlnll .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7834,7 +7904,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#rjhkvtdfoz .gt_last_grand_summary_row_top {
+#lsrnkhlnll .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7844,11 +7914,11 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#rjhkvtdfoz .gt_striped {
+#lsrnkhlnll .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rjhkvtdfoz .gt_table_body {
+#lsrnkhlnll .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7857,7 +7927,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#rjhkvtdfoz .gt_footnotes {
+#lsrnkhlnll .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7871,7 +7941,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#rjhkvtdfoz .gt_footnote {
+#lsrnkhlnll .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -7880,7 +7950,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#rjhkvtdfoz .gt_sourcenotes {
+#lsrnkhlnll .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7894,7 +7964,7 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#rjhkvtdfoz .gt_sourcenote {
+#lsrnkhlnll .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -7902,63 +7972,63 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#rjhkvtdfoz .gt_left {
+#lsrnkhlnll .gt_left {
   text-align: left;
 }
 
-#rjhkvtdfoz .gt_center {
+#lsrnkhlnll .gt_center {
   text-align: center;
 }
 
-#rjhkvtdfoz .gt_right {
+#lsrnkhlnll .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rjhkvtdfoz .gt_font_normal {
+#lsrnkhlnll .gt_font_normal {
   font-weight: normal;
 }
 
-#rjhkvtdfoz .gt_font_bold {
+#lsrnkhlnll .gt_font_bold {
   font-weight: bold;
 }
 
-#rjhkvtdfoz .gt_font_italic {
+#lsrnkhlnll .gt_font_italic {
   font-style: italic;
 }
 
-#rjhkvtdfoz .gt_super {
+#lsrnkhlnll .gt_super {
   font-size: 65%;
 }
 
-#rjhkvtdfoz .gt_footnote_marks {
+#lsrnkhlnll .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rjhkvtdfoz .gt_asterisk {
+#lsrnkhlnll .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rjhkvtdfoz .gt_indent_1 {
+#lsrnkhlnll .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rjhkvtdfoz .gt_indent_2 {
+#lsrnkhlnll .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rjhkvtdfoz .gt_indent_3 {
+#lsrnkhlnll .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rjhkvtdfoz .gt_indent_4 {
+#lsrnkhlnll .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rjhkvtdfoz .gt_indent_5 {
+#lsrnkhlnll .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -8009,34 +8079,34 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
 <td headers="n_New Yorker" class="gt_row gt_right">18</td>
 <td headers="mean_New Yorker" class="gt_row gt_right">34</td>
 <td headers="sd_New Yorker" class="gt_row gt_right">13</td>
-<td headers="n_Wall Street Journal" class="gt_row gt_right">10</td>
+<td headers="n_Wall Street Journal" class="gt_row gt_right">11</td>
 <td headers="mean_Wall Street Journal" class="gt_row gt_right">7</td>
 <td headers="sd_Wall Street Journal" class="gt_row gt_right">2</td></tr>
     <tr><td headers="day" class="gt_row gt_center">2</td>
-<td headers="n_Los Angeles Times" class="gt_row gt_right">27</td>
+<td headers="n_Los Angeles Times" class="gt_row gt_right">28</td>
 <td headers="mean_Los Angeles Times" class="gt_row gt_right">8</td>
 <td headers="sd_Los Angeles Times" class="gt_row gt_right">1</td>
-<td headers="n_New York Times" class="gt_row gt_right">33</td>
+<td headers="n_New York Times" class="gt_row gt_right">34</td>
 <td headers="mean_New York Times" class="gt_row gt_right">8</td>
 <td headers="sd_New York Times" class="gt_row gt_right">2</td>
-<td headers="n_New Yorker" class="gt_row gt_right">20</td>
+<td headers="n_New Yorker" class="gt_row gt_right">21</td>
 <td headers="mean_New Yorker" class="gt_row gt_right">18</td>
 <td headers="sd_New Yorker" class="gt_row gt_right">7</td>
-<td headers="n_Wall Street Journal" class="gt_row gt_right">7</td>
-<td headers="mean_Wall Street Journal" class="gt_row gt_right">11</td>
-<td headers="sd_Wall Street Journal" class="gt_row gt_right">1</td></tr>
+<td headers="n_Wall Street Journal" class="gt_row gt_right">8</td>
+<td headers="mean_Wall Street Journal" class="gt_row gt_right">10</td>
+<td headers="sd_Wall Street Journal" class="gt_row gt_right">2</td></tr>
     <tr><td headers="day" class="gt_row gt_center">3</td>
-<td headers="n_Los Angeles Times" class="gt_row gt_right">23</td>
+<td headers="n_Los Angeles Times" class="gt_row gt_right">24</td>
 <td headers="mean_Los Angeles Times" class="gt_row gt_right">9</td>
 <td headers="sd_Los Angeles Times" class="gt_row gt_right">3</td>
-<td headers="n_New York Times" class="gt_row gt_right">35</td>
+<td headers="n_New York Times" class="gt_row gt_right">36</td>
 <td headers="mean_New York Times" class="gt_row gt_right">12</td>
 <td headers="sd_New York Times" class="gt_row gt_right">5</td>
 <td headers="n_New Yorker" class="gt_row gt_right">24</td>
 <td headers="mean_New Yorker" class="gt_row gt_right">11</td>
 <td headers="sd_New Yorker" class="gt_row gt_right">4</td>
-<td headers="n_Wall Street Journal" class="gt_row gt_right">7</td>
-<td headers="mean_Wall Street Journal" class="gt_row gt_right">16</td>
+<td headers="n_Wall Street Journal" class="gt_row gt_right">8</td>
+<td headers="mean_Wall Street Journal" class="gt_row gt_right">15</td>
 <td headers="sd_Wall Street Journal" class="gt_row gt_right">5</td></tr>
     <tr><td headers="day" class="gt_row gt_center">4</td>
 <td headers="n_Los Angeles Times" class="gt_row gt_right">23</td>
@@ -8045,28 +8115,28 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
 <td headers="n_New York Times" class="gt_row gt_right">27</td>
 <td headers="mean_New York Times" class="gt_row gt_right">22</td>
 <td headers="sd_New York Times" class="gt_row gt_right">7</td>
-<td headers="n_New Yorker" class="gt_row gt_right">36</td>
+<td headers="n_New Yorker" class="gt_row gt_right">37</td>
 <td headers="mean_New Yorker" class="gt_row gt_right">6</td>
 <td headers="sd_New Yorker" class="gt_row gt_right">1</td>
 <td headers="n_Wall Street Journal" class="gt_row gt_right">8</td>
 <td headers="mean_Wall Street Journal" class="gt_row gt_right">18</td>
 <td headers="sd_Wall Street Journal" class="gt_row gt_right">6</td></tr>
     <tr><td headers="day" class="gt_row gt_center">5</td>
-<td headers="n_Los Angeles Times" class="gt_row gt_right">18</td>
-<td headers="mean_Los Angeles Times" class="gt_row gt_right">16</td>
+<td headers="n_Los Angeles Times" class="gt_row gt_right">19</td>
+<td headers="mean_Los Angeles Times" class="gt_row gt_right">15</td>
 <td headers="sd_Los Angeles Times" class="gt_row gt_right">6</td>
 <td headers="n_New York Times" class="gt_row gt_right">23</td>
 <td headers="mean_New York Times" class="gt_row gt_right">23</td>
 <td headers="sd_New York Times" class="gt_row gt_right">12</td>
-<td headers="n_New Yorker" class="gt_row gt_right">30</td>
+<td headers="n_New Yorker" class="gt_row gt_right">31</td>
 <td headers="mean_New Yorker" class="gt_row gt_right">13</td>
 <td headers="sd_New Yorker" class="gt_row gt_right">6</td>
-<td headers="n_Wall Street Journal" class="gt_row gt_right">7</td>
+<td headers="n_Wall Street Journal" class="gt_row gt_right">8</td>
 <td headers="mean_Wall Street Journal" class="gt_row gt_right">16</td>
-<td headers="sd_Wall Street Journal" class="gt_row gt_right">6</td></tr>
+<td headers="sd_Wall Street Journal" class="gt_row gt_right">5</td></tr>
     <tr><td headers="day" class="gt_row gt_center">6</td>
-<td headers="n_Los Angeles Times" class="gt_row gt_right">12</td>
-<td headers="mean_Los Angeles Times" class="gt_row gt_right">25</td>
+<td headers="n_Los Angeles Times" class="gt_row gt_right">13</td>
+<td headers="mean_Los Angeles Times" class="gt_row gt_right">24</td>
 <td headers="sd_Los Angeles Times" class="gt_row gt_right">11</td>
 <td headers="n_New York Times" class="gt_row gt_right">15</td>
 <td headers="mean_New York Times" class="gt_row gt_right">32</td>
@@ -8074,9 +8144,9 @@ font-style: inherit;">"sd"</span>)</span></code></pre></div>
 <td headers="n_New Yorker" class="gt_row gt_right">NA</td>
 <td headers="mean_New Yorker" class="gt_row gt_right">NA</td>
 <td headers="sd_New Yorker" class="gt_row gt_right">NA</td>
-<td headers="n_Wall Street Journal" class="gt_row gt_right">8</td>
+<td headers="n_Wall Street Journal" class="gt_row gt_right">9</td>
 <td headers="mean_Wall Street Journal" class="gt_row gt_right">34</td>
-<td headers="sd_Wall Street Journal" class="gt_row gt_right">9</td></tr>
+<td headers="sd_Wall Street Journal" class="gt_row gt_right">8</td></tr>
     <tr><td headers="day" class="gt_row gt_center">7</td>
 <td headers="n_Los Angeles Times" class="gt_row gt_right">7</td>
 <td headers="mean_Los Angeles Times" class="gt_row gt_right">29</td>

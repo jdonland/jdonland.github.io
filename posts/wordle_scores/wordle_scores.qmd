@@ -161,7 +161,7 @@ For a more detailed comparison against the scores from Twitter, we'll look at th
 # combine the scores from twitter with my own
 wordle_scores |>
   full_join(twitter_scores) |>
-  # count the occurences of each possible combination of source and score
+  # count the occurrences of each possible combination of source and score
   group_by(source, score) |>
   count() |>
   ungroup() |>
