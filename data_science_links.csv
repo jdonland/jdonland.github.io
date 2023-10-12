@@ -16,12 +16,12 @@ Directed Acyclic Graphs,https://arelbundock.com/posts/acmq_en_06_dag/,methodolog
 Go Get the Data,https://www.allendowney.com/blog/2023/06/25/go-get-the-data/,methodology & practice,2023-06-26
 Three Advantages of Non-AI Models,https://www.johndcook.com/blog/2023/07/03/three-advantages-of-non-ai-models/,methodology & practice,2023-07-03
 "Log Transforms, Geometric Means and Estimating Population Totals",http://freerangestats.info/blog/2023/07/30/log-transforms,methodology & practice,2023-07-30
-"Statistician's Time Series Hack",https://two-wrongs.com/statisticians-time-series-hack,methodology & practice,2023-08-09
+Statistician's Time Series Hack,https://two-wrongs.com/statisticians-time-series-hack,methodology & practice,2023-08-09
 There Are No Magic Outcome Variables,https://elevanth.org/blog/2022/09/02/there-are-no-magic-outcome-variables/,methodology & practice,2023-08-11
 Do We Have To Tune the Number of Trees in a Random Forest?,https://stats.stackexchange.com/questions/348245/do-we-have-to-tune-the-number-of-trees-in-a-random-forest,methodology & practice,2023-08-15
 Solving for the Hidden Data,https://win-vector.com/2023/09/02/solving-for-hidden-data/,methodology & practice,2023-09-04
 First Time Seeing a Rare Event,https://www.johndcook.com/blog/2023/08/30/first-time-seeing-a-rare-event/,methodology & practice,2023-09-04
-"Tell Me What You Really Want: How to Identify the Real Business Question",https://locallyoptimistic.com/post/data-product-discovery-template/,methodology & practice,2023-09-04
+Tell Me What You Really Want: How to Identify the Real Business Question,https://locallyoptimistic.com/post/data-product-discovery-template/,methodology & practice,2023-09-04
 The Misunderstood Kelly Criterion,https://two-wrongs.com/the-misunderstood-kelly-criterion,methodology & practice,2023-09-25
 What Size Is That Correlation?,https://www.allendowney.com/blog/2023/10/02/what-size-is-that-correlation/,methodology & practice,2023-10-02
 Review of Probability Theory: The Logic of Science,https://www.ams.org/notices/200601/rev-faris.pdf,philosophy,2022-10-18
@@ -36,8 +36,8 @@ The Well-Posed Problem,https://bayes.wustl.edu/etj/articles/well.pdf,philosophy,
 Levels of Uncertainty,https://www.johndcook.com/blog/2013/10/23/levels-of-uncertainty/,philosophy,2023-07-27
 The Weirdest Paradox in Statistics (and Machine Learning),https://youtu.be/cUqoHQDinCM,puzzles & paradoxes,2022-09-16
 Simpson's Paradox All the Way Down,https://dynomight.net/simpsons-paradox/,puzzles & paradoxes,2022-12-30
-"Bertrand's Paradox",https://www.youtube.com/watch?v=mZBwsm6B280,puzzles & paradoxes,2023-08-02
-"More On Bertrand's Paradox",https://www.youtube.com/watch?v=pJyKM-7IgAU,puzzles & paradoxes,2023-08-06
+Bertrand's Paradox,https://www.youtube.com/watch?v=mZBwsm6B280,puzzles & paradoxes,2023-08-02
+More On Bertrand's Paradox,https://www.youtube.com/watch?v=pJyKM-7IgAU,puzzles & paradoxes,2023-08-06
 The Exchange Paradox,https://en.wikipedia.org/wiki/Two_envelopes_problem,puzzles & paradoxes,2023-08-05
 Awesome Public Datasets,https://github.com/awesomedata/awesome-public-datasets/blob/master/README.rst,references & resources,2023-07-26
 Modern Data Science with R,https://mdsr-book.github.io/mdsr3e/,references & resources,2023-07-28
@@ -49,10 +49,11 @@ Bayes Rules! An Introduction to Applied Bayesian Modeling,https://www.bayesrules
 Bayesian Inference",http://www.stat.columbia.edu/~gelman/research/published/Bayesian_software_review-8.pdf,references & resources,2023-09-29
 Causal Inference: The Mixtape,https://mixtape.scunning.com/,references & resources,2023-10-02
 Happy Git and GitHub for the useR,https://happygitwithr.com/workflows-intro,references & resources,2023-10-02
+Introduction to Modern Statistics (2nd Ed),https://openintro-ims2.netlify.app/,references & resources,2023-10-12
 1 Dataset 100 Visualizations,https://100.datavizproject.com/,visualization,2023-02-27
 How People Actually Lie With Charts,https://vdl.sci.utah.edu/blog/2023/04/17/misleading/,visualization,2023-06-17
 From Data to Viz,https://www.data-to-viz.com/,visualization,2023-07-28
 Dataviz Inspiration,https://www.dataviz-inspiration.com/,visualization,2023-07-28
-"Review of The Visual Display of Quantitative Information",https://sci-hub.se/https://doi.org/10.1901/jeab.1988.49-171,visualization,2023-08-05
+Review of The Visual Display of Quantitative Information,https://sci-hub.se/https://doi.org/10.1901/jeab.1988.49-171,visualization,2023-08-05
 What Ordinary People Need Most from Information Visualization Today,http://mail.perceptualedge.com/articles/visual_business_intelligence/what_people_need_from_infovis.pdf,visualization,2023-08-05
 Market Cafe Magazine,https://www.marketcafemag.com/,visualization,2023-08-14
