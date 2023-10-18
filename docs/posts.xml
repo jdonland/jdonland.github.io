@@ -8744,7 +8744,10 @@ background-color: null;
 font-style: inherit;">"universal"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-7">  <span class="fu" style="color: #4758AB;
+<span id="cb1-7">  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># keep only regular games (i.e., exclude tournaments, etc.)</span></span>
+<span id="cb1-8">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">filter</span>(games_attributes.play_type <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -8753,16 +8756,16 @@ background-color: null;
 font-style: inherit;">"regular"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-8">  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># keep only the columns we need, add a round indicator, pivot to one row per</span></span>
 <span id="cb1-9">  <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># clue instead of per category, and calculate each clue's contribution to the</span></span>
+font-style: inherit;"># keep only the columns we need, add a round indicator, pivot to one row per</span></span>
 <span id="cb1-10">  <span class="co" style="color: #5E5E5E;
 background-color: null;
+font-style: inherit;"># clue instead of per category, and calculate each clue's contribution to the</span></span>
+<span id="cb1-11">  <span class="co" style="color: #5E5E5E;
+background-color: null;
 font-style: inherit;"># Coryat score</span></span>
-<span id="cb1-11">  <span class="fu" style="color: #4758AB;
+<span id="cb1-12">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">select</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -8775,7 +8778,7 @@ background-color: null;
 font-style: inherit;">14</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-12">  <span class="fu" style="color: #4758AB;
+<span id="cb1-13">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8804,7 +8807,7 @@ background-color: null;
 font-style: inherit;">12</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-13">  <span class="fu" style="color: #4758AB;
+<span id="cb1-14">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">pivot_longer</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8825,14 +8828,14 @@ background-color: null;
 font-style: inherit;">"result"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-14">  <span class="fu" style="color: #4758AB;
+<span id="cb1-15">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">rename</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">result =</span> value) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-15">  <span class="fu" style="color: #4758AB;
+<span id="cb1-16">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8875,7 +8878,7 @@ background-color: null;
 font-style: inherit;">.default =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>),</span>
-<span id="cb1-16">         <span class="at" style="color: #657422;
+<span id="cb1-17">         <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">score =</span> round <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -8890,32 +8893,32 @@ background-color: null;
 font-style: inherit;">*</span> result) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-17">  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># group by game, add up the total score, sort by game order, and throw away</span></span>
 <span id="cb1-18">  <span class="co" style="color: #5E5E5E;
 background-color: null;
+font-style: inherit;"># group by game, add up the total score, sort by game order, and throw away</span></span>
+<span id="cb1-19">  <span class="co" style="color: #5E5E5E;
+background-color: null;
 font-style: inherit;"># the timestamps</span></span>
-<span id="cb1-19">  <span class="fu" style="color: #4758AB;
+<span id="cb1-20">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">group_by</span>(games_attributes.date_played) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-20">  <span class="fu" style="color: #4758AB;
+<span id="cb1-21">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">summarize</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">sum</span>(score)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-21">  <span class="fu" style="color: #4758AB;
+<span id="cb1-22">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">arrange</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-22">  <span class="fu" style="color: #4758AB;
+<span id="cb1-23">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8924,7 +8927,7 @@ background-color: null;
 font-style: inherit;">row_number</span>()) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-23">  <span class="fu" style="color: #4758AB;
+<span id="cb1-24">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">select</span>(<span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -8933,7 +8936,7 @@ background-color: null;
 font-style: inherit;">1</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-24">  <span class="fu" style="color: #4758AB;
+<span id="cb1-25">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">rename</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -8946,10 +8949,10 @@ background-color: null;
 font-style: inherit;">`</span>) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
-<span id="cb1-25">  <span class="co" style="color: #5E5E5E;
+<span id="cb1-26">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># store the results</span></span>
-<span id="cb1-26">  coryat_scores</span></code></pre></div>
+<span id="cb1-27">  coryat_scores</span></code></pre></div>
 </div>
 <section id="table" class="level3">
 <h3 data-anchor-id="table">Table</h3>
@@ -9600,6 +9603,38 @@ font-style: inherit;">"5in"</span>)</span></code></pre></div>
 <td style="text-align: right;">15400</td>
 <td style="text-align: right;">154</td>
 </tr>
+<tr class="odd">
+<td style="text-align: right;">26800</td>
+<td style="text-align: right;">155</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14800</td>
+<td style="text-align: right;">156</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">21400</td>
+<td style="text-align: right;">157</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16800</td>
+<td style="text-align: right;">158</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19200</td>
+<td style="text-align: right;">159</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">17600</td>
+<td style="text-align: right;">160</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20800</td>
+<td style="text-align: right;">161</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">25000</td>
+<td style="text-align: right;">162</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -9628,7 +9663,7 @@ font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">round</span>()</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 19360</code></pre>
+<pre><code>[1] 19406</code></pre>
 </div>
 </div>
 <p>Clearly, I have some studying to do before I consider trying to compete on the show.</p>
