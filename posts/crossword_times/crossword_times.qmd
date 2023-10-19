@@ -124,11 +124,11 @@ if (file.exists("solve_time_model.RData")) {load("solve_time_model.RData")}
 
 ## Visualization
 
-It's a matter of some debate among data visualization practitioners about when to use density plots, such as violin plots, instead of histograms. Or indeed whether density plots should ever be used. Or even whether histograms should ever be used!
+It's a matter of some debate among data visualization practitioners about when to use density plots, such as violin plots, instead of histograms. Or indeed whether density plots should ever be used. Or even whether _histograms_ should ever be used!
 
-I disagree with several of the points Angela Collier makes in her video ["violin plots should not exist"](https://www.youtube.com/watch?v=_0QMKFzW9fw), but one that I find compelling is that drawing density plots requires making modelling assumptions which may not accurately reflect the actual process from which the data result.
+I disagree with several of the points Angela Collier makes in her video ["violin plots should not exist"](https://www.youtube.com/watch?v=_0QMKFzW9fw), but one that I find compelling is that drawing density plots usually involves what amounts to fitting an unjustified model.
 
-In most situations, `ggplot` uses locally estimated scatterplot smoothing (LOESS) by default, which involves evaluating a fitting a separate polynomial regression model on a weighted neighbourhood around each data point and evaluating it there. It makes nice looking violin plots, but you wouldn't expect it to reflect that "actual" theoretical distribution of the data. In particular you run into edge cases like a non-zero violin width outside the range in which the data can actually fall. LOESS doesn't know that it can't take -1.5 minutes for the first Northern cardinal to appear at your bird feeder after you fill it.
+In most situations, `ggplot` uses locally estimated scatterplot smoothing (LOESS) by default, which involves fitting a separate polynomial regression model on a weighted neighbourhood around each data point and evaluating it there. It (usually) makes nice looking violin plots, but you wouldn't expect it to reflect that "actual" theoretical distribution of the data.
 
 It seems to me that this sort of thing is a symptom of a general desire to avoid having to actually specify models by pretending that there's some bright-line distinction between descriptive statistics and statistical inference.
 
