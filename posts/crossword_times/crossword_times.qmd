@@ -23,6 +23,7 @@ library(tidybayes)
 library(ggforce)
 library(ggdist)
 library(viridis)
+library(ggh4x)
 ```
 
 ## Introduction
@@ -134,6 +135,7 @@ It seems to me that this sort of thing is a symptom of a general desire to avoid
 
 Since we were willing to actually specify a model, we can make density plots that show something meaningful: the [posterior predictive distributions](http://www.medicine.mcgill.ca/epidemiology/Joseph/courses/EPIB-668/predictive.pdf) corresponding to our model. We'll use `add_predicted_draws()` from `tidybayes` to generate draws from those models and use these to draw violins that reflect the data we expect to observe in the future based on those we have observed so far. (We also enlist the help of `data_grid` from `modelr`.)
 
+::: panel-tabset
 ### Violin Plot
 
 ```{r}
@@ -178,20 +180,13 @@ crossword_times |>
         panel.grid.major.x = element_blank(),
         strip.text = element_text(hjust = 0.5))
 ```
-
-### geom_violin vs Log-Normal Densities
-
-What's the difference between plotting LOESS-based densities and posterior predictive distributions? I think this image illustrates the shortcomings of the former approach well:
-
-![geom_violin (black) vs our posterior predictive distributions (grey).](loess_vs_model.png){fig-align="center" width="500"}
+### Line Graphs
 
 ```{r}
-#| label: cumulative-distributions
+#| label: line-graphs
 #| warning: false
 #| message: false
 #| code-fold: true
-#| eval: false
-#| include: false
 
 c("M", "T", "W", "T", "F", "S", "S") |>
   setNames(1:7) |>
@@ -199,43 +194,47 @@ c("M", "T", "W", "T", "F", "S", "S") |>
   day_labeller
 
 crossword_times |>
-  # group by publisher and day, sort by solve time, transform to percentiles
+  # group by publisher and day, add per-group row numbers
   group_by(publisher, day) |>
-  arrange(minutes) |>
-  summarize(percentile = cumsum(minutes)/sum(minutes), minutes = minutes) |>
+  mutate(id = row_number()) |>
   ggplot() +
   # plot structure
-  facet_grid(rows = vars(day), labeller = day_labeller) +
+  facet_grid2(rows = vars(publisher), 
+              cols = vars(day),
+              labeller = labeller(day = day_labeller),
+              scales = "free_x",
+              independent = "x") +
   # aesthetic mapping
-  aes(x = minutes, y = percentile, colour = publisher) +
+  aes(x = id, y = minutes, colour = publisher) +
+  geom_point() +
   # visual elements representing the data
-  geom_line(size = 2, alpha = 0.75) +
+  geom_line() +
   # scales
-  scale_y_continuous(labels = scales::label_percent(),
-                     limits = c(0, NA),
-                     expand = c(0, 0),
-                     sec.axis = sec_axis(~ ., 
-                                         labels = NULL, 
-                                         breaks = NULL, 
-                                         name = "Day of the Week\n")) +
-  scale_x_continuous(n.breaks = 12, minor_breaks = 0:65) +
+  scale_y_continuous(n.breaks = 12, minor_breaks = 0:65) +
   scale_colour_viridis(discrete = TRUE) +
   # labels
-  labs(title = "Crossword Solve Times", 
-       subtitle = "Cumulative distribution by publisher and day of the week",
-       x = "Time (Minutes)", 
-       y = "",
-       colour = NULL) +
+  labs(title = "Solve Time Trend by Publisher and Day of Week",
+       y = "Solve Time (Minutes)") +
   # theming
   theme_bw() +
-  theme(legend.position = "top", 
+  theme(legend.position = "none", 
         panel.spacing.y = unit(0.02, "npc"),
-        axis.text.y = element_text(size = rel(0.8)),
+        axis.text.y = element_text(size = rel(0.65)),
+        axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.x = element_blank(),
         panel.grid.minor.y = element_blank(),
-        panel.grid.minor.x = element_line(linetype = 3),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_blank(),
         legend.margin = margin(0, 0, 0, 0),
         strip.text = element_text(hjust = 0.5))
 ```
+:::
+### geom_violin vs Log-Normal Densities
+
+What's the difference between plotting LOESS-based densities and posterior predictive distributions? I think this image illustrates the shortcomings of the former approach well:
+
+![geom_violin (black) vs our posterior predictive distributions (grey).](loess_vs_model.png){fig-align="center" width="500"}
 
 ## References
 
