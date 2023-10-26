@@ -58,8 +58,8 @@ read_json(list.files()[grep(".jscor", list.files())], simplifyVector = TRUE) |>
   unnest(cols = c(games_attributes.sixths_attributes,
                   games_attributes.final_attributes),
          names_repair = "universal") |>
-  # keep only regular games (i.e., exclude tournaments, etc.)
-  filter(games_attributes.play_type == "regular") |>
+  # keep only regular difficulty games
+  filter(!games_attributes.play_type %in% c("toc", "masters")) |>
   # keep only the columns we need, add a round indicator, pivot to one row per
   # clue instead of per category, and calculate each clue's contribution to the
   # Coryat score
@@ -70,7 +70,7 @@ read_json(list.files()[grep(".jscor", list.files())], simplifyVector = TRUE) |>
   mutate(result = recode(result, `1` = -1, `3` = 1, `7` = 1, .default = 0),
          score = round * as.numeric(clue) * 200 * result) |>
   # group by game, add up the total score, sort by game order, and throw away
-  # the timestamps
+  # the time stamps
   group_by(games_attributes.date_played) |>
   summarize(sum(score)) |>
   arrange(1) |>
