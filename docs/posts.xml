@@ -10265,64 +10265,84 @@ font-style: inherit;">"5in"</span>)</span></code></pre></div>
 <td style="text-align: right;">158</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">5800</td>
+<td style="text-align: right;">26800</td>
 <td style="text-align: right;">159</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">12800</td>
+<td style="text-align: right;">14800</td>
 <td style="text-align: right;">160</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">15600</td>
+<td style="text-align: right;">21400</td>
 <td style="text-align: right;">161</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">10200</td>
+<td style="text-align: right;">16800</td>
 <td style="text-align: right;">162</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">15400</td>
+<td style="text-align: right;">19200</td>
 <td style="text-align: right;">163</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">26800</td>
+<td style="text-align: right;">17600</td>
 <td style="text-align: right;">164</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">14800</td>
+<td style="text-align: right;">20800</td>
 <td style="text-align: right;">165</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">21400</td>
+<td style="text-align: right;">25000</td>
 <td style="text-align: right;">166</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">16800</td>
+<td style="text-align: right;">27400</td>
 <td style="text-align: right;">167</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">19200</td>
+<td style="text-align: right;">20800</td>
 <td style="text-align: right;">168</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">17600</td>
+<td style="text-align: right;">20000</td>
 <td style="text-align: right;">169</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">20800</td>
+<td style="text-align: right;">26800</td>
 <td style="text-align: right;">170</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">25000</td>
+<td style="text-align: right;">22800</td>
 <td style="text-align: right;">171</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">27400</td>
+<td style="text-align: right;">33800</td>
 <td style="text-align: right;">172</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">20800</td>
+<td style="text-align: right;">16600</td>
 <td style="text-align: right;">173</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20800</td>
+<td style="text-align: right;">174</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20800</td>
+<td style="text-align: right;">175</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">27800</td>
+<td style="text-align: right;">176</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19200</td>
+<td style="text-align: right;">177</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16200</td>
+<td style="text-align: right;">178</td>
 </tr>
 </tbody>
 </table>
@@ -10352,7 +10372,7 @@ font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">round</span>()</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 19405</code></pre>
+<pre><code>[1] 19787</code></pre>
 </div>
 </div>
 <p>Clearly, I have some studying to do before I consider trying to compete on the show.</p>
