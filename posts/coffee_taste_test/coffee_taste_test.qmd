@@ -1,0 +1,86 @@
+---
+title: "James Hoffman's Coffee Taste Test"
+date: "2023-11-13"
+date-modified: now
+date-format: long
+description: ""
+execute: 
+   warning: false
+   message: false
+filters:
+   - lightbox
+lightbox: auto
+format:
+  html:
+    code-fold: false
+draft: true
+---
+
+## Introduction
+
+```{r}
+#| label: libraries
+#| include: false
+
+library(tidyverse)
+```
+
+## Data
+
+```{r}
+#| label: data-preparation
+#| message: false
+#| code-fold: false
+
+read_csv("coffee_taste_test.csv", 
+         col_types = "cff-lllll-llllllllll--llllll-f--lllll--lllllllll-llllllll-llllll-ffffiiii-iii-iii-iii-fffff-lllll-ffffffffff-fff",
+         col_names = c("id", 
+                       "age", 
+                       "cups", 
+                       "location_home", 
+                       "location_office",
+                       "location_onthego",
+                       "location_cafe",
+                       "location_nota",
+                       "method_pourover",
+                       "method_frenchpress",
+                       "method_espresso",
+                       "method_brewingmachine",
+                       "method_podmachine",
+                       "method_instant",
+                       "method_beantocupmachine",
+                       "method_coldbrew",
+                       "method_extract",
+                       "method_other",
+                       "purchaseplace_nationalchain",
+                       "purchaseplace_localcafe",
+                       "purchaseplace_drivethru",
+                       "purchaseplace_specialtyshop",
+                       "purchaseplace_delisupermarket",
+                       "purchaseplace_other",
+                       "favourite_coffee_drink",
+                       "add_nothing",
+                       "add_sugarsweetener",
+                       "add_flavoursyrup",
+                       "add_other",
+                       "dairy_wholemilk",
+                       "dairy_skimmilk",
+                       "dairy_halfandhalf",
+                       "dairy_creamer",
+                       "dairy_flavouredcreamer",
+                       "dairy_oatmilk",
+                       "dairy_almondmilk",
+                       "dairy_soymilk",
+                       "dairy_other",
+                       "sugarsweetener_whitesugar",
+                       "sugarsweetener_artificial",
+                       "sugarsweetener_honey",
+                       "sugarsweetener_maplesyrup",
+                       "sugarsweetener_stevia",
+                       "sugarsweetener_agavenectar",
+                       "sugarsweetener_brownsugar",
+                       "sugarsweetener_rawsugar")) ->
+  coffee_taste_test
+```
+
+## Visualization
