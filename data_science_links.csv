@@ -50,8 +50,7 @@ Modern Data Science with R,https://mdsr-book.github.io/mdsr3e/,references & reso
 Data Creators Club,https://datacreators.club/,references & resources,2023-07-28
 Regression Modeling Strategies,https://hbiostat.org/rmsc/,references & resources,2023-07-28
 Bayes Rules! An Introduction to Applied Bayesian Modeling,https://www.bayesrulesbook.com/,references & resources,2023-07-28
-"Past, Present, and Future of Software for
-Bayesian Inference",http://www.stat.columbia.edu/~gelman/research/published/Bayesian_software_review-8.pdf,references & resources,2023-09-29
+"Past, Present, and Future of Software for Bayesian Inference",http://www.stat.columbia.edu/~gelman/research/published/Bayesian_software_review-8.pdf,references & resources,2023-09-29
 Causal Inference: The Mixtape,https://mixtape.scunning.com/,references & resources,2023-10-02
 Happy Git and GitHub for the useR,https://happygitwithr.com/workflows-intro,references & resources,2023-10-02
 Introduction to Modern Statistics (2nd Ed),https://openintro-ims2.netlify.app/,references & resources,2023-10-12
@@ -65,3 +64,4 @@ Market Cafe Magazine,https://www.marketcafemag.com/,data visualization,2023-08-1
 Error Bars Considered Harmful: Exploring Alternate Encodings for Mean and Error,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6214189/,data visualization,2023-11-15
 Beyond Bar and Line Graphs: Time for a New Data Presentation Paradigm,https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128,data visualization,2023-11-15
 Visualizing the Uncertainty in Data,https://flowingdata.com/2018/01/08/visualizing-the-uncertainty-in-data/,data visualization,2023-11-15
+Friends Don't Let Friends Make Bad Graphs,https://github.com/cxli233/FriendsDontLetFriends,data visualization,2023-11-20
