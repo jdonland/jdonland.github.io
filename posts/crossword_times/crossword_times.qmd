@@ -199,8 +199,8 @@ crossword_times |>
   mutate(id = row_number()) |>
   ggplot() +
   # plot structure
-  facet_grid2(rows = vars(publisher), 
-              cols = vars(day),
+  facet_grid2(cols = vars(publisher), 
+              rows = vars(day),
               labeller = labeller(day = day_labeller),
               scales = "free_x",
               independent = "x") +
