@@ -18,7 +18,7 @@ options(readr.show_col_types = FALSE)
 #| message: false
 
 read_csv("data_science_links.csv") |>
-  arrange(category, date_added) |>
+  arrange(category, date_published) |>
   mutate(markdown_link = paste0("- [", title, "](", url, ")"),
          category = paste("\n## ", str_to_title(category)),
          .keep = "none") |>

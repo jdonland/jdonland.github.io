@@ -1,67 +1,66 @@
-title,url,category,date_added
+title,url,category,date_published
 Why Business Data Science Irritates Me,https://shakoist.substack.com/p/why-business-data-science-irritates,careers & industry,2022-12-19
-"On Moving from Statistics to Machine Learning, the Final Stage of Grief",https://ryxcommar.com/2019/07/14/on-moving-from-statistics-to-machine-learning-the-final-stage-of-grief/,careers & industry,2023-01-14
+"On Moving from Statistics to Machine Learning, the Final Stage of Grief",https://ryxcommar.com/2019/07/14/on-moving-from-statistics-to-machine-learning-the-final-stage-of-grief/,careers & industry,2019-07-14
 Most Data Work Seems Fundamentally Worthless,https://ludic.mataroa.blog/blog/most-data-work-seems-fundamentally-worthless/,careers & industry,2023-02-27
-Data Science Is Different Now,https://vickiboykis.com/2019/02/13/data-science-is-different-now/,careers & industry,2023-07-26
-Data Scientist: The Sexiest Job of the 21st Century,https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century,careers & industry,2023-07-27
-Is Data Scientist Still the Sexiest Job of the 21st Century?,https://hbr.org/2022/07/is-data-scientist-still-the-sexiest-job-of-the-21st-century,careers & industry,2023-07-27
+Data Science Is Different Now,https://vickiboykis.com/2019/02/13/data-science-is-different-now/,careers & industry,2019-02-13
+Data Scientist: The Sexiest Job of the 21st Century,https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century,careers & industry,2012-10-19
+Is Data Scientist Still the Sexiest Job of the 21st Century?,https://hbr.org/2022/07/is-data-scientist-still-the-sexiest-job-of-the-21st-century,careers & industry,2022-07-21
 Your Organization Probably Doesn't Want To Improve Things,https://ludic.mataroa.blog/blog/your-organization-probably-doesnt-want-to-improve-things/,careers & industry,2023-10-08
-Common Statistical Tests Are Linear Models (or: How To Teach Stats),https://lindeloev.github.io/tests-as-linear/,statistical methodology,2022-11-06
+Common Statistical Tests Are Linear Models (or: How To Teach Stats),https://lindeloev.github.io/tests-as-linear/,statistical methodology,2019-03-15
 Never Test For Normality,https://www.allendowney.com/blog/2023/01/28/never-test-for-normality/,statistical methodology,2023-01-28
-Stats Can't Make Modeling Decisions,https://allendowney.blogspot.com/2016/05/stats-cant-make-modeling-decisions.html,statistical methodology,2023-02-01
-The Shortcomings of Standardized Regression Coefficients,https://data.library.virginia.edu/the-shortcomings-of-standardized-regression-coefficients/,statistical methodology,2023-04-01
-Directed Acyclic Graphs,https://arelbundock.com/posts/acmq_en_06_dag/,statistical methodology,2023-06-03
+Stats Can't Make Modeling Decisions,https://allendowney.blogspot.com/2016/05/stats-cant-make-modeling-decisions.html,statistical methodology,2016-05-03
+The Shortcomings of Standardized Regression Coefficients,https://data.library.virginia.edu/the-shortcomings-of-standardized-regression-coefficients/,statistical methodology,2023-03-09
+Directed Acyclic Graphs,https://arelbundock.com/posts/acmq_en_06_dag/,statistical methodology,2023-08-05
 "Simulating Confounders, Colliders and Mediators",http://freerangestats.info/blog/2023/06/04/causality-sims,statistical methodology,2023-06-04
-Go Get the Data,https://www.allendowney.com/blog/2023/06/25/go-get-the-data/,statistical methodology,2023-06-26
+Go Get the Data,https://www.allendowney.com/blog/2023/06/25/go-get-the-data/,statistical methodology,2023-06-25
 Three Advantages of Non-AI Models,https://www.johndcook.com/blog/2023/07/03/three-advantages-of-non-ai-models/,statistical methodology,2023-07-03
 "Log Transforms, Geometric Means and Estimating Population Totals",http://freerangestats.info/blog/2023/07/30/log-transforms,statistical methodology,2023-07-30
 Statistician's Time Series Hack,https://two-wrongs.com/statisticians-time-series-hack,statistical methodology,2023-08-09
-There Are No Magic Outcome Variables,https://elevanth.org/blog/2022/09/02/there-are-no-magic-outcome-variables/,statistical methodology,2023-08-11
-Do We Have To Tune the Number of Trees in a Random Forest?,https://stats.stackexchange.com/questions/348245/do-we-have-to-tune-the-number-of-trees-in-a-random-forest,statistical methodology,2023-08-15
-Solving for the Hidden Data,https://win-vector.com/2023/09/02/solving-for-hidden-data/,statistical methodology,2023-09-04
-First Time Seeing a Rare Event,https://www.johndcook.com/blog/2023/08/30/first-time-seeing-a-rare-event/,statistical methodology,2023-09-04
-Tell Me What You Really Want: How to Identify the Real Business Question,https://locallyoptimistic.com/post/data-product-discovery-template/,statistical methodology,2023-09-04
-The Misunderstood Kelly Criterion,https://two-wrongs.com/the-misunderstood-kelly-criterion,statistical methodology,2023-09-25
+There Are No Magic Outcome Variables,https://elevanth.org/blog/2022/09/02/there-are-no-magic-outcome-variables/,statistical methodology,2022-09-02
+Solving for the Hidden Data,https://win-vector.com/2023/09/02/solving-for-hidden-data/,statistical methodology,2023-09-02
+First Time Seeing a Rare Event,https://www.johndcook.com/blog/2023/08/30/first-time-seeing-a-rare-event/,statistical methodology,2023-08-30
+Tell Me What You Really Want: How to Identify the Real Business Question,https://locallyoptimistic.com/post/data-product-discovery-template/,statistical methodology,2023-08-28
 What Size Is That Correlation?,https://www.allendowney.com/blog/2023/10/02/what-size-is-that-correlation/,statistical methodology,2023-10-02
-Bayes Rule in Odds Form,https://two-wrongs.com/bayes-rule-odds-form.html,statistical methodology,2023-10-14
+Bayes Rule in Odds Form,https://two-wrongs.com/bayes-rule-odds-form.html,statistical methodology,2021-07-31
 Sensitivity Counts Against You,https://two-wrongs.com/sensitivity-counts-against-you,statistical methodology,2023-10-14
 A/B Tests for Engineers,https://win-vector.com/2023/10/15/a-b-tests-for-engineers/,statistical methodology,2023-10-15
-"The Medical Test Paradox, and Redesigning Bayes' Rule",https://www.youtube.com/watch?v=lG4VkPoG3ko,statistical methodology,2023-10-19
+"The Medical Test Paradox, and Redesigning Bayes' Rule",https://www.youtube.com/watch?v=lG4VkPoG3ko,statistical methodology,2020-12-22
 Using Dimensional Analysis To Check Probability Calculations,https://www.johndcook.com/blog/2023/11/08/probability-dimensional-analysis/,statistical methodology,2023-11-08
-Review of Probability Theory: The Logic of Science,https://www.ams.org/notices/200601/rev-faris.pdf,philosophy,2022-10-18
-Probability That a Number Is Prime,https://www.johndcook.com/blog/2010/10/06/probability-a-number-is-prime/,philosophy,2022-12-01
-Philosophy of Probability,https://aidanlyon.com/philprob.pdf,philosophy,2022-12-14
-Philosophy of Statistics,https://plato.stanford.edu/entries/statistics/,philosophy,2023-01-01
+Review of Probability Theory: The Logic of Science,https://www.ams.org/notices/200601/rev-faris.pdf,philosophy,2006-01
+Probability That a Number Is Prime,https://www.johndcook.com/blog/2010/10/06/probability-a-number-is-prime/,philosophy,2010-10-06
+Philosophy of Probability,https://aidanlyon.com/philprob.pdf,philosophy,2009-12-30
+Kolmogorov’s Axiomatisation and its Discontents,https://aidanlyon.com/Bad%20Kolmogrov.pdf,philosophy,2012-01-30
+Philosophy of Statistics,https://plato.stanford.edu/entries/statistics/,philosophy,2014-08-19
 What Is Probability?,https://two-wrongs.com/what-is-probability,philosophy,2023-04-14
 Can You Have Confidence in a Confidence Interval?,https://www.johndcook.com/blog/2023/04/23/confidence-interval/,philosophy,2023-04-23
-Prior Probabilities,https://bayes.wustl.edu/etj/articles/prior.pdf,philosophy,2023-07-26
-The Well-Posed Problem,https://bayes.wustl.edu/etj/articles/well.pdf,philosophy,2023-07-26
-"Monkeys, Kangaroos, and N",https://bayes.wustl.edu/etj/articles/cmonkeys.pdf,philosophy,2023-07-26
-Levels of Uncertainty,https://www.johndcook.com/blog/2013/10/23/levels-of-uncertainty/,philosophy,2023-07-27
-The Weirdest Paradox in Statistics (and Machine Learning),https://youtu.be/cUqoHQDinCM,puzzles & paradoxes,2022-09-16
-Simpson's Paradox All the Way Down,https://dynomight.net/simpsons-paradox/,puzzles & paradoxes,2022-12-30
-Bertrand's Paradox,https://www.youtube.com/watch?v=mZBwsm6B280,puzzles & paradoxes,2023-08-02
-More On Bertrand's Paradox,https://www.youtube.com/watch?v=pJyKM-7IgAU,puzzles & paradoxes,2023-08-06
-The Exchange Paradox,https://en.wikipedia.org/wiki/Two_envelopes_problem,puzzles & paradoxes,2023-08-05
-The Good Research Code Handbook,https://goodresearch.dev/index.html,references & resources,2022-11-05
-Awesome Public Datasets,https://github.com/awesomedata/awesome-public-datasets/blob/master/README.rst,references & resources,2023-07-26
-Modern Data Science with R,https://mdsr-book.github.io/mdsr3e/,references & resources,2023-07-28
-"Statistical Rethinking with brms, ggplot2, and the tidyverse",https://bookdown.org/content/4857/,references & resources,2023-07-28
-Data Creators Club,https://datacreators.club/,references & resources,2023-07-28
-Regression Modeling Strategies,https://hbiostat.org/rmsc/,references & resources,2023-07-28
-Bayes Rules! An Introduction to Applied Bayesian Modeling,https://www.bayesrulesbook.com/,references & resources,2023-07-28
-"Past, Present, and Future of Software for Bayesian Inference",http://www.stat.columbia.edu/~gelman/research/published/Bayesian_software_review-8.pdf,references & resources,2023-09-29
-Causal Inference: The Mixtape,https://mixtape.scunning.com/,references & resources,2023-10-02
-Happy Git and GitHub for the useR,https://happygitwithr.com/workflows-intro,references & resources,2023-10-02
-Introduction to Modern Statistics (2nd Ed),https://openintro-ims2.netlify.app/,references & resources,2023-10-12
-1 Dataset 100 Visualizations,https://100.datavizproject.com/,data visualization,2023-02-27
-How People Actually Lie With Charts,https://vdl.sci.utah.edu/blog/2023/04/17/misleading/,data visualization,2023-06-17
-From Data to Viz,https://www.data-to-viz.com/,data visualization,2023-07-28
-Dataviz Inspiration,https://www.dataviz-inspiration.com/,data visualization,2023-07-28
-Review of The Visual Display of Quantitative Information,https://sci-hub.se/https://doi.org/10.1901/jeab.1988.49-171,data visualization,2023-08-05
-What Ordinary People Need Most from Information Visualization Today,http://mail.perceptualedge.com/articles/visual_business_intelligence/what_people_need_from_infovis.pdf,data visualization,2023-08-05
-Market Cafe Magazine,https://www.marketcafemag.com/,data visualization,2023-08-14
-Error Bars Considered Harmful: Exploring Alternate Encodings for Mean and Error,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6214189/,data visualization,2023-11-15
-Beyond Bar and Line Graphs: Time for a New Data Presentation Paradigm,https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128,data visualization,2023-11-15
-Visualizing the Uncertainty in Data,https://flowingdata.com/2018/01/08/visualizing-the-uncertainty-in-data/,data visualization,2023-11-15
-Friends Don't Let Friends Make Bad Graphs,https://github.com/cxli233/FriendsDontLetFriends,data visualization,2023-11-20
+Prior Probabilities,https://bayes.wustl.edu/etj/articles/prior.pdf,philosophy,1968
+The Well-Posed Problem,https://bayes.wustl.edu/etj/articles/well.pdf,philosophy,1973
+"Monkeys, Kangaroos, and N",https://bayes.wustl.edu/etj/articles/cmonkeys.pdf,philosophy,1996
+Levels of Uncertainty,https://www.johndcook.com/blog/2013/10/23/levels-of-uncertainty/,philosophy,2013-10-23
+R. A. Fisher and the Making of Maximum Likelihood 1912‒1922,http://www.medicine.mcgill.ca/epidemiology/hanley/bios601/Likelihood/Fisher%20and%20history%20of%20mle.pdf,philosophy,1997
+The Weirdest Paradox in Statistics (and Machine Learning),https://youtu.be/cUqoHQDinCM,puzzles & paradoxes,2022-08-30
+Simpson's Paradox All the Way Down,https://dynomight.net/simpsons-paradox/,puzzles & paradoxes,2020-11-16
+Bertrand's Paradox,https://www.youtube.com/watch?v=mZBwsm6B280,puzzles & paradoxes,2021-12-20
+More On Bertrand's Paradox,https://www.youtube.com/watch?v=pJyKM-7IgAU,puzzles & paradoxes,2021-12-21
+The Two-Envelope Paradox,https://sci-hub.se/https://doi.org/10.1093/analys/55.1.6,puzzles & paradoxes,1995-01
+The Good Research Code Handbook,https://goodresearch.dev/index.html,references & resources,2021-08-21
+Awesome Public Datasets,https://github.com/awesomedata/awesome-public-datasets/blob/master/README.rst,references & resources,2014-11-20
+Modern Data Science with R,https://mdsr-book.github.io/mdsr3e/,references & resources,2023-11-01
+"Statistical Rethinking with brms, ggplot2, and the tidyverse",https://bookdown.org/content/4857/,references & resources,2023-01-26
+Data Creators Club,https://datacreators.club/,references & resources,
+Regression Modeling Strategies,https://hbiostat.org/rmsc/,references & resources,2023-11-10
+Bayes Rules! An Introduction to Applied Bayesian Modeling,https://www.bayesrulesbook.com/,references & resources,2021-12-01
+Causal Inference: The Mixtape,https://mixtape.scunning.com/,references & resources,2021-01-06
+Happy Git and GitHub for the useR,https://happygitwithr.com/workflows-intro,references & resources,2016-06-04
+Introduction to Modern Statistics (2nd Ed),https://openintro-ims2.netlify.app/,references & resources,2015-07-13
+1 Dataset 100 Visualizations,https://100.datavizproject.com/,data visualization,2023-02-07
+How People Actually Lie With Charts,https://vdl.sci.utah.edu/blog/2023/04/17/misleading/,data visualization,2023-04-17
+From Data to Viz,https://www.data-to-viz.com/,data visualization,2018-02-19
+Dataviz Inspiration,https://www.dataviz-inspiration.com/,data visualization,2022-01-25
+Review of The Visual Display of Quantitative Information,https://sci-hub.se/https://doi.org/10.1901/jeab.1988.49-171,data visualization,1988-01
+What Ordinary People Need Most from Information Visualization Today,http://mail.perceptualedge.com/articles/visual_business_intelligence/what_people_need_from_infovis.pdf,data visualization,2008-08
+Market Cafe Magazine,https://www.marketcafemag.com/,data visualization,2016
+Error Bars Considered Harmful: Exploring Alternate Encodings for Mean and Error,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6214189/,data visualization,2018-11-02
+Beyond Bar and Line Graphs: Time for a New Data Presentation Paradigm,https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128,data visualization,2015-04-22
+Visualizing the Uncertainty in Data,https://flowingdata.com/2018/01/08/visualizing-the-uncertainty-in-data/,data visualization,2018-01-08
+Friends Don't Let Friends Make Bad Graphs,https://github.com/cxli233/FriendsDontLetFriends,data visualization,2022-05-24
