@@ -210,7 +210,7 @@ crossword_times |>
   # visual elements representing the data
   geom_line() +
   # scales
-  scale_y_continuous(n.breaks = 12, minor_breaks = 0:65) +
+  scale_y_continuous(n.breaks = 6) +
   scale_colour_viridis(discrete = TRUE) +
   # labels
   labs(title = "Solve Time Trend by Publisher and Day of Week",
