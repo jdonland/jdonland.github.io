@@ -9503,7 +9503,7 @@ font-style: inherit;">0.5</span>))</span></code></pre></div>
 <p>What’s the difference between plotting LOESS-based densities and posterior predictive distributions? I think this image illustrates the shortcomings of the former approach well:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="loess_vs_model.png" class="lightbox" title="geom_violin (black) vs our posterior predictive distributions (grey)." data-gallery="quarto-lightbox-gallery-1"><img src="https://jdonland.github.io/posts/crossword_times/loess_vs_model.png" class="img-fluid figure-img" width="500"></a></p>
+<p><a href="loess_vs_model.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="geom_violin (black) vs our posterior predictive distributions (grey)."><img src="https://jdonland.github.io/posts/crossword_times/loess_vs_model.png" class="img-fluid figure-img" width="500"></a></p>
 <figcaption class="figure-caption">geom_violin (black) vs our posterior predictive distributions (grey).</figcaption>
 </figure>
 </div>
