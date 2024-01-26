@@ -15,8 +15,7 @@ lightbox: auto
 #| include: false
 
 library(tidyverse)
-library(gt)
-library(vtable)
+library(DT)
 library(brms)
 library(modelr)
 library(tidybayes)
@@ -43,9 +42,10 @@ I'm accustomed to thinking of the week as beginning with Sunday, but for the pur
 #| message: false
 
 read_csv("crossword_times.csv", col_types = "ccD") |>
-  transmute(Publisher,
-            day = factor(wday(Date, week_start = 1)),
-            minutes = period_to_seconds(ms(Time))/60) |>
+  mutate(Publisher,
+         day = factor(wday(Date, week_start = 1, label = TRUE, abbr = FALSE)),
+         minutes = period_to_seconds(ms(Time))/60,
+         .keep = "none") |>
   rename(publisher = Publisher) ->
   crossword_times
 ```
@@ -58,9 +58,8 @@ read_csv("crossword_times.csv", col_types = "ccD") |>
 #| code-fold: true
 
 crossword_times |>
-  mutate(minutes = round(minutes)) |>
-  kable(caption = "My Crossword Solve Times") |>
-  scroll_box(height = "5in")
+  mutate(minutes = round(minutes, 2)) |>
+  datatable()
 ```
 
 ### Summary
@@ -68,24 +67,17 @@ crossword_times |>
 #| label: summary
 #| message: false
 #| code-fold: true
-
+  
 crossword_times |>
   group_by(publisher, day) |>
   summarize(n = n(), mean = mean(minutes), sd = sd(minutes)) |>
-  mutate(across(c("mean", "sd"), \(x) round(x))) |>
-  pivot_wider(names_from = publisher, 
-              values_from = c("n", "mean", "sd"),
-              names_sort = TRUE) |>
-  relocate(c(1, 2, 6, 10, 3, 7, 11, 4, 8, 12, 5, 9, 13)) |>
-  gt() |>
-  tab_header(title = "My Crossword Solve Times: Summary") |>
-  tab_spanner(label = "Los Angeles Times", columns = 2:4) |>
-  tab_spanner(label = "New York Times", columns = 5:7) |>
-  tab_spanner(label = "New Yorker", columns = 8:10) |>
-  tab_spanner(label = "Wall Street Journal", columns = 11:13) |>
-  cols_label(starts_with("n") ~ "n", 
-             starts_with("mean") ~ "mean", 
-             starts_with("sd") ~ "sd")
+  mutate(across(c("mean", "sd"), \(x) round(x, 2))) |>
+  mutate(publisher, 
+         day, 
+         stats = paste0("n: ", n, "<br/>mean: ", mean, "<br/>sd: ", sd),
+         .keep = "none") |>
+  pivot_wider(names_from = publisher, values_from = stats) |>
+  datatable(rownames = FALSE, escape = FALSE)
 ```
 :::
 
@@ -99,7 +91,7 @@ If we imagine that the distribution of solves times within each combination of p
 
 ```{r}
 #| label: model
-#| eval: true
+#| eval: false
 #| output: false
 
 crossword_times |>
