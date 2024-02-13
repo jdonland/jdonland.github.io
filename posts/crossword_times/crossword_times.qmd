@@ -140,8 +140,8 @@ crossword_times |>
   data_grid(publisher, day) |>
   add_predicted_draws(solve_time_model) |>
   # filter out predictions for groups that do not actually occur
-  filter(!(publisher == "New Yorker" & day %in% c(6, 7)),
-         !(publisher == "Wall Street Journal" & day == 7)) |>
+  filter(!(publisher == "New Yorker" & as.integer(day) %in% c(6, 7)),
+         !(publisher == "Wall Street Journal" & as.integer(day) == 7)) |>
   ggplot() +
   # plot structure
   facet_grid(cols = vars(publisher)) +
@@ -180,11 +180,6 @@ crossword_times |>
 #| message: false
 #| code-fold: true
 
-c("M", "T", "W", "T", "F", "S", "S") |>
-  setNames(1:7) |>
-  as_labeller() ->
-  day_labeller
-
 crossword_times |>
   # group by publisher and day, add per-group row numbers
   group_by(publisher, day) |>
@@ -193,7 +188,7 @@ crossword_times |>
   # plot structure
   facet_grid2(cols = vars(publisher), 
               rows = vars(day),
-              labeller = labeller(day = day_labeller),
+              labeller = labeller(day = ~ substr(., 1, 1)),
               scales = "free_x",
               independent = "x") +
   # aesthetic mapping
