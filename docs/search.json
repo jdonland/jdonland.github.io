@@ -53,7 +53,7 @@
     "href": "links.html#references-resources",
     "title": "Data Science Links",
     "section": "References & Resources",
-    "text": "References & Resources\n\nAwesome Public Datasets\nIntroduction to Modern Statistics (2nd Ed)\nHappy Git and GitHub for the useR\n3Blue1Brown: Probability\nCausal Inference: The Mixtape\nThe Good Research Code Handbook\nBayes Rules! An Introduction to Applied Bayesian Modeling\nStatistical Rethinking with brms, ggplot2, and the tidyverse\nMathematical Indroduction to Deep Learning: Methods, Implementations, and Theory\nModern Data Science with R\nRegression Modeling Strategies\nUnderstanding Deep Learning\nData Creators Club"
+    "text": "References & Resources\n\nAwesome Public Datasets\nIntroduction to Modern Statistics (2nd Ed)\nHappy Git and GitHub for the useR\n3Blue1Brown: Probability\nCausal Inference: The Mixtape\nThe Good Research Code Handbook\nBayes Rules! An Introduction to Applied Bayesian Modeling\nStatistical Rethinking with brms, ggplot2, and the tidyverse\nGeneralized Additive Models in R\nMathematical Indroduction to Deep Learning: Methods, Implementations, and Theory\nModern Data Science with R\nRegression Modeling Strategies\nUnderstanding Deep Learning\nData Creators Club"
   },
   {
     "objectID": "links.html#visualization",
@@ -494,7 +494,7 @@
     "href": "links.html#data-visualization",
     "title": "Data Science Links",
     "section": "Data Visualization",
-    "text": "Data Visualization\n\nReview of The Visual Display of Quantitative Information\nWhat Ordinary People Need Most from Information Visualization Today\nBeyond Bar and Line Graphs: Time for a New Data Presentation Paradigm\nMarket Cafe Magazine\nVisualizing the Uncertainty in Data\nFrom Data to Viz\nError Bars Considered Harmful: Exploring Alternate Encodings for Mean and Error\nDataviz Inspiration\nFriends Don’t Let Friends Make Bad Graphs\n1 Dataset 100 Visualizations\nHow People Actually Lie With Charts\nList of Data Visualization Books"
+    "text": "Data Visualization\n\nReview of The Visual Display of Quantitative Information\nWhat Ordinary People Need Most from Information Visualization Today\nBeyond Bar and Line Graphs: Time for a New Data Presentation Paradigm\nMarket Cafe Magazine\nVisualizing the Uncertainty in Data\nFrom Data to Viz\nError Bars Considered Harmful: Exploring Alternate Encodings for Mean and Error\nDataviz Inspiration\nFriends Don’t Let Friends Make Bad Graphs\n1 Dataset 100 Visualizations\nHow People Actually Lie With Charts\nThe Mythos of Visualization Literacy\nList of Data Visualization Books"
   },
   {
     "objectID": "links.html#na",
@@ -508,6 +508,6 @@
     "href": "links.html#statistical-methodology",
     "title": "Data Science Links",
     "section": "Statistical Methodology",
-    "text": "Statistical Methodology\n\nStats Can’t Make Modeling Decisions\nCommon Statistical Tests Are Linear Models (or: How To Teach Stats)\nThe Medical Test Paradox, and Redesigning Bayes’ Rule\nBayes Rule in Odds Form\nThere Are No Magic Outcome Variables\nNever Test For Normality\nThe Shortcomings of Standardized Regression Coefficients\nSimulating Confounders, Colliders and Mediators\nGo Get the Data\nThree Advantages of Non-AI Models\nLog Transforms, Geometric Means and Estimating Population Totals\nDirected Acyclic Graphs\nStatistician’s Time Series Hack\nTell Me What You Really Want: How to Identify the Real Business Question\nFirst Time Seeing a Rare Event\nSolving for the Hidden Data\nWhat Size Is That Correlation?\nSensitivity Counts Against You\nA/B Tests for Engineers\nUsing Dimensional Analysis To Check Probability Calculations\nOutlier Detection"
+    "text": "Statistical Methodology\n\nStats Can’t Make Modeling Decisions\nThe Mythos of Model Interpretability\nCommon Statistical Tests Are Linear Models (or: How To Teach Stats)\nThe Medical Test Paradox, and Redesigning Bayes’ Rule\nBayes Rule in Odds Form\nThere Are No Magic Outcome Variables\nNever Test For Normality\nThe Shortcomings of Standardized Regression Coefficients\nSimulating Confounders, Colliders and Mediators\nGo Get the Data\nThree Advantages of Non-AI Models\nLog Transforms, Geometric Means and Estimating Population Totals\nDirected Acyclic Graphs\nStatistician’s Time Series Hack\nTell Me What You Really Want: How to Identify the Real Business Question\nFirst Time Seeing a Rare Event\nSolving for the Hidden Data\nWhat Size Is That Correlation?\nSensitivity Counts Against You\nA/B Tests for Engineers\nUsing Dimensional Analysis To Check Probability Calculations\nOutlier Detection"
   }
 ]
