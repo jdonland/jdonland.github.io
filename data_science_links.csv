@@ -28,6 +28,7 @@ A/B Tests for Engineers,https://win-vector.com/2023/10/15/a-b-tests-for-engineer
 Using Dimensional Analysis To Check Probability Calculations,https://www.johndcook.com/blog/2023/11/08/probability-dimensional-analysis/,statistical methodology,2023-11-08
 Outlier Detection,https://two-wrongs.com/outlier-detection,statistical methodology,2024-01-04
 The Mythos of Model Interpretability,https://arxiv.org/pdf/1606.03490.pdf,statistical methodology,2017-03-06
+What Good is Analysis of Variance?,https://win-vector.com/2024/02/28/what-good-is-analysis-of-variance/,statistical methodology,2024-02-28
 Review of Probability Theory: The Logic of Science,https://www.ams.org/notices/200601/rev-faris.pdf,philosophy,2006-01
 Probability That a Number Is Prime,https://www.johndcook.com/blog/2010/10/06/probability-a-number-is-prime/,philosophy,2010-10-06
 Philosophy of Probability,https://aidanlyon.com/philprob.pdf,philosophy,2009-12-30
@@ -39,7 +40,8 @@ Prior Probabilities,https://bayes.wustl.edu/etj/articles/prior.pdf,philosophy,19
 The Well-Posed Problem,https://bayes.wustl.edu/etj/articles/well.pdf,philosophy,1973
 "Monkeys, Kangaroos, and N",https://bayes.wustl.edu/etj/articles/cmonkeys.pdf,philosophy,1996
 Levels of Uncertainty,https://www.johndcook.com/blog/2013/10/23/levels-of-uncertainty/,philosophy,2013-10-23
-R. A. Fisher and the Making of Maximum Likelihood 1912‒1922,http://www.medicine.mcgill.ca/epidemiology/hanley/bios601/Likelihood/Fisher%20and%20history%20of%20mle.pdf,philosophy,1997
+R. A. Fisher and the Making of Maximum Likelihood 1912‒1922,http://www.medicine.mcgill.ca/epidemiology/hanley/bios601/Likelihood/Fisher%20and%20history%20of%20mle.pdf,history,1997
+Before p < 0.05 to Beyond p < 0.05,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6693672/,history,2019
 The Weirdest Paradox in Statistics (and Machine Learning),https://youtu.be/cUqoHQDinCM,puzzles & paradoxes,2022-08-30
 Simpson's Paradox All the Way Down,https://dynomight.net/simpsons-paradox/,puzzles & paradoxes,2020-11-16
 Bertrand's Paradox,https://www.youtube.com/watch?v=mZBwsm6B280,puzzles & paradoxes,2021-12-20
@@ -59,6 +61,7 @@ Understanding Deep Learning,https://udlbook.github.io/udlbook/,references & reso
 3Blue1Brown: Probability,https://www.3blue1brown.com/topics/probability,references & resources,2020-04-12
 "Mathematical Indroduction to Deep Learning: Methods, Implementations, and Theory",https://arxiv.org/pdf/2310.20360.pdf,references & resources,2023-10-31
 Generalized Additive Models in R,https://r.qcbs.ca/workshop08/book-en/,references & resources,2023-04-24
+An Introduction to Bayesian Thinking,https://statswithr.github.io/book/,references & resources,2022-06-15
 1 Dataset 100 Visualizations,https://100.datavizproject.com/,data visualization,2023-02-07
 How People Actually Lie With Charts,https://vdl.sci.utah.edu/blog/2023/04/17/misleading/,data visualization,2023-04-17
 From Data to Viz,https://www.data-to-viz.com/,data visualization,2018-02-19
