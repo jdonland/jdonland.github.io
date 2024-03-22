@@ -39,7 +39,7 @@
     "href": "links.html#philosophy",
     "title": "Data Science Links",
     "section": "Philosophy",
-    "text": "Philosophy\n\nPrior Probabilities\nThe Well-Posed Problem\nMonkeys, Kangaroos, and N\nReview of Probability Theory: The Logic of Science\nPhilosophy of Probability\nProbability That a Number Is Prime\nKolmogorov’s Axiomatisation and its Discontents\nLevels of Uncertainty\nPhilosophy of Statistics\nWhat Is Probability?\nCan You Have Confidence in a Confidence Interval?"
+    "text": "Philosophy\n\nPrior Probabilities\nThe Well-Posed Problem\nMonkeys, Kangaroos, and N\nStatistical Modeling: The Two Cultures\nReview of Probability Theory: The Logic of Science\nPhilosophy of Probability\nProbability That a Number Is Prime\nKolmogorov’s Axiomatisation and its Discontents\nLevels of Uncertainty\nPhilosophy of Statistics\nAbandon Statistical Significance\nWhat Is Probability?\nCan You Have Confidence in a Confidence Interval?"
   },
   {
     "objectID": "links.html#puzzles-paradoxes",
@@ -494,7 +494,7 @@
     "href": "links.html#data-visualization",
     "title": "Data Science Links",
     "section": "Data Visualization",
-    "text": "Data Visualization\n\nReview of The Visual Display of Quantitative Information\nWhat Ordinary People Need Most from Information Visualization Today\nBeyond Bar and Line Graphs: Time for a New Data Presentation Paradigm\nMarket Cafe Magazine\nVisualizing the Uncertainty in Data\nFrom Data to Viz\nError Bars Considered Harmful: Exploring Alternate Encodings for Mean and Error\nDataviz Inspiration\nFriends Don’t Let Friends Make Bad Graphs\n1 Dataset 100 Visualizations\nHow People Actually Lie With Charts\nThe Mythos of Visualization Literacy\nList of Data Visualization Books"
+    "text": "Data Visualization\n\nReview of The Visual Display of Quantitative Information\nWhat Ordinary People Need Most from Information Visualization Today\nBeyond Bar and Line Graphs: Time for a New Data Presentation Paradigm\nMarket Cafe Magazine\nVisualizing the Uncertainty in Data\nFrom Data to Viz\nError Bars Considered Harmful: Exploring Alternate Encodings for Mean and Error\nFundamentals of Data Visualization\nDataviz Inspiration\nFriends Don’t Let Friends Make Bad Graphs\n1 Dataset 100 Visualizations\nHow People Actually Lie With Charts\nThe Mythos of Visualization Literacy\nList of Data Visualization Books"
   },
   {
     "objectID": "links.html#na",

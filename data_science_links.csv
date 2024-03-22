@@ -40,6 +40,8 @@ Prior Probabilities,https://bayes.wustl.edu/etj/articles/prior.pdf,philosophy,19
 The Well-Posed Problem,https://bayes.wustl.edu/etj/articles/well.pdf,philosophy,1973
 "Monkeys, Kangaroos, and N",https://bayes.wustl.edu/etj/articles/cmonkeys.pdf,philosophy,1996
 Levels of Uncertainty,https://www.johndcook.com/blog/2013/10/23/levels-of-uncertainty/,philosophy,2013-10-23
+Statistical Modeling: The Two Cultures,https://projecteuclid.org/journals/statistical-science/volume-16/issue-3/Statistical-Modeling--The-Two-Cultures-with-comments-and-a/10.1214/ss/1009213726.full,philosophy,2001-08
+Abandon Statistical Significance,https://stat.columbia.edu/~gelman/research/unpublished/abandon.pdf,philosophy,2017-09-21
 R. A. Fisher and the Making of Maximum Likelihood 1912‒1922,http://www.medicine.mcgill.ca/epidemiology/hanley/bios601/Likelihood/Fisher%20and%20history%20of%20mle.pdf,history,1997
 Before p < 0.05 to Beyond p < 0.05,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6693672/,history,2019
 The Weirdest Paradox in Statistics (and Machine Learning),https://youtu.be/cUqoHQDinCM,puzzles & paradoxes,2022-08-30
@@ -75,3 +77,4 @@ Visualizing the Uncertainty in Data,https://flowingdata.com/2018/01/08/visualizi
 Friends Don't Let Friends Make Bad Graphs,https://github.com/cxli233/FriendsDontLetFriends,data visualization,2022-05-24
 List of Data Visualization Books,https://baryon.notion.site/880c8d8e34e34ac98895e7b35ddd2f30?v=345e3f5d773247e08ab09414dd493a33,data visualization,
 The Mythos of Visualization Literacy,https://mcorrell.medium.com/the-mythos-of-visualization-literacy-5dd02db56254,data visualization,2024-02-22
+Fundamentals of Data Visualization,https://clauswilke.com/dataviz/index.html,data visualization,2019-03-18
