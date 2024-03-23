@@ -91,7 +91,7 @@ If we imagine that the distribution of solves times within each combination of p
 
 ```{r}
 #| label: model
-#| eval: true
+#| eval: false
 #| output: false
 
 crossword_times |>
