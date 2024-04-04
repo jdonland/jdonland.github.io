@@ -24,19 +24,15 @@ A self-published dictionary of the would-be successor to Esperanto. It's somewha
 
 Another artifact from the era of peak public interest in auxiliary languages. The author followed up this essay the next year with *A Planned Auxiliary Language*, which was briefly [reviewed](https://www.nature.com/articles/161665d0) in *Nature*.
 
-## [*Tidy Modeling with R: A Framework for Modeling in the Tidyverse*](https://www.librarything.com/work/28650260/) by Max Kuhn and Julia Silge
+## [*On the Collecting of Chess Sets*](https://www.librarything.com/work/30948637/) by Holger Langer
 
-This is an O'Reilly book about the `tidymodels` framework for statistical inference and machine learning in R. I'm a bit surprised that no other users have this yet. Maybe Python is just too popular.
+I ordered this reference book for chess collectors directly from the author. Although the book is in English, it follows the continental practice of having the title run upwards on the spine.
 
-## Coffee Table Books from Iceland
+## Books from Iceland
 
 ### [*Myndlistardeild Listaháskóla Íslands: útskriftarverkefni 2022*](https://www.librarything.com/work/28625984/) by Bjarki Bragason
 
 This is the book for the 2022 graduation exhibition of the Iceland University of the Arts. I'm not surprised no one else on the site has this.
-
-### [*Erró: The Power of Images*](https://www.librarything.com/work/28239798/)
-
-Another exhibition book from Iceland, this one from an [Erró retrospective](https://listasafnreykjavikur.is/en/exhibitions/erro-power-images) at the Reykjavík Art Museum.
 
 ### [*Birgir Andrésson: In Icelandic Colours*](https://www.librarything.com/work/30854098/) by Robert Hobbs
 
@@ -53,6 +49,10 @@ A pictorial history of (and fairly compelling advertisement for) the outerwear c
 ### [*Ef ég hefði verdið ... : Reykjavík 1950-1970*](https://www.librarything.com/work/30888019/) by Nina Zurier
 
 A fictional autobiography in which the editor imagines what it would have been like to grow up in Reykjavík instead of the American Midwest by compiling material from the Reykjavík Museum of Photography.
+
+### [*The Great Haul: French Fishermen in Icelandic Waters*](https://www.librarything.com/work/31453907/) by Pétur Gunnarsson
+
+A small paperback from a museum in Fáskrúðsfjörður, a 19th century French fishing station in eastern Iceland.
 
 ### [*Saga Spilanna*](https://www.librarything.com/work/30887961/) by Guðbrandur Magnússon
 
