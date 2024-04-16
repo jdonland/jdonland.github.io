@@ -30,6 +30,7 @@ Using Dimensional Analysis To Check Probability Calculations,https://www.johndco
 Outlier Detection,https://two-wrongs.com/outlier-detection,statistical methodology,2024-01-04
 The Mythos of Model Interpretability,https://arxiv.org/pdf/1606.03490.pdf,statistical methodology,2017-03-06
 What Good is Analysis of Variance?,https://win-vector.com/2024/02/28/what-good-is-analysis-of-variance/,statistical methodology,2024-02-28
+Why Do Tree-Based Models Still Outperform Deep Learning on Tabular Data?,https://arxiv.org/abs/2207.08815,statistical methodology,2022-07-18
 Review of Probability Theory: The Logic of Science,https://www.ams.org/notices/200601/rev-faris.pdf,philosophy,2006-01
 Probability That a Number Is Prime,https://www.johndcook.com/blog/2010/10/06/probability-a-number-is-prime/,philosophy,2010-10-06
 Philosophy of Probability,https://aidanlyon.com/philprob.pdf,philosophy,2009-12-30
@@ -81,3 +82,4 @@ List of Data Visualization Books,https://baryon.notion.site/880c8d8e34e34ac98895
 The Mythos of Visualization Literacy,https://mcorrell.medium.com/the-mythos-of-visualization-literacy-5dd02db56254,data visualization,2024-02-22
 Fundamentals of Data Visualization,https://clauswilke.com/dataviz/index.html,data visualization,2019-03-18
 Scikit-learn Visualization Guide: Making Models Speak,https://www.dataleadsfuture.com/scikit-learn-visualization-guide-making-models-speak/,data visualization,2024-03-20
+A Brief History of Data Visualization,https://www.datavis.ca/papers/hbook.pdf,data visualization,2006
