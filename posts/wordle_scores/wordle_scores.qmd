@@ -194,7 +194,7 @@ temp |>
                      expand = c(0, 0)) +
   ## evil secondary axis trickery part one
   scale_y_continuous(breaks = temp$percentile,
-                     labels = scales::label_percent(),
+                     labels = scales::label_percent(accuracy = 0.1),
                      limits = c(0, 1),
                      expand = c(0, 0),
                      sec.axis = dup_axis()) +
