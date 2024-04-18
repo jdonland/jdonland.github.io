@@ -44,6 +44,7 @@ The Well-Posed Problem,https://bayes.wustl.edu/etj/articles/well.pdf,philosophy,
 Levels of Uncertainty,https://www.johndcook.com/blog/2013/10/23/levels-of-uncertainty/,philosophy,2013-10-23
 Statistical Modeling: The Two Cultures,https://projecteuclid.org/journals/statistical-science/volume-16/issue-3/Statistical-Modeling--The-Two-Cultures-with-comments-and-a/10.1214/ss/1009213726.full,philosophy,2001-08
 Abandon Statistical Significance,https://stat.columbia.edu/~gelman/research/unpublished/abandon.pdf,philosophy,2017-09-21
+Who Knows What Evil Lurks in the Hearts of Men? The Bayesian Doesn’t Care,https://blog.richmond.edu/physicsbunn/2012/01/05/who-knows-what-evil-lurks-in-the-hearts-of-men-the-bayesian-doesnt-care/,philosophy,2012-01-05
 R. A. Fisher and the Making of Maximum Likelihood 1912‒1922,http://www.medicine.mcgill.ca/epidemiology/hanley/bios601/Likelihood/Fisher%20and%20history%20of%20mle.pdf,history,1997
 Before p < 0.05 to Beyond p < 0.05,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6693672/,history,2019
 The Weirdest Paradox in Statistics (and Machine Learning),https://youtu.be/cUqoHQDinCM,puzzles & paradoxes,2022-08-30
@@ -67,6 +68,7 @@ Understanding Deep Learning,https://udlbook.github.io/udlbook/,references & reso
 Generalized Additive Models in R,https://r.qcbs.ca/workshop08/book-en/,references & resources,2023-04-24
 An Introduction to Bayesian Thinking,https://statswithr.github.io/book/,references & resources,2022-06-15
 "easystats: An R Framework for Easy Statistical Modeling, Visualization, and Reporting",https://easystats.github.io/easystats/,references & resources,2022
+Elements of Data Science,https://allendowney.github.io/ElementsOfDataScience/README.html,references & resources,2022
 1 Dataset 100 Visualizations,https://100.datavizproject.com/,data visualization,2023-02-07
 How People Actually Lie With Charts,https://vdl.sci.utah.edu/blog/2023/04/17/misleading/,data visualization,2023-04-17
 From Data to Viz,https://www.data-to-viz.com/,data visualization,2018-02-19
