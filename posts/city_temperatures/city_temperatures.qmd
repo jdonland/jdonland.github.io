@@ -153,7 +153,7 @@ The area of this plot I'm most interested in is the vertical slice around Toront
 ```{r}
 #| warning: false
 city_temps |>
-  filter(abs(avg - toronto_avg)<=1) |>
+  filter(abs(avg - toronto_avg) <=1) |>
   ggplot(aes(x = avg, y = range, label = city)) +
   geom_point(colour = "#dc2828") +
   geom_text(size = 4, nudge_x = 0.01, hjust = "left") +
