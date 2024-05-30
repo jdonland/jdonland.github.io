@@ -1,4 +1,4 @@
-Time,Publisher,Date
+time,publisher,date
 11:03,New York Times,2022-12-20
 06:07,Los Angeles Times,2022-12-20
 08:46,Los Angeles Times,2022-12-21
@@ -813,3 +813,22 @@ Time,Publisher,Date
 11:10,New Yorker,2024-05-07
 03:58,New Yorker,2024-05-08
 15:10,New York Times,2024-05-09
+28:45,New York Times,2024-05-12
+05:28,New York Times,2024-05-14
+07:24,New Yorker,2024-05-14
+08:33,Wall Street Journal,2024-05-14
+04:10,New Yorker,2024-05-15
+05:55,Los Angeles Times,2024-05-15
+16:25,New York Times,2024-05-16
+24:57,Wall Street Journal,2024-05-16
+10:26,New York Times,2024-05-17
+12:40,Los Angeles Times,2024-05-17
+16:22,New York Times,2024-05-18
+22:40,New York Times,2024-05-19
+23:08,New Yorker,2024-05-20
+07:04,New Yorker,2024-05-21
+03:50,New Yorker,2024-05-22
+09:01,New York Times,2024-05-22
+17:56,New York Times,2024-05-24
+23:41,Los Angeles Times,2024-05-26
+12:14,New York Times,2024-05-29

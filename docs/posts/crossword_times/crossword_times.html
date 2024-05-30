@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2023-01-02">
-<meta name="description" content="A consideration of cruciverbal complexity.">
 
-<title>Jesse Onland - Crossword Times</title>
+<title>Jesse Onland - Crosswords, Violin Plots, and Dubious Distinctions in Data Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -87,20 +86,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-<script src="../../site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
-<link href="../../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="../../site_libs/datatables-binding-0.30/datatables.js"></script>
-<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="../../site_libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="../../site_libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="../../site_libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
-<link href="../../site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
-<script src="../../site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -143,21 +132,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Crossword Times</h1>
-<p class="subtitle lead">With a word on density plots</p>
+<h1 class="title">Crosswords, Violin Plots, and Dubious Distinctions in Data Analysis</h1>
 </div>
 
-<div>
-  <div class="description">
-    A consideration of cruciverbal complexity.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -173,7 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 11, 2024</p>
+      <p class="date-modified">May 30, 2024</p>
     </div>
   </div>
     
@@ -182,66 +167,795 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<!-- expand references -->
 <section id="introduction" class="level2">
 <h2 data-anchor-id="introduction">Introduction</h2>
-<p><a href="https://downforacross.com/">Down For Across</a> is a website which allows you to solve user-uploaded crosswords solo or with friends.</p>
-<p>The crosswords published in major American newspapers often differ in difficulty according to the day of the week. For example, the <a href="https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle">New York Times’ guide</a> explains that their Monday puzzles are the easiest and their Saturday puzzles the hardest. Meanwhile, the Sunday puzzles have easy clues but a large grid, and the Thursday puzzles have some unique gimmick. By contrast, the New Yorker’s crosswords decrease in difficulty over the week.</p>
-<p>I’ve started keeping track of my solo completion times for the New York Times, Los Angeles Times, New Yorker, and Wall Street Journal crosswords.</p>
+<p>Data analysis comprises a broad range of practices undertaken to extract meaning, discover insights, or inform decisions on the basis of data. Within this set of practices, it’s common to draw a distinction between <em>descriptive</em> and <em>inferential</em> analysis.</p>
+<p>In this project we’ll analyze how long it takes to solve a crossword puzzle, learn why descriptive and inferential data analysis are actually inextricable from one another, and resolve a raging controversy about violin plots.</p>
 </section>
 <section id="data" class="level2">
 <h2 data-anchor-id="data">Data</h2>
-<p>I’m accustomed to thinking of the week as beginning with Sunday, but for the purposes of crossword difficulty analysis, Monday is better. We’ll convert the solve times from <code>00:00</code>-style to minutes.</p>
+<p>The crosswords published in major American newspapers differ in difficulty according to the day of the week. For example, the <a href="https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle">New York Times’ guide</a> explains that their Monday puzzles are the easiest and their Saturday puzzles the hardest. Meanwhile, the Sunday puzzles have easy clues but a large grid, and the Thursday puzzles have some unique gimmick. By contrast, the New Yorker’s Monday puzzle is their most challenging, with the difficulty mostly decreasing over the course of the week.</p>
+<p>I track how long it takes me to solve the New York Times, Los Angeles Times, New Yorker, and Wall Street Journal crosswords in a CSV file.</p>
+<!-- I'm accustomed to thinking of the week as beginning with Sunday, but for the purposes of crossword difficulty analysis, Monday is better. We'll convert the solve times from `00:00`-style to minutes. -->
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"crossword_times.csv"</span>, <span class="at">col_types =</span> <span class="st">"ccD"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(Publisher,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">day =</span> <span class="fu">factor</span>(<span class="fu">wday</span>(Date, <span class="at">week_start =</span> <span class="dv">1</span>, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)),</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">minutes =</span> <span class="fu">period_to_seconds</span>(<span class="fu">ms</span>(Time))<span class="sc">/</span><span class="dv">60</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">.keep =</span> <span class="st">"none"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">publisher =</span> Publisher) <span class="ot">-&gt;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  crossword_times</span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(publisher,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">day =</span> <span class="fu">factor</span>(<span class="fu">wday</span>(date, <span class="at">week_start =</span> <span class="dv">1</span>, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">minutes =</span> <span class="fu">period_to_seconds</span>(<span class="fu">ms</span>(time))<span class="sc">/</span><span class="dv">60</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">.keep =</span> <span class="st">"none"</span>) <span class="ot">-&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  crossword_times</span></code></pre></div>
 </div>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Table</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Summary</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+</section>
+<section id="descriptive-analysis-doesnt-exist" class="level2 page-columns page-full">
+<h2 data-anchor-id="descriptive-analysis-doesnt-exist">Descriptive Analysis Doesn’t Exist</h2>
+<p>At this point we’re ready to do “descriptive” data analysis. We can count observations, calculate so called “five-number” summaries, and so on.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>crossword_times <span class="sc">|&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">minutes =</span> <span class="fu">round</span>(minutes, <span class="dv">2</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>()</span></code></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(publisher, day) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reframe</span>(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Count =</span> <span class="fu">n</span>(),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Mean =</span> <span class="fu">mean</span>(minutes),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">fivenum</span>(minutes),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Minimum"</span>, </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>             <span class="st">"1ˢᵗ Quartile"</span>, </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Median"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>             <span class="st">"3ʳᵈ Quartile"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Maximum"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), \(x) <span class="fu">round</span>(x, <span class="dv">1</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">rowname_col =</span> <span class="st">"day"</span>, <span class="at">groupname_col =</span> <span class="st">"publisher"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Crossword Solve Times: Descriptive Statistics"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"center"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">table_body.hlines.color =</span> <span class="st">"transparent"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"#555655"</span>, <span class="at">align =</span> <span class="st">"center"</span>)), </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">list</span>(<span class="fu">cells_column_labels</span>(), <span class="fu">cells_stub</span>(), <span class="fu">cells_stubhead</span>())</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">"Source: Self-collected data"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_vertical_padding</span>(<span class="at">scale =</span> <span class="fl">0.25</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-bdb242dddf63327c169a" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-bdb242dddf63327c169a">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237","238","239","240","241","242","243","244","245","246","247","248","249","250","251","252","253","254","255","256","257","258","259","260","261","262","263","264","265","266","267","268","269","270","271","272","273","274","275","276","277","278","279","280","281","282","283","284","285","286","287","288","289","290","291","292","293","294","295","296","297","298","299","300","301","302","303","304","305","306","307","308","309","310","311","312","313","314","315","316","317","318","319","320","321","322","323","324","325","326","327","328","329","330","331","332","333","334","335","336","337","338","339","340","341","342","343","344","345","346","347","348","349","350","351","352","353","354","355","356","357","358","359","360","361","362","363","364","365","366","367","368","369","370","371","372","373","374","375","376","377","378","379","380","381","382","383","384","385","386","387","388","389","390","391","392","393","394","395","396","397","398","399","400","401","402","403","404","405","406","407","408","409","410","411","412","413","414","415","416","417","418","419","420","421","422","423","424","425","426","427","428","429","430","431","432","433","434","435","436","437","438","439","440","441","442","443","444","445","446","447","448","449","450","451","452","453","454","455","456","457","458","459","460","461","462","463","464","465","466","467","468","469","470","471","472","473","474","475","476","477","478","479","480","481","482","483","484","485","486","487","488","489","490","491","492","493","494","495","496","497","498","499","500","501","502","503","504","505","506","507","508","509","510","511","512","513","514","515","516","517","518","519","520","521","522","523","524","525","526","527","528","529","530","531","532","533","534","535","536","537","538","539","540","541","542","543","544","545","546","547","548","549","550","551","552","553","554","555","556","557","558","559","560","561","562","563","564","565","566","567","568","569","570","571","572","573","574","575","576","577","578","579","580","581","582","583","584","585","586","587","588","589","590","591","592","593","594","595","596","597","598","599","600","601","602","603","604","605","606","607","608","609","610","611","612","613","614","615","616","617","618","619","620","621","622","623","624","625","626","627","628","629","630","631","632","633","634","635","636","637","638","639","640","641","642","643","644","645","646","647","648","649","650","651","652","653","654","655","656","657","658","659","660","661","662","663","664","665","666","667","668","669","670","671","672","673","674","675","676","677","678","679","680","681","682","683","684","685","686","687","688","689","690","691","692","693","694","695","696","697","698","699","700","701","702","703","704","705","706","707","708","709","710","711","712","713","714","715","716","717","718","719","720","721","722","723","724","725","726","727","728","729","730","731","732","733","734","735","736","737","738","739","740","741","742","743","744","745","746","747","748","749","750","751","752","753","754","755","756","757","758","759","760","761","762","763","764","765","766","767","768","769","770","771","772","773","774","775","776","777","778","779","780","781","782","783","784","785","786","787","788","789","790","791","792","793","794","795","796","797","798","799","800","801","802","803","804","805","806","807","808","809","810","811","812","813","814"],["New York Times","Los Angeles Times","Los Angeles Times","New York Times","New York Times","Los Angeles Times","Los Angeles Times","New York Times","New York Times","Los Angeles Times","New York Times","Los Angeles Times","New York Times","Los Angeles Times","New York Times","Los Angeles Times","Los Angeles Times","New York Times","Los Angeles Times","New York Times","New York Times","New York Times","Los Angeles Times","Los Angeles Times","New Yorker","New Yorker","New York Times","New Yorker","New Yorker","New Yorker","New Yorker","New Yorker","New Yorker","New Yorker","Los Angeles Times","New York Times","New York Times","New Yorker","New Yorker","Los Angeles Times","New York Times","Los Angeles Times","New Yorker","New York Times","New Yorker","Los Angeles Times","Los Angeles Times","New York Times","New York Times","New Yorker","Los Angeles Times","New Yorker","New Yorker","New Yorker","New Yorker","New Yorker","Los Angeles Times","Los Angeles Times","New Yorker","New York Times","New York Times","Los Angeles Times","New Yorker","New Yorker","Los Angeles Times","New York Times","Los Angeles Times","New York Times","New Yorker","New York Times","Los Angeles Times","Los Angeles Times","New York Times","Los Angeles Times","Los Angeles Times","New York Times","Los Angeles Times","New York Times","New Yorker","New Yorker","Los Angeles Times","New York Times","New Yorker","Los Angeles Times","New York Times","New Yorker","New Yorker","Los Angeles Times","New York Times","Los Angeles Times","New York Times","New York Times","Los Angeles Times","Los Angeles Times","New York Times","New Yorker","Los Angeles Times","New York Times","New York Times","New Yorker","Los Angeles Times","New York Times","New Yorker","Los Angeles Times","New Yorker","New York Times","Los Angeles Times","New York Times","New York Times","Los Angeles Times","New Yorker","Los Angeles Times","New Yorker","New York Times","Los Angeles Times","New York Times","New York Times","Los Angeles Times","New Yorker","New York Times","Los Angeles Times","New York Times","New York Times","Los Angeles Times","New York Times","Los Angeles Times","New Yorker","New Yorker","Los Angeles Times","New York Times","Los Angeles Times","New York Times","Los Angeles Times","New Yorker","New Yorker","New York Times","Los Angeles Times","New Yorker","New York Times","Wall Street Journal","New York Times","Wall Street Journal","Los Angeles Times","New Yorker","Los Angeles Times","New Yorker","Wall Street Journal","New York Times","Los Angeles Times","New Yorker","New Yorker","New York Times","Los Angeles Times","Los Angeles Times","New York Times","Wall Street Journal","New Yorker","New Yorker","New York Times","Wall Street Journal","New York Times","New Yorker","Wall Street Journal","New York Times","Los Angeles Times","Los Angeles Times","New York Times","Wall Street Journal","New Yorker","Los Angeles Times","New Yorker","New York Times","New Yorker","Los Angeles Times","New York Times","New Yorker","Los Angeles Times","New York Times","New York Times","New Yorker","Los Angeles Times","Los Angeles Times","New Yorker","New York Times","Wall Street Journal","Wall Street Journal","Wall Street Journal","New York Times","Los Angeles Times","New Yorker","New York Times","Los Angeles Times","New Yorker","New York Times","Los Angeles Times","New Yorker","Los Angeles Times","New York Times","New Yorker","Los Angeles Times","New York Times","Los Angeles Times","New York Times","Los Angeles Times","New York Times","New York Times","Los Angeles Times","New Yorker","Wall Street Journal","New Yorker","New Yorker","New Yorker","Wall Street Journal","Los Angeles Times","New York Times","Los Angeles Times","New York Times","New York Times","Los Angeles Times","New York Times","New York Times","New Yorker","Los Angeles Times","New Yorker","Wall Street Journal","New York Times","Los Angeles Times","New York Times","New York Times","New York Times","Wall Street Journal","New York Times","Wall Street Journal","Los Angeles Times","New York Times","New Yorker","Los Angeles Times","New York Times","New York Times","Los Angeles Times","Los Angeles Times","Wall Street Journal","Wall Street Journal","Wall Street Journal","New York Times","New York Times","Los Angeles Times","New Yorker","Wall Street Journal","New Yorker","New York Times","Los Angeles Times","Wall Street Journal","New Yorker","New York Times","New York Times","Los Angeles Times","Wall Street Journal","Los Angeles Times","New Yorker","New York Times","New York Times","Los Angeles Times","New Yorker","Los Angeles Times","New Yorker","New York Times","Wall Street Journal","Los Angeles Times","New York Times","New Yorker","Wall Street Journal","Los Angeles Times","Los Angeles Times","New York Times","New York Times","Los Angeles Times","New York Times","Los Angeles Times","New York Times","Los Angeles Times","New Yorker","Los Angeles Times","New Yorker","New York Times","Los Angeles Times","New Yorker","New Yorker","New York Times","New York Times","New Yorker","Los Angeles Times","New Yorker","Wall Street Journal","Wall Street Journal","Wall Street Journal","Wall Street Journal","Wall Street Journal","New Yorker","New York Times","New York Times","New York Times","New York Times","Los Angeles Times","New York Times","New Yorker","Wall Street Journal","New York Times","New York Times","New Yorker","New York Times","Los Angeles Times","New York Times","Los Angeles Times","New Yorker","New Yorker","New York Times","New Yorker","New York Times","New Yorker","New York Times","Los Angeles Times","New Yorker","Los Angeles Times","New York Times","New York Times","New Yorker","Los Angeles Times","Los Angeles Times","New Yorker","Wall Street Journal","Wall Street Journal","New York Times","Los Angeles Times","New Yorker","Wall Street Journal","Wall Street Journal","New York Times","Los Angeles Times","New Yorker","Wall Street Journal","Los Angeles Times","New Yorker","New York Times","Los Angeles Times","Los Angeles Times","Wall Street Journal","New Yorker","New York Times","Los Angeles Times","Wall Street Journal","Los Angeles Times","New York Times","New Yorker","New York Times","Los Angeles Times","New Yorker","New Yorker","New York Times","New York Times","Los Angeles Times","New York Times","New York Times","Los Angeles Times","New Yorker","New York Times","Wall Street Journal","Los Angeles Times","New Yorker","Los Angeles Times","New York Times","Los Angeles Times","Wall Street Journal","New Yorker","New York Times","Los Angeles Times","New York Times","New Yorker","Wall Street Journal","New York Times","Los Angeles Times","New York Times","Los Angeles Times","New Yorker","Los Angeles Times","New Yorker","New York Times","Wall Street Journal","Los Angeles Times","New York Times","New Yorker","Los Angeles Times","New Yorker","New York Times","New York Times","New York Times","New Yorker","New York Times","New Yorker","New Yorker","New York Times","Los Angeles Times","New York Times","New Yorker","New York Times","New Yorker","New York Times","New Yorker","New York Times","New York Times","Los Angeles Times","New York Times","New York Times","New York Times","Los Angeles Times","New York Times","New York Times","New York Times","New Yorker","New York Times","New York Times","New York Times","Los Angeles Times","Wall Street Journal","New York Times","Los Angeles Times","New Yorker","New Yorker","New York Times","New York Times","Los Angeles Times","New York Times","Los Angeles Times","New Yorker","New York Times","Wall Street Journal","New York Times","Los Angeles Times","Wall Street Journal","New York Times","Los Angeles Times","New Yorker","New York Times","Wall Street Journal","New York Times","Los Angeles Times","Wall Street Journal","New Yorker","New York Times","Los Angeles Times","New Yorker","New York Times","New Yorker","New York Times","New Yorker","Wall Street Journal","New York Times","New Yorker","New York Times","Los Angeles Times","New York Times","New York Times","New York Times","Los Angeles Times","New York Times","Los Angeles Times","New York Times","New Yorker","New York Times","New Yorker","New York Times","New Yorker","New York Times","Los Angeles Times","Los Angeles Times","New York Times","New York Times","Los Angeles Times","New Yorker","New York Times","Los Angeles Times","New Yorker","New York Times","Los Angeles Times","New York Times","Los Angeles Times","New Yorker","New Yorker","New York Times","Los Angeles Times","New Yorker","New York Times","New York Times","New York Times","Los Angeles Times","New Yorker","Wall Street Journal","New York Times","New York Times","Los Angeles Times","New Yorker","Wall Street Journal","Wall Street Journal","Wall Street Journal","New York Times","New Yorker","Wall Street Journal","Los Angeles Times","New York Times","Los Angeles Times","Wall Street Journal","New Yorker","Los Angeles Times","New Yorker","Los Angeles Times","New York Times","Wall Street Journal","New York Times","Los Angeles Times","New Yorker","New Yorker","New York Times","Los Angeles Times","Wall Street Journal","New York Times","Los Angeles Times","New Yorker","Wall Street Journal","New Yorker","Wall Street Journal","Los Angeles Times","New York Times","New York Times","Los Angeles Times","New Yorker","New York Times","Los Angeles Times","Wall Street Journal","Los Angeles Times","New York Times","Los Angeles Times","New York Times","New Yorker","Wall Street Journal","New York Times","Los Angeles Times","Wall Street Journal","New Yorker","New York Times","Los Angeles Times","New Yorker","Wall Street Journal","New York Times","Los Angeles Times","New Yorker","Wall Street Journal","New York Times","Los Angeles Times","New Yorker","New York Times","Los Angeles Times","Wall Street Journal","New York Times","Los Angeles Times","New York Times","Los Angeles Times","New Yorker","Wall Street Journal","New York Times","Los Angeles Times","New Yorker","Wall Street Journal","New York Times","Los Angeles Times","Wall Street Journal","New Yorker","New York Times","Los Angeles Times","New Yorker","Wall Street Journal","New York Times","Los Angeles Times","New Yorker","New York Times","Los Angeles Times","Wall Street Journal","New York Times","Los Angeles Times","Wall Street Journal","New Yorker","New York Times","Wall Street Journal","Los Angeles Times","New Yorker","New York Times","Los Angeles Times","Wall Street Journal","New Yorker","New York Times","Los Angeles Times","Wall Street Journal","New Yorker","Los Angeles Times","New York Times","New York Times","Los Angeles Times","Los Angeles Times","New York Times","Los Angeles Times","New York Times","New Yorker","Los Angeles Times","New Yorker","New Yorker","New Yorker","Los Angeles Times","New York Times","New York Times","New York Times","New Yorker","New York Times","Los Angeles Times","New Yorker","New Yorker","New York Times","New York Times","New York Times","Wall Street Journal","Wall Street Journal","New York Times","Los Angeles Times","New Yorker","New York Times","New Yorker","Wall Street Journal","Los Angeles Times","New York Times","New Yorker","New York Times","Los Angeles Times","New Yorker","New Yorker","New Yorker","New York Times","New Yorker","New York Times","New Yorker","Los Angeles Times","New York Times","Los Angeles Times","New Yorker","New York Times","Wall Street Journal","Wall Street Journal","Los Angeles Times","Los Angeles Times","New Yorker","New Yorker","Los Angeles Times","New York Times","New York Times","Los Angeles Times","New York Times","Wall Street Journal","New York Times","New York Times","New York Times","New York Times","New York Times","New Yorker","Los Angeles Times","New York Times","New Yorker","New York Times","Los Angeles Times","New Yorker","New Yorker","New York Times","New Yorker","New Yorker","New York Times","New York Times","New York Times","New Yorker","New York Times","Los Angeles Times","New York Times","New Yorker","Los Angeles Times","New Yorker","New York Times","Wall Street Journal","New Yorker","New Yorker","New York Times","New Yorker","New York Times","New York Times","New York Times","New York Times","New York Times","New Yorker","New Yorker","New York Times","New York Times","New York Times","New Yorker","Los Angeles Times","New York Times","New Yorker","New York Times","Los Angeles Times","New York Times","New Yorker","New York Times","New York Times","New Yorker","Los Angeles Times","New Yorker","New York Times","New Yorker","New York Times","Los Angeles Times","New Yorker","New York Times","New York Times","New Yorker","New York Times","New Yorker","New York Times","New York Times","New Yorker","New York Times","New York Times","New York Times","New York Times","Los Angeles Times","New Yorker","New Yorker","New York Times","Los Angeles Times","New Yorker","New Yorker","New York Times","New Yorker","New York Times","New York Times","Los Angeles Times","Wall Street Journal","New York Times","New Yorker","New York Times","New York Times","New York Times","New York Times","New Yorker","Los Angeles Times","New York Times","Los Angeles Times","New Yorker","New Yorker","New York Times","New York Times","New Yorker","New York Times","New York Times","New York Times","New York Times","Los Angeles Times","Los Angeles Times","New York Times","Los Angeles Times","New Yorker","New Yorker","New York Times","New York Times","New Yorker","Los Angeles Times","New York Times","New York Times","New York Times","New York Times","New Yorker","New Yorker","Los Angeles Times","New York Times","New York Times","New York Times","New York Times","Los Angeles Times","New York Times","New York Times","New Yorker","New York Times","Los Angeles Times","Los Angeles Times","New York Times","New Yorker","New York Times","New Yorker","New York Times","Los Angeles Times","New York Times","New York Times","New York Times","New Yorker","New York Times","New Yorker","New York Times","New York Times","Los Angeles Times","New Yorker","New Yorker","New York Times"],["Tuesday","Tuesday","Wednesday","Wednesday","Thursday","Thursday","Friday","Friday","Monday","Monday","Tuesday","Tuesday","Wednesday","Wednesday","Thursday","Thursday","Friday","Sunday","Monday","Monday","Saturday","Saturday","Saturday","Tuesday","Tuesday","Wednesday","Tuesday","Tuesday","Monday","Thursday","Friday","Friday","Thursday","Thursday","Wednesday","Wednesday","Sunday","Wednesday","Monday","Saturday","Thursday","Thursday","Thursday","Friday","Friday","Friday","Saturday","Saturday","Sunday","Monday","Sunday","Wednesday","Tuesday","Thursday","Friday","Monday","Sunday","Monday","Thursday","Monday","Tuesday","Tuesday","Tuesday","Monday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Friday","Friday","Saturday","Sunday","Sunday","Monday","Monday","Tuesday","Wednesday","Monday","Tuesday","Wednesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Friday","Friday","Friday","Saturday","Saturday","Sunday","Sunday","Monday","Monday","Monday","Tuesday","Tuesday","Friday","Tuesday","Wednesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Monday","Monday","Tuesday","Tuesday","Friday","Wednesday","Wednesday","Wednesday","Thursday","Saturday","Monday","Monday","Thursday","Tuesday","Tuesday","Friday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Wednesday","Friday","Friday","Monday","Monday","Tuesday","Monday","Tuesday","Tuesday","Wednesday","Wednesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Thursday","Friday","Friday","Saturday","Monday","Monday","Monday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Friday","Friday","Friday","Saturday","Saturday","Monday","Monday","Saturday","Monday","Tuesday","Tuesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Saturday","Saturday","Friday","Friday","Sunday","Monday","Monday","Monday","Monday","Wednesday","Tuesday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Friday","Friday","Friday","Saturday","Saturday","Sunday","Monday","Monday","Tuesday","Wednesday","Wednesday","Wednesday","Wednesday","Friday","Thursday","Tuesday","Monday","Thursday","Friday","Monday","Tuesday","Monday","Tuesday","Wednesday","Thursday","Thursday","Thursday","Friday","Friday","Friday","Monday","Monday","Tuesday","Wednesday","Monday","Saturday","Tuesday","Thursday","Thursday","Thursday","Friday","Friday","Monday","Monday","Tuesday","Tuesday","Saturday","Saturday","Tuesday","Wednesday","Wednesday","Wednesday","Monday","Thursday","Friday","Friday","Friday","Friday","Sunday","Monday","Monday","Monday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Thursday","Friday","Friday","Friday","Friday","Saturday","Monday","Monday","Tuesday","Tuesday","Wednesday","Wednesday","Friday","Friday","Thursday","Monday","Friday","Monday","Tuesday","Tuesday","Monday","Tuesday","Wednesday","Wednesday","Thursday","Thursday","Tuesday","Monday","Thursday","Wednesday","Friday","Friday","Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday","Thursday","Thursday","Friday","Tuesday","Friday","Monday","Monday","Tuesday","Tuesday","Monday","Tuesday","Wednesday","Wednesday","Thursday","Thursday","Friday","Friday","Friday","Saturday","Sunday","Monday","Monday","Monday","Tuesday","Tuesday","Monday","Friday","Wednesday","Wednesday","Wednesday","Saturday","Saturday","Thursday","Thursday","Thursday","Thursday","Friday","Friday","Monday","Monday","Saturday","Monday","Tuesday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Friday","Monday","Sunday","Monday","Monday","Tuesday","Tuesday","Wednesday","Thursday","Wednesday","Thursday","Thursday","Friday","Monday","Monday","Monday","Friday","Wednesday","Tuesday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Friday","Friday","Saturday","Saturday","Monday","Monday","Thursday","Thursday","Friday","Monday","Tuesday","Wednesday","Friday","Wednesday","Wednesday","Thursday","Monday","Monday","Tuesday","Wednesday","Thursday","Thursday","Friday","Friday","Saturday","Monday","Monday","Tuesday","Thursday","Monday","Monday","Tuesday","Wednesday","Thursday","Thursday","Sunday","Monday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Friday","Thursday","Friday","Monday","Monday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Friday","Friday","Friday","Saturday","Friday","Monday","Monday","Monday","Monday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Friday","Wednesday","Monday","Monday","Tuesday","Wednesday","Monday","Tuesday","Tuesday","Wednesday","Wednesday","Wednesday","Thursday","Thursday","Friday","Friday","Saturday","Saturday","Friday","Sunday","Monday","Monday","Monday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Friday","Sunday","Sunday","Monday","Monday","Sunday","Wednesday","Wednesday","Friday","Saturday","Saturday","Monday","Monday","Monday","Monday","Friday","Saturday","Tuesday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Wednesday","Thursday","Friday","Friday","Saturday","Saturday","Saturday","Monday","Monday","Monday","Tuesday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Thursday","Friday","Friday","Friday","Saturday","Saturday","Saturday","Sunday","Sunday","Monday","Monday","Monday","Monday","Tuesday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Thursday","Friday","Friday","Friday","Saturday","Saturday","Saturday","Sunday","Sunday","Monday","Monday","Monday","Monday","Tuesday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Thursday","Friday","Friday","Friday","Friday","Saturday","Saturday","Monday","Monday","Monday","Monday","Tuesday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Friday","Friday","Saturday","Sunday","Sunday","Saturday","Monday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Thursday","Friday","Saturday","Friday","Monday","Wednesday","Friday","Monday","Tuesday","Wednesday","Thursday","Tuesday","Friday","Thursday","Monday","Tuesday","Monday","Monday","Monday","Tuesday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Monday","Tuesday","Wednesday","Wednesday","Thursday","Thursday","Thursday","Friday","Friday","Friday","Monday","Monday","Tuesday","Monday","Tuesday","Thursday","Friday","Saturday","Saturday","Sunday","Monday","Monday","Monday","Tuesday","Wednesday","Monday","Tuesday","Monday","Thursday","Monday","Tuesday","Thursday","Thursday","Thursday","Friday","Monday","Wednesday","Wednesday","Friday","Saturday","Sunday","Monday","Friday","Saturday","Monday","Tuesday","Tuesday","Wednesday","Wednesday","Monday","Monday","Wednesday","Thursday","Friday","Wednesday","Wednesday","Thursday","Friday","Saturday","Sunday","Tuesday","Wednesday","Friday","Saturday","Sunday","Monday","Tuesday","Tuesday","Tuesday","Wednesday","Wednesday","Thursday","Friday","Saturday","Monday","Monday","Monday","Tuesday","Tuesday","Wednesday","Wednesday","Thursday","Thursday","Saturday","Sunday","Monday","Monday","Wednesday","Wednesday","Thursday","Friday","Friday","Saturday","Sunday","Monday","Monday","Monday","Tuesday","Tuesday","Tuesday","Wednesday","Thursday","Thursday","Friday","Friday","Saturday","Saturday","Saturday","Sunday","Monday","Monday","Tuesday","Friday","Thursday","Wednesday","Friday","Saturday","Monday","Monday","Tuesday","Tuesday","Wednesday","Wednesday","Friday","Thursday","Saturday","Sunday","Sunday","Friday","Monday","Monday","Monday","Tuesday","Tuesday","Wednesday","Wednesday","Wednesday","Thursday","Friday","Sunday","Tuesday","Tuesday","Wednesday","Wednesday","Wednesday","Thursday","Friday","Monday","Monday","Tuesday","Tuesday","Tuesday","Saturday","Saturday","Sunday","Monday","Tuesday","Wednesday","Wednesday","Thursday","Thursday","Friday","Saturday","Monday","Tuesday","Tuesday","Wednesday","Wednesday","Thursday","Thursday","Tuesday","Wednesday","Thursday"],[11.05,6.12,8.77,21.87,14.37,15.72,18.65,21.68,8.550000000000001,7.28,7.38,10.45,12.42,7.45,17.5,20.57,7.52,29.22,5.97,5,17.33,36.6,14.08,10.08,12.87,9.949999999999999,5.4,15.55,19.35,7.7,7.6,9.57,5.37,4.97,8.32,11.62,35.97,7.2,32.65,14.65,38.4,10.45,5.27,25.57,22.03,17.33,17.1,18.45,60.87,64.88,38.13,7.95,16.93,4.52,9.699999999999999,20.62,22.55,6.23,4.88,5.77,7.37,8.75,14.93,22.02,8.199999999999999,26.93,17.55,14.35,5.23,47.92,21.82,18.25,41.33,27.43,5.77,5.22,7.47,7.43,38.73,12.42,7.87,6.83,12.57,17.62,19.02,5.87,9.619999999999999,17.78,13.27,31.82,34.58,47.47,24.08,8.67,7.82,37.08,12.33,7.13,54.53,16.48,8.08,12.9,13.78,12.53,8.98,21.78,5.4,6.63,7.23,7.63,11.6,8.130000000000001,13.92,17.58,10.73,21.87,6.7,7.53,6.18,7.43,7.85,17.18,13.62,9.77,17.35,17.2,8.199999999999999,20.6,29.2,28.8,6.43,5.15,10.43,49.97,13.57,6.2,9.83,12.33,12.08,19.18,23.85,19.13,10.33,7.22,24.13,10.23,46.7,4.92,7.67,20.27,15.88,10.48,7.4,8.220000000000001,7.28,11.48,11.15,6.43,20.32,14.8,19.48,6.57,12.75,56.42,20.8,6.3,4.78,34.42,39.4,7.12,20.82,10.28,7.62,7.9,22.93,7.7,22.33,34.37,39.17,28.03,40.97,7.88,37.23,7.62,5.63,14,10.57,8.630000000000001,8.800000000000001,17.73,13.35,10.98,6.75,21.37,10.18,6.33,11.7,21.13,10.95,45.35,41.42,27.27,5.95,7.45,10.87,15.58,9.5,12.45,15.5,11.12,5.15,31.03,8.65,35.63,17.62,5.75,9.73,4.68,6.05,18.53,28.12,4.7,6.38,15.47,18.52,16.35,5.8,5.9,9.17,7.52,5.47,31.42,9.52,11.47,25.55,4.1,13.28,39.47,6.42,5.62,6.52,10.42,33.92,42.6,6.57,12,20.23,9.67,9.800000000000001,5.37,26.02,9.300000000000001,27.5,16.05,22.6,5.95,4.83,7.38,7.42,21.6,5.97,13.53,10.72,14.05,11.28,5.23,28.22,19.32,17.97,20.03,15.88,15.22,32.73,5.13,4.93,6.68,7.7,10.93,11.1,11.03,12,8.550000000000001,6.28,9.98,5.85,7.97,26.53,38.93,8.220000000000001,13,5.43,12.1,5.7,11.33,5.98,12.4,8.77,14.27,11.15,65.58,43.92,6.28,10.45,12.87,40,5.38,9.119999999999999,24.77,7.38,15.55,5.93,5.45,7.68,6.12,57.73,13.52,8.380000000000001,10.1,19.9,6.23,22.03,17.72,15.72,41.08,34.9,5.42,24.65,6.25,8.9,12.75,5.77,9.48,17.8,7.52,6.52,23.08,27.68,28.5,7.32,5.12,21.2,10.12,26.47,6.6,10.75,23.87,7.27,37.25,6.35,7.73,12.87,11.7,9.33,13.73,19.23,10.97,5.65,21.08,8.699999999999999,41.33,6.22,4.08,6.53,7.7,14.05,24.52,22.22,11.22,6,22.23,5.1,6.28,4.62,7.87,7.27,7.6,6.48,16.1,10.88,9.880000000000001,6.37,13.93,11.5,4.33,12.83,5.88,29.38,37.93,9.02,6.7,6.65,13.85,23.12,5.18,9.779999999999999,11,14.43,5.33,10.17,5.55,4.47,5.18,5.3,9.630000000000001,10.85,5.15,12.7,13.95,16.95,7.47,8.369999999999999,9.1,15.5,6.5,5.85,6.45,8.23,15.02,5.38,25.15,4.22,6.77,7.37,8.050000000000001,8.130000000000001,7.02,9.93,4.07,18.95,3.77,6.88,7.27,5.78,15.17,9.82,18.95,29.88,13.32,26.83,12.03,7.02,15,10.53,17.65,4.97,4.92,9.029999999999999,31.17,5,8.279999999999999,19.35,12.03,14.27,23,6.32,19.92,18.72,7.53,5.65,6.12,6.37,14.15,6.05,7.82,7.88,7.67,11.7,6.28,16.2,4.8,8.77,7.6,37.97,14.93,13.4,26.05,4.83,7.77,23.72,12.08,8.52,9.199999999999999,8.07,7.58,16.55,9.029999999999999,4.3,12.08,50.83,24.85,29.68,4.08,67.97,8.970000000000001,4.65,8.119999999999999,23.42,29.3,4.95,5.7,20.75,4.28,15.97,32.63,8.5,9.33,6,6.67,16.65,7.05,12.35,4.3,8.800000000000001,8.58,13.18,33.03,31.58,3.73,7.07,23.7,14.43,4.97,9.130000000000001,6.35,7.18,6.8,8.43,13.77,5.32,20.22,6.02,29.58,13.58,10.98,7.57,31.05,23.07,33.08,26.75,35.27,4.98,3.93,27.08,5.88,8.18,4.62,11.9,12.97,9.67,6.17,9.58,10.03,19.1,17.42,4.52,14.55,19.58,13.67,18.02,31.78,22.28,15.92,37.95,28.12,5.17,6.15,17.83,5.93,7.12,5.53,10.63,7,10.05,13.95,11.32,8.619999999999999,13.83,8.949999999999999,4.9,13.37,19.87,12.32,9.6,23.72,18.35,26.98,4.7,4.5,8.27,21.45,6.92,6.15,7.62,11.55,14.5,9.949999999999999,8.779999999999999,14.68,15.37,9.5,16.97,11.17,14.73,25.52,39.1,19.82,15.8,5.07,7.05,8.630000000000001,34.85,6.38,7.92,6.52,6.58,33.4,19.67,5.08,14.23,10.62,6.98,5.9,11.28,4.97,8.67,21.63,18.75,6.02,5.78,6.1,5.9,26,5.32,11.5,7.03,5.75,10.75,5.12,21.73,9.33,5.73,30.22,27.38,16.6,11.82,18.83,4.53,14.02,33.95,12.82,13.27,4.87,8.15,13.03,5.32,6.63,6.75,7.97,28.12,17.02,25.03,4.35,6.42,6.4,12.27,13.63,4.7,7.87,4.8,4.53,5.73,8.529999999999999,6.25,13.07,11.28,9.77,16.83,13.33,5.53,5.47,9.92,24.8,4.88,8.82,11.07,7,7.35,11.38,7.63,6.35,5.67,6.62,7,4.98,33.78,10.87,14.65,16.43,25.77,26.15,30.05,11.17,7.8,10.83,12.37,24.22,16.37,7.33,7.78,10.05,7.75,7.83,20.08,7.03,25.3,5.13,45.78,5.75,14.38,4.57,7.58,7.2,7.15,4.8,26.98,68.65000000000001,40.67,4.72,9.6,12.22,19.93,8.42,33.82,23.25,24.07,6.67,5.72,17.58,12.22,7.12,6.08,4.97,5.4,9.4,7.22,21.82,14.27,10.78,30.35,25.77,17.52,4.47,7.47,16.67,17.08,4.75,18.78,23.67,4.15,14.87,11.27,8.720000000000001,9.699999999999999,4.37,11.07,27.08,39.35,26.1,16.93,13.55,6.7,6.78,19.9,9.33,8.93,9.869999999999999,4.88,10.4,18,17.3,29.9,6,11.2,4.15,5.73,11.4,23.27,30.7,5.23,5.8,16.55,7.37,9.630000000000001,22.52,32.35,34.63,6.38,12.75,14.1,3.98,18.08,8.25,13.55,15.9,5.63,9.43,7.52,3.95,12.75,18,7.45,11.17,3.97,15.17]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>publisher<\/th>\n      <th>day<\/th>\n      <th>minutes<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div id="nyrpgqzdkc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nyrpgqzdkc table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#nyrpgqzdkc thead, #nyrpgqzdkc tbody, #nyrpgqzdkc tfoot, #nyrpgqzdkc tr, #nyrpgqzdkc td, #nyrpgqzdkc th {
+  border-style: none;
+}
+
+#nyrpgqzdkc p {
+  margin: 0;
+  padding: 0;
+}
+
+#nyrpgqzdkc .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#nyrpgqzdkc .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#nyrpgqzdkc .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#nyrpgqzdkc .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#nyrpgqzdkc .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nyrpgqzdkc .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nyrpgqzdkc .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nyrpgqzdkc .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 1.25px;
+  padding-bottom: 2.25px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#nyrpgqzdkc .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#nyrpgqzdkc .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#nyrpgqzdkc .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#nyrpgqzdkc .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 1.25px;
+  padding-bottom: 1.25px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#nyrpgqzdkc .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#nyrpgqzdkc .gt_group_heading {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#nyrpgqzdkc .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#nyrpgqzdkc .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#nyrpgqzdkc .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#nyrpgqzdkc .gt_row {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(255, 255, 255, 0);
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#nyrpgqzdkc .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nyrpgqzdkc .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#nyrpgqzdkc .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#nyrpgqzdkc .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#nyrpgqzdkc .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nyrpgqzdkc .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#nyrpgqzdkc .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#nyrpgqzdkc .gt_last_summary_row {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nyrpgqzdkc .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nyrpgqzdkc .gt_first_grand_summary_row {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#nyrpgqzdkc .gt_last_grand_summary_row_top {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nyrpgqzdkc .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#nyrpgqzdkc .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nyrpgqzdkc .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nyrpgqzdkc .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nyrpgqzdkc .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nyrpgqzdkc .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nyrpgqzdkc .gt_left {
+  text-align: left;
+}
+
+#nyrpgqzdkc .gt_center {
+  text-align: center;
+}
+
+#nyrpgqzdkc .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#nyrpgqzdkc .gt_font_normal {
+  font-weight: normal;
+}
+
+#nyrpgqzdkc .gt_font_bold {
+  font-weight: bold;
+}
+
+#nyrpgqzdkc .gt_font_italic {
+  font-style: italic;
+}
+
+#nyrpgqzdkc .gt_super {
+  font-size: 65%;
+}
+
+#nyrpgqzdkc .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#nyrpgqzdkc .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#nyrpgqzdkc .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#nyrpgqzdkc .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#nyrpgqzdkc .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#nyrpgqzdkc .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#nyrpgqzdkc .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="">Crossword Solve Times: Descriptive Statistics</td>
+    </tr>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #555655; text-align: center;" scope="col" id=""></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #555655; text-align: center;" scope="col" id="Count">Count</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #555655; text-align: center;" scope="col" id="Mean">Mean</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #555655; text-align: center;" scope="col" id="Minimum">Minimum</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #555655; text-align: center;" scope="col" id="1ˢᵗ Quartile">1ˢᵗ Quartile</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #555655; text-align: center;" scope="col" id="Median">Median</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #555655; text-align: center;" scope="col" id="3ʳᵈ Quartile">3ʳᵈ Quartile</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #555655; text-align: center;" scope="col" id="Maximum">Maximum</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <th colspan="8" class="gt_group_heading" scope="colgroup" id="Los Angeles Times">Los Angeles Times</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_1" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Monday</th>
+<td headers="Los Angeles Times stub_1_1 Count" class="gt_row gt_right">46</td>
+<td headers="Los Angeles Times stub_1_1 Mean" class="gt_row gt_right">6.3</td>
+<td headers="Los Angeles Times stub_1_1 Minimum" class="gt_row gt_right">4.2</td>
+<td headers="Los Angeles Times stub_1_1 1ˢᵗ Quartile" class="gt_row gt_right">5.6</td>
+<td headers="Los Angeles Times stub_1_1 Median" class="gt_row gt_right">6.0</td>
+<td headers="Los Angeles Times stub_1_1 3ʳᵈ Quartile" class="gt_row gt_right">7.0</td>
+<td headers="Los Angeles Times stub_1_1 Maximum" class="gt_row gt_right">10.8</td></tr>
+    <tr><th id="stub_1_2" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Tuesday</th>
+<td headers="Los Angeles Times stub_1_2 Count" class="gt_row gt_right">38</td>
+<td headers="Los Angeles Times stub_1_2 Mean" class="gt_row gt_right">7.6</td>
+<td headers="Los Angeles Times stub_1_2 Minimum" class="gt_row gt_right">4.6</td>
+<td headers="Los Angeles Times stub_1_2 1ˢᵗ Quartile" class="gt_row gt_right">6.5</td>
+<td headers="Los Angeles Times stub_1_2 Median" class="gt_row gt_right">7.5</td>
+<td headers="Los Angeles Times stub_1_2 3ʳᵈ Quartile" class="gt_row gt_right">8.3</td>
+<td headers="Los Angeles Times stub_1_2 Maximum" class="gt_row gt_right">12.3</td></tr>
+    <tr><th id="stub_1_3" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Wednesday</th>
+<td headers="Los Angeles Times stub_1_3 Count" class="gt_row gt_right">34</td>
+<td headers="Los Angeles Times stub_1_3 Mean" class="gt_row gt_right">8.8</td>
+<td headers="Los Angeles Times stub_1_3 Minimum" class="gt_row gt_right">4.7</td>
+<td headers="Los Angeles Times stub_1_3 1ˢᵗ Quartile" class="gt_row gt_right">7.0</td>
+<td headers="Los Angeles Times stub_1_3 Median" class="gt_row gt_right">8.1</td>
+<td headers="Los Angeles Times stub_1_3 3ʳᵈ Quartile" class="gt_row gt_right">9.9</td>
+<td headers="Los Angeles Times stub_1_3 Maximum" class="gt_row gt_right">20.2</td></tr>
+    <tr><th id="stub_1_4" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Thursday</th>
+<td headers="Los Angeles Times stub_1_4 Count" class="gt_row gt_right">33</td>
+<td headers="Los Angeles Times stub_1_4 Mean" class="gt_row gt_right">12.2</td>
+<td headers="Los Angeles Times stub_1_4 Minimum" class="gt_row gt_right">6.0</td>
+<td headers="Los Angeles Times stub_1_4 1ˢᵗ Quartile" class="gt_row gt_right">9.0</td>
+<td headers="Los Angeles Times stub_1_4 Median" class="gt_row gt_right">11.2</td>
+<td headers="Los Angeles Times stub_1_4 3ʳᵈ Quartile" class="gt_row gt_right">13.8</td>
+<td headers="Los Angeles Times stub_1_4 Maximum" class="gt_row gt_right">35.6</td></tr>
+    <tr><th id="stub_1_5" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Friday</th>
+<td headers="Los Angeles Times stub_1_5 Count" class="gt_row gt_right">27</td>
+<td headers="Los Angeles Times stub_1_5 Mean" class="gt_row gt_right">14.9</td>
+<td headers="Los Angeles Times stub_1_5 Minimum" class="gt_row gt_right">7.0</td>
+<td headers="Los Angeles Times stub_1_5 1ˢᵗ Quartile" class="gt_row gt_right">11.8</td>
+<td headers="Los Angeles Times stub_1_5 Median" class="gt_row gt_right">13.4</td>
+<td headers="Los Angeles Times stub_1_5 3ʳᵈ Quartile" class="gt_row gt_right">17.9</td>
+<td headers="Los Angeles Times stub_1_5 Maximum" class="gt_row gt_right">29.2</td></tr>
+    <tr><th id="stub_1_6" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Saturday</th>
+<td headers="Los Angeles Times stub_1_6 Count" class="gt_row gt_right">21</td>
+<td headers="Los Angeles Times stub_1_6 Mean" class="gt_row gt_right">23.5</td>
+<td headers="Los Angeles Times stub_1_6 Minimum" class="gt_row gt_right">10.8</td>
+<td headers="Los Angeles Times stub_1_6 1ˢᵗ Quartile" class="gt_row gt_right">15.8</td>
+<td headers="Los Angeles Times stub_1_6 Median" class="gt_row gt_right">22.3</td>
+<td headers="Los Angeles Times stub_1_6 3ʳᵈ Quartile" class="gt_row gt_right">31.8</td>
+<td headers="Los Angeles Times stub_1_6 Maximum" class="gt_row gt_right">45.4</td></tr>
+    <tr><th id="stub_1_7" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Sunday</th>
+<td headers="Los Angeles Times stub_1_7 Count" class="gt_row gt_right">13</td>
+<td headers="Los Angeles Times stub_1_7 Mean" class="gt_row gt_right">27.3</td>
+<td headers="Los Angeles Times stub_1_7 Minimum" class="gt_row gt_right">16.9</td>
+<td headers="Los Angeles Times stub_1_7 1ˢᵗ Quartile" class="gt_row gt_right">23.7</td>
+<td headers="Los Angeles Times stub_1_7 Median" class="gt_row gt_right">26.8</td>
+<td headers="Los Angeles Times stub_1_7 3ʳᵈ Quartile" class="gt_row gt_right">28.1</td>
+<td headers="Los Angeles Times stub_1_7 Maximum" class="gt_row gt_right">41.0</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="8" class="gt_group_heading" scope="colgroup" id="New York Times">New York Times</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_8" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Monday</th>
+<td headers="New York Times stub_1_8 Count" class="gt_row gt_right">60</td>
+<td headers="New York Times stub_1_8 Mean" class="gt_row gt_right">5.6</td>
+<td headers="New York Times stub_1_8 Minimum" class="gt_row gt_right">3.7</td>
+<td headers="New York Times stub_1_8 1ˢᵗ Quartile" class="gt_row gt_right">4.8</td>
+<td headers="New York Times stub_1_8 Median" class="gt_row gt_right">5.2</td>
+<td headers="New York Times stub_1_8 3ʳᵈ Quartile" class="gt_row gt_right">6.4</td>
+<td headers="New York Times stub_1_8 Maximum" class="gt_row gt_right">8.7</td></tr>
+    <tr><th id="stub_1_9" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Tuesday</th>
+<td headers="New York Times stub_1_9 Count" class="gt_row gt_right">56</td>
+<td headers="New York Times stub_1_9 Mean" class="gt_row gt_right">7.8</td>
+<td headers="New York Times stub_1_9 Minimum" class="gt_row gt_right">4.6</td>
+<td headers="New York Times stub_1_9 1ˢᵗ Quartile" class="gt_row gt_right">6.5</td>
+<td headers="New York Times stub_1_9 Median" class="gt_row gt_right">7.4</td>
+<td headers="New York Times stub_1_9 3ʳᵈ Quartile" class="gt_row gt_right">8.6</td>
+<td headers="New York Times stub_1_9 Maximum" class="gt_row gt_right">16.6</td></tr>
+    <tr><th id="stub_1_10" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Wednesday</th>
+<td headers="New York Times stub_1_10 Count" class="gt_row gt_right">56</td>
+<td headers="New York Times stub_1_10 Mean" class="gt_row gt_right">11.8</td>
+<td headers="New York Times stub_1_10 Minimum" class="gt_row gt_right">5.3</td>
+<td headers="New York Times stub_1_10 1ˢᵗ Quartile" class="gt_row gt_right">9.0</td>
+<td headers="New York Times stub_1_10 Median" class="gt_row gt_right">11.7</td>
+<td headers="New York Times stub_1_10 3ʳᵈ Quartile" class="gt_row gt_right">13.6</td>
+<td headers="New York Times stub_1_10 Maximum" class="gt_row gt_right">26.9</td></tr>
+    <tr><th id="stub_1_11" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Thursday</th>
+<td headers="New York Times stub_1_11 Count" class="gt_row gt_right">47</td>
+<td headers="New York Times stub_1_11 Mean" class="gt_row gt_right">20.3</td>
+<td headers="New York Times stub_1_11 Minimum" class="gt_row gt_right">9.4</td>
+<td headers="New York Times stub_1_11 1ˢᵗ Quartile" class="gt_row gt_right">16.3</td>
+<td headers="New York Times stub_1_11 Median" class="gt_row gt_right">19.0</td>
+<td headers="New York Times stub_1_11 3ʳᵈ Quartile" class="gt_row gt_right">23.1</td>
+<td headers="New York Times stub_1_11 Maximum" class="gt_row gt_right">40.0</td></tr>
+    <tr><th id="stub_1_12" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Friday</th>
+<td headers="New York Times stub_1_12 Count" class="gt_row gt_right">42</td>
+<td headers="New York Times stub_1_12 Mean" class="gt_row gt_right">22.2</td>
+<td headers="New York Times stub_1_12 Minimum" class="gt_row gt_right">8.8</td>
+<td headers="New York Times stub_1_12 1ˢᵗ Quartile" class="gt_row gt_right">16.4</td>
+<td headers="New York Times stub_1_12 Median" class="gt_row gt_right">19.8</td>
+<td headers="New York Times stub_1_12 3ʳᵈ Quartile" class="gt_row gt_right">25.8</td>
+<td headers="New York Times stub_1_12 Maximum" class="gt_row gt_right">54.5</td></tr>
+    <tr><th id="stub_1_13" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Saturday</th>
+<td headers="New York Times stub_1_13 Count" class="gt_row gt_right">33</td>
+<td headers="New York Times stub_1_13 Mean" class="gt_row gt_right">26.9</td>
+<td headers="New York Times stub_1_13 Minimum" class="gt_row gt_right">9.9</td>
+<td headers="New York Times stub_1_13 1ˢᵗ Quartile" class="gt_row gt_right">17.0</td>
+<td headers="New York Times stub_1_13 Median" class="gt_row gt_right">25.5</td>
+<td headers="New York Times stub_1_13 3ʳᵈ Quartile" class="gt_row gt_right">33.0</td>
+<td headers="New York Times stub_1_13 Maximum" class="gt_row gt_right">65.6</td></tr>
+    <tr><th id="stub_1_14" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Sunday</th>
+<td headers="New York Times stub_1_14 Count" class="gt_row gt_right">27</td>
+<td headers="New York Times stub_1_14 Mean" class="gt_row gt_right">35.9</td>
+<td headers="New York Times stub_1_14 Minimum" class="gt_row gt_right">22.6</td>
+<td headers="New York Times stub_1_14 1ˢᵗ Quartile" class="gt_row gt_right">25.5</td>
+<td headers="New York Times stub_1_14 Median" class="gt_row gt_right">30.0</td>
+<td headers="New York Times stub_1_14 3ʳᵈ Quartile" class="gt_row gt_right">41.3</td>
+<td headers="New York Times stub_1_14 Maximum" class="gt_row gt_right">68.7</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="8" class="gt_group_heading" scope="colgroup" id="New Yorker">New Yorker</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_15" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Monday</th>
+<td headers="New Yorker stub_1_15 Count" class="gt_row gt_right">33</td>
+<td headers="New Yorker stub_1_15 Mean" class="gt_row gt_right">29.3</td>
+<td headers="New Yorker stub_1_15 Minimum" class="gt_row gt_right">14.9</td>
+<td headers="New Yorker stub_1_15 1ˢᵗ Quartile" class="gt_row gt_right">20.3</td>
+<td headers="New Yorker stub_1_15 Median" class="gt_row gt_right">24.6</td>
+<td headers="New Yorker stub_1_15 3ʳᵈ Quartile" class="gt_row gt_right">37.2</td>
+<td headers="New Yorker stub_1_15 Maximum" class="gt_row gt_right">64.9</td></tr>
+    <tr><th id="stub_1_16" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Tuesday</th>
+<td headers="New Yorker stub_1_16 Count" class="gt_row gt_right">42</td>
+<td headers="New Yorker stub_1_16 Mean" class="gt_row gt_right">15.3</td>
+<td headers="New Yorker stub_1_16 Minimum" class="gt_row gt_right">7.1</td>
+<td headers="New Yorker stub_1_16 1ˢᵗ Quartile" class="gt_row gt_right">11.2</td>
+<td headers="New Yorker stub_1_16 Median" class="gt_row gt_right">12.9</td>
+<td headers="New Yorker stub_1_16 3ʳᵈ Quartile" class="gt_row gt_right">16.5</td>
+<td headers="New Yorker stub_1_16 Maximum" class="gt_row gt_right">37.2</td></tr>
+    <tr><th id="stub_1_17" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Wednesday</th>
+<td headers="New Yorker stub_1_17 Count" class="gt_row gt_right">49</td>
+<td headers="New Yorker stub_1_17 Mean" class="gt_row gt_right">8.8</td>
+<td headers="New Yorker stub_1_17 Minimum" class="gt_row gt_right">3.8</td>
+<td headers="New Yorker stub_1_17 1ˢᵗ Quartile" class="gt_row gt_right">5.5</td>
+<td headers="New Yorker stub_1_17 Median" class="gt_row gt_right">8.0</td>
+<td headers="New Yorker stub_1_17 3ʳᵈ Quartile" class="gt_row gt_right">11.3</td>
+<td headers="New Yorker stub_1_17 Maximum" class="gt_row gt_right">20.6</td></tr>
+    <tr><th id="stub_1_18" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Thursday</th>
+<td headers="New Yorker stub_1_18 Count" class="gt_row gt_right">50</td>
+<td headers="New Yorker stub_1_18 Mean" class="gt_row gt_right">5.6</td>
+<td headers="New Yorker stub_1_18 Minimum" class="gt_row gt_right">4.1</td>
+<td headers="New Yorker stub_1_18 1ˢᵗ Quartile" class="gt_row gt_right">4.9</td>
+<td headers="New Yorker stub_1_18 Median" class="gt_row gt_right">5.4</td>
+<td headers="New Yorker stub_1_18 3ʳᵈ Quartile" class="gt_row gt_right">6.2</td>
+<td headers="New Yorker stub_1_18 Maximum" class="gt_row gt_right">9.0</td></tr>
+    <tr><th id="stub_1_19" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Friday</th>
+<td headers="New Yorker stub_1_19 Count" class="gt_row gt_right">45</td>
+<td headers="New Yorker stub_1_19 Mean" class="gt_row gt_right">12.1</td>
+<td headers="New Yorker stub_1_19 Minimum" class="gt_row gt_right">5.5</td>
+<td headers="New Yorker stub_1_19 1ˢᵗ Quartile" class="gt_row gt_right">8.1</td>
+<td headers="New Yorker stub_1_19 Median" class="gt_row gt_right">10.2</td>
+<td headers="New Yorker stub_1_19 3ʳᵈ Quartile" class="gt_row gt_right">15.0</td>
+<td headers="New Yorker stub_1_19 Maximum" class="gt_row gt_right">28.0</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="8" class="gt_group_heading" scope="colgroup" id="Wall Street Journal">Wall Street Journal</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_20" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Monday</th>
+<td headers="Wall Street Journal stub_1_20 Count" class="gt_row gt_right">18</td>
+<td headers="Wall Street Journal stub_1_20 Mean" class="gt_row gt_right">6.7</td>
+<td headers="Wall Street Journal stub_1_20 Minimum" class="gt_row gt_right">4.3</td>
+<td headers="Wall Street Journal stub_1_20 1ˢᵗ Quartile" class="gt_row gt_right">5.8</td>
+<td headers="Wall Street Journal stub_1_20 Median" class="gt_row gt_right">6.2</td>
+<td headers="Wall Street Journal stub_1_20 3ʳᵈ Quartile" class="gt_row gt_right">8.2</td>
+<td headers="Wall Street Journal stub_1_20 Maximum" class="gt_row gt_right">9.8</td></tr>
+    <tr><th id="stub_1_21" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Tuesday</th>
+<td headers="Wall Street Journal stub_1_21 Count" class="gt_row gt_right">16</td>
+<td headers="Wall Street Journal stub_1_21 Mean" class="gt_row gt_right">9.1</td>
+<td headers="Wall Street Journal stub_1_21 Minimum" class="gt_row gt_right">5.8</td>
+<td headers="Wall Street Journal stub_1_21 1ˢᵗ Quartile" class="gt_row gt_right">6.7</td>
+<td headers="Wall Street Journal stub_1_21 Median" class="gt_row gt_right">9.0</td>
+<td headers="Wall Street Journal stub_1_21 3ʳᵈ Quartile" class="gt_row gt_right">11.1</td>
+<td headers="Wall Street Journal stub_1_21 Maximum" class="gt_row gt_right">13.0</td></tr>
+    <tr><th id="stub_1_22" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Wednesday</th>
+<td headers="Wall Street Journal stub_1_22 Count" class="gt_row gt_right">12</td>
+<td headers="Wall Street Journal stub_1_22 Mean" class="gt_row gt_right">13.9</td>
+<td headers="Wall Street Journal stub_1_22 Minimum" class="gt_row gt_right">8.8</td>
+<td headers="Wall Street Journal stub_1_22 1ˢᵗ Quartile" class="gt_row gt_right">10.7</td>
+<td headers="Wall Street Journal stub_1_22 Median" class="gt_row gt_right">13.1</td>
+<td headers="Wall Street Journal stub_1_22 3ʳᵈ Quartile" class="gt_row gt_right">17.2</td>
+<td headers="Wall Street Journal stub_1_22 Maximum" class="gt_row gt_right">22.2</td></tr>
+    <tr><th id="stub_1_23" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Thursday</th>
+<td headers="Wall Street Journal stub_1_23 Count" class="gt_row gt_right">13</td>
+<td headers="Wall Street Journal stub_1_23 Mean" class="gt_row gt_right">17.9</td>
+<td headers="Wall Street Journal stub_1_23 Minimum" class="gt_row gt_right">9.1</td>
+<td headers="Wall Street Journal stub_1_23 1ˢᵗ Quartile" class="gt_row gt_right">14.6</td>
+<td headers="Wall Street Journal stub_1_23 Median" class="gt_row gt_right">19.1</td>
+<td headers="Wall Street Journal stub_1_23 3ʳᵈ Quartile" class="gt_row gt_right">20.2</td>
+<td headers="Wall Street Journal stub_1_23 Maximum" class="gt_row gt_right">26.8</td></tr>
+    <tr><th id="stub_1_24" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Friday</th>
+<td headers="Wall Street Journal stub_1_24 Count" class="gt_row gt_right">8</td>
+<td headers="Wall Street Journal stub_1_24 Mean" class="gt_row gt_right">16.4</td>
+<td headers="Wall Street Journal stub_1_24 Minimum" class="gt_row gt_right">9.5</td>
+<td headers="Wall Street Journal stub_1_24 1ˢᵗ Quartile" class="gt_row gt_right">13.5</td>
+<td headers="Wall Street Journal stub_1_24 Median" class="gt_row gt_right">15.6</td>
+<td headers="Wall Street Journal stub_1_24 3ʳᵈ Quartile" class="gt_row gt_right">18.1</td>
+<td headers="Wall Street Journal stub_1_24 Maximum" class="gt_row gt_right">27.5</td></tr>
+    <tr><th id="stub_1_25" scope="row" class="gt_row gt_center gt_stub" style="color: #555655; text-align: center;">Saturday</th>
+<td headers="Wall Street Journal stub_1_25 Count" class="gt_row gt_right">14</td>
+<td headers="Wall Street Journal stub_1_25 Mean" class="gt_row gt_right">31.4</td>
+<td headers="Wall Street Journal stub_1_25 Minimum" class="gt_row gt_right">15.9</td>
+<td headers="Wall Street Journal stub_1_25 1ˢᵗ Quartile" class="gt_row gt_right">27.0</td>
+<td headers="Wall Street Journal stub_1_25 Median" class="gt_row gt_right">32.1</td>
+<td headers="Wall Street Journal stub_1_25 3ʳᵈ Quartile" class="gt_row gt_right">34.4</td>
+<td headers="Wall Street Journal stub_1_25 Maximum" class="gt_row gt_right">46.7</td></tr>
+  </tbody>
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="8">Source: Self-collected data</td>
+    </tr>
+  </tfoot>
+  
+</table>
 </div>
 </div>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>It’s difficult to discern any story from a table like this. Let’s make a plot:</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>crossword_times <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(publisher, day) <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean =</span> <span class="fu">mean</span>(minutes), <span class="at">sd =</span> <span class="fu">sd</span>(minutes)) <span class="sc">|&gt;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(<span class="st">"mean"</span>, <span class="st">"sd"</span>), \(x) <span class="fu">round</span>(x, <span class="dv">2</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(publisher, </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>         day, </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">stats =</span> <span class="fu">paste0</span>(<span class="st">"n: "</span>, n, <span class="st">"&lt;br/&gt;mean: "</span>, mean, <span class="st">"&lt;br/&gt;sd: "</span>, sd),</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">.keep =</span> <span class="st">"none"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> publisher, <span class="at">values_from =</span> stats) <span class="sc">|&gt;</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>(<span class="at">rownames =</span> <span class="cn">FALSE</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plot structure</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(publisher)) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># aesthetic mapping for the violins</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">y =</span> minutes, <span class="at">x =</span> day, <span class="at">fill =</span> publisher) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># visual elements representing the observed data</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scales</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"M"</span>, <span class="st">"T"</span>, <span class="st">"W"</span>, <span class="st">"T"</span>, <span class="st">"F"</span>, <span class="st">"S"</span>, <span class="st">"S"</span>)) <span class="sc">+</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">70</span>, <span class="dv">5</span>), </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>), </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Crossword Solve Times"</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Box and whisker plot"</span>,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Day of the Week"</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Solve Time (Minutes)"</span>) <span class="sc">+</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theming</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_swd</span>()</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ea85f248a73ff5e9a521" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-ea85f248a73ff5e9a521">{"x":{"filter":"none","vertical":false,"data":[["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],["n: 46<br/>mean: 6.3<br/>sd: 1.29","n: 38<br/>mean: 7.58<br/>sd: 1.55","n: 33<br/>mean: 8.92<br/>sd: 2.9","n: 33<br/>mean: 12.25<br/>sd: 5.54","n: 26<br/>mean: 14.99<br/>sd: 5.36","n: 21<br/>mean: 23.54<br/>sd: 9.52","n: 12<br/>mean: 27.63<br/>sd: 7.14"],["n: 60<br/>mean: 5.6<br/>sd: 1.11","n: 55<br/>mean: 7.87<br/>sd: 2.09","n: 54<br/>mean: 11.88<br/>sd: 4.02","n: 46<br/>mean: 20.41<br/>sd: 6.38","n: 40<br/>mean: 22.61<br/>sd: 10.16","n: 32<br/>mean: 27.23<br/>sd: 12.58","n: 25<br/>mean: 36.74<br/>sd: 13.58"],["n: 32<br/>mean: 29.52<br/>sd: 12.57","n: 40<br/>mean: 15.66<br/>sd: 6.91","n: 47<br/>mean: 9.04<br/>sd: 3.71","n: 50<br/>mean: 5.64<br/>sd: 1.15","n: 45<br/>mean: 12.05<br/>sd: 5.38",null,null],["n: 18<br/>mean: 6.73<br/>sd: 1.54","n: 15<br/>mean: 9.13<br/>sd: 2.62","n: 12<br/>mean: 13.86<br/>sd: 4.34","n: 12<br/>mean: 17.32<br/>sd: 4.76","n: 8<br/>mean: 16.42<br/>sd: 5.3","n: 14<br/>mean: 31.45<br/>sd: 7.99",null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>day<\/th>\n      <th>Los Angeles Times<\/th>\n      <th>New York Times<\/th>\n      <th>New Yorker<\/th>\n      <th>Wall Street Journal<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="crossword_times_files/figure-html/box-plot-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="crossword_times_files/figure-html/box-plot-1.png" class="img-fluid figure-img" width="960"></a></p>
+</figure>
 </div>
 </div>
 </div>
-</div>
-</div>
+<p>Now we the relative difficulty of each group of puzzles stands out. So what’s the problem?</p>
+<p>For one thing, notice that <code>ggplot2</code>’s <code>geom_boxplot()</code> function has identified some of the data points as outliers and plotted them separately. Is that appropriate for this data set? As the Wikipedia article on outliers points out:</p>
+<blockquote class="blockquote">
+<p>There is no rigid mathematical definition of what constitutes an outlier; determining whether or not an observation is an outlier is ultimately a subjective exercise.</p>
+</blockquote>
+<div class="page-columns page-full"><p><code>geom_boxplot()</code> treats anything more than 1.5 times the interquartile range from the box as an outlier, but whether an observation should be considered an outlier obviously depends on the sampling distribution. For example, an observation of x = 2 is a fairly remarkable if X ~ Normal(0, 1) but not if X ~ Cauchy(0, 1), since the Cauchy distribution has fatter tails. And by using the same rule at both extremes of the sample, we implicitly assume the sampling distribution is symmetric.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Notice that nearly all the outliers in our box plot are at the high end.</p></li></div></div>
+<p>Grouping the data by publisher and day of the week suggests that we believe the observations within each group are independent and identically distributed, even if we don’t explicitly say so. When we report a mean, we suggest that the sampling distribution has a finite mean.</p>
+<p>Perhaps the idea that there’s a real distinction between descriptive and inferential data analysis ultimately stems from the “everything is normally distributed” fallacy.</p>
+</section>
+<section id="histograms-density-plots-and-violins" class="level2">
+<h2 data-anchor-id="histograms-density-plots-and-violins">Histograms, Density Plots, and Violins</h2>
+<p>It’s a matter of some debate among data visualization practitioners about when to use density plots, such as violin plots, instead of histograms. Or indeed whether density plots should ever be used. Or even whether <em>histograms</em> should ever be used!</p>
+<p>Scientist and YouTuber Angela Collier doesn’t like violin plots:</p>
+<p align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_0QMKFzW9fw?si=Zbd0fmecfDTwNFFC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+</p>
+<p>One of the points she makes is that drawing density plots usually involves what amounts to fitting an unjustified model.</p>
+<p>In most situations, <code>ggplot</code> uses locally estimated scatterplot smoothing (LOESS) by default, which involves fitting a separate polynomial regression model on a weighted neighbourhood around each data point and evaluating it there. This often results in serviceable violin plots, but you wouldn’t necessarily expect it to reflect the “actual” theoretical distribution of the data.</p>
+<p>Designing charts is another situation in which we cannot avoid making modelling assumptions just because we insist we’re only doing “descriptive” analysis. As soon as you click “add trendline” in Excel, you’re fitting a model. Accepting this and being willing to specify a model allows us to create better data visualizations.</p>
+<p>Let’s apply a simple Bayesian model of our crossword data and use it to design a violin plot in which the densities we present are actually justified.</p>
 </section>
 <section id="modelling" class="level2">
 <h2 data-anchor-id="modelling">Modelling</h2>
@@ -264,15 +978,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="visualization" class="level2">
 <h2 data-anchor-id="visualization">Visualization</h2>
-<p>It’s a matter of some debate among data visualization practitioners about when to use density plots, such as violin plots, instead of histograms. Or indeed whether density plots should ever be used. Or even whether <em>histograms</em> should ever be used!</p>
-<p>I disagree with several of the points Angela Collier makes in her video <a href="https://www.youtube.com/watch?v=_0QMKFzW9fw">“violin plots should not exist”</a>, but one that I find compelling is that drawing density plots usually involves what amounts to fitting an unjustified model.</p>
-<p>In most situations, <code>ggplot</code> uses locally estimated scatterplot smoothing (LOESS) by default, which involves fitting a separate polynomial regression model on a weighted neighbourhood around each data point and evaluating it there. It (usually) makes nice looking violin plots, but you wouldn’t expect it to reflect that “actual” theoretical distribution of the data.</p>
-<p>It seems to me that this sort of thing is a symptom of a general desire to avoid having to actually specify models by pretending that there’s some bright-line distinction between descriptive statistics and statistical inference.</p>
-<p>Since we were willing to actually specify a model, we can make density plots that show something meaningful: the <a href="http://www.medicine.mcgill.ca/epidemiology/Joseph/courses/EPIB-668/predictive.pdf">posterior predictive distributions</a> corresponding to our model. We’ll use <code>add_predicted_draws()</code> from <code>tidybayes</code> to generate draws from those models and use these to draw violins that reflect the data we expect to observe in the future based on those we have observed so far. (We also enlist the help of <code>data_grid</code> from <code>modelr</code>.)</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Violin Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Line Graphs</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Since we were willing to actually specify a model, we can now make a density plot that shows something meaningful: the <a href="http://www.medicine.mcgill.ca/epidemiology/Joseph/courses/EPIB-668/predictive.pdf">posterior predictive distributions</a> corresponding to our model. We’ll use <code>add_predicted_draws()</code> from <code>tidybayes</code> to generate draws from those models and use these to draw violins that reflect the data we expect to observe in the future based on those we have observed so far. (We also enlist the help of <code>data_grid()</code> from <code>modelr</code>.)</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -286,89 +992,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plot structure</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(publisher)) <span class="sc">+</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># aesthetic mapping for the violins</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">y =</span> .prediction, <span class="at">x =</span> day) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">y =</span> .prediction, <span class="at">x =</span> day, <span class="at">fill =</span> publisher) <span class="sc">+</span></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># visual elements representing the posterior predictive model</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_eye</span>(<span class="at">colour =</span> <span class="cn">NA</span>, <span class="at">fill =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># visual elements representing the observed data</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sina</span>(<span class="at">data =</span> crossword_times,</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">y =</span> minutes, <span class="at">fill =</span> publisher),</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">pch =</span> <span class="dv">21</span>, </span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scales</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"M"</span>, <span class="st">"T"</span>, <span class="st">"W"</span>, <span class="st">"T"</span>, <span class="st">"F"</span>, <span class="st">"S"</span>, <span class="st">"S"</span>)) <span class="sc">+</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">70</span>, <span class="dv">5</span>), </span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>), </span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Crossword Solve Times"</span>,</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"With posterior predictive log-normal distributions"</span>,</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Day of the Week"</span>,</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Solve Time (Minutes)"</span>) <span class="sc">+</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theming</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_eye</span>(<span class="at">color =</span> <span class="cn">NA</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"M"</span>, <span class="st">"T"</span>, <span class="st">"W"</span>, <span class="st">"T"</span>, <span class="st">"F"</span>, <span class="st">"S"</span>, <span class="st">"S"</span>)) <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">70</span>, <span class="dv">5</span>), </span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>), </span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Crossword Solve Times"</span>,</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Posterior predictive log-normal distributions"</span>,</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Day of the Week"</span>,</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Solve Time (Minutes)"</span>) <span class="sc">+</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theming</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_swd</span>()</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="crossword_times_files/figure-html/violin-plots-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="crossword_times_files/figure-html/violin-plots-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="crossword_times_files/figure-html/violin-plot-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="crossword_times_files/figure-html/violin-plot-1.png" class="img-fluid figure-img" width="960"></a></p>
 </figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>crossword_times <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># group by publisher and day, add per-group row numbers</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(publisher, day) <span class="sc">|&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">row_number</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plot structure</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid2</span>(<span class="at">cols =</span> <span class="fu">vars</span>(publisher), </span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">rows =</span> <span class="fu">vars</span>(day),</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">labeller =</span> <span class="fu">labeller</span>(<span class="at">day =</span> <span class="sc">~</span> <span class="fu">substr</span>(., <span class="dv">1</span>, <span class="dv">1</span>)),</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">scales =</span> <span class="st">"free_x"</span>,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">independent =</span> <span class="st">"x"</span>) <span class="sc">+</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># aesthetic mapping</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> id, <span class="at">y =</span> minutes, <span class="at">colour =</span> publisher) <span class="sc">+</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># visual elements representing the data</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scales</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">n.breaks =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Solve Time Trend by Publisher and Day of Week"</span>,</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Solve Time (Minutes)"</span>) <span class="sc">+</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theming</span></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>, </span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.spacing.y =</span> <span class="fu">unit</span>(<span class="fl">0.02</span>, <span class="st">"npc"</span>),</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.65</span>)),</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="crossword_times_files/figure-html/line-graphs-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="crossword_times_files/figure-html/line-graphs-1.png" class="img-fluid figure-img" width="672"></a></p>
-</figure>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -377,7 +1022,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>What’s the difference between plotting LOESS-based densities and posterior predictive distributions? I think this image illustrates the shortcomings of the former approach well:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="loess_vs_model.png" class="lightbox" title="geom_violin (black) vs our posterior predictive distributions (grey)." data-gallery="quarto-lightbox-gallery-1"><img src="loess_vs_model.png" class="img-fluid figure-img" width="500"></a></p>
+<p><a href="loess_vs_model.png" class="lightbox" title="geom_violin (black) vs our posterior predictive distributions (grey)." data-gallery="quarto-lightbox-gallery-3"><img src="loess_vs_model.png" class="img-fluid figure-img" width="500"></a></p>
 <figcaption class="figure-caption">geom_violin (black) vs our posterior predictive distributions (grey).</figcaption>
 </figure>
 </div>
@@ -392,6 +1037,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -583,7 +1229,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","loop":true,"selector":".lightbox","closeEffect":"zoom"});</script>
 
 
 
