@@ -8,6 +8,7 @@ execute:
 filters:
    - lightbox
 lightbox: auto
+draft: true
 ---
 
 ```{r}

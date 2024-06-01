@@ -13,7 +13,7 @@ website:
       - href: index.qmd
         text: Home
       - href: posts.qmd
-        text: Index
+        text: Projects
       - href: links.qmd 
         text: Links
       - href: resume.pdf

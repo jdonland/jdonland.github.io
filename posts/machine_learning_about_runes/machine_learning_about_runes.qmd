@@ -3,7 +3,7 @@ title: "(Machine) Learning about Runes"
 date: "2022-06-27"
 date-modified: last-modified
 date-format: long
-description: "Alphabetic algorithm alchemy."
+description: ""
 ---
 
 ```{r setup, include = FALSE}

@@ -3,7 +3,7 @@ title: "Cities with Nice Weather"
 date: "2022-05-12"
 date-modified: last-modified
 date-format: long
-description: "A meteorological meditation."
+description: ""
 execute: 
    warning: false
    message: false
