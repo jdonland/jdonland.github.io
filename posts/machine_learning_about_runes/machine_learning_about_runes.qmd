@@ -3,7 +3,8 @@ title: "(Machine) Learning about Runes"
 date: "2022-06-27"
 date-modified: last-modified
 date-format: long
-description: ""
+description: "Models and explainability."
+image: futhark_thumbnail.png
 ---
 
 ```{r setup, include = FALSE}

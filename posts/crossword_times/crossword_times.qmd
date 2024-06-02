@@ -3,7 +3,8 @@ title: "Crosswords, Violin Plots, and Dubious Distinctions in Data Analysis"
 date: "2023-01-02"
 date-modified: now
 date-format: long
-description: ""
+image: violin_plot_thumbnail.png
+description: "On so-called \"descriptive\" analysis."
 filters:
    - lightbox
 lightbox: auto

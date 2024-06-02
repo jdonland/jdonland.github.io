@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2022-05-12">
-<meta name="description" content="A meteorological meditation.">
+<meta name="description" content="Mean-variance optimality.">
 
 <title>Jesse Onland - Cities with Nice Weather</title>
 <style>
@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../posts.html" rel="" target="">
- <span class="menu-text">Index</span></a>
+ <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../links.html" rel="" target="">
@@ -143,7 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    A meteorological meditation.
+    Mean-variance optimality.
   </div>
 </div>
 
@@ -161,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 18, 2024</p>
+      <p class="date-modified">June 1, 2024</p>
     </div>
   </div>
     
@@ -341,7 +341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="page-columns page-full"><p>The area of this plot I’m most interested in is the vertical slice around Toronto. Let’s see the same plot, including only the cities within one degree of Toronto’s average temperature.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> We’ll exclude the marginal histograms but add labels to the cities.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;I haven’t defined an ideal average temperature, but any city with a similar average and smaller range than Toronto is a clear improvement.</p></li></div></div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>city_temps <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">abs</span>(avg <span class="sc">-</span> toronto_avg)<span class="sc">&lt;=</span><span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">abs</span>(avg <span class="sc">-</span> toronto_avg) <span class="sc">&lt;=</span><span class="dv">1</span>) <span class="sc">|&gt;</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> avg, <span class="at">y =</span> range, <span class="at">label =</span> city)) <span class="sc">+</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"#dc2828"</span>) <span class="sc">+</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">nudge_x =</span> <span class="fl">0.01</span>, <span class="at">hjust =</span> <span class="st">"left"</span>) <span class="sc">+</span></span>

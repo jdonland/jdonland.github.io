@@ -1,9 +1,9 @@
 ---
 listing:
   contents: posts
-  sort: "date desc"
-  type: grid
+  sort: "date"
+  type: default
   categories: false
   feed: true
-  fields: [date, title, description]
+  fields: [image, title, description]
 ---

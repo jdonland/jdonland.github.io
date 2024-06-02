@@ -3,11 +3,11 @@ title: "Cities with Nice Weather"
 date: "2022-05-12"
 date-modified: last-modified
 date-format: long
-description: ""
+image: thermometers_thumbnail.png
+description: "Mean-variance optimality."
 execute: 
    warning: false
    message: false
-image: "city_temperatures.jpg"
 ---
 
 ```{r setup, include = FALSE}

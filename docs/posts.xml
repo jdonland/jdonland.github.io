@@ -246,23 +246,23 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 
-<div id="nyrpgqzdkc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nyrpgqzdkc table {
+<div id="reegirvloy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#reegirvloy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nyrpgqzdkc thead, #nyrpgqzdkc tbody, #nyrpgqzdkc tfoot, #nyrpgqzdkc tr, #nyrpgqzdkc td, #nyrpgqzdkc th {
+#reegirvloy thead, #reegirvloy tbody, #reegirvloy tfoot, #reegirvloy tr, #reegirvloy td, #reegirvloy th {
   border-style: none;
 }
 
-#nyrpgqzdkc p {
+#reegirvloy p {
   margin: 0;
   padding: 0;
 }
 
-#nyrpgqzdkc .gt_table {
+#reegirvloy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -288,12 +288,12 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#nyrpgqzdkc .gt_caption {
+#reegirvloy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nyrpgqzdkc .gt_title {
+#reegirvloy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -305,7 +305,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#nyrpgqzdkc .gt_subtitle {
+#reegirvloy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -317,7 +317,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-top-width: 0;
 }
 
-#nyrpgqzdkc .gt_heading {
+#reegirvloy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -329,13 +329,13 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#nyrpgqzdkc .gt_bottom_border {
+#reegirvloy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nyrpgqzdkc .gt_col_headings {
+#reegirvloy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -350,7 +350,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#nyrpgqzdkc .gt_col_heading {
+#reegirvloy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -370,7 +370,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#nyrpgqzdkc .gt_column_spanner_outer {
+#reegirvloy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -382,15 +382,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 4px;
 }
 
-#nyrpgqzdkc .gt_column_spanner_outer:first-child {
+#reegirvloy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nyrpgqzdkc .gt_column_spanner_outer:last-child {
+#reegirvloy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nyrpgqzdkc .gt_column_spanner {
+#reegirvloy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -402,11 +402,11 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   width: 100%;
 }
 
-#nyrpgqzdkc .gt_spanner_row {
+#reegirvloy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nyrpgqzdkc .gt_group_heading {
+#reegirvloy .gt_group_heading {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -432,7 +432,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   text-align: left;
 }
 
-#nyrpgqzdkc .gt_empty_group_heading {
+#reegirvloy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -447,15 +447,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   vertical-align: middle;
 }
 
-#nyrpgqzdkc .gt_from_md > :first-child {
+#reegirvloy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nyrpgqzdkc .gt_from_md > :last-child {
+#reegirvloy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nyrpgqzdkc .gt_row {
+#reegirvloy .gt_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -474,7 +474,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#nyrpgqzdkc .gt_stub {
+#reegirvloy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -487,7 +487,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#nyrpgqzdkc .gt_stub_row_group {
+#reegirvloy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -501,15 +501,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   vertical-align: top;
 }
 
-#nyrpgqzdkc .gt_row_group_first td {
+#reegirvloy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nyrpgqzdkc .gt_row_group_first th {
+#reegirvloy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nyrpgqzdkc .gt_summary_row {
+#reegirvloy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -519,16 +519,16 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#nyrpgqzdkc .gt_first_summary_row {
+#reegirvloy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nyrpgqzdkc .gt_first_summary_row.thick {
+#reegirvloy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nyrpgqzdkc .gt_last_summary_row {
+#reegirvloy .gt_last_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -538,7 +538,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#nyrpgqzdkc .gt_grand_summary_row {
+#reegirvloy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -548,7 +548,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#nyrpgqzdkc .gt_first_grand_summary_row {
+#reegirvloy .gt_first_grand_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -558,7 +558,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#nyrpgqzdkc .gt_last_grand_summary_row_top {
+#reegirvloy .gt_last_grand_summary_row_top {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -568,11 +568,11 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#nyrpgqzdkc .gt_striped {
+#reegirvloy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nyrpgqzdkc .gt_table_body {
+#reegirvloy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -581,7 +581,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#nyrpgqzdkc .gt_footnotes {
+#reegirvloy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -595,7 +595,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#nyrpgqzdkc .gt_footnote {
+#reegirvloy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -604,7 +604,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#nyrpgqzdkc .gt_sourcenotes {
+#reegirvloy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -618,7 +618,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#nyrpgqzdkc .gt_sourcenote {
+#reegirvloy .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -626,63 +626,63 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#nyrpgqzdkc .gt_left {
+#reegirvloy .gt_left {
   text-align: left;
 }
 
-#nyrpgqzdkc .gt_center {
+#reegirvloy .gt_center {
   text-align: center;
 }
 
-#nyrpgqzdkc .gt_right {
+#reegirvloy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nyrpgqzdkc .gt_font_normal {
+#reegirvloy .gt_font_normal {
   font-weight: normal;
 }
 
-#nyrpgqzdkc .gt_font_bold {
+#reegirvloy .gt_font_bold {
   font-weight: bold;
 }
 
-#nyrpgqzdkc .gt_font_italic {
+#reegirvloy .gt_font_italic {
   font-style: italic;
 }
 
-#nyrpgqzdkc .gt_super {
+#reegirvloy .gt_super {
   font-size: 65%;
 }
 
-#nyrpgqzdkc .gt_footnote_marks {
+#reegirvloy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nyrpgqzdkc .gt_asterisk {
+#reegirvloy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nyrpgqzdkc .gt_indent_1 {
+#reegirvloy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nyrpgqzdkc .gt_indent_2 {
+#reegirvloy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nyrpgqzdkc .gt_indent_3 {
+#reegirvloy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nyrpgqzdkc .gt_indent_4 {
+#reegirvloy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nyrpgqzdkc .gt_indent_5 {
+#reegirvloy .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1407,7 +1407,7 @@ font-style: inherit;">theme_swd</span>()</span></code></pre></div>
 <p>What’s the difference between plotting LOESS-based densities and posterior predictive distributions? I think this image illustrates the shortcomings of the former approach well:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="loess_vs_model.png" class="lightbox" title="geom_violin (black) vs our posterior predictive distributions (grey)." data-gallery="quarto-lightbox-gallery-3"><img src="https://jdonland.github.io/posts/crossword_times/loess_vs_model.png" class="img-fluid figure-img" width="500"></a></p>
+<p><a href="loess_vs_model.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="geom_violin (black) vs our posterior predictive distributions (grey)."><img src="https://jdonland.github.io/posts/crossword_times/loess_vs_model.png" class="img-fluid figure-img" width="500"></a></p>
 <figcaption class="figure-caption">geom_violin (black) vs our posterior predictive distributions (grey).</figcaption>
 </figure>
 </div>
@@ -1427,6 +1427,7 @@ font-style: inherit;">theme_swd</span>()</span></code></pre></div>
  ]]></description>
   <guid>https://jdonland.github.io/posts/crossword_times/crossword_times.html</guid>
   <pubDate>Mon, 02 Jan 2023 05:00:00 GMT</pubDate>
+  <media:content url="https://jdonland.github.io/posts/crossword_times/violin_plot_thumbnail.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>(Machine) Learning about Runes</title>
@@ -3942,6 +3943,7 @@ font-style: inherit;">1</span>])}))</span></code></pre></div>
  ]]></description>
   <guid>https://jdonland.github.io/posts/machine_learning_about_runes/machine_learning_about_runes.html</guid>
   <pubDate>Mon, 27 Jun 2022 04:00:00 GMT</pubDate>
+  <media:content url="https://jdonland.github.io/posts/machine_learning_about_runes/futhark_thumbnail.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Cities with Nice Weather</title>
@@ -4363,7 +4365,7 @@ font-style: inherit;">filter</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">abs</span>(avg <span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">-</span> toronto_avg)<span class="sc" style="color: #5E5E5E;
+font-style: inherit;">-</span> toronto_avg) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;=</span><span class="dv" style="color: #AD0000;
 background-color: null;
@@ -4703,7 +4705,7 @@ font-style: inherit;">theme_bw</span>()</span></code></pre></div>
  ]]></description>
   <guid>https://jdonland.github.io/posts/city_temperatures/city_temperatures.html</guid>
   <pubDate>Thu, 12 May 2022 04:00:00 GMT</pubDate>
-  <media:content url="https://jdonland.github.io/posts/city_temperatures/city_temperatures.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://jdonland.github.io/posts/city_temperatures/thermometers_thumbnail.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
 </rss>
