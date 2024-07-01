@@ -33,9 +33,9 @@ format:
       body-width: 723px
       margin-width: 300px
     code-copy: false
+    code-fold: true
+    lightbox: true
     anchor-sections: false
-    filters:
-      - lightbox
     link-external-newwindow: true
 
 editor: source

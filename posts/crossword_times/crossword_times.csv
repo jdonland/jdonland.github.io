@@ -846,7 +846,7 @@ time,publisher,date
 04:42,Los Angeles Times,2024-06-10
 14:07,New Yorker,2024-06-11
 07:26,New York Times,2024-06-11
-05:50,Los Angles Times,2024-06-11
+05:50,Los Angeles Times,2024-06-11
 03:55,New Yorker,2024-06-12
 04:52,USA Today,2024-06-12
 15:14,New York Times,2024-06-12
@@ -873,3 +873,4 @@ time,publisher,date
 17:33,New York Times,2024-06-29
 23:17,New York Times,2024-06-30
 04:18,New York Times,2024-07-01
+04:56,Los Angeles Times,2024-07-01

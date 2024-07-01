@@ -5,10 +5,6 @@ date-modified: now
 date-format: long
 image: violin_plot_thumbnail.png
 description: "On so-called \"descriptive\" analysis."
-filters:
-   - lightbox
-lightbox: auto
-code-fold: true
 ---
 
 <!-- expand references -->
@@ -60,6 +56,7 @@ I track how long it takes me to solve the New York Times, Los Angeles Times, New
 #| code-fold: false
 
 read_csv("crossword_times.csv", col_types = "ccD") |>
+  filter(publisher != "USA Today") |>
   mutate(publisher,
          day = factor(wday(date, week_start = 1, label = TRUE, abbr = FALSE)),
          minutes = period_to_seconds(ms(time))/60,
@@ -134,13 +131,13 @@ crossword_times |>
   theme_swd()
 ```
 
-Now we the relative difficulty of each group of puzzles stands out. So what's the problem?
+Now the relative difficulty of each group of puzzles stands out. So what's the problem?
 
 For one thing, notice that `ggplot2`'s `geom_boxplot()` function has identified some of the data points as outliers and plotted them separately. Is that appropriate for this data set? As the Wikipedia article on outliers points out:
 
 > There is no rigid mathematical definition of what constitutes an outlier; determining whether or not an observation is an outlier is ultimately a subjective exercise.
 
-`geom_boxplot()` treats anything more than 1.5 times the interquartile range from the box as an outlier, but whether an observation should be considered an outlier obviously depends on the sampling distribution. For example, an observation of x = 2 is a fairly remarkable if X ~ Normal(0, 1) but not if X ~ Cauchy(0, 1), since the Cauchy distribution has fatter tails. And by using the same rule at both extremes of the sample, we implicitly assume the sampling distribution is symmetric.^[Notice that nearly all the outliers in our box plot are at the high end.]
+`geom_boxplot()` treats anything more than 1.5 times the interquartile range from the box as an outlier, but whether an observation should be considered an outlier obviously depends on the sampling distribution. For example, an observation of x = 2 is a fairly remarkable if X ~ Normal(0, 1) but not if X ~ Cauchy(0, 1), since the Cauchy distribution has fatter tails. And by using the same rule at both extremes of the sample, we implicitly assume the sampling distribution is symmetric.^[Notice that nearly all the outliers in our box plot are at the high end.]^[See [this article](https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/) for more on issues with box plots in general.]
 
 Grouping the data by publisher and day of the week suggests that we believe the observations within each group are independent and identically distributed, even if we don't explicitly say so. When we report a mean, we suggest that the sampling distribution has a finite mean.
 
@@ -245,5 +242,7 @@ What's the difference between plotting LOESS-based densities and posterior predi
 
 ## References
 
--   [How to Solve The New York Times Crossword](https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle)
--   [Anna Shechtman, the new queen of crosswords](https://www.theguardian.com/global/2019/may/12/anna-shechtman-the-new-queen-of-crosswords)
+-   [How to Solve the New York Times Crossword](https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle)
+-   [Anna Shechtman, the New Queen of Crosswords](https://www.theguardian.com/global/2019/may/12/anna-shechtman-the-new-queen-of-crosswords)
+-   [Violin Plots Should Not Exist](https://www.youtube.com/watch?v=_0QMKFzW9fw)
+-   [I’ve Stopped Using Box Plots. Should You?](https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/)
