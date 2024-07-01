@@ -92,7 +92,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -135,9 +135,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -185,7 +187,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-anchor-id="data">Data</h2>
 <p>The crosswords published in major American newspapers differ in difficulty according to the day of the week. For example, the <a href="https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle">New York Times’ guide</a> explains that their Monday puzzles are the easiest and their Saturday puzzles the hardest. Meanwhile, the Sunday puzzles have easy clues but a large grid, and the Thursday puzzles have some unique gimmick. By contrast, the New Yorker’s Monday puzzle is their most challenging, with the difficulty mostly decreasing over the course of the week.</p>
 <p>I track how long it takes me to solve the New York Times, Los Angeles Times, New Yorker, and Wall Street Journal crosswords in a CSV file.</p>
-<!-- I'm accustomed to thinking of the week as beginning with Sunday, but for the purposes of crossword difficulty analysis, Monday is better. We'll convert the solve times from `00:00`-style to minutes. -->
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"crossword_times.csv"</span>, <span class="at">col_types =</span> <span class="st">"ccD"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(publisher <span class="sc">!=</span> <span class="st">"USA Today"</span>) <span class="sc">|&gt;</span></span>
@@ -196,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  crossword_times</span></code></pre></div>
 </div>
 </section>
-<section id="descriptive-analysis-doesnt-exist" class="level2">
+<section id="descriptive-analysis-doesnt-exist" class="level2 page-columns page-full">
 <h2 data-anchor-id="descriptive-analysis-doesnt-exist">Descriptive Analysis Doesn’t Exist</h2>
 <p>At this point we’re ready to do “descriptive” data analysis. We can count observations, calculate so called “five-number” summaries, and so on.</p>
 <div class="cell">
@@ -221,29 +222,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">table_body.hlines.color =</span> <span class="st">"transparent"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"#555655"</span>, <span class="at">align =</span> <span class="st">"center"</span>)), </span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">list</span>(<span class="fu">cells_column_labels</span>(), <span class="fu">cells_stub</span>(), <span class="fu">cells_stubhead</span>())</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">"Source: Self-collected data"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_vertical_padding</span>(<span class="at">scale =</span> <span class="fl">0.25</span>)</span></code></pre></div>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">list</span>(<span class="fu">cells_column_labels</span>(), <span class="fu">cells_stub</span>(), <span class="fu">cells_stubhead</span>())) <span class="sc">|&gt;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">"Source: Self-collected data"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_vertical_padding</span>(<span class="at">scale =</span> <span class="fl">0.25</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="reiqvqijnq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#reiqvqijnq table {
+<div id="ffzsjgvvte" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ffzsjgvvte table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#reiqvqijnq thead, #reiqvqijnq tbody, #reiqvqijnq tfoot, #reiqvqijnq tr, #reiqvqijnq td, #reiqvqijnq th {
+#ffzsjgvvte thead, #ffzsjgvvte tbody, #ffzsjgvvte tfoot, #ffzsjgvvte tr, #ffzsjgvvte td, #ffzsjgvvte th {
   border-style: none;
 }
 
-#reiqvqijnq p {
+#ffzsjgvvte p {
   margin: 0;
   padding: 0;
 }
 
-#reiqvqijnq .gt_table {
+#ffzsjgvvte .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -269,12 +269,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#reiqvqijnq .gt_caption {
+#ffzsjgvvte .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#reiqvqijnq .gt_title {
+#ffzsjgvvte .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -286,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#reiqvqijnq .gt_subtitle {
+#ffzsjgvvte .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -298,7 +298,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#reiqvqijnq .gt_heading {
+#ffzsjgvvte .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -310,13 +310,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#reiqvqijnq .gt_bottom_border {
+#ffzsjgvvte .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#reiqvqijnq .gt_col_headings {
+#ffzsjgvvte .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -331,7 +331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#reiqvqijnq .gt_col_heading {
+#ffzsjgvvte .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -351,7 +351,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#reiqvqijnq .gt_column_spanner_outer {
+#ffzsjgvvte .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -363,15 +363,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#reiqvqijnq .gt_column_spanner_outer:first-child {
+#ffzsjgvvte .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#reiqvqijnq .gt_column_spanner_outer:last-child {
+#ffzsjgvvte .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#reiqvqijnq .gt_column_spanner {
+#ffzsjgvvte .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -383,11 +383,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#reiqvqijnq .gt_spanner_row {
+#ffzsjgvvte .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#reiqvqijnq .gt_group_heading {
+#ffzsjgvvte .gt_group_heading {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -413,7 +413,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#reiqvqijnq .gt_empty_group_heading {
+#ffzsjgvvte .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -428,15 +428,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#reiqvqijnq .gt_from_md > :first-child {
+#ffzsjgvvte .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#reiqvqijnq .gt_from_md > :last-child {
+#ffzsjgvvte .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#reiqvqijnq .gt_row {
+#ffzsjgvvte .gt_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -455,7 +455,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#reiqvqijnq .gt_stub {
+#ffzsjgvvte .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -468,7 +468,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#reiqvqijnq .gt_stub_row_group {
+#ffzsjgvvte .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -482,15 +482,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#reiqvqijnq .gt_row_group_first td {
+#ffzsjgvvte .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#reiqvqijnq .gt_row_group_first th {
+#ffzsjgvvte .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#reiqvqijnq .gt_summary_row {
+#ffzsjgvvte .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -500,16 +500,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#reiqvqijnq .gt_first_summary_row {
+#ffzsjgvvte .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#reiqvqijnq .gt_first_summary_row.thick {
+#ffzsjgvvte .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#reiqvqijnq .gt_last_summary_row {
+#ffzsjgvvte .gt_last_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -519,7 +519,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#reiqvqijnq .gt_grand_summary_row {
+#ffzsjgvvte .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -529,7 +529,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#reiqvqijnq .gt_first_grand_summary_row {
+#ffzsjgvvte .gt_first_grand_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -539,7 +539,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#reiqvqijnq .gt_last_grand_summary_row_top {
+#ffzsjgvvte .gt_last_grand_summary_row_top {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -549,11 +549,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#reiqvqijnq .gt_striped {
+#ffzsjgvvte .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#reiqvqijnq .gt_table_body {
+#ffzsjgvvte .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -562,7 +562,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#reiqvqijnq .gt_footnotes {
+#ffzsjgvvte .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -576,7 +576,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#reiqvqijnq .gt_footnote {
+#ffzsjgvvte .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -585,7 +585,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#reiqvqijnq .gt_sourcenotes {
+#ffzsjgvvte .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -599,7 +599,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#reiqvqijnq .gt_sourcenote {
+#ffzsjgvvte .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -607,63 +607,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#reiqvqijnq .gt_left {
+#ffzsjgvvte .gt_left {
   text-align: left;
 }
 
-#reiqvqijnq .gt_center {
+#ffzsjgvvte .gt_center {
   text-align: center;
 }
 
-#reiqvqijnq .gt_right {
+#ffzsjgvvte .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#reiqvqijnq .gt_font_normal {
+#ffzsjgvvte .gt_font_normal {
   font-weight: normal;
 }
 
-#reiqvqijnq .gt_font_bold {
+#ffzsjgvvte .gt_font_bold {
   font-weight: bold;
 }
 
-#reiqvqijnq .gt_font_italic {
+#ffzsjgvvte .gt_font_italic {
   font-style: italic;
 }
 
-#reiqvqijnq .gt_super {
+#ffzsjgvvte .gt_super {
   font-size: 65%;
 }
 
-#reiqvqijnq .gt_footnote_marks {
+#ffzsjgvvte .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#reiqvqijnq .gt_asterisk {
+#ffzsjgvvte .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#reiqvqijnq .gt_indent_1 {
+#ffzsjgvvte .gt_indent_1 {
   text-indent: 5px;
 }
 
-#reiqvqijnq .gt_indent_2 {
+#ffzsjgvvte .gt_indent_2 {
   text-indent: 10px;
 }
 
-#reiqvqijnq .gt_indent_3 {
+#ffzsjgvvte .gt_indent_3 {
   text-indent: 15px;
 }
 
-#reiqvqijnq .gt_indent_4 {
+#ffzsjgvvte .gt_indent_4 {
   text-indent: 20px;
 }
 
-#reiqvqijnq .gt_indent_5 {
+#ffzsjgvvte .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -998,8 +998,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>There is no rigid mathematical definition of what constitutes an outlier; determining whether or not an observation is an outlier is ultimately a subjective exercise.</p>
 </blockquote>
-<p><code>geom_boxplot()</code> treats anything more than 1.5 times the interquartile range from the box as an outlier, but whether an observation should be considered an outlier obviously depends on the sampling distribution. For example, an observation of x = 2 is a fairly remarkable if X ~ Normal(0, 1) but not if X ~ Cauchy(0, 1), since the Cauchy distribution has fatter tails. And by using the same rule at both extremes of the sample, we implicitly assume the sampling distribution is symmetric.<sup>[Notice that nearly all the outliers in our box plot are at the high end.]</sup>[See <a href="https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/">this article</a> for more on issues with box plots in general.]</p>
-<p>Grouping the data by publisher and day of the week suggests that we believe the observations within each group are independent and identically distributed, even if we don’t explicitly say so. When we report a mean, we suggest that the sampling distribution has a finite mean.</p>
+<p><code>geom_boxplot()</code> treats anything more than 1.5 times the interquartile range from the box as an outlier, but whether an observation should be considered an outlier obviously depends on the sampling distribution. For example, an observation of x = 2 is a fairly remarkable if X ~ Normal(0, 1) but not if X ~ Cauchy(0, 1), since the Cauchy distribution has fatter tails. And by using the same rule at both extremes of the sample, we implicitly assume the sampling distribution is symmetric.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Notice that nearly all the outliers in our box plot are at the high end.</p></div><div id="fn2"><p><sup>2</sup>&nbsp;See <a href="https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/">this article</a> for more on issues with box plots in general.</p></div></div><p>Grouping the data by publisher and day of the week suggests that we believe the observations within each group are independent and identically distributed, even if we don’t explicitly say so. When we report a mean, we suggest that the sampling distribution has a finite mean.</p>
 <p>Perhaps the idea that there’s a real distinction between descriptive and inferential data analysis ultimately stems from the “everything is normally distributed” fallacy.</p>
 </section>
 <section id="histograms-density-plots-and-violins" class="level2">
@@ -1101,6 +1101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1459,7 +1460,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

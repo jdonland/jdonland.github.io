@@ -48,8 +48,6 @@ The crosswords published in major American newspapers differ in difficulty accor
 
 I track how long it takes me to solve the New York Times, Los Angeles Times, New Yorker, and Wall Street Journal crosswords in a CSV file.
 
-<!-- I'm accustomed to thinking of the week as beginning with Sunday, but for the purposes of crossword difficulty analysis, Monday is better. We'll convert the solve times from `00:00`-style to minutes. -->
-
 ```{r}
 #| label: data-preparation
 #| message: false
@@ -92,8 +90,7 @@ crossword_times |>
   tab_options(table_body.hlines.color = "transparent") |>
   tab_style(
     style = list(cell_text(color = "#555655", align = "center")), 
-    locations = list(cells_column_labels(), cells_stub(), cells_stubhead())
-  ) |>
+    locations = list(cells_column_labels(), cells_stub(), cells_stubhead())) |>
   tab_source_note(source_note = "Source: Self-collected data") |>
   opt_vertical_padding(scale = 0.25)
 ```
@@ -137,7 +134,7 @@ For one thing, notice that `ggplot2`'s `geom_boxplot()` function has identified 
 
 > There is no rigid mathematical definition of what constitutes an outlier; determining whether or not an observation is an outlier is ultimately a subjective exercise.
 
-`geom_boxplot()` treats anything more than 1.5 times the interquartile range from the box as an outlier, but whether an observation should be considered an outlier obviously depends on the sampling distribution. For example, an observation of x = 2 is a fairly remarkable if X ~ Normal(0, 1) but not if X ~ Cauchy(0, 1), since the Cauchy distribution has fatter tails. And by using the same rule at both extremes of the sample, we implicitly assume the sampling distribution is symmetric.^[Notice that nearly all the outliers in our box plot are at the high end.]^[See [this article](https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/) for more on issues with box plots in general.]
+`geom_boxplot()` treats anything more than 1.5 times the interquartile range from the box as an outlier, but whether an observation should be considered an outlier obviously depends on the sampling distribution. For example, an observation of x = 2 is a fairly remarkable if X ~ Normal(0, 1) but not if X ~ Cauchy(0, 1), since the Cauchy distribution has fatter tails. And by using the same rule at both extremes of the sample, we implicitly assume the sampling distribution is symmetric.^[Notice that nearly all the outliers in our box plot are at the high end.] ^[See [this article](https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/) for more on issues with box plots in general.]
 
 Grouping the data by publisher and day of the week suggests that we believe the observations within each group are independent and identically distributed, even if we don't explicitly say so. When we report a mean, we suggest that the sampling distribution has a finite mean.
 
