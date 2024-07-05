@@ -1,0 +1,91 @@
+---
+title: "Recreating the _Modernist Cuisine_ recipe style in `gt`"
+format: html
+draft: true
+---
+
+```{r}
+library(tidyverse)
+library(gt)
+```
+
+```{r}
+read_delim("the_colonel's_fried_chicken.csv") -> 
+  recipe
+```
+
+```{r}
+theme_modernist_cuisine <- function(table, ...){
+  table |>
+    tab_options(table.width = px(1116)) |>
+    cols_width(
+      ingredient ~ pct(20),
+      quantity ~ pct(10),
+      scaling ~ pct(10),
+      procedure ~ pct(60)) |>
+    opt_vertical_padding(scale = 0.5) |>
+    opt_align_table_header("left") |>
+    opt_table_font(google_font("Belleza")) |>
+    tab_style(
+      style = cell_text(
+        transform = "uppercase", 
+        weight = 1000, 
+        size = 22,
+        align = "left"), 
+      locations = cells_column_labels()) |>
+    tab_style(
+      style = cell_text(
+        v_align = "top", 
+        size = 22, 
+        weight = 500, 
+        align = "left"),
+      locations = cells_body()) |>
+    tab_style(
+      style = cell_text(weight = 700),
+      locations = cells_body(columns = 1)) |>
+    tab_style(
+      style = cell_text(transform = "uppercase", weight = 1000, size = 30),
+      locations = cells_title("title")) |>
+    tab_style(
+      style = cell_text(color = "#AD1E23", size = 22, weight = 700),
+      locations = list(cells_title("subtitle"), cells_source_notes())) |>
+    fmt_markdown() |>
+    opt_table_lines("none")
+}
+
+theme_modernist_cuisine_hlines <- function(table, rows){
+  table |>
+    tab_style(
+      style = cell_borders(
+        sides = c("top"),  
+        weight = px(1.5), 
+        color = "#AD1E23"),
+      locations = cells_body(rows = rows))
+}
+```
+
+```{r}
+recipe |>
+  mutate(across(everything(), \(x) replace_na(x, ""))) |>
+  gt() |>
+  tab_header(
+    title = toupper("The Colonel's Fried Chicken"),
+    subtitle = toupper("Inspired By Colonel Harland Sanders")) |>
+  tab_source_note("(original 1930, adapted 2010)") |>
+  theme_modernist_cuisine() |>
+  theme_modernist_cuisine_hlines(rows = c(1, 2, 5, 16, 18)) |>
+  gtsave(filename = "fried_chicken.html") 
+```
+
+```{r}
+read_csv("banana_bread.csv") |>
+  mutate(across(everything(), \(x) replace_na(x, ""))) |>
+  gt() |>
+  tab_header(
+    title = toupper("Banana Bread"),
+    subtitle = toupper("From Sally's Baking Recipes")) |>
+  tab_source_note("Sally McKenney, 2023") |>
+  theme_modernist_cuisine() |>
+  theme_modernist_cuisine_hlines(rows = c(6, 10)) |>
+  gtsave(filename = "banana_bread.html") 
+```
