@@ -253,23 +253,23 @@ background-color: null;
 font-style: inherit;">0.25</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="ffzsjgvvte" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ffzsjgvvte table {
+<div id="actixlmaiy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#actixlmaiy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ffzsjgvvte thead, #ffzsjgvvte tbody, #ffzsjgvvte tfoot, #ffzsjgvvte tr, #ffzsjgvvte td, #ffzsjgvvte th {
+#actixlmaiy thead, #actixlmaiy tbody, #actixlmaiy tfoot, #actixlmaiy tr, #actixlmaiy td, #actixlmaiy th {
   border-style: none;
 }
 
-#ffzsjgvvte p {
+#actixlmaiy p {
   margin: 0;
   padding: 0;
 }
 
-#ffzsjgvvte .gt_table {
+#actixlmaiy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -295,12 +295,12 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#ffzsjgvvte .gt_caption {
+#actixlmaiy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ffzsjgvvte .gt_title {
+#actixlmaiy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -312,7 +312,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#ffzsjgvvte .gt_subtitle {
+#actixlmaiy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -324,7 +324,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-top-width: 0;
 }
 
-#ffzsjgvvte .gt_heading {
+#actixlmaiy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -336,13 +336,13 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#ffzsjgvvte .gt_bottom_border {
+#actixlmaiy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ffzsjgvvte .gt_col_headings {
+#actixlmaiy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -357,7 +357,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#ffzsjgvvte .gt_col_heading {
+#actixlmaiy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -377,7 +377,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#ffzsjgvvte .gt_column_spanner_outer {
+#actixlmaiy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -389,15 +389,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 4px;
 }
 
-#ffzsjgvvte .gt_column_spanner_outer:first-child {
+#actixlmaiy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ffzsjgvvte .gt_column_spanner_outer:last-child {
+#actixlmaiy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ffzsjgvvte .gt_column_spanner {
+#actixlmaiy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -409,11 +409,11 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   width: 100%;
 }
 
-#ffzsjgvvte .gt_spanner_row {
+#actixlmaiy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ffzsjgvvte .gt_group_heading {
+#actixlmaiy .gt_group_heading {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -439,7 +439,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   text-align: left;
 }
 
-#ffzsjgvvte .gt_empty_group_heading {
+#actixlmaiy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -454,15 +454,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   vertical-align: middle;
 }
 
-#ffzsjgvvte .gt_from_md > :first-child {
+#actixlmaiy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ffzsjgvvte .gt_from_md > :last-child {
+#actixlmaiy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ffzsjgvvte .gt_row {
+#actixlmaiy .gt_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -481,7 +481,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#ffzsjgvvte .gt_stub {
+#actixlmaiy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -494,7 +494,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#ffzsjgvvte .gt_stub_row_group {
+#actixlmaiy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -508,15 +508,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   vertical-align: top;
 }
 
-#ffzsjgvvte .gt_row_group_first td {
+#actixlmaiy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ffzsjgvvte .gt_row_group_first th {
+#actixlmaiy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ffzsjgvvte .gt_summary_row {
+#actixlmaiy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -526,16 +526,16 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#ffzsjgvvte .gt_first_summary_row {
+#actixlmaiy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ffzsjgvvte .gt_first_summary_row.thick {
+#actixlmaiy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ffzsjgvvte .gt_last_summary_row {
+#actixlmaiy .gt_last_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -545,7 +545,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#ffzsjgvvte .gt_grand_summary_row {
+#actixlmaiy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -555,7 +555,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#ffzsjgvvte .gt_first_grand_summary_row {
+#actixlmaiy .gt_first_grand_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -565,7 +565,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#ffzsjgvvte .gt_last_grand_summary_row_top {
+#actixlmaiy .gt_last_grand_summary_row_top {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -575,11 +575,11 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#ffzsjgvvte .gt_striped {
+#actixlmaiy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ffzsjgvvte .gt_table_body {
+#actixlmaiy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -588,7 +588,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#ffzsjgvvte .gt_footnotes {
+#actixlmaiy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -602,7 +602,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#ffzsjgvvte .gt_footnote {
+#actixlmaiy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -611,7 +611,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#ffzsjgvvte .gt_sourcenotes {
+#actixlmaiy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -625,7 +625,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#ffzsjgvvte .gt_sourcenote {
+#actixlmaiy .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -633,63 +633,63 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#ffzsjgvvte .gt_left {
+#actixlmaiy .gt_left {
   text-align: left;
 }
 
-#ffzsjgvvte .gt_center {
+#actixlmaiy .gt_center {
   text-align: center;
 }
 
-#ffzsjgvvte .gt_right {
+#actixlmaiy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ffzsjgvvte .gt_font_normal {
+#actixlmaiy .gt_font_normal {
   font-weight: normal;
 }
 
-#ffzsjgvvte .gt_font_bold {
+#actixlmaiy .gt_font_bold {
   font-weight: bold;
 }
 
-#ffzsjgvvte .gt_font_italic {
+#actixlmaiy .gt_font_italic {
   font-style: italic;
 }
 
-#ffzsjgvvte .gt_super {
+#actixlmaiy .gt_super {
   font-size: 65%;
 }
 
-#ffzsjgvvte .gt_footnote_marks {
+#actixlmaiy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ffzsjgvvte .gt_asterisk {
+#actixlmaiy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ffzsjgvvte .gt_indent_1 {
+#actixlmaiy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ffzsjgvvte .gt_indent_2 {
+#actixlmaiy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ffzsjgvvte .gt_indent_3 {
+#actixlmaiy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ffzsjgvvte .gt_indent_4 {
+#actixlmaiy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ffzsjgvvte .gt_indent_5 {
+#actixlmaiy .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -785,193 +785,206 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
 <td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 Maximum">41.0</td>
 </tr>
 <tr class="odd gt_group_heading_row">
+<td colspan="8" id="New York Time" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">New York Time</td>
+</tr>
+<tr class="even gt_row_group_first">
+<td id="stub_1_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
+<td class="gt_row gt_right" headers="New York Time stub_1_8 Count">1</td>
+<td class="gt_row gt_right" headers="New York Time stub_1_8 Mean">19.3</td>
+<td class="gt_row gt_right" headers="New York Time stub_1_8 Minimum">19.3</td>
+<td class="gt_row gt_right" headers="New York Time stub_1_8 1ˢᵗ Quartile">19.3</td>
+<td class="gt_row gt_right" headers="New York Time stub_1_8 Median">19.3</td>
+<td class="gt_row gt_right" headers="New York Time stub_1_8 3ʳᵈ Quartile">19.3</td>
+<td class="gt_row gt_right" headers="New York Time stub_1_8 Maximum">19.3</td>
+</tr>
+<tr class="odd gt_group_heading_row">
 <td colspan="8" id="New York Times" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">New York Times</td>
 </tr>
 <tr class="even gt_row_group_first">
-<td id="stub_1_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Count">64</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Mean">5.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Minimum">3.7</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 1ˢᵗ Quartile">4.8</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Median">5.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 3ʳᵈ Quartile">6.3</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Maximum">8.7</td>
+<td id="stub_1_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_9 Count">65</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_9 Mean">5.5</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_9 Minimum">3.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_9 1ˢᵗ Quartile">4.8</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_9 Median">5.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_9 3ʳᵈ Quartile">6.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_9 Maximum">8.7</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Count">58</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Mean">7.8</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Minimum">4.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 1ˢᵗ Quartile">6.5</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Median">7.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 3ʳᵈ Quartile">8.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Maximum">16.6</td>
+<td id="stub_1_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_10 Count">58</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_10 Mean">7.8</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_10 Minimum">4.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_10 1ˢᵗ Quartile">6.5</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_10 Median">7.4</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_10 3ʳᵈ Quartile">8.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_10 Maximum">16.6</td>
 </tr>
 <tr class="even">
-<td id="stub_1_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Count">57</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Mean">11.9</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Minimum">5.3</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 1ˢᵗ Quartile">9.0</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Median">11.7</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 3ʳᵈ Quartile">13.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Maximum">26.9</td>
+<td id="stub_1_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_11 Count">59</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_11 Mean">11.8</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_11 Minimum">5.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_11 1ˢᵗ Quartile">9.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_11 Median">11.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_11 3ʳᵈ Quartile">13.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_11 Maximum">26.9</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Count">51</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Mean">19.9</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Minimum">9.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 1ˢᵗ Quartile">15.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Median">18.8</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 3ʳᵈ Quartile">23.1</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Maximum">40.0</td>
+<td id="stub_1_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 Count">56</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 Mean">19.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 Minimum">9.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 1ˢᵗ Quartile">14.9</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 Median">18.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 3ʳᵈ Quartile">23.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 Maximum">40.0</td>
 </tr>
 <tr class="even">
-<td id="stub_1_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Count">44</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Mean">22.0</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Minimum">8.8</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 1ˢᵗ Quartile">16.5</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Median">19.8</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 3ʳᵈ Quartile">25.7</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Maximum">54.5</td>
+<td id="stub_1_13" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 Count">46</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 Mean">21.5</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 Minimum">6.4</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 1ˢᵗ Quartile">13.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 Median">19.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 3ʳᵈ Quartile">25.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 Maximum">54.5</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_13" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Count">36</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Mean">26.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Minimum">9.9</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 1ˢᵗ Quartile">17.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Median">25.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 3ʳᵈ Quartile">32.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Maximum">65.6</td>
+<td id="stub_1_14" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_14 Count">37</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_14 Mean">26.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_14 Minimum">9.9</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_14 1ˢᵗ Quartile">17.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_14 Median">25.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_14 3ʳᵈ Quartile">31.8</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_14 Maximum">65.6</td>
 </tr>
 <tr class="even">
-<td id="stub_1_14" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Sunday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Count">31</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Mean">34.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Minimum">17.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 1ˢᵗ Quartile">24.9</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Median">29.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 3ʳᵈ Quartile">40.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Maximum">68.7</td>
+<td id="stub_1_15" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Sunday</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_15 Count">32</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_15 Mean">33.8</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_15 Minimum">17.4</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_15 1ˢᵗ Quartile">24.5</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_15 Median">29.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_15 3ʳᵈ Quartile">40.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_15 Maximum">68.7</td>
 </tr>
 <tr class="odd gt_group_heading_row">
 <td colspan="8" id="New Yorker" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">New Yorker</td>
 </tr>
 <tr class="even gt_row_group_first">
-<td id="stub_1_15" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Count">35</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Mean">28.6</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Minimum">14.9</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 1ˢᵗ Quartile">19.6</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Median">23.7</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 3ʳᵈ Quartile">37.2</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Maximum">64.9</td>
+<td id="stub_1_16" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 Count">35</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 Mean">28.6</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 Minimum">14.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 1ˢᵗ Quartile">19.6</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 Median">23.7</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 3ʳᵈ Quartile">37.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 Maximum">64.9</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_16" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Count">46</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Mean">15.1</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Minimum">7.1</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 1ˢᵗ Quartile">11.2</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Median">12.9</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 3ʳᵈ Quartile">16.5</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Maximum">37.2</td>
+<td id="stub_1_17" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 Count">47</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 Mean">14.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 Minimum">6.8</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 1ˢᵗ Quartile">11.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 Median">12.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 3ʳᵈ Quartile">16.3</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 Maximum">37.2</td>
 </tr>
 <tr class="even">
-<td id="stub_1_17" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Count">52</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Mean">8.6</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Minimum">3.7</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 1ˢᵗ Quartile">5.0</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Median">7.9</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 3ʳᵈ Quartile">11.2</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Maximum">20.6</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_18" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Count">50</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Mean">5.6</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Minimum">4.1</td>
+<td id="stub_1_18" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_18 Count">55</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_18 Mean">8.3</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_18 Minimum">3.7</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_18 1ˢᵗ Quartile">4.9</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Median">5.4</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 3ʳᵈ Quartile">6.2</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Maximum">9.0</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_18 Median">7.6</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_18 3ʳᵈ Quartile">11.0</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_18 Maximum">20.6</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_19" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_19 Count">50</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_19 Mean">5.6</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_19 Minimum">4.1</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_19 1ˢᵗ Quartile">4.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_19 Median">5.4</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_19 3ʳᵈ Quartile">6.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_19 Maximum">9.0</td>
 </tr>
 <tr class="even">
-<td id="stub_1_19" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 Count">45</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 Mean">12.1</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 Minimum">5.5</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 1ˢᵗ Quartile">8.1</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 Median">10.2</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 3ʳᵈ Quartile">15.0</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 Maximum">28.0</td>
+<td id="stub_1_20" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_20 Count">45</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_20 Mean">12.1</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_20 Minimum">5.5</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_20 1ˢᵗ Quartile">8.1</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_20 Median">10.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_20 3ʳᵈ Quartile">15.0</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_20 Maximum">28.0</td>
 </tr>
 <tr class="odd gt_group_heading_row">
 <td colspan="8" id="Wall Street Journal" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Wall Street Journal</td>
 </tr>
 <tr class="even gt_row_group_first">
-<td id="stub_1_20" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 Count">18</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 Mean">6.7</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 Minimum">4.3</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 1ˢᵗ Quartile">5.8</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 Median">6.2</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 3ʳᵈ Quartile">8.2</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 Maximum">9.8</td>
+<td id="stub_1_21" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Count">18</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Mean">6.7</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Minimum">4.3</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 1ˢᵗ Quartile">5.8</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Median">6.2</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 3ʳᵈ Quartile">8.2</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Maximum">9.8</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_21" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Count">16</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Mean">9.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Minimum">5.8</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 1ˢᵗ Quartile">6.7</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Median">9.0</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 3ʳᵈ Quartile">11.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Maximum">13.0</td>
+<td id="stub_1_22" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Count">16</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Mean">9.1</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Minimum">5.8</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 1ˢᵗ Quartile">6.7</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Median">9.0</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 3ʳᵈ Quartile">11.1</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Maximum">13.0</td>
 </tr>
 <tr class="even">
-<td id="stub_1_22" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Count">12</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Mean">13.9</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Minimum">8.8</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 1ˢᵗ Quartile">10.7</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Median">13.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 3ʳᵈ Quartile">17.2</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Maximum">22.2</td>
+<td id="stub_1_23" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Count">12</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Mean">13.9</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Minimum">8.8</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 1ˢᵗ Quartile">10.7</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Median">13.1</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 3ʳᵈ Quartile">17.2</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Maximum">22.2</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_23" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Count">13</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Mean">17.9</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Minimum">9.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 1ˢᵗ Quartile">14.6</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Median">19.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 3ʳᵈ Quartile">20.2</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Maximum">26.8</td>
+<td id="stub_1_24" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Count">13</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Mean">17.9</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Minimum">9.1</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 1ˢᵗ Quartile">14.6</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Median">19.1</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 3ʳᵈ Quartile">20.2</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Maximum">26.8</td>
 </tr>
 <tr class="even">
-<td id="stub_1_24" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Count">8</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Mean">16.4</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Minimum">9.5</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 1ˢᵗ Quartile">13.5</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Median">15.6</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 3ʳᵈ Quartile">18.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Maximum">27.5</td>
+<td id="stub_1_25" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Count">8</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Mean">16.4</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Minimum">9.5</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 1ˢᵗ Quartile">13.5</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Median">15.6</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 3ʳᵈ Quartile">18.1</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Maximum">27.5</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_25" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Count">14</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Mean">31.4</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Minimum">15.9</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 1ˢᵗ Quartile">27.0</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Median">32.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 3ʳᵈ Quartile">34.4</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Maximum">46.7</td>
+<td id="stub_1_26" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_26 Count">14</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_26 Mean">31.4</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_26 Minimum">15.9</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_26 1ˢᵗ Quartile">27.0</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_26 Median">32.1</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_26 3ʳᵈ Quartile">34.4</td>
+<td class="gt_row gt_right" headers="Wall Street Journal stub_1_26 Maximum">46.7</td>
 </tr>
 </tbody><tfoot class="gt_sourcenotes">
 <tr class="odd">
