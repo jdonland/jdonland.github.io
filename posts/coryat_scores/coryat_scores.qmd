@@ -171,3 +171,4 @@ coryat_scores |>
 -   [J! Scorer](https://j-scorer.com/)
 -   [J! Archive](https://j-archive.com/)
 -   [J!ometry](https://j-ometry.com/)
+-   [Maximum Jeopardy!](http://datagenetics.com/blog/september12012/index.html)
