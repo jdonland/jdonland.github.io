@@ -5,9 +5,6 @@ description: "A sojourn on star situations."
 execute: 
    warning: false
    message: false
-filters:
-   - lightbox
-lightbox: auto
 draft: true
 ---
 
