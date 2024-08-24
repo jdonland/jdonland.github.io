@@ -1,6 +1,6 @@
 ---
 title: "Hot Days"
-description: "On the importance of reproducibility in data visualization."
+description: "Reproducibility in data visualization."
 date: "2024-07-11"
 modified: now
 format: html
