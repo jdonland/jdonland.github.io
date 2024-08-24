@@ -5,7 +5,7 @@ date: "2024-07-11"
 modified: now
 format: html
 author: "Jesse Onland"
-
+image: hot_days_thumbnail.png
 ---
 
 ```{r}
