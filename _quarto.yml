@@ -37,5 +37,9 @@ format:
     lightbox: true
     anchor-sections: false
     link-external-newwindow: true
+    date-format: long
+    execute: 
+      warning: false
+      message: false
 
 editor: source
