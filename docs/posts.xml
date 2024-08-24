@@ -10,7 +10,551 @@
 <atom:link href="https://jdonland.github.io/posts.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.5.52</generator>
-<lastBuildDate>Mon, 02 Jan 2023 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 11 Jul 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Hot Days</title>
+  <dc:creator>Jesse Onland</dc:creator>
+  <link>https://jdonland.github.io/posts/hot_days/hot_days.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="original-graphic" class="level2">
+<h2 data-anchor-id="original-graphic">Original Graphic</h2>
+<p>Our goal is to recreate the graphic below, originally posted by <a href="https://x.com/ChrisMartzWX">Chris Martz</a> on X. He says,</p>
+<blockquote class="blockquote">
+<p>This plot shows the average number of days per year with daily maximum temperatures ≥95°, ≥100° and ≥105° per USHCN station since 1895. The trend is down.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="original.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Original data graphic"><img src="https://jdonland.github.io/posts/hot_days/original.jpg" class="img-fluid figure-img" alt="Original data graphic"></a></p>
+<figcaption>Original data graphic</figcaption>
+</figure>
+</div>
+</section>
+<section id="data-visualization-reproducibility" class="level2">
+<h2 data-anchor-id="data-visualization-reproducibility">Data Visualization Reproducibility</h2>
+<p><em>Reproducibility</em> refers to a set of practices which ensure that a data product can be recreated by someone other than its author(s) in order to verify it. This concept applies as well to data visualization as it does to statistical analyses and machine learning models. A reproducible data graphic allows its audience to verify that the story it tells is truthful.</p>
+<p>Unfortunately, the graphic above is not very reproducible. That’s because it’s unclear exactly how it was created and thus it’s unclear exactly what it <em>means</em>. It includes a note about the data source, but the provided URL doesn’t link to a specific data set. The graphic doesn’t indicate what software was used to make it, let alone include code we could use to generate an exact copy of it.</p>
+<p>We’ll have to do our best to recreate it “by hand”.</p>
+</section>
+<section id="getting-the-data" class="level2">
+<h2 data-anchor-id="getting-the-data">Getting the Data</h2>
+<p>The closest USHCN data set I was able to find easily is a TSV of daily maximum temperatures for weather stations in the US. First we download it and store it locally. Note that the <code>read_*()</code> and <code>write_*()</code> family of functions from <code>readr</code> can zip and unzip files automatically according to the file extensions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://iridl.ldeo.columbia.edu/SOURCES/.CDIAC/.USHCN/.daily/tmax/tmax/[T]data.tsv"</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb1-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">url</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb1-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read_tsv</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb1-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">write_tsv</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">file =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tmax.gz"</span>)  </span></code></pre></div>
+</div>
+<p>Next we read the data into a data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tmax.gz"</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read_tsv</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">na =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"-99"</span>) <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">-&gt;</span></span>
+<span id="cb2-3">  tmax_data</span>
+<span id="cb2-4"></span>
+<span id="cb2-5">tmax_data <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">set_names</span>(\(x) <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"day_"</span>, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq_along</span>(x))) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-7">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rownames_to_column</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">var =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"station"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-8">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pivot_longer</span>(</span>
+<span id="cb2-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">cols =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">starts_with</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"day_"</span>), </span>
+<span id="cb2-10">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">names_to =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"day"</span>, </span>
+<span id="cb2-11">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">names_prefix =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"day_"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-12">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">drop_na</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-13">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">date =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ymd</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">18490101</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">days</span>(day)) <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">-&gt;</span></span>
+<span id="cb2-14">  tmax_data</span></code></pre></div>
+</div>
+<p>For each year, we need the proporations of days which were 95‒99°F, 100‒104°F, and 105°F or greater.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1">tmax_data <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">year =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">year</span>(date)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(year <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1894</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">select</span>(year, value) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-5">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(year) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarize</span>(</span>
+<span id="cb3-7">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">above_95  =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">between</span>(value,  <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">95</span>,  <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">99</span>))<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">n</span>(),</span>
+<span id="cb3-8">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">above_100 =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">between</span>(value, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">104</span>))<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">n</span>(),</span>
+<span id="cb3-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">above_105 =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(value <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">105</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">n</span>()) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-10">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pivot_longer</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">starts_with</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"above_"</span>), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">names_to =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"temp_threshold"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-11">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb3-12">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">temp_threshold =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">fct_relevel</span>(temp_threshold, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"above_95"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"above_100"</span>)) <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">-&gt;</span></span>
+<span id="cb3-13">  tmax_data_thresholded</span></code></pre></div>
+</div>
+</section>
+<section id="our-graphic" class="level2">
+<h2 data-anchor-id="our-graphic">Our Graphic</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1">tmax_data_thresholded <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb4-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> year, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> value, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> temp_threshold)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_col</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">position =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">position_stack</span>(), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">width =</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scale_x_continuous</span>(</span>
+<span id="cb4-5">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">expand =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>), </span>
+<span id="cb4-6">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">breaks =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1900</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2020</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>),</span>
+<span id="cb4-7">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">labels =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.character</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1900</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2020</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>))) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-8">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scale_y_continuous</span>(</span>
+<span id="cb4-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">breaks =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.01</span>),</span>
+<span id="cb4-10">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">labels =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.character</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>),</span>
+<span id="cb4-11">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">expand =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-12">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scale_fill_manual</span>(</span>
+<span id="cb4-13">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">values =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(</span>
+<span id="cb4-14">      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"above_95"</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#fe7b4b"</span>,</span>
+<span id="cb4-15">      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"above_100"</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#b02320"</span>,</span>
+<span id="cb4-16">      <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"above_105"</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#000000"</span>),</span>
+<span id="cb4-17">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">labels =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">paste0</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Days ≥"</span>, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">95</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">105</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>), <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"°F"</span>)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-18">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">labs</span>(</span>
+<span id="cb4-19">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"U.S. Observed Number of Very Hot Days Per Year 1895 to 2014"</span>,</span>
+<span id="cb4-20">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">caption =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Data source: U.S. Historical Climatology Network"</span>,</span>
+<span id="cb4-21">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Percent of Station-Days"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-22">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_bw</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">base_size =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">24</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-23">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme</span>(</span>
+<span id="cb4-24">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">aspect.ratio =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,</span>
+<span id="cb4-25">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">text =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_text</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">family =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Tinos"</span>),</span>
+<span id="cb4-26">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">axis.title.x =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_blank</span>(),</span>
+<span id="cb4-27">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">axis.title.y =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_text</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">margin =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">margin</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">t =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">r =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">b =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">l =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)),</span>
+<span id="cb4-28">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">legend.position =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"inside"</span>,</span>
+<span id="cb4-29">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">legend.position.inside =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.85</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span>),</span>
+<span id="cb4-30">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">legend.title =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_blank</span>(),</span>
+<span id="cb4-31">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">legend.background =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_rect</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NA</span>),</span>
+<span id="cb4-32">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">panel.grid =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_blank</span>())</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="hot_days_files/figure-html/our-graphic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://jdonland.github.io/posts/hot_days/hot_days_files/figure-html/our-graphic-1.png" class="img-fluid figure-img" width="786"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="remarks" class="level2 page-columns page-full">
+<h2 data-anchor-id="remarks">Remarks</h2>
+<p>There are some differences between our graphic and the original. For example, the most recent year included in the data we used is 2014, not 2023. Additionally, our vertical axis runs from 0% to 9% of station-days, whereas the original’s is from 0% to 6% of days.<sup>1</sup> The original title suggests that data from weather stations in Alaska and Hawaii have been excluded; we have not done this for our graphic.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;It’s not clear whether or how the original author transformed the data from station-days to days.</p></div><div id="fn2"><p><sup>2</sup>&nbsp;The linear trend can be added to the graphic with <code>geom_smooth(method = "lm").</code></p></div></div><p>While our graphic is not a perfect match for the original, we have nevertheless verified the claim that the (linear) trend in the proportion of very hot days in the United States has been downward since the end of the 19th century, despite the overall increase in the global temperature during that time.<sup>2</sup></p>
+<p>Context provided by an expert could be important here. A climatologist might be able to tell us whether this linear trend is important or useful, or whether we should try to control for any possible correlation in the changing distribution of American weather stations and average daily maximum temperatures. But one doesn’t need expert knowledge on, or even a basic understanding of, a data graphic’s subject matter in order to benefit from reproducing it. We can be assured that a successfully reproduced graphic isn’t lying, even if we aren’t sure exactly what it’s saying.</p>
+
+
+</section>
+
+
+ ]]></description>
+  <guid>https://jdonland.github.io/posts/hot_days/hot_days.html</guid>
+  <pubDate>Thu, 11 Jul 2024 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Crosswords, Violin Plots, and Dubious Distinctions in Data Analysis</title>
   <link>https://jdonland.github.io/posts/crossword_times/crossword_times.html</link>
@@ -253,23 +797,23 @@ background-color: null;
 font-style: inherit;">0.25</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="actixlmaiy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#actixlmaiy table {
+<div id="wbmjqmurrq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wbmjqmurrq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#actixlmaiy thead, #actixlmaiy tbody, #actixlmaiy tfoot, #actixlmaiy tr, #actixlmaiy td, #actixlmaiy th {
+#wbmjqmurrq thead, #wbmjqmurrq tbody, #wbmjqmurrq tfoot, #wbmjqmurrq tr, #wbmjqmurrq td, #wbmjqmurrq th {
   border-style: none;
 }
 
-#actixlmaiy p {
+#wbmjqmurrq p {
   margin: 0;
   padding: 0;
 }
 
-#actixlmaiy .gt_table {
+#wbmjqmurrq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -295,12 +839,12 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#actixlmaiy .gt_caption {
+#wbmjqmurrq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#actixlmaiy .gt_title {
+#wbmjqmurrq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -312,7 +856,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#actixlmaiy .gt_subtitle {
+#wbmjqmurrq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -324,7 +868,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-top-width: 0;
 }
 
-#actixlmaiy .gt_heading {
+#wbmjqmurrq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -336,13 +880,13 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#actixlmaiy .gt_bottom_border {
+#wbmjqmurrq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#actixlmaiy .gt_col_headings {
+#wbmjqmurrq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -357,7 +901,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#actixlmaiy .gt_col_heading {
+#wbmjqmurrq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -377,7 +921,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#actixlmaiy .gt_column_spanner_outer {
+#wbmjqmurrq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -389,15 +933,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 4px;
 }
 
-#actixlmaiy .gt_column_spanner_outer:first-child {
+#wbmjqmurrq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#actixlmaiy .gt_column_spanner_outer:last-child {
+#wbmjqmurrq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#actixlmaiy .gt_column_spanner {
+#wbmjqmurrq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -409,11 +953,11 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   width: 100%;
 }
 
-#actixlmaiy .gt_spanner_row {
+#wbmjqmurrq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#actixlmaiy .gt_group_heading {
+#wbmjqmurrq .gt_group_heading {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -439,7 +983,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   text-align: left;
 }
 
-#actixlmaiy .gt_empty_group_heading {
+#wbmjqmurrq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -454,15 +998,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   vertical-align: middle;
 }
 
-#actixlmaiy .gt_from_md > :first-child {
+#wbmjqmurrq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#actixlmaiy .gt_from_md > :last-child {
+#wbmjqmurrq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#actixlmaiy .gt_row {
+#wbmjqmurrq .gt_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -481,7 +1025,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#actixlmaiy .gt_stub {
+#wbmjqmurrq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -494,7 +1038,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#actixlmaiy .gt_stub_row_group {
+#wbmjqmurrq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -508,15 +1052,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   vertical-align: top;
 }
 
-#actixlmaiy .gt_row_group_first td {
+#wbmjqmurrq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#actixlmaiy .gt_row_group_first th {
+#wbmjqmurrq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#actixlmaiy .gt_summary_row {
+#wbmjqmurrq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -526,16 +1070,16 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#actixlmaiy .gt_first_summary_row {
+#wbmjqmurrq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#actixlmaiy .gt_first_summary_row.thick {
+#wbmjqmurrq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#actixlmaiy .gt_last_summary_row {
+#wbmjqmurrq .gt_last_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -545,7 +1089,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#actixlmaiy .gt_grand_summary_row {
+#wbmjqmurrq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -555,7 +1099,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#actixlmaiy .gt_first_grand_summary_row {
+#wbmjqmurrq .gt_first_grand_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -565,7 +1109,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#actixlmaiy .gt_last_grand_summary_row_top {
+#wbmjqmurrq .gt_last_grand_summary_row_top {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -575,11 +1119,11 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#actixlmaiy .gt_striped {
+#wbmjqmurrq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#actixlmaiy .gt_table_body {
+#wbmjqmurrq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -588,7 +1132,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#actixlmaiy .gt_footnotes {
+#wbmjqmurrq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -602,7 +1146,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#actixlmaiy .gt_footnote {
+#wbmjqmurrq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -611,7 +1155,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#actixlmaiy .gt_sourcenotes {
+#wbmjqmurrq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -625,7 +1169,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#actixlmaiy .gt_sourcenote {
+#wbmjqmurrq .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -633,63 +1177,63 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#actixlmaiy .gt_left {
+#wbmjqmurrq .gt_left {
   text-align: left;
 }
 
-#actixlmaiy .gt_center {
+#wbmjqmurrq .gt_center {
   text-align: center;
 }
 
-#actixlmaiy .gt_right {
+#wbmjqmurrq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#actixlmaiy .gt_font_normal {
+#wbmjqmurrq .gt_font_normal {
   font-weight: normal;
 }
 
-#actixlmaiy .gt_font_bold {
+#wbmjqmurrq .gt_font_bold {
   font-weight: bold;
 }
 
-#actixlmaiy .gt_font_italic {
+#wbmjqmurrq .gt_font_italic {
   font-style: italic;
 }
 
-#actixlmaiy .gt_super {
+#wbmjqmurrq .gt_super {
   font-size: 65%;
 }
 
-#actixlmaiy .gt_footnote_marks {
+#wbmjqmurrq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#actixlmaiy .gt_asterisk {
+#wbmjqmurrq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#actixlmaiy .gt_indent_1 {
+#wbmjqmurrq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#actixlmaiy .gt_indent_2 {
+#wbmjqmurrq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#actixlmaiy .gt_indent_3 {
+#wbmjqmurrq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#actixlmaiy .gt_indent_4 {
+#wbmjqmurrq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#actixlmaiy .gt_indent_5 {
+#wbmjqmurrq .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -802,7 +1346,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
 </tr>
 <tr class="even gt_row_group_first">
 <td id="stub_1_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Count">65</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_9 Count">66</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_9 Mean">5.5</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_9 Minimum">3.0</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_9 1ˢᵗ Quartile">4.8</td>
@@ -812,8 +1356,8 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
 </tr>
 <tr class="odd">
 <td id="stub_1_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Count">58</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Mean">7.8</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_10 Count">59</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_10 Mean">7.7</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_10 Minimum">4.6</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_10 1ˢᵗ Quartile">6.5</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_10 Median">7.4</td>
@@ -822,52 +1366,52 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
 </tr>
 <tr class="even">
 <td id="stub_1_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Count">59</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_11 Count">60</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_11 Mean">11.8</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_11 Minimum">5.3</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_11 1ˢᵗ Quartile">9.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Median">11.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_11 Median">11.7</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_11 3ʳᵈ Quartile">13.6</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_11 Maximum">26.9</td>
 </tr>
 <tr class="odd">
 <td id="stub_1_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Count">56</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Mean">19.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 Count">58</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 Mean">19.1</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_12 Minimum">9.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 1ˢᵗ Quartile">14.9</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 1ˢᵗ Quartile">14.7</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_12 Median">18.0</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 3ʳᵈ Quartile">23.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 3ʳᵈ Quartile">22.9</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_12 Maximum">40.0</td>
 </tr>
 <tr class="even">
 <td id="stub_1_13" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Count">46</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Mean">21.5</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 Count">48</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 Mean">21.1</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_13 Minimum">6.4</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_13 1ˢᵗ Quartile">13.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Median">19.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 3ʳᵈ Quartile">25.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 Median">19.5</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 3ʳᵈ Quartile">25.2</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_13 Maximum">54.5</td>
 </tr>
 <tr class="odd">
 <td id="stub_1_14" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Count">37</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Mean">26.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_14 Count">38</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_14 Mean">26.1</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_14 Minimum">9.9</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_14 1ˢᵗ Quartile">17.3</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Median">25.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_14 Median">24.5</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_14 3ʳᵈ Quartile">31.8</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_14 Maximum">65.6</td>
 </tr>
 <tr class="even">
 <td id="stub_1_15" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Sunday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_15 Count">32</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_15 Mean">33.8</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_15 Minimum">17.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_15 1ˢᵗ Quartile">24.5</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_15 Median">29.0</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_15 3ʳᵈ Quartile">40.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_15 Count">33</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_15 Mean">32.9</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_15 Minimum">3.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_15 1ˢᵗ Quartile">24.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_15 Median">28.8</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_15 3ʳᵈ Quartile">39.1</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_15 Maximum">68.7</td>
 </tr>
 <tr class="odd gt_group_heading_row">
@@ -875,30 +1419,30 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
 </tr>
 <tr class="even gt_row_group_first">
 <td id="stub_1_16" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Count">35</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Mean">28.6</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 Count">36</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 Mean">28.3</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_16 Minimum">14.9</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 1ˢᵗ Quartile">19.6</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 1ˢᵗ Quartile">18.6</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_16 Median">23.7</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_16 3ʳᵈ Quartile">37.2</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_16 Maximum">64.9</td>
 </tr>
 <tr class="odd">
 <td id="stub_1_17" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Count">47</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Mean">14.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 Count">48</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 Mean">14.8</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_17 Minimum">6.8</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 1ˢᵗ Quartile">11.2</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Median">12.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 1ˢᵗ Quartile">10.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 Median">12.8</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_17 3ʳᵈ Quartile">16.3</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_17 Maximum">37.2</td>
 </tr>
 <tr class="even">
 <td id="stub_1_18" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Count">55</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_18 Count">56</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_18 Mean">8.3</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_18 Minimum">3.7</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 1ˢᵗ Quartile">4.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_18 1ˢᵗ Quartile">4.8</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_18 Median">7.6</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_18 3ʳᵈ Quartile">11.0</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_18 Maximum">20.6</td>

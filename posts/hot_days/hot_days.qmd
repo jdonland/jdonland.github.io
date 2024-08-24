@@ -1,9 +1,11 @@
 ---
 title: "Hot Days"
+description: "On the importance of reproducibility in data visualization."
+date: "2024-07-11"
+modified: now
 format: html
 author: "Jesse Onland"
-date: "2024-07-11"
-draft: true
+
 ---
 
 ```{r}
@@ -15,8 +17,6 @@ library(showtext)
 
 font_add_google("Tinos")
 showtext_auto() 
-
-Sys.setenv("VROOM_CONNECTION_SIZE" = 131072 * 8)
 ```
 
 ## Original Graphic
@@ -25,13 +25,13 @@ Our goal is to recreate the graphic below, originally posted by [Chris Martz](ht
 
 > This plot shows the average number of days per year with daily maximum temperatures ≥95°, ≥100° and ≥105° per USHCN station since 1895. The trend is down.
 
-[![Original data graphic]("original.jpg")]
+![Original data graphic](original.jpg)
 
 ## Data Visualization Reproducibility
 
-_Reproducibility_ refers to a set of practices which ensure that a data product can be recreated by someone other than its author(s) in order to verify it. This concept applies as well to data visualization as it does to statistical analyses and machine learning models.
+_Reproducibility_ refers to a set of practices which ensure that a data product can be recreated by someone other than its author(s) in order to verify it. This concept applies as well to data visualization as it does to statistical analyses and machine learning models. A reproducible data graphic allows its audience to verify that the story it tells is truthful.
 
-Unfortunately, the graphic above is not very reproducible because it's unclear exactly how it was created. It includes a note about the data source, but the provided URL doesn't link to a specific data set. There's also no indication of what software was used, and in particular there's no code we can run to generate our own copy of it.
+Unfortunately, the graphic above is not very reproducible. That's because it's unclear exactly how it was created and thus it's unclear exactly what it _means_. It includes a note about the data source, but the provided URL doesn't link to a specific data set. The graphic doesn't indicate what software was used to make it, let alone include code we could use to generate an exact copy of it.
 
 We'll have to do our best to recreate it "by hand".
 
@@ -42,6 +42,7 @@ The closest USHCN data set I was able to find easily is a TSV of daily maximum t
 ```{r}
 #| label: download
 #| eval: false
+#| code-fold: false
 
 "https://iridl.ldeo.columbia.edu/SOURCES/.CDIAC/.USHCN/.daily/tmax/tmax/[T]data.tsv" |>
   url() |>
@@ -54,6 +55,7 @@ Next we read the data into a data frame.
 ```{r}
 #| label: data
 #| eval: false
+#| code-fold: false
 
 "tmax.gz" |>
   read_tsv(na = "-99") ->
@@ -76,6 +78,7 @@ For each year, we need the proporations of days which were 95‒99°F, 100‒104
 ```{r}
 #| label: summarize
 #| eval: false
+#| code-fold: false
 
 tmax_data |>
   mutate(year = year(date)) |>
@@ -124,16 +127,26 @@ tmax_data_thresholded |>
       "above_105" = "#000000"),
     labels = paste0("Days ≥", seq(95, 105, 5), "°F")) +
   labs(
-    title = "U.S. Observed Number of Very Hot Days Per Year 1895 to 2023",
+    title = "U.S. Observed Number of Very Hot Days Per Year 1895 to 2014",
     caption = "Data source: U.S. Historical Climatology Network",
     y = "Percent of Station-Days") +
-  theme_bw(base_size = 12) +
+  theme_bw(base_size = 24) +
   theme(
     aspect.ratio = 3/4,
     text = element_text(family = "Tinos"),
     axis.title.x = element_blank(),
     axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)),
-    legend.position = c(0.85, 0.9),
+    legend.position = "inside",
+    legend.position.inside = c(0.85, 0.8),
     legend.title = element_blank(),
+    legend.background = element_rect(fill = NA),
     panel.grid = element_blank())
 ```
+
+## Remarks
+
+There are some differences between our graphic and the original. For example, the most recent year included in the data we used is 2014, not 2023. Additionally, our vertical axis runs from 0% to 9% of station-days, whereas the original's is from 0% to 6% of days.^[It's not clear whether or how the original author transformed the data from station-days to days.] The original title suggests that data from weather stations in Alaska and Hawaii have been excluded; we have not done this for our graphic.
+
+While our graphic is not a perfect match for the original, we have nevertheless verified the claim that the (linear) trend in the proportion of very hot days in the United States has been downward since the end of the 19th century, despite the overall increase in the global temperature during that time.^[The linear trend can be added to the graphic with `geom_smooth(method = "lm").`]
+
+Context provided by an expert could be important here. A climatologist might be able to tell us whether this linear trend is important or useful, or whether we should try to control for any possible correlation in the changing distribution of American weather stations and average daily maximum temperatures. But one doesn't need expert knowledge on, or even a basic understanding of, a data graphic's subject matter in order to benefit from reproducing it. We can be assured that a successfully reproduced graphic isn't lying, even if we aren't sure exactly what it's saying.
