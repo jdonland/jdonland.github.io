@@ -73,7 +73,7 @@ tmax_data |>
   tmax_data
 ```
 
-For each year, we need the proporations of days which were 95‒99°F, 100‒104°F, and 105°F or greater.
+For each year, we need the proportions of days which were 95‒99°F, 100‒104°F, and 105°F or greater.
 
 ```{r}
 #| label: summarize
