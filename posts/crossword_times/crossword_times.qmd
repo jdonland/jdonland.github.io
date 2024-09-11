@@ -53,8 +53,14 @@ I track how long it takes me to solve the New York Times, Los Angeles Times, New
 #| message: false
 #| code-fold: false
 
+c("New York Times", 
+  "New Yorker", 
+  "Wall Street Journal", 
+  "Los Angeles Times") ->
+  publishers
+
 read_csv("crossword_times.csv", col_types = "ccD") |>
-  filter(publisher != "USA Today") |>
+  filter(publisher %in% publishers) |>
   mutate(publisher,
          day = factor(wday(date, week_start = 1, label = TRUE, abbr = FALSE)),
          minutes = period_to_seconds(ms(time))/60,
