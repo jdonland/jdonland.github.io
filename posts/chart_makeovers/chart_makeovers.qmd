@@ -1,0 +1,58 @@
+---
+title: "Chart Makeovers"
+date: ""
+image: chart_makeovers.png
+description: ""
+draft: true
+---
+
+```{r}
+#| label: libraries
+#| include: false
+
+library(tidyverse)
+```
+
+## Education & Parenthood
+
+![Original](xkl4nb0bo6qd1.png)
+
+```{r}
+"
+sex,   children,  education,      percent,
+Men,   Parent,    College Degree, 36,
+Men,   Childless, College Degree, 35,
+Men,   Parent,    No College,     39,
+Men,   Childless, No College,     38,
+Men,   Parent,    Some College,   24,
+Men,   Childless, Some College,   27,
+Women, Parent,    College Degree, 31,
+Women, Childless, College Degree, 47,
+Women, Parent,    No College,     27,
+Women, Childless, No College,     27,
+Women, Parent,    Some College,   28,
+Women, Childless, Some College,   26
+" |>
+  read_csv(col_types = "fff") |>
+  mutate(
+    education = fct_relevel(education, "No College", "Some College", "College Degree")) |>
+  ggplot(aes(x = children, y = education, fill = percent)) +
+  geom_tile() +
+  geom_text(aes(label = percent), size = 5, colour = "white") +
+  scale_y_discrete(position = "right") +
+  coord_fixed() +
+  facet_grid(cols = vars(sex)) +
+  labs(
+    title = "Education negatively correlated with motherhood, but not fatherhood",
+    subtitle = "Percent of Americans over 50 by education level and parenthood status",
+    caption = "Source: Pew Research Center, \"The Experiences of U.S. Adults Who Don't Have Children,\" 2021-22") +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position = "none",
+    plot.title = element_text(face = "bold"),
+    plot.subtitle = element_text(face = "italic", colour = "grey20"),
+    axis.text = element_text(size = 14),
+    axis.title = element_blank(),
+    strip.text = element_text(size = 14),
+    panel.grid = element_blank())
+```
