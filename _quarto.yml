@@ -8,6 +8,7 @@ website:
   favicon: image.jpg
   search: false
   page-footer: ""
+  draft-mode: unlinked
   navbar:
     left:
       - href: index.qmd

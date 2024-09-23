@@ -1,9 +1,11 @@
 ---
 title: "Chart Makeovers"
-date: ""
+date: "2024-09-21"
 image: chart_makeovers.png
-description: ""
+description: "True beauty comes from within."
 draft: true
+html:
+    code-fold: true
 ---
 
 ```{r}
@@ -12,47 +14,77 @@ draft: true
 
 library(tidyverse)
 ```
+## Introduction
+
+I like to give makeovers to ugly and/or ineffective data visualizations I encounter as a way to keep my data graphic design skills sharp. This page serves to collect and showcase the results.
 
 ## Education & Parenthood
 
-![Original](xkl4nb0bo6qd1.png)
+A reliable way to remake an ineffective data visualization is to apply some of the ideas from Cole Nussbaumer Knaflic's excellent introductory data visualization book *Storytelling with Data*. In it, she describes a variety of ways to eliminate clutter that doesn't help communicate the graphic's "big idea" and highlight the elements that do.
+
+### Original
+
+![](original-1-1.png)
+
+This chart isn't terrible. The big idea is clear: a larger proportion of childless women have college degrees than do mothers, fathers, or childless men. The column heights and label colours show this well enough. But the chart is a bit confusing. The columns are arranged so that childless women and men are adjacent, but this order isn't very natural, and the combined "WITH KIDS [WITHOUT CHILDREN]{.underline} WITH KIDS" header is baffling at first. Additionally, the dotted lines joining the labels strongly imply a time dimension, which these data don't have.
+
+### Makeover
+
+In each of the four combinations of sex and parenthood our values sum to 100%, so a 100% stacked column chart is the natural structure for this graphic. While it could be possible to get the original column order to work by making careful use of borders and/or spacing, the simple solution is to just to facet the plot by sex and place the columns for parents and non-parents in consistent positions within each facet. We'll also replace the confusing column header with straightforward labels and organize them using a size hierarchy. Instead of mapping fill colour to sex, we'll use saturation to indicate education levels and hue to highlight the important part. Bolding the most relevant numbers will reinforce that highlighting. The "big idea" will go directly in the title, while the subtitle and caption can explain the structure of the chart and the source of the data.
+
+Our finished makeover also improves somewhat on Pew Research's own [version](https://www.pewresearch.org/wp-content/uploads/sites/20/2024/07/PST_2024.7.26_adults-without-children_4-02.png) of the chart, which maps hue to sex and breaks up the column label hierarchy. Their title is excessively wordy, too.
 
 ```{r}
-"
-sex,   children,  education,      percent,
-Men,   Parent,    College Degree, 36,
-Men,   Childless, College Degree, 35,
-Men,   Parent,    No College,     39,
-Men,   Childless, No College,     38,
-Men,   Parent,    Some College,   24,
-Men,   Childless, Some College,   27,
-Women, Parent,    College Degree, 31,
-Women, Childless, College Degree, 47,
-Women, Parent,    No College,     27,
-Women, Childless, No College,     27,
-Women, Parent,    Some College,   28,
-Women, Childless, Some College,   26
-" |>
-  read_csv(col_types = "fff") |>
+#| label: makeover-1
+#| warning: false
+#| message: false
+#| fig-width: 10
+#| fig-height: 10
+
+tibble(
+  sex       = rep(c("Men", "Women"), each = 6),
+  children  = rep(c("Parents", "Non-Parents"), times = 6),
+  education = rep(c("College Degree", "No College", "Some College"), 2, NA, 2),
+  percent   = c(36, 35, 40, 38, 24, 27, 31, 47, 41, 27, 28, 26),
+  label     = str_c(c(36, 35, 39, 38, 24, 27, 31, 47, 41, 27, 28, 26), "%"),
+  fontface = c(rep("plain", 6), rep("bold", 2), rep("plain", 4))) |>
   mutate(
-    education = fct_relevel(education, "No College", "Some College", "College Degree")) |>
-  ggplot(aes(x = children, y = education, fill = percent)) +
-  geom_tile() +
-  geom_text(aes(label = percent), size = 5, colour = "white") +
-  scale_y_discrete(position = "right") +
-  coord_fixed() +
+    education = fct_relevel(education, "No College", "Some College"),
+    children  = fct_relevel(children, "Parents")) |>
+  ggplot() + 
+  aes(
+    x        = children, 
+    fill     = education, 
+    y        = percent, 
+    label    = label, 
+    fontface = fontface) +
+  geom_col(position = position_stack(), colour = "white") +
+  geom_text(
+    aes(group = interaction(sex, education)), 
+    size = 6, 
+    colour = "white", 
+    position = position_stack(vjust = 0.5)) +
+  scale_x_discrete(position = "top") +
+  scale_fill_manual(
+    values = c(
+      "No College" = "grey80",
+      "Some College" = "grey69", # saturation midpoint
+      "College Degree" = "cornflowerblue")) +
   facet_grid(cols = vars(sex)) +
   labs(
     title = "Education negatively correlated with motherhood, but not fatherhood",
-    subtitle = "Percent of Americans over 50 by education level and parenthood status",
+    subtitle = "College degree attainment of Americans 50+, grouped by sex and parenthood",
     caption = "Source: Pew Research Center, \"The Experiences of U.S. Adults Who Don't Have Children,\" 2021-22") +
   theme_minimal(base_size = 14) +
   theme(
-    legend.position = "none",
-    plot.title = element_text(face = "bold"),
-    plot.subtitle = element_text(face = "italic", colour = "grey20"),
-    axis.text = element_text(size = 14),
-    axis.title = element_blank(),
-    strip.text = element_text(size = 14),
-    panel.grid = element_blank())
+    axis.title      = element_blank(),
+    axis.text       = element_text(size = 14),
+    axis.text.y     = element_blank(),
+    legend.title    = element_blank(),
+    legend.position = "top",
+    panel.grid      = element_blank(),
+    plot.title      = element_text(face = "bold"),
+    plot.subtitle   = element_text(face = "italic", colour = "grey20"),
+    strip.placement = "outside",
+    strip.text      = element_text(size = 18, face = "bold"))
 ```
