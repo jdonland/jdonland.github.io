@@ -1,9 +1,8 @@
 ---
 title: "Chart Makeovers"
-date: "2024-09-21"
+date: "2024-09-27"
 image: chart_makeovers.png
 description: "True beauty comes from within."
-draft: true
 html:
     code-fold: true
 ---
@@ -47,7 +46,7 @@ tibble(
   education = rep(c("College Degree", "No College", "Some College"), 2, NA, 2),
   percent   = c(36, 35, 40, 38, 24, 27, 31, 47, 41, 27, 28, 26),
   label     = str_c(c(36, 35, 39, 38, 24, 27, 31, 47, 41, 27, 28, 26), "%"),
-  fontface = c(rep("plain", 6), rep("bold", 2), rep("plain", 4))) |>
+  fontface  = c(rep("plain", 6), rep("bold", 2), rep("plain", 4))) |>
   mutate(
     education = fct_relevel(education, "No College", "Some College"),
     children  = fct_relevel(children, "Parents")) |>
@@ -87,4 +86,59 @@ tibble(
     plot.subtitle   = element_text(face = "italic", colour = "grey20"),
     strip.placement = "outside",
     strip.text      = element_text(size = 18, face = "bold"))
+```
+
+## 
+
+### Original
+
+![](original-2-1.png)
+
+Three-dimensional pie charts are the canonical example of data visualization incompetance. Sadly, [The Copper Age Cemetery of Budakalász](https://ri.abtk.hu/images/kiadvanyok/monografiak/bondar_2009_Budakalasz/Budakalasz.pdf), an extremely detailed archaeological study of ancient graves found at a site near Budapest, is chock full of them. This one comes from a section about graves containing the remains of two people buried side-by-side. To the authors' credit, they include tables of all their data, so their data graphics are fully reproducible. They also record many other features of the graves, such as the type of pit and whether it contained any grave goods.
+
+### Makeover
+
+Directional data lends itself well to a radial layout, like a compass. We end up with a lot of whitespace, but this helps reinforce the big idea: "Most burials were oriented to the south, with the head of the deceased aligned to the south or with a slight divergence to the south-east, the south–south-west or the east–south-east". We can do a little math to calculate the average direction and display that as well.
+
+```{r}
+#| label: makeover-2
+#| warning: false
+#| message: false
+#| fig-width: 10
+#| fig-height: 10
+
+tibble(
+  direction = fct_inorder(
+    factor(
+      c("N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"),
+      ordered = TRUE)),
+  count = c(NA, NA, NA, 1, 3, 9, 11, 6, 13, 8, 2, 4, 2, 1, NA, 1)) |>
+  ggplot() +
+  aes(x = direction, y = count) +
+  geom_segment(
+    x = 8.299883, 
+    y = 0, 
+    yend = 13, 
+    colour = "cornflowerblue",
+    arrow = arrow(length = unit(10, "point"), type = "closed")) +
+  geom_point() +
+  geom_text(aes(label = count, y = count + 2), size = 6) +
+  geom_segment(aes(y = 0, yend = count)) +
+  scale_y_continuous(limits = c(0, 16)) +
+  coord_radial(expand = FALSE, end = 15/8 * pi) +
+  labs(
+    title = "Most double burials at Budakalász oriented approximately to the south",
+    subtitle = "Number of graves by orientation. Arrow indicates average orientation.",
+    caption = "Source: Bondár & Raczky 2009, p.225") +
+  theme_minimal(base_size = 14) +
+  theme(
+plot.margin=unit(c(0,-4,0,-4),"cm"),
+    axis.text.r = element_blank(),
+    axis.title = element_blank(),
+    axis.text.theta = element_text(size = 18),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(), 
+    plot.title      = element_text(face = "bold"),
+    plot.subtitle   = element_text(face = "italic", colour = "grey20"))
 ```
