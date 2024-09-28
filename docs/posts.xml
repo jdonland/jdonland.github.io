@@ -1365,6 +1365,24 @@ font-style: inherit;">element_blank</span>())</span></code></pre></div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
 background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"New York Times"</span>, </span>
+<span id="cb1-2">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"New Yorker"</span>, </span>
+<span id="cb1-3">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Wall Street Journal"</span>, </span>
+<span id="cb1-4">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Los Angeles Times"</span>) <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">-&gt;</span></span>
+<span id="cb1-5">  publishers</span>
+<span id="cb1-6"></span>
+<span id="cb1-7"><span class="fu" style="color: #4758AB;
+background-color: null;
 font-style: inherit;">read_csv</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"crossword_times.csv"</span>, <span class="at" style="color: #657422;
@@ -1374,19 +1392,17 @@ background-color: null;
 font-style: inherit;">"ccD"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-2">  <span class="fu" style="color: #4758AB;
+<span id="cb1-8">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">filter</span>(publisher <span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">!=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"USA Today"</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">%in%</span> publishers) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-3">  <span class="fu" style="color: #4758AB;
+<span id="cb1-9">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mutate</span>(publisher,</span>
-<span id="cb1-4">         <span class="at" style="color: #657422;
+<span id="cb1-10">         <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">day =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1405,7 +1421,7 @@ background-color: null;
 font-style: inherit;">abbr =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
 font-style: inherit;">FALSE</span>)),</span>
-<span id="cb1-5">         <span class="at" style="color: #657422;
+<span id="cb1-11">         <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">minutes =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1416,14 +1432,14 @@ background-color: null;
 font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">60</span>,</span>
-<span id="cb1-6">         <span class="at" style="color: #657422;
+<span id="cb1-12">         <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">.keep =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"none"</span>) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
-<span id="cb1-7">  crossword_times</span></code></pre></div>
+<span id="cb1-13">  crossword_times</span></code></pre></div>
 </div>
 </section>
 <section id="descriptive-analysis-doesnt-exist" class="level2 page-columns page-full">
@@ -1586,23 +1602,23 @@ background-color: null;
 font-style: inherit;">0.25</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="yglgthocdb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yglgthocdb table {
+<div id="szbirobuqj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#szbirobuqj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yglgthocdb thead, #yglgthocdb tbody, #yglgthocdb tfoot, #yglgthocdb tr, #yglgthocdb td, #yglgthocdb th {
+#szbirobuqj thead, #szbirobuqj tbody, #szbirobuqj tfoot, #szbirobuqj tr, #szbirobuqj td, #szbirobuqj th {
   border-style: none;
 }
 
-#yglgthocdb p {
+#szbirobuqj p {
   margin: 0;
   padding: 0;
 }
 
-#yglgthocdb .gt_table {
+#szbirobuqj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1628,12 +1644,12 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_caption {
+#szbirobuqj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yglgthocdb .gt_title {
+#szbirobuqj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1645,7 +1661,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#yglgthocdb .gt_subtitle {
+#szbirobuqj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1657,7 +1673,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-top-width: 0;
 }
 
-#yglgthocdb .gt_heading {
+#szbirobuqj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1669,13 +1685,13 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_bottom_border {
+#szbirobuqj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_col_headings {
+#szbirobuqj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1690,7 +1706,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_col_heading {
+#szbirobuqj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1710,7 +1726,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#yglgthocdb .gt_column_spanner_outer {
+#szbirobuqj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1722,15 +1738,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 4px;
 }
 
-#yglgthocdb .gt_column_spanner_outer:first-child {
+#szbirobuqj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yglgthocdb .gt_column_spanner_outer:last-child {
+#szbirobuqj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yglgthocdb .gt_column_spanner {
+#szbirobuqj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1742,11 +1758,11 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   width: 100%;
 }
 
-#yglgthocdb .gt_spanner_row {
+#szbirobuqj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yglgthocdb .gt_group_heading {
+#szbirobuqj .gt_group_heading {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1772,7 +1788,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   text-align: left;
 }
 
-#yglgthocdb .gt_empty_group_heading {
+#szbirobuqj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1787,15 +1803,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   vertical-align: middle;
 }
 
-#yglgthocdb .gt_from_md > :first-child {
+#szbirobuqj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yglgthocdb .gt_from_md > :last-child {
+#szbirobuqj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yglgthocdb .gt_row {
+#szbirobuqj .gt_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1814,7 +1830,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#yglgthocdb .gt_stub {
+#szbirobuqj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1827,7 +1843,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#yglgthocdb .gt_stub_row_group {
+#szbirobuqj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1841,15 +1857,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   vertical-align: top;
 }
 
-#yglgthocdb .gt_row_group_first td {
+#szbirobuqj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yglgthocdb .gt_row_group_first th {
+#szbirobuqj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yglgthocdb .gt_summary_row {
+#szbirobuqj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1859,16 +1875,16 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#yglgthocdb .gt_first_summary_row {
+#szbirobuqj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_first_summary_row.thick {
+#szbirobuqj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yglgthocdb .gt_last_summary_row {
+#szbirobuqj .gt_last_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1878,7 +1894,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_grand_summary_row {
+#szbirobuqj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1888,7 +1904,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#yglgthocdb .gt_first_grand_summary_row {
+#szbirobuqj .gt_first_grand_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1898,7 +1914,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_last_grand_summary_row_top {
+#szbirobuqj .gt_last_grand_summary_row_top {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1908,11 +1924,11 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_striped {
+#szbirobuqj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yglgthocdb .gt_table_body {
+#szbirobuqj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1921,7 +1937,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_footnotes {
+#szbirobuqj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1935,7 +1951,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_footnote {
+#szbirobuqj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -1944,7 +1960,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#yglgthocdb .gt_sourcenotes {
+#szbirobuqj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1958,7 +1974,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_sourcenote {
+#szbirobuqj .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -1966,63 +1982,63 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#yglgthocdb .gt_left {
+#szbirobuqj .gt_left {
   text-align: left;
 }
 
-#yglgthocdb .gt_center {
+#szbirobuqj .gt_center {
   text-align: center;
 }
 
-#yglgthocdb .gt_right {
+#szbirobuqj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yglgthocdb .gt_font_normal {
+#szbirobuqj .gt_font_normal {
   font-weight: normal;
 }
 
-#yglgthocdb .gt_font_bold {
+#szbirobuqj .gt_font_bold {
   font-weight: bold;
 }
 
-#yglgthocdb .gt_font_italic {
+#szbirobuqj .gt_font_italic {
   font-style: italic;
 }
 
-#yglgthocdb .gt_super {
+#szbirobuqj .gt_super {
   font-size: 65%;
 }
 
-#yglgthocdb .gt_footnote_marks {
+#szbirobuqj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yglgthocdb .gt_asterisk {
+#szbirobuqj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yglgthocdb .gt_indent_1 {
+#szbirobuqj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yglgthocdb .gt_indent_2 {
+#szbirobuqj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yglgthocdb .gt_indent_3 {
+#szbirobuqj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yglgthocdb .gt_indent_4 {
+#szbirobuqj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yglgthocdb .gt_indent_5 {
+#szbirobuqj .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2069,8 +2085,8 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
 </tr>
 <tr class="even">
 <td id="stub_1_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Count">34</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Mean">8.8</td>
+<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Count">35</td>
+<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Mean">8.7</td>
 <td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Minimum">4.7</td>
 <td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 1ˢᵗ Quartile">7.0</td>
 <td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Median">8.1</td>
@@ -2162,12 +2178,12 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
 </tr>
 <tr class="even">
 <td id="stub_1_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Count">48</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 Count">49</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_12 Mean">21.1</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_12 Minimum">6.4</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_12 1ˢᵗ Quartile">13.6</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_12 Median">19.5</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 3ʳᵈ Quartile">25.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 3ʳᵈ Quartile">24.8</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_12 Maximum">54.5</td>
 </tr>
 <tr class="odd">
@@ -2195,17 +2211,17 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
 </tr>
 <tr class="even gt_row_group_first">
 <td id="stub_1_15" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Count">36</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Mean">28.3</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_15 Count">37</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_15 Mean">28.0</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_15 Minimum">14.9</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 1ˢᵗ Quartile">18.6</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_15 1ˢᵗ Quartile">18.4</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_15 Median">23.7</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 3ʳᵈ Quartile">37.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_15 3ʳᵈ Quartile">37.1</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_15 Maximum">64.9</td>
 </tr>
 <tr class="odd">
 <td id="stub_1_16" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Count">49</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 Count">50</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_16 Mean">14.6</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_16 Minimum">6.8</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_16 1ˢᵗ Quartile">10.6</td>
@@ -2215,10 +2231,10 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
 </tr>
 <tr class="even">
 <td id="stub_1_17" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Count">57</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Mean">8.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 Count">58</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 Mean">8.1</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_17 Minimum">3.7</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 1ˢᵗ Quartile">4.8</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 1ˢᵗ Quartile">4.4</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_17 Median">7.6</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_17 3ʳᵈ Quartile">10.9</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_17 Maximum">20.6</td>
@@ -2665,18 +2681,30 @@ background-color: null;
 font-style: inherit;"># visual elements representing the posterior predictive model</span></span>
 <span id="cb5-13">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">stat_eye</span>(<span class="at" style="color: #657422;
+font-style: inherit;">stat_eye</span>(</span>
+<span id="cb5-14">    <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">color =</span> <span class="cn" style="color: #8f5902;
+font-style: inherit;">slab_colour =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">NA</span>, <span class="at" style="color: #657422;
+font-style: inherit;">"black"</span>, </span>
+<span id="cb5-15">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">interval_colour =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NA</span>, </span>
+<span id="cb5-16">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">point_colour =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">NA</span>,</span>
+<span id="cb5-17">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">alpha =</span> <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0.5</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-14">  <span class="fu" style="color: #4758AB;
+<span id="cb5-18">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_x_discrete</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2699,7 +2727,7 @@ background-color: null;
 font-style: inherit;">"S"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-15">  <span class="fu" style="color: #4758AB;
+<span id="cb5-19">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_y_continuous</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2712,7 +2740,7 @@ background-color: null;
 font-style: inherit;">70</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">5</span>), </span>
-<span id="cb5-16">                     <span class="at" style="color: #657422;
+<span id="cb5-20">                     <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">limits =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2721,7 +2749,7 @@ background-color: null;
 font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">70</span>), </span>
-<span id="cb5-17">                     <span class="at" style="color: #657422;
+<span id="cb5-21">                     <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">expand =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2732,7 +2760,7 @@ background-color: null;
 font-style: inherit;">0</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-18">  <span class="fu" style="color: #4758AB;
+<span id="cb5-22">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_fill_viridis</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2741,34 +2769,34 @@ background-color: null;
 font-style: inherit;">TRUE</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-19">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-23">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># labels</span></span>
-<span id="cb5-20">  <span class="fu" style="color: #4758AB;
+<span id="cb5-24">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Crossword Solve Times"</span>,</span>
-<span id="cb5-21">       <span class="at" style="color: #657422;
+<span id="cb5-25">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">subtitle =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Posterior predictive log-normal distributions"</span>,</span>
-<span id="cb5-22">       <span class="at" style="color: #657422;
+<span id="cb5-26">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Day of the Week"</span>,</span>
-<span id="cb5-23">       <span class="at" style="color: #657422;
+<span id="cb5-27">       <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Solve Time (Minutes)"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-24">  <span class="fu" style="color: #4758AB;
+<span id="cb5-28">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">guides</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2777,10 +2805,10 @@ background-color: null;
 font-style: inherit;">"none"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-25">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-29">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># theming</span></span>
-<span id="cb5-26">  <span class="fu" style="color: #4758AB;
+<span id="cb5-30">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_swd</span>()</span></code></pre></div>
 </details>

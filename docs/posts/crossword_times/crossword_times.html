@@ -166,7 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 2, 2024</p>
+      <p class="date-modified">September 27, 2024</p>
     </div>
   </div>
     
@@ -188,13 +188,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The crosswords published in major American newspapers differ in difficulty according to the day of the week. For example, the <a href="https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle">New York Times’ guide</a> explains that their Monday puzzles are the easiest and their Saturday puzzles the hardest. Meanwhile, the Sunday puzzles have easy clues but a large grid, and the Thursday puzzles have some unique gimmick. By contrast, the New Yorker’s Monday puzzle is their most challenging, with the difficulty mostly decreasing over the course of the week.</p>
 <p>I track how long it takes me to solve the New York Times, Los Angeles Times, New Yorker, and Wall Street Journal crosswords in a CSV file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"crossword_times.csv"</span>, <span class="at">col_types =</span> <span class="st">"ccD"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(publisher <span class="sc">!=</span> <span class="st">"USA Today"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(publisher,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">day =</span> <span class="fu">factor</span>(<span class="fu">wday</span>(date, <span class="at">week_start =</span> <span class="dv">1</span>, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)),</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">minutes =</span> <span class="fu">period_to_seconds</span>(<span class="fu">ms</span>(time))<span class="sc">/</span><span class="dv">60</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">.keep =</span> <span class="st">"none"</span>) <span class="ot">-&gt;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  crossword_times</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"New York Times"</span>, </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"New Yorker"</span>, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Wall Street Journal"</span>, </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Los Angeles Times"</span>) <span class="ot">-&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  publishers</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"crossword_times.csv"</span>, <span class="at">col_types =</span> <span class="st">"ccD"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(publisher <span class="sc">%in%</span> publishers) <span class="sc">|&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(publisher,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">day =</span> <span class="fu">factor</span>(<span class="fu">wday</span>(date, <span class="at">week_start =</span> <span class="dv">1</span>, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">minutes =</span> <span class="fu">period_to_seconds</span>(<span class="fu">ms</span>(time))<span class="sc">/</span><span class="dv">60</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">.keep =</span> <span class="st">"none"</span>) <span class="ot">-&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  crossword_times</span></code></pre></div>
 </div>
 </section>
 <section id="descriptive-analysis-doesnt-exist" class="level2 page-columns page-full">
@@ -227,23 +233,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_vertical_padding</span>(<span class="at">scale =</span> <span class="fl">0.25</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="yglgthocdb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yglgthocdb table {
+<div id="szbirobuqj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#szbirobuqj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yglgthocdb thead, #yglgthocdb tbody, #yglgthocdb tfoot, #yglgthocdb tr, #yglgthocdb td, #yglgthocdb th {
+#szbirobuqj thead, #szbirobuqj tbody, #szbirobuqj tfoot, #szbirobuqj tr, #szbirobuqj td, #szbirobuqj th {
   border-style: none;
 }
 
-#yglgthocdb p {
+#szbirobuqj p {
   margin: 0;
   padding: 0;
 }
 
-#yglgthocdb .gt_table {
+#szbirobuqj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -269,12 +275,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_caption {
+#szbirobuqj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yglgthocdb .gt_title {
+#szbirobuqj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -286,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#yglgthocdb .gt_subtitle {
+#szbirobuqj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -298,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#yglgthocdb .gt_heading {
+#szbirobuqj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -310,13 +316,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_bottom_border {
+#szbirobuqj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_col_headings {
+#szbirobuqj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -331,7 +337,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_col_heading {
+#szbirobuqj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -351,7 +357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#yglgthocdb .gt_column_spanner_outer {
+#szbirobuqj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -363,15 +369,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#yglgthocdb .gt_column_spanner_outer:first-child {
+#szbirobuqj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yglgthocdb .gt_column_spanner_outer:last-child {
+#szbirobuqj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yglgthocdb .gt_column_spanner {
+#szbirobuqj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -383,11 +389,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#yglgthocdb .gt_spanner_row {
+#szbirobuqj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yglgthocdb .gt_group_heading {
+#szbirobuqj .gt_group_heading {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -413,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#yglgthocdb .gt_empty_group_heading {
+#szbirobuqj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -428,15 +434,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#yglgthocdb .gt_from_md > :first-child {
+#szbirobuqj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yglgthocdb .gt_from_md > :last-child {
+#szbirobuqj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yglgthocdb .gt_row {
+#szbirobuqj .gt_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -455,7 +461,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#yglgthocdb .gt_stub {
+#szbirobuqj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -468,7 +474,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yglgthocdb .gt_stub_row_group {
+#szbirobuqj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -482,15 +488,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#yglgthocdb .gt_row_group_first td {
+#szbirobuqj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yglgthocdb .gt_row_group_first th {
+#szbirobuqj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yglgthocdb .gt_summary_row {
+#szbirobuqj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -500,16 +506,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yglgthocdb .gt_first_summary_row {
+#szbirobuqj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_first_summary_row.thick {
+#szbirobuqj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yglgthocdb .gt_last_summary_row {
+#szbirobuqj .gt_last_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -519,7 +525,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_grand_summary_row {
+#szbirobuqj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -529,7 +535,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yglgthocdb .gt_first_grand_summary_row {
+#szbirobuqj .gt_first_grand_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -539,7 +545,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_last_grand_summary_row_top {
+#szbirobuqj .gt_last_grand_summary_row_top {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -549,11 +555,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_striped {
+#szbirobuqj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yglgthocdb .gt_table_body {
+#szbirobuqj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -562,7 +568,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_footnotes {
+#szbirobuqj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -576,7 +582,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_footnote {
+#szbirobuqj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -585,7 +591,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yglgthocdb .gt_sourcenotes {
+#szbirobuqj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -599,7 +605,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yglgthocdb .gt_sourcenote {
+#szbirobuqj .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -607,63 +613,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yglgthocdb .gt_left {
+#szbirobuqj .gt_left {
   text-align: left;
 }
 
-#yglgthocdb .gt_center {
+#szbirobuqj .gt_center {
   text-align: center;
 }
 
-#yglgthocdb .gt_right {
+#szbirobuqj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yglgthocdb .gt_font_normal {
+#szbirobuqj .gt_font_normal {
   font-weight: normal;
 }
 
-#yglgthocdb .gt_font_bold {
+#szbirobuqj .gt_font_bold {
   font-weight: bold;
 }
 
-#yglgthocdb .gt_font_italic {
+#szbirobuqj .gt_font_italic {
   font-style: italic;
 }
 
-#yglgthocdb .gt_super {
+#szbirobuqj .gt_super {
   font-size: 65%;
 }
 
-#yglgthocdb .gt_footnote_marks {
+#szbirobuqj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yglgthocdb .gt_asterisk {
+#szbirobuqj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yglgthocdb .gt_indent_1 {
+#szbirobuqj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yglgthocdb .gt_indent_2 {
+#szbirobuqj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yglgthocdb .gt_indent_3 {
+#szbirobuqj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yglgthocdb .gt_indent_4 {
+#szbirobuqj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yglgthocdb .gt_indent_5 {
+#szbirobuqj .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -710,8 +716,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td id="stub_1_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Count">34</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Mean">8.8</td>
+<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Count">35</td>
+<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Mean">8.7</td>
 <td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Minimum">4.7</td>
 <td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 1ˢᵗ Quartile">7.0</td>
 <td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Median">8.1</td>
@@ -803,12 +809,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td id="stub_1_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Count">48</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 Count">49</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_12 Mean">21.1</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_12 Minimum">6.4</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_12 1ˢᵗ Quartile">13.6</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_12 Median">19.5</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 3ʳᵈ Quartile">25.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 3ʳᵈ Quartile">24.8</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_12 Maximum">54.5</td>
 </tr>
 <tr class="odd">
@@ -836,17 +842,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even gt_row_group_first">
 <td id="stub_1_15" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Count">36</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Mean">28.3</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_15 Count">37</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_15 Mean">28.0</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_15 Minimum">14.9</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 1ˢᵗ Quartile">18.6</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_15 1ˢᵗ Quartile">18.4</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_15 Median">23.7</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 3ʳᵈ Quartile">37.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_15 3ʳᵈ Quartile">37.1</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_15 Maximum">64.9</td>
 </tr>
 <tr class="odd">
 <td id="stub_1_16" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Count">49</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 Count">50</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_16 Mean">14.6</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_16 Minimum">6.8</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_16 1ˢᵗ Quartile">10.6</td>
@@ -856,10 +862,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td id="stub_1_17" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Count">57</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Mean">8.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 Count">58</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 Mean">8.1</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_17 Minimum">3.7</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 1ˢᵗ Quartile">4.8</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 1ˢᵗ Quartile">4.4</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_17 Median">7.6</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_17 3ʳᵈ Quartile">10.9</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_17 Maximum">20.6</td>
@@ -1052,20 +1058,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># aesthetic mapping for the violins</span></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">y =</span> .prediction, <span class="at">x =</span> day, <span class="at">fill =</span> publisher) <span class="sc">+</span></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># visual elements representing the posterior predictive model</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_eye</span>(<span class="at">color =</span> <span class="cn">NA</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"M"</span>, <span class="st">"T"</span>, <span class="st">"W"</span>, <span class="st">"T"</span>, <span class="st">"F"</span>, <span class="st">"S"</span>, <span class="st">"S"</span>)) <span class="sc">+</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">70</span>, <span class="dv">5</span>), </span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>), </span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Crossword Solve Times"</span>,</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Posterior predictive log-normal distributions"</span>,</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Day of the Week"</span>,</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Solve Time (Minutes)"</span>) <span class="sc">+</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theming</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_swd</span>()</span></code></pre></div>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_eye</span>(</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">slab_colour =</span> <span class="st">"black"</span>, </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">interval_colour =</span> <span class="cn">NA</span>, </span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">point_colour =</span> <span class="cn">NA</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"M"</span>, <span class="st">"T"</span>, <span class="st">"W"</span>, <span class="st">"T"</span>, <span class="st">"F"</span>, <span class="st">"S"</span>, <span class="st">"S"</span>)) <span class="sc">+</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">70</span>, <span class="dv">5</span>), </span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>), </span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Crossword Solve Times"</span>,</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Posterior predictive log-normal distributions"</span>,</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Day of the Week"</span>,</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Solve Time (Minutes)"</span>) <span class="sc">+</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theming</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_swd</span>()</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1460,7 +1470,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
