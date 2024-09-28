@@ -2,7 +2,9 @@
 listing:
   contents: posts
   sort: "date"
-  type: default
+  type: grid
+  grid-columns: 2
+  image-height: 350px
   categories: false
   feed: true
   fields: [image, title, description]
