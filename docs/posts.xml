@@ -1605,23 +1605,23 @@ background-color: null;
 font-style: inherit;">0.25</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="szbirobuqj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#szbirobuqj table {
+<div id="yvsmngvjjp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yvsmngvjjp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#szbirobuqj thead, #szbirobuqj tbody, #szbirobuqj tfoot, #szbirobuqj tr, #szbirobuqj td, #szbirobuqj th {
+#yvsmngvjjp thead, #yvsmngvjjp tbody, #yvsmngvjjp tfoot, #yvsmngvjjp tr, #yvsmngvjjp td, #yvsmngvjjp th {
   border-style: none;
 }
 
-#szbirobuqj p {
+#yvsmngvjjp p {
   margin: 0;
   padding: 0;
 }
 
-#szbirobuqj .gt_table {
+#yvsmngvjjp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1647,12 +1647,12 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#szbirobuqj .gt_caption {
+#yvsmngvjjp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#szbirobuqj .gt_title {
+#yvsmngvjjp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1664,7 +1664,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#szbirobuqj .gt_subtitle {
+#yvsmngvjjp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1676,7 +1676,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-top-width: 0;
 }
 
-#szbirobuqj .gt_heading {
+#yvsmngvjjp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1688,13 +1688,13 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#szbirobuqj .gt_bottom_border {
+#yvsmngvjjp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#szbirobuqj .gt_col_headings {
+#yvsmngvjjp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1709,7 +1709,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#szbirobuqj .gt_col_heading {
+#yvsmngvjjp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1729,7 +1729,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#szbirobuqj .gt_column_spanner_outer {
+#yvsmngvjjp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1741,15 +1741,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 4px;
 }
 
-#szbirobuqj .gt_column_spanner_outer:first-child {
+#yvsmngvjjp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#szbirobuqj .gt_column_spanner_outer:last-child {
+#yvsmngvjjp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#szbirobuqj .gt_column_spanner {
+#yvsmngvjjp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1761,11 +1761,11 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   width: 100%;
 }
 
-#szbirobuqj .gt_spanner_row {
+#yvsmngvjjp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#szbirobuqj .gt_group_heading {
+#yvsmngvjjp .gt_group_heading {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1791,7 +1791,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   text-align: left;
 }
 
-#szbirobuqj .gt_empty_group_heading {
+#yvsmngvjjp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1806,15 +1806,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   vertical-align: middle;
 }
 
-#szbirobuqj .gt_from_md > :first-child {
+#yvsmngvjjp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#szbirobuqj .gt_from_md > :last-child {
+#yvsmngvjjp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#szbirobuqj .gt_row {
+#yvsmngvjjp .gt_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1833,7 +1833,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#szbirobuqj .gt_stub {
+#yvsmngvjjp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1846,7 +1846,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#szbirobuqj .gt_stub_row_group {
+#yvsmngvjjp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1860,15 +1860,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   vertical-align: top;
 }
 
-#szbirobuqj .gt_row_group_first td {
+#yvsmngvjjp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#szbirobuqj .gt_row_group_first th {
+#yvsmngvjjp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#szbirobuqj .gt_summary_row {
+#yvsmngvjjp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1878,16 +1878,16 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#szbirobuqj .gt_first_summary_row {
+#yvsmngvjjp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#szbirobuqj .gt_first_summary_row.thick {
+#yvsmngvjjp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#szbirobuqj .gt_last_summary_row {
+#yvsmngvjjp .gt_last_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1897,7 +1897,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#szbirobuqj .gt_grand_summary_row {
+#yvsmngvjjp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1907,7 +1907,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#szbirobuqj .gt_first_grand_summary_row {
+#yvsmngvjjp .gt_first_grand_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1917,7 +1917,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#szbirobuqj .gt_last_grand_summary_row_top {
+#yvsmngvjjp .gt_last_grand_summary_row_top {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1927,11 +1927,11 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#szbirobuqj .gt_striped {
+#yvsmngvjjp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#szbirobuqj .gt_table_body {
+#yvsmngvjjp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1940,7 +1940,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#szbirobuqj .gt_footnotes {
+#yvsmngvjjp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1954,7 +1954,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#szbirobuqj .gt_footnote {
+#yvsmngvjjp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -1963,7 +1963,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#szbirobuqj .gt_sourcenotes {
+#yvsmngvjjp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1977,7 +1977,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#szbirobuqj .gt_sourcenote {
+#yvsmngvjjp .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -1985,63 +1985,63 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#szbirobuqj .gt_left {
+#yvsmngvjjp .gt_left {
   text-align: left;
 }
 
-#szbirobuqj .gt_center {
+#yvsmngvjjp .gt_center {
   text-align: center;
 }
 
-#szbirobuqj .gt_right {
+#yvsmngvjjp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#szbirobuqj .gt_font_normal {
+#yvsmngvjjp .gt_font_normal {
   font-weight: normal;
 }
 
-#szbirobuqj .gt_font_bold {
+#yvsmngvjjp .gt_font_bold {
   font-weight: bold;
 }
 
-#szbirobuqj .gt_font_italic {
+#yvsmngvjjp .gt_font_italic {
   font-style: italic;
 }
 
-#szbirobuqj .gt_super {
+#yvsmngvjjp .gt_super {
   font-size: 65%;
 }
 
-#szbirobuqj .gt_footnote_marks {
+#yvsmngvjjp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#szbirobuqj .gt_asterisk {
+#yvsmngvjjp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#szbirobuqj .gt_indent_1 {
+#yvsmngvjjp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#szbirobuqj .gt_indent_2 {
+#yvsmngvjjp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#szbirobuqj .gt_indent_3 {
+#yvsmngvjjp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#szbirobuqj .gt_indent_4 {
+#yvsmngvjjp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#szbirobuqj .gt_indent_5 {
+#yvsmngvjjp .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2510,7 +2510,7 @@ font-style: inherit;">theme_swd</span>()</span></code></pre></div>
 <blockquote class="blockquote">
 <p>There is no rigid mathematical definition of what constitutes an outlier; determining whether or not an observation is an outlier is ultimately a subjective exercise.</p>
 </blockquote>
-<p><code>geom_boxplot()</code> treats anything more than 1.5 times the interquartile range from the box as an outlier, but whether an observation should be considered an outlier obviously depends on the sampling distribution. For example, an observation of x = 2 is a fairly remarkable if X ~ Normal(0, 1) but not if X ~ Cauchy(0, 1), since the Cauchy distribution has fatter tails. And by using the same rule at both extremes of the sample, we implicitly assume the sampling distribution is symmetric.<sup>1</sup> <sup>2</sup></p>
+<p><code>geom_boxplot()</code> treats anything more than 1.5 times the interquartile range from the box as an outlier, but whether an observation should be considered an outlier obviously depends on the model we associate with the data-generating process. For example, an observation of x = 2 is fairly remarkable if X ~ Normal(0, 1) but not if X ~ Cauchy(0, 1), since the Cauchy distribution has fatter tails. And by using the same rule at both extremes of the sample, we implicitly assume the distribution is symmetric.<sup>1</sup> <sup>2</sup></p>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Notice that nearly all the outliers in our box plot are at the high end.</p></div><div id="fn2"><p><sup>2</sup>&nbsp;See <a href="https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/">this article</a> for more on issues with box plots in general.</p></div></div><p>Grouping the data by publisher and day of the week suggests that we believe the observations within each group are independent and identically distributed, even if we don’t explicitly say so. When we report a mean, we suggest that the sampling distribution has a finite mean.</p>
 <p>Perhaps the idea that there’s a real distinction between descriptive and inferential data analysis ultimately stems from the “everything is normally distributed” fallacy.</p>
 </section>
@@ -2523,8 +2523,8 @@ font-style: inherit;">theme_swd</span>()</span></code></pre></div>
 </iframe>
 </p>
 <p>One of the points she makes is that drawing density plots usually involves what amounts to fitting an unjustified model.</p>
-<p>In most situations, <code>ggplot</code> uses locally estimated scatterplot smoothing (LOESS) by default, which involves fitting a separate polynomial regression model on a weighted neighbourhood around each data point and evaluating it there. This often results in serviceable violin plots, but you wouldn’t necessarily expect it to reflect the “actual” theoretical distribution of the data.</p>
-<p>Designing charts is another situation in which we cannot avoid making modelling assumptions just because we insist we’re only doing “descriptive” analysis. As soon as you click “add trendline” in Excel, you’re fitting a model. Accepting this and being willing to specify a model allows us to create better data visualizations.</p>
+<p>In most situations, <code>ggplot</code> uses locally estimated scatter plot smoothing (LOESS) by default, which involves fitting a separate polynomial regression model on a weighted neighbourhood around each data point and evaluating it there. This often results in serviceable violin plots, but you wouldn’t necessarily expect it to reflect the “actual” theoretical distribution of the data.</p>
+<p>Designing charts is another situation in which we cannot avoid making modelling assumptions just because we insist we’re only doing “descriptive” analysis. As soon as you click “add trend line” in Excel, you’re fitting a model. Accepting this and being willing to specify a model allows us to create better data visualizations.</p>
 <p>Let’s apply a simple Bayesian model of our crossword data and use it to design a violin plot in which the densities we present are actually justified.</p>
 </section>
 <section id="modelling" class="level2">

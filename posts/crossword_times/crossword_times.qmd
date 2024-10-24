@@ -140,7 +140,7 @@ For one thing, notice that `ggplot2`'s `geom_boxplot()` function has identified 
 
 > There is no rigid mathematical definition of what constitutes an outlier; determining whether or not an observation is an outlier is ultimately a subjective exercise.
 
-`geom_boxplot()` treats anything more than 1.5 times the interquartile range from the box as an outlier, but whether an observation should be considered an outlier obviously depends on the sampling distribution. For example, an observation of x = 2 is a fairly remarkable if X ~ Normal(0, 1) but not if X ~ Cauchy(0, 1), since the Cauchy distribution has fatter tails. And by using the same rule at both extremes of the sample, we implicitly assume the sampling distribution is symmetric.^[Notice that nearly all the outliers in our box plot are at the high end.] ^[See [this article](https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/) for more on issues with box plots in general.]
+`geom_boxplot()` treats anything more than 1.5 times the interquartile range from the box as an outlier, but whether an observation should be considered an outlier obviously depends on the model we associate with the data-generating process. For example, an observation of x = 2 is fairly remarkable if X ~ Normal(0, 1) but not if X ~ Cauchy(0, 1), since the Cauchy distribution has fatter tails. And by using the same rule at both extremes of the sample, we implicitly assume the distribution is symmetric.^[Notice that nearly all the outliers in our box plot are at the high end.] ^[See [this article](https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/) for more on issues with box plots in general.]
 
 Grouping the data by publisher and day of the week suggests that we believe the observations within each group are independent and identically distributed, even if we don't explicitly say so. When we report a mean, we suggest that the sampling distribution has a finite mean.
 
@@ -156,9 +156,9 @@ Scientist and YouTuber Angela Collier doesn't like violin plots:
 
 One of the points she makes is that drawing density plots usually involves what amounts to fitting an unjustified model.
 
-In most situations, `ggplot` uses locally estimated scatterplot smoothing (LOESS) by default, which involves fitting a separate polynomial regression model on a weighted neighbourhood around each data point and evaluating it there. This often results in serviceable violin plots, but you wouldn't necessarily expect it to reflect the "actual" theoretical distribution of the data.
+In most situations, `ggplot` uses locally estimated scatter plot smoothing (LOESS) by default, which involves fitting a separate polynomial regression model on a weighted neighbourhood around each data point and evaluating it there. This often results in serviceable violin plots, but you wouldn't necessarily expect it to reflect the "actual" theoretical distribution of the data.
 
-Designing charts is another situation in which we cannot avoid making modelling assumptions just because we insist we're only doing "descriptive" analysis. As soon as you click "add trendline" in Excel, you're fitting a model. Accepting this and being willing to specify a model allows us to create better data visualizations.
+Designing charts is another situation in which we cannot avoid making modelling assumptions just because we insist we're only doing "descriptive" analysis. As soon as you click "add trend line" in Excel, you're fitting a model. Accepting this and being willing to specify a model allows us to create better data visualizations.
 
 Let's apply a simple Bayesian model of our crossword data and use it to design a violin plot in which the densities we present are actually justified.
 
