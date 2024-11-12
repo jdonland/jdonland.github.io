@@ -10,8 +10,8 @@ about:
       href: https://github.com/jdonland
     - icon: linkedin
       href: https://www.linkedin.com/in/jesseonland/
-    - icon: mastodon
-      href: https://vis.social/@jdonland
+    - icon: twitter
+      href: https://bsky.app/profile/jdonland.bsky.social
     - icon: envelope-at-fill
       href: mailto://jesse.onland@gmail.com
 ---
