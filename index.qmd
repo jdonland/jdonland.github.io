@@ -6,13 +6,13 @@ about:
   image-shape: round
 #  image-width: 15em
   links:
-    - icon: github
+    - text: "{{< iconify mdi:github title=GitHub size=2x >}}"
       href: https://github.com/jdonland
-    - icon: linkedin
+    - text: "{{< iconify mdi:linkedin title=LinkedIn size=2x >}}"
       href: https://www.linkedin.com/in/jesseonland/
-    - icon: twitter
+    - text: "{{< iconify ri:bluesky-fill title=Bluesky size=2x >}}"
       href: https://bsky.app/profile/jdonland.bsky.social
-    - icon: envelope-at-fill
+    - text: "{{< iconify bi:envelope-at-fill title=Email size=2x >}}"
       href: mailto://jesse.onland@gmail.com
 ---
 
