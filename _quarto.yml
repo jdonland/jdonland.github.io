@@ -5,7 +5,7 @@ project:
 website:
   title: "Jesse Onland"
   site-url: "https://jdonland.github.io/"
-  favicon: image.jpg
+  favicon: index.gif
   search: false
   page-footer: ""
   draft-mode: unlinked
