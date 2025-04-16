@@ -59,7 +59,8 @@ c("New York Times",
   "Los Angeles Times") ->
   publishers
 
-read_csv("crossword_times.csv", col_types = "ccD") |>
+here("posts", "crossword_times", "crossword_times.csv") |>
+read_csv(col_types = "ccD") |>
   filter(publisher %in% publishers) |>
   mutate(publisher,
          day = factor(wday(date, week_start = 1, label = TRUE, abbr = FALSE)),
