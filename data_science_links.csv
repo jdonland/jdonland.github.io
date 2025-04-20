@@ -37,6 +37,9 @@ Why Do Tree-Based Models Still Outperform Deep Learning on Tabular Data?,https:/
 Stepwise Selection of Variables in Regression Is Evil,https://freerangestats.info/blog/2024/09/14/stepwise,statistical methodology,2024-09-14
 Why Effect Sizes Selected for Significance are Inflated,http://daniellakens.blogspot.com/2024/02/why-effect-sizes-selected-for.html,statistical methodology,2024-02-09
 Preventing Common Misconceptions About Bayes Factors,http://daniellakens.blogspot.com/2023/04/preventing-common-misconceptions-about.html,statistical methodology,2023-04-13
+Bayesian Workflow,https://sites.stat.columbia.edu/gelman/research/unpublished/Bayesian_Workflow_article.pdf,statistical methodology,2020-11-02
+Univariate Distribution Relationships,https://www.math.wm.edu/~leemis/chart/UDR/UDR.html,statistical methodology,
+The Surprising Richness of Correlations,https://entropicthoughts.com/the-surprising-richness-of-correlations,statistical methodology,2025-04-01
 Review of Probability Theory: The Logic of Science,https://www.ams.org/notices/200601/rev-faris.pdf,philosophy,2006-01
 Probability That a Number Is Prime,https://www.johndcook.com/blog/2010/10/06/probability-a-number-is-prime/,philosophy,2010-10-06
 Philosophy of Probability,https://aidanlyon.com/philprob.pdf,philosophy,2009-12-30
@@ -88,6 +91,7 @@ The Truth About Linear Regression,https://www.stat.cmu.edu/~cshalizi/TALR/,refer
 Active Statistics,https://avehtari.github.io/ActiveStatistics/,references & resources,2024-03
 "Which Books, Papers, and Blogs Are in the Bayesian Canon?",https://statmodeling.stat.columbia.edu/2024/08/21/which-books-papers-and-blogs-are-in-the-bayesian-canon/,references & resources,2024-08-21
 "Code Review for Statisticians, Data Scientists & Modellers",https://jcken95.github.io/projects/code_review.html,references & resources,2024-09-12
+Learn Bayes,https://learnbayes.se,references & resources,
 1 Dataset 100 Visualizations,https://100.datavizproject.com/,data visualization,2023-02-07
 How People Actually Lie With Charts,https://vdl.sci.utah.edu/blog/2023/04/17/misleading/,data visualization,2023-04-17
 From Data to Viz,https://www.data-to-viz.com/,data visualization,2018-02-19
@@ -115,3 +119,4 @@ Comparing Visualizations,https://rpubs.com/Data4HR/visualization-comparison,data
 I Stopped Using Box Plots: The Aftermath,https://nightingaledvs.com/i-stopped-using-box-plots-the-aftermath/,data visualization,2025-01-28
 Defense Against Dishonest Charts,https://flowingdata.com/projects/dishonest-charts/,data visualization,2025-02-13
 Visualizing Data Is An Art - We Should Treat It Like One,https://perthirtysix.com/visualizing-data-is-an-art,data visualization,2025-02-13
+Visual Vocabulary,https://ft-interactive.github.io/visual-vocabulary/,data visualization,
