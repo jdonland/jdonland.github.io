@@ -40,6 +40,7 @@ Preventing Common Misconceptions About Bayes Factors,http://daniellakens.blogspo
 Bayesian Workflow,https://sites.stat.columbia.edu/gelman/research/unpublished/Bayesian_Workflow_article.pdf,statistical methodology,2020-11-02
 Univariate Distribution Relationships,https://www.math.wm.edu/~leemis/chart/UDR/UDR.html,statistical methodology,
 The Surprising Richness of Correlations,https://entropicthoughts.com/the-surprising-richness-of-correlations,statistical methodology,2025-04-01
+Don't Hold Out On Me: Some Thoughts on Out-of-Sample Prediction,https://statmodeling.stat.columbia.edu/2025/05/08/dont-hold-out-on-me-some-thoughts-on-out-of-sample-prediction/,statistical methodology,2025-05-08
 Review of Probability Theory: The Logic of Science,https://www.ams.org/notices/200601/rev-faris.pdf,philosophy,2006-01
 Probability That a Number Is Prime,https://www.johndcook.com/blog/2010/10/06/probability-a-number-is-prime/,philosophy,2010-10-06
 Philosophy of Probability,https://aidanlyon.com/philprob.pdf,philosophy,2009-12-30
@@ -58,6 +59,7 @@ Statistical Factuality Versus Practicality Versus Poetry,https://statmodeling.st
 Evidence Versus Logic in Scientific Reform,https://daniellakens.blogspot.com/2024/09/why-i-dont-expect-to-be-convinced-by.html,philosophy,2024-09-04
 Surely God Loves 51 km/h Nearly As Much as 49 km/h?,http://daniellakens.blogspot.com/2024/01/surely-god-loves-51-kmh-nearly-as-much.html,philosophy,2024-01-11
 Simplicity and Indifference,https://www.umsu.de/wo/2018/680,philosophy,2018-07-04
+Large Numbers,https://www.privatdozent.co/p/large-numbers-1948,philosophy,2025-05-02
 R. A. Fisher and the Making of Maximum Likelihood 1912‒1922,http://www.medicine.mcgill.ca/epidemiology/hanley/bios601/Likelihood/Fisher%20and%20history%20of%20mle.pdf,history,1997
 Before p < 0.05 to Beyond p < 0.05,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6693672/,history,2019
 The Weirdest Paradox in Statistics (and Machine Learning),https://youtu.be/cUqoHQDinCM,puzzles & paradoxes,2022-08-30
@@ -120,3 +122,5 @@ I Stopped Using Box Plots: The Aftermath,https://nightingaledvs.com/i-stopped-us
 Defense Against Dishonest Charts,https://flowingdata.com/projects/dishonest-charts/,data visualization,2025-02-13
 Visualizing Data Is An Art - We Should Treat It Like One,https://perthirtysix.com/visualizing-data-is-an-art,data visualization,2025-02-13
 Visual Vocabulary,https://ft-interactive.github.io/visual-vocabulary/,data visualization,
+SveltePlot,https://svelteplot.dev/why-svelteplot,data visualization,2025-05-09
+Designing for Interactive Exploratory Data Analysis Requires Theories of Graphical Inference,https://hdsr.mitpress.mit.edu/pub/w075glo6/release/3,data visualization,2021-07-30
