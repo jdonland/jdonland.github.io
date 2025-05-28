@@ -17,5 +17,5 @@ theme_swd <- function() {
       plot.caption = element_text(hjust = 0, color = "#828282"),
       plot.caption.position = "plot",
       plot.margin = margin(.5,.5,.5,.5,"cm"),
-      strip.text = element_text(color = "#929497", hjust = 0.5, size = 24)) 
+      strip.text = element_text(color = "#929497", hjust = 0.5, size = 24))
 }

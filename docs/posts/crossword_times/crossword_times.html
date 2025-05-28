@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.52">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -23,8 +23,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -35,7 +36,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -61,15 +62,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<link href="../../image.jpg" rel="icon" type="image/jpeg">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
+<link href="../../index.gif" rel="icon" type="image/gif">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-516395c8ec564ed6a55db079f0ce3af9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-c238d3cc10b82f4d2991166d0e9f949c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -92,7 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -166,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">October 24, 2024</p>
+      <p class="date-modified">May 27, 2025</p>
     </div>
   </div>
     
@@ -177,7 +179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<!-- expand references -->
+<!-- truncate tails of violins -->
 <section id="introduction" class="level2">
 <h2 data-anchor-id="introduction">Introduction</h2>
 <p>Data analysis comprises a broad range of practices undertaken to extract meaning, discover insights, or inform decisions on the basis of data. Within this set of practices, it’s common to draw a distinction between <em>descriptive</em> and <em>inferential</em> analysis.</p>
@@ -188,24 +190,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The crosswords published in major American newspapers differ in difficulty according to the day of the week. For example, the <a href="https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle">New York Times’ guide</a> explains that their Monday puzzles are the easiest and their Saturday puzzles the hardest. Meanwhile, the Sunday puzzles have easy clues but a large grid, and the Thursday puzzles have some unique gimmick. By contrast, the New Yorker’s Monday puzzle is their most challenging, with the difficulty mostly decreasing over the course of the week.</p>
 <p>I track how long it takes me to solve the New York Times, Los Angeles Times, New Yorker, and Wall Street Journal crosswords in a CSV file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"New York Times"</span>, </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"New Yorker"</span>, </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Wall Street Journal"</span>, </span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"New York Times"</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"New Yorker"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Wall Street Journal"</span>,</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Los Angeles Times"</span>) <span class="ot">-&gt;</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  publishers</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"crossword_times.csv"</span>, <span class="at">col_types =</span> <span class="st">"ccD"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(publisher <span class="sc">%in%</span> publishers) <span class="sc">|&gt;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(publisher,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">day =</span> <span class="fu">factor</span>(<span class="fu">wday</span>(date, <span class="at">week_start =</span> <span class="dv">1</span>, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)),</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">minutes =</span> <span class="fu">period_to_seconds</span>(<span class="fu">ms</span>(time))<span class="sc">/</span><span class="dv">60</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">.keep =</span> <span class="st">"none"</span>) <span class="ot">-&gt;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  crossword_times</span></code></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">here</span>(<span class="st">"posts"</span>, <span class="st">"crossword_times"</span>, <span class="st">"crossword_times.csv"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="at">col_types =</span> <span class="st">"ccD"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(publisher <span class="sc">%in%</span> publishers) <span class="sc">|&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(publisher,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">day =</span> <span class="fu">factor</span>(<span class="fu">wday</span>(date, <span class="at">week_start =</span> <span class="dv">1</span>, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">minutes =</span> <span class="fu">period_to_seconds</span>(<span class="fu">ms</span>(time))<span class="sc">/</span><span class="dv">60</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">.keep =</span> <span class="st">"none"</span>) <span class="ot">-&gt;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  crossword_times</span></code></pre></div>
 </div>
 </section>
 <section id="descriptive-analysis-doesnt-exist" class="level2 page-columns page-full">
 <h2 data-anchor-id="descriptive-analysis-doesnt-exist">Descriptive Analysis Doesn’t Exist</h2>
-<p>At this point we’re ready to do “descriptive” data analysis. We can count observations, calculate so called “five-number” summaries, and so on.</p>
+<p>At this point we’re ready to do “descriptive” data analysis. We can count observations, calculate so-called “five-number” summaries, and so on.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -215,41 +218,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Count =</span> <span class="fu">n</span>(),</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Mean =</span> <span class="fu">mean</span>(minutes),</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">fivenum</span>(minutes),</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Minimum"</span>, </span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>             <span class="st">"1ˢᵗ Quartile"</span>, </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Median"</span>,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>             <span class="st">"3ʳᵈ Quartile"</span>,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Maximum"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), \(x) <span class="fu">round</span>(x, <span class="dv">1</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">rowname_col =</span> <span class="st">"day"</span>, <span class="at">groupname_col =</span> <span class="st">"publisher"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Crossword Solve Times: Descriptive Statistics"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"center"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">table_body.hlines.color =</span> <span class="st">"transparent"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"#555655"</span>, <span class="at">align =</span> <span class="st">"center"</span>)), </span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">list</span>(<span class="fu">cells_column_labels</span>(), <span class="fu">cells_stub</span>(), <span class="fu">cells_stubhead</span>())) <span class="sc">|&gt;</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">"Source: Self-collected data"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_vertical_padding</span>(<span class="at">scale =</span> <span class="fl">0.25</span>)</span></code></pre></div>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Minimum"</span>, <span class="st">"1ˢᵗ Quartile"</span>, <span class="st">"Median"</span>, <span class="st">"3ʳᵈ Quartile"</span>, <span class="st">"Maximum"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), \(x) <span class="fu">round</span>(x, <span class="dv">1</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">rowname_col =</span> <span class="st">"day"</span>, <span class="at">groupname_col =</span> <span class="st">"publisher"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Crossword Solve Times: Descriptive Statistics"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"center"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">table_body.hlines.color =</span> <span class="st">"transparent"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"#555655"</span>, <span class="at">align =</span> <span class="st">"center"</span>)),</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">list</span>(<span class="fu">cells_column_labels</span>(), <span class="fu">cells_stub</span>(), <span class="fu">cells_stubhead</span>())) <span class="sc">|&gt;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">"Source: Self-collected data"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_vertical_padding</span>(<span class="at">scale =</span> <span class="fl">0.25</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="yvsmngvjjp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yvsmngvjjp table {
+<div id="mqqotselce" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mqqotselce table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yvsmngvjjp thead, #yvsmngvjjp tbody, #yvsmngvjjp tfoot, #yvsmngvjjp tr, #yvsmngvjjp td, #yvsmngvjjp th {
+#mqqotselce thead, #mqqotselce tbody, #mqqotselce tfoot, #mqqotselce tr, #mqqotselce td, #mqqotselce th {
   border-style: none;
 }
 
-#yvsmngvjjp p {
+#mqqotselce p {
   margin: 0;
   padding: 0;
 }
 
-#yvsmngvjjp .gt_table {
+#mqqotselce .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -275,12 +274,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_caption {
+#mqqotselce .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yvsmngvjjp .gt_title {
+#mqqotselce .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -292,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#yvsmngvjjp .gt_subtitle {
+#mqqotselce .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -304,7 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#yvsmngvjjp .gt_heading {
+#mqqotselce .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -316,13 +315,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_bottom_border {
+#mqqotselce .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_col_headings {
+#mqqotselce .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -337,7 +336,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_col_heading {
+#mqqotselce .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -357,7 +356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#yvsmngvjjp .gt_column_spanner_outer {
+#mqqotselce .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -369,15 +368,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#yvsmngvjjp .gt_column_spanner_outer:first-child {
+#mqqotselce .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yvsmngvjjp .gt_column_spanner_outer:last-child {
+#mqqotselce .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yvsmngvjjp .gt_column_spanner {
+#mqqotselce .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -389,11 +388,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#yvsmngvjjp .gt_spanner_row {
+#mqqotselce .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yvsmngvjjp .gt_group_heading {
+#mqqotselce .gt_group_heading {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -419,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#yvsmngvjjp .gt_empty_group_heading {
+#mqqotselce .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -434,15 +433,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#yvsmngvjjp .gt_from_md > :first-child {
+#mqqotselce .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yvsmngvjjp .gt_from_md > :last-child {
+#mqqotselce .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yvsmngvjjp .gt_row {
+#mqqotselce .gt_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -461,7 +460,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#yvsmngvjjp .gt_stub {
+#mqqotselce .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -474,7 +473,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yvsmngvjjp .gt_stub_row_group {
+#mqqotselce .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -488,15 +487,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#yvsmngvjjp .gt_row_group_first td {
+#mqqotselce .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yvsmngvjjp .gt_row_group_first th {
+#mqqotselce .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yvsmngvjjp .gt_summary_row {
+#mqqotselce .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -506,16 +505,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yvsmngvjjp .gt_first_summary_row {
+#mqqotselce .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_first_summary_row.thick {
+#mqqotselce .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yvsmngvjjp .gt_last_summary_row {
+#mqqotselce .gt_last_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -525,7 +524,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_grand_summary_row {
+#mqqotselce .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -535,7 +534,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yvsmngvjjp .gt_first_grand_summary_row {
+#mqqotselce .gt_first_grand_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -545,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_last_grand_summary_row_top {
+#mqqotselce .gt_last_grand_summary_row_top {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -555,11 +554,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_striped {
+#mqqotselce .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yvsmngvjjp .gt_table_body {
+#mqqotselce .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -568,7 +567,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_footnotes {
+#mqqotselce .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -582,7 +581,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_footnote {
+#mqqotselce .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -591,7 +590,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yvsmngvjjp .gt_sourcenotes {
+#mqqotselce .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -605,7 +604,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_sourcenote {
+#mqqotselce .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -613,88 +612,97 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yvsmngvjjp .gt_left {
+#mqqotselce .gt_left {
   text-align: left;
 }
 
-#yvsmngvjjp .gt_center {
+#mqqotselce .gt_center {
   text-align: center;
 }
 
-#yvsmngvjjp .gt_right {
+#mqqotselce .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yvsmngvjjp .gt_font_normal {
+#mqqotselce .gt_font_normal {
   font-weight: normal;
 }
 
-#yvsmngvjjp .gt_font_bold {
+#mqqotselce .gt_font_bold {
   font-weight: bold;
 }
 
-#yvsmngvjjp .gt_font_italic {
+#mqqotselce .gt_font_italic {
   font-style: italic;
 }
 
-#yvsmngvjjp .gt_super {
+#mqqotselce .gt_super {
   font-size: 65%;
 }
 
-#yvsmngvjjp .gt_footnote_marks {
+#mqqotselce .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yvsmngvjjp .gt_asterisk {
+#mqqotselce .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yvsmngvjjp .gt_indent_1 {
+#mqqotselce .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yvsmngvjjp .gt_indent_2 {
+#mqqotselce .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yvsmngvjjp .gt_indent_3 {
+#mqqotselce .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yvsmngvjjp .gt_indent_4 {
+#mqqotselce .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yvsmngvjjp .gt_indent_5 {
+#mqqotselce .gt_indent_5 {
   text-indent: 25px;
+}
+
+#mqqotselce .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#mqqotselce div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
+<tr class="gt_heading header">
 <th colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border">Crossword Solve Times: Descriptive Statistics</th>
 </tr>
-<tr class="odd gt_col_headings">
-<th class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col"></th>
+<tr class="gt_col_headings even">
+<th id="a::stub" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col"></th>
 <th id="Count" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">Count</th>
 <th id="Mean" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">Mean</th>
 <th id="Minimum" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">Minimum</th>
-<th id="1ˢᵗ Quartile" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">1ˢᵗ Quartile</th>
+<th id="a1ˢᵗ-Quartile" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">1ˢᵗ Quartile</th>
 <th id="Median" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">Median</th>
-<th id="3ʳᵈ Quartile" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">3ʳᵈ Quartile</th>
+<th id="a3ʳᵈ-Quartile" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">3ʳᵈ Quartile</th>
 <th id="Maximum" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">Maximum</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
-<tr class="odd gt_group_heading_row">
+<tr class="gt_group_heading_row odd">
 <td colspan="8" id="Los Angeles Times" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Los Angeles Times</td>
 </tr>
-<tr class="even gt_row_group_first">
+<tr class="gt_row_group_first even">
 <td id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
 <td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 Count">49</td>
 <td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 Mean">6.2</td>
@@ -764,24 +772,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 3ʳᵈ Quartile">28.1</td>
 <td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 Maximum">41.0</td>
 </tr>
-<tr class="odd gt_group_heading_row">
+<tr class="gt_group_heading_row odd">
 <td colspan="8" id="New York Times" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">New York Times</td>
 </tr>
-<tr class="even gt_row_group_first">
+<tr class="gt_row_group_first even">
 <td id="stub_1_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Count">67</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Mean">5.5</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_8 Count">72</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_8 Mean">5.4</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_8 Minimum">3.0</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 1ˢᵗ Quartile">4.8</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_8 1ˢᵗ Quartile">4.7</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_8 Median">5.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 3ʳᵈ Quartile">6.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_8 3ʳᵈ Quartile">6.2</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_8 Maximum">8.7</td>
 </tr>
 <tr class="odd">
 <td id="stub_1_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Count">60</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Mean">7.7</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Minimum">4.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_9 Count">63</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_9 Mean">7.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_9 Minimum">4.5</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_9 1ˢᵗ Quartile">6.4</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_9 Median">7.4</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_9 3ʳᵈ Quartile">8.6</td>
@@ -789,7 +797,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td id="stub_1_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Count">61</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_10 Count">63</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_10 Mean">11.8</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_10 Minimum">5.3</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_10 1ˢᵗ Quartile">9.1</td>
@@ -799,75 +807,75 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td id="stub_1_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Count">59</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Mean">19.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_11 Count">67</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_11 Mean">18.4</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_11 Minimum">9.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 1ˢᵗ Quartile">14.9</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Median">18.0</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 3ʳᵈ Quartile">22.4</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_11 1ˢᵗ Quartile">14.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_11 Median">17.5</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_11 3ʳᵈ Quartile">21.6</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_11 Maximum">40.0</td>
 </tr>
 <tr class="even">
 <td id="stub_1_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Count">49</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Mean">21.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 Count">56</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 Mean">20.7</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_12 Minimum">6.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 1ˢᵗ Quartile">13.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Median">19.5</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 3ʳᵈ Quartile">24.8</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 1ˢᵗ Quartile">14.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 Median">18.8</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_12 3ʳᵈ Quartile">24.2</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_12 Maximum">54.5</td>
 </tr>
 <tr class="odd">
 <td id="stub_1_13" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Count">40</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Mean">25.8</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 Count">46</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 Mean">24.8</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_13 Minimum">9.9</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 1ˢᵗ Quartile">17.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Median">23.7</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 3ʳᵈ Quartile">31.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 1ˢᵗ Quartile">17.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 Median">22.9</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_13 3ʳᵈ Quartile">31.0</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_13 Maximum">65.6</td>
 </tr>
 <tr class="even">
 <td id="stub_1_14" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Sunday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Count">33</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Mean">32.9</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_14 Count">37</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_14 Mean">32.1</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_14 Minimum">3.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 1ˢᵗ Quartile">24.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Median">28.8</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 3ʳᵈ Quartile">39.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_14 1ˢᵗ Quartile">24.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_14 Median">26.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_14 3ʳᵈ Quartile">38.9</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_14 Maximum">68.7</td>
 </tr>
-<tr class="odd gt_group_heading_row">
+<tr class="gt_group_heading_row odd">
 <td colspan="8" id="New Yorker" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">New Yorker</td>
 </tr>
-<tr class="even gt_row_group_first">
+<tr class="gt_row_group_first even">
 <td id="stub_1_15" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Count">37</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Mean">28.0</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Minimum">14.9</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 1ˢᵗ Quartile">18.4</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Median">23.7</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 3ʳᵈ Quartile">37.1</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_15 Count">42</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_15 Mean">26.5</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_15 Minimum">10.6</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_15 1ˢᵗ Quartile">17.5</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_15 Median">21.7</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_15 3ʳᵈ Quartile">32.6</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_15 Maximum">64.9</td>
 </tr>
 <tr class="odd">
 <td id="stub_1_16" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Count">50</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Mean">14.6</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Minimum">6.8</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 1ˢᵗ Quartile">10.6</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Median">12.8</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 3ʳᵈ Quartile">16.1</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 Count">56</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 Mean">13.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 Minimum">5.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 1ˢᵗ Quartile">9.5</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 Median">12.3</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_16 3ʳᵈ Quartile">15.7</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_16 Maximum">37.2</td>
 </tr>
 <tr class="even">
 <td id="stub_1_17" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Count">58</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Mean">8.1</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 Count">64</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 Mean">7.8</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_17 Minimum">3.7</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 1ˢᵗ Quartile">4.4</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Median">7.6</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 3ʳᵈ Quartile">10.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 1ˢᵗ Quartile">4.3</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 Median">6.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_17 3ʳᵈ Quartile">10.1</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_17 Maximum">20.6</td>
 </tr>
 <tr class="odd">
@@ -890,10 +898,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="New Yorker stub_1_19 3ʳᵈ Quartile">15.0</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_19 Maximum">28.0</td>
 </tr>
-<tr class="odd gt_group_heading_row">
+<tr class="gt_group_heading_row odd">
 <td colspan="8" id="Wall Street Journal" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Wall Street Journal</td>
 </tr>
-<tr class="even gt_row_group_first">
+<tr class="gt_row_group_first even">
 <td id="stub_1_20" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
 <td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 Count">18</td>
 <td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 Mean">6.7</td>
@@ -978,8 +986,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scales</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"M"</span>, <span class="st">"T"</span>, <span class="st">"W"</span>, <span class="st">"T"</span>, <span class="st">"F"</span>, <span class="st">"S"</span>, <span class="st">"S"</span>)) <span class="sc">+</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">70</span>, <span class="dv">5</span>), </span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>), </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">70</span>, <span class="dv">5</span>),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>),</span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
@@ -1059,13 +1067,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">y =</span> .prediction, <span class="at">x =</span> day, <span class="at">fill =</span> publisher) <span class="sc">+</span></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># visual elements representing the posterior predictive model</span></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_eye</span>(</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">slab_colour =</span> <span class="st">"black"</span>, </span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">interval_colour =</span> <span class="cn">NA</span>, </span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">slab_colour =</span> <span class="st">"black"</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">interval_colour =</span> <span class="cn">NA</span>,</span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">point_colour =</span> <span class="cn">NA</span>,</span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"M"</span>, <span class="st">"T"</span>, <span class="st">"W"</span>, <span class="st">"T"</span>, <span class="st">"F"</span>, <span class="st">"S"</span>, <span class="st">"S"</span>)) <span class="sc">+</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">70</span>, <span class="dv">5</span>), </span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>), </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">70</span>, <span class="dv">5</span>),</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>),</span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
@@ -1107,6 +1115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://www.theguardian.com/global/2019/may/12/anna-shechtman-the-new-queen-of-crosswords">Anna Shechtman, the New Queen of Crosswords</a></li>
 <li><a href="https://www.youtube.com/watch?v=_0QMKFzW9fw">Violin Plots Should Not Exist</a></li>
 <li><a href="https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/">I’ve Stopped Using Box Plots. Should You?</a></li>
+<li><a href="https://hdsr.mitpress.mit.edu/pub/w075glo6/release/3">Designing for Interactive Exploratory Data Analysis Requires Theories of Graphical Inference</a></li>
 </ul>
 
 
@@ -1115,174 +1124,179 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jdonland\.github\.io\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/jdonland\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1290,187 +1304,163 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

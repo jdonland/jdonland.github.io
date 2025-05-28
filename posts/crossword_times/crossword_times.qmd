@@ -7,7 +7,7 @@ image: violin_plot_thumbnail.png
 description: "So-called \"descriptive\" analysis."
 ---
 
-<!-- expand references -->
+<!-- truncate tails of violins -->
 
 ```{r}
 #| label: libraries
@@ -53,9 +53,9 @@ I track how long it takes me to solve the New York Times, Los Angeles Times, New
 #| message: false
 #| code-fold: false
 
-c("New York Times", 
-  "New Yorker", 
-  "Wall Street Journal", 
+c("New York Times",
+  "New Yorker",
+  "Wall Street Journal",
   "Los Angeles Times") ->
   publishers
 
@@ -71,7 +71,7 @@ read_csv(col_types = "ccD") |>
 
 ## Descriptive Analysis Doesn't Exist
 
-At this point we're ready to do "descriptive" data analysis. We can count observations, calculate so called "five-number" summaries, and so on.
+At this point we're ready to do "descriptive" data analysis. We can count observations, calculate so-called "five-number" summaries, and so on.
 
 ```{r}
 #| label: summary-statistics
@@ -84,11 +84,7 @@ crossword_times |>
     Count = n(),
     Mean = mean(minutes),
     value = fivenum(minutes),
-    name = c("Minimum", 
-             "1ˢᵗ Quartile", 
-             "Median",
-             "3ʳᵈ Quartile",
-             "Maximum")) |>
+    name = c("Minimum", "1ˢᵗ Quartile", "Median", "3ʳᵈ Quartile", "Maximum")) |>
   pivot_wider() |>
   mutate(across(where(is.numeric), \(x) round(x, 1))) |>
   gt(rowname_col = "day", groupname_col = "publisher") |>
@@ -96,7 +92,7 @@ crossword_times |>
   opt_align_table_header(align = "center") |>
   tab_options(table_body.hlines.color = "transparent") |>
   tab_style(
-    style = list(cell_text(color = "#555655", align = "center")), 
+    style = list(cell_text(color = "#555655", align = "center")),
     locations = list(cells_column_labels(), cells_stub(), cells_stubhead())) |>
   tab_source_note(source_note = "Source: Self-collected data") |>
   opt_vertical_padding(scale = 0.25)
@@ -121,8 +117,8 @@ crossword_times |>
   geom_boxplot(alpha = 0.5) +
   # scales
   scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S")) +
-  scale_y_continuous(breaks = seq(0, 70, 5), 
-                     limits = c(0, 70), 
+  scale_y_continuous(breaks = seq(0, 70, 5),
+                     limits = c(0, 70),
                      expand = c(0, 0)) +
   scale_fill_viridis(discrete = TRUE) +
   # labels
@@ -223,13 +219,13 @@ crossword_times |>
   aes(y = .prediction, x = day, fill = publisher) +
   # visual elements representing the posterior predictive model
   stat_eye(
-    slab_colour = "black", 
-    interval_colour = NA, 
+    slab_colour = "black",
+    interval_colour = NA,
     point_colour = NA,
     alpha = 0.5) +
   scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S")) +
-  scale_y_continuous(breaks = seq(0, 70, 5), 
-                     limits = c(0, 70), 
+  scale_y_continuous(breaks = seq(0, 70, 5),
+                     limits = c(0, 70),
                      expand = c(0, 0)) +
   scale_fill_viridis(discrete = TRUE) +
   # labels
@@ -254,3 +250,4 @@ What's the difference between plotting LOESS-based densities and posterior predi
 -   [Anna Shechtman, the New Queen of Crosswords](https://www.theguardian.com/global/2019/may/12/anna-shechtman-the-new-queen-of-crosswords)
 -   [Violin Plots Should Not Exist](https://www.youtube.com/watch?v=_0QMKFzW9fw)
 -   [I’ve Stopped Using Box Plots. Should You?](https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/)
+-   [Designing for Interactive Exploratory Data Analysis Requires Theories of Graphical Inference](https://hdsr.mitpress.mit.edu/pub/w075glo6/release/3)
