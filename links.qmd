@@ -17,11 +17,13 @@ options(readr.show_col_types = FALSE)
 #| output: asis
 #| message: false
 
-read_csv("data_science_links.csv") |>
+"data_science_links.csv" |>
+  read_csv() |>
   arrange(category, date_published) |>
-  mutate(markdown_link = str_c("- [", title, "](", url, ")"),
-         category = paste("\n## ", str_to_title(category)),
-         .keep = "none") |>
+  mutate(
+    markdown_link = str_c("- [", title, "](", url, ")"),
+    category = paste("\n## ", str_to_title(category)),
+    .keep = "none") |>
   group_by(category) |>
   summarize(content = str_c(markdown_link, collapse = "\n")) |>
   mutate(content = paste(category, "\n", content, "\n")) |>

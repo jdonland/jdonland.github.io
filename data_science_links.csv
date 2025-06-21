@@ -41,6 +41,7 @@ Bayesian Workflow,https://sites.stat.columbia.edu/gelman/research/unpublished/Ba
 Univariate Distribution Relationships,https://www.math.wm.edu/~leemis/chart/UDR/UDR.html,statistical methodology,
 The Surprising Richness of Correlations,https://entropicthoughts.com/the-surprising-richness-of-correlations,statistical methodology,2025-04-01
 Don't Hold Out On Me: Some Thoughts on Out-of-Sample Prediction,https://statmodeling.stat.columbia.edu/2025/05/08/dont-hold-out-on-me-some-thoughts-on-out-of-sample-prediction/,statistical methodology,2025-05-08
+A Bayesian Formulation of Exploratory Data Analysis and Goodness-of-Fit Testing,https://sites.stat.columbia.edu/gelman/research/published/isr.pdf,statistical methodology,2003
 Review of Probability Theory: The Logic of Science,https://www.ams.org/notices/200601/rev-faris.pdf,philosophy,2006-01
 Probability That a Number Is Prime,https://www.johndcook.com/blog/2010/10/06/probability-a-number-is-prime/,philosophy,2010-10-06
 Philosophy of Probability,https://aidanlyon.com/philprob.pdf,philosophy,2009-12-30
@@ -61,6 +62,8 @@ Surely God Loves 51 km/h Nearly As Much as 49 km/h?,http://daniellakens.blogspot
 Simplicity and Indifference,https://www.umsu.de/wo/2018/680,philosophy,2018-07-04
 Large Numbers,https://www.privatdozent.co/p/large-numbers-1948,philosophy,2025-05-02
 R. A. Fisher and the Making of Maximum Likelihood 1912‒1922,http://www.medicine.mcgill.ca/epidemiology/hanley/bios601/Likelihood/Fisher%20and%20history%20of%20mle.pdf,history,1997
+"""Not Only Defended But Also Applied"": The Perceived Absurdity
+of Bayesian Inference",https://sites.stat.columbia.edu/gelman/research/published/feller8.pdf,history,2013-02-20
 Before p < 0.05 to Beyond p < 0.05,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6693672/,history,2019
 The Weirdest Paradox in Statistics (and Machine Learning),https://youtu.be/cUqoHQDinCM,puzzles & paradoxes,2022-08-30
 Simpson's Paradox All the Way Down,https://dynomight.net/simpsons-paradox/,puzzles & paradoxes,2020-11-16
@@ -94,6 +97,7 @@ Active Statistics,https://avehtari.github.io/ActiveStatistics/,references & reso
 "Which Books, Papers, and Blogs Are in the Bayesian Canon?",https://statmodeling.stat.columbia.edu/2024/08/21/which-books-papers-and-blogs-are-in-the-bayesian-canon/,references & resources,2024-08-21
 "Code Review for Statisticians, Data Scientists & Modellers",https://jcken95.github.io/projects/code_review.html,references & resources,2024-09-12
 Learn Bayes,https://learnbayes.se,references & resources,
+"Patterns, Predictions, and Actions",https://mlstory.org/,references & resources,2022
 1 Dataset 100 Visualizations,https://100.datavizproject.com/,data visualization,2023-02-07
 How People Actually Lie With Charts,https://vdl.sci.utah.edu/blog/2023/04/17/misleading/,data visualization,2023-04-17
 From Data to Viz,https://www.data-to-viz.com/,data visualization,2018-02-19
@@ -122,5 +126,7 @@ I Stopped Using Box Plots: The Aftermath,https://nightingaledvs.com/i-stopped-us
 Defense Against Dishonest Charts,https://flowingdata.com/projects/dishonest-charts/,data visualization,2025-02-13
 Visualizing Data Is An Art - We Should Treat It Like One,https://perthirtysix.com/visualizing-data-is-an-art,data visualization,2025-02-13
 Visual Vocabulary,https://ft-interactive.github.io/visual-vocabulary/,data visualization,
-SveltePlot,https://svelteplot.dev/why-svelteplot,data visualization,2025-05-09
 Designing for Interactive Exploratory Data Analysis Requires Theories of Graphical Inference,https://hdsr.mitpress.mit.edu/pub/w075glo6/release/3,data visualization,2021-07-30
+The Ladder of Abstraction in Statistical Graphics,https://sites.stat.columbia.edu/gelman/research/unpublished/ladder.pdf,data visualization,2025-01-14
+A Checklist for Designing and Improving the Visualization of Scientific Data,https://www.nature.com/articles/s41556-025-01684-z.epdf?sharing_token=6rxyOROydY7MrGz6upfLBtRgN0jAjWel9jnR3ZoTv0OGLizn9CO3XQIVRsF7OvkKcbOdlu_ZcqkGwmASxUheeApvxObVGpY9yvcyp-Hhporvpq37ebtjXHKnbwJc1DLCKXHv7TM28oj-Wu_RxDIKwVrKUB5fCJT_fzGYq847-7A%3D,data visualization,2025-06-13
+VizDex,https://vizdexproject.com/,data visualization,2025
