@@ -1,0 +1,36 @@
+---
+title: "Reliability, PCA, and the Big Five"
+date: "2025-10-13"
+description: ""
+html:
+    code-fold: true
+draft: true
+---
+
+```{r}
+#| label: libraries
+#| include: false
+
+library(here)
+library(tidyverse)
+library(corrr)
+```
+
+```{r}
+here("posts", "big_five", "IPIP-FFM-data-8Nov2018.zip") |>
+  unzip("IPIP-FFM-data-8Nov2018/data-final.csv") |>
+  read_tsv(na = "NULL", col_select = 1:50) ->
+  big_five_data
+```
+
+```{r}
+big_five_data |>
+  slice_sample(prop = .01) |>
+  mutate(across(everything(), str_trim)) |>
+  correlate() |>
+  autoplot(method = "Identity",low = "#2166ac") +
+  labs(title = "Correlation Plot of Big Five Survey Items")
+```
+
+* [When to Use Cronbach’s Alpha: An Overview and Visualization With R Code](https://thetaminusb.com/2020/12/13/when-to-use-cronbachs-coefficient-alpha-an-overview-and-visualization-with-r-code/)
+* [Assessing the Unidimensionality of Measurement: A Paradigm and Illustration Within the Context of Information Systems Research](https://www.sciencedirect.com/science/article/abs/pii/S0305048396000515)
