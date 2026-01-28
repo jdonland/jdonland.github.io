@@ -1,0 +1,47 @@
+---
+title: "Discrete Probability Distributions, Delta Functions, and Iverson Brackets"
+date: "2026-01-23"
+description: ""
+html:
+    code-fold: true
+draft: true
+---
+
+## Introduction
+
+Beginning students of probability theory immediately encounter an annoying aspect of the topic: many definitions and theorems must be stated and proven twice, once for the discrete case and again for the continuous case, despite the general idea usually being the same for both.
+
+Any textbook will give these definitions, or very similar ones:
+
+- A _random variable_ is a function $X:\Omega \to \mathbb{R}$ from a sample space to real numbers.
+- If the image of $X$ is countable (resp. uncountable) then it is _discrete (continuous)_ and its distribution can be characterized by a _probability mass (density[^1]) function_.
+
+A probability mass function gives the probability of its argument: $\operatorname{pmf_X}(x) = \operatorname{P}(X = x)$. Meanwhile, since the probability of any individual outcome for a continuous random variable is zero, a probability density function gives something called a "density" which must be integrated to recover a probability: $\int_S \operatorname{pdf_X}(x)\,\mathrm{d}x = \operatorname{P}(X \in S)$.
+
+Luckily, the notion of a _cumulative distribution function_ applies in both cases: $\operatorname{cdf}_X(x) = \operatorname{P}(X \leq x)$.
+
+## The Dirac Delta
+
+It's possible to unify discrete and continuous probability mass/density functions using the Dirac delta, which for our purposes can be defined by the following property:
+$$\int_S \delta(x) \, \mathrm{d}x = \begin{cases}1 & 0 \in S \\ 0 & \text{otherwise} \end{cases}$$
+
+Although $\delta$ is often called the "delta function", it isn't a function. Formally, it's a _distribution_ or _measure_. One way to think of it is as the probability density "function" obtained from treating the Heaviside function $H(x) = \begin{cases} 0, & x < 0 \\ 1, & x \geq 0 \end{cases}$ as a cumulative distribution function.
+
+## PMFs as PDFs
+
+If we can welcome the somewhat exotic Dirac delta into our conceptual framework for elementary probability theory, we can dissolve the distinction between probability mass and density functions without having to delve any deeper into measure theory. The trick is that any probability mass function corresponds to a density function consisting of a countable sum of deltas, one for each element of its support, scaled its values:
+$$\sum_{x_i \in \operatorname{supp}(\operatorname{pmf_X})} \operatorname{pmf_X}(x_i)\delta(x - x_i)$$
+
+For example, consider a random variable $D$ representing rolling a fair six-sided die. The sample space consists of six elements, namely "the side with one (or two, ..., or six) pip(s) comes up", and let $D$ send each of these to the corresponding real number in $\{1, 2, \dots, 6\}$. The probability mass function is $\operatorname{pmf_D}(x) = \begin{cases} \frac{1}{6}, & x \in \{1, 2, \dots, 6 \} \\ 0 , & \text{otherwise}\end{cases}$.
+
+Using the sum-of-deltas trick above, we get a corresponding probability density function $\frac{1}{6} (\delta(x - 1) + \delta(x - 2) \cdots + \delta(x - 6))$ which has integrals equal to the values of the probability mass function.
+
+Does it make pedagogical sense to unify probability mass and density functions this way? Probably not, but it's reassuring to know that the distinction is ultimately superficial. It's all densities under the hood.
+
+## Iverson Brackets
+
+## Applications
+
+## References
+
+[^1]: Technically this requires that X is _absolutely continuous_.
