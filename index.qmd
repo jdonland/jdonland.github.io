@@ -1,7 +1,7 @@
 ---
 title: "Jesse Onland"
 image: index.gif
-about: 
+about:
   template: trestles
   image-shape: round
 #  image-width: 15em
@@ -19,3 +19,5 @@ about:
 I'm a data scientist and business intelligence analyst working in Kitchener, Ontario, Canada.
 
 I'm interested in inference broadly construed. That includes formal reasoning, statistical inference, machine learning, data visualization, and anything else related to knowing what we ought to conclude from the facts available to us.
+
+Everything here was created by learning and thinking and writing, without consulting any LLM chatbots.
