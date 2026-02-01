@@ -168,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 27, 2026</p>
+      <p class="date-modified">February 1, 2026</p>
     </div>
   </div>
     
@@ -179,7 +179,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<!-- truncate tails of violins -->
 <section id="introduction" class="level2">
 <h2 data-anchor-id="introduction">Introduction</h2>
 <p>Data analysis comprises a broad range of practices undertaken to extract meaning, discover insights, or inform decisions on the basis of data. Within this set of practices, it’s common to draw a distinction between <em>descriptive</em> and <em>inferential</em> analysis.</p>
@@ -188,22 +187,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data" class="level2">
 <h2 data-anchor-id="data">Data</h2>
 <p>The crosswords published in major American newspapers differ in difficulty according to the day of the week. For example, the <a href="https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle">New York Times’ guide</a> explains that their Monday puzzles are the easiest and their Saturday puzzles the hardest. Meanwhile, the Sunday puzzles have easy clues but a large grid, and the Thursday puzzles have some unique gimmick. By contrast, the New Yorker’s Monday puzzle is their most challenging, with the difficulty mostly decreasing over the course of the week.</p>
-<p>I track how long it takes me to solve the New York Times, Los Angeles Times, New Yorker, and Wall Street Journal crosswords in a CSV file.</p>
+<p>I track how long it takes me to solve the New York Times and New Yorker crosswords in a CSV file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"New York Times"</span>,</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"New Yorker"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Wall Street Journal"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Los Angeles Times"</span>) <span class="ot">-&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  publishers</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">here</span>(<span class="st">"posts"</span>, <span class="st">"crossword_times"</span>, <span class="st">"crossword_times.csv"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="at">col_types =</span> <span class="st">"ccD"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(publisher <span class="sc">%in%</span> publishers) <span class="sc">|&gt;</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(publisher,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">day =</span> <span class="fu">factor</span>(<span class="fu">wday</span>(date, <span class="at">week_start =</span> <span class="dv">1</span>, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)),</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">minutes =</span> <span class="fu">period_to_seconds</span>(<span class="fu">ms</span>(time))<span class="sc">/</span><span class="dv">60</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">.keep =</span> <span class="st">"none"</span>) <span class="ot">-&gt;</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  crossword_times</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">here</span>(<span class="st">"posts"</span>, <span class="st">"crossword_times"</span>, <span class="st">"crossword_times.csv"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="at">col_types =</span> <span class="st">"ccD"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(publisher <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"New York Times"</span>, <span class="st">"New Yorker"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    publisher,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">day =</span> <span class="fu">factor</span>(<span class="fu">wday</span>(date, <span class="at">week_start =</span> <span class="dv">1</span>, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">minutes =</span> <span class="fu">period_to_seconds</span>(<span class="fu">ms</span>(time))<span class="sc">/</span><span class="dv">60</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">.keep =</span> <span class="st">"none"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="ot">-&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  crossword_times</span></code></pre></div>
 </div>
 </section>
 <section id="descriptive-analysis-doesnt-exist" class="level2 page-columns page-full">
@@ -218,37 +213,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Count =</span> <span class="fu">n</span>(),</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Mean =</span> <span class="fu">mean</span>(minutes),</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">fivenum</span>(minutes),</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Minimum"</span>, <span class="st">"1ˢᵗ Quartile"</span>, <span class="st">"Median"</span>, <span class="st">"3ʳᵈ Quartile"</span>, <span class="st">"Maximum"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), \(x) <span class="fu">round</span>(x, <span class="dv">1</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">rowname_col =</span> <span class="st">"day"</span>, <span class="at">groupname_col =</span> <span class="st">"publisher"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Crossword Solve Times: Descriptive Statistics"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"center"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">table_body.hlines.color =</span> <span class="st">"transparent"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"#555655"</span>, <span class="at">align =</span> <span class="st">"center"</span>)),</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">list</span>(<span class="fu">cells_column_labels</span>(), <span class="fu">cells_stub</span>(), <span class="fu">cells_stubhead</span>())) <span class="sc">|&gt;</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">"Source: Self-collected data"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_vertical_padding</span>(<span class="at">scale =</span> <span class="fl">0.25</span>)</span></code></pre></div>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Minimum"</span>, <span class="st">"1ˢᵗ Quartile"</span>, <span class="st">"Median"</span>, <span class="st">"3ʳᵈ Quartile"</span>, <span class="st">"Maximum"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), \(x) <span class="fu">round</span>(x, <span class="dv">1</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">rowname_col =</span> <span class="st">"day"</span>, <span class="at">groupname_col =</span> <span class="st">"publisher"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Crossword Solve Times: Descriptive Statistics"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"center"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">table_body.hlines.color =</span> <span class="st">"transparent"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"#555655"</span>, <span class="at">align =</span> <span class="st">"center"</span>)),</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">list</span>(<span class="fu">cells_column_labels</span>(), <span class="fu">cells_stub</span>(), <span class="fu">cells_stubhead</span>())</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">"Source: Self-collected data"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_vertical_padding</span>(<span class="at">scale =</span> <span class="fl">0.25</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="srvcuymvbd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#srvcuymvbd table {
+<div id="zutscuivgr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zutscuivgr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#srvcuymvbd thead, #srvcuymvbd tbody, #srvcuymvbd tfoot, #srvcuymvbd tr, #srvcuymvbd td, #srvcuymvbd th {
+#zutscuivgr thead, #zutscuivgr tbody, #zutscuivgr tfoot, #zutscuivgr tr, #zutscuivgr td, #zutscuivgr th {
   border-style: none;
 }
 
-#srvcuymvbd p {
+#zutscuivgr p {
   margin: 0;
   padding: 0;
 }
 
-#srvcuymvbd .gt_table {
+#zutscuivgr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -274,12 +271,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#srvcuymvbd .gt_caption {
+#zutscuivgr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#srvcuymvbd .gt_title {
+#zutscuivgr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -291,7 +288,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#srvcuymvbd .gt_subtitle {
+#zutscuivgr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -303,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#srvcuymvbd .gt_heading {
+#zutscuivgr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -315,13 +312,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#srvcuymvbd .gt_bottom_border {
+#zutscuivgr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#srvcuymvbd .gt_col_headings {
+#zutscuivgr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -336,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#srvcuymvbd .gt_col_heading {
+#zutscuivgr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -356,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#srvcuymvbd .gt_column_spanner_outer {
+#zutscuivgr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -368,15 +365,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#srvcuymvbd .gt_column_spanner_outer:first-child {
+#zutscuivgr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#srvcuymvbd .gt_column_spanner_outer:last-child {
+#zutscuivgr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#srvcuymvbd .gt_column_spanner {
+#zutscuivgr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -388,11 +385,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#srvcuymvbd .gt_spanner_row {
+#zutscuivgr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#srvcuymvbd .gt_group_heading {
+#zutscuivgr .gt_group_heading {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -418,7 +415,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#srvcuymvbd .gt_empty_group_heading {
+#zutscuivgr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -433,15 +430,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#srvcuymvbd .gt_from_md > :first-child {
+#zutscuivgr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#srvcuymvbd .gt_from_md > :last-child {
+#zutscuivgr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#srvcuymvbd .gt_row {
+#zutscuivgr .gt_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -460,7 +457,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#srvcuymvbd .gt_stub {
+#zutscuivgr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -473,7 +470,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#srvcuymvbd .gt_stub_row_group {
+#zutscuivgr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -487,15 +484,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#srvcuymvbd .gt_row_group_first td {
+#zutscuivgr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#srvcuymvbd .gt_row_group_first th {
+#zutscuivgr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#srvcuymvbd .gt_summary_row {
+#zutscuivgr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -505,16 +502,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#srvcuymvbd .gt_first_summary_row {
+#zutscuivgr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#srvcuymvbd .gt_first_summary_row.thick {
+#zutscuivgr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#srvcuymvbd .gt_last_summary_row {
+#zutscuivgr .gt_last_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -524,7 +521,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#srvcuymvbd .gt_grand_summary_row {
+#zutscuivgr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -534,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#srvcuymvbd .gt_first_grand_summary_row {
+#zutscuivgr .gt_first_grand_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -544,7 +541,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#srvcuymvbd .gt_last_grand_summary_row_top {
+#zutscuivgr .gt_last_grand_summary_row_top {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -554,11 +551,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#srvcuymvbd .gt_striped {
+#zutscuivgr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#srvcuymvbd .gt_table_body {
+#zutscuivgr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -567,7 +564,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#srvcuymvbd .gt_footnotes {
+#zutscuivgr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -581,7 +578,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#srvcuymvbd .gt_footnote {
+#zutscuivgr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -590,7 +587,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#srvcuymvbd .gt_sourcenotes {
+#zutscuivgr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -604,7 +601,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#srvcuymvbd .gt_sourcenote {
+#zutscuivgr .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -612,72 +609,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#srvcuymvbd .gt_left {
+#zutscuivgr .gt_left {
   text-align: left;
 }
 
-#srvcuymvbd .gt_center {
+#zutscuivgr .gt_center {
   text-align: center;
 }
 
-#srvcuymvbd .gt_right {
+#zutscuivgr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#srvcuymvbd .gt_font_normal {
+#zutscuivgr .gt_font_normal {
   font-weight: normal;
 }
 
-#srvcuymvbd .gt_font_bold {
+#zutscuivgr .gt_font_bold {
   font-weight: bold;
 }
 
-#srvcuymvbd .gt_font_italic {
+#zutscuivgr .gt_font_italic {
   font-style: italic;
 }
 
-#srvcuymvbd .gt_super {
+#zutscuivgr .gt_super {
   font-size: 65%;
 }
 
-#srvcuymvbd .gt_footnote_marks {
+#zutscuivgr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#srvcuymvbd .gt_asterisk {
+#zutscuivgr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#srvcuymvbd .gt_indent_1 {
+#zutscuivgr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#srvcuymvbd .gt_indent_2 {
+#zutscuivgr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#srvcuymvbd .gt_indent_3 {
+#zutscuivgr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#srvcuymvbd .gt_indent_4 {
+#zutscuivgr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#srvcuymvbd .gt_indent_5 {
+#zutscuivgr .gt_indent_5 {
   text-indent: 25px;
 }
 
-#srvcuymvbd .katex-display {
+#zutscuivgr .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#srvcuymvbd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zutscuivgr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -700,276 +697,130 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody class="gt_table_body">
 <tr class="gt_group_heading_row odd">
-<td colspan="8" id="Los Angeles Times" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Los Angeles Times</td>
-</tr>
-<tr class="gt_row_group_first even">
-<td id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 Count">49</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 Mean">6.2</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 Minimum">4.2</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 1ˢᵗ Quartile">5.4</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 Median">5.9</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 3ʳᵈ Quartile">6.9</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 Maximum">10.8</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_2 Count">40</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_2 Mean">7.5</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_2 Minimum">4.6</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_2 1ˢᵗ Quartile">6.1</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_2 Median">7.4</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_2 3ʳᵈ Quartile">8.1</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_2 Maximum">12.3</td>
-</tr>
-<tr class="even">
-<td id="stub_1_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Count">35</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Mean">8.7</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Minimum">4.7</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 1ˢᵗ Quartile">7.0</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Median">8.1</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 3ʳᵈ Quartile">9.9</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Maximum">20.2</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_4" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_4 Count">35</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_4 Mean">12.1</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_4 Minimum">6.0</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_4 1ˢᵗ Quartile">9.0</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_4 Median">11.0</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_4 3ʳᵈ Quartile">13.6</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_4 Maximum">35.6</td>
-</tr>
-<tr class="even">
-<td id="stub_1_5" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_5 Count">29</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_5 Mean">14.4</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_5 Minimum">7.0</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_5 1ˢᵗ Quartile">11.0</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_5 Median">13.3</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_5 3ʳᵈ Quartile">17.8</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_5 Maximum">29.2</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_6" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_6 Count">21</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_6 Mean">23.5</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_6 Minimum">10.8</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_6 1ˢᵗ Quartile">15.8</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_6 Median">22.3</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_6 3ʳᵈ Quartile">31.8</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_6 Maximum">45.4</td>
-</tr>
-<tr class="even">
-<td id="stub_1_7" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Sunday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 Count">13</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 Mean">27.3</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 Minimum">16.9</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 1ˢᵗ Quartile">23.7</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 Median">26.8</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 3ʳᵈ Quartile">28.1</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 Maximum">41.0</td>
-</tr>
-<tr class="gt_group_heading_row odd">
 <td colspan="8" id="New York Times" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">New York Times</td>
 </tr>
 <tr class="gt_row_group_first even">
-<td id="stub_1_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Count">94</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Mean">5.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Minimum">2.9</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 1ˢᵗ Quartile">4.5</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Median">5.1</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 3ʳᵈ Quartile">6.0</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Maximum">8.7</td>
+<td id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_1 Count">94</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_1 Mean">5.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_1 Minimum">2.9</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_1 1ˢᵗ Quartile">4.5</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_1 Median">5.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_1 3ʳᵈ Quartile">6.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_1 Maximum">8.7</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Count">80</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Mean">7.5</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Minimum">4.1</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 1ˢᵗ Quartile">6.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Median">7.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 3ʳᵈ Quartile">8.5</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Maximum">16.6</td>
+<td id="stub_1_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_2 Count">80</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_2 Mean">7.5</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_2 Minimum">4.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_2 1ˢᵗ Quartile">6.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_2 Median">7.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_2 3ʳᵈ Quartile">8.5</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_2 Maximum">16.6</td>
 </tr>
 <tr class="even">
-<td id="stub_1_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Count">81</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Mean">11.1</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Minimum">5.3</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 1ˢᵗ Quartile">8.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Median">10.3</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 3ʳᵈ Quartile">12.9</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Maximum">26.9</td>
+<td id="stub_1_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_3 Count">82</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_3 Mean">11.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_3 Minimum">5.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_3 1ˢᵗ Quartile">8.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_3 Median">10.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_3 3ʳᵈ Quartile">12.9</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_3 Maximum">26.9</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Count">81</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Mean">17.7</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Minimum">8.8</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 1ˢᵗ Quartile">13.5</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Median">16.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 3ʳᵈ Quartile">20.3</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Maximum">40.0</td>
+<td id="stub_1_4" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_4 Count">82</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_4 Mean">17.5</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_4 Minimum">7.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_4 1ˢᵗ Quartile">13.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_4 Median">16.4</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_4 3ʳᵈ Quartile">20.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_4 Maximum">40.0</td>
 </tr>
 <tr class="even">
-<td id="stub_1_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Count">79</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Mean">19.0</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Minimum">6.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 1ˢᵗ Quartile">13.3</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Median">17.3</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 3ʳᵈ Quartile">21.8</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Maximum">54.5</td>
+<td id="stub_1_5" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_5 Count">80</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_5 Mean">19.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_5 Minimum">6.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_5 1ˢᵗ Quartile">13.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_5 Median">17.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_5 3ʳᵈ Quartile">21.8</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_5 Maximum">54.5</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_13" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Count">63</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Mean">22.5</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Minimum">9.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 1ˢᵗ Quartile">15.1</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Median">19.3</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 3ʳᵈ Quartile">26.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Maximum">65.6</td>
+<td id="stub_1_6" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_6 Count">64</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_6 Mean">22.4</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_6 Minimum">9.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_6 1ˢᵗ Quartile">15.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_6 Median">19.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_6 3ʳᵈ Quartile">26.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_6 Maximum">65.6</td>
 </tr>
 <tr class="even">
-<td id="stub_1_14" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Sunday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Count">56</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Mean">29.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Minimum">3.3</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 1ˢᵗ Quartile">22.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Median">26.1</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 3ʳᵈ Quartile">36.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Maximum">68.7</td>
+<td id="stub_1_7" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Sunday</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_7 Count">57</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_7 Mean">29.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_7 Minimum">3.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_7 1ˢᵗ Quartile">22.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_7 Median">26.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_7 3ʳᵈ Quartile">36.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_7 Maximum">68.7</td>
 </tr>
 <tr class="gt_group_heading_row odd">
 <td colspan="8" id="New Yorker" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">New Yorker</td>
 </tr>
 <tr class="gt_row_group_first even">
-<td id="stub_1_15" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Count">61</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Mean">22.2</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Minimum">5.5</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 1ˢᵗ Quartile">14.6</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Median">17.8</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 3ʳᵈ Quartile">26.0</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Maximum">64.9</td>
+<td id="stub_1_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_8 Count">61</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_8 Mean">22.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_8 Minimum">5.5</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_8 1ˢᵗ Quartile">14.6</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_8 Median">17.8</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_8 3ʳᵈ Quartile">26.0</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_8 Maximum">64.9</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_16" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Count">73</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Mean">12.7</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Minimum">4.8</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 1ˢᵗ Quartile">8.9</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Median">11.3</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 3ʳᵈ Quartile">14.8</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Maximum">37.2</td>
+<td id="stub_1_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_9 Count">73</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_9 Mean">12.7</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_9 Minimum">4.8</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_9 1ˢᵗ Quartile">8.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_9 Median">11.3</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_9 3ʳᵈ Quartile">14.8</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_9 Maximum">37.2</td>
 </tr>
 <tr class="even">
-<td id="stub_1_17" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Count">80</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Mean">7.2</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Minimum">3.0</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 1ˢᵗ Quartile">4.2</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Median">5.6</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 3ʳᵈ Quartile">9.6</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Maximum">20.6</td>
+<td id="stub_1_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_10 Count">81</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_10 Mean">7.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_10 Minimum">3.0</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_10 1ˢᵗ Quartile">4.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_10 Median">5.6</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_10 3ʳᵈ Quartile">9.6</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_10 Maximum">20.6</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_18" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Count">51</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Mean">5.6</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Minimum">4.1</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 1ˢᵗ Quartile">4.9</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Median">5.4</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 3ʳᵈ Quartile">6.2</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Maximum">9.0</td>
+<td id="stub_1_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_11 Count">51</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_11 Mean">5.6</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_11 Minimum">4.1</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_11 1ˢᵗ Quartile">4.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_11 Median">5.4</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_11 3ʳᵈ Quartile">6.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_11 Maximum">9.0</td>
 </tr>
 <tr class="even">
-<td id="stub_1_19" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 Count">46</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 Mean">11.9</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 Minimum">4.5</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 1ˢᵗ Quartile">8.0</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 Median">10.1</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 3ʳᵈ Quartile">15.0</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 Maximum">28.0</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_20" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_20 Count">1</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_20 Mean">7.0</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_20 Minimum">7.0</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_20 1ˢᵗ Quartile">7.0</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_20 Median">7.0</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_20 3ʳᵈ Quartile">7.0</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_20 Maximum">7.0</td>
-</tr>
-<tr class="gt_group_heading_row even">
-<td colspan="8" id="Wall Street Journal" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Wall Street Journal</td>
-</tr>
-<tr class="gt_row_group_first odd">
-<td id="stub_1_21" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Count">18</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Mean">6.7</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Minimum">4.3</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 1ˢᵗ Quartile">5.8</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Median">6.2</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 3ʳᵈ Quartile">8.2</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Maximum">9.8</td>
-</tr>
-<tr class="even">
-<td id="stub_1_22" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Count">16</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Mean">9.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Minimum">5.8</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 1ˢᵗ Quartile">6.7</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Median">9.0</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 3ʳᵈ Quartile">11.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Maximum">13.0</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_23" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Count">12</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Mean">13.9</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Minimum">8.8</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 1ˢᵗ Quartile">10.7</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Median">13.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 3ʳᵈ Quartile">17.2</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Maximum">22.2</td>
-</tr>
-<tr class="even">
-<td id="stub_1_24" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Count">13</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Mean">17.9</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Minimum">9.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 1ˢᵗ Quartile">14.6</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Median">19.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 3ʳᵈ Quartile">20.2</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Maximum">26.8</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_25" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Count">8</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Mean">16.4</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Minimum">9.5</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 1ˢᵗ Quartile">13.5</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Median">15.6</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 3ʳᵈ Quartile">18.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Maximum">27.5</td>
-</tr>
-<tr class="even">
-<td id="stub_1_26" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_26 Count">14</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_26 Mean">31.4</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_26 Minimum">15.9</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_26 1ˢᵗ Quartile">27.0</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_26 Median">32.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_26 3ʳᵈ Quartile">34.4</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_26 Maximum">46.7</td>
+<td id="stub_1_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_12 Count">46</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_12 Mean">11.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_12 Minimum">4.5</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_12 1ˢᵗ Quartile">8.0</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_12 Median">10.1</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_12 3ʳᵈ Quartile">15.0</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_12 Maximum">28.0</td>
 </tr>
 </tbody><tfoot class="gt_sourcenotes">
 <tr class="odd">
@@ -996,18 +847,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scales</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"M"</span>, <span class="st">"T"</span>, <span class="st">"W"</span>, <span class="st">"T"</span>, <span class="st">"F"</span>, <span class="st">"S"</span>, <span class="st">"S"</span>)) <span class="sc">+</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">70</span>, <span class="dv">5</span>),</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>),</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Crossword Solve Times"</span>,</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Box and whisker plot"</span>,</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Day of the Week"</span>,</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Solve Time (Minutes)"</span>) <span class="sc">+</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theming</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_swd</span>()</span></code></pre></div>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">70</span>, <span class="dv">5</span>),</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>),</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Crossword Solve Times"</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Box and whisker plot"</span>,</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Day of the Week"</span>,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Solve Time (Minutes)"</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theming</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_swd</span>()</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1047,14 +901,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>If we imagine that the distribution of solves times within each combination of publisher and day of the week is log-normal where the underlying normal distribution has some particular mean and standard deviation, we can provide that model specification to <code>brms</code>, accept some default priors, and have it estimate posterior distributions of those means and standard deviations based on the observed solve times.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>crossword_times <span class="sc">|&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">brm</span>(<span class="at">formula =</span> minutes <span class="sc">~</span> (<span class="dv">1</span> <span class="sc">+</span> day <span class="sc">|</span> publisher),</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> _,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">family =</span> <span class="fu">lognormal</span>(),</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">iter =</span> <span class="dv">2000</span>,</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">chains =</span> <span class="dv">4</span>,</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">control =</span> <span class="fu">list</span>(<span class="at">adapt_delta =</span> <span class="fl">0.95</span>)) <span class="ot">-&gt;</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  solve_time_model</span></code></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">brm</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">formula =</span> minutes <span class="sc">~</span> (<span class="dv">1</span> <span class="sc">+</span> day <span class="sc">|</span> publisher),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> _,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="fu">lognormal</span>(),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">iter =</span> <span class="dv">2000</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">control =</span> <span class="fu">list</span>(<span class="at">adapt_delta =</span> <span class="fl">0.95</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="ot">-&gt;</span> solve_time_model</span></code></pre></div>
 </div>
 </section>
 </section>
@@ -1068,32 +923,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data_grid</span>(publisher, day) <span class="sc">|&gt;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_predicted_draws</span>(solve_time_model) <span class="sc">|&gt;</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># filter out predictions for groups that do not actually occur</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(publisher <span class="sc">==</span> <span class="st">"New Yorker"</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(day) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">7</span>)),</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>         <span class="sc">!</span>(publisher <span class="sc">==</span> <span class="st">"Wall Street Journal"</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(day) <span class="sc">==</span> <span class="dv">7</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plot structure</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(publisher)) <span class="sc">+</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># aesthetic mapping for the violins</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">y =</span> .prediction, <span class="at">x =</span> day, <span class="at">fill =</span> publisher) <span class="sc">+</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># visual elements representing the posterior predictive model</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_eye</span>(</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">slab_colour =</span> <span class="st">"black"</span>,</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">interval_colour =</span> <span class="cn">NA</span>,</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">point_colour =</span> <span class="cn">NA</span>,</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(publisher <span class="sc">==</span> <span class="st">"New Yorker"</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(day) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">7</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plot structure</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(publisher)) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># aesthetic mapping for the violins</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">y =</span> .prediction, <span class="at">x =</span> day, <span class="at">fill =</span> publisher) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># visual elements representing the posterior predictive model</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_eye</span>(</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">slab_colour =</span> <span class="st">"black"</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">interval_colour =</span> <span class="cn">NA</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">point_colour =</span> <span class="cn">NA</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"M"</span>, <span class="st">"T"</span>, <span class="st">"W"</span>, <span class="st">"T"</span>, <span class="st">"F"</span>, <span class="st">"S"</span>, <span class="st">"S"</span>)) <span class="sc">+</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">70</span>, <span class="dv">5</span>),</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>),</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Crossword Solve Times"</span>,</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Posterior predictive log-normal distributions"</span>,</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Day of the Week"</span>,</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Solve Time (Minutes)"</span>) <span class="sc">+</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theming</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_swd</span>()</span></code></pre></div>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">70</span>, <span class="dv">5</span>),</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>),</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Crossword Solve Times"</span>,</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Posterior predictive log-normal distributions"</span>,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Day of the Week"</span>,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Solve Time (Minutes)"</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theming</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_swd</span>()</span></code></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1126,6 +984,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://www.youtube.com/watch?v=_0QMKFzW9fw">Violin Plots Should Not Exist</a></li>
 <li><a href="https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/">I’ve Stopped Using Box Plots. Should You?</a></li>
 <li><a href="https://hdsr.mitpress.mit.edu/pub/w075glo6/release/3">Designing for Interactive Exploratory Data Analysis Requires Theories of Graphical Inference</a></li>
+<li><a href="https://rawdatastudies.com/2025/07/05/data-strips-experiment/">Data Strips Experiment</a></li>
 </ul>
 
 

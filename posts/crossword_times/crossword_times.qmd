@@ -7,8 +7,6 @@ image: violin_plot_thumbnail.png
 description: "So-called \"descriptive\" analysis."
 ---
 
-<!-- truncate tails of violins -->
-
 ```{r}
 #| label: libraries
 #| include: false
@@ -18,7 +16,6 @@ library(tidyverse)
 library(sysfonts)
 library(showtext)
 library(gt)
-library(viridis)
 library(brms)
 library(tidybayes)
 library(modelr)
@@ -46,26 +43,22 @@ In this project we'll analyze how long it takes to solve a crossword puzzle, lea
 
 The crosswords published in major American newspapers differ in difficulty according to the day of the week. For example, the [New York Times' guide](https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle) explains that their Monday puzzles are the easiest and their Saturday puzzles the hardest. Meanwhile, the Sunday puzzles have easy clues but a large grid, and the Thursday puzzles have some unique gimmick. By contrast, the New Yorker's Monday puzzle is their most challenging, with the difficulty mostly decreasing over the course of the week.
 
-I track how long it takes me to solve the New York Times, Los Angeles Times, New Yorker, and Wall Street Journal crosswords in a CSV file.
+I track how long it takes me to solve the New York Times and New Yorker crosswords in a CSV file.
 
 ```{r}
 #| label: data-preparation
 #| message: false
 #| code-fold: false
 
-c("New York Times",
-  "New Yorker",
-  "Wall Street Journal",
-  "Los Angeles Times") ->
-  publishers
-
 here("posts", "crossword_times", "crossword_times.csv") |>
 read_csv(col_types = "ccD") |>
-  filter(publisher %in% publishers) |>
-  mutate(publisher,
-         day = factor(wday(date, week_start = 1, label = TRUE, abbr = FALSE)),
-         minutes = period_to_seconds(ms(time))/60,
-         .keep = "none") ->
+  filter(publisher %in% c("New York Times", "New Yorker")) |>
+  mutate(
+    publisher,
+    day = factor(wday(date, week_start = 1, label = TRUE, abbr = FALSE)),
+    minutes = period_to_seconds(ms(time))/60,
+    .keep = "none"
+  ) ->
   crossword_times
 ```
 
@@ -84,7 +77,8 @@ crossword_times |>
     Count = n(),
     Mean = mean(minutes),
     value = fivenum(minutes),
-    name = c("Minimum", "1ˢᵗ Quartile", "Median", "3ʳᵈ Quartile", "Maximum")) |>
+    name = c("Minimum", "1ˢᵗ Quartile", "Median", "3ʳᵈ Quartile", "Maximum")
+  ) |>
   pivot_wider() |>
   mutate(across(where(is.numeric), \(x) round(x, 1))) |>
   gt(rowname_col = "day", groupname_col = "publisher") |>
@@ -93,7 +87,8 @@ crossword_times |>
   tab_options(table_body.hlines.color = "transparent") |>
   tab_style(
     style = list(cell_text(color = "#555655", align = "center")),
-    locations = list(cells_column_labels(), cells_stub(), cells_stubhead())) |>
+    locations = list(cells_column_labels(), cells_stub(), cells_stubhead())
+  ) |>
   tab_source_note(source_note = "Source: Self-collected data") |>
   opt_vertical_padding(scale = 0.25)
 ```
@@ -117,15 +112,18 @@ crossword_times |>
   geom_boxplot(alpha = 0.5) +
   # scales
   scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S")) +
-  scale_y_continuous(breaks = seq(0, 70, 5),
-                     limits = c(0, 70),
-                     expand = c(0, 0)) +
-  scale_fill_viridis(discrete = TRUE) +
+  scale_y_continuous(
+    breaks = seq(0, 70, 5),
+    limits = c(0, 70),
+    expand = c(0, 0)
+  ) +
   # labels
-  labs(title = "Crossword Solve Times",
-       subtitle = "Box and whisker plot",
-       x = "Day of the Week",
-       y = "Solve Time (Minutes)") +
+  labs(
+    title = "Crossword Solve Times",
+    subtitle = "Box and whisker plot",
+    x = "Day of the Week",
+    y = "Solve Time (Minutes)"
+  ) +
   guides(fill = "none") +
   # theming
   theme_swd()
@@ -174,14 +172,15 @@ If we imagine that the distribution of solves times within each combination of p
 #| code-fold: false
 
 crossword_times |>
-  brm(formula = minutes ~ (1 + day | publisher),
-      data = _,
-      family = lognormal(),
-      warmup = 1000,
-      iter = 2000,
-      chains = 4,
-      control = list(adapt_delta = 0.95)) ->
-  solve_time_model
+  brm(
+    formula = minutes ~ (1 + day | publisher),
+    data = _,
+    family = lognormal(),
+    warmup = 1000,
+    iter = 2000,
+    chains = 4,
+    control = list(adapt_delta = 0.95)
+  ) -> solve_time_model
 ```
 
 ```{r}
@@ -191,7 +190,9 @@ if (exists("solve_time_model")) {
   save(solve_time_model, file = "solve_time_model.RData")
 }
 
-if (file.exists("solve_time_model.RData")) {load("solve_time_model.RData")}
+if (file.exists("solve_time_model.RData")) {
+  load("solve_time_model.RData")
+}
 ```
 
 ## Visualization
@@ -210,8 +211,7 @@ crossword_times |>
   data_grid(publisher, day) |>
   add_predicted_draws(solve_time_model) |>
   # filter out predictions for groups that do not actually occur
-  filter(!(publisher == "New Yorker" & as.integer(day) %in% c(6, 7)),
-         !(publisher == "Wall Street Journal" & as.integer(day) == 7)) |>
+  filter(!(publisher == "New Yorker" & as.integer(day) %in% c(6, 7))) |>
   ggplot() +
   # plot structure
   facet_grid(cols = vars(publisher)) +
@@ -222,17 +222,21 @@ crossword_times |>
     slab_colour = "black",
     interval_colour = NA,
     point_colour = NA,
-    alpha = 0.5) +
+    alpha = 0.5
+  ) +
   scale_x_discrete(labels = c("M", "T", "W", "T", "F", "S", "S")) +
-  scale_y_continuous(breaks = seq(0, 70, 5),
-                     limits = c(0, 70),
-                     expand = c(0, 0)) +
-  scale_fill_viridis(discrete = TRUE) +
+  scale_y_continuous(
+    breaks = seq(0, 70, 5),
+    limits = c(0, 70),
+    expand = c(0, 0)
+  ) +
   # labels
-  labs(title = "Crossword Solve Times",
-       subtitle = "Posterior predictive log-normal distributions",
-       x = "Day of the Week",
-       y = "Solve Time (Minutes)") +
+  labs(
+    title = "Crossword Solve Times",
+    subtitle = "Posterior predictive log-normal distributions",
+    x = "Day of the Week",
+    y = "Solve Time (Minutes)"
+  ) +
   guides(fill = "none") +
   # theming
   theme_swd()
@@ -251,3 +255,4 @@ What's the difference between plotting LOESS-based densities and posterior predi
 -   [Violin Plots Should Not Exist](https://www.youtube.com/watch?v=_0QMKFzW9fw)
 -   [I’ve Stopped Using Box Plots. Should You?](https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/)
 -   [Designing for Interactive Exploratory Data Analysis Requires Theories of Graphical Inference](https://hdsr.mitpress.mit.edu/pub/w075glo6/release/3)
+-   [Data Strips Experiment](https://rawdatastudies.com/2025/07/05/data-strips-experiment/)
