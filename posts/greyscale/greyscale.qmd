@@ -1,0 +1,91 @@
+---
+title: "Greyscale"
+date: "2026-02-25"
+date-modified: last-modified
+date-format: long
+description: "Greyscale considered harmful."
+execute:
+   warning: false
+   message: false
+draft: true
+---
+
+```{r}
+#| include: false
+#| label: libraries
+library(tidyverse)
+library(viridis)
+library(cowplot)
+```
+
+## Introduction
+
+Andrew Gelman recently published a brief blog post about the importance of emphasizing comparisons in data visualization, and a commenter chimed in with:
+
+> And please use greyscale, not colors, on graphs.
+
+I was surprised to see this dubious suggestion framed as though it were akin to rules like "avoid pie charts" and "always start bar chart axes at zero". Using too many colours is certainly a common error in data visualization design, but using any at all?
+
+Let's investigate by comparing the map of unemployment rates found in the documentation of the `viridis` package with some greyscale versions.
+
+##
+
+We'll translate the code from Boomer R to tidyverse style, but hold off on specifying the colour scale:
+
+```{r}
+#| label: plot-code
+library(mapproj)
+
+map_data("county", projection = "albers", parameters = c(39, 45)) |>
+  set_names(c("long", "lat", "group", "order", "state_name", "county")) |>
+  mutate(
+    state = recode_values(
+      state_name,
+      from = tolower(state.name),
+      to = state.abb
+    ),
+    .keep = "unused"
+  ) -> county_df
+
+map_data("state", projection = "albers", parameters = c(39, 45)) -> state_df
+```
+
+```{r}
+data(unemp, package = "viridis")
+
+unemp |>
+  right_join(county_df, by = join_by("state", "county")) |>
+  arrange(order) |>
+  ggplot(aes(long, lat, group = group)) +
+  geom_polygon(
+    aes(fill = rate),
+    colour = alpha("white", 0.5),
+    linewidth = 0.2
+  ) +
+  geom_polygon(data = state_df, colour = "white", fill = NA) +
+  coord_fixed() +
+  theme_minimal() +
+  ggtitle("US unemployment rate by county") +
+  theme(
+    axis.line = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank()
+  ) -> p0
+```
+
+```{r}
+#| label: scales
+p0 + scale_fill_distiller(type = "seq", direction = -1, palette = "Greys") -> p1
+p0 + scale_fill_fermenter(type = "seq", direction = -1, palette = "Greys") -> p2
+p0 + scale_fill_viridis(option = "magma") -> p3
+```
+
+```{r}
+#| label: plot-grid
+plot_grid(p1, p2, p3, ncol = 1)
+```
+
+## References
+
+https://colorcet.com/

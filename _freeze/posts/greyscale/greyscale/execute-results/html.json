@@ -1,0 +1,17 @@
+{
+  "hash": "d972b9817cca7cc901bf1a1144ac85bd",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Greyscale\"\ndate: \"2026-02-25\"\ndate-modified: last-modified\ndate-format: long\ndescription: \"Greyscale considered harmful.\"\nexecute:\n   warning: false\n   message: false\ndraft: true\n---\n\n\n\n## Introduction\n\nAndrew Gelman recently published a brief blog post about the importance of emphasizing comparisons in data visualization, and a commenter chimed in with:\n\n> And please use greyscale, not colors, on graphs.\n\nI was surprised to see this dubious suggestion framed as though it were akin to rules like \"avoid pie charts\" and \"always start bar chart axes at zero\". Using too many colours is certainly a common error in data visualization design, but using any at all?\n\nLet's investigate by comparing the map of unemployment rates found in the documentation of the `viridis` package with some greyscale versions.\n\n##\n\nWe'll translate the code from Boomer R to tidyverse style, but hold off on specifying the colour scale:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(mapproj)\n\ndata(unemp, package = \"viridis\")\n\nmap_data(\"county\", projection = \"albers\", parameters = c(39, 45)) |>\n  set_names(\n    c(\n      \"long\",\n      \"lat\",\n      \"group\",\n      \"order\",\n      \"state_name\",\n      \"county\"\n    )\n  ) |>\n  mutate(\n    state = recode_values(\n      state_name,\n      from = state.abb,\n      to = tolower(state.name)\n    ),\n    .keep = \"unused\"\n  ) -> county_df\n\nmap_data(\"state\", projection = \"albers\", parameters = c(39, 45)) -> state_df\n\nmerge(county_df, unemp, by = c(\"state\", \"county\")) |>\n  arrange(order) |>\n  ggplot(aes(long, lat, group = group)) +\n  geom_polygon(\n    aes(fill = rate),\n    colour = alpha(\"white\", 0.5),\n    linewidth = 0.2\n  ) +\n  geom_polygon(data = state_df, colour = \"white\", fill = NA) +\n  coord_fixed() +\n  theme_minimal() +\n  ggtitle(\"US unemployment rate by county\") +\n  theme(\n    axis.line = element_blank(),\n    axis.text = element_blank(),\n    axis.ticks = element_blank(),\n    axis.title = element_blank()\n  ) -> p0\n```\n:::\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\np0 + scale_fill_brewer(type = \"seq\", direction = -1, palette = \"Greys\") -> p1\np0 + scale_fill_fermenter(type = \"seq\", direction = -1, palette = \"Greys\") -> p2\np0 + scale_fill_viridis(option = \"magma\") -> p3\n```\n:::\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nplot_grid(p1, p2, p3, nrow = 1)\n```\n\n::: {.cell-output-display}\n![](greyscale_files/figure-html/plot-grid-1.png){width=672}\n:::\n:::\n\n",
+    "supporting": [
+      "greyscale_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
