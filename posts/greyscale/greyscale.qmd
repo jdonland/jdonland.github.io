@@ -20,7 +20,7 @@ library(cowplot)
 
 ## Introduction
 
-Andrew Gelman recently published a brief blog post about the importance of emphasizing comparisons in data visualization, and a commenter chimed in with:
+Andrew Gelman recently published a brief [blog post](https://statmodeling.stat.columbia.edu/2026/02/24/tufte-on-graphs-as-comparisons/#comments) about the importance of emphasizing comparisons in data visualization, and a commenter chimed in with:
 
 > And please use greyscale, not colors, on graphs.
 
@@ -89,3 +89,4 @@ plot_grid(p1, p2, p3, ncol = 1)
 ## References
 
 https://colorcet.com/
+https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html

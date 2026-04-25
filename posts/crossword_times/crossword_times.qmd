@@ -147,7 +147,7 @@ It's a matter of some debate among data visualization practitioners about when t
 
 Scientist and YouTuber Angela Collier doesn't like violin plots:
 
-<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/_0QMKFzW9fw?si=Zbd0fmecfDTwNFFC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_0QMKFzW9fw?si=bFPU-hh19owL6O_9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 One of the points she makes is that drawing density plots usually involves what amounts to fitting an unjustified model.
 
