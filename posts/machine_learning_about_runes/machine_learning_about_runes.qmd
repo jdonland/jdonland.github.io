@@ -4,7 +4,7 @@ date: "2022-06-27"
 date-modified: last-modified
 date-format: long
 description: "Models and explainability."
-image: futhark_thumbnail.png
+image: iconoven--viking-helmet.png
 ---
 
 ```{r setup, include = FALSE}

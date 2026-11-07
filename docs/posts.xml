@@ -9,8 +9,39 @@
 <link>https://jdonland.github.io/posts.html</link>
 <atom:link href="https://jdonland.github.io/posts.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.5.52</generator>
-<lastBuildDate>Fri, 27 Sep 2024 04:00:00 GMT</lastBuildDate>
+<generator>quarto-1.11.9</generator>
+<lastBuildDate>Sat, 07 Nov 2026 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>300-Character Book Reviews</title>
+  <link>https://jdonland.github.io/posts/book_reviews/book_reviews.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="introduction" class="level2">
+<h2 data-anchor-id="introduction">Introduction</h2>
+<p>Here are the extremely brief reviews of data analysis and visualization related books that I occasionally post on <a href="https://bsky.app/profile/jdonland.bsky.social">Bluesky</a>.</p>
+<section id="the-theory-that-would-not-die-mcgrayne-2011" class="level3">
+<h3 data-anchor-id="the-theory-that-would-not-die-mcgrayne-2011"><em>The Theory That Would Not Die</em> (McGrayne, 2011)</h3>
+<p>Brings its heroes and villains to life with charming short biographies, but mangles the statistical ideas.</p>
+<p>“Fisher considered a hypothesis significant if it was unlikely to have occurred by chance”? Hypotheses don’t “occur” at all!</p>
+</section>
+<section id="references" class="level3">
+<h3 data-anchor-id="references">References</h3>
+<ul>
+<li><a href="https://www.google.ca/books/edition/The_Theory_That_Would_Not_Die/_Kx5xVGuLRIC"><em>The Theory That Would Not Die: How Bayes’ Rule Cracked the Enigma Code, Hunted Down Russian Submarines, &amp; Emerged Triumphant from Two Centuries of Controversy</em></a></li>
+</ul>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <guid>https://jdonland.github.io/posts/book_reviews/book_reviews.html</guid>
+  <pubDate>Sat, 07 Nov 2026 05:00:00 GMT</pubDate>
+  <media:content url="https://jdonland.github.io/posts/book_reviews/andrsrxn--book-open-pages.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
 <item>
   <title>Chart Makeovers</title>
   <link>https://jdonland.github.io/posts/chart_makeovers/chart_makeovers.html</link>
@@ -797,7 +828,7 @@ font-style: inherit;">"grey20"</span>))</span></code></pre></div>
  ]]></description>
   <guid>https://jdonland.github.io/posts/chart_makeovers/chart_makeovers.html</guid>
   <pubDate>Fri, 27 Sep 2024 04:00:00 GMT</pubDate>
-  <media:content url="https://jdonland.github.io/posts/chart_makeovers/chart_makeovers.png" medium="image" type="image/png" height="144" width="144"/>
+  <media:content url="https://jdonland.github.io/posts/chart_makeovers/andrsrxn--cosmetic.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Hot Days</title>
@@ -1345,7 +1376,7 @@ font-style: inherit;">element_blank</span>())</span></code></pre></div>
  ]]></description>
   <guid>https://jdonland.github.io/posts/hot_days/hot_days.html</guid>
   <pubDate>Thu, 11 Jul 2024 04:00:00 GMT</pubDate>
-  <media:content url="https://jdonland.github.io/posts/hot_days/hot_days_thumbnail.png" medium="image" type="image/png" height="144" width="144"/>
+  <media:content url="https://jdonland.github.io/posts/hot_days/andrsrxn--copy-controls.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Crosswords, Violin Plots, and Dubious Distinctions in Data Analysis</title>
@@ -1355,7 +1386,6 @@ font-style: inherit;">element_blank</span>())</span></code></pre></div>
 
 
 
-<!-- expand references -->
 <section id="introduction" class="level2">
 <h2 data-anchor-id="introduction">Introduction</h2>
 <p>Data analysis comprises a broad range of practices undertaken to extract meaning, discover insights, or inform decisions on the basis of data. Within this set of practices, it’s common to draw a distinction between <em>descriptive</em> and <em>inferential</em> analysis.</p>
@@ -1364,48 +1394,46 @@ font-style: inherit;">element_blank</span>())</span></code></pre></div>
 <section id="data" class="level2">
 <h2 data-anchor-id="data">Data</h2>
 <p>The crosswords published in major American newspapers differ in difficulty according to the day of the week. For example, the <a href="https://www.nytimes.com/guides/crosswords/how-to-solve-a-crossword-puzzle">New York Times’ guide</a> explains that their Monday puzzles are the easiest and their Saturday puzzles the hardest. Meanwhile, the Sunday puzzles have easy clues but a large grid, and the Thursday puzzles have some unique gimmick. By contrast, the New Yorker’s Monday puzzle is their most challenging, with the difficulty mostly decreasing over the course of the week.</p>
-<p>I track how long it takes me to solve the New York Times, Los Angeles Times, New Yorker, and Wall Street Journal crosswords in a CSV file.</p>
+<p>I track how long it takes me to solve the New York Times and New Yorker crosswords in a CSV file.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+font-style: inherit;">here</span>(<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"New York Times"</span>, </span>
-<span id="cb1-2">  <span class="st" style="color: #20794D;
+font-style: inherit;">"posts"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"New Yorker"</span>, </span>
-<span id="cb1-3">  <span class="st" style="color: #20794D;
+font-style: inherit;">"crossword_times"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Wall Street Journal"</span>, </span>
-<span id="cb1-4">  <span class="st" style="color: #20794D;
+font-style: inherit;">"crossword_times.csv"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">"Los Angeles Times"</span>) <span class="ot" style="color: #003B4F;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">-&gt;</span></span>
-<span id="cb1-5">  publishers</span>
-<span id="cb1-6"></span>
-<span id="cb1-7"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">read_csv</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"crossword_times.csv"</span>, <span class="at" style="color: #657422;
+font-style: inherit;">read_csv</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">col_types =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"ccD"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-8">  <span class="fu" style="color: #4758AB;
+<span id="cb1-3">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">filter</span>(publisher <span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">%in%</span> publishers) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">%in%</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"New York Times"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"New Yorker"</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb1-9">  <span class="fu" style="color: #4758AB;
+<span id="cb1-4">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">mutate</span>(publisher,</span>
-<span id="cb1-10">         <span class="at" style="color: #657422;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb1-5">    publisher,</span>
+<span id="cb1-6">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">day =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1424,7 +1452,7 @@ background-color: null;
 font-style: inherit;">abbr =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
 font-style: inherit;">FALSE</span>)),</span>
-<span id="cb1-11">         <span class="at" style="color: #657422;
+<span id="cb1-7">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">minutes =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1435,19 +1463,20 @@ background-color: null;
 font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">60</span>,</span>
-<span id="cb1-12">         <span class="at" style="color: #657422;
+<span id="cb1-8">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">.keep =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"none"</span>) <span class="ot" style="color: #003B4F;
+font-style: inherit;">"none"</span></span>
+<span id="cb1-9">  ) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
-<span id="cb1-13">  crossword_times</span></code></pre></div>
+<span id="cb1-10">  crossword_times</span></code></pre></div>
 </div>
 </section>
 <section id="descriptive-analysis-doesnt-exist" class="level2 page-columns page-full">
 <h2 data-anchor-id="descriptive-analysis-doesnt-exist">Descriptive Analysis Doesn’t Exist</h2>
-<p>At this point we’re ready to do “descriptive” data analysis. We can count observations, calculate so called “five-number” summaries, and so on.</p>
+<p>At this point we’re ready to do “descriptive” data analysis. We can count observations, calculate so-called “five-number” summaries, and so on.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1483,27 +1512,24 @@ font-style: inherit;">name =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Minimum"</span>, </span>
-<span id="cb2-8">             <span class="st" style="color: #20794D;
+font-style: inherit;">"Minimum"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"1ˢᵗ Quartile"</span>, </span>
-<span id="cb2-9">             <span class="st" style="color: #20794D;
+font-style: inherit;">"1ˢᵗ Quartile"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Median"</span>,</span>
-<span id="cb2-10">             <span class="st" style="color: #20794D;
+font-style: inherit;">"Median"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"3ʳᵈ Quartile"</span>,</span>
-<span id="cb2-11">             <span class="st" style="color: #20794D;
+font-style: inherit;">"3ʳᵈ Quartile"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Maximum"</span>)) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"Maximum"</span>)</span>
+<span id="cb2-8">  ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb2-12">  <span class="fu" style="color: #4758AB;
+<span id="cb2-9">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">pivot_wider</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb2-13">  <span class="fu" style="color: #4758AB;
+<span id="cb2-10">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mutate</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1516,7 +1542,7 @@ background-color: null;
 font-style: inherit;">1</span>))) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb2-14">  <span class="fu" style="color: #4758AB;
+<span id="cb2-11">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">gt</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -1529,7 +1555,7 @@ background-color: null;
 font-style: inherit;">"publisher"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb2-15">  <span class="fu" style="color: #4758AB;
+<span id="cb2-12">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">tab_header</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -1538,7 +1564,7 @@ background-color: null;
 font-style: inherit;">"Crossword Solve Times: Descriptive Statistics"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb2-16">  <span class="fu" style="color: #4758AB;
+<span id="cb2-13">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">opt_align_table_header</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -1547,7 +1573,7 @@ background-color: null;
 font-style: inherit;">"center"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb2-17">  <span class="fu" style="color: #4758AB;
+<span id="cb2-14">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">tab_options</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -1556,10 +1582,10 @@ background-color: null;
 font-style: inherit;">"transparent"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb2-18">  <span class="fu" style="color: #4758AB;
+<span id="cb2-15">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">tab_style</span>(</span>
-<span id="cb2-19">    <span class="at" style="color: #657422;
+<span id="cb2-16">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">style =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1573,8 +1599,8 @@ font-style: inherit;">"#555655"</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">align =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"center"</span>)), </span>
-<span id="cb2-20">    <span class="at" style="color: #657422;
+font-style: inherit;">"center"</span>)),</span>
+<span id="cb2-17">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">locations =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1584,10 +1610,11 @@ font-style: inherit;">cells_column_labels</span>(), <span class="fu" style="colo
 background-color: null;
 font-style: inherit;">cells_stub</span>(), <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">cells_stubhead</span>())) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">cells_stubhead</span>())</span>
+<span id="cb2-18">  ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb2-21">  <span class="fu" style="color: #4758AB;
+<span id="cb2-19">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">tab_source_note</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -1596,7 +1623,7 @@ background-color: null;
 font-style: inherit;">"Source: Self-collected data"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb2-22">  <span class="fu" style="color: #4758AB;
+<span id="cb2-20">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">opt_vertical_padding</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -1605,23 +1632,23 @@ background-color: null;
 font-style: inherit;">0.25</span>)</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="yvsmngvjjp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yvsmngvjjp table {
+<div id="umgsnesjrw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#umgsnesjrw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yvsmngvjjp thead, #yvsmngvjjp tbody, #yvsmngvjjp tfoot, #yvsmngvjjp tr, #yvsmngvjjp td, #yvsmngvjjp th {
+#umgsnesjrw thead, #umgsnesjrw tbody, #umgsnesjrw tfoot, #umgsnesjrw tr, #umgsnesjrw td, #umgsnesjrw th {
   border-style: none;
 }
 
-#yvsmngvjjp p {
+#umgsnesjrw p {
   margin: 0;
   padding: 0;
 }
 
-#yvsmngvjjp .gt_table {
+#umgsnesjrw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1647,12 +1674,12 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-left-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_caption {
+#umgsnesjrw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yvsmngvjjp .gt_title {
+#umgsnesjrw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1664,7 +1691,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-width: 0;
 }
 
-#yvsmngvjjp .gt_subtitle {
+#umgsnesjrw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1676,7 +1703,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-top-width: 0;
 }
 
-#yvsmngvjjp .gt_heading {
+#umgsnesjrw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1688,13 +1715,13 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_bottom_border {
+#umgsnesjrw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_col_headings {
+#umgsnesjrw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1709,7 +1736,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_col_heading {
+#umgsnesjrw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1729,7 +1756,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#yvsmngvjjp .gt_column_spanner_outer {
+#umgsnesjrw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1741,15 +1768,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 4px;
 }
 
-#yvsmngvjjp .gt_column_spanner_outer:first-child {
+#umgsnesjrw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yvsmngvjjp .gt_column_spanner_outer:last-child {
+#umgsnesjrw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yvsmngvjjp .gt_column_spanner {
+#umgsnesjrw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1761,11 +1788,11 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   width: 100%;
 }
 
-#yvsmngvjjp .gt_spanner_row {
+#umgsnesjrw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yvsmngvjjp .gt_group_heading {
+#umgsnesjrw .gt_group_heading {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1791,7 +1818,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   text-align: left;
 }
 
-#yvsmngvjjp .gt_empty_group_heading {
+#umgsnesjrw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1806,15 +1833,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   vertical-align: middle;
 }
 
-#yvsmngvjjp .gt_from_md > :first-child {
+#umgsnesjrw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yvsmngvjjp .gt_from_md > :last-child {
+#umgsnesjrw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yvsmngvjjp .gt_row {
+#umgsnesjrw .gt_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1833,7 +1860,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   overflow-x: hidden;
 }
 
-#yvsmngvjjp .gt_stub {
+#umgsnesjrw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1846,7 +1873,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#yvsmngvjjp .gt_stub_row_group {
+#umgsnesjrw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1860,15 +1887,15 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   vertical-align: top;
 }
 
-#yvsmngvjjp .gt_row_group_first td {
+#umgsnesjrw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yvsmngvjjp .gt_row_group_first th {
+#umgsnesjrw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yvsmngvjjp .gt_summary_row {
+#umgsnesjrw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1878,16 +1905,16 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#yvsmngvjjp .gt_first_summary_row {
+#umgsnesjrw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_first_summary_row.thick {
+#umgsnesjrw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yvsmngvjjp .gt_last_summary_row {
+#umgsnesjrw .gt_last_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1897,7 +1924,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_grand_summary_row {
+#umgsnesjrw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1907,7 +1934,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#yvsmngvjjp .gt_first_grand_summary_row {
+#umgsnesjrw .gt_first_grand_summary_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1917,7 +1944,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-top-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_last_grand_summary_row_top {
+#umgsnesjrw .gt_last_grand_summary_row_top {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1927,11 +1954,11 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_striped {
+#umgsnesjrw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yvsmngvjjp .gt_table_body {
+#umgsnesjrw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1940,7 +1967,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-bottom-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_footnotes {
+#umgsnesjrw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1954,7 +1981,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_footnote {
+#umgsnesjrw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -1963,7 +1990,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#yvsmngvjjp .gt_sourcenotes {
+#umgsnesjrw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1977,7 +2004,7 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   border-right-color: #D3D3D3;
 }
 
-#yvsmngvjjp .gt_sourcenote {
+#umgsnesjrw .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -1985,348 +2012,221 @@ font-style: inherit;">0.25</span>)</span></code></pre></div>
   padding-right: 5px;
 }
 
-#yvsmngvjjp .gt_left {
+#umgsnesjrw .gt_left {
   text-align: left;
 }
 
-#yvsmngvjjp .gt_center {
+#umgsnesjrw .gt_center {
   text-align: center;
 }
 
-#yvsmngvjjp .gt_right {
+#umgsnesjrw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yvsmngvjjp .gt_font_normal {
+#umgsnesjrw .gt_font_normal {
   font-weight: normal;
 }
 
-#yvsmngvjjp .gt_font_bold {
+#umgsnesjrw .gt_font_bold {
   font-weight: bold;
 }
 
-#yvsmngvjjp .gt_font_italic {
+#umgsnesjrw .gt_font_italic {
   font-style: italic;
 }
 
-#yvsmngvjjp .gt_super {
+#umgsnesjrw .gt_super {
   font-size: 65%;
 }
 
-#yvsmngvjjp .gt_footnote_marks {
+#umgsnesjrw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yvsmngvjjp .gt_asterisk {
+#umgsnesjrw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yvsmngvjjp .gt_indent_1 {
+#umgsnesjrw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yvsmngvjjp .gt_indent_2 {
+#umgsnesjrw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yvsmngvjjp .gt_indent_3 {
+#umgsnesjrw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yvsmngvjjp .gt_indent_4 {
+#umgsnesjrw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yvsmngvjjp .gt_indent_5 {
+#umgsnesjrw .gt_indent_5 {
   text-indent: 25px;
+}
+
+#umgsnesjrw .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#umgsnesjrw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_heading">
-<th colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border">Crossword Solve Times: Descriptive Statistics</th>
+<tr class="gt_heading header">
+<td colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border">Crossword Solve Times: Descriptive Statistics</td>
 </tr>
-<tr class="odd gt_col_headings">
-<th class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col"></th>
+<tr class="gt_col_headings even">
+<th id="a::stub" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col"></th>
 <th id="Count" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">Count</th>
 <th id="Mean" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">Mean</th>
 <th id="Minimum" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">Minimum</th>
-<th id="1ˢᵗ Quartile" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">1ˢᵗ Quartile</th>
+<th id="a1ˢᵗ-Quartile" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">1ˢᵗ Quartile</th>
 <th id="Median" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">Median</th>
-<th id="3ʳᵈ Quartile" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">3ʳᵈ Quartile</th>
+<th id="a3ʳᵈ-Quartile" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">3ʳᵈ Quartile</th>
 <th id="Maximum" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col">Maximum</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
-<tr class="odd gt_group_heading_row">
-<td colspan="8" id="Los Angeles Times" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Los Angeles Times</td>
+<tr class="gt_group_heading_row odd">
+<th colspan="8" id="New York Times" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">New York Times</th>
 </tr>
-<tr class="even gt_row_group_first">
-<td id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 Count">49</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 Mean">6.2</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 Minimum">4.2</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 1ˢᵗ Quartile">5.4</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 Median">5.9</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 3ʳᵈ Quartile">6.9</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_1 Maximum">10.8</td>
+<tr class="gt_row_group_first even">
+<th id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</th>
+<td class="gt_row gt_right" headers="New York Times stub_1_1 Count">104</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_1 Mean">5.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_1 Minimum">2.9</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_1 1ˢᵗ Quartile">4.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_1 Median">5.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_1 3ʳᵈ Quartile">5.9</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_1 Maximum">8.7</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_2 Count">40</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_2 Mean">7.5</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_2 Minimum">4.6</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_2 1ˢᵗ Quartile">6.1</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_2 Median">7.4</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_2 3ʳᵈ Quartile">8.1</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_2 Maximum">12.3</td>
+<th id="stub_1_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</th>
+<td class="gt_row gt_right" headers="New York Times stub_1_2 Count">88</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_2 Mean">7.4</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_2 Minimum">4.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_2 1ˢᵗ Quartile">6.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_2 Median">7.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_2 3ʳᵈ Quartile">8.5</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_2 Maximum">16.6</td>
 </tr>
 <tr class="even">
-<td id="stub_1_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Count">35</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Mean">8.7</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Minimum">4.7</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 1ˢᵗ Quartile">7.0</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Median">8.1</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 3ʳᵈ Quartile">9.9</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_3 Maximum">20.2</td>
+<th id="stub_1_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</th>
+<td class="gt_row gt_right" headers="New York Times stub_1_3 Count">87</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_3 Mean">11.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_3 Minimum">5.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_3 1ˢᵗ Quartile">8.7</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_3 Median">9.9</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_3 3ʳᵈ Quartile">12.8</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_3 Maximum">26.9</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_4" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_4 Count">35</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_4 Mean">12.1</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_4 Minimum">6.0</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_4 1ˢᵗ Quartile">9.0</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_4 Median">11.0</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_4 3ʳᵈ Quartile">13.6</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_4 Maximum">35.6</td>
+<th id="stub_1_4" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</th>
+<td class="gt_row gt_right" headers="New York Times stub_1_4 Count">85</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_4 Mean">17.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_4 Minimum">7.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_4 1ˢᵗ Quartile">13.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_4 Median">16.4</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_4 3ʳᵈ Quartile">20.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_4 Maximum">40.0</td>
 </tr>
 <tr class="even">
-<td id="stub_1_5" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_5 Count">29</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_5 Mean">14.4</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_5 Minimum">7.0</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_5 1ˢᵗ Quartile">11.0</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_5 Median">13.3</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_5 3ʳᵈ Quartile">17.8</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_5 Maximum">29.2</td>
+<th id="stub_1_5" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</th>
+<td class="gt_row gt_right" headers="New York Times stub_1_5 Count">88</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_5 Mean">19.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_5 Minimum">6.2</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_5 1ˢᵗ Quartile">13.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_5 Median">17.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_5 3ʳᵈ Quartile">21.9</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_5 Maximum">54.5</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_6" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_6 Count">21</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_6 Mean">23.5</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_6 Minimum">10.8</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_6 1ˢᵗ Quartile">15.8</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_6 Median">22.3</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_6 3ʳᵈ Quartile">31.8</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_6 Maximum">45.4</td>
+<th id="stub_1_6" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</th>
+<td class="gt_row gt_right" headers="New York Times stub_1_6 Count">72</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_6 Mean">22.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_6 Minimum">8.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_6 1ˢᵗ Quartile">15.1</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_6 Median">19.0</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_6 3ʳᵈ Quartile">26.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_6 Maximum">65.6</td>
 </tr>
 <tr class="even">
-<td id="stub_1_7" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Sunday</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 Count">13</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 Mean">27.3</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 Minimum">16.9</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 1ˢᵗ Quartile">23.7</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 Median">26.8</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 3ʳᵈ Quartile">28.1</td>
-<td class="gt_row gt_right" headers="Los Angeles Times stub_1_7 Maximum">41.0</td>
+<th id="stub_1_7" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Sunday</th>
+<td class="gt_row gt_right" headers="New York Times stub_1_7 Count">60</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_7 Mean">28.9</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_7 Minimum">3.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_7 1ˢᵗ Quartile">22.3</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_7 Median">25.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_7 3ʳᵈ Quartile">35.6</td>
+<td class="gt_row gt_right" headers="New York Times stub_1_7 Maximum">68.7</td>
 </tr>
-<tr class="odd gt_group_heading_row">
-<td colspan="8" id="New York Times" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">New York Times</td>
+<tr class="gt_group_heading_row odd">
+<th colspan="8" id="New Yorker" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">New Yorker</th>
 </tr>
-<tr class="even gt_row_group_first">
-<td id="stub_1_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Count">67</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Mean">5.5</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Minimum">3.0</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 1ˢᵗ Quartile">4.8</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Median">5.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 3ʳᵈ Quartile">6.3</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_8 Maximum">8.7</td>
+<tr class="gt_row_group_first even">
+<th id="stub_1_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</th>
+<td class="gt_row gt_right" headers="New Yorker stub_1_8 Count">67</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_8 Mean">21.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_8 Minimum">5.5</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_8 1ˢᵗ Quartile">12.4</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_8 Median">17.5</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_8 3ʳᵈ Quartile">24.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_8 Maximum">64.9</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Count">60</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Mean">7.7</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Minimum">4.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 1ˢᵗ Quartile">6.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Median">7.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 3ʳᵈ Quartile">8.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_9 Maximum">16.6</td>
+<th id="stub_1_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</th>
+<td class="gt_row gt_right" headers="New Yorker stub_1_9 Count">79</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_9 Mean">12.4</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_9 Minimum">4.8</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_9 1ˢᵗ Quartile">8.4</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_9 Median">11.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_9 3ʳᵈ Quartile">14.4</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_9 Maximum">37.2</td>
 </tr>
 <tr class="even">
-<td id="stub_1_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Count">61</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Mean">11.8</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Minimum">5.3</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 1ˢᵗ Quartile">9.1</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Median">11.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 3ʳᵈ Quartile">13.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_10 Maximum">26.9</td>
+<th id="stub_1_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</th>
+<td class="gt_row gt_right" headers="New Yorker stub_1_10 Count">83</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_10 Mean">7.1</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_10 Minimum">3.0</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_10 1ˢᵗ Quartile">4.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_10 Median">5.5</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_10 3ʳᵈ Quartile">9.6</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_10 Maximum">20.6</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Count">59</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Mean">19.1</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Minimum">9.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 1ˢᵗ Quartile">14.9</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Median">18.0</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 3ʳᵈ Quartile">22.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_11 Maximum">40.0</td>
+<th id="stub_1_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</th>
+<td class="gt_row gt_right" headers="New Yorker stub_1_11 Count">51</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_11 Mean">5.6</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_11 Minimum">4.1</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_11 1ˢᵗ Quartile">4.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_11 Median">5.4</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_11 3ʳᵈ Quartile">6.2</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_11 Maximum">9.0</td>
 </tr>
 <tr class="even">
-<td id="stub_1_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Count">49</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Mean">21.1</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Minimum">6.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 1ˢᵗ Quartile">13.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Median">19.5</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 3ʳᵈ Quartile">24.8</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_12 Maximum">54.5</td>
+<th id="stub_1_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</th>
+<td class="gt_row gt_right" headers="New Yorker stub_1_12 Count">46</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_12 Mean">11.9</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_12 Minimum">4.5</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_12 1ˢᵗ Quartile">8.0</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_12 Median">10.1</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_12 3ʳᵈ Quartile">15.0</td>
+<td class="gt_row gt_right" headers="New Yorker stub_1_12 Maximum">28.0</td>
 </tr>
-<tr class="odd">
-<td id="stub_1_13" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Count">40</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Mean">25.8</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Minimum">9.9</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 1ˢᵗ Quartile">17.4</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Median">23.7</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 3ʳᵈ Quartile">31.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_13 Maximum">65.6</td>
-</tr>
-<tr class="even">
-<td id="stub_1_14" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Sunday</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Count">33</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Mean">32.9</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Minimum">3.6</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 1ˢᵗ Quartile">24.2</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Median">28.8</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 3ʳᵈ Quartile">39.1</td>
-<td class="gt_row gt_right" headers="New York Times stub_1_14 Maximum">68.7</td>
-</tr>
-<tr class="odd gt_group_heading_row">
-<td colspan="8" id="New Yorker" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">New Yorker</td>
-</tr>
-<tr class="even gt_row_group_first">
-<td id="stub_1_15" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Count">37</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Mean">28.0</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Minimum">14.9</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 1ˢᵗ Quartile">18.4</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Median">23.7</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 3ʳᵈ Quartile">37.1</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_15 Maximum">64.9</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_16" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Count">50</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Mean">14.6</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Minimum">6.8</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 1ˢᵗ Quartile">10.6</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Median">12.8</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 3ʳᵈ Quartile">16.1</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_16 Maximum">37.2</td>
-</tr>
-<tr class="even">
-<td id="stub_1_17" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Count">58</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Mean">8.1</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Minimum">3.7</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 1ˢᵗ Quartile">4.4</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Median">7.6</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 3ʳᵈ Quartile">10.9</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_17 Maximum">20.6</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_18" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Count">50</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Mean">5.6</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Minimum">4.1</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 1ˢᵗ Quartile">4.9</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Median">5.4</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 3ʳᵈ Quartile">6.2</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_18 Maximum">9.0</td>
-</tr>
-<tr class="even">
-<td id="stub_1_19" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 Count">45</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 Mean">12.1</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 Minimum">5.5</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 1ˢᵗ Quartile">8.1</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 Median">10.2</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 3ʳᵈ Quartile">15.0</td>
-<td class="gt_row gt_right" headers="New Yorker stub_1_19 Maximum">28.0</td>
-</tr>
-<tr class="odd gt_group_heading_row">
-<td colspan="8" id="Wall Street Journal" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Wall Street Journal</td>
-</tr>
-<tr class="even gt_row_group_first">
-<td id="stub_1_20" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 Count">18</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 Mean">6.7</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 Minimum">4.3</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 1ˢᵗ Quartile">5.8</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 Median">6.2</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 3ʳᵈ Quartile">8.2</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_20 Maximum">9.8</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_21" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Count">16</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Mean">9.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Minimum">5.8</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 1ˢᵗ Quartile">6.7</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Median">9.0</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 3ʳᵈ Quartile">11.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_21 Maximum">13.0</td>
-</tr>
-<tr class="even">
-<td id="stub_1_22" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Count">12</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Mean">13.9</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Minimum">8.8</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 1ˢᵗ Quartile">10.7</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Median">13.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 3ʳᵈ Quartile">17.2</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_22 Maximum">22.2</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_23" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Count">13</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Mean">17.9</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Minimum">9.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 1ˢᵗ Quartile">14.6</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Median">19.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 3ʳᵈ Quartile">20.2</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_23 Maximum">26.8</td>
-</tr>
-<tr class="even">
-<td id="stub_1_24" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Count">8</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Mean">16.4</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Minimum">9.5</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 1ˢᵗ Quartile">13.5</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Median">15.6</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 3ʳᵈ Quartile">18.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_24 Maximum">27.5</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_25" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Count">14</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Mean">31.4</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Minimum">15.9</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 1ˢᵗ Quartile">27.0</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Median">32.1</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 3ʳᵈ Quartile">34.4</td>
-<td class="gt_row gt_right" headers="Wall Street Journal stub_1_25 Maximum">46.7</td>
-</tr>
-</tbody><tfoot class="gt_sourcenotes">
-<tr class="odd">
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
 <td colspan="8" class="gt_sourcenote">Source: Self-collected data</td>
 </tr>
 </tfoot>
@@ -2414,7 +2314,8 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb3-11">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">scale_y_continuous</span>(<span class="at" style="color: #657422;
+font-style: inherit;">scale_y_continuous</span>(</span>
+<span id="cb3-12">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">breaks =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2424,8 +2325,8 @@ font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">70</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">5</span>), </span>
-<span id="cb3-12">                     <span class="at" style="color: #657422;
+font-style: inherit;">5</span>),</span>
+<span id="cb3-13">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">limits =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2433,8 +2334,8 @@ font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">70</span>), </span>
-<span id="cb3-13">                     <span class="at" style="color: #657422;
+font-style: inherit;">70</span>),</span>
+<span id="cb3-14">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">expand =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2442,46 +2343,40 @@ font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">0</span>)) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">0</span>)</span>
+<span id="cb3-15">  ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb3-14">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">scale_fill_viridis</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">discrete =</span> <span class="cn" style="color: #8f5902;
-background-color: null;
-font-style: inherit;">TRUE</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb3-15">  <span class="co" style="color: #5E5E5E;
+<span id="cb3-16">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># labels</span></span>
-<span id="cb3-16">  <span class="fu" style="color: #4758AB;
+<span id="cb3-17">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
+font-style: inherit;">labs</span>(</span>
+<span id="cb3-18">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Crossword Solve Times"</span>,</span>
-<span id="cb3-17">       <span class="at" style="color: #657422;
+<span id="cb3-19">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">subtitle =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Box and whisker plot"</span>,</span>
-<span id="cb3-18">       <span class="at" style="color: #657422;
+<span id="cb3-20">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Day of the Week"</span>,</span>
-<span id="cb3-19">       <span class="at" style="color: #657422;
+<span id="cb3-21">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Solve Time (Minutes)"</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"Solve Time (Minutes)"</span></span>
+<span id="cb3-22">  ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb3-20">  <span class="fu" style="color: #4758AB;
+<span id="cb3-23">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">guides</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2490,10 +2385,10 @@ background-color: null;
 font-style: inherit;">"none"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb3-21">  <span class="co" style="color: #5E5E5E;
+<span id="cb3-24">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># theming</span></span>
-<span id="cb3-22">  <span class="fu" style="color: #4758AB;
+<span id="cb3-25">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_swd</span>()</span></code></pre></div>
 </details>
@@ -2518,10 +2413,8 @@ font-style: inherit;">theme_swd</span>()</span></code></pre></div>
 <h2 data-anchor-id="histograms-density-plots-and-violins">Histograms, Density Plots, and Violins</h2>
 <p>It’s a matter of some debate among data visualization practitioners about when to use density plots, such as violin plots, instead of histograms. Or indeed whether density plots should ever be used. Or even whether <em>histograms</em> should ever be used!</p>
 <p>Scientist and YouTuber Angela Collier doesn’t like violin plots:</p>
-<p align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_0QMKFzW9fw?si=Zbd0fmecfDTwNFFC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_0QMKFzW9fw?si=bFPU-hh19owL6O_9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-</p>
 <p>One of the points she makes is that drawing density plots usually involves what amounts to fitting an unjustified model.</p>
 <p>In most situations, <code>ggplot</code> uses locally estimated scatter plot smoothing (LOESS) by default, which involves fitting a separate polynomial regression model on a weighted neighbourhood around each data point and evaluating it there. This often results in serviceable violin plots, but you wouldn’t necessarily expect it to reflect the “actual” theoretical distribution of the data.</p>
 <p>Designing charts is another situation in which we cannot avoid making modelling assumptions just because we insist we’re only doing “descriptive” analysis. As soon as you click “add trend line” in Excel, you’re fitting a model. Accepting this and being willing to specify a model allows us to create better data visualizations.</p>
@@ -2539,7 +2432,8 @@ background-color: null;
 font-style: inherit;">|&gt;</span></span>
 <span id="cb4-2">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">brm</span>(<span class="at" style="color: #657422;
+font-style: inherit;">brm</span>(</span>
+<span id="cb4-3">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">formula =</span> minutes <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -2550,30 +2444,30 @@ background-color: null;
 font-style: inherit;">+</span> day <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|</span> publisher),</span>
-<span id="cb4-3">      <span class="at" style="color: #657422;
+<span id="cb4-4">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">data =</span> _,</span>
-<span id="cb4-4">      <span class="at" style="color: #657422;
+<span id="cb4-5">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">family =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">lognormal</span>(),</span>
-<span id="cb4-5">      <span class="at" style="color: #657422;
+<span id="cb4-6">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">warmup =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1000</span>,</span>
-<span id="cb4-6">      <span class="at" style="color: #657422;
+<span id="cb4-7">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">iter =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2000</span>,</span>
-<span id="cb4-7">      <span class="at" style="color: #657422;
+<span id="cb4-8">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">chains =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">4</span>,</span>
-<span id="cb4-8">      <span class="at" style="color: #657422;
+<span id="cb4-9">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">control =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2581,10 +2475,10 @@ font-style: inherit;">list</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">adapt_delta =</span> <span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">0.95</span>)) <span class="ot" style="color: #003B4F;
+font-style: inherit;">0.95</span>)</span>
+<span id="cb4-10">  ) <span class="ot" style="color: #003B4F;
 background-color: null;
-font-style: inherit;">-&gt;</span></span>
-<span id="cb4-9">  solve_time_model</span></code></pre></div>
+font-style: inherit;">-&gt;</span> solve_time_model</span></code></pre></div>
 </div>
 </section>
 </section>
@@ -2630,33 +2524,18 @@ font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">7</span>)),</span>
-<span id="cb5-6">         <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">!</span>(publisher <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Wall Street Journal"</span> <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">&amp;</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">as.integer</span>(day) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">7</span>)) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">7</span>))) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb5-7">  <span class="fu" style="color: #4758AB;
+<span id="cb5-6">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggplot</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-8">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-7">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># plot structure</span></span>
-<span id="cb5-9">  <span class="fu" style="color: #4758AB;
+<span id="cb5-8">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">facet_grid</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2665,10 +2544,10 @@ background-color: null;
 font-style: inherit;">vars</span>(publisher)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-10">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-9">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># aesthetic mapping for the violins</span></span>
-<span id="cb5-11">  <span class="fu" style="color: #4758AB;
+<span id="cb5-10">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2679,32 +2558,33 @@ background-color: null;
 font-style: inherit;">fill =</span> publisher) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-12">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-11">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># visual elements representing the posterior predictive model</span></span>
-<span id="cb5-13">  <span class="fu" style="color: #4758AB;
+<span id="cb5-12">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">stat_eye</span>(</span>
-<span id="cb5-14">    <span class="at" style="color: #657422;
+<span id="cb5-13">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">slab_colour =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"black"</span>, </span>
-<span id="cb5-15">    <span class="at" style="color: #657422;
+font-style: inherit;">"black"</span>,</span>
+<span id="cb5-14">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">interval_colour =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
-font-style: inherit;">NA</span>, </span>
-<span id="cb5-16">    <span class="at" style="color: #657422;
+font-style: inherit;">NA</span>,</span>
+<span id="cb5-15">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">point_colour =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
 font-style: inherit;">NA</span>,</span>
-<span id="cb5-17">    <span class="at" style="color: #657422;
+<span id="cb5-16">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">alpha =</span> <span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">0.5</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">0.5</span></span>
+<span id="cb5-17">  ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb5-18">  <span class="fu" style="color: #4758AB;
@@ -2732,7 +2612,8 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb5-19">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">scale_y_continuous</span>(<span class="at" style="color: #657422;
+font-style: inherit;">scale_y_continuous</span>(</span>
+<span id="cb5-20">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">breaks =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2742,8 +2623,8 @@ font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">70</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">5</span>), </span>
-<span id="cb5-20">                     <span class="at" style="color: #657422;
+font-style: inherit;">5</span>),</span>
+<span id="cb5-21">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">limits =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2751,8 +2632,8 @@ font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">70</span>), </span>
-<span id="cb5-21">                     <span class="at" style="color: #657422;
+font-style: inherit;">70</span>),</span>
+<span id="cb5-22">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">expand =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2760,46 +2641,40 @@ font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">0</span>)) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">0</span>)</span>
+<span id="cb5-23">  ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-22">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">scale_fill_viridis</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">discrete =</span> <span class="cn" style="color: #8f5902;
-background-color: null;
-font-style: inherit;">TRUE</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb5-23">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-24">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># labels</span></span>
-<span id="cb5-24">  <span class="fu" style="color: #4758AB;
+<span id="cb5-25">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
+font-style: inherit;">labs</span>(</span>
+<span id="cb5-26">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Crossword Solve Times"</span>,</span>
-<span id="cb5-25">       <span class="at" style="color: #657422;
+<span id="cb5-27">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">subtitle =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Posterior predictive log-normal distributions"</span>,</span>
-<span id="cb5-26">       <span class="at" style="color: #657422;
+<span id="cb5-28">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Day of the Week"</span>,</span>
-<span id="cb5-27">       <span class="at" style="color: #657422;
+<span id="cb5-29">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Solve Time (Minutes)"</span>) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"Solve Time (Minutes)"</span></span>
+<span id="cb5-30">  ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-28">  <span class="fu" style="color: #4758AB;
+<span id="cb5-31">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">guides</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -2808,10 +2683,10 @@ background-color: null;
 font-style: inherit;">"none"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb5-29">  <span class="co" style="color: #5E5E5E;
+<span id="cb5-32">  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># theming</span></span>
-<span id="cb5-30">  <span class="fu" style="color: #4758AB;
+<span id="cb5-33">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_swd</span>()</span></code></pre></div>
 </details>
@@ -2845,6 +2720,8 @@ font-style: inherit;">theme_swd</span>()</span></code></pre></div>
 <li><a href="https://www.theguardian.com/global/2019/may/12/anna-shechtman-the-new-queen-of-crosswords">Anna Shechtman, the New Queen of Crosswords</a></li>
 <li><a href="https://www.youtube.com/watch?v=_0QMKFzW9fw">Violin Plots Should Not Exist</a></li>
 <li><a href="https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/">I’ve Stopped Using Box Plots. Should You?</a></li>
+<li><a href="https://hdsr.mitpress.mit.edu/pub/w075glo6/release/3">Designing for Interactive Exploratory Data Analysis Requires Theories of Graphical Inference</a></li>
+<li><a href="https://rawdatastudies.com/2025/07/05/data-strips-experiment/">Data Strips Experiment</a></li>
 </ul>
 
 
@@ -2854,7 +2731,7 @@ font-style: inherit;">theme_swd</span>()</span></code></pre></div>
  ]]></description>
   <guid>https://jdonland.github.io/posts/crossword_times/crossword_times.html</guid>
   <pubDate>Mon, 02 Jan 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://jdonland.github.io/posts/crossword_times/violin_plot_thumbnail.png" medium="image" type="image/png" height="144" width="144"/>
+  <media:content url="https://jdonland.github.io/posts/crossword_times/carbon--chart-violin-plot.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>(Machine) Learning about Runes</title>
@@ -2863,14 +2740,15 @@ font-style: inherit;">theme_swd</span>()</span></code></pre></div>
 
 
 
+
 <section id="introduction" class="level2 page-columns page-full">
 <h2 data-anchor-id="introduction">Introduction</h2>
 <p>Today we’ll learn about an ancient Germanic writing system, clean up some messy data, engineer a couple of simple features, and see if we can find a way to predict the age of some historical artifacts without having to pay for a fancy-schmancy archaeology degree. Along the way, we’ll get a little overview of the <code>tidyverse</code> and <code>tidymodels</code> approaches to data analysis and modeling in R.</p>
 <section id="a-very-brief-primer-on-runes" class="level3 page-columns page-full">
 <h3 data-anchor-id="a-very-brief-primer-on-runes">A Very Brief Primer on Runes</h3>
-<div class="page-columns page-full"><p>A rune is a letter from any of a handful of closely-related alphabets used by Germanic peoples primarily from around the 3rd to the 13th centuries CE. Like the Latin alphabet used to write the Germanic languages today, they derive from an ancient form of the Greek alphabet.<sup>1</sup> These alphabets are sometimes called “futhark” (or “futhorc”, “fuþąrk”, etc.) after first few letters in their canonical order.<sup>2</sup></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Possibly via one of the alpine Old Italic alphabets such as Venetic.</p></li><li id="fn2"><p><sup>2</sup>&nbsp;Curiously, the first three letters of these alphabets spell out a vulgar word for a woman’s genitals in Old Norse.</p></li></div></div>
-<div class="page-columns page-full"><p>The main runic alphabets are<sup>3</sup>:</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;The abecedaria, or “rune rows”, in this table are much simplified. In reality, there were many variations of each. The medieval runes in particular were augmented by diacritical dots in order to disambiguate sounds represented by the same rune in the younger futhark.</p></li></div></div>
-<table class="table">
+<p>A rune is a letter from any of a handful of closely-related alphabets used by Germanic peoples primarily from around the 3rd to the 13th centuries CE. Like the Latin alphabet used to write the Germanic languages today, they derive from an ancient form of the Greek alphabet.<sup>1</sup> These alphabets are sometimes called “futhark” (or “futhorc”, “fuþąrk”, etc.) after first few letters in their canonical order.<sup>2</sup></p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Possibly via one of the alpine Old Italic alphabets such as Venetic.</p></div><div id="fn2"><p><sup>2</sup>&nbsp;Curiously, the first three letters of these alphabets spell out a vulgar word for a woman’s genitals in Old Norse.</p></div><div id="fn3"><p><sup>3</sup>&nbsp;The abecedaria, or “rune rows”, in this table are much simplified. In reality, there were many variations of each. The medieval runes in particular were augmented by diacritical dots in order to disambiguate sounds represented by the same rune in the younger futhark.</p></div></div><p>The main runic alphabets are<sup>3</sup>:</p>
+<table class="caption-top table">
 <colgroup>
 <col style="width: 18%">
 <col style="width: 23%">
@@ -2912,8 +2790,8 @@ font-style: inherit;">theme_swd</span>()</span></code></pre></div>
 </tr>
 </tbody>
 </table>
-<div class="page-columns page-full"><p>Magical incantations were sometimes written in runes, but despite what such august institutions as the gift shop of the National Museum of Iceland would have you believe, there’s no evidence that each runic letter had a specific symbolic meaning.<sup>4</sup> Neither is there much evidence that they were used in divination. These alphabets were used mainly for mundane purposes such as inscribing an object with its owner or creator’s name, and for memorializing the dead on gravestones. Nevertheless, in recent times these alphabets have become an element in various kinds of New Age mysticism, neo-pagan religions, and unsavoury political movements.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;The runes have mnemonic names, and occasionally a rune could stand in for its name, but even this is rare.</p></li></div></div>
-</section>
+<p>Magical incantations were sometimes written in runes, but despite what such august institutions as the gift shop of the National Museum of Iceland would have you believe, there’s no evidence that each runic letter had a specific symbolic meaning.<sup>4</sup> Neither is there much evidence that they were used in divination. These alphabets were used mainly for mundane purposes such as inscribing an object with its owner or creator’s name, and for memorializing the dead on gravestones. Nevertheless, in recent times these alphabets have become an element in various kinds of New Age mysticism, neo-pagan religions, and unsavoury political movements.</p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;The runes have mnemonic names, and occasionally a rune could stand in for its name, but even this is rare.</p></div></div></section>
 <section id="runes-db" class="level3">
 <h3 data-anchor-id="runes-db">RuneS-DB</h3>
 <p>RuneS-DB is a database of artifacts bearing runic writing compiled from a variety of sources as part of RuneS, an overarching project to study these writing systems. It’s available from the RuneS project’s website.</p>
@@ -2934,6 +2812,8 @@ font-style: inherit;">theme_swd</span>()</span></code></pre></div>
 <h3 data-anchor-id="reading-the-file">Reading the File</h3>
 <p>The file we obtain from the RuneS website is tab-separated, contains three lines of preamble, and uses a hyphen to indicate missing data. Providing this information to <code>readr</code>’s <code>read_delim</code> will produce a tibble (i.e., a fancy data frame, which is in turn a fancy matrix) that we can begin to manipulate.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># read the file</span></span>
@@ -2970,12 +2850,15 @@ font-style: inherit;">-&gt;</span></span>
 background-color: null;
 font-style: inherit;"># save to a dataframe</span></span>
 <span id="cb1-8">  runes_data</span></code></pre></div>
+</details>
 </div>
 </section>
 <section id="the-vimose-comb" class="level3 page-columns page-full">
 <h3 data-anchor-id="the-vimose-comb">The Vimose Comb</h3>
-<div class="page-columns page-full"><p>One artifact we’d expect to find in RuneS-DB is the <a href="https://en.wikipedia.org/wiki/Vimose_inscriptions">Vimose comb</a>, which bears what’s considered to be the oldest known datable<sup>5</sup> runic inscription. <code>dplyr</code>’s <code>filter</code> function and <code>stringr</code>’s <code>str_detect</code> let us filter the data to show only rows where value in the column of inscription names matches “Vimose comb”.<sup>6</sup></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Insert joke about “datable” here.</p></li><li id="fn6"><p><sup>6</sup>&nbsp;Just checking for <code>rs_short_inscr_name == "Vimose comb"</code> would fail because the values in that column have extra whitespace characters.</p></li></div></div>
-<div class="cell" data-layout-align="center">
+<p>One artifact we’d expect to find in RuneS-DB is the <a href="https://en.wikipedia.org/wiki/Vimose_inscriptions">Vimose comb</a>, which bears what’s considered to be the oldest known datable<sup>5</sup> runic inscription. <code>dplyr</code>’s <code>filter</code> function and <code>stringr</code>’s <code>str_detect</code> let us filter the data to show only rows where value in the column of inscription names matches “Vimose comb”.<sup>6</sup></p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Insert joke about “datable” here.</p></div><div id="fn6"><p><sup>6</sup>&nbsp;Just checking for <code>rs_short_inscr_name == "Vimose comb"</code> would fail because the values in that column have extra whitespace characters.</p></div></div><div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -3002,9 +2885,10 @@ background-color: null;
 font-style: inherit;">width =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"51.75%"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; ">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: right;" data-quarto-table-cell-role="th">Findno</th>
@@ -3077,7 +2961,6 @@ font-style: inherit;">"51.75%"</span>)</span></code></pre></div>
 </tbody>
 </table>
 </div>
-
 </div>
 </div>
 <p>So we can see that this object was found in Vimose, currently resides in a museum, has been dated to 140-160 CE, is a personal hygiene tool made of antler, says “harja” (ᚺᚨᚱᛃᚨ), etc.</p>
@@ -3086,6 +2969,8 @@ font-style: inherit;">"51.75%"</span>)</span></code></pre></div>
 <h3 data-anchor-id="diagnosing">Diagnosing</h3>
 <p>One way to quantify the messiness of a data set is to calculate the count and proportion of missing and unique values in each column. <code>dlookr</code>’s <code>diagnose</code> does this.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span> </span>
@@ -3106,9 +2991,10 @@ background-color: null;
 font-style: inherit;">width =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"51.75%"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; ">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">variables</th>
@@ -3371,12 +3257,13 @@ font-style: inherit;">"51.75%"</span>)</span></code></pre></div>
 </tbody>
 </table>
 </div>
-
 </div>
 </div>
 <p>Unfortunately, RuneS-DB is a bit of a mess. Because it’s amalgamated from many sources, information is coded inconsistently. A mix of languages are used, including in the column names. Getting this data set clean enough to start visualizing it is easy enough using <code>dplyr</code> functions like <code>rename()</code>, <code>separate()</code>, and <code>mutate()</code>.</p>
 <p>The first step is to make the column names more informative and get rid of the weird “rs_” and “rs_short_” prefixes.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -3486,9 +3373,12 @@ font-style: inherit;">-&gt;</span></span>
 background-color: null;
 font-style: inherit;"># update the dataframe</span></span>
 <span id="cb4-37">  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>Next we’ll separate the <code>location</code> column into two columns, one with the general category and the other with the rest of the information. We’ll also create separate columns for the lower and upper bounds of each date, then convert this into a midpoint and a range.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -3607,9 +3497,12 @@ font-style: inherit;">-&gt;</span></span>
 background-color: null;
 font-style: inherit;"># update the dataframe again</span></span>
 <span id="cb5-22">  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>Next let’s convert RuneS-DB’s somewhat idiosyncratic country codes into human-readable names. While we’re at it, we’ll collapse the rarest ones into a “Rest of World” category.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -3679,9 +3572,12 @@ font-style: inherit;">"Rest of World"</span>)) <span class="ot" style="color: #0
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
 <span id="cb6-13">  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>Finally some miscellaneous re-encoding.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -3873,6 +3769,7 @@ font-style: inherit;">"mixed/unknown"</span>)) <span class="ot" style="color: #0
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
 <span id="cb7-33">  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>There’s more cleaning we could do, but this is enough for now.</p>
 </section>
@@ -3880,6 +3777,8 @@ font-style: inherit;">-&gt;</span></span>
 <section id="exploratory-data-analysis" class="level2 page-columns page-full">
 <h2 data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h2>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb8-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -3973,17 +3872,20 @@ background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Material Class"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://jdonland.github.io/posts/machine_learning_about_runes/machine_learning_about_runes_files/figure-html/object class vs material class-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="machine_learning_about_runes_files/figure-html/object class vs material class-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://jdonland.github.io/posts/machine_learning_about_runes/machine_learning_about_runes_files/figure-html/object class vs material class-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
-<div class="page-columns page-full"><p>Nearly half of the artifacts in RuneS-DB are stones<sup>7</sup>, which it turns out are always made of stone! Likewise, coins and bracteates<sup>8</sup> are always made of metal, and rune sticks are always made of wood. Tools, edifices, “inventory” (mostly furniture), and “other objects” all seem to come in a variety of materials.</p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;<a href="https://frinkiac.com/meme/S04E19/338003.jpg?b64lines=R09PRCBPTEQgUk9DSy4gIApOT1RISU5HIEJFQVRTIFRIQVQu">Good old rock, nothin’ beats that!</a></p></li><li id="fn8"><p><sup>8</sup>&nbsp;What’s a bracteate, you ask? Why, it’s “is”a flat, thin, single-sided gold medal worn as jewelry”.</p></li></div></div>
-<p>Where is this stuff typically found?</p>
+<p>Nearly half of the artifacts in RuneS-DB are stones<sup>7</sup>, which it turns out are always made of stone! Likewise, coins and bracteates<sup>8</sup> are always made of metal, and rune sticks are always made of wood. Tools, edifices, “inventory” (mostly furniture), and “other objects” all seem to come in a variety of materials.</p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;<a href="https://frinkiac.com/meme/S04E19/338003.jpg?b64lines=R09PRCBPTEQgUk9DSy4gIApOT1RISU5HIEJFQVRTIFRIQVQu">Good old rock, nothin’ beats that!</a></p></div><div id="fn8"><p><sup>8</sup>&nbsp;What’s a bracteate, you ask? Why, it’s “is”a flat, thin, single-sided gold medal worn as jewelry”.</p></div></div><p>Where is this stuff typically found?</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb9-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -4051,10 +3953,11 @@ background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Number of Objects"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://jdonland.github.io/posts/machine_learning_about_runes/machine_learning_about_runes_files/figure-html/location graphic-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="machine_learning_about_runes_files/figure-html/location graphic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://jdonland.github.io/posts/machine_learning_about_runes/machine_learning_about_runes_files/figure-html/location graphic-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -4062,6 +3965,8 @@ font-style: inherit;">"Number of Objects"</span>)</span></code></pre></div>
 <p>Right. Scandinavia, mostly.</p>
 <p>One last exploratory graphic. How old is this stuff?</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb10-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -4165,10 +4070,11 @@ background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Number of Objects"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://jdonland.github.io/posts/machine_learning_about_runes/machine_learning_about_runes_files/figure-html/dates graphic-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="machine_learning_about_runes_files/figure-html/dates graphic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="https://jdonland.github.io/posts/machine_learning_about_runes/machine_learning_about_runes_files/figure-html/dates graphic-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -4177,8 +4083,8 @@ font-style: inherit;">"Number of Objects"</span>)</span></code></pre></div>
 </section>
 <section id="feature-engineering" class="level2 page-columns page-full">
 <h2 data-anchor-id="feature-engineering">Feature Engineering</h2>
-<div class="page-columns page-full"><p>Suppose you’re lost in the woods in northwestern Europe<sup>9</sup> and stumble upon some runes. Is there some rule you can use to estimate when they were carved (or written)?</p><div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;What do you do if you’re lost in the woods in Iceland? Stand up.</p></li></div></div>
-<p>First, we need to consider what features of the object you’d be able to determine. I think these are all reasonable:</p>
+<p>Suppose you’re lost in the woods in northwestern Europe<sup>9</sup> and stumble upon some runes. Is there some rule you can use to estimate when they were carved (or written)?</p>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;What do you do if you’re lost in the woods in Iceland? Stand up.</p></div></div><p>First, we need to consider what features of the object you’d be able to determine. I think these are all reasonable:</p>
 <ul>
 <li>object class (stone, coin, etc.)</li>
 <li>material class (stone, metal, wood, etc.)</li>
@@ -4189,8 +4095,10 @@ font-style: inherit;">"Number of Objects"</span>)</span></code></pre></div>
 <li>whether the inscription seems to contain any of a few common words or morphemes</li>
 </ul>
 <p>The first four of these features are already present in our data frame. We’ll have to “engineer” the others.</p>
-<div class="page-columns page-full"><p>Unfortunately, the transliterations in RuneS-DB are very inconsistently encoded, but we can still get an approximate length of each inscription by converting the transliteration to ASCII<sup>10</sup> and counting the number of resulting alphanumeric characters<sup>11</sup>. It’s too bad the database doesn’t simply use the runic characters included in Unicode, but perhaps that wouldn’t be sufficient to encode parts of the inscriptions which are unclear, damaged, combined into ligatures (so-called “bind runes”), etc.</p><div class="no-row-height column-margin column-container"><li id="fn10"><p><sup>10</sup>&nbsp;Note that different operating systems have different ideas about how to convert other encodings into ASCII.</p></li><li id="fn11"><p><sup>11</sup>&nbsp;Plus question marks, to account for some of the non-ASCII letters.</p></li></div></div>
-<div class="cell" data-layout-align="center">
+<p>Unfortunately, the transliterations in RuneS-DB are very inconsistently encoded, but we can still get an approximate length of each inscription by converting the transliteration to ASCII<sup>10</sup> and counting the number of resulting alphanumeric characters<sup>11</sup>. It’s too bad the database doesn’t simply use the runic characters included in Unicode, but perhaps that wouldn’t be sufficient to encode parts of the inscriptions which are unclear, damaged, combined into ligatures (so-called “bind runes”), etc.</p>
+<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;Note that different operating systems have different ideas about how to convert other encodings into ASCII.</p></div><div id="fn11"><p><sup>11</sup>&nbsp;Plus question marks, to account for some of the non-ASCII letters.</p></div></div><div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -4230,9 +4138,12 @@ font-style: inherit;">?]"</span>)) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
 <span id="cb11-9">  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>We can identify abecedaria by slightly re-encoding the “category” column.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -4272,9 +4183,12 @@ font-style: inherit;">"no"</span>)) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
 <span id="cb12-7">  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>Another feature we can derive from the inscription is what kind of spacing is used between words.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -4344,9 +4258,12 @@ font-style: inherit;">"none/other"</span>)) <span class="ot" style="color: #003B
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
 <span id="cb13-9">  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>Finally let’s encode the presence or absence of a few of the most common words/morphemes.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -4399,6 +4316,7 @@ font-style: inherit;">:</span>lit, as.numeric)) <span class="ot" style="color: #
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
 <span id="cb14-10">  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>Is this enough information to be able to predict the age of a runic inscription with any accuracy? Let’s try fitting a few different models using different approaches.</p>
 </section>
@@ -4408,6 +4326,8 @@ font-style: inherit;">-&gt;</span></span>
 <h3 data-anchor-id="testtraining-data-split">Test/Training Data Split</h3>
 <p>First we’ll split the data into a training and a test set, then create cross-validation folds from training data to help estimate model performance.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1">runes_data <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -4483,6 +4403,7 @@ background-color: null;
 font-style: inherit;">vfold_cv</span>(train) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span> folds</span></code></pre></div>
+</details>
 </div>
 <p>The <code>tidymodels</code> framework provides a unified interface to various model-specific packages, as well as convenient functions for defining, fitting, tuning, and comparing many combinations of data pre-processing recipes and model specifications.</p>
 <blockquote class="blockquote">
@@ -4493,6 +4414,8 @@ font-style: inherit;">-&gt;</span> folds</span></code></pre></div>
 <h3 data-anchor-id="pre-processing-recipe">Pre-Processing Recipe</h3>
 <p>Next we’ll define two pre-processing recipes. In both cases we’ll normalize our numeric predictor. Some model types require categorical predictors to be dummy-encoded, while others can exhibit better performance with categorical predictors left as-is. We’ll try both ways.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># create a pre-processing recipe</span></span>
@@ -4550,12 +4473,15 @@ font-style: inherit;">all_nominal_predictors</span>()) <span class="ot" style="c
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
 <span id="cb16-9">  runes_recipe</span></code></pre></div>
+</details>
 </div>
 </section>
 <section id="baseline" class="level3">
 <h3 data-anchor-id="baseline">Baseline</h3>
 <p>Now we can define our models. First let’s “fit” the null model, which consists of just always guessing the mean date value from the training set. It’s straightforward to simply calculate the appropriate RMSE estimate in this case, but for illustrative purposes we’ll use cross-validation anyway. It doesn’t matter which recipe we use since the null model ignores the predictors anyway.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">null_model</span>() <span class="sc" style="color: #5E5E5E;
@@ -4611,6 +4537,7 @@ font-style: inherit;">|&gt;</span></span>
 <span id="cb17-11">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">pull</span>(mean)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 311.4979</code></pre>
 </div>
@@ -4625,6 +4552,8 @@ font-style: inherit;">pull</span>(mean)</span></code></pre></div>
 <p>We’ll try six more kinds of model. Each comes with some hyperparameters which control the bias-variance tradeoff, the step size for gradient descent, etc. We can leave <code>tune()</code> as a placeholder for these values when creating the model specifications. When we fit the models, we’ll try 10 combinations of hyperparameter values for each model type, and keep only the best ones.</p>
 <p>A linear model assumes the outcome is a linear function of the predictors and finds the best coefficient to assign to each. Linear models are inflexible, and so tend to suffer from bias (unless the underlying relationship really is approximately linear), but they tend to have lower variance than more flexible model types, since their outputs are not too sensitive to small changes in their inputs. The <code>penalty</code> and <code>mixture</code> hyperparameters here control how much L1 (LASSO) and/or L2 (ridge) regularization to apply. Regularization penalizes more complex models in order to prevent overfitting.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">linear_reg</span>(</span>
@@ -4646,9 +4575,12 @@ font-style: inherit;">tune</span>()) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
 <span id="cb19-5">  linear_spec</span></code></pre></div>
+</details>
 </div>
 <p>A decision tree is essentially a flowchart, with each split corresponding to a rule in the form of an “if/then” condition on a predictor. The idea is to find the splits which best separate the outcome. Predictions are produced by taking the average outcome among the training data belonging to the relevant terminal node of the tree. <code>tree_depth</code> specifies the maximum depth of the tree; without some maximum, the training data could be completely interpolated (or “memorized”), an extreme form of overfitting. <code>cost_complexity</code> controls how well a split must separate its subset of the training data in order to be considered, and <code>min_n</code> controls how much training data must belong to a node in order to justify any further splitting.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">decision_tree</span>(<span class="at" style="color: #657422;
@@ -4669,9 +4601,12 @@ font-style: inherit;">tune</span>()) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
 <span id="cb20-4">  decision_tree_spec</span></code></pre></div>
+</details>
 </div>
 <p>Nearest neighbours models predict that the value of the outcome for a test data point will be some kind of weighted average of that point’s nearest neighbours in the training data. <code>neighbors</code> controls the number of neighbours to consider and the other hyperparameters specify the precise notions of “weighted average” and “nearest” to use.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">nearest_neighbor</span>(<span class="at" style="color: #657422;
@@ -4697,9 +4632,12 @@ font-style: inherit;">tune</span>()) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
 <span id="cb21-5">  nearest_neighbours_spec</span></code></pre></div>
+</details>
 </div>
 <p>Boosted tree ensembles are a very popular machine learning approach involving fitting many small decision trees, each of which is optimized to improve the predictions obtained by combining the preceding trees. This model type inherents the hyperparameters involved in fitting decision trees, plus additional hyperparameters specifying the number of trees to use, the proportion of training data and number of predictors to consider at each step during fitting, as well as how much weight to initially apply to each new tree.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">boost_tree</span>(<span class="at" style="color: #657422;
@@ -4745,9 +4683,12 @@ font-style: inherit;">tune</span>()) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
 <span id="cb22-9">  boosted_trees_spec</span></code></pre></div>
+</details>
 </div>
 <p>Some approaches combine multiple other types of models. Cubist involves a tree ensemble with linear models fit on each tree node, a boosting-like procedure, and a final nearest-neighbours-based adjustment.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">cubist_rules</span>(<span class="at" style="color: #657422;
@@ -4768,12 +4709,15 @@ font-style: inherit;">tune</span>()) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
 <span id="cb23-4">  cubist_spec</span></code></pre></div>
+</details>
 </div>
 </section>
 <section id="model-fitting-1" class="level3">
 <h3 data-anchor-id="model-fitting-1">Model Fitting</h3>
 <p>In <code>tidymodels</code>, a “workflow” is an object which bundles together a model specification together with any associated pre-processing recipes, hyperparameter values, and/or evaluation results. <code>workflow_set</code> and <code>workflow_map</code> allow us to tune all of our model specifications as a batch.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># combine the model specifications in a list</span></span>
@@ -4869,12 +4813,15 @@ font-style: inherit;">-&gt;</span></span>
 background-color: null;
 font-style: inherit;"># update the workflow set with the results</span></span>
 <span id="cb24-27">  runes_workflow_set</span></code></pre></div>
+</details>
 </div>
 </section>
 <section id="performance-comparison" class="level3">
 <h3 data-anchor-id="performance-comparison">Performance Comparison</h3>
 <p>Now our workflow set contains ten fit models per model type for each of ten hyperparameter combinations. We can extract the best version of each model type and plot the cross-validated performance estimates.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># plot the rmse estimate from the best iteration of each type of model</span></span>
@@ -4976,16 +4923,19 @@ background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Estimated RMSE for Best Model of Each Type"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://jdonland.github.io/posts/machine_learning_about_runes/machine_learning_about_runes_files/figure-html/model performance plot-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="machine_learning_about_runes_files/figure-html/model performance plot-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="https://jdonland.github.io/posts/machine_learning_about_runes/machine_learning_about_runes_files/figure-html/model performance plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
 <p>It appears that Cubist and boosted trees models work best for these data. Let’s finalize a Cubist model by re-fitting the best one on the entire training set, and seeing how well it predicts the age of artifacts in the test set.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1">runes_workflow_set <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -5037,6 +4987,7 @@ font-style: inherit;">metric_set</span>(rmse)) <span class="ot" style="color: #0
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
 <span id="cb26-11">  final_cubist</span></code></pre></div>
+</details>
 </div>
 </section>
 <section id="the-performance-explainability-trade-off" class="level3 page-columns page-full">
@@ -5044,6 +4995,8 @@ font-style: inherit;">-&gt;</span></span>
 <p>Unfortunately, our finalized Cubist model is useless. Since we’re lost in the woods, we can’t actually compute a prediction involving a complicated collection of trees of linear models with hundreds or thousands of coefficients and weights in total.</p>
 <p>Can we find a simple decision tree with comparable performance by trying more hyperparameter combinations? Let’s set <code>tree_depth</code> to 3, find good values for the other hyperparameters, then finalize and evaluate the resulting decision tree model.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1">decision_tree_spec <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -5147,9 +5100,12 @@ font-style: inherit;">metric_set</span>(rmse)) <span class="ot" style="color: #0
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
 <span id="cb27-21">  small_tree</span></code></pre></div>
+</details>
 </div>
 <p>Now we have two finalized models: a Cubist model and a small decision tree. The most obvious way to compare them would be to inspect their performance, but we can also use the <code>vip</code> package to extract the number of features used by each model, giving us a way to compare their relative complexity as well.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">data.frame</span>(</span>
@@ -5244,9 +5200,10 @@ background-color: null;
 font-style: inherit;">width =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"51.75%"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; ">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">model</th>
@@ -5268,12 +5225,13 @@ font-style: inherit;">"51.75%"</span>)</span></code></pre></div>
 </tbody>
 </table>
 </div>
-
 </div>
 </div>
-<div class="page-columns page-full"><p>The small decision tree’s predictions are about 16% worse than the best Cubist model we could find. On the other hand, it’s <em>much</em> simpler. While the Cubist model uses essentially all of the information we provided to it, since we constrained our decision tree to three levels, it can use only a maximum of seven features.<sup>12</sup> Although the more complicated Cubist performs well, it’s difficult to explain exactly why, or what the role of each feature is in generating predictions. This illustrates the performance-explainability trade-off.</p><div class="no-row-height column-margin column-container"><li id="fn12"><p><sup>12</sup>&nbsp;None of which are among the ones we engineered, as it happens.</p></li></div></div>
-<p>Our small tree model is simple enough to write on an index card and keep with us when venturing out into the forests of rural Scandinavia. Here it is:</p>
+<p>The small decision tree’s predictions are about 16% worse than the best Cubist model we could find. On the other hand, it’s <em>much</em> simpler. While the Cubist model uses essentially all of the information we provided to it, since we constrained our decision tree to three levels, it can use only a maximum of seven features.<sup>12</sup> Although the more complicated Cubist performs well, it’s difficult to explain exactly why, or what the role of each feature is in generating predictions. This illustrates the performance-explainability trade-off.</p>
+<div class="no-row-height column-margin column-container"><div id="fn12"><p><sup>12</sup>&nbsp;None of which are among the ones we engineered, as it happens.</p></div></div><p>Our small tree model is simple enough to write on an index card and keep with us when venturing out into the forests of rural Scandinavia. Here it is:</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1">small_tree <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -5325,10 +5283,11 @@ background-color: null;
 font-style: inherit;">$</span>prediction[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>])}))</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://jdonland.github.io/posts/machine_learning_about_runes/machine_learning_about_runes_files/figure-html/tree graphic-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="machine_learning_about_runes_files/figure-html/tree graphic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="https://jdonland.github.io/posts/machine_learning_about_runes/machine_learning_about_runes_files/figure-html/tree graphic-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -5337,8 +5296,8 @@ font-style: inherit;">1</span>])}))</span></code></pre></div>
 </section>
 <section id="conclusion" class="level2 page-columns page-full">
 <h2 data-anchor-id="conclusion">Conclusion</h2>
-<div class="page-columns page-full"><p>If you can foresee yourself desperately needing to know the approximate age of a runic inscription, I recommend you write down the decision tree above and keep it in your pocket. That, or always bring a licensed and qualified runologist<sup>13</sup> with you.</p><div class="no-row-height column-margin column-container"><li id="fn13"><p><sup>13</sup>&nbsp;The real job title of perhaps an entire dozen people!</p></li></div></div>
-</section>
+<p>If you can foresee yourself desperately needing to know the approximate age of a runic inscription, I recommend you write down the decision tree above and keep it in your pocket. That, or always bring a licensed and qualified runologist<sup>13</sup> with you.</p>
+<div class="no-row-height column-margin column-container"><div id="fn13"><p><sup>13</sup>&nbsp;The real job title of perhaps an entire dozen people!</p></div></div></section>
 <section id="references" class="level2">
 <h2 data-anchor-id="references">References</h2>
 <section id="runes" class="level3">
@@ -5371,12 +5330,13 @@ font-style: inherit;">1</span>])}))</span></code></pre></div>
  ]]></description>
   <guid>https://jdonland.github.io/posts/machine_learning_about_runes/machine_learning_about_runes.html</guid>
   <pubDate>Mon, 27 Jun 2022 04:00:00 GMT</pubDate>
-  <media:content url="https://jdonland.github.io/posts/machine_learning_about_runes/futhark_thumbnail.png" medium="image" type="image/png" height="144" width="144"/>
+  <media:content url="https://jdonland.github.io/posts/machine_learning_about_runes/iconoven--viking-helmet.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Cities with Nice Weather</title>
   <link>https://jdonland.github.io/posts/city_temperatures/city_temperatures.html</link>
   <description><![CDATA[ 
+
 
 
 
@@ -5392,6 +5352,8 @@ font-style: inherit;">1</span>])}))</span></code></pre></div>
 <h2 data-anchor-id="data">Data</h2>
 <p>First, I created a CSV file comprising all the information in the Wikpedia article <a href="https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature">List of cities by average temperature</a>.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">read_csv</span>(<span class="st" style="color: #20794D;
@@ -5408,6 +5370,7 @@ font-style: inherit;">-&gt;</span></span>
 <span id="cb1-4"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">head</span>(city_temps)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 15
   Country City         Jan   Feb   Mar   Apr   May   Jun   Jul   Aug   Sep   Oct
@@ -5421,10 +5384,12 @@ font-style: inherit;">head</span>(city_temps)</span></code></pre></div>
 # ℹ 3 more variables: Nov &lt;dbl&gt;, Dec &lt;dbl&gt;, Year &lt;dbl&gt;</code></pre>
 </div>
 </div>
-<div class="page-columns page-full"><p>Each row corresponds to a distinct city. There are two text columns containing each city’s name and country, twelve numeric columns indicating the “averages of the daily highs and lows”<sup>1</sup> for each month, and one additional numeric column containing the same figure for the entire year. The units are degrees Celsius. 455 cities are included in the data.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This is a bit ambiguous, but no matter. The article also points out that “the actual daytime temperature in a given month will be 3 to 10 °C higher than the temperature listed here, depending on how large the difference between daily highs and lows is.”</p></li></div></div>
-<p>We’ll define the “deviation” mentioned above as the difference between the value recorded for the coldest and hottest months, and the “average” as the value recorded for the whole year overall.</p>
-<div class="page-columns page-full"><p>We’ll ignore any other weather characteristics like humidity, rain, wind, diurnal temperature difference, etc.<sup>2</sup></p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;This may or many not be reasonable depending on your personal preferences about weather.</p></li></div></div>
-<div class="cell">
+<p>Each row corresponds to a distinct city. There are two text columns containing each city’s name and country, twelve numeric columns indicating the “averages of the daily highs and lows”<sup>1</sup> for each month, and one additional numeric column containing the same figure for the entire year. The units are degrees Celsius. 455 cities are included in the data.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;This is a bit ambiguous, but no matter. The article also points out that “the actual daytime temperature in a given month will be 3 to 10 °C higher than the temperature listed here, depending on how large the difference between daily highs and lows is.”</p></div></div><p>We’ll define the “deviation” mentioned above as the difference between the value recorded for the coldest and hottest months, and the “average” as the value recorded for the whole year overall.</p>
+<p>We’ll ignore any other weather characteristics like humidity, rain, wind, diurnal temperature difference, etc.<sup>2</sup></p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;This may or many not be reasonable depending on your personal preferences about weather.</p></div></div><div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1">city_temps <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -5468,6 +5433,7 @@ font-style: inherit;">-&gt;</span></span>
 <span id="cb3-9"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">head</span>(city_temps)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
 # Rowwise: 
@@ -5487,6 +5453,8 @@ font-style: inherit;">head</span>(city_temps)</span></code></pre></div>
 <p>Now we can investigate the distribution of each of our two variables.</p>
 <p>Here are the default summaries:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1">city_temps <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span> </span>
@@ -5498,6 +5466,7 @@ font-style: inherit;">|&gt;</span></span>
 <span id="cb5-3">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">summarize</span>()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>          N    Mean   SD     Min    Q1 Median    Q3  Max
 1   avg 455   18.00 8.12   -14.4 12.45   18.6 25.65 30.5
@@ -5506,6 +5475,8 @@ font-style: inherit;">summarize</span>()</span></code></pre></div>
 </div>
 <p>Which cities correspond to the extremes for each variable?</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1">city_temps <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -5541,6 +5512,7 @@ font-style: inherit;">|&gt;</span></span>
 <span id="cb7-5">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">arrange</span>(avg)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
 # Rowwise: 
@@ -5554,6 +5526,8 @@ font-style: inherit;">arrange</span>(avg)</span></code></pre></div>
 </div>
 <p>Let’s see the values for Toronto as a baseline, and save them for later:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1">city_temps <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -5564,6 +5538,7 @@ background-color: null;
 font-style: inherit;">==</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Toronto"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
 # Rowwise: 
@@ -5571,6 +5546,8 @@ font-style: inherit;">"Toronto"</span>)</span></code></pre></div>
   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
 1 Toronto   9.4    26</code></pre>
 </div>
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1">city_temps <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -5608,6 +5585,7 @@ font-style: inherit;">pull</span>(range) <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">-&gt;</span></span>
 <span id="cb11-9">  toronto_range</span></code></pre></div>
+</details>
 </div>
 <p>By global standards, Toronto is cool on average, but in keeping with my subjective perception, the deviation from that average over the year is quite large.</p>
 </section>
@@ -5615,6 +5593,8 @@ font-style: inherit;">-&gt;</span></span>
 <h2 data-anchor-id="plots">Plots</h2>
 <p>Let’s look at a scatter plot with marginal histograms:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1">city_temps <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -5725,14 +5705,21 @@ font-style: inherit;">-&gt;</span></span>
 <span id="cb12-18">  plot</span>
 <span id="cb12-19"></span>
 <span id="cb12-20">plot</span></code></pre></div>
+</details>
 <div class="cell-output-display">
-<p><img src="https://jdonland.github.io/posts/city_temperatures/city_temperatures_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><a href="city_temperatures_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://jdonland.github.io/posts/city_temperatures/city_temperatures_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Here Toronto is indicated by the dashed lines.</p>
 <p>We can see there’s a negative association between a city’s average temperature and the range of temperatures experienced there. In particular, there’s a big cluster of very hot cities which have little difference between their hottest and coldest months.</p>
 <p>Ten tropical cities fall into both the hottest decile and the least varying decile:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1">city_temps <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span> </span>
@@ -5761,6 +5748,7 @@ font-style: inherit;">|&gt;</span></span>
 <span id="cb13-4">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">select</span>(city)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 1
 # Rowwise: 
@@ -5782,8 +5770,10 @@ font-style: inherit;">select</span>(city)</span></code></pre></div>
 </section>
 <section id="zooming-in" class="level2 page-columns page-full">
 <h2 data-anchor-id="zooming-in">Zooming In</h2>
-<div class="page-columns page-full"><p>The area of this plot I’m most interested in is the vertical slice around Toronto. Let’s see the same plot, including only the cities within one degree of Toronto’s average temperature.<sup>3</sup> We’ll exclude the marginal histograms but add labels to the cities.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;I haven’t defined an ideal average temperature, but any city with a similar average and smaller range than Toronto is a clear improvement.</p></li></div></div>
-<div class="cell">
+<p>The area of this plot I’m most interested in is the vertical slice around Toronto. Let’s see the same plot, including only the cities within one degree of Toronto’s average temperature.<sup>3</sup> We’ll exclude the marginal histograms but add labels to the cities.</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;I haven’t defined an ideal average temperature, but any city with a similar average and smaller range than Toronto is a clear improvement.</p></div></div><div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1">city_temps <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -5895,8 +5885,13 @@ font-style: inherit;">+</span></span>
 <span id="cb15-15">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_bw</span>()</span></code></pre></div>
+</details>
 <div class="cell-output-display">
-<p><img src="https://jdonland.github.io/posts/city_temperatures/city_temperatures_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><a href="city_temperatures_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://jdonland.github.io/posts/city_temperatures/city_temperatures_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p>So it seems that <a href="https://en.wikipedia.org/wiki/La_Paz#Climate">La Paz</a>, <a href="https://en.wikipedia.org/wiki/Edinburgh#Climate">Edinburgh</a>, or <a href="https://en.wikipedia.org/wiki/Dublin#Climate">Dublin</a> might be good options.</p>
@@ -5907,6 +5902,8 @@ font-style: inherit;">theme_bw</span>()</span></code></pre></div>
 <p>We want to know, for each maximum average temperature, the city that has the minimum range of temperatures. These are the cities that form the “bottom-left edge” of our first plot.</p>
 <p>Nine cities fit this criterion:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1">city_temps <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -5951,6 +5948,7 @@ font-style: inherit;">|&gt;</span></span>
 <span id="cb16-6">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">select</span>(city)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>        city
 1 Gjoa Haven
@@ -5967,6 +5965,8 @@ font-style: inherit;">select</span>(city)</span></code></pre></div>
 <p>Of these, the first two have temperatures which are more variable than Toronto, so we can remove them from consideration.</p>
 <p>Let’s plot the final seven candidates:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1">city_temps <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
@@ -6113,8 +6113,13 @@ font-style: inherit;">+</span></span>
 <span id="cb18-18">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_bw</span>()</span></code></pre></div>
+</details>
 <div class="cell-output-display">
-<p><img src="https://jdonland.github.io/posts/city_temperatures/city_temperatures_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><a href="city_temperatures_files/figure-html/unnamed-chunk-10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="https://jdonland.github.io/posts/city_temperatures/city_temperatures_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Again we see that La Paz has a similar overall average temperature to Toronto, but much less annual variability. <a href="https://en.wikipedia.org/wiki/Cusco#Geography_and_climate">Cusco</a> and <a href="https://en.wikipedia.org/wiki/Bogot%C3%A1#Climate">Bogotá</a> are warmer but even less variable.</p>
@@ -6133,7 +6138,7 @@ font-style: inherit;">theme_bw</span>()</span></code></pre></div>
  ]]></description>
   <guid>https://jdonland.github.io/posts/city_temperatures/city_temperatures.html</guid>
   <pubDate>Thu, 12 May 2022 04:00:00 GMT</pubDate>
-  <media:content url="https://jdonland.github.io/posts/city_temperatures/thermometers_thumbnail.png" medium="image" type="image/png" height="144" width="144"/>
+  <media:content url="https://jdonland.github.io/posts/city_temperatures/andrsrxn--thermometer-sun.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
 </rss>

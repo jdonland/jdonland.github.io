@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,16 @@
 
 <title>Crosswords, Violin Plots, and Dubious Distinctions in Data Analysis – Jesse Onland</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -65,13 +71,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../index.gif" rel="icon" type="image/gif">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-4d49c55b2a02038d936e54d6a2565e99.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2d1b484175df9f94b87cc871fc78a24c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-c238d3cc10b82f4d2991166d0e9f949c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-542436dca96572d7ea1a863c4db5b555.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -94,18 +101,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Jesse Onland</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -141,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -168,7 +175,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 25, 2026</p>
+      <p class="date-modified">November 7, 2026</p>
     </div>
   </div>
     
@@ -679,10 +686,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<th colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border">Crossword Solve Times: Descriptive Statistics</th>
+<td colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border">Crossword Solve Times: Descriptive Statistics</td>
 </tr>
 <tr class="gt_col_headings even">
 <th id="a::stub" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="text-align: center; color: #555655;" scope="col"></th>
@@ -697,10 +704,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody class="gt_table_body">
 <tr class="gt_group_heading_row odd">
-<td colspan="8" id="New York Times" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">New York Times</td>
+<th colspan="8" id="New York Times" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">New York Times</th>
 </tr>
 <tr class="gt_row_group_first even">
-<td id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
+<th id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</th>
 <td class="gt_row gt_right" headers="New York Times stub_1_1 Count">104</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_1 Mean">5.1</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_1 Minimum">2.9</td>
@@ -710,7 +717,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="New York Times stub_1_1 Maximum">8.7</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
+<th id="stub_1_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</th>
 <td class="gt_row gt_right" headers="New York Times stub_1_2 Count">88</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_2 Mean">7.4</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_2 Minimum">4.1</td>
@@ -720,7 +727,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="New York Times stub_1_2 Maximum">16.6</td>
 </tr>
 <tr class="even">
-<td id="stub_1_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
+<th id="stub_1_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</th>
 <td class="gt_row gt_right" headers="New York Times stub_1_3 Count">87</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_3 Mean">11.0</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_3 Minimum">5.3</td>
@@ -730,7 +737,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="New York Times stub_1_3 Maximum">26.9</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_4" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
+<th id="stub_1_4" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</th>
 <td class="gt_row gt_right" headers="New York Times stub_1_4 Count">85</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_4 Mean">17.6</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_4 Minimum">7.3</td>
@@ -740,7 +747,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="New York Times stub_1_4 Maximum">40.0</td>
 </tr>
 <tr class="even">
-<td id="stub_1_5" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
+<th id="stub_1_5" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</th>
 <td class="gt_row gt_right" headers="New York Times stub_1_5 Count">88</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_5 Mean">19.0</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_5 Minimum">6.2</td>
@@ -750,7 +757,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="New York Times stub_1_5 Maximum">54.5</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_6" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</td>
+<th id="stub_1_6" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Saturday</th>
 <td class="gt_row gt_right" headers="New York Times stub_1_6 Count">72</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_6 Mean">22.1</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_6 Minimum">8.0</td>
@@ -760,7 +767,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="New York Times stub_1_6 Maximum">65.6</td>
 </tr>
 <tr class="even">
-<td id="stub_1_7" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Sunday</td>
+<th id="stub_1_7" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Sunday</th>
 <td class="gt_row gt_right" headers="New York Times stub_1_7 Count">60</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_7 Mean">28.9</td>
 <td class="gt_row gt_right" headers="New York Times stub_1_7 Minimum">3.3</td>
@@ -770,10 +777,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="New York Times stub_1_7 Maximum">68.7</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="8" id="New Yorker" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">New Yorker</td>
+<th colspan="8" id="New Yorker" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">New Yorker</th>
 </tr>
 <tr class="gt_row_group_first even">
-<td id="stub_1_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</td>
+<th id="stub_1_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Monday</th>
 <td class="gt_row gt_right" headers="New Yorker stub_1_8 Count">67</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_8 Mean">21.2</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_8 Minimum">5.5</td>
@@ -783,7 +790,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="New Yorker stub_1_8 Maximum">64.9</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</td>
+<th id="stub_1_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Tuesday</th>
 <td class="gt_row gt_right" headers="New Yorker stub_1_9 Count">79</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_9 Mean">12.4</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_9 Minimum">4.8</td>
@@ -793,7 +800,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="New Yorker stub_1_9 Maximum">37.2</td>
 </tr>
 <tr class="even">
-<td id="stub_1_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</td>
+<th id="stub_1_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Wednesday</th>
 <td class="gt_row gt_right" headers="New Yorker stub_1_10 Count">83</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_10 Mean">7.1</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_10 Minimum">3.0</td>
@@ -803,7 +810,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="New Yorker stub_1_10 Maximum">20.6</td>
 </tr>
 <tr class="odd">
-<td id="stub_1_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</td>
+<th id="stub_1_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Thursday</th>
 <td class="gt_row gt_right" headers="New Yorker stub_1_11 Count">51</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_11 Mean">5.6</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_11 Minimum">4.1</td>
@@ -813,7 +820,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="New Yorker stub_1_11 Maximum">9.0</td>
 </tr>
 <tr class="even">
-<td id="stub_1_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</td>
+<th id="stub_1_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row" style="text-align: center; color: #555655;">Friday</th>
 <td class="gt_row gt_right" headers="New Yorker stub_1_12 Count">46</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_12 Mean">11.9</td>
 <td class="gt_row gt_right" headers="New Yorker stub_1_12 Minimum">4.5</td>
@@ -995,11 +1002,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
         var filterRegex = new RegExp("https:\/\/jdonland\.github\.io\/");
+      const newWindowLabel = "(opens in a new tab)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -1013,8 +1039,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             if (link.getAttribute("rel") === null) {
               link.setAttribute("rel", "noopener");
             }
+            describeNewWindow(link);
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -1028,6 +1116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1190,44 +1279,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1325,6 +1424,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});

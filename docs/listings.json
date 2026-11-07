@@ -2,11 +2,12 @@
   {
     "listing": "/posts.html",
     "items": [
-      "/posts/city_temperatures/city_temperatures.html",
-      "/posts/machine_learning_about_runes/machine_learning_about_runes.html",
-      "/posts/crossword_times/crossword_times.html",
+      "/posts/book_reviews/book_reviews.html",
+      "/posts/chart_makeovers/chart_makeovers.html",
       "/posts/hot_days/hot_days.html",
-      "/posts/chart_makeovers/chart_makeovers.html"
+      "/posts/crossword_times/crossword_times.html",
+      "/posts/machine_learning_about_runes/machine_learning_about_runes.html",
+      "/posts/city_temperatures/city_temperatures.html"
     ]
   }
 ]

@@ -2,19 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2022-06-27">
 <meta name="description" content="Alphabetic algorithm alchemy.">
 
-<title>Jesse Onland - (Machine) Learning about Runes</title>
+<title>(Machine) Learning about Runes – Jesse Onland</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -23,6 +29,7 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -61,15 +68,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<link href="../../image.jpg" rel="icon" type="image/jpeg">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
+<link href="../../index.gif" rel="icon" type="image/gif">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2d1b484175df9f94b87cc871fc78a24c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-542436dca96572d7ea1a863c4db5b555.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -79,24 +91,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
-
 <script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+
 <link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Jesse Onland</span>
     </a>
@@ -107,25 +122,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html" rel="" target="">
- <span class="menu-text">Projects</span></a>
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../links.html" rel="" target="">
- <span class="menu-text">Links</span></a>
+    <a class="nav-link" href="../../links.html"> 
+<span class="menu-text">Links</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resume.pdf" rel="" target="">
- <span class="menu-text">Resume</span></a>
+    <a class="nav-link" href="../../resume.pdf"> 
+<span class="menu-text">Resume</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -133,11 +148,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -164,23 +179,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">June 1, 2024</p>
+      <p class="date-modified">November 7, 2026</p>
     </div>
   </div>
     
   </div>
   
 
+
 </header>
+
 
 <section id="introduction" class="level2 page-columns page-full">
 <h2 data-anchor-id="introduction">Introduction</h2>
 <p>Today we’ll learn about an ancient Germanic writing system, clean up some messy data, engineer a couple of simple features, and see if we can find a way to predict the age of some historical artifacts without having to pay for a fancy-schmancy archaeology degree. Along the way, we’ll get a little overview of the <code>tidyverse</code> and <code>tidymodels</code> approaches to data analysis and modeling in R.</p>
 <section id="a-very-brief-primer-on-runes" class="level3 page-columns page-full">
 <h3 data-anchor-id="a-very-brief-primer-on-runes">A Very Brief Primer on Runes</h3>
-<div class="page-columns page-full"><p>A rune is a letter from any of a handful of closely-related alphabets used by Germanic peoples primarily from around the 3rd to the 13th centuries CE. Like the Latin alphabet used to write the Germanic languages today, they derive from an ancient form of the Greek alphabet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> These alphabets are sometimes called “futhark” (or “futhorc”, “fuþąrk”, etc.) after first few letters in their canonical order.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Possibly via one of the alpine Old Italic alphabets such as Venetic.</p></li><li id="fn2"><p><sup>2</sup>&nbsp;Curiously, the first three letters of these alphabets spell out a vulgar word for a woman’s genitals in Old Norse.</p></li></div></div>
-<div class="page-columns page-full"><p>The main runic alphabets are<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;The abecedaria, or “rune rows”, in this table are much simplified. In reality, there were many variations of each. The medieval runes in particular were augmented by diacritical dots in order to disambiguate sounds represented by the same rune in the younger futhark.</p></li></div></div>
-<table class="table">
+<p>A rune is a letter from any of a handful of closely-related alphabets used by Germanic peoples primarily from around the 3rd to the 13th centuries CE. Like the Latin alphabet used to write the Germanic languages today, they derive from an ancient form of the Greek alphabet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> These alphabets are sometimes called “futhark” (or “futhorc”, “fuþąrk”, etc.) after first few letters in their canonical order.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Possibly via one of the alpine Old Italic alphabets such as Venetic.</p></div><div id="fn2"><p><sup>2</sup>&nbsp;Curiously, the first three letters of these alphabets spell out a vulgar word for a woman’s genitals in Old Norse.</p></div><div id="fn3"><p><sup>3</sup>&nbsp;The abecedaria, or “rune rows”, in this table are much simplified. In reality, there were many variations of each. The medieval runes in particular were augmented by diacritical dots in order to disambiguate sounds represented by the same rune in the younger futhark.</p></div></div><p>The main runic alphabets are<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p>
+<table class="caption-top table">
 <colgroup>
 <col style="width: 18%">
 <col style="width: 23%">
@@ -222,8 +239,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<div class="page-columns page-full"><p>Magical incantations were sometimes written in runes, but despite what such august institutions as the gift shop of the National Museum of Iceland would have you believe, there’s no evidence that each runic letter had a specific symbolic meaning.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Neither is there much evidence that they were used in divination. These alphabets were used mainly for mundane purposes such as inscribing an object with its owner or creator’s name, and for memorializing the dead on gravestones. Nevertheless, in recent times these alphabets have become an element in various kinds of New Age mysticism, neo-pagan religions, and unsavoury political movements.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;The runes have mnemonic names, and occasionally a rune could stand in for its name, but even this is rare.</p></li></div></div>
-</section>
+<p>Magical incantations were sometimes written in runes, but despite what such august institutions as the gift shop of the National Museum of Iceland would have you believe, there’s no evidence that each runic letter had a specific symbolic meaning.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Neither is there much evidence that they were used in divination. These alphabets were used mainly for mundane purposes such as inscribing an object with its owner or creator’s name, and for memorializing the dead on gravestones. Nevertheless, in recent times these alphabets have become an element in various kinds of New Age mysticism, neo-pagan religions, and unsavoury political movements.</p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;The runes have mnemonic names, and occasionally a rune could stand in for its name, but even this is rare.</p></div></div></section>
 <section id="runes-db" class="level3">
 <h3 data-anchor-id="runes-db">RuneS-DB</h3>
 <p>RuneS-DB is a database of artifacts bearing runic writing compiled from a variety of sources as part of RuneS, an overarching project to study these writing systems. It’s available from the RuneS project’s website.</p>
@@ -244,6 +261,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-anchor-id="reading-the-file">Reading the File</h3>
 <p>The file we obtain from the RuneS website is tab-separated, contains three lines of preamble, and uses a hyphen to indicate missing data. Providing this information to <code>readr</code>’s <code>read_delim</code> will produce a tibble (i.e., a fancy data frame, which is in turn a fancy matrix) that we can begin to manipulate.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read the file</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_delim</span>(<span class="at">file =</span> <span class="st">"runes_data.csv"</span>,</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">delim =</span> <span class="st">";"</span>,</span>
@@ -252,19 +271,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="ot">-&gt;</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># save to a dataframe</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code></pre></div>
+</details>
 </div>
 </section>
 <section id="the-vimose-comb" class="level3 page-columns page-full">
 <h3 data-anchor-id="the-vimose-comb">The Vimose Comb</h3>
-<div class="page-columns page-full"><p>One artifact we’d expect to find in RuneS-DB is the <a href="https://en.wikipedia.org/wiki/Vimose_inscriptions">Vimose comb</a>, which bears what’s considered to be the oldest known datable<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> runic inscription. <code>dplyr</code>’s <code>filter</code> function and <code>stringr</code>’s <code>str_detect</code> let us filter the data to show only rows where value in the column of inscription names matches “Vimose comb”.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Insert joke about “datable” here.</p></li><li id="fn6"><p><sup>6</sup>&nbsp;Just checking for <code>rs_short_inscr_name == "Vimose comb"</code> would fail because the values in that column have extra whitespace characters.</p></li></div></div>
-<div class="cell" data-layout-align="center">
+<p>One artifact we’d expect to find in RuneS-DB is the <a href="https://en.wikipedia.org/wiki/Vimose_inscriptions">Vimose comb</a>, which bears what’s considered to be the oldest known datable<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> runic inscription. <code>dplyr</code>’s <code>filter</code> function and <code>stringr</code>’s <code>str_detect</code> let us filter the data to show only rows where value in the column of inscription names matches “Vimose comb”.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Insert joke about “datable” here.</p></div><div id="fn6"><p><sup>6</sup>&nbsp;Just checking for <code>rs_short_inscr_name == "Vimose comb"</code> would fail because the values in that column have extra whitespace characters.</p></div></div><div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(rs_short_inscr_name, <span class="at">pattern =</span> <span class="st">"Vimose comb"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">|&gt;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">"51.75%"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; ">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: right;" data-quarto-table-cell-role="th">Findno</th>
@@ -337,7 +360,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </div>
-
 </div>
 </div>
 <p>So we can see that this object was found in Vimose, currently resides in a museum, has been dated to 140-160 CE, is a personal hygiene tool made of antler, says “harja” (ᚺᚨᚱᛃᚨ), etc.</p>
@@ -346,13 +368,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-anchor-id="diagnosing">Diagnosing</h3>
 <p>One way to quantify the messiness of a data set is to calculate the count and proportion of missing and unique values in each column. <code>dlookr</code>’s <code>diagnose</code> does this.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">diagnose</span>() <span class="sc">|&gt;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">|&gt;</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">"51.75%"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; ">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">variables</th>
@@ -615,12 +640,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </div>
-
 </div>
 </div>
 <p>Unfortunately, RuneS-DB is a bit of a mess. Because it’s amalgamated from many sources, information is coded inconsistently. A mix of languages are used, including in the column names. Getting this data set clean enough to start visualizing it is easy enough using <code>dplyr</code> functions like <code>rename()</code>, <code>separate()</code>, and <code>mutate()</code>.</p>
 <p>The first step is to make the column names more informative and get rid of the weird “rs_” and “rs_short_” prefixes.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># rename the columns</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
@@ -658,9 +684,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  ) <span class="ot">-&gt;</span></span>
 <span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># update the dataframe</span></span>
 <span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>Next we’ll separate the <code>location</code> column into two columns, one with the general category and the other with the rest of the information. We’ll also create separate columns for the lower and upper bounds of each date, then convert this into a midpoint and a range.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># separate location category and detail</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(</span>
@@ -683,9 +712,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(date_upper, date_lower)) <span class="ot">-&gt;</span></span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># update the dataframe again</span></span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>Next let’s convert RuneS-DB’s somewhat idiosyncratic country codes into human-readable names. While we’re at it, we’ll collapse the rarest ones into a “Rest of World” category.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">country =</span> <span class="fu">recode</span>(</span>
@@ -699,9 +731,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>      <span class="st">"KN"</span> <span class="ot">=</span> <span class="st">"Greenland"</span>,</span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> <span class="st">"Rest of World"</span>)) <span class="ot">-&gt;</span></span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>Finally some miscellaneous re-encoding.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># treat the ID numbers as strings</span></span>
@@ -735,6 +770,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>      <span class="st">"medieval runes"</span> <span class="ot">=</span> <span class="st">"manuscript runes"</span>,</span>
 <span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> <span class="st">"mixed/unknown"</span>)) <span class="ot">-&gt;</span></span>
 <span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>There’s more cleaning we could do, but this is enough for now.</p>
 </section>
@@ -742,6 +778,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exploratory-data-analysis" class="level2 page-columns page-full">
 <h2 data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h2>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(object_class, material_class) <span class="sc">|&gt;</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(object_class, material_class) <span class="sc">|&gt;</span></span>
@@ -755,17 +793,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Runic Artifacts by Object and Material Class"</span>,</span>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Object Class"</span>,</span>
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Material Class"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="machine_learning_about_runes_files/figure-html/object class vs material class-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="machine_learning_about_runes_files/figure-html/object class vs material class-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="machine_learning_about_runes_files/figure-html/object class vs material class-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
-<div class="page-columns page-full"><p>Nearly half of the artifacts in RuneS-DB are stones<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, which it turns out are always made of stone! Likewise, coins and bracteates<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> are always made of metal, and rune sticks are always made of wood. Tools, edifices, “inventory” (mostly furniture), and “other objects” all seem to come in a variety of materials.</p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;<a href="https://frinkiac.com/meme/S04E19/338003.jpg?b64lines=R09PRCBPTEQgUk9DSy4gIApOT1RISU5HIEJFQVRTIFRIQVQu">Good old rock, nothin’ beats that!</a></p></li><li id="fn8"><p><sup>8</sup>&nbsp;What’s a bracteate, you ask? Why, it’s “is”a flat, thin, single-sided gold medal worn as jewelry”.</p></li></div></div>
-<p>Where is this stuff typically found?</p>
+<p>Nearly half of the artifacts in RuneS-DB are stones<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, which it turns out are always made of stone! Likewise, coins and bracteates<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> are always made of metal, and rune sticks are always made of wood. Tools, edifices, “inventory” (mostly furniture), and “other objects” all seem to come in a variety of materials.</p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;<a href="https://frinkiac.com/meme/S04E19/338003.jpg?b64lines=R09PRCBPTEQgUk9DSy4gIApOT1RISU5HIEJFQVRTIFRIQVQu">Good old rock, nothin’ beats that!</a></p></div><div id="fn8"><p><sup>8</sup>&nbsp;What’s a bracteate, you ask? Why, it’s “is”a flat, thin, single-sided gold medal worn as jewelry”.</p></div></div><p>Where is this stuff typically found?</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># discard artifacts missing country information</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(country) <span class="sc">|&gt;</span></span>
@@ -777,10 +818,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Runic Objects by Country"</span>,</span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Country of Discovery"</span>,</span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Number of Objects"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="machine_learning_about_runes_files/figure-html/location graphic-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="machine_learning_about_runes_files/figure-html/location graphic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="machine_learning_about_runes_files/figure-html/location graphic-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -788,6 +830,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Right. Scandinavia, mostly.</p>
 <p>One last exploratory graphic. How old is this stuff?</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># discard undated objects</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(date) <span class="sc">|&gt;</span></span>
@@ -803,10 +847,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Number of Runic Objects by Century"</span>,</span>
 <span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year of Manufacture"</span>,</span>
 <span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Number of Objects"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="machine_learning_about_runes_files/figure-html/dates graphic-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="machine_learning_about_runes_files/figure-html/dates graphic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="machine_learning_about_runes_files/figure-html/dates graphic-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -815,8 +860,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="feature-engineering" class="level2 page-columns page-full">
 <h2 data-anchor-id="feature-engineering">Feature Engineering</h2>
-<div class="page-columns page-full"><p>Suppose you’re lost in the woods in northwestern Europe<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> and stumble upon some runes. Is there some rule you can use to estimate when they were carved (or written)?</p><div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;What do you do if you’re lost in the woods in Iceland? Stand up.</p></li></div></div>
-<p>First, we need to consider what features of the object you’d be able to determine. I think these are all reasonable:</p>
+<p>Suppose you’re lost in the woods in northwestern Europe<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> and stumble upon some runes. Is there some rule you can use to estimate when they were carved (or written)?</p>
+<div class="no-row-height column-margin column-container"><div id="fn9"><p><sup>9</sup>&nbsp;What do you do if you’re lost in the woods in Iceland? Stand up.</p></div></div><p>First, we need to consider what features of the object you’d be able to determine. I think these are all reasonable:</p>
 <ul>
 <li>object class (stone, coin, etc.)</li>
 <li>material class (stone, metal, wood, etc.)</li>
@@ -827,8 +872,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>whether the inscription seems to contain any of a few common words or morphemes</li>
 </ul>
 <p>The first four of these features are already present in our data frame. We’ll have to “engineer” the others.</p>
-<div class="page-columns page-full"><p>Unfortunately, the transliterations in RuneS-DB are very inconsistently encoded, but we can still get an approximate length of each inscription by converting the transliteration to ASCII<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> and counting the number of resulting alphanumeric characters<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. It’s too bad the database doesn’t simply use the runic characters included in Unicode, but perhaps that wouldn’t be sufficient to encode parts of the inscriptions which are unclear, damaged, combined into ligatures (so-called “bind runes”), etc.</p><div class="no-row-height column-margin column-container"><li id="fn10"><p><sup>10</sup>&nbsp;Note that different operating systems have different ideas about how to convert other encodings into ASCII.</p></li><li id="fn11"><p><sup>11</sup>&nbsp;Plus question marks, to account for some of the non-ASCII letters.</p></li></div></div>
-<div class="cell" data-layout-align="center">
+<p>Unfortunately, the transliterations in RuneS-DB are very inconsistently encoded, but we can still get an approximate length of each inscription by converting the transliteration to ASCII<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> and counting the number of resulting alphanumeric characters<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. It’s too bad the database doesn’t simply use the runic characters included in Unicode, but perhaps that wouldn’t be sufficient to encode parts of the inscriptions which are unclear, damaged, combined into ligatures (so-called “bind runes”), etc.</p>
+<div class="no-row-height column-margin column-container"><div id="fn10"><p><sup>10</sup>&nbsp;Note that different operating systems have different ideas about how to convert other encodings into ASCII.</p></div><div id="fn11"><p><sup>11</sup>&nbsp;Plus question marks, to account for some of the non-ASCII letters.</p></div></div><div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">inscription_length =</span></span>
@@ -838,9 +885,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>      <span class="co"># count alphanumeric characters</span></span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_count</span>(<span class="st">"[[:lower:]</span><span class="sc">\\</span><span class="st">?]"</span>)) <span class="ot">-&gt;</span></span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>We can identify abecedaria by slightly re-encoding the “category” column.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">abecedarium =</span> <span class="fu">case_when</span>(</span>
@@ -848,9 +898,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(category, <span class="st">"row"</span>) <span class="sc">~</span> <span class="st">"futh"</span>,</span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"no"</span>)) <span class="ot">-&gt;</span></span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>Another feature we can derive from the inscription is what kind of spacing is used between words.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">spaces =</span> <span class="fu">case_when</span>(</span>
@@ -860,9 +913,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(transliteration, <span class="st">" : "</span>) <span class="sc">~</span> <span class="st">"double dots"</span>,</span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"none/other"</span>)) <span class="ot">-&gt;</span></span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>Finally let’s encode the presence or absence of a few of the most common words/morphemes.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">sin_sun_syn =</span> <span class="fu">str_detect</span>(transliteration, <span class="st">"sin|sun|syn"</span>),</span>
@@ -873,6 +929,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">lit         =</span> <span class="fu">str_detect</span>(transliteration, <span class="st">"lit"</span>),</span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(sin_sun_syn<span class="sc">:</span>lit, as.numeric)) <span class="ot">-&gt;</span></span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  runes_data</span></code></pre></div>
+</details>
 </div>
 <p>Is this enough information to be able to predict the age of a runic inscription with any accuracy? Let’s try fitting a few different models using different approaches.</p>
 </section>
@@ -882,6 +939,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-anchor-id="testtraining-data-split">Test/Training Data Split</h3>
 <p>First we’ll split the data into a training and a test set, then create cross-validation folds from training data to help estimate model performance.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>runes_data <span class="sc">|&gt;</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># keep just the features we want to predict from</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
@@ -911,6 +970,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a><span class="co"># create 10 cross-validation folds</span></span>
 <span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a><span class="fu">vfold_cv</span>(train) <span class="ot">-&gt;</span> folds</span></code></pre></div>
+</details>
 </div>
 <p>The <code>tidymodels</code> framework provides a unified interface to various model-specific packages, as well as convenient functions for defining, fitting, tuning, and comparing many combinations of data pre-processing recipes and model specifications.</p>
 <blockquote class="blockquote">
@@ -921,6 +981,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-anchor-id="pre-processing-recipe">Pre-Processing Recipe</h3>
 <p>Next we’ll define two pre-processing recipes. In both cases we’ll normalize our numeric predictor. Some model types require categorical predictors to be dummy-encoded, while others can exhibit better performance with categorical predictors left as-is. We’ll try both ways.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a pre-processing recipe</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">recipe</span>(runes_data) <span class="sc">|&gt;</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">update_role</span>(date, <span class="at">new_role =</span> <span class="st">"outcome"</span>) <span class="sc">|&gt;</span></span>
@@ -930,12 +992,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># dummy encode the categorical features</span></span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_dummy</span>(<span class="fu">all_nominal_predictors</span>()) <span class="ot">-&gt;</span></span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  runes_recipe</span></code></pre></div>
+</details>
 </div>
 </section>
 <section id="baseline" class="level3">
 <h3 data-anchor-id="baseline">Baseline</h3>
 <p>Now we can define our models. First let’s “fit” the null model, which consists of just always guessing the mean date value from the training set. It’s straightforward to simply calculate the appropriate RMSE estimate in this case, but for illustrative purposes we’ll use cross-validation anyway. It doesn’t matter which recipe we use since the null model ignores the predictors anyway.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">null_model</span>() <span class="sc">|&gt;</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"parsnip"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">"regression"</span>) <span class="ot">-&gt;</span></span>
@@ -947,6 +1012,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit_resamples</span>(<span class="at">resamples =</span> folds, <span class="at">metrics =</span> <span class="fu">metric_set</span>(rmse)) <span class="sc">|&gt;</span></span>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">collect_metrics</span>() <span class="sc">|&gt;</span></span>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(mean)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 311.4979</code></pre>
 </div>
@@ -961,29 +1027,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We’ll try six more kinds of model. Each comes with some hyperparameters which control the bias-variance tradeoff, the step size for gradient descent, etc. We can leave <code>tune()</code> as a placeholder for these values when creating the model specifications. When we fit the models, we’ll try 10 combinations of hyperparameter values for each model type, and keep only the best ones.</p>
 <p>A linear model assumes the outcome is a linear function of the predictors and finds the best coefficient to assign to each. Linear models are inflexible, and so tend to suffer from bias (unless the underlying relationship really is approximately linear), but they tend to have lower variance than more flexible model types, since their outputs are not too sensitive to small changes in their inputs. The <code>penalty</code> and <code>mixture</code> hyperparameters here control how much L1 (LASSO) and/or L2 (ridge) regularization to apply. Regularization penalizes more complex models in order to prevent overfitting.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_reg</span>(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">engine  =</span> <span class="st">"glmnet"</span>,</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">penalty =</span> <span class="fu">tune</span>(),</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">mixture =</span> <span class="fu">tune</span>()) <span class="ot">-&gt;</span></span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  linear_spec</span></code></pre></div>
+</details>
 </div>
 <p>A decision tree is essentially a flowchart, with each split corresponding to a rule in the form of an “if/then” condition on a predictor. The idea is to find the splits which best separate the outcome. Predictions are produced by taking the average outcome among the training data belonging to the relevant terminal node of the tree. <code>tree_depth</code> specifies the maximum depth of the tree; without some maximum, the training data could be completely interpolated (or “memorized”), an extreme form of overfitting. <code>cost_complexity</code> controls how well a split must separate its subset of the training data in order to be considered, and <code>min_n</code> controls how much training data must belong to a node in order to justify any further splitting.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">decision_tree</span>(<span class="at">engine     =</span> <span class="st">"partykit"</span>,</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">tree_depth =</span> <span class="fu">tune</span>(),</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">min_n      =</span> <span class="fu">tune</span>()) <span class="ot">-&gt;</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  decision_tree_spec</span></code></pre></div>
+</details>
 </div>
 <p>Nearest neighbours models predict that the value of the outcome for a test data point will be some kind of weighted average of that point’s nearest neighbours in the training data. <code>neighbors</code> controls the number of neighbours to consider and the other hyperparameters specify the precise notions of “weighted average” and “nearest” to use.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nearest_neighbor</span>(<span class="at">engine      =</span> <span class="st">"kknn"</span>,</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">neighbors   =</span> <span class="fu">tune</span>(),</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">weight_func =</span> <span class="fu">tune</span>(),</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">dist_power  =</span> <span class="fu">tune</span>()) <span class="ot">-&gt;</span></span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  nearest_neighbours_spec</span></code></pre></div>
+</details>
 </div>
 <p>Boosted tree ensembles are a very popular machine learning approach involving fitting many small decision trees, each of which is optimized to improve the predictions obtained by combining the preceding trees. This model type inherents the hyperparameters involved in fitting decision trees, plus additional hyperparameters specifying the number of trees to use, the proportion of training data and number of predictors to consider at each step during fitting, as well as how much weight to initially apply to each new tree.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boost_tree</span>(<span class="at">engine         =</span> <span class="st">"xgboost"</span>,</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">trees          =</span> <span class="dv">1000</span>,</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">tree_depth     =</span> <span class="fu">tune</span>(),</span>
@@ -993,19 +1070,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">mtry           =</span> <span class="fu">tune</span>(),</span>
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">learn_rate     =</span> <span class="fu">tune</span>()) <span class="ot">-&gt;</span></span>
 <span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  boosted_trees_spec</span></code></pre></div>
+</details>
 </div>
 <p>Some approaches combine multiple other types of models. Cubist involves a tree ensemble with linear models fit on each tree node, a boosting-like procedure, and a final nearest-neighbours-based adjustment.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cubist_rules</span>(<span class="at">engine =</span> <span class="st">"Cubist"</span>,</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">committees =</span> <span class="fu">tune</span>(),</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">neighbors =</span> <span class="fu">tune</span>()) <span class="ot">-&gt;</span></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  cubist_spec</span></code></pre></div>
+</details>
 </div>
 </section>
 <section id="model-fitting-1" class="level3">
 <h3 data-anchor-id="model-fitting-1">Model Fitting</h3>
 <p>In <code>tidymodels</code>, a “workflow” is an object which bundles together a model specification together with any associated pre-processing recipes, hyperparameter values, and/or evaluation results. <code>workflow_set</code> and <code>workflow_map</code> allow us to tune all of our model specifications as a batch.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># combine the model specifications in a list</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(<span class="at">linear        =</span> linear_spec,</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">tree          =</span> decision_tree_spec,</span>
@@ -1033,12 +1116,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>               <span class="at">metrics =</span> <span class="fu">metric_set</span>(rmse)) <span class="ot">-&gt;</span></span>
 <span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># update the workflow set with the results</span></span>
 <span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a>  runes_workflow_set</span></code></pre></div>
+</details>
 </div>
 </section>
 <section id="performance-comparison" class="level3">
 <h3 data-anchor-id="performance-comparison">Performance Comparison</h3>
 <p>Now our workflow set contains ten fit models per model type for each of ten hyperparameter combinations. We can extract the best version of each model type and plot the cross-validated performance estimates.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the rmse estimate from the best iteration of each type of model</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rank_results</span>(runes_workflow_set, <span class="at">select_best =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(model) <span class="sc">|&gt;</span></span>
@@ -1054,16 +1140,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Model Type"</span>,</span>
 <span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Estimated RMSE"</span>,</span>
 <span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Estimated RMSE for Best Model of Each Type"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="machine_learning_about_runes_files/figure-html/model performance plot-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="machine_learning_about_runes_files/figure-html/model performance plot-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="machine_learning_about_runes_files/figure-html/model performance plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
 <p>It appears that Cubist and boosted trees models work best for these data. Let’s finalize a Cubist model by re-fitting the best one on the entire training set, and seeing how well it predicts the age of artifacts in the test set.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>runes_workflow_set <span class="sc">|&gt;</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get the cubist workflow</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_workflow</span>(<span class="st">"recipe_cubist"</span>) <span class="sc">|&gt;</span></span>
@@ -1075,6 +1164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># fit on the entire training set</span></span>
 <span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">last_fit</span>(split, <span class="at">metrics =</span> <span class="fu">metric_set</span>(rmse)) <span class="ot">-&gt;</span></span>
 <span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  final_cubist</span></code></pre></div>
+</details>
 </div>
 </section>
 <section id="the-performance-explainability-trade-off" class="level3 page-columns page-full">
@@ -1082,6 +1172,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Unfortunately, our finalized Cubist model is useless. Since we’re lost in the woods, we can’t actually compute a prediction involving a complicated collection of trees of linear models with hundreds or thousands of coefficients and weights in total.</p>
 <p>Can we find a simple decision tree with comparable performance by trying more hyperparameter combinations? Let’s set <code>tree_depth</code> to 3, find good values for the other hyperparameters, then finalize and evaluate the resulting decision tree model.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>decision_tree_spec <span class="sc">|&gt;</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_args</span>(<span class="at">tree_depth =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">"regression"</span>) <span class="ot">-&gt;</span></span>
@@ -1103,9 +1195,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># fit on the entire training set</span></span>
 <span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">last_fit</span>(split, <span class="at">metrics =</span> <span class="fu">metric_set</span>(rmse)) <span class="ot">-&gt;</span></span>
 <span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>  small_tree</span></code></pre></div>
+</details>
 </div>
 <p>Now we have two finalized models: a Cubist model and a small decision tree. The most obvious way to compare them would be to inspect their performance, but we can also use the <code>vip</code> package to extract the number of features used by each model, giving us a way to compare their relative complexity as well.</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">model    =</span> <span class="fu">c</span>(<span class="st">"Cubist"</span>, <span class="st">"Small Decision Tree"</span>),</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">rmse     =</span> <span class="fu">c</span>(final_cubist <span class="sc">|&gt;</span> <span class="fu">collect_metrics</span>() <span class="sc">|&gt;</span> <span class="fu">pull</span>(.estimate), </span>
@@ -1114,9 +1209,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>               small_tree   <span class="sc">|&gt;</span> <span class="fu">extract_fit_engine</span>() <span class="sc">|&gt;</span> <span class="fu">vi</span>() <span class="sc">|&gt;</span> <span class="fu">filter</span>(Importance <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> <span class="fu">nrow</span>())) <span class="sc">|&gt;</span></span>
 <span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">|&gt;</span></span>
 <span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">"51.75%"</span>)</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:51.75%; ">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">model</th>
@@ -1138,12 +1234,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </div>
-
 </div>
 </div>
-<div class="page-columns page-full"><p>The small decision tree’s predictions are about 16% worse than the best Cubist model we could find. On the other hand, it’s <em>much</em> simpler. While the Cubist model uses essentially all of the information we provided to it, since we constrained our decision tree to three levels, it can use only a maximum of seven features.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> Although the more complicated Cubist performs well, it’s difficult to explain exactly why, or what the role of each feature is in generating predictions. This illustrates the performance-explainability trade-off.</p><div class="no-row-height column-margin column-container"><li id="fn12"><p><sup>12</sup>&nbsp;None of which are among the ones we engineered, as it happens.</p></li></div></div>
-<p>Our small tree model is simple enough to write on an index card and keep with us when venturing out into the forests of rural Scandinavia. Here it is:</p>
+<p>The small decision tree’s predictions are about 16% worse than the best Cubist model we could find. On the other hand, it’s <em>much</em> simpler. While the Cubist model uses essentially all of the information we provided to it, since we constrained our decision tree to three levels, it can use only a maximum of seven features.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> Although the more complicated Cubist performs well, it’s difficult to explain exactly why, or what the role of each feature is in generating predictions. This illustrates the performance-explainability trade-off.</p>
+<div class="no-row-height column-margin column-container"><div id="fn12"><p><sup>12</sup>&nbsp;None of which are among the ones we engineered, as it happens.</p></div></div><p>Our small tree model is simple enough to write on an index card and keep with us when venturing out into the forests of rural Scandinavia. Here it is:</p>
 <div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>small_tree <span class="sc">|&gt;</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_fit_engine</span>() <span class="sc">|&gt;</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.simpleparty</span>() <span class="sc">|&gt;</span></span>
@@ -1152,10 +1249,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">tp_args =</span> <span class="fu">list</span>(</span>
 <span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">id =</span> <span class="cn">FALSE</span>, </span>
 <span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">FUN =</span> <span class="cf">function</span>(node){<span class="fu">round</span>(node<span class="sc">$</span>prediction[<span class="dv">1</span>])}))</span></code></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="machine_learning_about_runes_files/figure-html/tree graphic-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="machine_learning_about_runes_files/figure-html/tree graphic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="machine_learning_about_runes_files/figure-html/tree graphic-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1164,8 +1262,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="conclusion" class="level2 page-columns page-full">
 <h2 data-anchor-id="conclusion">Conclusion</h2>
-<div class="page-columns page-full"><p>If you can foresee yourself desperately needing to know the approximate age of a runic inscription, I recommend you write down the decision tree above and keep it in your pocket. That, or always bring a licensed and qualified runologist<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> with you.</p><div class="no-row-height column-margin column-container"><li id="fn13"><p><sup>13</sup>&nbsp;The real job title of perhaps an entire dozen people!</p></li></div></div>
-</section>
+<p>If you can foresee yourself desperately needing to know the approximate age of a runic inscription, I recommend you write down the decision tree above and keep it in your pocket. That, or always bring a licensed and qualified runologist<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> with you.</p>
+<div class="no-row-height column-margin column-container"><div id="fn13"><p><sup>13</sup>&nbsp;The real job title of perhaps an entire dozen people!</p></div></div></section>
 <section id="references" class="level2">
 <h2 data-anchor-id="references">References</h2>
 <section id="runes" class="level3">
@@ -1197,86 +1295,317 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  function tippyHover(el, contentFn) {
-    const config = {
-      allowHTML: true,
-      content: contentFn,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start'
-    };
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/jdonland\.github\.io\/");
+      const newWindowLabel = "(opens in a new tab)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
       }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            describeNewWindow(link);
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
             let div = window.document.getElementById("code-annotation-line-highlight");
             if (div === null) {
               div = window.document.createElement("div");
@@ -1284,8 +1613,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
               div.style.position = 'absolute';
               parent.appendChild(div);
             }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1295,96 +1623,142 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
               const gutter = codeCell.querySelector('.code-annotation-gutter');
               gutter.appendChild(gutterDiv);
             }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
           }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
         };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
           }
-          popup.appendChild(citeDiv);
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
         });
-        return popup.innerHTML;
-      });
-    }
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/jdonland\.github\.io\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
       }
     }
-});
-</script>
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
 
 
 

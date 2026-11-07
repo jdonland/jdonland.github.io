@@ -5,9 +5,6 @@ description: "Time trials and tribulations."
 execute: 
    warning: false
    message: false
-filters:
-   - lightbox
-lightbox: auto
 draft: true
 ---
 
@@ -15,7 +12,6 @@ draft: true
 #| label: libraries
 #| include: false
 
-library(here)
 library(tidyverse)
 library(kableExtra)
 library(scales)

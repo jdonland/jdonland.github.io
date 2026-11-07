@@ -1,10 +1,9 @@
 ---
 listing:
   contents: posts
-  sort: "date"
-  type: grid
-  grid-columns: 2
-  image-height: 350px
+  sort: "date desc"
+  type: default
+  image-height: 200px
   categories: false
   feed: true
   fields: [image, title, description]

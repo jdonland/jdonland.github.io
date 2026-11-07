@@ -5,9 +5,6 @@ date-modified: last-modified
 date-format: long
 description: "The joy of Jeopardy! judgement."
 image: "coryat_scores.jpg"
-filters:
-   - lightbox
-lightbox: auto
 draft: true
 ---
 

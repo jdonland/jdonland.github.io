@@ -5,9 +5,6 @@ date-modified: now
 date-format: long
 image: violin_plot_thumbnail.png
 description: "Recreating a YouGov Data Graphic with ggplot2"
-filters:
-   - lightbox
-lightbox: auto
 code-fold: true
 format:
   html:
