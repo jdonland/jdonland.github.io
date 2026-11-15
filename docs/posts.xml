@@ -22,15 +22,23 @@
 <section id="introduction" class="level2">
 <h2 data-anchor-id="introduction">Introduction</h2>
 <p>Here are the extremely brief reviews of data analysis and visualization related books that I occasionally post on <a href="https://bsky.app/profile/jdonland.bsky.social">Bluesky</a>.</p>
+<p>They come out to 300 characters, including the title, year, and the phrase “300-character book review”, plus the accompanying punctuation.</p>
 <section id="the-theory-that-would-not-die-mcgrayne-2011" class="level3">
 <h3 data-anchor-id="the-theory-that-would-not-die-mcgrayne-2011"><em>The Theory That Would Not Die</em> (McGrayne, 2011)</h3>
 <p>Brings its heroes and villains to life with charming short biographies, but mangles the statistical ideas.</p>
 <p>“Fisher considered a hypothesis significant if it was unlikely to have occurred by chance”? Hypotheses don’t “occur” at all!</p>
 </section>
+<section id="how-to-sound-smart-when-talking-about-charts-bradley-2026" class="level3">
+<h3 data-anchor-id="how-to-sound-smart-when-talking-about-charts-bradley-2026"><em>How to Sound Smart When Talking About Charts</em> (Bradley, 2026)</h3>
+<p>A little zine elaborating on thirteen quotes about data visualization design, accompanied by cute medieval-ish line drawings.</p>
+<p>All the sources but two skew recent and tweet/bloggy.</p>
+<p>Well executed given the constraints.</p>
+</section>
 <section id="references" class="level3">
 <h3 data-anchor-id="references">References</h3>
 <ul>
 <li><a href="https://www.google.ca/books/edition/The_Theory_That_Would_Not_Die/_Kx5xVGuLRIC"><em>The Theory That Would Not Die: How Bayes’ Rule Cracked the Enigma Code, Hunted Down Russian Submarines, &amp; Emerged Triumphant from Two Centuries of Controversy</em></a></li>
+<li><a href="https://graphpaper.substack.com/p/how-to-sound-smart-when-talking-about"><em>How to Sound Smart When Talking About Charts</em></a></li>
 </ul>
 
 
