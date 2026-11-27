@@ -66,11 +66,6 @@ Statistical Factuality Versus Practicality Versus Poetry,https://statmodeling.st
 Evidence Versus Logic in Scientific Reform,https://daniellakens.blogspot.com/2024/09/why-i-dont-expect-to-be-convinced-by.html,philosophy,2024-09-04
 Surely God Loves 51 km/h Nearly As Much as 49 km/h?,http://daniellakens.blogspot.com/2024/01/surely-god-loves-51-kmh-nearly-as-much.html,philosophy,2024-01-11
 Simplicity and Indifference,https://www.umsu.de/wo/2018/680,philosophy,2018-07-04
-Large Numbers,https://www.privatdozent.co/p/large-numbers-1948,philosophy,2025-05-02
-R. A. Fisher and the Making of Maximum Likelihood 1912‒1922,http://www.medicine.mcgill.ca/epidemiology/hanley/bios601/Likelihood/Fisher%20and%20history%20of%20mle.pdf,history,1997
-"""Not Only Defended But Also Applied"": The Perceived Absurdity
-of Bayesian Inference",https://sites.stat.columbia.edu/gelman/research/published/feller8.pdf,history,2013-02-20
-Before p < 0.05 to Beyond p < 0.05,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6693672/,history,2019
 The Weirdest Paradox in Statistics (and Machine Learning),https://youtu.be/cUqoHQDinCM,puzzles & paradoxes,2022-08-30
 Simpson's Paradox All the Way Down,https://dynomight.net/simpsons-paradox/,puzzles & paradoxes,2020-11-16
 Bertrand's Paradox,https://www.youtube.com/watch?v=mZBwsm6B280,puzzles & paradoxes,2021-12-20
@@ -80,7 +75,6 @@ The Good Research Code Handbook,https://goodresearch.dev/index.html,references &
 Awesome Public Datasets,https://github.com/awesomedata/awesome-public-datasets/blob/master/README.rst,references & resources,2014-11-20
 Modern Data Science with R,https://mdsr-book.github.io/mdsr3e/,references & resources,2023-11-01
 "Statistical Rethinking with brms, ggplot2, and the tidyverse",https://bookdown.org/content/4857/,references & resources,2023-01-26
-Data Creators Club,https://datacreators.club/,references & resources,
 Regression Modeling Strategies,https://hbiostat.org/rmsc/,references & resources,2023-11-10
 Bayes Rules! An Introduction to Applied Bayesian Modeling,https://www.bayesrulesbook.com/,references & resources,2021-12-01
 Causal Inference: The Mixtape,https://mixtape.scunning.com/,references & resources,2021-01-06
@@ -93,9 +87,6 @@ Generalized Additive Models in R,https://r.qcbs.ca/workshop08/book-en/,reference
 An Introduction to Bayesian Thinking,https://statswithr.github.io/book/,references & resources,2022-06-15
 "easystats: An R Framework for Easy Statistical Modeling, Visualization, and Reporting",https://easystats.github.io/easystats/,references & resources,2022
 Elements of Data Science,https://allendowney.github.io/ElementsOfDataScience/README.html,references & resources,2022
-D3 in Depth,https://www.d3indepth.com/,references & resources,2016
-Causal Inference in R,https://www.r-causal.org/,references & resources,2024-03-14
-What Is Entropy?,https://math.ucr.edu/home/baez/what_is_entropy.pdf,references & resources,2024
 Review of _Statistical Rethinking_,https://dfd.github.io/mcelreath-statistical-rethinking/,references & resources,2024-07-24
 Bayesian Data Analysis,http://www.stat.columbia.edu/~gelman/book/,references & resources,
 The Truth About Linear Regression,https://www.stat.cmu.edu/~cshalizi/TALR/,references & resources,
@@ -113,7 +104,6 @@ From Data to Viz,https://www.data-to-viz.com/,data visualization,2018-02-19
 Dataviz Inspiration,https://www.dataviz-inspiration.com/,data visualization,2022-01-25
 Review of _The Visual Display of Quantitative Information_,https://sci-hub.se/https://doi.org/10.1901/jeab.1988.49-171,data visualization,1988-01
 What Ordinary People Need Most from Information Visualization Today,http://mail.perceptualedge.com/articles/visual_business_intelligence/what_people_need_from_infovis.pdf,data visualization,2008-08
-Market Cafe Magazine,https://www.marketcafemag.com/,data visualization,2016
 Error Bars Considered Harmful: Exploring Alternate Encodings for Mean and Error,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6214189/,data visualization,2018-11-02
 Beyond Bar and Line Graphs: Time for a New Data Presentation Paradigm,https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128,data visualization,2015-04-22
 Visualizing the Uncertainty in Data,https://flowingdata.com/2018/01/08/visualizing-the-uncertainty-in-data/,data visualization,2018-01-08
@@ -126,7 +116,6 @@ A Brief History of Data Visualization,https://www.datavis.ca/papers/hbook.pdf,da
 Learning Data Visualization,https://www.visualcinnamon.com/resources/learning-data-visualization/,data visualization,2020-10-22
 The Data Visualization Catalogue,https://datavizcatalogue.com/,data visualization,
 Data Visualization Teaching and Learning Materials,https://visualization.info/,data visualization,
-Reflections on UpSet ,https://vdl.sci.utah.edu/blog/2024/10/16/upset_reflections/,data visualization,2024-10-16
 Best Practices for Data Visualisation,https://royal-statistical-society.github.io/datavisguide/,data visualization,2024
 Statistical Graphics and Comics: Parallel Histories of Visual Storytelling,http://stat.columbia.edu/~gelman/research/unpublished/graphics_bd.pdf,data visualization,2024-07-14
 I’ve Stopped Using Box Plots. Should You?,https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/,data visualization,2021-11-04
@@ -139,7 +128,6 @@ Designing for Interactive Exploratory Data Analysis Requires Theories of Graphic
 The Ladder of Abstraction in Statistical Graphics,https://sites.stat.columbia.edu/gelman/research/unpublished/ladder.pdf,data visualization,2025-01-14
 A Checklist for Designing and Improving the Visualization of Scientific Data,https://www.nature.com/articles/s41556-025-01684-z.epdf?sharing_token=6rxyOROydY7MrGz6upfLBtRgN0jAjWel9jnR3ZoTv0OGLizn9CO3XQIVRsF7OvkKcbOdlu_ZcqkGwmASxUheeApvxObVGpY9yvcyp-Hhporvpq37ebtjXHKnbwJc1DLCKXHv7TM28oj-Wu_RxDIKwVrKUB5fCJT_fzGYq847-7A%3D,data visualization,2025-06-13
 VizDex,https://vizdexproject.com/,data visualization,2025
-Weather Forecasts Are Punctuated,https://entropicthoughts.com/weather-forecasts-are-punctuated,data visualization,2025-10-28
 Obumbratta Palette Generator,https://obumbratta.com/colour,data visualization,2026
 Can Design Be Taught?,https://www.storytellingwithdata.com/blog/can-design-be-taught,data visualization,2026-06-18
 Datatype: A Variable Font That Turns Text Into Charts,https://franktisellano.github.io/datatype/,data visualization,2026-02-15
